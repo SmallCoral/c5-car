@@ -1,0 +1,518 @@
+[
+  {
+    "ref": "C1",
+    "value": "100nF / 50V",
+    "footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+    "description": null,
+    "datasheet": null,
+    "fields": {
+      "Footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+      "Datasheet": null,
+      "Description": null
+    }
+  },
+  {
+    "ref": "C2",
+    "value": "10uF / 16V X7R",
+    "footprint": "DevBoard:Capacitor_SMD__C_1206_3216Metric",
+    "description": null,
+    "datasheet": null,
+    "fields": {
+      "Footprint": "DevBoard:Capacitor_SMD__C_1206_3216Metric",
+      "Datasheet": null,
+      "Description": null
+    }
+  },
+  {
+    "ref": "C3",
+    "value": "100nF / 16V",
+    "footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+    "description": null,
+    "datasheet": null,
+    "fields": {
+      "Footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+      "Datasheet": null,
+      "Description": null
+    }
+  },
+  {
+    "ref": "C4",
+    "value": "22uF / 10V X7R",
+    "footprint": "DevBoard:Capacitor_SMD__C_1206_3216Metric",
+    "description": null,
+    "datasheet": null,
+    "fields": {
+      "Footprint": "DevBoard:Capacitor_SMD__C_1206_3216Metric",
+      "Datasheet": null,
+      "Description": null
+    }
+  },
+  {
+    "ref": "C5",
+    "value": "22uF / 10V X7R",
+    "footprint": "DevBoard:Capacitor_SMD__C_1206_3216Metric",
+    "description": null,
+    "datasheet": null,
+    "fields": {
+      "Footprint": "DevBoard:Capacitor_SMD__C_1206_3216Metric",
+      "Datasheet": null,
+      "Description": null
+    }
+  },
+  {
+    "ref": "C6",
+    "value": "1uF / 16V",
+    "footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+    "description": null,
+    "datasheet": null,
+    "fields": {
+      "Footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+      "Datasheet": null,
+      "Description": null
+    }
+  },
+  {
+    "ref": "D2",
+    "value": "SS14",
+    "footprint": "DevBoard:Diode_SMD__D_SMA",
+    "description": null,
+    "datasheet": null,
+    "fields": {
+      "Footprint": "DevBoard:Diode_SMD__D_SMA",
+      "Datasheet": null,
+      "Description": null
+    }
+  },
+  {
+    "ref": "J2",
+    "value": "USB-C / USB2.0 FS",
+    "footprint": "DevBoard:Connector_USB__USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal",
+    "description": null,
+    "datasheet": "https://www.usb.org/sites/default/files/documents/usb_type-c.zip",
+    "fields": {
+      "Footprint": "DevBoard:Connector_USB__USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal",
+      "Datasheet": "https://www.usb.org/sites/default/files/documents/usb_type-c.zip",
+      "Description": null
+    }
+  },
+  {
+    "ref": "L1",
+    "value": "6.8uH / SRN6045TA-6R8M",
+    "footprint": "DevBoard:Inductor_SMD__L_Bourns_SRN6045TA",
+    "description": null,
+    "datasheet": null,
+    "fields": {
+      "Footprint": "DevBoard:Inductor_SMD__L_Bourns_SRN6045TA",
+      "Datasheet": null,
+      "Description": null
+    }
+  },
+  {
+    "ref": "R1",
+    "value": "5.1k / 1%",
+    "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+    "description": null,
+    "datasheet": null,
+    "fields": {
+      "Footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "Datasheet": null,
+      "Description": null
+    }
+  },
+  {
+    "ref": "R2",
+    "value": "5.1k / 1%",
+    "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+    "description": null,
+    "datasheet": null,
+    "fields": {
+      "Footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "Datasheet": null,
+      "Description": null
+    }
+  },
+  {
+    "ref": "R3",
+    "value": "0R",
+    "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+    "description": null,
+    "datasheet": null,
+    "fields": {
+      "Footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "Datasheet": null,
+      "Description": null
+    }
+  },
+  {
+    "ref": "R4",
+    "value": "0R",
+    "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+    "description": null,
+    "datasheet": null,
+    "fields": {
+      "Footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "Datasheet": null,
+      "Description": null
+    }
+  },
+  {
+    "ref": "R52",
+    "value": "100k / 1%",
+    "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+    "description": null,
+    "datasheet": null,
+    "fields": {
+      "Footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "Datasheet": null,
+      "Description": null
+    }
+  },
+  {
+    "ref": "R53",
+    "value": "150k / 1%",
+    "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+    "description": null,
+    "datasheet": null,
+    "fields": {
+      "Footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "Datasheet": null,
+      "Description": null
+    }
+  },
+  {
+    "ref": "U2",
+    "value": "AP63203WU-7",
+    "footprint": "DevBoard:Package_TO_SOT_SMD__TSOT-23-6",
+    "description": null,
+    "datasheet": "https://www.diodes.com/assets/Datasheets/AP63200-AP63201-AP63203-AP63205.pdf",
+    "fields": {
+      "Footprint": "DevBoard:Package_TO_SOT_SMD__TSOT-23-6",
+      "Datasheet": "https://www.diodes.com/assets/Datasheets/AP63200-AP63201-AP63203-AP63205.pdf",
+      "Description": null
+    }
+  },
+  {
+    "ref": "U3",
+    "value": "USBLC6-2SC6",
+    "footprint": "DevBoard:Package_TO_SOT_SMD__SOT-23-6",
+    "description": null,
+    "datasheet": "https://www.st.com/resource/en/datasheet/usblc6-2.pdf",
+    "fields": {
+      "Footprint": "DevBoard:Package_TO_SOT_SMD__SOT-23-6",
+      "Datasheet": "https://www.st.com/resource/en/datasheet/usblc6-2.pdf",
+      "Description": null
+    }
+  },
+  {
+    "ref": "C7",
+    "value": "2.2uF / 6.3V X7R",
+    "footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+    "description": null,
+    "datasheet": null,
+    "fields": {
+      "Footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+      "Datasheet": null,
+      "Description": null
+    }
+  },
+  {
+    "ref": "C8",
+    "value": "100nF / 16V",
+    "footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+    "description": null,
+    "datasheet": null,
+    "fields": {
+      "Footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+      "Datasheet": null,
+      "Description": null
+    }
+  },
+  {
+    "ref": "C9",
+    "value": "100nF / 16V",
+    "footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+    "description": null,
+    "datasheet": null,
+    "fields": {
+      "Footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+      "Datasheet": null,
+      "Description": null
+    }
+  },
+  {
+    "ref": "C10",
+    "value": "100nF / 16V",
+    "footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+    "description": null,
+    "datasheet": null,
+    "fields": {
+      "Footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+      "Datasheet": null,
+      "Description": null
+    }
+  },
+  {
+    "ref": "C11",
+    "value": "100nF / 16V",
+    "footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+    "description": null,
+    "datasheet": null,
+    "fields": {
+      "Footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+      "Datasheet": null,
+      "Description": null
+    }
+  },
+  {
+    "ref": "C12",
+    "value": "100nF / 16V",
+    "footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+    "description": null,
+    "datasheet": null,
+    "fields": {
+      "Footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+      "Datasheet": null,
+      "Description": null
+    }
+  },
+  {
+    "ref": "C13",
+    "value": "4.7uF / 10V",
+    "footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+    "description": null,
+    "datasheet": null,
+    "fields": {
+      "Footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+      "Datasheet": null,
+      "Description": null
+    }
+  },
+  {
+    "ref": "C14",
+    "value": "1uF / 10V",
+    "footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+    "description": null,
+    "datasheet": null,
+    "fields": {
+      "Footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+      "Datasheet": null,
+      "Description": null
+    }
+  },
+  {
+    "ref": "C15",
+    "value": "100nF / 16V",
+    "footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+    "description": null,
+    "datasheet": null,
+    "fields": {
+      "Footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+      "Datasheet": null,
+      "Description": null
+    }
+  },
+  {
+    "ref": "C16",
+    "value": "100nF / 16V",
+    "footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+    "description": null,
+    "datasheet": null,
+    "fields": {
+      "Footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+      "Datasheet": null,
+      "Description": null
+    }
+  },
+  {
+    "ref": "C17",
+    "value": "27pF / C0G",
+    "footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+    "description": null,
+    "datasheet": null,
+    "fields": {
+      "Footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+      "Datasheet": null,
+      "Description": null
+    }
+  },
+  {
+    "ref": "C18",
+    "value": "27pF / C0G",
+    "footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+    "description": null,
+    "datasheet": null,
+    "fields": {
+      "Footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+      "Datasheet": null,
+      "Description": null
+    }
+  },
+  {
+    "ref": "R5",
+    "value": "0 / VREF LINK",
+    "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+    "description": null,
+    "datasheet": null,
+    "fields": {
+      "Footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "Datasheet": null,
+      "Description": null
+    }
+  },
+  {
+    "ref": "R6",
+    "value": "10k",
+    "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+    "description": null,
+    "datasheet": null,
+    "fields": {
+      "Footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "Datasheet": null,
+      "Description": null
+    }
+  },
+  {
+    "ref": "R7",
+    "value": "10k / BOOT0",
+    "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+    "description": null,
+    "datasheet": null,
+    "fields": {
+      "Footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "Datasheet": null,
+      "Description": null
+    }
+  },
+  {
+    "ref": "SW1",
+    "value": "RESET / SD-1107 / 3x6x2.5",
+    "footprint": "DevBoard:SW_SD1107_2P_6x3_H2.5",
+    "description": null,
+    "datasheet": "https://sungmun.cn/upload/2019-08-06/615c19dcf691b57b49aed471754ab41f.pdf",
+    "fields": {
+      "Footprint": "DevBoard:SW_SD1107_2P_6x3_H2.5",
+      "Datasheet": "https://sungmun.cn/upload/2019-08-06/615c19dcf691b57b49aed471754ab41f.pdf",
+      "Description": null
+    }
+  },
+  {
+    "ref": "SW2",
+    "value": "BOOT0 / SD-1107 / 3x6x2.5",
+    "footprint": "DevBoard:SW_SD1107_2P_6x3_H2.5",
+    "description": null,
+    "datasheet": "https://sungmun.cn/upload/2019-08-06/615c19dcf691b57b49aed471754ab41f.pdf",
+    "fields": {
+      "Footprint": "DevBoard:SW_SD1107_2P_6x3_H2.5",
+      "Datasheet": "https://sungmun.cn/upload/2019-08-06/615c19dcf691b57b49aed471754ab41f.pdf",
+      "Description": null
+    }
+  },
+  {
+    "ref": "U1",
+    "value": "STM32C5A3VGT6",
+    "footprint": "DevBoard:Package_QFP__LQFP-100_14x14mm_P0.5mm",
+    "description": null,
+    "datasheet": "https://www.st.com/resource/en/datasheet/stm32c5a3vg.pdf",
+    "fields": {
+      "Footprint": "DevBoard:Package_QFP__LQFP-100_14x14mm_P0.5mm",
+      "Datasheet": "https://www.st.com/resource/en/datasheet/stm32c5a3vg.pdf",
+      "Description": null
+    }
+  },
+  {
+    "ref": "Y1",
+    "value": "24MHz / CL18pF",
+    "footprint": "DevBoard:Crystal__Crystal_SMD_3225-4Pin_3.2x2.5mm",
+    "description": null,
+    "datasheet": null,
+    "fields": {
+      "Footprint": "DevBoard:Crystal__Crystal_SMD_3225-4Pin_3.2x2.5mm",
+      "Datasheet": null,
+      "Description": null
+    }
+  },
+  {
+    "ref": "D3",
+    "value": "YELLOW-GREEN",
+    "footprint": "DevBoard:LED_0603_YellowGreen",
+    "description": null,
+    "datasheet": null,
+    "fields": {
+      "Footprint": "DevBoard:LED_0603_YellowGreen",
+      "Datasheet": null,
+      "Description": null
+    }
+  },
+  {
+    "ref": "D4",
+    "value": "RED",
+    "footprint": "DevBoard:LED_0603_Red",
+    "description": null,
+    "datasheet": null,
+    "fields": {
+      "Footprint": "DevBoard:LED_0603_Red",
+      "Datasheet": null,
+      "Description": null
+    }
+  },
+  {
+    "ref": "J13",
+    "value": "CORE EDGE / 98P",
+    "footprint": "DevBoard:Streamline_Core_Edge",
+    "description": null,
+    "datasheet": null,
+    "fields": {
+      "Footprint": "DevBoard:Streamline_Core_Edge",
+      "Datasheet": null,
+      "Description": null
+    }
+  },
+  {
+    "ref": "R49",
+    "value": "10k",
+    "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+    "description": null,
+    "datasheet": null,
+    "fields": {
+      "Footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "Datasheet": null,
+      "Description": null
+    }
+  },
+  {
+    "ref": "R50",
+    "value": "1k",
+    "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+    "description": null,
+    "datasheet": null,
+    "fields": {
+      "Footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "Datasheet": null,
+      "Description": null
+    }
+  },
+  {
+    "ref": "R51",
+    "value": "1k",
+    "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+    "description": null,
+    "datasheet": null,
+    "fields": {
+      "Footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "Datasheet": null,
+      "Description": null
+    }
+  },
+  {
+    "ref": "SW5",
+    "value": "USER / PD2 / SD-1107 / 3x6x2.5",
+    "footprint": "DevBoard:SW_SD1107_2P_6x3_H2.5",
+    "description": null,
+    "datasheet": "https://sungmun.cn/upload/2019-08-06/615c19dcf691b57b49aed471754ab41f.pdf",
+    "fields": {
+      "Footprint": "DevBoard:SW_SD1107_2P_6x3_H2.5",
+      "Datasheet": "https://sungmun.cn/upload/2019-08-06/615c19dcf691b57b49aed471754ab41f.pdf",
+      "Description": null
+    }
+  }
+]

@@ -1,0 +1,74 @@
+﻿Reference,Value,Footprint,DNP,3D_model
+J14,X1611WVS-98-9TV01 / 98P,DevBoard:Streamline_Socket,False,${KIPRJMOD}/Models/Streamline_Socket.step
+C35,10uF / 16V X7R,DevBoard:Capacitor_SMD__C_1206_3216Metric,False,${KIPRJMOD}/Models/C_1206_3216Metric.step
+C36,100nF / 16V,DevBoard:Capacitor_SMD__C_0603_1608Metric,False,${KIPRJMOD}/Models/C_0603_1608Metric.step
+C37,100nF / 50V,DevBoard:Capacitor_SMD__C_0603_1608Metric,False,${KIPRJMOD}/Models/C_0603_1608Metric.step
+C38,22uF / 10V X7R,DevBoard:Capacitor_SMD__C_1206_3216Metric,False,${KIPRJMOD}/Models/C_1206_3216Metric.step
+C39,22uF / 10V X7R,DevBoard:Capacitor_SMD__C_1206_3216Metric,False,${KIPRJMOD}/Models/C_1206_3216Metric.step
+D1,SS34,DevBoard:Diode_SMD__D_SMC,False,${KIPRJMOD}/Models/D_SMC.step
+J1,5V INPUT / 2A,DevBoard:Connector_PinHeader_2.54mm__PinHeader_1x02_P2.54mm_Vertical,False,${KIPRJMOD}/Models/PinHeader_1x02_P2.54mm_Vertical.step
+L2,6.8uH / SRN6045TA-6R8M,DevBoard:Inductor_SMD__L_Bourns_SRN6045TA,False,${KIPRJMOD}/Models/L_Bourns_SRN6045TA.step
+U6,AP63203WU-7,DevBoard:Package_TO_SOT_SMD__TSOT-23-6,False,${KIPRJMOD}/Models/TSOT-23-6.step
+C21,100nF,DevBoard:Capacitor_SMD__C_0603_1608Metric,False,${KIPRJMOD}/Models/C_0603_1608Metric.step
+C22,100nF,DevBoard:Capacitor_SMD__C_0603_1608Metric,False,${KIPRJMOD}/Models/C_0603_1608Metric.step
+C23,10uF / 10V,DevBoard:Capacitor_SMD__C_0603_1608Metric,False,${KIPRJMOD}/Models/C_0603_1608Metric.step
+C24,100nF,DevBoard:Capacitor_SMD__C_0603_1608Metric,False,${KIPRJMOD}/Models/C_0603_1608Metric.step
+C25,1uF / 6.3V,DevBoard:Capacitor_SMD__C_0603_1608Metric,False,${KIPRJMOD}/Models/C_0603_1608Metric.step
+C26,470pF / C0G,DevBoard:Capacitor_SMD__C_0603_1608Metric,False,${KIPRJMOD}/Models/C_0603_1608Metric.step
+C27,10nF,DevBoard:Capacitor_SMD__C_0603_1608Metric,False,${KIPRJMOD}/Models/C_0603_1608Metric.step
+C28,1nF / 2kV,DevBoard:Capacitor_SMD__C_1206_3216Metric,False,${KIPRJMOD}/Models/C_1206_3216Metric.step
+FB1,BLM18AG601SN1D / 600R@100M,DevBoard:Inductor_SMD__L_0603_1608Metric,False,${KIPRJMOD}/Models/L_0603_1608Metric.step
+J3,HR911105A,DevBoard:Connector_RJ__RJ45_Hanrun_HR911105A_Horizontal,False,${KIPRJMOD}/Models/GENERIC_HR911105A_ENVELOPE.wrl
+R10,10k / MODE=111,DevBoard:Resistor_SMD__R_0603_1608Metric,False,${KIPRJMOD}/Models/R_0603_1608Metric.step
+R11,10k / MODE=111,DevBoard:Resistor_SMD__R_0603_1608Metric,False,${KIPRJMOD}/Models/R_0603_1608Metric.step
+R12,10k / MODE=111,DevBoard:Resistor_SMD__R_0603_1608Metric,False,${KIPRJMOD}/Models/R_0603_1608Metric.step
+R13,10k / PHYAD0=0,DevBoard:Resistor_SMD__R_0603_1608Metric,False,${KIPRJMOD}/Models/R_0603_1608Metric.step
+R14,1.5k / MDIO,DevBoard:Resistor_SMD__R_0603_1608Metric,False,${KIPRJMOD}/Models/R_0603_1608Metric.step
+R15,10k / RESET,DevBoard:Resistor_SMD__R_0603_1608Metric,False,${KIPRJMOD}/Models/R_0603_1608Metric.step
+R16,10k / IRQ,DevBoard:Resistor_SMD__R_0603_1608Metric,False,${KIPRJMOD}/Models/R_0603_1608Metric.step
+R17,49.9 / 1%,DevBoard:Resistor_SMD__R_0603_1608Metric,False,${KIPRJMOD}/Models/R_0603_1608Metric.step
+R18,49.9 / 1%,DevBoard:Resistor_SMD__R_0603_1608Metric,False,${KIPRJMOD}/Models/R_0603_1608Metric.step
+R19,49.9 / 1%,DevBoard:Resistor_SMD__R_0603_1608Metric,False,${KIPRJMOD}/Models/R_0603_1608Metric.step
+R20,49.9 / 1%,DevBoard:Resistor_SMD__R_0603_1608Metric,False,${KIPRJMOD}/Models/R_0603_1608Metric.step
+R21,330,DevBoard:Resistor_SMD__R_0603_1608Metric,False,${KIPRJMOD}/Models/R_0603_1608Metric.step
+R22,330,DevBoard:Resistor_SMD__R_0603_1608Metric,False,${KIPRJMOD}/Models/R_0603_1608Metric.step
+R23,10k / REGOFF=0,DevBoard:Resistor_SMD__R_0603_1608Metric,False,${KIPRJMOD}/Models/R_0603_1608Metric.step
+R24,10k / INTSEL=1,DevBoard:Resistor_SMD__R_0603_1608Metric,False,${KIPRJMOD}/Models/R_0603_1608Metric.step
+R25,12.1k / 1%,DevBoard:Resistor_SMD__R_0603_1608Metric,False,${KIPRJMOD}/Models/R_0603_1608Metric.step
+R26,22 / CLK PHY,DevBoard:Resistor_SMD__R_0603_1608Metric,False,${KIPRJMOD}/Models/R_0603_1608Metric.step
+R27,22 / CLK MCU,DevBoard:Resistor_SMD__R_0603_1608Metric,False,${KIPRJMOD}/Models/R_0603_1608Metric.step
+R28,1M / SHIELD BLEED,DevBoard:Resistor_SMD__R_0603_1608Metric,False,${KIPRJMOD}/Models/R_0603_1608Metric.step
+U4,LAN8720A-CP-TR,DevBoard:Package_DFN_QFN__VQFN-24-1EP_4x4mm_P0.5mm_EP2.5x2.5mm_ThermalVias,False,${KIPRJMOD}/Models/GENERIC_LAN8720A_QFN24.wrl
+Y3,ASE-50.000MHZ-LC-T,DevBoard:Oscillator__Oscillator_SMD_Abracon_ASE-4Pin_3.2x2.5mm,False,${KIPRJMOD}/Models/GENERIC_ASE_3225.wrl
+C29,10uF / 10V,DevBoard:Capacitor_SMD__C_0603_1608Metric,False,${KIPRJMOD}/Models/C_0603_1608Metric.step
+C30,100nF / 16V,DevBoard:Capacitor_SMD__C_0603_1608Metric,False,${KIPRJMOD}/Models/C_0603_1608Metric.step
+C31,22uF / 10V,DevBoard:Capacitor_SMD__C_1206_3216Metric,False,${KIPRJMOD}/Models/C_1206_3216Metric.step
+C32,1uF / EN DELAY,DevBoard:Capacitor_SMD__C_0603_1608Metric,False,${KIPRJMOD}/Models/C_0603_1608Metric.step
+J4,ESP UART / 3V3 LOGIC,DevBoard:Connector_PinHeader_2.54mm__PinHeader_1x06_P2.54mm_Vertical,False,${KIPRJMOD}/Models/PinHeader_1x06_P2.54mm_Vertical.step
+J5,ESP AUX GPIO,DevBoard:Connector_PinHeader_2.54mm__PinHeader_1x06_P2.54mm_Vertical,False,${KIPRJMOD}/Models/PinHeader_1x06_P2.54mm_Vertical.step
+J6,ESP FLOW / AT UART,DevBoard:Connector_PinHeader_2.54mm__PinHeader_1x06_P2.54mm_Vertical,False,${KIPRJMOD}/Models/PinHeader_1x06_P2.54mm_Vertical.step
+R29,10k / EN,DevBoard:Resistor_SMD__R_0603_1608Metric,False,${KIPRJMOD}/Models/R_0603_1608Metric.step
+R30,1k / HOST EN,DevBoard:Resistor_SMD__R_0603_1608Metric,False,${KIPRJMOD}/Models/R_0603_1608Metric.step
+R31,10k / STRAP,DevBoard:Resistor_SMD__R_0603_1608Metric,False,${KIPRJMOD}/Models/R_0603_1608Metric.step
+R32,10k / STRAP,DevBoard:Resistor_SMD__R_0603_1608Metric,False,${KIPRJMOD}/Models/R_0603_1608Metric.step
+R33,10k / STRAP,DevBoard:Resistor_SMD__R_0603_1608Metric,False,${KIPRJMOD}/Models/R_0603_1608Metric.step
+R34,1k / HOST BOOT,DevBoard:Resistor_SMD__R_0603_1608Metric,False,${KIPRJMOD}/Models/R_0603_1608Metric.step
+R35,1k,DevBoard:Resistor_SMD__R_0603_1608Metric,False,${KIPRJMOD}/Models/R_0603_1608Metric.step
+R36,1k,DevBoard:Resistor_SMD__R_0603_1608Metric,False,${KIPRJMOD}/Models/R_0603_1608Metric.step
+SW3,ESP RESET / SD-1107 / 3x6x2.5,DevBoard:SW_SD1107_2P_6x3_H2.5,False,${KIPRJMOD}/Models/GENERIC_SD1107_H2.5.wrl
+SW4,ESP DOWNLOAD / SD-1107 / 3x6x2.5,DevBoard:SW_SD1107_2P_6x3_H2.5,False,${KIPRJMOD}/Models/GENERIC_SD1107_H2.5.wrl
+U5,ESP32-C3-MINI-1U-N4X,DevBoard:Espressif__ESP32-C3-MINI-1U,False,${KIPRJMOD}/Models/ESP32-C3-MINI-1U.STEP
+C33,10uF / 10V,DevBoard:Capacitor_SMD__C_0603_1608Metric,False,${KIPRJMOD}/Models/C_0603_1608Metric.step
+C34,100nF / 16V,DevBoard:Capacitor_SMD__C_0603_1608Metric,False,${KIPRJMOD}/Models/C_0603_1608Metric.step
+J7,Hirose DM3AT-SF-PEJM5,DevBoard:Connector_Card__microSD_HC_Hirose_DM3AT-SF-PEJM5,False,${KIPRJMOD}/Models/microSD_HC_Hirose_DM3AT-SF-PEJM5.step
+R37,10k,DevBoard:Resistor_SMD__R_0603_1608Metric,False,${KIPRJMOD}/Models/R_0603_1608Metric.step
+R38,10k,DevBoard:Resistor_SMD__R_0603_1608Metric,False,${KIPRJMOD}/Models/R_0603_1608Metric.step
+R39,10k,DevBoard:Resistor_SMD__R_0603_1608Metric,False,${KIPRJMOD}/Models/R_0603_1608Metric.step
+R40,10k,DevBoard:Resistor_SMD__R_0603_1608Metric,False,${KIPRJMOD}/Models/R_0603_1608Metric.step
+R41,10k,DevBoard:Resistor_SMD__R_0603_1608Metric,False,${KIPRJMOD}/Models/R_0603_1608Metric.step
+R42,22,DevBoard:Resistor_SMD__R_0603_1608Metric,False,${KIPRJMOD}/Models/R_0603_1608Metric.step
+R43,22,DevBoard:Resistor_SMD__R_0603_1608Metric,False,${KIPRJMOD}/Models/R_0603_1608Metric.step
+R44,10k / DETECT,DevBoard:Resistor_SMD__R_0603_1608Metric,False,${KIPRJMOD}/Models/R_0603_1608Metric.step
+J8,RIGHT GPIO / 2x24,DevBoard:Connector_PinHeader_2.54mm__PinHeader_2x24_P2.54mm_Vertical,False,${KIPRJMOD}/Models/PinHeader_2x24_P2.54mm_Vertical.step
+J9,LEFT GPIO / 2x24,DevBoard:Connector_PinHeader_2.54mm__PinHeader_2x24_P2.54mm_Vertical,False,${KIPRJMOD}/Models/PinHeader_2x24_P2.54mm_Vertical.step
+J12,SWD / JST B4B-XH-A / 2.50mm,DevBoard:Connector_JST__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical,False,${KIPRJMOD}/Models/JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical.step

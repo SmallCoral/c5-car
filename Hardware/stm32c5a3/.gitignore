@@ -1,0 +1,48 @@
+# Local editor and operating-system state
+.DS_Store
+Thumbs.db
+desktop.ini
+.history/
+.vscode/
+.idea/
+__pycache__/
+*.py[cod]
+
+# KiCad local state, locks and automatic backups
+*.kicad_prl
+*.lck
+*.bak
+*.bck
+*-backups/
+_autosave-*
+~*.kicad_*
+
+# Firmware build output and local tool overrides
+build/
+Debug/
+Release/
+CMakeFiles/
+CMakeCache.txt
+CMakeUserPresets.json
+compile_commands.json
+*.elf
+*.bin
+*.hex
+*.map
+*.o
+*.obj
+*.a
+*.d
+*.log
+
+# Credentials and machine-local settings
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Rendered review intermediates; deliverable PDFs and board previews are retained
+Hardware/*/docs/previews/
+Hardware/Shared/sources/*_drawing.png
+

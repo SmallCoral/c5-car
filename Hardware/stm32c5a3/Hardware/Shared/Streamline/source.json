@@ -1,0 +1,17 @@
+{
+  "revision": "27dc9a9413d3e3f1fc1cdf63371ded3b01293c0f",
+  "upstream": "https://github.com/currentmakers/streamline_kicad_libraries",
+  "files": [
+    "LICENSE",
+    "README.md",
+    "sl.kicad_sym",
+    "sl.pretty/SL_BOARD.kicad_mod"
+  ],
+  "pcb_before_split_sha256": "45c17dfaf1658f51f41e73628bef88dbbdd935857ced67a00bf1a0cc0ffb1bf0",
+  "reference_schematic_urls": [
+    "https://stm32world.com/images/0/03/Sl_mcu_stm32c551.svg",
+    "https://stm32world.com/images/6/65/Sl_mcu_stm32h562.svg"
+  ],
+  "reference_photo_url": "https://stm32world.com/images/0/04/Streamline_MCU_STM32H562_-_top_view.jpg",
+  "pruned_unused_upstream_assets": true
+}

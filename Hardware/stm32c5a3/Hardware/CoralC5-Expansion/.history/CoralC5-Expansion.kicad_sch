@@ -1,0 +1,1896 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "31672fb3-2283-55e8-8ba0-9720622e3890")
+	(paper "A4")
+	(title_block
+		(title "CoralC5-Expansion 模块总览")
+		(date "2026-10-19")
+		(rev "B1")
+		(company "CoralC5-Expansion")
+		(comment 1 "双板开发版本；仅完成摆放，尚未布线")
+	)
+	(lib_symbols)
+	(text "SPI3 用于卡座，USART3 用于无线；四线 SWD 保留既定顺序"
+		(exclude_from_sim no)
+		(at 21.336 180.086 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+			(justify left top)
+		)
+		(uuid "1f718de9-d989-5531-a34b-179810fcb937")
+	)
+	(text "Core 输出逻辑参考；外设稳压由本板 U6 提供"
+		(exclude_from_sim no)
+		(at 21.336 167.386 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+			(justify left top)
+		)
+		(uuid "4a920488-2568-52e6-a52e-6360f94fddf6")
+	)
+	(text "单槽扩展板、百兆网口、无线与存储"
+		(exclude_from_sim no)
+		(at 20 15 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+			(justify left top)
+		)
+		(uuid "a8c49cc3-44dd-53a3-8145-31118c92092b")
+	)
+	(wire
+		(pts
+			(xy 236.22 137.16) (xy 251.46 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "092d73a6-a628-5c8d-8879-74d6eb81c886")
+	)
+	(wire
+		(pts
+			(xy 236.22 92.71) (xy 251.46 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0c81c157-3ca7-5f77-ba74-1824e3f83b54")
+	)
+	(wire
+		(pts
+			(xy 236.22 132.08) (xy 251.46 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "144163c5-1feb-516b-b477-e74b2f7fc4e6")
+	)
+	(wire
+		(pts
+			(xy 73.66 60.96) (xy 91.44 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "19bc0a1b-2e10-57ae-ab03-4397e2fef22a")
+	)
+	(wire
+		(pts
+			(xy 73.66 137.16) (xy 76.2 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1d5f9eb0-9654-527e-9ce6-a659f23cef75")
+	)
+	(wire
+		(pts
+			(xy 73.66 55.88) (xy 91.44 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1f2f6550-e3ba-5128-a93a-54141df00bf8")
+	)
+	(wire
+		(pts
+			(xy 26.67 45.72) (xy 24.13 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2040286c-be15-5e61-9a4e-88ac95cefbf3")
+	)
+	(wire
+		(pts
+			(xy 73.66 81.28) (xy 91.44 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "20464a75-5211-5447-8f7c-792c92616acd")
+	)
+	(wire
+		(pts
+			(xy 236.22 87.63) (xy 251.46 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2aa33b4d-03cf-5574-a4ba-dd183d0302aa")
+	)
+	(wire
+		(pts
+			(xy 73.66 127) (xy 91.44 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "375229d8-b5d4-50ab-ad98-98bef48a9a66")
+	)
+	(wire
+		(pts
+			(xy 73.66 106.68) (xy 80.01 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "395278b4-1b71-5f0f-a172-3318435e997b")
+	)
+	(wire
+		(pts
+			(xy 167.64 48.26) (xy 165.1 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "40350f3b-b7f1-5d31-8a0c-95ca4c359a02")
+	)
+	(wire
+		(pts
+			(xy 73.66 86.36) (xy 91.44 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4708d89e-0ace-5f79-89c0-5067ba405956")
+	)
+	(wire
+		(pts
+			(xy 144.78 116.84) (xy 149.86 116.84)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4a0f359a-45aa-5983-b00f-0ea0df5ed3d1")
+	)
+	(wire
+		(pts
+			(xy 127 40.64) (xy 133.35 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "500b6904-56b5-5e24-ad2f-158f4200810f")
+	)
+	(wire
+		(pts
+			(xy 228.6 33.02) (xy 234.95 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5113a8a4-3e9f-5e9f-bddb-c8543de3a98c")
+	)
+	(wire
+		(pts
+			(xy 73.66 66.04) (xy 91.44 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "524155fc-2f42-51ac-8adf-d8334166b9d3")
+	)
+	(wire
+		(pts
+			(xy 168.91 92.71) (xy 166.37 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "529f1834-84f6-5918-8d1c-788aedc08c2d")
+	)
+	(wire
+		(pts
+			(xy 236.22 127) (xy 251.46 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "54cde39d-8912-5d00-a184-136508701867")
+	)
+	(wire
+		(pts
+			(xy 26.67 35.56) (xy 24.13 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6d49f9cd-bc1c-5c29-a401-14288fe4ee8e")
+	)
+	(wire
+		(pts
+			(xy 73.66 96.52) (xy 80.01 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "797ba9a3-c4e5-5a25-bb1a-1f8c60e14e70")
+	)
+	(wire
+		(pts
+			(xy 144.78 111.76) (xy 149.86 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7a79efde-a227-5215-adef-077c97fd5bfc")
+	)
+	(wire
+		(pts
+			(xy 167.64 43.18) (xy 165.1 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7c9e32be-4e47-53c7-9da9-9955708f5e61")
+	)
+	(wire
+		(pts
+			(xy 73.66 45.72) (xy 91.44 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "803cc1f7-4aa3-563d-a9d5-d97e375e51d0")
+	)
+	(wire
+		(pts
+			(xy 167.64 33.02) (xy 165.1 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "87e30bf8-69a7-5059-9bb1-8b487804d6ae")
+	)
+	(wire
+		(pts
+			(xy 73.66 35.56) (xy 91.44 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9199d10a-2f1a-59e3-b49f-b4fff80073a4")
+	)
+	(wire
+		(pts
+			(xy 73.66 116.84) (xy 91.44 116.84)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9507d297-05de-5453-b912-b8b87acdf81d")
+	)
+	(wire
+		(pts
+			(xy 73.66 40.64) (xy 91.44 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9b4bc1fe-5f69-542b-b829-153513398fb8")
+	)
+	(wire
+		(pts
+			(xy 73.66 91.44) (xy 80.01 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9e899bdc-0c4f-5c4c-a39a-d9ebec43fd6a")
+	)
+	(wire
+		(pts
+			(xy 73.66 101.6) (xy 80.01 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "af60a148-edeb-5b58-bdda-a5abd460f6d6")
+	)
+	(wire
+		(pts
+			(xy 26.67 40.64) (xy 24.13 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b4a8866b-5070-5400-81a3-5a24b03c85d3")
+	)
+	(wire
+		(pts
+			(xy 73.66 71.12) (xy 91.44 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ba898df0-d966-536e-a523-91cfce419214")
+	)
+	(wire
+		(pts
+			(xy 73.66 132.08) (xy 91.44 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bfd66657-7966-5a44-a1d4-d328578ebd2c")
+	)
+	(wire
+		(pts
+			(xy 73.66 76.2) (xy 91.44 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c28432bc-882b-5216-bc4b-9fe005db9493")
+	)
+	(wire
+		(pts
+			(xy 73.66 121.92) (xy 91.44 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c8d5e2c4-d6ab-5635-945f-527c4f3b083a")
+	)
+	(wire
+		(pts
+			(xy 73.66 142.24) (xy 76.2 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cb3cafbc-ef04-5c38-89cd-83c8d5608d0f")
+	)
+	(wire
+		(pts
+			(xy 127 35.56) (xy 133.35 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e02304fe-f23f-5b2c-9608-d8491b26906d")
+	)
+	(wire
+		(pts
+			(xy 168.91 87.63) (xy 166.37 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ebb07ced-1807-5f75-a12f-60090ead975a")
+	)
+	(wire
+		(pts
+			(xy 228.6 38.1) (xy 234.95 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ef037a98-d6df-50ca-afbf-662c8462fffa")
+	)
+	(wire
+		(pts
+			(xy 167.64 38.1) (xy 165.1 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f27e882e-62a3-5a39-a618-2a6d8b7bf8fb")
+	)
+	(wire
+		(pts
+			(xy 73.66 50.8) (xy 91.44 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f8e90ff4-8643-50b6-915e-b163c83fef57")
+	)
+	(wire
+		(pts
+			(xy 73.66 111.76) (xy 91.44 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ffcbdcf5-c918-5020-99e1-65288fc222d0")
+	)
+	(global_label "+3V3"
+		(shape bidirectional)
+		(at 251.46 87.63 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "0f9d5fb7-74d3-5caa-afa0-db37fedd4f00")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 251.46 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "PA13"
+		(shape bidirectional)
+		(at 76.2 137.16 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "1d330f1e-14fb-5180-b687-ddc17ad85a65")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 76.2 137.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "PD3"
+		(shape bidirectional)
+		(at 165.1 33.02 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right)
+		)
+		(uuid "2753f842-cfda-5504-81a1-43d3c8d3d1ca")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 165.1 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "PD4"
+		(shape bidirectional)
+		(at 80.01 96.52 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "301ee966-458f-51f1-b052-ba0176f21b7d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 80.01 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 133.35 40.64 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "38ca5e16-9bb7-5d13-8e1d-75aeeb3ff08d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 133.35 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "PD9"
+		(shape bidirectional)
+		(at 80.01 106.68 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "390a61fa-9a51-56e4-909e-fe1d7f448644")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 80.01 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "PD8"
+		(shape bidirectional)
+		(at 165.1 43.18 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right)
+		)
+		(uuid "3bc94adb-e330-5625-90fd-f203930efa7a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 165.1 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 234.95 38.1 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "3ecd2c2d-6110-576c-acb1-8672187025bd")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 234.95 38.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "PA14"
+		(shape bidirectional)
+		(at 166.37 92.71 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right)
+		)
+		(uuid "4e4172e0-a91b-52ea-90d9-65ed7f96fce5")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 166.37 92.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "+3V3_EXP"
+		(shape bidirectional)
+		(at 133.35 35.56 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "5cc4313d-45b4-5aa9-8e7f-8d426d13a9bd")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 133.35 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 251.46 137.16 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "6ca85ac6-7d7a-51ad-b52d-c05feb6f4d41")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 251.46 137.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "PA13"
+		(shape bidirectional)
+		(at 166.37 87.63 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right)
+		)
+		(uuid "88d845e6-c517-5389-97a1-bf962482dbc4")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 166.37 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "+3V3_EXP"
+		(shape bidirectional)
+		(at 251.46 132.08 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "8a2b42ac-65f5-587b-83c4-5428d3fb13ec")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 251.46 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "+3V3"
+		(shape bidirectional)
+		(at 24.13 40.64 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right)
+		)
+		(uuid "8d45bec3-a3a7-558d-9de9-6162e814d3b9")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 24.13 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 251.46 92.71 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "91430b99-1964-508e-a623-ca035ea37b1c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 251.46 92.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 149.86 116.84 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "9693e6ce-7b00-5215-910d-50b6474e0e90")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 149.86 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "PD4"
+		(shape bidirectional)
+		(at 165.1 38.1 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right)
+		)
+		(uuid "a5baea9c-301d-5311-a982-0e44416ad3d0")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 165.1 38.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "+5V_SYS"
+		(shape bidirectional)
+		(at 24.13 35.56 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right)
+		)
+		(uuid "a8a6e546-4b45-5c84-af50-df8a0c254f62")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 24.13 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "PD8"
+		(shape bidirectional)
+		(at 80.01 101.6 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "af0ee0d4-23eb-5238-a284-495425006d75")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 80.01 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "PD9"
+		(shape bidirectional)
+		(at 165.1 48.26 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right)
+		)
+		(uuid "b82c1ca7-0bea-52e1-b203-fdbc25e9c7e6")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 165.1 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "+3V3_EXP"
+		(shape bidirectional)
+		(at 149.86 111.76 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "bf1f8d44-31bf-5b7a-abd9-8c5306091c01")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 149.86 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 24.13 45.72 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right)
+		)
+		(uuid "c0eae6f5-c751-577c-90cd-920063b59f13")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 24.13 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "PA14"
+		(shape bidirectional)
+		(at 76.2 142.24 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "de9081c5-3c79-5617-8d3e-d820f2803594")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 76.2 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "+3V3_EXP"
+		(shape bidirectional)
+		(at 234.95 33.02 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "e49ba1e3-4c5b-515d-8b3f-68fdab431c62")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 234.95 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "+5V_SYS"
+		(shape bidirectional)
+		(at 251.46 127 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "f1484de3-6fd6-5ed9-8a20-530101a4818d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 251.46 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "PD3"
+		(shape bidirectional)
+		(at 80.01 91.44 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "f48e06df-4770-5471-9d55-1bc7e04899a9")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 80.01 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(sheet
+		(at 91.44 101.6)
+		(size 53.34 45.72)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.254)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "23b2b94d-88b5-5753-9788-5373c4776648")
+		(property "Sheetname" "SPI 模式 microSD 存储接口"
+			(at 91.186 99.314 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 2.54 2.54)
+				)
+				(justify left)
+			)
+		)
+		(property "Sheetfile" "06_microSD.kicad_sch"
+			(at 91.44 148.59 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(pin "PA15" bidirectional
+			(at 91.44 111.76 180)
+			(uuid "b1a5d84d-46cc-588e-bede-55be1a7c55ec")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(pin "PC10" bidirectional
+			(at 91.44 116.84 180)
+			(uuid "715be11f-4aad-5e70-a3a2-1ac63d1da5dd")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(pin "PC11" bidirectional
+			(at 91.44 121.92 180)
+			(uuid "166a634e-5219-558b-8260-16fc4fbeac75")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(pin "PC12" bidirectional
+			(at 91.44 127 180)
+			(uuid "b20eb330-9c48-5995-8248-da7faf8b5aa9")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(pin "PH4" bidirectional
+			(at 91.44 132.08 180)
+			(uuid "bb864f93-fa1d-52f5-83ac-ea64341e5df1")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(pin "+3V3_EXP" input
+			(at 144.78 111.76 0)
+			(uuid "91fa9896-4343-5634-b829-932384a6bbc5")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify right)
+			)
+		)
+		(pin "GND" passive
+			(at 144.78 116.84 0)
+			(uuid "8328fbe4-b778-5f44-8f5a-06d2920d8454")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "CoralC5-Expansion"
+				(path "/31672fb3-2283-55e8-8ba0-9720622e3890"
+					(page "6")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 26.67 25.4)
+		(size 46.99 129.54)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.254)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "2bf7e8eb-5de2-5b58-b96e-dfa000c05dee")
+		(property "Sheetname" "核心板插槽与公共信号接口"
+			(at 26.416 23.368 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 2.54 2.54)
+				)
+				(justify left)
+			)
+		)
+		(property "Sheetfile" "02_Interface.kicad_sch"
+			(at 26.416 156.464 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(pin "+5V_SYS" passive
+			(at 26.67 35.56 180)
+			(uuid "2dbb76be-fce9-580c-9b93-4236cb4bae52")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(pin "+3V3" passive
+			(at 26.67 40.64 180)
+			(uuid "0433a881-d5c9-5628-90e4-8a444921ceee")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(pin "GND" passive
+			(at 26.67 45.72 180)
+			(uuid "88fff5da-6d57-502a-946d-700480e53311")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(pin "PA1" bidirectional
+			(at 73.66 35.56 0)
+			(uuid "247dbfd8-3041-5029-82e5-feac7f79a9b2")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify right)
+			)
+		)
+		(pin "PA2" bidirectional
+			(at 73.66 40.64 0)
+			(uuid "0dba983f-d1ca-582b-8e64-556c2614b2a0")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify right)
+			)
+		)
+		(pin "PC1" bidirectional
+			(at 73.66 45.72 0)
+			(uuid "04f28690-923c-5996-8559-7fa48e1d3eff")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify right)
+			)
+		)
+		(pin "PA7" bidirectional
+			(at 73.66 50.8 0)
+			(uuid "47e38527-9ed5-5d8a-bd47-7c102a8169ee")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify right)
+			)
+		)
+		(pin "PC4" bidirectional
+			(at 73.66 55.88 0)
+			(uuid "2a0716a4-c18d-5761-8395-a661c91b92a9")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify right)
+			)
+		)
+		(pin "PC5" bidirectional
+			(at 73.66 60.96 0)
+			(uuid "bf24778b-0ff5-550f-87ab-c9b2b4d56f49")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify right)
+			)
+		)
+		(pin "PB12" bidirectional
+			(at 73.66 66.04 0)
+			(uuid "aae1579b-62b6-5708-a9ed-b91ec197333c")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify right)
+			)
+		)
+		(pin "PB13" bidirectional
+			(at 73.66 71.12 0)
+			(uuid "f5276da4-3939-5d54-b87e-eed9975fec45")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify right)
+			)
+		)
+		(pin "PB15" bidirectional
+			(at 73.66 76.2 0)
+			(uuid "9cb17dd0-3ab3-5b20-a2d4-ca706a268c26")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify right)
+			)
+		)
+		(pin "PE0" bidirectional
+			(at 73.66 81.28 0)
+			(uuid "ddbce305-e706-51e1-b241-4cf83abb6105")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify right)
+			)
+		)
+		(pin "PE1" bidirectional
+			(at 73.66 86.36 0)
+			(uuid "a33db710-140a-5364-b696-d327320f3e6d")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify right)
+			)
+		)
+		(pin "PD3" bidirectional
+			(at 73.66 91.44 0)
+			(uuid "236f5730-91c8-5d66-98dd-088a4985f4a2")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify right)
+			)
+		)
+		(pin "PD4" bidirectional
+			(at 73.66 96.52 0)
+			(uuid "2ed01322-0049-5980-9f26-458ad0f85312")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify right)
+			)
+		)
+		(pin "PD8" bidirectional
+			(at 73.66 101.6 0)
+			(uuid "280a767e-16e5-589a-b0af-9b5eb9cdce96")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify right)
+			)
+		)
+		(pin "PD9" bidirectional
+			(at 73.66 106.68 0)
+			(uuid "c8aba8e1-236c-5a79-8c2b-6c7ba6e7847f")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify right)
+			)
+		)
+		(pin "PA15" bidirectional
+			(at 73.66 111.76 0)
+			(uuid "1145f801-9bcb-599d-949c-6f471b4ba237")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify right)
+			)
+		)
+		(pin "PC10" bidirectional
+			(at 73.66 116.84 0)
+			(uuid "c67cd9e6-36f0-5ed0-8963-c9e51bd663a0")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify right)
+			)
+		)
+		(pin "PC11" bidirectional
+			(at 73.66 121.92 0)
+			(uuid "c49cfad8-403c-5e55-899e-bc1fad07c669")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify right)
+			)
+		)
+		(pin "PC12" bidirectional
+			(at 73.66 127 0)
+			(uuid "6206b1fc-4256-5403-8540-a5948a45bab7")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify right)
+			)
+		)
+		(pin "PH4" bidirectional
+			(at 73.66 132.08 0)
+			(uuid "16c4d428-924d-54c9-b31b-bd0b87634b2e")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify right)
+			)
+		)
+		(pin "PA13" bidirectional
+			(at 73.66 137.16 0)
+			(uuid "375a7c1f-4cf4-5838-812e-4318fc6930dd")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify right)
+			)
+		)
+		(pin "PA14" bidirectional
+			(at 73.66 142.24 0)
+			(uuid "4716bb8c-6547-5e88-9a33-b70c8bb3f352")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "CoralC5-Expansion"
+				(path "/31672fb3-2283-55e8-8ba0-9720622e3890"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 168.91 116.84)
+		(size 67.31 35.56)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.254)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "2f57b387-95cc-5dec-a1aa-147481928076")
+		(property "Sheetname" "五伏入口与外设独立稳压"
+			(at 168.91 114.554 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 2.54 2.54)
+				)
+				(justify left)
+			)
+		)
+		(property "Sheetfile" "03_Power.kicad_sch"
+			(at 168.91 153.67 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(pin "+5V_SYS" output
+			(at 236.22 127 0)
+			(uuid "ba2aa405-90fb-5f3b-bb5f-bb4b088e3082")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify right)
+			)
+		)
+		(pin "+3V3_EXP" output
+			(at 236.22 132.08 0)
+			(uuid "3f74f6bf-8e5c-5e7c-acd4-80a43f7e25f3")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify right)
+			)
+		)
+		(pin "GND" passive
+			(at 236.22 137.16 0)
+			(uuid "7793331e-d60d-5131-a14d-80381cf4326d")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "CoralC5-Expansion"
+				(path "/31672fb3-2283-55e8-8ba0-9720622e3890"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 91.44 25.4)
+		(size 35.56 67.31)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.254)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "981738cf-99d0-57a7-bd2b-5752007b71e1")
+		(property "Sheetname" "百兆以太网 PHY 与集成变压器网口"
+			(at 90.678 23.368 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 2.54 2.54)
+				)
+				(justify left)
+			)
+		)
+		(property "Sheetfile" "04_Ethernet.kicad_sch"
+			(at 91.44 94.234 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(pin "PA1" output
+			(at 91.44 35.56 180)
+			(uuid "30f9aa7a-387a-5e21-ac93-9927d58bad35")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(pin "PA2" bidirectional
+			(at 91.44 40.64 180)
+			(uuid "9d86d78f-a3a9-547c-a355-b1d350b36223")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(pin "PC1" bidirectional
+			(at 91.44 45.72 180)
+			(uuid "170dc722-561e-52a8-920b-e1faaa2822cc")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(pin "PA7" bidirectional
+			(at 91.44 50.8 180)
+			(uuid "98d6e7f3-7b01-5ad2-abbc-f49f15c41909")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(pin "PC4" bidirectional
+			(at 91.44 55.88 180)
+			(uuid "c5d45971-1ed3-5039-9279-95a8a8146982")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(pin "PC5" bidirectional
+			(at 91.44 60.96 180)
+			(uuid "7342d06b-4e5f-521c-ba16-78879a0def28")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(pin "PB12" bidirectional
+			(at 91.44 66.04 180)
+			(uuid "250820e1-cf63-5bfc-aecf-7573ee4af337")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(pin "PB13" bidirectional
+			(at 91.44 71.12 180)
+			(uuid "90d8d2ba-10aa-5248-8c05-5039c201d08b")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(pin "PB15" bidirectional
+			(at 91.44 76.2 180)
+			(uuid "e85f5d6a-dd49-5c48-9760-4b9f92cff076")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(pin "PE0" bidirectional
+			(at 91.44 81.28 180)
+			(uuid "8b53b114-02c1-5ea4-ba6c-019a216e8b6b")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(pin "PE1" bidirectional
+			(at 91.44 86.36 180)
+			(uuid "74a993ad-e801-5cfa-94d1-70471d9dc0bd")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(pin "+3V3_EXP" input
+			(at 127 35.56 0)
+			(uuid "2a4002d9-3ebd-5a4c-b03c-8279b467af59")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify right)
+			)
+		)
+		(pin "GND" passive
+			(at 127 40.64 0)
+			(uuid "ef09fa7a-21fd-553f-8c77-714c535e5f61")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "CoralC5-Expansion"
+				(path "/31672fb3-2283-55e8-8ba0-9720622e3890"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 167.64 26.67)
+		(size 60.96 29.21)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.254)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "a0747f49-83ca-5754-a89b-2eae876d7911")
+		(property "Sheetname" "无线模块、外置天线与下载接口"
+			(at 167.386 24.892 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 2.54 2.54)
+				)
+				(justify left)
+			)
+		)
+		(property "Sheetfile" "05_WiFi_BLE.kicad_sch"
+			(at 167.64 57.912 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(pin "PD3" bidirectional
+			(at 167.64 33.02 180)
+			(uuid "ab144fe1-ebd3-5f89-b9ae-433550ddb8f8")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(pin "PD4" bidirectional
+			(at 167.64 38.1 180)
+			(uuid "97d88b6c-6ea1-544c-aa23-90b5a0f7c6d3")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(pin "PD8" bidirectional
+			(at 167.64 43.18 180)
+			(uuid "92298e45-e54d-5cd3-967c-39b4db6450c5")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(pin "PD9" bidirectional
+			(at 167.64 48.26 180)
+			(uuid "336bd2ee-cfe0-5c71-b14a-7b71ae152276")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(pin "+3V3_EXP" input
+			(at 228.6 33.02 0)
+			(uuid "bdade092-8f68-5bc4-aa4a-3a62f441e833")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify right)
+			)
+		)
+		(pin "GND" passive
+			(at 228.6 38.1 0)
+			(uuid "e1fb7bd3-9847-5390-a119-21da039ef5bc")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "CoralC5-Expansion"
+				(path "/31672fb3-2283-55e8-8ba0-9720622e3890"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 168.91 77.47)
+		(size 67.31 25.4)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.254)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "ce875cb0-79f6-5cb4-b3dd-2ce15d56777b")
+		(property "Sheetname" "扩展排针与四线 SWD"
+			(at 168.656 75.184 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 2.54 2.54)
+				)
+				(justify left)
+			)
+		)
+		(property "Sheetfile" "07_Headers_Debug.kicad_sch"
+			(at 168.91 104.902 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(pin "PA13" bidirectional
+			(at 168.91 87.63 180)
+			(uuid "84e506bc-1703-5238-a5ed-5dbc9bcb8692")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(pin "PA14" bidirectional
+			(at 168.91 92.71 180)
+			(uuid "3044062e-5bce-5f93-8f67-6d310b99535b")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(pin "+3V3" passive
+			(at 236.22 87.63 0)
+			(uuid "d6eec6b5-0462-58ce-9e74-c1b76f562650")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify right)
+			)
+		)
+		(pin "GND" passive
+			(at 236.22 92.71 0)
+			(uuid "05347353-f954-58d4-9dc6-f2eabadce37b")
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "CoralC5-Expansion"
+				(path "/31672fb3-2283-55e8-8ba0-9720622e3890"
+					(page "7")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)

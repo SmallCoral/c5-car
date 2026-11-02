@@ -1,0 +1,14 @@
+(version 1)
+
+# CoralC5-Core, 2026-10-23: JLC conventional FR4, 2 layers, 1oz outer copper.
+# Via copper clearance is separate from drill-edge clearance.
+# Sources and applicability are recorded in docs/fabrication_rules.md.
+(rule "Core via copper clearance 0.15mm for 1oz"
+  (condition "A.Type == 'Via' || B.Type == 'Via'")
+  (constraint clearance (min 0.15mm)))
+
+# The board-wide drill-edge spacing is 0.20mm for vias. Retain the larger
+# manufacturing requirement when either drilled item is a plated connector pad.
+(rule "Core plated connector hole spacing 0.45mm"
+  (condition "(A.Type == 'Pad' && A.Pad_Type == 'Through-hole') || (B.Type == 'Pad' && B.Pad_Type == 'Through-hole')")
+  (constraint hole_to_hole (min 0.45mm)))

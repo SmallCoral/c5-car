@@ -1,0 +1,933 @@
+{
+  "revision": "M1",
+  "date": "2026-10-27",
+  "pages": [
+    {
+      "file": "CoralC5-Motor.kicad_sch",
+      "title": "Coral-C5 双电机扩展板总览",
+      "page": 1
+    },
+    {
+      "file": "02_Power.kicad_sch",
+      "title": "十二伏入口、拨动总开关与五伏降压",
+      "page": 2
+    },
+    {
+      "file": "03_Core_Interface.kicad_sch",
+      "title": "C5-EDGE-3 核心板接口与调试",
+      "page": 3
+    },
+    {
+      "file": "04_Left_Motor.kicad_sch",
+      "title": "左电机驱动与霍尔编码器",
+      "page": 4
+    },
+    {
+      "file": "05_Right_Motor.kicad_sch",
+      "title": "右电机驱动与霍尔编码器",
+      "page": 5
+    }
+  ],
+  "parts": [
+    {
+      "reference": "J14",
+      "value": "C5-EDGE-3 / 98P",
+      "mpn": "X1611WVS-98-9TV01",
+      "footprint": "Motor:C5_EDGE_3_Socket",
+      "page": 3,
+      "datasheet": ""
+    },
+    {
+      "reference": "J8",
+      "value": "SWD / XH2.50",
+      "mpn": "B4B-XH-A",
+      "footprint": "Motor:Connector_JST__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical",
+      "page": 3,
+      "datasheet": ""
+    },
+    {
+      "reference": "J9",
+      "value": "AUX",
+      "mpn": "",
+      "footprint": "Motor:Connector_PinHeader_2.54mm__PinHeader_2x05_P2.54mm_Vertical",
+      "page": 3,
+      "datasheet": ""
+    },
+    {
+      "reference": "J10",
+      "value": "RUN / STOP_NC",
+      "mpn": "",
+      "footprint": "Motor:Connector_PinHeader_2.54mm__PinHeader_1x02_P2.54mm_Vertical",
+      "page": 3,
+      "datasheet": ""
+    },
+    {
+      "reference": "R6",
+      "value": "100R",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "page": 3,
+      "datasheet": ""
+    },
+    {
+      "reference": "R7",
+      "value": "10k",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "page": 3,
+      "datasheet": ""
+    },
+    {
+      "reference": "J1",
+      "value": "DC-005-5A-2.0",
+      "mpn": "DC-005-5A-2.0",
+      "footprint": "Motor:DC005_XKB_5A_2mm",
+      "page": 2,
+      "datasheet": ""
+    },
+    {
+      "reference": "F1",
+      "value": "4A / 32V",
+      "mpn": "0466004.NR",
+      "footprint": "Motor:Fuse__Fuse_1206_3216Metric",
+      "page": 2,
+      "datasheet": ""
+    },
+    {
+      "reference": "Q1",
+      "value": "AO4407A",
+      "mpn": "AO4407A",
+      "footprint": "Motor:Package_SO__SOIC-8_3.9x4.9mm_P1.27mm",
+      "page": 2,
+      "datasheet": "https://aosmd.com/sites/default/files/res/datasheets/AO4407A.pdf"
+    },
+    {
+      "reference": "Q2",
+      "value": "AO4407A",
+      "mpn": "AO4407A",
+      "footprint": "Motor:Package_SO__SOIC-8_3.9x4.9mm_P1.27mm",
+      "page": 2,
+      "datasheet": "https://aosmd.com/sites/default/files/res/datasheets/AO4407A.pdf"
+    },
+    {
+      "reference": "R1",
+      "value": "1M",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "page": 2,
+      "datasheet": ""
+    },
+    {
+      "reference": "D1",
+      "value": "BZT52C12",
+      "mpn": "BZT52C12",
+      "footprint": "Motor:Diode_SMD__D_SOD-123",
+      "page": 2,
+      "datasheet": ""
+    },
+    {
+      "reference": "SW1",
+      "value": "SS12D07VG4",
+      "mpn": "SS12D07VG4",
+      "footprint": "Motor:SS12D07VG4",
+      "page": 2,
+      "datasheet": ""
+    },
+    {
+      "reference": "R2",
+      "value": "100k",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "page": 2,
+      "datasheet": ""
+    },
+    {
+      "reference": "D2",
+      "value": "SMAJ15A",
+      "mpn": "SMAJ15A",
+      "footprint": "Motor:Diode_SMD__D_SMA",
+      "page": 2,
+      "datasheet": ""
+    },
+    {
+      "reference": "C1",
+      "value": "470u / 25V",
+      "mpn": "EEU-FR1E471",
+      "footprint": "Motor:Capacitor_THT__CP_Radial_D10.0mm_P5.00mm",
+      "page": 2,
+      "datasheet": ""
+    },
+    {
+      "reference": "U1",
+      "value": "AP63205WU-7",
+      "mpn": "AP63205WU-7",
+      "footprint": "Motor:Package_TO_SOT_SMD__TSOT-23-6",
+      "page": 2,
+      "datasheet": "https://www.diodes.com/assets/Datasheets/AP63200-AP63201-AP63203-AP63205.pdf"
+    },
+    {
+      "reference": "C2",
+      "value": "10u / 50V",
+      "mpn": "GRM21BR61H106KE43L",
+      "footprint": "Motor:Capacitor_SMD__C_0805_2012Metric",
+      "page": 2,
+      "datasheet": ""
+    },
+    {
+      "reference": "C3",
+      "value": "100n / 50V",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "page": 2,
+      "datasheet": ""
+    },
+    {
+      "reference": "R3",
+      "value": "698k / 1%",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "page": 2,
+      "datasheet": ""
+    },
+    {
+      "reference": "R4",
+      "value": "100k / 1%",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "page": 2,
+      "datasheet": ""
+    },
+    {
+      "reference": "C4",
+      "value": "100n / 16V",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "page": 2,
+      "datasheet": ""
+    },
+    {
+      "reference": "L1",
+      "value": "4.7u / 4.5A",
+      "mpn": "SRN6045TA-4R7M",
+      "footprint": "Motor:Inductor_SMD__L_Bourns_SRN6045TA",
+      "page": 2,
+      "datasheet": ""
+    },
+    {
+      "reference": "C5",
+      "value": "22u / 10V",
+      "mpn": "GRM31CR71A226KE15L",
+      "footprint": "Motor:Capacitor_SMD__C_1206_3216Metric",
+      "page": 2,
+      "datasheet": ""
+    },
+    {
+      "reference": "C6",
+      "value": "22u / 10V",
+      "mpn": "GRM31CR71A226KE15L",
+      "footprint": "Motor:Capacitor_SMD__C_1206_3216Metric",
+      "page": 2,
+      "datasheet": ""
+    },
+    {
+      "reference": "D3",
+      "value": "SS34",
+      "mpn": "SS34",
+      "footprint": "Motor:Diode_SMD__D_SMA",
+      "page": 2,
+      "datasheet": ""
+    },
+    {
+      "reference": "R5",
+      "value": "2.2k",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "page": 2,
+      "datasheet": ""
+    },
+    {
+      "reference": "D4",
+      "value": "LED_GREEN",
+      "mpn": "LTST-C190KGKT",
+      "footprint": "Motor:LED_SMD__LED_0603_1608Metric",
+      "page": 2,
+      "datasheet": ""
+    },
+    {
+      "reference": "U2",
+      "value": "DRV8874PWPR",
+      "mpn": "DRV8874PWPR",
+      "footprint": "Motor:DRV8874_PWP0016",
+      "page": 4,
+      "datasheet": "https://www.ti.com/lit/ds/symlink/drv8874.pdf"
+    },
+    {
+      "reference": "C12",
+      "value": "100n / 50V",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "page": 4,
+      "datasheet": ""
+    },
+    {
+      "reference": "C13",
+      "value": "470u / 25V",
+      "mpn": "EEU-FR1E471",
+      "footprint": "Motor:Capacitor_THT__CP_Radial_D10.0mm_P5.00mm",
+      "page": 4,
+      "datasheet": ""
+    },
+    {
+      "reference": "C11",
+      "value": "100n / 16V",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "page": 4,
+      "datasheet": ""
+    },
+    {
+      "reference": "C10",
+      "value": "22n / 50V",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "page": 4,
+      "datasheet": ""
+    },
+    {
+      "reference": "J3",
+      "value": "MOTOR / 5.08",
+      "mpn": "MKDS 1,5/ 2-5,08",
+      "footprint": "Motor:TerminalBlock_Phoenix__TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal",
+      "page": 4,
+      "datasheet": ""
+    },
+    {
+      "reference": "R13",
+      "value": "10k",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "page": 4,
+      "datasheet": ""
+    },
+    {
+      "reference": "R14",
+      "value": "100k",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "page": 4,
+      "datasheet": ""
+    },
+    {
+      "reference": "R10",
+      "value": "10k / 1%",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "page": 4,
+      "datasheet": ""
+    },
+    {
+      "reference": "R11",
+      "value": "10k / 1%",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "page": 4,
+      "datasheet": ""
+    },
+    {
+      "reference": "C14",
+      "value": "100n / 16V",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "page": 4,
+      "datasheet": ""
+    },
+    {
+      "reference": "R12",
+      "value": "1.82k / 1%",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "page": 4,
+      "datasheet": ""
+    },
+    {
+      "reference": "C15",
+      "value": "10n / 16V",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "page": 4,
+      "datasheet": ""
+    },
+    {
+      "reference": "R15",
+      "value": "1k",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "page": 4,
+      "datasheet": ""
+    },
+    {
+      "reference": "C16",
+      "value": "100n / 16V",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "page": 4,
+      "datasheet": ""
+    },
+    {
+      "reference": "J4",
+      "value": "ENC / XH2.50",
+      "mpn": "B4B-XH-A",
+      "footprint": "Motor:Connector_JST__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical",
+      "page": 4,
+      "datasheet": ""
+    },
+    {
+      "reference": "U3",
+      "value": "SN74LVC2G17DCKR",
+      "mpn": "SN74LVC2G17DCKR",
+      "footprint": "Motor:Package_TO_SOT_SMD__SOT-363_SC-70-6",
+      "page": 4,
+      "datasheet": "https://www.ti.com/lit/ds/symlink/sn74lvc2g17.pdf"
+    },
+    {
+      "reference": "R16",
+      "value": "1k",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "page": 4,
+      "datasheet": ""
+    },
+    {
+      "reference": "R17",
+      "value": "1k",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "page": 4,
+      "datasheet": ""
+    },
+    {
+      "reference": "R18",
+      "value": "10k",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "page": 4,
+      "datasheet": ""
+    },
+    {
+      "reference": "R19",
+      "value": "10k",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "page": 4,
+      "datasheet": ""
+    },
+    {
+      "reference": "C17",
+      "value": "1n / 16V",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "page": 4,
+      "datasheet": ""
+    },
+    {
+      "reference": "C18",
+      "value": "1n / 16V",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "page": 4,
+      "datasheet": ""
+    },
+    {
+      "reference": "C19",
+      "value": "100n / 16V",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "page": 4,
+      "datasheet": ""
+    },
+    {
+      "reference": "C20",
+      "value": "1u / 10V",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "page": 4,
+      "datasheet": ""
+    },
+    {
+      "reference": "U4",
+      "value": "DRV8874PWPR",
+      "mpn": "DRV8874PWPR",
+      "footprint": "Motor:DRV8874_PWP0016",
+      "page": 5,
+      "datasheet": "https://www.ti.com/lit/ds/symlink/drv8874.pdf"
+    },
+    {
+      "reference": "C32",
+      "value": "100n / 50V",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "page": 5,
+      "datasheet": ""
+    },
+    {
+      "reference": "C33",
+      "value": "470u / 25V",
+      "mpn": "EEU-FR1E471",
+      "footprint": "Motor:Capacitor_THT__CP_Radial_D10.0mm_P5.00mm",
+      "page": 5,
+      "datasheet": ""
+    },
+    {
+      "reference": "C31",
+      "value": "100n / 16V",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "page": 5,
+      "datasheet": ""
+    },
+    {
+      "reference": "C30",
+      "value": "22n / 50V",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "page": 5,
+      "datasheet": ""
+    },
+    {
+      "reference": "J5",
+      "value": "MOTOR / 5.08",
+      "mpn": "MKDS 1,5/ 2-5,08",
+      "footprint": "Motor:TerminalBlock_Phoenix__TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal",
+      "page": 5,
+      "datasheet": ""
+    },
+    {
+      "reference": "R33",
+      "value": "10k",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "page": 5,
+      "datasheet": ""
+    },
+    {
+      "reference": "R34",
+      "value": "100k",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "page": 5,
+      "datasheet": ""
+    },
+    {
+      "reference": "R30",
+      "value": "10k / 1%",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "page": 5,
+      "datasheet": ""
+    },
+    {
+      "reference": "R31",
+      "value": "10k / 1%",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "page": 5,
+      "datasheet": ""
+    },
+    {
+      "reference": "C34",
+      "value": "100n / 16V",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "page": 5,
+      "datasheet": ""
+    },
+    {
+      "reference": "R32",
+      "value": "1.82k / 1%",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "page": 5,
+      "datasheet": ""
+    },
+    {
+      "reference": "C35",
+      "value": "10n / 16V",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "page": 5,
+      "datasheet": ""
+    },
+    {
+      "reference": "R35",
+      "value": "1k",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "page": 5,
+      "datasheet": ""
+    },
+    {
+      "reference": "C36",
+      "value": "100n / 16V",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "page": 5,
+      "datasheet": ""
+    },
+    {
+      "reference": "J6",
+      "value": "ENC / XH2.50",
+      "mpn": "B4B-XH-A",
+      "footprint": "Motor:Connector_JST__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical",
+      "page": 5,
+      "datasheet": ""
+    },
+    {
+      "reference": "U5",
+      "value": "SN74LVC2G17DCKR",
+      "mpn": "SN74LVC2G17DCKR",
+      "footprint": "Motor:Package_TO_SOT_SMD__SOT-363_SC-70-6",
+      "page": 5,
+      "datasheet": "https://www.ti.com/lit/ds/symlink/sn74lvc2g17.pdf"
+    },
+    {
+      "reference": "R36",
+      "value": "1k",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "page": 5,
+      "datasheet": ""
+    },
+    {
+      "reference": "R37",
+      "value": "1k",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "page": 5,
+      "datasheet": ""
+    },
+    {
+      "reference": "R38",
+      "value": "10k",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "page": 5,
+      "datasheet": ""
+    },
+    {
+      "reference": "R39",
+      "value": "10k",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "page": 5,
+      "datasheet": ""
+    },
+    {
+      "reference": "C37",
+      "value": "1n / 16V",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "page": 5,
+      "datasheet": ""
+    },
+    {
+      "reference": "C38",
+      "value": "1n / 16V",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "page": 5,
+      "datasheet": ""
+    },
+    {
+      "reference": "C39",
+      "value": "100n / 16V",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "page": 5,
+      "datasheet": ""
+    },
+    {
+      "reference": "C40",
+      "value": "1u / 10V",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "page": 5,
+      "datasheet": ""
+    }
+  ],
+  "footprints": {
+    "Motor:Resistor_SMD__R_0603_1608Metric": {
+      "source": "D:\\KiCad\\10.0\\share\\kicad\\footprints\\Resistor_SMD.pretty\\R_0603_1608Metric.kicad_mod",
+      "models": [
+        "Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ],
+      "model_status": "KiCad package geometry"
+    },
+    "Motor:Capacitor_SMD__C_0603_1608Metric": {
+      "source": "D:\\KiCad\\10.0\\share\\kicad\\footprints\\Capacitor_SMD.pretty\\C_0603_1608Metric.kicad_mod",
+      "models": [
+        "Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+      ],
+      "model_status": "KiCad package geometry"
+    },
+    "Motor:Capacitor_SMD__C_0805_2012Metric": {
+      "source": "D:\\KiCad\\10.0\\share\\kicad\\footprints\\Capacitor_SMD.pretty\\C_0805_2012Metric.kicad_mod",
+      "models": [
+        "Capacitor_SMD__C_0805_2012Metric__C_0805_2012Metric.step"
+      ],
+      "model_status": "KiCad package geometry"
+    },
+    "Motor:Capacitor_SMD__C_1206_3216Metric": {
+      "source": "D:\\KiCad\\10.0\\share\\kicad\\footprints\\Capacitor_SMD.pretty\\C_1206_3216Metric.kicad_mod",
+      "models": [
+        "Capacitor_SMD__C_1206_3216Metric__C_1206_3216Metric.step"
+      ],
+      "model_status": "KiCad package geometry"
+    },
+    "Motor:Capacitor_THT__CP_Radial_D10.0mm_P5.00mm": {
+      "source": "D:\\KiCad\\10.0\\share\\kicad\\footprints\\Capacitor_THT.pretty\\CP_Radial_D10.0mm_P5.00mm.kicad_mod",
+      "models": [
+        "Capacitor_THT__CP_Radial_D10.0mm_P5.00mm__CP_Radial_D10.0mm_P5.00mm.step"
+      ],
+      "model_status": "KiCad package geometry"
+    },
+    "Motor:Fuse__Fuse_1206_3216Metric": {
+      "source": "D:\\KiCad\\10.0\\share\\kicad\\footprints\\Fuse.pretty\\Fuse_1206_3216Metric.kicad_mod",
+      "models": [
+        "Fuse__Fuse_1206_3216Metric__Fuse_1206_3216Metric.step"
+      ],
+      "model_status": "KiCad package geometry"
+    },
+    "Motor:Package_SO__SOIC-8_3.9x4.9mm_P1.27mm": {
+      "source": "D:\\KiCad\\10.0\\share\\kicad\\footprints\\Package_SO.pretty\\SOIC-8_3.9x4.9mm_P1.27mm.kicad_mod",
+      "models": [
+        "Package_SO__SOIC-8_3.9x4.9mm_P1.27mm__SOIC-8_3.9x4.9mm_P1.27mm.step"
+      ],
+      "model_status": "KiCad package geometry"
+    },
+    "Motor:Package_TO_SOT_SMD__SOT-363_SC-70-6": {
+      "source": "D:\\KiCad\\10.0\\share\\kicad\\footprints\\Package_TO_SOT_SMD.pretty\\SOT-363_SC-70-6.kicad_mod",
+      "models": [
+        "Package_TO_SOT_SMD__SOT-363_SC-70-6__SOT-363_SC-70-6.step"
+      ],
+      "model_status": "KiCad package geometry"
+    },
+    "Motor:Package_TO_SOT_SMD__TSOT-23-6": {
+      "source": "D:\\KiCad\\10.0\\share\\kicad\\footprints\\Package_TO_SOT_SMD.pretty\\TSOT-23-6.kicad_mod",
+      "models": [
+        "Package_TO_SOT_SMD__TSOT-23-6__TSOT-23-6.step"
+      ],
+      "model_status": "KiCad package geometry"
+    },
+    "Motor:Diode_SMD__D_SOD-123": {
+      "source": "D:\\KiCad\\10.0\\share\\kicad\\footprints\\Diode_SMD.pretty\\D_SOD-123.kicad_mod",
+      "models": [
+        "Diode_SMD__D_SOD-123__D_SOD-123.step"
+      ],
+      "model_status": "KiCad package geometry"
+    },
+    "Motor:Diode_SMD__D_SMA": {
+      "source": "D:\\KiCad\\10.0\\share\\kicad\\footprints\\Diode_SMD.pretty\\D_SMA.kicad_mod",
+      "models": [
+        "Diode_SMD__D_SMA__D_SMA.step"
+      ],
+      "model_status": "KiCad package geometry"
+    },
+    "Motor:LED_SMD__LED_0603_1608Metric": {
+      "source": "D:\\KiCad\\10.0\\share\\kicad\\footprints\\LED_SMD.pretty\\LED_0603_1608Metric.kicad_mod",
+      "models": [
+        "LED_SMD__LED_0603_1608Metric__LED_0603_1608Metric.step"
+      ],
+      "model_status": "KiCad package geometry"
+    },
+    "Motor:Inductor_SMD__L_Bourns_SRN6045TA": {
+      "source": "D:\\KiCad\\10.0\\share\\kicad\\footprints\\Inductor_SMD.pretty\\L_Bourns_SRN6045TA.kicad_mod",
+      "models": [
+        "Inductor_SMD__L_Bourns_SRN6045TA__L_Bourns_SRN6045TA.step"
+      ],
+      "model_status": "KiCad package geometry"
+    },
+    "Motor:Connector_JST__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical": {
+      "source": "D:\\KiCad\\10.0\\share\\kicad\\footprints\\Connector_JST.pretty\\JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical.kicad_mod",
+      "models": [
+        "Connector_JST__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical.step"
+      ],
+      "model_status": "KiCad package geometry"
+    },
+    "Motor:Connector_PinHeader_2.54mm__PinHeader_1x02_P2.54mm_Vertical": {
+      "source": "D:\\KiCad\\10.0\\share\\kicad\\footprints\\Connector_PinHeader_2.54mm.pretty\\PinHeader_1x02_P2.54mm_Vertical.kicad_mod",
+      "models": [
+        "Connector_PinHeader_2.54mm__PinHeader_1x02_P2.54mm_Vertical__PinHeader_1x02_P2.54mm_Vertical.step"
+      ],
+      "model_status": "KiCad package geometry"
+    },
+    "Motor:Connector_PinHeader_2.54mm__PinHeader_2x05_P2.54mm_Vertical": {
+      "source": "D:\\KiCad\\10.0\\share\\kicad\\footprints\\Connector_PinHeader_2.54mm.pretty\\PinHeader_2x05_P2.54mm_Vertical.kicad_mod",
+      "models": [
+        "Connector_PinHeader_2.54mm__PinHeader_2x05_P2.54mm_Vertical__PinHeader_2x05_P2.54mm_Vertical.step"
+      ],
+      "model_status": "KiCad package geometry"
+    },
+    "Motor:TerminalBlock_Phoenix__TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal": {
+      "source": "D:\\KiCad\\10.0\\share\\kicad\\footprints\\TerminalBlock_Phoenix.pretty\\TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal.kicad_mod",
+      "models": [
+        "TerminalBlock_Phoenix__TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal__TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal.step"
+      ],
+      "model_status": "KiCad package geometry"
+    },
+    "Motor:C5_EDGE_3_Socket": {
+      "source": "D:\\dev\\qrs\\stm32\\Coral-C5\\Hardware\\CoralC5-Expansion\\DevBoard.pretty\\Streamline_Socket.kicad_mod",
+      "models": [
+        "C5_EDGE_3_Socket__Streamline_Socket.step"
+      ],
+      "model_status": "existing project vendor model"
+    },
+    "Motor:DRV8874_PWP0016": {
+      "source": "D:\\KiCad\\10.0\\share\\kicad\\footprints\\Package_SO.pretty\\HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.78x3.37mm.kicad_mod",
+      "models": [
+        "DRV8874_PWP0016__HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.78x3.37mm.step"
+      ],
+      "model_status": "generic HTSSOP body; manufacturer pad geometry in footprint"
+    },
+    "Motor:DC005_XKB_5A_2mm": {
+      "source": "XKB DC-005-5A-2.0 manufacturer top-view drilling: 1=center, 3=sleeve, 2=switched sleeve. Verify mating plug 5.5/2.1mm.",
+      "models": [
+        "DC005_XKB_5A_2mm.wrl"
+      ],
+      "model_status": "generic external envelope derived from manufacturer drawing"
+    },
+    "Motor:SS12D07VG4": {
+      "source": "SHOU HAN SS12D07VG4: 2=common, 1/3=throws; 4/5=shell mounting. Local generic model; see source drawing.",
+      "models": [
+        "SS12D07VG4.wrl"
+      ],
+      "model_status": "generic external envelope derived from manufacturer drawing"
+    }
+  },
+  "finger_map": {
+    "A1": "GND",
+    "A2": "PA2",
+    "A3": "PA1",
+    "A4": "PA0",
+    "A5": "PH5",
+    "A6": "VREF_MCU",
+    "A7": "PH4",
+    "A8": "PC3",
+    "A9": "PC2",
+    "A10": "PC1",
+    "A11": "PC0",
+    "A12": "NRST",
+    "A13": "",
+    "A14": "",
+    "A15": "PC15",
+    "A16": "PC14",
+    "A17": "PC13",
+    "A18": "PH15",
+    "A19": "PE6",
+    "A20": "PE5",
+    "A21": "PE4",
+    "A22": "PE3",
+    "A23": "PE2",
+    "A24": "PE1",
+    "A25": "PE0",
+    "A26": "PB9",
+    "A27": "PB8",
+    "A28": "PH2",
+    "A29": "PB7",
+    "A30": "PB6",
+    "A31": "PB5",
+    "A32": "PB4",
+    "A33": "PB3",
+    "A34": "PD7",
+    "A35": "PD6",
+    "A36": "PD5",
+    "A37": "PD4",
+    "A38": "PD3",
+    "A39": "PD2",
+    "A40": "PD1",
+    "A41": "PD0",
+    "A42": "PC12",
+    "A43": "PC11",
+    "A44": "PC10",
+    "A45": "PA15",
+    "A46": "PA14",
+    "A47": "+3V3",
+    "A48": "+5V_SYS",
+    "A49": "GND",
+    "B1": "GND",
+    "B2": "PA3",
+    "B3": "PA4",
+    "B4": "PA5",
+    "B5": "PA6",
+    "B6": "PA7",
+    "B7": "PC4",
+    "B8": "PC5",
+    "B9": "PB0",
+    "B10": "PB1",
+    "B11": "PB2",
+    "B12": "PE7",
+    "B13": "PE8",
+    "B14": "PE9",
+    "B15": "PE10",
+    "B16": "PE11",
+    "B17": "PE12",
+    "B18": "PE13",
+    "B19": "PE14",
+    "B20": "PE15",
+    "B21": "PB10",
+    "B22": "PB12",
+    "B23": "PB13",
+    "B24": "PB14",
+    "B25": "PB15",
+    "B26": "PD8",
+    "B27": "PD9",
+    "B28": "PD10",
+    "B29": "PD11",
+    "B30": "PD12",
+    "B31": "PD13",
+    "B32": "PD14",
+    "B33": "PD15",
+    "B34": "PC6",
+    "B35": "PC7",
+    "B36": "PC8",
+    "B37": "PC9",
+    "B38": "PA8",
+    "B39": "PA9",
+    "B40": "PA10",
+    "B41": "PA11",
+    "B42": "PA12",
+    "B43": "PA13",
+    "B44": "PH3",
+    "B45": "",
+    "B46": "",
+    "B47": "+3V3",
+    "B48": "+5V_SYS",
+    "B49": "GND"
+  },
+  "gpio_functions": {
+    "PD12": "L_PWM",
+    "PD10": "L_DIR",
+    "PD13": "R_PWM",
+    "PD11": "R_DIR",
+    "PE2": "MOTOR_EN_REQ",
+    "PE4": "L_nFAULT",
+    "PE5": "R_nFAULT",
+    "PA0": "L_ISENSE",
+    "PA1": "R_ISENSE",
+    "PA15": "L_ENC_A",
+    "PB3": "L_ENC_B",
+    "PC6": "R_ENC_A",
+    "PC7": "R_ENC_B",
+    "PA13": "SWDIO",
+    "PA14": "SWCLK",
+    "PB6": "AUX_I2C_SCL",
+    "PB7": "AUX_I2C_SDA",
+    "PA2": "AUX_UART_TX",
+    "PA3": "AUX_UART_RX",
+    "PA4": "AUX_ADC",
+    "PA5": "AUX_GPIO",
+    "+3V3": "V3V3",
+    "+5V_SYS": "V5_SYS",
+    "GND": "GND",
+    "NRST": "NRST"
+  }
+}

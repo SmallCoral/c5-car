@@ -1,0 +1,56 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-27T12:14:05",
+    "ignored_checks": [
+        {
+            "description": "Global label only appears once in the schematic",
+            "key": "single_global_label"
+        },
+        {
+            "description": "Four connection points are joined together",
+            "key": "four_way_junction"
+        },
+        {
+            "description": "SPICE model issue",
+            "key": "simulation_model_issue"
+        },
+        {
+            "description": "Assigned footprint doesn't match footprint filters",
+            "key": "footprint_filter"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning"
+    ],
+    "kicad_version": "10.0.5",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709",
+            "violations": []
+        },
+        {
+            "path": "/输入、总开关与降压/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709/3e4d7eec-bf94-5ef7-a88d-e072db9975b7",
+            "violations": []
+        },
+        {
+            "path": "/核心板接口/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709/c813fdd4-725f-5df7-aa4a-68cd15d401cf",
+            "violations": []
+        },
+        {
+            "path": "/左电机与编码器/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9",
+            "violations": []
+        },
+        {
+            "path": "/右电机与编码器/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709/ddf41ba8-06a1-59de-bdac-eecd21fc55cb",
+            "violations": []
+        }
+    ],
+    "source": "CoralC5-Motor.kicad_sch"
+}

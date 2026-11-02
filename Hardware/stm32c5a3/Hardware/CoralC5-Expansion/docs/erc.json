@@ -1,0 +1,67 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-23T18:02:26",
+    "ignored_checks": [
+        {
+            "description": "Global label only appears once in the schematic",
+            "key": "single_global_label"
+        },
+        {
+            "description": "Four connection points are joined together",
+            "key": "four_way_junction"
+        },
+        {
+            "description": "SPICE model issue",
+            "key": "simulation_model_issue"
+        },
+        {
+            "description": "Assigned footprint doesn't match footprint filters",
+            "key": "footprint_filter"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.6",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/31672fb3-2283-55e8-8ba0-9720622e3890",
+            "violations": []
+        },
+        {
+            "path": "/核心板插槽与公共信号接口/",
+            "uuid_path": "/31672fb3-2283-55e8-8ba0-9720622e3890/2bf7e8eb-5de2-5b58-b96e-dfa000c05dee",
+            "violations": []
+        },
+        {
+            "path": "/五伏入口与外设独立稳压/",
+            "uuid_path": "/31672fb3-2283-55e8-8ba0-9720622e3890/2f57b387-95cc-5dec-a1aa-147481928076",
+            "violations": []
+        },
+        {
+            "path": "/百兆以太网 PHY 与集成变压器网口/",
+            "uuid_path": "/31672fb3-2283-55e8-8ba0-9720622e3890/981738cf-99d0-57a7-bd2b-5752007b71e1",
+            "violations": []
+        },
+        {
+            "path": "/无线模块、外置天线与下载接口/",
+            "uuid_path": "/31672fb3-2283-55e8-8ba0-9720622e3890/a0747f49-83ca-5754-a89b-2eae876d7911",
+            "violations": []
+        },
+        {
+            "path": "/SPI 模式 microSD 存储接口/",
+            "uuid_path": "/31672fb3-2283-55e8-8ba0-9720622e3890/23b2b94d-88b5-5753-9788-5373c4776648",
+            "violations": []
+        },
+        {
+            "path": "/扩展排针与四线 SWD/",
+            "uuid_path": "/31672fb3-2283-55e8-8ba0-9720622e3890/ce875cb0-79f6-5cb4-b3dd-2ce15d56777b",
+            "violations": []
+        }
+    ],
+    "source": "CoralC5-Expansion.kicad_sch"
+}

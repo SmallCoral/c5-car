@@ -1,0 +1,912 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "b6138eaf-d20b-5b43-a04a-d71eca329709")
+	(paper "A4")
+	(title_block
+		(title "Coral-C5 双电机扩展板总览")
+		(date "2026-10-27")
+		(rev "M1")
+		(company "SmallCoral / CoralC5-Motor")
+		(comment 1 "原理图设计；实板电流、温升与线束待验证")
+	)
+	(lib_symbols)
+	(text "MG513XP28_12V ×2，配套CoralC5-Core\n三串锂电池2800mAh，目标约一小时"
+		(exclude_from_sim no)
+		(at 17.78 24.13 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+			(justify left top)
+		)
+		(uuid "218be7a7-a028-5a0b-b708-cf87be0bdf01")
+	)
+	(text "双电机扩展板"
+		(exclude_from_sim no)
+		(at 17.78 15.24 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+			(justify left top)
+		)
+		(uuid "5cd7af4e-060b-53e5-924e-e783667aed27")
+	)
+	(text "拨动开关切断主电源\n两路电机各自限流\n编码器用三伏三"
+		(exclude_from_sim no)
+		(at 120.65 170.18 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+			(justify left top)
+		)
+		(uuid "f5be9ea2-7107-54e8-8ea8-7aaceec3c288")
+	)
+	(junction
+		(at 142.24 60.96)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0ecd4b19-dc24-5971-8658-053bb1418212")
+	)
+	(wire
+		(pts
+			(xy 95.25 53.34) (xy 175.26 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "05bfa16e-4dc1-54f0-b857-d8f21691d11b")
+	)
+	(wire
+		(pts
+			(xy 95.25 76.2) (xy 175.26 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "07424c56-8264-52a5-83e4-93a08001b716")
+	)
+	(wire
+		(pts
+			(xy 95.25 134.62) (xy 175.26 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "08c30332-772a-5a95-8c8b-8cd5c2df90b0")
+	)
+	(wire
+		(pts
+			(xy 95.25 68.58) (xy 175.26 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "153adc62-ef47-5dce-ba11-ebe6d6758ff9")
+	)
+	(wire
+		(pts
+			(xy 15.24 100.33) (xy 15.24 173.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1d01abc5-bbb1-5745-9f42-541ee1cc26df")
+	)
+	(wire
+		(pts
+			(xy 95.25 91.44) (xy 119.38 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1db223a5-3be6-5205-bfa6-cdc4ca801efd")
+	)
+	(wire
+		(pts
+			(xy 95.25 60.96) (xy 142.24 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "21b44c63-8155-56d9-aafb-fdfb4760e00e")
+	)
+	(wire
+		(pts
+			(xy 95.25 64.77) (xy 175.26 64.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "381fe612-8d37-54c7-97da-24422702f559")
+	)
+	(wire
+		(pts
+			(xy 142.24 104.14) (xy 154.94 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3d19aa0d-86f1-5dfe-b4a1-f1fb1b835385")
+	)
+	(wire
+		(pts
+			(xy 15.24 100.33) (xy 40.64 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4a6313ee-6338-590d-bc93-cfa4fc9d7288")
+	)
+	(wire
+		(pts
+			(xy 95.25 138.43) (xy 175.26 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5d90642d-06ff-51fb-a0fa-1612ea3f455d")
+	)
+	(wire
+		(pts
+			(xy 95.25 127) (xy 175.26 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "60fc73b3-9f5a-5192-9c9a-8f44a41c9d22")
+	)
+	(wire
+		(pts
+			(xy 142.24 60.96) (xy 142.24 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "64d13979-c3c1-599a-8b1c-33ce92ed6ef6")
+	)
+	(wire
+		(pts
+			(xy 250.19 68.58) (xy 270.51 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "722c779c-327b-5c05-9ba3-6dab92dccc1f")
+	)
+	(wire
+		(pts
+			(xy 250.19 138.43) (xy 270.51 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7e977072-d96e-533b-b7af-ea835327306f")
+	)
+	(wire
+		(pts
+			(xy 95.25 181.61) (xy 113.03 181.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8237a33c-ce0c-57ac-b124-a3d5106c5865")
+	)
+	(wire
+		(pts
+			(xy 95.25 123.19) (xy 175.26 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8631adbd-a12a-5785-af45-a7a162d582f1")
+	)
+	(wire
+		(pts
+			(xy 154.94 130.81) (xy 175.26 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "90110163-1873-59c4-9e91-9faa941b804d")
+	)
+	(wire
+		(pts
+			(xy 95.25 57.15) (xy 175.26 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "92830728-51f6-5e52-981c-68807626b6df")
+	)
+	(wire
+		(pts
+			(xy 15.24 173.99) (xy 25.4 173.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "954a0f1b-8aff-529a-9a17-7f6fa8f2847d")
+	)
+	(wire
+		(pts
+			(xy 95.25 146.05) (xy 175.26 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9cc584b5-13aa-512b-a4ea-1652d1005636")
+	)
+	(wire
+		(pts
+			(xy 142.24 60.96) (xy 175.26 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a0f8f9c0-d09b-5d30-93c0-12d1a23ef15c")
+	)
+	(wire
+		(pts
+			(xy 154.94 104.14) (xy 154.94 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bedfe5b8-700e-5de4-abd9-33457de567e5")
+	)
+	(wire
+		(pts
+			(xy 250.19 123.19) (xy 270.51 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c2f7f9c2-463b-5e18-82d7-46b33e79b231")
+	)
+	(wire
+		(pts
+			(xy 95.25 72.39) (xy 175.26 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cc6886a6-19b8-57a4-9cd2-060182dfb42d")
+	)
+	(wire
+		(pts
+			(xy 250.19 53.34) (xy 270.51 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ecdce56e-78d9-508d-9ffa-998be2809db3")
+	)
+	(wire
+		(pts
+			(xy 95.25 142.24) (xy 175.26 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f37a81d2-3cfa-5c53-b56c-d6d736ef1e46")
+	)
+	(label "VM"
+		(at 270.51 53.34 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "4658d12f-deef-5015-8bab-dc4ab4cdfb27")
+	)
+	(label "VM"
+		(at 113.03 181.61 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "50fd532f-defa-5c25-9092-7119cc75cfcd")
+	)
+	(label "V3V3"
+		(at 270.51 68.58 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "5b8dd449-8b5d-5c3c-99ae-1e662eb37150")
+	)
+	(label "V3V3"
+		(at 119.38 91.44 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "96981f0c-74ef-57cc-9320-52884ace27ce")
+	)
+	(label "VM"
+		(at 270.51 123.19 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "9ccb6ed1-94b9-5cfa-b513-ae4f66afac37")
+	)
+	(label "V3V3"
+		(at 270.51 138.43 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "df7d936e-9717-5172-ae9d-417439a20422")
+	)
+	(sheet
+		(at 25.4 166.37)
+		(size 69.85 22.86)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.254)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "3e4d7eec-bf94-5ef7-a88d-e072db9975b7")
+		(property "Sheetname" "输入、总开关与降压"
+			(at 25.4 161.29 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sheetfile" "02_Power.kicad_sch"
+			(at 25.4 191.77 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "V5_SYS" output
+			(at 25.4 173.99 180)
+			(uuid "0b9de82f-d23a-5253-86d8-54723ddc5d66")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "VM" output
+			(at 95.25 181.61 0)
+			(uuid "0e0163c3-45cc-5f01-b276-eb95709ca8e3")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "CoralC5-Motor"
+				(path "/b6138eaf-d20b-5b43-a04a-d71eca329709"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 40.64 44.45)
+		(size 54.61 110.49)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.254)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "c813fdd4-725f-5df7-aa4a-68cd15d401cf")
+		(property "Sheetname" "核心板接口"
+			(at 40.64 39.37 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sheetfile" "03_Core_Interface.kicad_sch"
+			(at 40.64 157.48 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "L_PWM" output
+			(at 95.25 53.34 0)
+			(uuid "7b02e368-f83e-592f-9231-1a3ea1ea2189")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "L_DIR" output
+			(at 95.25 57.15 0)
+			(uuid "0a2e011f-300e-5b26-a3a1-158853e06601")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "MOTOR_RUN" output
+			(at 95.25 60.96 0)
+			(uuid "1265fd51-6041-5efd-89ce-2931be34b135")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "L_nFAULT" input
+			(at 95.25 64.77 0)
+			(uuid "5221a9b8-fe59-5666-8b79-2ff575f74310")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "L_ISENSE" input
+			(at 95.25 68.58 0)
+			(uuid "1b9ae853-7ec7-50ce-96b4-2bfeeecf8efe")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "L_ENC_A" input
+			(at 95.25 72.39 0)
+			(uuid "419ed309-fdd0-5889-9c51-06184d634935")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "L_ENC_B" input
+			(at 95.25 76.2 0)
+			(uuid "bdb6cad4-8f3c-5152-ab45-e89a94996552")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "R_PWM" output
+			(at 95.25 123.19 0)
+			(uuid "a119687a-f292-502d-8ceb-8f0ae3b81421")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "R_DIR" output
+			(at 95.25 127 0)
+			(uuid "052eef43-c72d-5bd7-9ee1-713a5e82901e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "R_nFAULT" input
+			(at 95.25 134.62 0)
+			(uuid "c2902da2-9cd6-50c4-bf33-064ff19729c9")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "R_ISENSE" input
+			(at 95.25 138.43 0)
+			(uuid "3e851b81-32bf-5dd1-9652-9fcddf6d190b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "R_ENC_A" input
+			(at 95.25 142.24 0)
+			(uuid "590aba47-94a1-5de8-858e-5c013e0139d7")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "R_ENC_B" input
+			(at 95.25 146.05 0)
+			(uuid "1e1898c0-4a74-5107-bacb-171e92757819")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "V5_SYS" input
+			(at 40.64 100.33 180)
+			(uuid "bf1184c6-30a3-5904-adda-f70fbe28b871")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "V3V3" output
+			(at 95.25 91.44 0)
+			(uuid "fe462d16-baa0-57c5-90d5-e7b30ec907e0")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "CoralC5-Motor"
+				(path "/b6138eaf-d20b-5b43-a04a-d71eca329709"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 175.26 114.3)
+		(size 74.93 45.72)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.254)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "ddf41ba8-06a1-59de-bdac-eecd21fc55cb")
+		(property "Sheetname" "右电机与编码器"
+			(at 175.26 109.22 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sheetfile" "05_Right_Motor.kicad_sch"
+			(at 175.26 162.56 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "R_PWM" input
+			(at 175.26 123.19 180)
+			(uuid "082ac04b-8484-59fe-8df0-58b5c73c3afe")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "R_DIR" input
+			(at 175.26 127 180)
+			(uuid "9ce18957-ea72-539b-b072-6454c35b8fb7")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "MOTOR_RUN" input
+			(at 175.26 130.81 180)
+			(uuid "18bc80fd-8011-58b6-83b9-765de140e5e2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "R_nFAULT" output
+			(at 175.26 134.62 180)
+			(uuid "07a7a6fa-9456-5684-a658-17551fc0c181")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "R_ISENSE" output
+			(at 175.26 138.43 180)
+			(uuid "c5d3cff7-738b-5d27-a59a-f2425c723e44")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "R_ENC_A" output
+			(at 175.26 142.24 180)
+			(uuid "d13a7f63-51a8-5571-ad96-7e4bebd98bcc")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "R_ENC_B" output
+			(at 175.26 146.05 180)
+			(uuid "7244a2fe-b3e9-573a-8904-095ad2d6f04a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "VM" input
+			(at 250.19 123.19 0)
+			(uuid "d3d91d7c-f743-59fe-b63b-7db6e2e8f5af")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "V3V3" input
+			(at 250.19 138.43 0)
+			(uuid "a50a1379-a1b6-5bf1-975a-4022ce3c377a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "CoralC5-Motor"
+				(path "/b6138eaf-d20b-5b43-a04a-d71eca329709"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 175.26 44.45)
+		(size 74.93 45.72)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.254)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9")
+		(property "Sheetname" "左电机与编码器"
+			(at 175.26 39.37 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sheetfile" "04_Left_Motor.kicad_sch"
+			(at 175.26 92.71 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "L_PWM" input
+			(at 175.26 53.34 180)
+			(uuid "f591947d-8ea4-5c63-a793-b447e215b30c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "L_DIR" input
+			(at 175.26 57.15 180)
+			(uuid "13561907-a67f-5f6b-87d1-01cc1e79179a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "MOTOR_RUN" input
+			(at 175.26 60.96 180)
+			(uuid "87fa11ee-a812-5bfd-b979-cec018ac7ffa")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "L_nFAULT" output
+			(at 175.26 64.77 180)
+			(uuid "653b76b5-7047-5044-ad5a-ad22349e801e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "L_ISENSE" output
+			(at 175.26 68.58 180)
+			(uuid "1d8cea49-69a4-541a-b17f-bdc1ff6dbe5f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "L_ENC_A" output
+			(at 175.26 72.39 180)
+			(uuid "2b72073b-0b6e-580e-bff4-1127ba9d82d3")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "L_ENC_B" output
+			(at 175.26 76.2 180)
+			(uuid "406036d0-7b4b-5cce-bd63-c5f5c3450162")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "VM" input
+			(at 250.19 53.34 0)
+			(uuid "e69b6083-4609-5168-8121-dda74e04c0d7")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "V3V3" input
+			(at 250.19 68.58 0)
+			(uuid "a47f3dc9-7229-582b-ba0a-9df6cf22e655")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "CoralC5-Motor"
+				(path "/b6138eaf-d20b-5b43-a04a-d71eca329709"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)

@@ -1,0 +1,516 @@
+{
+  "project": "CoralC5-Core",
+  "erc_errors": 0,
+  "erc_warnings": 0,
+  "schematic_parity_issues": 0,
+  "physical_footprints": 43,
+  "mounted_components": 42,
+  "model_bound_components": 42,
+  "bare_board_features": [
+    "J13"
+  ],
+  "generic_envelope_models": [
+    "SW1",
+    "SW2",
+    "SW5"
+  ],
+  "schematic_pages": 4,
+  "stage": "partially routed; not a fabrication release",
+  "track_items": 944,
+  "zones": 2,
+  "numbered_pads_checked": 308,
+  "retired_references": {
+    "JP1": "USB 供电跳帽已删除，USB_VBUS 直接连接 D2 阳极，保留 D2 反灌隔离。",
+    "C19": "2026-10-21 按用户要求取消 32.768kHz LSE 晶体及其负载电容，原理图与 PCB 同步移除。",
+    "C20": "2026-10-21 按用户要求取消 32.768kHz LSE 晶体及其负载电容，原理图与 PCB 同步移除。",
+    "Y2": "2026-10-21 按用户要求取消 32.768kHz LSE 晶体及其负载电容，原理图与 PCB 同步移除。",
+    "R45": "2026-10-22 按用户要求删除引出选装零欧电阻；PH0/PH1 仅接 HSE，PC14/PC15 直接引出。",
+    "R46": "2026-10-22 按用户要求删除引出选装零欧电阻；PH0/PH1 仅接 HSE，PC14/PC15 直接引出。",
+    "R47": "2026-10-22 按用户要求删除引出选装零欧电阻；PH0/PH1 仅接 HSE，PC14/PC15 直接引出。",
+    "R48": "2026-10-22 按用户要求删除引出选装零欧电阻；PH0/PH1 仅接 HSE，PC14/PC15 直接引出。"
+  },
+  "remaining_erc": [],
+  "remaining_drc": [],
+  "unconnected_items": 0,
+  "resources": {
+    "C1": {
+      "footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/C_0603_1608Metric.step"
+      ]
+    },
+    "C2": {
+      "footprint": "DevBoard:Capacitor_SMD__C_1206_3216Metric",
+      "models": [
+        "${KIPRJMOD}/Models/C_1206_3216Metric.step"
+      ]
+    },
+    "C3": {
+      "footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/C_0603_1608Metric.step"
+      ]
+    },
+    "C4": {
+      "footprint": "DevBoard:Capacitor_SMD__C_1206_3216Metric",
+      "models": [
+        "${KIPRJMOD}/Models/C_1206_3216Metric.step"
+      ]
+    },
+    "C5": {
+      "footprint": "DevBoard:Capacitor_SMD__C_1206_3216Metric",
+      "models": [
+        "${KIPRJMOD}/Models/C_1206_3216Metric.step"
+      ]
+    },
+    "C6": {
+      "footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/C_0603_1608Metric.step"
+      ]
+    },
+    "D2": {
+      "footprint": "DevBoard:Diode_SMD__D_SMA",
+      "models": [
+        "${KIPRJMOD}/Models/D_SMA.step"
+      ]
+    },
+    "J2": {
+      "footprint": "DevBoard:Connector_USB__USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal",
+      "models": [
+        "${KIPRJMOD}/Models/USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal.step"
+      ]
+    },
+    "L1": {
+      "footprint": "DevBoard:Inductor_SMD__L_Bourns_SRN6045TA",
+      "models": [
+        "${KIPRJMOD}/Models/L_Bourns_SRN6045TA.step"
+      ]
+    },
+    "R1": {
+      "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/R_0603_1608Metric.step"
+      ]
+    },
+    "R2": {
+      "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/R_0603_1608Metric.step"
+      ]
+    },
+    "R3": {
+      "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/R_0603_1608Metric.step"
+      ]
+    },
+    "R4": {
+      "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/R_0603_1608Metric.step"
+      ]
+    },
+    "R52": {
+      "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/R_0603_1608Metric.step"
+      ]
+    },
+    "R53": {
+      "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/R_0603_1608Metric.step"
+      ]
+    },
+    "U2": {
+      "footprint": "DevBoard:Package_TO_SOT_SMD__TSOT-23-6",
+      "models": [
+        "${KIPRJMOD}/Models/TSOT-23-6.step"
+      ]
+    },
+    "U3": {
+      "footprint": "DevBoard:Package_TO_SOT_SMD__SOT-23-6",
+      "models": [
+        "${KIPRJMOD}/Models/SOT-23-6.step"
+      ]
+    },
+    "C7": {
+      "footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/C_0603_1608Metric.step"
+      ]
+    },
+    "C8": {
+      "footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/C_0603_1608Metric.step"
+      ]
+    },
+    "C9": {
+      "footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/C_0603_1608Metric.step"
+      ]
+    },
+    "C10": {
+      "footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/C_0603_1608Metric.step"
+      ]
+    },
+    "C11": {
+      "footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/C_0603_1608Metric.step"
+      ]
+    },
+    "C12": {
+      "footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/C_0603_1608Metric.step"
+      ]
+    },
+    "C13": {
+      "footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/C_0603_1608Metric.step"
+      ]
+    },
+    "C14": {
+      "footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/C_0603_1608Metric.step"
+      ]
+    },
+    "C15": {
+      "footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/C_0603_1608Metric.step"
+      ]
+    },
+    "C16": {
+      "footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/C_0603_1608Metric.step"
+      ]
+    },
+    "C17": {
+      "footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/C_0603_1608Metric.step"
+      ]
+    },
+    "C18": {
+      "footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/C_0603_1608Metric.step"
+      ]
+    },
+    "R5": {
+      "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/R_0603_1608Metric.step"
+      ]
+    },
+    "R6": {
+      "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/R_0603_1608Metric.step"
+      ]
+    },
+    "R7": {
+      "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/R_0603_1608Metric.step"
+      ]
+    },
+    "SW1": {
+      "footprint": "DevBoard:SW_SD1107_2P_6x3_H2.5",
+      "models": [
+        "${KIPRJMOD}/Models/GENERIC_SD1107_H2.5.wrl"
+      ]
+    },
+    "SW2": {
+      "footprint": "DevBoard:SW_SD1107_2P_6x3_H2.5",
+      "models": [
+        "${KIPRJMOD}/Models/GENERIC_SD1107_H2.5.wrl"
+      ]
+    },
+    "U1": {
+      "footprint": "DevBoard:Package_QFP__LQFP-100_14x14mm_P0.5mm",
+      "models": [
+        "${KIPRJMOD}/Models/LQFP-100_14x14mm_P0.5mm.step"
+      ]
+    },
+    "Y1": {
+      "footprint": "DevBoard:Crystal__Crystal_SMD_3225-4Pin_3.2x2.5mm",
+      "models": [
+        "${KIPRJMOD}/Models/Crystal_SMD_3225-4Pin_3.2x2.5mm.step"
+      ]
+    },
+    "D3": {
+      "footprint": "DevBoard:LED_0603_YellowGreen",
+      "models": [
+        "${KIPRJMOD}/Models/LED_0603_YellowGreen.step"
+      ]
+    },
+    "D4": {
+      "footprint": "DevBoard:LED_0603_Red",
+      "models": [
+        "${KIPRJMOD}/Models/LED_0603_Red.step"
+      ]
+    },
+    "J13": {
+      "footprint": "DevBoard:Streamline_Core_Edge",
+      "models": []
+    },
+    "R49": {
+      "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/R_0603_1608Metric.step"
+      ]
+    },
+    "R50": {
+      "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/R_0603_1608Metric.step"
+      ]
+    },
+    "R51": {
+      "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/R_0603_1608Metric.step"
+      ]
+    },
+    "SW5": {
+      "footprint": "DevBoard:SW_SD1107_2P_6x3_H2.5",
+      "models": [
+        "${KIPRJMOD}/Models/GENERIC_SD1107_H2.5.wrl"
+      ]
+    }
+  },
+  "passed_checks_shared_total": 2019,
+  "failed_checks_shared": [],
+  "manual_review": {
+    "report": "../../Shared/full_review_2026-10-23.md",
+    "findings": [
+      {
+        "id": "C7_VCAP_RATING",
+        "board": "CoralC5-Core",
+        "status": "open",
+        "ref": "C7",
+        "issue": "2.2uF / 6.3V marked; ST requires rated voltage >=10V and ESR <20mohm at3MHz",
+        "source": "https://www.st.com/content/st_com/en/technical-documents/stm32c5a3cg_asset/chunk-011-topic-stm32-db-ds-electrical-characteristics.html"
+      },
+      {
+        "id": "CORE_B49_GND_ISLAND",
+        "board": "CoralC5-Core",
+        "status": "fixed",
+        "ref": "J13.B49",
+        "xy_mm": [
+          116.45,
+          82.05
+        ],
+        "resolution": "Connected in latest user routing; native refill DRC has zero unconnected items"
+      },
+      {
+        "id": "CORE_J2_NPTH_CLEARANCE",
+        "board": "CoralC5-Core",
+        "status": "fixed",
+        "actual_mm": 0.23305638452651462,
+        "minimum_mm": 0.2,
+        "drc_items": 0,
+        "method": "GND pad corner radius 0.15 to 0.30 mm; drill and pad envelope unchanged",
+        "report": "pcb_review.md"
+      },
+      {
+        "id": "CORE_OVERLAPPING_SHORT_SEGMENTS",
+        "board": "CoralC5-Core",
+        "status": "fixed",
+        "count": 3,
+        "nets": [
+          "+3V3 F.Cu",
+          "+3V3 B.Cu",
+          "PB15 F.Cu"
+        ],
+        "resolution": "All three UUIDs absent from user commit 88247a1; native refill DRC has no warnings",
+        "resolved_date": "2026-10-24"
+      },
+      {
+        "id": "USB_VALUES_SYNC",
+        "board": "CoralC5-Core",
+        "status": "fixed",
+        "refs": [
+          "R3",
+          "R4"
+        ],
+        "value": "0R",
+        "only_pcb_value_fields_changed": true
+      }
+    ]
+  },
+  "silkscreen_review": {
+    "date": "2026-10-23T20:51:40",
+    "button_labels": {
+      "SW1": "RESET",
+      "SW2": "BOOT0",
+      "SW5": "USER"
+    },
+    "logo": "DevBoard:Logo_SmallCoral_11mm",
+    "name": "SmallCoral",
+    "layer": "F.SilkS",
+    "logo_width_mm": 11,
+    "logo_center_mm": [
+      67.5,
+      58.5
+    ],
+    "original_board_objects_preserved": true,
+    "new_drc_violations": 0,
+    "schematic_parity_issues": 0,
+    "remaining_drc_errors": 0,
+    "remaining_drc_warnings": 0,
+    "remaining_unconnected_items": 0,
+    "preview": "placement_top.png",
+    "logo_source": "../../Shared/branding/README.md",
+    "caption": "Designed by SmallCoral",
+    "caption_font_mm": 0.9,
+    "user_button_gpio": "PD2"
+  },
+  "usb_clearance_review": {
+    "date": "2026-10-23T21:10:00",
+    "ref": "J2",
+    "source": "https://gct.co/files/drawings/usb4105.pdf",
+    "changed_pads": [
+      "A1",
+      "A12",
+      "B1",
+      "B12"
+    ],
+    "pad_size_mm": [
+      0.6,
+      1.15
+    ],
+    "roundrect_ratio_before": 0.25,
+    "roundrect_ratio_after": 0.5,
+    "npth_drill_mm": 0.65,
+    "minimum_hole_to_copper_mm": 0.23305638452651462,
+    "minimum_required_mm": 0.2,
+    "drills_and_pad_centers_preserved": true,
+    "all_other_objects_preserved_against_latest_user_save": true,
+    "drc_errors": 0,
+    "drc_warnings": 0,
+    "unconnected_items": 0,
+    "schematic_parity_issues": 0,
+    "position_figure": "pcb_review.png",
+    "reviewed_pcb_sha256": "86606584a096fe02c6d426d8409b60e276f022053de7ecfb4eeec186cbe0a0bc",
+    "removed_redundant_tracks": [
+      {
+        "number": 1,
+        "net": "+3V3",
+        "layer": "B.Cu",
+        "uuid": "35eef34f-0de5-455f-97ef-6b9fbc8600a2",
+        "start_mm": [
+          80.0,
+          44.5
+        ],
+        "end_mm": [
+          81.0,
+          45.5
+        ],
+        "length_mm": 1.4142135623730951,
+        "width_mm": 0.2,
+        "covering_tracks": [
+          {
+            "uuid": "2db07d47-fe8e-4b49-a767-cb3bc2e493dd",
+            "start_mm": [
+              81.0,
+              45.5
+            ],
+            "end_mm": [
+              79.5,
+              44.0
+            ]
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "net": "+3V3",
+        "layer": "F.Cu",
+        "uuid": "51069f85-77a8-4a9a-bd7c-a5bb4ebd8621",
+        "start_mm": [
+          91.0,
+          63.154198
+        ],
+        "end_mm": [
+          95.077099,
+          59.077099
+        ],
+        "length_mm": 5.765888700937789,
+        "width_mm": 0.2,
+        "covering_tracks": [
+          {
+            "uuid": "a88869ad-66df-44ec-8eab-1a26db40a239",
+            "start_mm": [
+              95.077099,
+              59.077099
+            ],
+            "end_mm": [
+              90.654198,
+              63.5
+            ]
+          }
+        ]
+      },
+      {
+        "number": 3,
+        "net": "PB15",
+        "layer": "F.Cu",
+        "uuid": "ddd8db84-95c2-49b8-980e-b4879ad0dbac",
+        "start_mm": [
+          94.193019,
+          64.556981
+        ],
+        "end_mm": [
+          94.25,
+          64.613961
+        ],
+        "length_mm": 0.08058259589390489,
+        "width_mm": 0.2,
+        "covering_tracks": [
+          {
+            "uuid": "33d88e8b-c0a4-4c91-9f35-bf28233a6241",
+            "start_mm": [
+              94.193019,
+              64.556981
+            ],
+            "end_mm": [
+              94.592857,
+              64.956819
+            ]
+          }
+        ]
+      }
+    ],
+    "redundant_tracks_removed_in_user_commit": "88247a1"
+  },
+  "latest_native_drc_review": {
+    "date": "2026-10-24T12:32:41",
+    "checked_user_commit": "88247a1",
+    "pcb_sha256": "86606584a096fe02c6d426d8409b60e276f022053de7ecfb4eeec186cbe0a0bc",
+    "errors": 0,
+    "warnings": 0,
+    "unconnected_items": 0,
+    "schematic_parity_issues": 0,
+    "routing_segments": 621,
+    "vias": 323,
+    "usb_pad_corner_ratio": 0.5,
+    "redundant_track_uuids_removed": [
+      "35eef34f-0de5-455f-97ef-6b9fbc8600a2",
+      "51069f85-77a8-4a9a-bd7c-a5bb4ebd8621",
+      "ddd8db84-95c2-49b8-980e-b4879ad0dbac"
+    ],
+    "remaining_manual_issue": "C7 VCAP capacitor rating and ESR selection still require correction"
+  }
+}

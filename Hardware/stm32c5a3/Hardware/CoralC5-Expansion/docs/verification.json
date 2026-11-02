@@ -1,0 +1,535 @@
+{
+  "project": "CoralC5-Expansion",
+  "erc_errors": 0,
+  "erc_warnings": 0,
+  "schematic_parity_issues": 0,
+  "physical_footprints": 75,
+  "mounted_components": 73,
+  "model_bound_components": 73,
+  "bare_board_features": [
+    "TP5",
+    "TP6"
+  ],
+  "generic_envelope_models": [
+    "J3",
+    "U4",
+    "Y3",
+    "SW3",
+    "SW4"
+  ],
+  "schematic_pages": 7,
+  "stage": "unrouted placement template",
+  "track_items": 0,
+  "zones": 0,
+  "numbered_pads_checked": 474,
+  "retired_references": {},
+  "remaining_erc": [],
+  "remaining_drc": [
+    {
+      "description": "孔间距违规 (<电路板配置> 中的 \"孔\" 约束 间距 0.2500 mm; 实际 0.0500 mm)",
+      "items": [
+        {
+          "description": "F.Cu 上 J14 的焊盘 51 [GND]",
+          "pos": {
+            "x": 128.0,
+            "y": 58.625
+          },
+          "uuid": "9c4067a4-cf0a-4953-bc11-0471da28c7fd"
+        },
+        {
+          "description": "J14 的 NPTH 焊盘",
+          "pos": {
+            "x": 126.8,
+            "y": 58.625
+          },
+          "uuid": "5a700d75-2a02-4512-9d7d-76ef45ef9018"
+        }
+      ],
+      "severity": "error",
+      "type": "hole_clearance"
+    }
+  ],
+  "unconnected_items": 314,
+  "resources": {
+    "J14": {
+      "footprint": "DevBoard:Streamline_Socket",
+      "models": [
+        "${KIPRJMOD}/Models/Streamline_Socket.step"
+      ]
+    },
+    "TP5": {
+      "footprint": "DevBoard:TestPoint__TestPoint_Pad_D1.0mm",
+      "models": []
+    },
+    "TP6": {
+      "footprint": "DevBoard:TestPoint__TestPoint_Pad_D1.0mm",
+      "models": []
+    },
+    "C35": {
+      "footprint": "DevBoard:Capacitor_SMD__C_1206_3216Metric",
+      "models": [
+        "${KIPRJMOD}/Models/C_1206_3216Metric.step"
+      ]
+    },
+    "C36": {
+      "footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/C_0603_1608Metric.step"
+      ]
+    },
+    "C37": {
+      "footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/C_0603_1608Metric.step"
+      ]
+    },
+    "C38": {
+      "footprint": "DevBoard:Capacitor_SMD__C_1206_3216Metric",
+      "models": [
+        "${KIPRJMOD}/Models/C_1206_3216Metric.step"
+      ]
+    },
+    "C39": {
+      "footprint": "DevBoard:Capacitor_SMD__C_1206_3216Metric",
+      "models": [
+        "${KIPRJMOD}/Models/C_1206_3216Metric.step"
+      ]
+    },
+    "D1": {
+      "footprint": "DevBoard:Diode_SMD__D_SMC",
+      "models": [
+        "${KIPRJMOD}/Models/D_SMC.step"
+      ]
+    },
+    "J1": {
+      "footprint": "DevBoard:Connector_PinHeader_2.54mm__PinHeader_1x02_P2.54mm_Vertical",
+      "models": [
+        "${KIPRJMOD}/Models/PinHeader_1x02_P2.54mm_Vertical.step"
+      ]
+    },
+    "L2": {
+      "footprint": "DevBoard:Inductor_SMD__L_Bourns_SRN6045TA",
+      "models": [
+        "${KIPRJMOD}/Models/L_Bourns_SRN6045TA.step"
+      ]
+    },
+    "U6": {
+      "footprint": "DevBoard:Package_TO_SOT_SMD__TSOT-23-6",
+      "models": [
+        "${KIPRJMOD}/Models/TSOT-23-6.step"
+      ]
+    },
+    "C21": {
+      "footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/C_0603_1608Metric.step"
+      ]
+    },
+    "C22": {
+      "footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/C_0603_1608Metric.step"
+      ]
+    },
+    "C23": {
+      "footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/C_0603_1608Metric.step"
+      ]
+    },
+    "C24": {
+      "footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/C_0603_1608Metric.step"
+      ]
+    },
+    "C25": {
+      "footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/C_0603_1608Metric.step"
+      ]
+    },
+    "C26": {
+      "footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/C_0603_1608Metric.step"
+      ]
+    },
+    "C27": {
+      "footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/C_0603_1608Metric.step"
+      ]
+    },
+    "C28": {
+      "footprint": "DevBoard:Capacitor_SMD__C_1206_3216Metric",
+      "models": [
+        "${KIPRJMOD}/Models/C_1206_3216Metric.step"
+      ]
+    },
+    "FB1": {
+      "footprint": "DevBoard:Inductor_SMD__L_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/L_0603_1608Metric.step"
+      ]
+    },
+    "J3": {
+      "footprint": "DevBoard:Connector_RJ__RJ45_Hanrun_HR911105A_Horizontal",
+      "models": [
+        "${KIPRJMOD}/Models/GENERIC_HR911105A_ENVELOPE.wrl"
+      ]
+    },
+    "R10": {
+      "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/R_0603_1608Metric.step"
+      ]
+    },
+    "R11": {
+      "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/R_0603_1608Metric.step"
+      ]
+    },
+    "R12": {
+      "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/R_0603_1608Metric.step"
+      ]
+    },
+    "R13": {
+      "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/R_0603_1608Metric.step"
+      ]
+    },
+    "R14": {
+      "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/R_0603_1608Metric.step"
+      ]
+    },
+    "R15": {
+      "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/R_0603_1608Metric.step"
+      ]
+    },
+    "R16": {
+      "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/R_0603_1608Metric.step"
+      ]
+    },
+    "R17": {
+      "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/R_0603_1608Metric.step"
+      ]
+    },
+    "R18": {
+      "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/R_0603_1608Metric.step"
+      ]
+    },
+    "R19": {
+      "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/R_0603_1608Metric.step"
+      ]
+    },
+    "R20": {
+      "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/R_0603_1608Metric.step"
+      ]
+    },
+    "R21": {
+      "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/R_0603_1608Metric.step"
+      ]
+    },
+    "R22": {
+      "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/R_0603_1608Metric.step"
+      ]
+    },
+    "R23": {
+      "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/R_0603_1608Metric.step"
+      ]
+    },
+    "R24": {
+      "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/R_0603_1608Metric.step"
+      ]
+    },
+    "R25": {
+      "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/R_0603_1608Metric.step"
+      ]
+    },
+    "R26": {
+      "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/R_0603_1608Metric.step"
+      ]
+    },
+    "R27": {
+      "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/R_0603_1608Metric.step"
+      ]
+    },
+    "R28": {
+      "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/R_0603_1608Metric.step"
+      ]
+    },
+    "U4": {
+      "footprint": "DevBoard:Package_DFN_QFN__VQFN-24-1EP_4x4mm_P0.5mm_EP2.5x2.5mm_ThermalVias",
+      "models": [
+        "${KIPRJMOD}/Models/GENERIC_LAN8720A_QFN24.wrl"
+      ]
+    },
+    "Y3": {
+      "footprint": "DevBoard:Oscillator__Oscillator_SMD_Abracon_ASE-4Pin_3.2x2.5mm",
+      "models": [
+        "${KIPRJMOD}/Models/GENERIC_ASE_3225.wrl"
+      ]
+    },
+    "C29": {
+      "footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/C_0603_1608Metric.step"
+      ]
+    },
+    "C30": {
+      "footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/C_0603_1608Metric.step"
+      ]
+    },
+    "C31": {
+      "footprint": "DevBoard:Capacitor_SMD__C_1206_3216Metric",
+      "models": [
+        "${KIPRJMOD}/Models/C_1206_3216Metric.step"
+      ]
+    },
+    "C32": {
+      "footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/C_0603_1608Metric.step"
+      ]
+    },
+    "J4": {
+      "footprint": "DevBoard:Connector_PinHeader_2.54mm__PinHeader_1x06_P2.54mm_Vertical",
+      "models": [
+        "${KIPRJMOD}/Models/PinHeader_1x06_P2.54mm_Vertical.step"
+      ]
+    },
+    "J5": {
+      "footprint": "DevBoard:Connector_PinHeader_2.54mm__PinHeader_1x06_P2.54mm_Vertical",
+      "models": [
+        "${KIPRJMOD}/Models/PinHeader_1x06_P2.54mm_Vertical.step"
+      ]
+    },
+    "J6": {
+      "footprint": "DevBoard:Connector_PinHeader_2.54mm__PinHeader_1x06_P2.54mm_Vertical",
+      "models": [
+        "${KIPRJMOD}/Models/PinHeader_1x06_P2.54mm_Vertical.step"
+      ]
+    },
+    "R29": {
+      "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/R_0603_1608Metric.step"
+      ]
+    },
+    "R30": {
+      "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/R_0603_1608Metric.step"
+      ]
+    },
+    "R31": {
+      "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/R_0603_1608Metric.step"
+      ]
+    },
+    "R32": {
+      "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/R_0603_1608Metric.step"
+      ]
+    },
+    "R33": {
+      "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/R_0603_1608Metric.step"
+      ]
+    },
+    "R34": {
+      "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/R_0603_1608Metric.step"
+      ]
+    },
+    "R35": {
+      "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/R_0603_1608Metric.step"
+      ]
+    },
+    "R36": {
+      "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/R_0603_1608Metric.step"
+      ]
+    },
+    "SW3": {
+      "footprint": "DevBoard:SW_SD1107_2P_6x3_H2.5",
+      "models": [
+        "${KIPRJMOD}/Models/GENERIC_SD1107_H2.5.wrl"
+      ]
+    },
+    "SW4": {
+      "footprint": "DevBoard:SW_SD1107_2P_6x3_H2.5",
+      "models": [
+        "${KIPRJMOD}/Models/GENERIC_SD1107_H2.5.wrl"
+      ]
+    },
+    "U5": {
+      "footprint": "DevBoard:Espressif__ESP32-C3-MINI-1U",
+      "models": [
+        "${KIPRJMOD}/Models/ESP32-C3-MINI-1U.STEP"
+      ]
+    },
+    "C33": {
+      "footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/C_0603_1608Metric.step"
+      ]
+    },
+    "C34": {
+      "footprint": "DevBoard:Capacitor_SMD__C_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/C_0603_1608Metric.step"
+      ]
+    },
+    "J7": {
+      "footprint": "DevBoard:Connector_Card__microSD_HC_Hirose_DM3AT-SF-PEJM5",
+      "models": [
+        "${KIPRJMOD}/Models/microSD_HC_Hirose_DM3AT-SF-PEJM5.step"
+      ]
+    },
+    "R37": {
+      "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/R_0603_1608Metric.step"
+      ]
+    },
+    "R38": {
+      "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/R_0603_1608Metric.step"
+      ]
+    },
+    "R39": {
+      "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/R_0603_1608Metric.step"
+      ]
+    },
+    "R40": {
+      "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/R_0603_1608Metric.step"
+      ]
+    },
+    "R41": {
+      "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/R_0603_1608Metric.step"
+      ]
+    },
+    "R42": {
+      "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/R_0603_1608Metric.step"
+      ]
+    },
+    "R43": {
+      "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/R_0603_1608Metric.step"
+      ]
+    },
+    "R44": {
+      "footprint": "DevBoard:Resistor_SMD__R_0603_1608Metric",
+      "models": [
+        "${KIPRJMOD}/Models/R_0603_1608Metric.step"
+      ]
+    },
+    "J8": {
+      "footprint": "DevBoard:Connector_PinHeader_2.54mm__PinHeader_2x24_P2.54mm_Vertical",
+      "models": [
+        "${KIPRJMOD}/Models/PinHeader_2x24_P2.54mm_Vertical.step"
+      ]
+    },
+    "J9": {
+      "footprint": "DevBoard:Connector_PinHeader_2.54mm__PinHeader_2x24_P2.54mm_Vertical",
+      "models": [
+        "${KIPRJMOD}/Models/PinHeader_2x24_P2.54mm_Vertical.step"
+      ]
+    },
+    "J12": {
+      "footprint": "DevBoard:Connector_JST__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical",
+      "models": [
+        "${KIPRJMOD}/Models/JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical.step"
+      ]
+    }
+  },
+  "passed_checks_shared_total": 2019,
+  "failed_checks_shared": [],
+  "manual_review": {
+    "report": "../../Shared/full_review_2026-10-23.md",
+    "findings": [
+      {
+        "id": "EXP_J14_NPTH_CLEARANCE",
+        "board": "CoralC5-Expansion",
+        "status": "open",
+        "actual_mm": 0.05,
+        "minimum_mm": 0.25,
+        "drc_items": 1
+      },
+      {
+        "id": "EXP_LOCAL_DECOUPLING_PLACEMENT",
+        "board": "CoralC5-Expansion",
+        "status": "open",
+        "refs": [
+          "C21",
+          "C22",
+          "C24",
+          "C30",
+          "C34"
+        ],
+        "issue": "7 to16mm straight-line distances to supply pins; move local bypass capacitors before routing"
+      },
+      {
+        "id": "EXP_ROUTING_INCOMPLETE",
+        "board": "CoralC5-Expansion",
+        "status": "open",
+        "unconnected_items": 314
+      }
+    ]
+  }
+}
