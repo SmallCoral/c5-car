@@ -1,0 +1,75 @@
+{
+  "date": "2026-11-03",
+  "kicad_version": "10.0.8",
+  "baseline_folder": "C:\\Users\\Shan_\\.codex\\visualizations\\2026\\11\\02\\01a19ce6-9f7a-75e3-8bb6-33e8eb6f9e52\\remove-j3-j5-before\\Hardware\\stm32c5a3\\Hardware\\CoralC5-Motor",
+  "removed_references": [
+    "J3",
+    "J5"
+  ],
+  "netlist_preserved_except_removed_pins": true,
+  "remaining_pcb_objects_identical": true,
+  "removed_pcb_objects": [
+    {
+      "type": "footprint",
+      "uuid": "332145f6-a340-4ca7-89be-2848f38dd59d"
+    },
+    {
+      "type": "segment",
+      "uuid": "75d43e65-22d9-4a2e-833f-3a1fb3445e7b"
+    },
+    {
+      "type": "segment",
+      "uuid": "8773d92c-a3f9-4e0e-a17d-4792df758edd"
+    },
+    {
+      "type": "segment",
+      "uuid": "97326a9a-0040-4f8b-b8e9-9213022fb641"
+    },
+    {
+      "type": "segment",
+      "uuid": "b99a2528-3850-4d23-ad94-2c047b934e26"
+    },
+    {
+      "type": "segment",
+      "uuid": "ce76cb39-d12a-49d2-8f18-c60e0986fd90"
+    },
+    {
+      "type": "segment",
+      "uuid": "d9eedc33-eca5-4546-8927-50214503e587"
+    },
+    {
+      "type": "footprint",
+      "uuid": "e180e476-b092-475d-bf7b-92a984e8fb52"
+    }
+  ],
+  "pcb_footprints": 75,
+  "pcb_tracks": 71,
+  "six_pin_connectors_preserved": true,
+  "erc_unchanged": true,
+  "drc_before": {
+    "errors": 2,
+    "warnings": 4,
+    "unconnected": 160,
+    "parity_issues": 0
+  },
+  "drc_after": {
+    "errors": 2,
+    "warnings": 4,
+    "unconnected": 157,
+    "parity_issues": 0
+  },
+  "full_schematic_contract": {
+    "checks": 461,
+    "passed": 450,
+    "failed": 11
+  },
+  "source_sha256": {
+    "02_Power.kicad_sch": "fcf94eb0d94e77bddddb7460a5562f8777086663c5a77b28733b0f5b4aa6280d",
+    "03_Core_Interface.kicad_sch": "178228af554c4cc1b09f14f901ae392c9b489f1948e45d424a31b36b6677f518",
+    "04_Left_Motor.kicad_sch": "f92593add1b2bbc151587adba52f48ffcd473b350a1dd29919c34bbd73cd7bfc",
+    "05_Right_Motor.kicad_sch": "88e0e54a4ac8597c0a1806c7765418d869d7587465ca3213645ecab76b312027",
+    "CoralC5-Motor.kicad_sch": "21c00966af73e655c886e797fb11e88d9557d1431212efc5b87f7f7a516aed27",
+    "CoralC5-Motor.kicad_pcb": "afd479b0b886f586bc9a096bfda966ab69efd8f0f8fe000ef6efeab940612117"
+  },
+  "documentation_broken_links": []
+}

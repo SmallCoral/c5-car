@@ -1,5 +1,8 @@
 # Coral-C5
 
+当前c5-car项目以校赛A题为目标，Motor六针接口及新增功能计划从[项目总入口](../../README.md)查看。
+本页保留Core与网络Expansion的硬件概况；Motor当前验证状态以[最新记录](../../Documentation/validation/2026-11-03-motor-pin-remap.md)为准。
+
 Coral-C5 包含核心板和两种扩展板。STM32C5A3VGT6、时钟、电源、USB 和几个常用按键留在 CoralC5-Core，网口、无线、SD 卡和四线 SWD 放到 CoralC5-Expansion。新增 CoralC5-Motor 用于双电机机器人，配有十二伏DC-005输入、拨动总开关、五伏降压、双路DRV8874和编码器接口。核心板通过98触点金手指配套使用其中一种扩展板。
 
 当前硬件版本为 B1。原理图已拆成两套工程，Core 已基本完成布线，2026 年 10 月 24 日复查为 0 个 DRC 错误、0 个警告、0 个未连接项。Expansion 尚未布线。两板的原理图与 PCB 网络已重新校准。固件仍保留之前的生成工程，应用代码与端口配置还没有按 B1 完整接入。
@@ -13,7 +16,7 @@ Coral-C5 包含核心板和两种扩展板。STM32C5A3VGT6、时钟、电源、U
 | 查金手指和兼容边界 | [双板接口说明](Hardware/Shared/interface.md)、[98 触点表](Hardware/Shared/interface.csv) |
 | 查扩展排针 | [J8、J9 针脚表](Hardware/CoralC5-Expansion/docs/header_pinout.csv) |
 | 看电路 | [Core 原理图](Hardware/CoralC5-Core/docs/CoralC5-Core_Schematic.pdf)、[Expansion 原理图](Hardware/CoralC5-Expansion/docs/CoralC5-Expansion_Schematic.pdf) |
-| 接着写固件 | [固件说明](Firmware/README.md) |
+| 接着写固件 | [固件说明](../../Firmware/README.md) |
 
 Core 沿用 Streamline 的 70.00×51.45mm 公共板形和 PCIe x8 形状的金手指，参照 H562 公开照片整理摆放。MCU 沿用 −45° 方向放在板中上部，复位按钮位于主控左上，BOOT0 与 USER 位于顶边，降压电源和 USB-C 在右侧。三个按键已补上用途丝印，左侧放了珊瑚 Logo 和 Designed by SmallCoral 署名，见 [Core 当前预览](Hardware/CoralC5-Core/docs/placement_top.png)。C5-EDGE-3 电气针序已经自定义，MCU 下半信号接正面 B 排，上半信号接背面 A 排，扩展板插槽同步配对，不能与旧电气针序混用。这里传的是 GPIO 和电源，不能插电脑 PCIe 插槽。Expansion 的 100×86mm 板框是本项目暂定尺寸，顶部放核心板插槽，左右各一组 2×24 排针，下方放 RJ45 和 microSD，右侧放外置天线无线模块。
 

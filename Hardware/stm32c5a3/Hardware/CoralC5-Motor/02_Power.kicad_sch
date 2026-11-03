@@ -6,8 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "十二伏入口、拨动总开关与五伏降压")
-		(date "2026-10-27")
-		(rev "M1")
+		(date "2026-11-03")
+		(rev "M1.1")
 		(company "SmallCoral / CoralC5-Motor")
 		(comment 1 "原理图设计；实板电流、温升与线束待验证")
 	)

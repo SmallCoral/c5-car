@@ -6,8 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "左电机驱动与霍尔编码器")
-		(date "2026-10-27")
-		(rev "M1")
+		(date "2026-11-03")
+		(rev "M1.1")
 		(company "SmallCoral / CoralC5-Motor")
 		(comment 1 "原理图设计；实板电流、温升与线束待验证")
 	)
@@ -1027,7 +1027,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Motor:ENCODER_4P"
+		(symbol "Motor:MG513_6P"
 			(pin_names
 				(offset 0.5)
 			)
@@ -1046,7 +1046,7 @@
 					)
 				)
 			)
-			(property "Value" "ENCODER / XH2.50"
+			(property "Value" "MG513 / XH2.50 / 6P"
 				(at 0 22.86 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1056,7 +1056,7 @@
 					)
 				)
 			)
-			(property "Footprint" "Motor:Connector_JST__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical"
+			(property "Footprint" "Motor:Connector_JST__JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1089,10 +1089,10 @@
 					)
 				)
 			)
-			(symbol "ENCODER_4P_0_1"
+			(symbol "MG513_6P_0_1"
 				(rectangle
-					(start -2.54 6.35)
-					(end 2.54 -6.35)
+					(start -2.54 8.89)
+					(end 2.54 -8.89)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -1102,11 +1102,11 @@
 					)
 				)
 			)
-			(symbol "ENCODER_4P_1_1"
+			(symbol "MG513_6P_1_1"
 				(pin passive line
-					(at 7.62 3.81 180)
+					(at 7.62 6.35 180)
 					(length 5.08)
-					(name "GND"
+					(name "M-"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -1122,9 +1122,9 @@
 					)
 				)
 				(pin passive line
-					(at 7.62 1.27 180)
+					(at 7.62 3.81 180)
 					(length 5.08)
-					(name "3V3"
+					(name "VENC"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -1140,7 +1140,7 @@
 					)
 				)
 				(pin passive line
-					(at 7.62 -1.27 180)
+					(at 7.62 1.27 180)
 					(length 5.08)
 					(name "A"
 						(effects
@@ -1158,7 +1158,7 @@
 					)
 				)
 				(pin passive line
-					(at 7.62 -3.81 180)
+					(at 7.62 -1.27 180)
 					(length 5.08)
 					(name "B"
 						(effects
@@ -1168,6 +1168,42 @@
 						)
 					)
 					(number "4"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 -3.81 180)
+					(length 5.08)
+					(name "GND"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 -6.35 180)
+					(length 5.08)
+					(name "M+"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "6"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -1529,7 +1565,7 @@
 		)
 		(uuid "93bf60b0-65d9-579b-a298-9509c5ea6905")
 	)
-	(text "接口依次为地、三伏三、A、B\n先核对原电机线束\n禁止直接套用六针线序"
+	(text "六针线序见接口表\n编码器现为3.3V，先核对电平\n动力与编码器统一从六针口引出"
 		(exclude_from_sim no)
 		(at 215.9 139.7 0)
 		(effects
@@ -1540,7 +1576,7 @@
 		)
 		(uuid "9780f468-329c-50b1-8c9c-e8b5b16f59d2")
 	)
-	(text "编码器供电、滤波与整形"
+	(text "六针电机接口、编码器滤波与整形"
 		(exclude_from_sim no)
 		(at 15.24 121.92 0)
 		(effects
@@ -1743,7 +1779,7 @@
 	)
 	(wire
 		(pts
-			(xy 33.02 138.43) (xy 40.64 138.43)
+			(xy 33.02 148.59) (xy 40.64 148.59)
 		)
 		(stroke
 			(width 0)
@@ -1800,6 +1836,16 @@
 			(type default)
 		)
 		(uuid "261a2a58-3503-5933-bfe1-36dec1e0510a")
+	)
+	(wire
+		(pts
+			(xy 36.83 151.13) (xy 36.83 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2a4a83cf-56fe-53c6-8321-1969786c212b")
 	)
 	(wire
 		(pts
@@ -1940,6 +1986,16 @@
 			(type default)
 		)
 		(uuid "47094ffc-3dd0-5ed3-98ff-e04ffab344b7")
+	)
+	(wire
+		(pts
+			(xy 33.02 151.13) (xy 36.83 151.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "47df23eb-d536-5faf-9c5e-20b60484a176")
 	)
 	(wire
 		(pts
@@ -2323,7 +2379,7 @@
 	)
 	(wire
 		(pts
-			(xy 208.28 58.42) (xy 233.68 58.42)
+			(xy 208.28 58.42) (xy 220.98 58.42)
 		)
 		(stroke
 			(width 0)
@@ -2410,6 +2466,16 @@
 			(type default)
 		)
 		(uuid "a57357bb-0ced-5a04-953b-9a219d44ff52")
+	)
+	(wire
+		(pts
+			(xy 33.02 138.43) (xy 45.72 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a5892cb9-4e94-52bf-ab38-05d4e70798c4")
 	)
 	(wire
 		(pts
@@ -2533,7 +2599,7 @@
 	)
 	(wire
 		(pts
-			(xy 40.64 138.43) (xy 40.64 154.94)
+			(xy 40.64 148.59) (xy 40.64 154.94)
 		)
 		(stroke
 			(width 0)
@@ -2583,7 +2649,7 @@
 	)
 	(wire
 		(pts
-			(xy 200.66 60.96) (xy 233.68 60.96)
+			(xy 200.66 60.96) (xy 220.98 60.96)
 		)
 		(stroke
 			(width 0)
@@ -2791,6 +2857,16 @@
 		)
 		(uuid "7ef30848-b8ce-5478-a0c4-9c20012ffa30")
 	)
+	(label "L_M_OUT2"
+		(at 220.98 60.96 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "adfa2ce5-92dc-5255-a37f-0c74d1ba096c")
+	)
 	(label "MOTOR_RUN"
 		(at 88.9 90.17 0)
 		(effects
@@ -2801,6 +2877,26 @@
 		)
 		(uuid "ca128830-e66a-5386-b933-134ff6bcc9e7")
 	)
+	(label "L_M_OUT1"
+		(at 36.83 166.37 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d9c345c0-1609-5a45-b511-e1419c239b31")
+	)
+	(label "L_M_OUT1"
+		(at 220.98 58.42 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "df67b5f8-335e-5f6d-b11e-fc1aff66a536")
+	)
 	(label "V3V3"
 		(at 60.96 48.26 0)
 		(effects
@@ -2810,6 +2906,16 @@
 			(justify left bottom)
 		)
 		(uuid "e6b6992f-df74-5728-a4a5-e4032bcc5dd8")
+	)
+	(label "L_M_OUT2"
+		(at 45.72 138.43 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "ea7575a7-1036-5bbc-b1b1-b2a00ec9df6d")
 	)
 	(hierarchical_label "L_ISENSE"
 		(shape output)
@@ -3379,95 +3485,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Motor:Connector_Generic__Conn_01x02")
-		(at 238.76 58.42 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "19acb80b-3f0e-5908-a256-63db41d17c9d")
-		(property "Reference" "J3"
-			(at 238.76 50.8 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "MOTOR / 5.08"
-			(at 238.76 54.61 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Motor:TerminalBlock_Phoenix__TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal"
-			(at 238.76 58.42 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 238.76 58.42 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 238.76 58.42 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "MKDS 1,5/ 2-5,08"
-			(at 238.76 58.42 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "b8e4c6dd-4d1f-5ac8-8e67-d86979f78ffb")
-		)
-		(pin "2"
-			(uuid "f13d5017-88e9-5888-91fe-6a325379e290")
-		)
-		(instances
-			(project "CoralC5-Motor"
-				(path "/b6138eaf-d20b-5b43-a04a-d71eca329709/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9"
-					(reference "J3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Motor:power__GND")
 		(at 224.79 41.91 0)
 		(unit 1)
@@ -4014,8 +4031,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Motor:ENCODER_4P")
-		(at 25.4 142.24 0)
+		(lib_id "Motor:MG513_6P")
+		(at 25.4 144.78 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4034,7 +4051,7 @@
 				)
 			)
 		)
-		(property "Value" "ENC / XH2.50"
+		(property "Value" "MG513 / XH2.50 / 6P"
 			(at 25.4 133.35 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4044,7 +4061,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Motor:Connector_JST__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical"
+		(property "Footprint" "Motor:Connector_JST__JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical"
 			(at 25.4 142.24 0)
 			(hide yes)
 			(show_name no)
@@ -4066,8 +4083,9 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "MG513 six-pin motor and AB encoder connector"
 			(at 25.4 142.24 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4076,7 +4094,7 @@
 				)
 			)
 		)
-		(property "MPN" "B4B-XH-A"
+		(property "MPN" "B6B-XH-A(LF)(SN)"
 			(at 25.4 142.24 0)
 			(hide yes)
 			(show_name no)
@@ -4098,6 +4116,12 @@
 		)
 		(pin "4"
 			(uuid "d840a6b0-06e6-59c8-940f-1d488ca0c509")
+		)
+		(pin "5"
+			(uuid "a2acfcc8-545e-5a6a-a91c-6631f8263d55")
+		)
+		(pin "6"
+			(uuid "fe13397a-6517-5b19-aa3c-56abfdc9d1da")
 		)
 		(instances
 			(project "CoralC5-Motor"

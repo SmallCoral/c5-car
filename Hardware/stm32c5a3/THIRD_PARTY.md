@@ -8,10 +8,10 @@ ST 设备支持包、HAL 和系统调用代码保留了原文件头及随附许�
 
 | 内容 | 本地许可证 |
 | --- | --- |
-| STM32C5 设备支持 | [stm32c5xx_dfp/LICENSE.md](Firmware/STM32C5A3VGT6_cmake/stm32c5xx_dfp/LICENSE.md) |
-| STM32 HAL | [stm32c5xx_drivers/LICENSE.md](Firmware/STM32C5A3VGT6_cmake/stm32c5xx_drivers/LICENSE.md) |
-| Arm CMSIS | [arch/cmsis/LICENSE.md](Firmware/STM32C5A3VGT6_cmake/arch/cmsis/LICENSE.md) |
-| 系统调用 | [utilities/syscalls/LICENSE.md](Firmware/STM32C5A3VGT6_cmake/utilities/syscalls/LICENSE.md) |
+| STM32C5 设备支持 | [stm32c5xx_dfp/LICENSE.md](../../Firmware/STM32C5A3VGT6_cmake/stm32c5xx_dfp/LICENSE.md) |
+| STM32 HAL | [stm32c5xx_drivers/LICENSE.md](../../Firmware/STM32C5A3VGT6_cmake/stm32c5xx_drivers/LICENSE.md) |
+| Arm CMSIS | [arch/cmsis/LICENSE.md](../../Firmware/STM32C5A3VGT6_cmake/arch/cmsis/LICENSE.md) |
+| 系统调用 | [utilities/syscalls/LICENSE.md](../../Firmware/STM32C5A3VGT6_cmake/utilities/syscalls/LICENSE.md) |
 
 生成目录中还保留了 `mx_stm32c5xx_hal_drivers_license.md` 和 `mx_syscalls_license.md`，它们对应各自的生成文件。
 

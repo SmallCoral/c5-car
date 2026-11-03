@@ -1,29 +1,136 @@
 {
-  "date": "2026-10-27",
-  "pass": true,
-  "checks": 471,
-  "failed": [],
-  "physical_references": 78,
-  "physical_pins": 326,
-  "models": 21,
+  "date": "2026-11-03",
+  "pass": false,
+  "checks": 491,
+  "failed": [
+    {
+      "name": "core supply after isolation",
+      "pass": false,
+      "detail": {
+        "missing": [
+          "J9:9"
+        ],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "core 3.3V loads",
+      "pass": false,
+      "detail": {
+        "missing": [
+          "J9:1"
+        ],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "NRST",
+      "pass": false,
+      "detail": {
+        "missing": [
+          "J9:10"
+        ],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "aux 3",
+      "pass": false,
+      "detail": {
+        "missing": [
+          "J9:3"
+        ],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "aux 4",
+      "pass": false,
+      "detail": {
+        "missing": [
+          "J9:4"
+        ],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "aux 5",
+      "pass": false,
+      "detail": {
+        "missing": [
+          "J9:5"
+        ],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "aux 6",
+      "pass": false,
+      "detail": {
+        "missing": [
+          "J9:6"
+        ],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "aux 7",
+      "pass": false,
+      "detail": {
+        "missing": [
+          "J9:7"
+        ],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "aux 8",
+      "pass": false,
+      "detail": {
+        "missing": [
+          "J9:8"
+        ],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "all ground returns, EP, PH/EN and fixed off-time straps",
+      "pass": false,
+      "detail": {
+        "missing": [
+          "J9:2"
+        ],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "native ERC no violations",
+      "pass": false,
+      "detail": ""
+    }
+  ],
+  "physical_references": 75,
+  "physical_pins": 316,
+  "models": 20,
   "native_erc_errors": 0,
-  "native_erc_warnings": 0,
+  "native_erc_warnings": 8,
   "model_exceptions": {
     "J1": "generic manufacturer-dimension external envelope, not exact internal assembly",
     "SW1": "generic manufacturer-dimension external envelope, not exact internal assembly",
     "U2,U4": "KiCad HTSSOP envelope; custom footprint follows TI PWP0016 drawing"
   },
   "limitations": [
-    "No board file or physical prototype verified",
+    "J3/J5 removed from schematic and PCB; native PCB DRC and parity results are separate from this schematic audit; no prototype verified",
+    "J9 is absent from the current schematic; original auxiliary-header contract is intentionally retained and its failures are reported",
     "Battery usable energy and runtime are estimates",
-    "Encoder cable order and encoder current require hardware confirmation"
+    "Cable polarity, connector mating direction and encoder operation at 3.3 V require hardware confirmation"
   ],
   "artifacts_sha256": {
-    "02_Power.kicad_sch": "7f1e45e4b6c80c2b6a3b2d7fd5f87fda90234b324101c4bedd2c54304d5db9b4",
-    "03_Core_Interface.kicad_sch": "307759d4f8922b5b850f97214ddaa0b60341e5458bdc31cd599311eefd88e35c",
-    "04_Left_Motor.kicad_sch": "6988e9d2b6b6b5610ffb5ed99e0e8838fc4b8bf8eaba284e2449bee6d61a4bb6",
-    "05_Right_Motor.kicad_sch": "8b3d538eef3bcb66d73b7b6e20e1685ed995a1105cf4801313b4f39a4f00f01a",
-    "CoralC5-Motor.kicad_sch": "5a27a983709c8e8c48938e79631f61c88d9c4af5aa2fab749fe8004dbc9fd6e8"
+    "02_Power.kicad_sch": "82f61be660e540e143985f00babc8bfec9bacc95351249dcb384dc6c67e135b4",
+    "03_Core_Interface.kicad_sch": "62167e2a2a1d72e25d7b4f7b854d7912451cc1d7d68913fc9376e56f4d5de3da",
+    "04_Left_Motor.kicad_sch": "58c43abfa910463273620cd4c1bb83eb6f0fd3b2a91bc7e51453aac83c8368fd",
+    "05_Right_Motor.kicad_sch": "ea975a74456adf147ea5e55b2cd1a14b0ed3d985d8d5c0f96b2ad4eb0fe298e1",
+    "CoralC5-Motor.kicad_sch": "1c392c93c2d535ea4d98c9f023c817b977c37d6e05302551581ca836854485c9"
   },
   "results": [
     {
@@ -108,9 +215,11 @@
     },
     {
       "name": "core supply after isolation",
-      "pass": true,
+      "pass": false,
       "detail": {
-        "missing": [],
+        "missing": [
+          "J9:9"
+        ],
         "unexpected": []
       }
     },
@@ -148,9 +257,11 @@
     },
     {
       "name": "core 3.3V loads",
-      "pass": true,
+      "pass": false,
       "detail": {
-        "missing": [],
+        "missing": [
+          "J9:1"
+        ],
         "unexpected": []
       }
     },
@@ -172,57 +283,71 @@
     },
     {
       "name": "NRST",
-      "pass": true,
+      "pass": false,
       "detail": {
-        "missing": [],
+        "missing": [
+          "J9:10"
+        ],
         "unexpected": []
       }
     },
     {
       "name": "aux 3",
-      "pass": true,
+      "pass": false,
       "detail": {
-        "missing": [],
+        "missing": [
+          "J9:3"
+        ],
         "unexpected": []
       }
     },
     {
       "name": "aux 4",
-      "pass": true,
+      "pass": false,
       "detail": {
-        "missing": [],
+        "missing": [
+          "J9:4"
+        ],
         "unexpected": []
       }
     },
     {
       "name": "aux 5",
-      "pass": true,
+      "pass": false,
       "detail": {
-        "missing": [],
+        "missing": [
+          "J9:5"
+        ],
         "unexpected": []
       }
     },
     {
       "name": "aux 6",
-      "pass": true,
+      "pass": false,
       "detail": {
-        "missing": [],
+        "missing": [
+          "J9:6"
+        ],
         "unexpected": []
       }
     },
     {
       "name": "aux 7",
-      "pass": true,
+      "pass": false,
       "detail": {
-        "missing": [],
+        "missing": [
+          "J9:7"
+        ],
         "unexpected": []
       }
     },
     {
       "name": "aux 8",
-      "pass": true,
+      "pass": false,
       "detail": {
-        "missing": [],
+        "missing": [
+          "J9:8"
+        ],
         "unexpected": []
       }
     },
@@ -500,9 +625,11 @@
     },
     {
       "name": "all ground returns, EP, PH/EN and fixed off-time straps",
-      "pass": true,
+      "pass": false,
       "detail": {
-        "missing": [],
+        "missing": [
+          "J9:2"
+        ],
         "unexpected": []
       }
     },
@@ -643,6 +770,166 @@
     },
     {
       "name": "05_Right_Motor.kicad_sch note size",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "J3 removed",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "J5 removed",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "all 13 motor roles assigned",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "motor GPIOs unique",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "motor contacts unique",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "reserved interfaces retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "L_ENC_A Core contact",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "L_ENC_A datasheet AF",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "L_ENC_B Core contact",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "L_ENC_B datasheet AF",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R_ENC_A Core contact",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R_ENC_A datasheet AF",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R_ENC_B Core contact",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R_ENC_B datasheet AF",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "L_PWM Core contact",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "L_PWM datasheet AF",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R_PWM Core contact",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R_PWM datasheet AF",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "L_DIR Core contact",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R_DIR Core contact",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "L_nFAULT Core contact",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R_nFAULT Core contact",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "L_ISENSE Core contact",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "L_ISENSE datasheet analog input",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R_ISENSE Core contact",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R_ISENSE datasheet analog input",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "MOTOR_EN_REQ Core contact",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "L hardware encoder pair",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R hardware encoder pair",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "independent encoder timers",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "PWM shared timer and separate channels",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "PWM timers separate from encoders",
       "pass": true,
       "detail": ""
     },
@@ -1268,29 +1555,6 @@
       "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
     },
     {
-      "name": "J9 portable footprint",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "J9 symbol to pad map",
-      "pass": true,
-      "detail": {
-        "symbol_only": [],
-        "pad_only": []
-      }
-    },
-    {
-      "name": "J9 model bound",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "J9 model path",
-      "pass": true,
-      "detail": "${KIPRJMOD}/Models/Connector_PinHeader_2.54mm__PinHeader_2x05_P2.54mm_Vertical__PinHeader_2x05_P2.54mm_Vertical.step"
-    },
-    {
       "name": "C20 portable footprint",
       "pass": true,
       "detail": ""
@@ -1335,29 +1599,6 @@
       "name": "C12 model path",
       "pass": true,
       "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
-    },
-    {
-      "name": "J3 portable footprint",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "J3 symbol to pad map",
-      "pass": true,
-      "detail": {
-        "symbol_only": [],
-        "pad_only": []
-      }
-    },
-    {
-      "name": "J3 model bound",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "J3 model path",
-      "pass": true,
-      "detail": "${KIPRJMOD}/Models/TerminalBlock_Phoenix__TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal__TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal.step"
     },
     {
       "name": "R15 portable footprint",
@@ -1449,7 +1690,7 @@
     {
       "name": "J4 model path",
       "pass": true,
-      "detail": "${KIPRJMOD}/Models/Connector_JST__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical.step"
+      "detail": "${KIPRJMOD}/Models/JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical.step"
     },
     {
       "name": "C10 portable footprint",
@@ -1909,7 +2150,7 @@
     {
       "name": "J6 model path",
       "pass": true,
-      "detail": "${KIPRJMOD}/Models/Connector_JST__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical.step"
+      "detail": "${KIPRJMOD}/Models/JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical.step"
     },
     {
       "name": "C35 portable footprint",
@@ -2025,29 +2266,6 @@
       "name": "R35 model path",
       "pass": true,
       "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
-    },
-    {
-      "name": "J5 portable footprint",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "J5 symbol to pad map",
-      "pass": true,
-      "detail": {
-        "symbol_only": [],
-        "pad_only": []
-      }
-    },
-    {
-      "name": "J5 model bound",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "J5 model path",
-      "pass": true,
-      "detail": "${KIPRJMOD}/Models/TerminalBlock_Phoenix__TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal__TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal.step"
     },
     {
       "name": "C32 portable footprint",
@@ -2441,107 +2659,12 @@
       "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
     },
     {
-      "name": "unused finger B8",
+      "name": "unused finger A42",
       "pass": true,
       "detail": ""
     },
     {
-      "name": "unused finger B15",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "unused finger B38",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "unused finger A36",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "unused finger A26",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "unused finger B18",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "unused finger B20",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "unused finger B10",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "unused finger A19",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "unused finger B45",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "unused finger B23",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "unused finger A17",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "unused finger A35",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "unused finger A11",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "unused finger B16",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "unused finger A10",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "unused finger B37",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "unused finger A37",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "unused finger B46",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "unused finger A16",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "unused finger B39",
+      "name": "unused finger A13",
       "pass": true,
       "detail": ""
     },
@@ -2551,37 +2674,27 @@
       "detail": ""
     },
     {
-      "name": "unused finger B26",
+      "name": "unused finger A21",
       "pass": true,
       "detail": ""
     },
     {
-      "name": "unused finger A22",
+      "name": "unused finger A41",
       "pass": true,
       "detail": ""
     },
     {
-      "name": "unused finger A18",
+      "name": "unused finger A40",
       "pass": true,
       "detail": ""
     },
     {
-      "name": "unused finger B17",
+      "name": "unused finger B39",
       "pass": true,
       "detail": ""
     },
     {
-      "name": "unused finger B21",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "unused finger B32",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "unused finger B25",
+      "name": "unused finger B30",
       "pass": true,
       "detail": ""
     },
@@ -2591,17 +2704,82 @@
       "detail": ""
     },
     {
-      "name": "unused finger A43",
+      "name": "unused finger B33",
       "pass": true,
       "detail": ""
     },
     {
-      "name": "unused finger A38",
+      "name": "unused finger B25",
       "pass": true,
       "detail": ""
     },
     {
-      "name": "unused finger A27",
+      "name": "unused finger B36",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B34",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B26",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B29",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger A26",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B10",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B42",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B16",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B46",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B18",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B11",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B27",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B17",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B19",
       "pass": true,
       "detail": ""
     },
@@ -2611,7 +2789,87 @@
       "detail": ""
     },
     {
+      "name": "unused finger A24",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B31",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger A31",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger A15",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B21",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger A6",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger A37",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger A20",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B23",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B35",
+      "pass": true,
+      "detail": ""
+    },
+    {
       "name": "unused finger A32",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B15",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger A18",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B8",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B37",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B40",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B14",
       "pass": true,
       "detail": ""
     },
@@ -2626,132 +2884,7 @@
       "detail": ""
     },
     {
-      "name": "unused finger B33",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "unused finger A40",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "unused finger A41",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "unused finger B42",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "unused finger A8",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "unused finger A5",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "unused finger A13",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "unused finger A34",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "unused finger A15",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "unused finger B11",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "unused finger B36",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "unused finger B12",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "unused finger A44",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "unused finger B40",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "unused finger A42",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "unused finger A31",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "unused finger B27",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "unused finger A6",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "unused finger B44",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "unused finger B41",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "unused finger B14",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "unused finger B19",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "unused finger A24",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "unused finger A28",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "unused finger B22",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "unused finger A25",
+      "name": "unused finger A10",
       "pass": true,
       "detail": ""
     },
@@ -2761,22 +2894,107 @@
       "detail": ""
     },
     {
-      "name": "unused finger A9",
+      "name": "unused finger B22",
       "pass": true,
       "detail": ""
     },
     {
-      "name": "unused finger A7",
+      "name": "unused finger A19",
       "pass": true,
       "detail": ""
     },
     {
-      "name": "unused finger B13",
+      "name": "unused finger A23",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B12",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B45",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B38",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger A44",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger A22",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger A16",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger A28",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B44",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B20",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger A25",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B32",
       "pass": true,
       "detail": ""
     },
     {
       "name": "unused finger B9",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger A17",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B41",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger A43",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B28",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger A36",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger A38",
       "pass": true,
       "detail": ""
     },
@@ -2787,7 +3005,7 @@
     },
     {
       "name": "native ERC no violations",
-      "pass": true,
+      "pass": false,
       "detail": ""
     },
     {

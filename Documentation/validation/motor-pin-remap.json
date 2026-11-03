@@ -1,0 +1,620 @@
+{
+  "date": "2026-11-03",
+  "source_commit": "0b6e5ea0e0e913346a675242086204cccd8a8c60",
+  "working_tree": "user changes present before this task; commit is context only, comparisons use saved file baseline",
+  "baseline_directory": "C:\\Users\\Shan_\\.codex\\visualizations\\2026\\11\\02\\01a19ce6-9f7a-75e3-8bb6-33e8eb6f9e52\\motor-pin-remap-before-20261103",
+  "tools": {
+    "kicad_cli": "10.0.8",
+    "comparison_python": "3.11.5"
+  },
+  "verification_script": "C:\\Users\\Shan_\\.codex\\visualizations\\2026\\11\\02\\01a19ce6-9f7a-75e3-8bb6-33e8eb6f9e52\\verify_motor_pin_remap.py",
+  "verification_script_sha256": "9d15a93cc1f400eeb5da5c0d4076d9dbb59a1ee29dfd6e5bec28c918ff72370c",
+  "commands": [
+    "kicad-cli sch export netlist --format kicadxml --output docs/netlist.xml CoralC5-Motor.kicad_sch",
+    "kicad-cli sch erc --format json --output docs/erc.json CoralC5-Motor.kicad_sch",
+    "kicad-cli pcb drc --format json --schematic-parity --refill-zones --output docs/drc.json CoralC5-Motor.kicad_pcb",
+    "python -B tools/verify_schematic.py",
+    "kicad-cli sch export pdf --output docs/CoralC5-Motor_Schematic.pdf CoralC5-Motor.kicad_sch",
+    "uv run --python <bundled-python> --with pymupdf python -B tools/check_visual.py",
+    "D:/KiCad/10.0/bin/python.exe -B C:\\Users\\Shan_\\.codex\\visualizations\\2026\\11\\02\\01a19ce6-9f7a-75e3-8bb6-33e8eb6f9e52\\verify_motor_pin_remap.py"
+  ],
+  "passed": true,
+  "checks": [
+    {
+      "name": "baseline PCB hash agrees with pre-edit snapshot",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "all footprint references preserved",
+      "passed": true,
+      "detail": {
+        "count": 75
+      }
+    },
+    {
+      "name": "exactly the intended 22 J14 pad nets changed",
+      "passed": true,
+      "detail": [
+        {
+          "contact": "A3",
+          "old_net": "/右电机与编码器/R_ISENSE",
+          "new_net": "/左电机与编码器/L_ENC_B"
+        },
+        {
+          "contact": "A4",
+          "old_net": "/左电机与编码器/L_ISENSE",
+          "new_net": "/左电机与编码器/L_ENC_A"
+        },
+        {
+          "contact": "A5",
+          "old_net": "unconnected-(J14A-A5_{slash}_PH5-PadA5)",
+          "new_net": "/左电机与编码器/L_ISENSE"
+        },
+        {
+          "contact": "A7",
+          "old_net": "unconnected-(J14A-A7_{slash}_PH4-PadA7)",
+          "new_net": "/左电机与编码器/L_nFAULT"
+        },
+        {
+          "contact": "A8",
+          "old_net": "unconnected-(J14A-A8_{slash}_PC3-PadA8)",
+          "new_net": "/左电机与编码器/L_DIR"
+        },
+        {
+          "contact": "A9",
+          "old_net": "unconnected-(J14A-A9_{slash}_PC2-PadA9)",
+          "new_net": "/左电机与编码器/L_PWM"
+        },
+        {
+          "contact": "A11",
+          "old_net": "unconnected-(J14A-A11_{slash}_PC0-PadA11)",
+          "new_net": "/右电机与编码器/R_ISENSE"
+        },
+        {
+          "contact": "A20",
+          "old_net": "/右电机与编码器/R_nFAULT",
+          "new_net": "unconnected-(J14A-A20_{slash}_PE5-PadA20)"
+        },
+        {
+          "contact": "A21",
+          "old_net": "/左电机与编码器/L_nFAULT",
+          "new_net": "unconnected-(J14A-A21_{slash}_PE4-PadA21)"
+        },
+        {
+          "contact": "A23",
+          "old_net": "/核心板接口/MOTOR_EN_REQ",
+          "new_net": "unconnected-(J14A-A23_{slash}_PE2-PadA23)"
+        },
+        {
+          "contact": "A27",
+          "old_net": "unconnected-(J14B-A27_{slash}_PB8-PadA27)",
+          "new_net": "/右电机与编码器/R_PWM"
+        },
+        {
+          "contact": "A33",
+          "old_net": "/左电机与编码器/L_ENC_B",
+          "new_net": "/右电机与编码器/R_ENC_A"
+        },
+        {
+          "contact": "A34",
+          "old_net": "unconnected-(J14B-A34_{slash}_PD7-PadA34)",
+          "new_net": "/右电机与编码器/R_DIR"
+        },
+        {
+          "contact": "A35",
+          "old_net": "unconnected-(J14B-A35_{slash}_PD6-PadA35)",
+          "new_net": "/右电机与编码器/R_nFAULT"
+        },
+        {
+          "contact": "A45",
+          "old_net": "/左电机与编码器/L_ENC_A",
+          "new_net": "/右电机与编码器/R_ENC_B"
+        },
+        {
+          "contact": "B13",
+          "old_net": "unconnected-(J14A-B13_{slash}_PE8-PadB13)",
+          "new_net": "/核心板接口/MOTOR_EN_REQ"
+        },
+        {
+          "contact": "B28",
+          "old_net": "/左电机与编码器/L_DIR",
+          "new_net": "unconnected-(J14B-B28_{slash}_PD10-PadB28)"
+        },
+        {
+          "contact": "B29",
+          "old_net": "/右电机与编码器/R_DIR",
+          "new_net": "unconnected-(J14B-B29_{slash}_PD11-PadB29)"
+        },
+        {
+          "contact": "B30",
+          "old_net": "/左电机与编码器/L_PWM",
+          "new_net": "unconnected-(J14B-B30_{slash}_PD12-PadB30)"
+        },
+        {
+          "contact": "B31",
+          "old_net": "/右电机与编码器/R_PWM",
+          "new_net": "unconnected-(J14B-B31_{slash}_PD13-PadB31)"
+        },
+        {
+          "contact": "B34",
+          "old_net": "/右电机与编码器/R_ENC_A",
+          "new_net": "unconnected-(J14B-B34_{slash}_PC6-PadB34)"
+        },
+        {
+          "contact": "B35",
+          "old_net": "/右电机与编码器/R_ENC_B",
+          "new_net": "unconnected-(J14B-B35_{slash}_PC7-PadB35)"
+        }
+      ]
+    },
+    {
+      "name": "whole PCB AST identical after reversing the J14 net reassignment",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "all non-J14 footprints identical",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "all segment objects identical",
+      "passed": true,
+      "detail": {
+        "count": 142
+      }
+    },
+    {
+      "name": "all via objects identical",
+      "passed": true,
+      "detail": {
+        "count": 2
+      }
+    },
+    {
+      "name": "all zone objects identical",
+      "passed": true,
+      "detail": {
+        "count": 0
+      }
+    },
+    {
+      "name": "all source schematic files except the Core interface untouched",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "KiCad project settings untouched",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "protected file unchanged: Hardware\\stm32c5a3\\Hardware\\Shared\\interface.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "protected file unchanged: Hardware\\stm32c5a3\\Hardware\\Shared\\interface.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "protected file unchanged: Hardware\\stm32c5a3\\Hardware\\Shared\\edge_pin_order.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "protected file unchanged: Hardware\\stm32c5a3\\Hardware\\CoralC5-Core\\CoralC5-Core.kicad_pcb",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "protected file unchanged: Hardware\\stm32c5a3\\Hardware\\CoralC5-Expansion\\CoralC5-Expansion.kicad_pcb",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "all external circuit connectivity preserved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "L_ENC_A routed to intended new contact",
+      "passed": true,
+      "detail": {
+        "gpio": "PA0",
+        "contact": "A4",
+        "nodes": [
+          "J14:A4",
+          "U3:6"
+        ]
+      }
+    },
+    {
+      "name": "L_ENC_B routed to intended new contact",
+      "passed": true,
+      "detail": {
+        "gpio": "PA1",
+        "contact": "A3",
+        "nodes": [
+          "J14:A3",
+          "U3:4"
+        ]
+      }
+    },
+    {
+      "name": "R_ENC_A routed to intended new contact",
+      "passed": true,
+      "detail": {
+        "gpio": "PB3",
+        "contact": "A33",
+        "nodes": [
+          "J14:A33",
+          "U5:6"
+        ]
+      }
+    },
+    {
+      "name": "R_ENC_B routed to intended new contact",
+      "passed": true,
+      "detail": {
+        "gpio": "PA15",
+        "contact": "A45",
+        "nodes": [
+          "J14:A45",
+          "U5:4"
+        ]
+      }
+    },
+    {
+      "name": "L_PWM routed to intended new contact",
+      "passed": true,
+      "detail": {
+        "gpio": "PC2",
+        "contact": "A9",
+        "nodes": [
+          "J14:A9",
+          "U2:1"
+        ]
+      }
+    },
+    {
+      "name": "R_PWM routed to intended new contact",
+      "passed": true,
+      "detail": {
+        "gpio": "PB8",
+        "contact": "A27",
+        "nodes": [
+          "J14:A27",
+          "U4:1"
+        ]
+      }
+    },
+    {
+      "name": "L_DIR routed to intended new contact",
+      "passed": true,
+      "detail": {
+        "gpio": "PC3",
+        "contact": "A8",
+        "nodes": [
+          "J14:A8",
+          "U2:2"
+        ]
+      }
+    },
+    {
+      "name": "R_DIR routed to intended new contact",
+      "passed": true,
+      "detail": {
+        "gpio": "PD7",
+        "contact": "A34",
+        "nodes": [
+          "J14:A34",
+          "U4:2"
+        ]
+      }
+    },
+    {
+      "name": "L_nFAULT routed to intended new contact",
+      "passed": true,
+      "detail": {
+        "gpio": "PH4",
+        "contact": "A7",
+        "nodes": [
+          "J14:A7",
+          "R13:1",
+          "U2:4"
+        ]
+      }
+    },
+    {
+      "name": "R_nFAULT routed to intended new contact",
+      "passed": true,
+      "detail": {
+        "gpio": "PD6",
+        "contact": "A35",
+        "nodes": [
+          "J14:A35",
+          "R33:1",
+          "U4:4"
+        ]
+      }
+    },
+    {
+      "name": "L_ISENSE routed to intended new contact",
+      "passed": true,
+      "detail": {
+        "gpio": "PH5",
+        "contact": "A5",
+        "nodes": [
+          "C16:1",
+          "J14:A5",
+          "R15:2"
+        ]
+      }
+    },
+    {
+      "name": "R_ISENSE routed to intended new contact",
+      "passed": true,
+      "detail": {
+        "gpio": "PC0",
+        "contact": "A11",
+        "nodes": [
+          "C36:1",
+          "J14:A11",
+          "R35:2"
+        ]
+      }
+    },
+    {
+      "name": "MOTOR_EN_REQ routed to intended new contact",
+      "passed": true,
+      "detail": {
+        "gpio": "PE8",
+        "contact": "B13",
+        "nodes": [
+          "J14:B13",
+          "R6:1"
+        ]
+      }
+    },
+    {
+      "name": "all electrical PCB pads agree with native netlist",
+      "passed": true,
+      "detail": {
+        "checked_pads": 316,
+        "mismatches": []
+      }
+    },
+    {
+      "name": "L_ENC_A matches both physical Core pad and public CSV",
+      "passed": true,
+      "detail": {
+        "core_pad_net": "PA0"
+      }
+    },
+    {
+      "name": "L_ENC_B matches both physical Core pad and public CSV",
+      "passed": true,
+      "detail": {
+        "core_pad_net": "PA1"
+      }
+    },
+    {
+      "name": "R_ENC_A matches both physical Core pad and public CSV",
+      "passed": true,
+      "detail": {
+        "core_pad_net": "PB3"
+      }
+    },
+    {
+      "name": "R_ENC_B matches both physical Core pad and public CSV",
+      "passed": true,
+      "detail": {
+        "core_pad_net": "PA15"
+      }
+    },
+    {
+      "name": "L_PWM matches both physical Core pad and public CSV",
+      "passed": true,
+      "detail": {
+        "core_pad_net": "PC2"
+      }
+    },
+    {
+      "name": "R_PWM matches both physical Core pad and public CSV",
+      "passed": true,
+      "detail": {
+        "core_pad_net": "PB8"
+      }
+    },
+    {
+      "name": "L_DIR matches both physical Core pad and public CSV",
+      "passed": true,
+      "detail": {
+        "core_pad_net": "PC3"
+      }
+    },
+    {
+      "name": "R_DIR matches both physical Core pad and public CSV",
+      "passed": true,
+      "detail": {
+        "core_pad_net": "PD7"
+      }
+    },
+    {
+      "name": "L_nFAULT matches both physical Core pad and public CSV",
+      "passed": true,
+      "detail": {
+        "core_pad_net": "PH4"
+      }
+    },
+    {
+      "name": "R_nFAULT matches both physical Core pad and public CSV",
+      "passed": true,
+      "detail": {
+        "core_pad_net": "PD6"
+      }
+    },
+    {
+      "name": "L_ISENSE matches both physical Core pad and public CSV",
+      "passed": true,
+      "detail": {
+        "core_pad_net": "PH5"
+      }
+    },
+    {
+      "name": "R_ISENSE matches both physical Core pad and public CSV",
+      "passed": true,
+      "detail": {
+        "core_pad_net": "PC0"
+      }
+    },
+    {
+      "name": "MOTOR_EN_REQ matches both physical Core pad and public CSV",
+      "passed": true,
+      "detail": {
+        "core_pad_net": "PE8"
+      }
+    },
+    {
+      "name": "ERC has no new issue types or counts",
+      "passed": true,
+      "detail": {
+        "before": {
+          "warning": 8
+        },
+        "after": {
+          "warning": 8
+        }
+      }
+    },
+    {
+      "name": "native DRC violation signatures unchanged",
+      "passed": true,
+      "detail": {
+        "before": {
+          "error": 2,
+          "warning": 4
+        },
+        "after": {
+          "error": 2,
+          "warning": 4
+        }
+      }
+    },
+    {
+      "name": "native DRC unconnected count unchanged",
+      "passed": true,
+      "detail": {
+        "before": 127,
+        "after": 127
+      }
+    },
+    {
+      "name": "native DRC schematic parity clean",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "no motor-output unconnected or electrical DRC issues",
+      "passed": true,
+      "detail": {
+        "nets": [
+          "/右电机与编码器/R_M_OUT1",
+          "/右电机与编码器/R_M_OUT2",
+          "/左电机与编码器/L_M_OUT1",
+          "/左电机与编码器/L_M_OUT2"
+        ],
+        "issues": []
+      }
+    },
+    {
+      "name": "estimated encoder path reduction",
+      "passed": true,
+      "detail": {
+        "type": "Manhattan estimate excluding obstacles and vias, not actual routed length",
+        "paths": [
+          {
+            "signal": "L_ENC_A",
+            "old_manhattan_mm": 64.5375,
+            "new_manhattan_mm": 21.5375
+          },
+          {
+            "signal": "L_ENC_B",
+            "old_manhattan_mm": 53.8375,
+            "new_manhattan_mm": 21.8375
+          },
+          {
+            "signal": "R_ENC_A",
+            "old_manhattan_mm": 47.05,
+            "new_manhattan_mm": 40.85
+          },
+          {
+            "signal": "R_ENC_B",
+            "old_manhattan_mm": 47.35,
+            "new_manhattan_mm": 30.15
+          }
+        ],
+        "old_sum_mm": 212.775,
+        "new_sum_mm": 114.375,
+        "reduction_percent": 46.2
+      }
+    },
+    {
+      "name": "no added complete-contract failures",
+      "passed": true,
+      "detail": {
+        "checks": 491,
+        "passed": 480,
+        "retained_failures": [
+          "core supply after isolation",
+          "core 3.3V loads",
+          "NRST",
+          "aux 3",
+          "aux 4",
+          "aux 5",
+          "aux 6",
+          "aux 7",
+          "aux 8",
+          "all ground returns, EP, PH/EN and fixed off-time straps",
+          "native ERC no violations"
+        ]
+      }
+    },
+    {
+      "name": "latest PDF is current and clear of detected layout overlaps",
+      "passed": true,
+      "detail": {
+        "date": "2026-11-03",
+        "pdf_sha256": "dbf620a98fc410108fcff4cdd9e7b9b6e80cf1052cb90eff96ee5042450e9685",
+        "pages": 5,
+        "wire_text_intersections": 0,
+        "text_text_overlaps": 0,
+        "ignored_identical_pdf_search_spans": 30,
+        "findings": [],
+        "text_overlaps": []
+      }
+    }
+  ],
+  "source_sha256": {
+    "Hardware/stm32c5a3/Hardware/CoralC5-Motor/CoralC5-Motor.kicad_pcb": "7dd761e902b238ba5c6aee6b820509d59eda9071c279728dc4b5dfbbfe56f24f",
+    "Hardware/stm32c5a3/Hardware/CoralC5-Motor/03_Core_Interface.kicad_sch": "62167e2a2a1d72e25d7b4f7b854d7912451cc1d7d68913fc9376e56f4d5de3da",
+    "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/design_manifest.json": "e5f7e9bf021362ee4594b3fbd0f6052ecc7f328bfc41aecbc305186a8d6e8f31",
+    "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/core_pin_assignment.csv": "bef2aa1063fdf2db83ad3813087c3b38777281106a972d3c4a86238c32af51da",
+    "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/netlist.xml": "b8624ae6695ab1cd6574dbc470c56d154cf128ad67bce0689bb43c9c62f1344e",
+    "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/erc.json": "191933313d2997b60a1e654a9657747f44a0fa151e6cbfa900c045c8323ef47f",
+    "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/drc.json": "89c28b825897edb6512159a32bc4911c3d8844aea7a1879e19bc7450520dc54b",
+    "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/verification.json": "8af0a7122021055a27425ce0975b1ac2ddaf65fe746c2a37a1a6871def179dd2",
+    "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/visual_check.json": "b02f7153a3d27a34ccc4c40aed9e5055d030e178b911b1e9483e29305e0d01c9",
+    "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/CoralC5-Motor_Schematic.pdf": "dbf620a98fc410108fcff4cdd9e7b9b6e80cf1052cb90eff96ee5042450e9685"
+  },
+  "unverified": [
+    "remaining board routing and ground return",
+    "current capacity and thermal performance of 0.45 mm traces and 0.3 mm drill vias",
+    "physical motor and encoder voltage/polarity tests",
+    "firmware peripheral setup and encoder direction",
+    "complete fabrication outline and final DRC clearance"
+  ]
+}

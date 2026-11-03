@@ -1,6 +1,6 @@
 {
-  "revision": "M1",
-  "date": "2026-10-27",
+  "revision": "M1.1-connector",
+  "date": "2026-11-03",
   "pages": [
     {
       "file": "CoralC5-Motor.kicad_sch",
@@ -42,14 +42,6 @@
       "value": "SWD / XH2.50",
       "mpn": "B4B-XH-A",
       "footprint": "Motor:Connector_JST__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical",
-      "page": 3,
-      "datasheet": ""
-    },
-    {
-      "reference": "J9",
-      "value": "AUX",
-      "mpn": "",
-      "footprint": "Motor:Connector_PinHeader_2.54mm__PinHeader_2x05_P2.54mm_Vertical",
       "page": 3,
       "datasheet": ""
     },
@@ -294,14 +286,6 @@
       "datasheet": ""
     },
     {
-      "reference": "J3",
-      "value": "MOTOR / 5.08",
-      "mpn": "MKDS 1,5/ 2-5,08",
-      "footprint": "Motor:TerminalBlock_Phoenix__TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal",
-      "page": 4,
-      "datasheet": ""
-    },
-    {
       "reference": "R13",
       "value": "10k",
       "mpn": "",
@@ -375,9 +359,9 @@
     },
     {
       "reference": "J4",
-      "value": "ENC / XH2.50",
-      "mpn": "B4B-XH-A",
-      "footprint": "Motor:Connector_JST__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical",
+      "value": "MG513 / XH2.50 / 6P",
+      "mpn": "B6B-XH-A(LF)(SN)",
+      "footprint": "Motor:Connector_JST__JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical",
       "page": 4,
       "datasheet": ""
     },
@@ -494,14 +478,6 @@
       "datasheet": ""
     },
     {
-      "reference": "J5",
-      "value": "MOTOR / 5.08",
-      "mpn": "MKDS 1,5/ 2-5,08",
-      "footprint": "Motor:TerminalBlock_Phoenix__TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal",
-      "page": 5,
-      "datasheet": ""
-    },
-    {
       "reference": "R33",
       "value": "10k",
       "mpn": "",
@@ -575,9 +551,9 @@
     },
     {
       "reference": "J6",
-      "value": "ENC / XH2.50",
-      "mpn": "B4B-XH-A",
-      "footprint": "Motor:Connector_JST__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical",
+      "value": "MG513 / XH2.50 / 6P",
+      "mpn": "B6B-XH-A(LF)(SN)",
+      "footprint": "Motor:Connector_JST__JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical",
       "page": 5,
       "datasheet": ""
     },
@@ -904,19 +880,6 @@
     "B49": "GND"
   },
   "gpio_functions": {
-    "PD12": "L_PWM",
-    "PD10": "L_DIR",
-    "PD13": "R_PWM",
-    "PD11": "R_DIR",
-    "PE2": "MOTOR_EN_REQ",
-    "PE4": "L_nFAULT",
-    "PE5": "R_nFAULT",
-    "PA0": "L_ISENSE",
-    "PA1": "R_ISENSE",
-    "PA15": "L_ENC_A",
-    "PB3": "L_ENC_B",
-    "PC6": "R_ENC_A",
-    "PC7": "R_ENC_B",
     "PA13": "SWDIO",
     "PA14": "SWCLK",
     "PB6": "AUX_I2C_SCL",
@@ -928,6 +891,195 @@
     "+3V3": "V3V3",
     "+5V_SYS": "V5_SYS",
     "GND": "GND",
-    "NRST": "NRST"
+    "NRST": "NRST",
+    "PA0": "L_ENC_A",
+    "PA1": "L_ENC_B",
+    "PB3": "R_ENC_A",
+    "PA15": "R_ENC_B",
+    "PC2": "L_PWM",
+    "PB8": "R_PWM",
+    "PC3": "L_DIR",
+    "PD7": "R_DIR",
+    "PH4": "L_nFAULT",
+    "PD6": "R_nFAULT",
+    "PH5": "L_ISENSE",
+    "PC0": "R_ISENSE",
+    "PE8": "MOTOR_EN_REQ"
+  },
+  "connector_revision": {
+    "date": "2026-11-03",
+    "pins": {
+      "1": "OUT2 / motor -",
+      "2": "VENC = Core 3V3",
+      "3": "encoder A",
+      "4": "encoder B",
+      "5": "GND",
+      "6": "OUT1 / motor +"
+    },
+    "evidence": "Documentation/reference/motor-interface.md",
+    "pcb_updated": true,
+    "power_connectors": "J4/J6 only; J3/J5 removed"
+  },
+  "preexisting_absent_components": [
+    {
+      "reference": "J9",
+      "reason": "Already absent from the schematic at the start of this task; original verification contract still reports missing J9."
+    }
+  ],
+  "removed_board_features": {
+    "J3": "2026-11-03 user-requested removal from schematic and PCB; motor outputs remain at J4/J6 six-pin connectors.",
+    "J5": "2026-11-03 user-requested removal from schematic and PCB; motor outputs remain at J4/J6 six-pin connectors."
+  },
+  "motor_pin_assignment": {
+    "date": "2026-11-03",
+    "scope": "Motor GPIO selection only; C5-EDGE-3 physical contract unchanged",
+    "source": "DS15137 Rev3 Tables 13/14",
+    "entries": [
+      {
+        "signal": "L_ENC_A",
+        "gpio": "PA0",
+        "contact": "A4",
+        "function": "TIM5_CH1",
+        "af": 2,
+        "direction": "input",
+        "endpoint": "U3:6",
+        "old_gpio": "PA15",
+        "old_contact": "A45"
+      },
+      {
+        "signal": "L_ENC_B",
+        "gpio": "PA1",
+        "contact": "A3",
+        "function": "TIM5_CH2",
+        "af": 2,
+        "direction": "input",
+        "endpoint": "U3:4",
+        "old_gpio": "PB3",
+        "old_contact": "A33"
+      },
+      {
+        "signal": "R_ENC_A",
+        "gpio": "PB3",
+        "contact": "A33",
+        "function": "TIM2_CH2",
+        "af": 1,
+        "direction": "input",
+        "endpoint": "U5:6",
+        "old_gpio": "PC6",
+        "old_contact": "B34"
+      },
+      {
+        "signal": "R_ENC_B",
+        "gpio": "PA15",
+        "contact": "A45",
+        "function": "TIM2_CH1",
+        "af": 1,
+        "direction": "input",
+        "endpoint": "U5:4",
+        "old_gpio": "PC7",
+        "old_contact": "B35"
+      },
+      {
+        "signal": "L_PWM",
+        "gpio": "PC2",
+        "contact": "A9",
+        "function": "TIM4_CH4",
+        "af": 2,
+        "direction": "output",
+        "endpoint": "U2:1",
+        "old_gpio": "PD12",
+        "old_contact": "B30"
+      },
+      {
+        "signal": "R_PWM",
+        "gpio": "PB8",
+        "contact": "A27",
+        "function": "TIM4_CH3",
+        "af": 2,
+        "direction": "output",
+        "endpoint": "U4:1",
+        "old_gpio": "PD13",
+        "old_contact": "B31"
+      },
+      {
+        "signal": "L_DIR",
+        "gpio": "PC3",
+        "contact": "A8",
+        "function": "GPIO",
+        "af": null,
+        "direction": "output",
+        "endpoint": "U2:2",
+        "old_gpio": "PD10",
+        "old_contact": "B28"
+      },
+      {
+        "signal": "R_DIR",
+        "gpio": "PD7",
+        "contact": "A34",
+        "function": "GPIO",
+        "af": null,
+        "direction": "output",
+        "endpoint": "U4:2",
+        "old_gpio": "PD11",
+        "old_contact": "B29"
+      },
+      {
+        "signal": "L_nFAULT",
+        "gpio": "PH4",
+        "contact": "A7",
+        "function": "EXTI4",
+        "af": null,
+        "direction": "input",
+        "endpoint": "U2:4",
+        "old_gpio": "PE4",
+        "old_contact": "A21"
+      },
+      {
+        "signal": "R_nFAULT",
+        "gpio": "PD6",
+        "contact": "A35",
+        "function": "EXTI6",
+        "af": null,
+        "direction": "input",
+        "endpoint": "U4:4",
+        "old_gpio": "PE5",
+        "old_contact": "A20"
+      },
+      {
+        "signal": "L_ISENSE",
+        "gpio": "PH5",
+        "contact": "A5",
+        "function": "ADC2_IN13",
+        "af": null,
+        "direction": "input",
+        "endpoint": "R15:2",
+        "old_gpio": "PA0",
+        "old_contact": "A4"
+      },
+      {
+        "signal": "R_ISENSE",
+        "gpio": "PC0",
+        "contact": "A11",
+        "function": "ADC1_IN8",
+        "af": null,
+        "direction": "input",
+        "endpoint": "R35:2",
+        "old_gpio": "PA1",
+        "old_contact": "A3"
+      },
+      {
+        "signal": "MOTOR_EN_REQ",
+        "gpio": "PE8",
+        "contact": "B13",
+        "function": "GPIO",
+        "af": null,
+        "direction": "output",
+        "endpoint": "R6:1",
+        "old_gpio": "PE2",
+        "old_contact": "A23"
+      }
+    ],
+    "right_encoder_phase_order": "A=TIM2_CH2, B=TIM2_CH1; calibrate wheel direction in firmware",
+    "firmware_implemented": false
   }
 }

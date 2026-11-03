@@ -1,8 +1,13 @@
 # CoralC5-Motor
 
-供现有 CoralC5-Core 使用的双电机扩展板原理图，版本 M1，2026-10-27。使用 KiCad 10 打开 [工程](CoralC5-Motor.kicad_pro) 或 [主原理图](CoralC5-Motor.kicad_sch)，见 [五页电路 PDF](docs/CoralC5-Motor_Schematic.pdf)。
+供现有 CoralC5-Core 使用的双电机扩展板。2026-11-03更新至M1.1-connector，在原理图中把J4/J6改为适配MG513六线信号的六针接口。
+使用KiCad 10打开[工程](CoralC5-Motor.kicad_pro)或[主原理图](CoralC5-Motor.kicad_sch)，见更新后的[五页电路PDF](docs/CoralC5-Motor_Schematic.pdf)。
+原理图及PCB已删除J3/J5两针端子，电机仅从J4/J6六针口连接。
+当前按用户新布局重新分配13路Core信号，原理图与PCB的J14网络已同步，保留已有器件位置和铜线，见[最新验证记录](../../../../Documentation/validation/2026-11-03-motor-pin-remap.md)。
+A题新增功能仍在[方案阶段](../../../../Documentation/explanation/a-system-outline.md)，尚未并入本五页电路。
 
-按用户指定的 [schematic-design skill](https://github.com/SmallCoral/schematic-design-skill/blob/main/SKILL.md) 绘制原理图和必要元件库。用户后续已在本目录创建PCB文件，本次原理图检查不涵盖板级布局、布线和DRC；上传时保留该文件和既有Expansion的用户修改。
+原理图和必要元件库沿用用户指定的[schematic-design skill](https://github.com/SmallCoral/schematic-design-skill/blob/main/SKILL.md)规范。
+按明确要求检查PCB布线并调整J14信号分配，运行原生DRC；检查结果与原理图检查分开报告。
 
 五页均为 A4，依次为电气层次总览、电源、核心板接口、左电机、右电机。模块内部实线连接，跨模块使用端口和网络名。自由说明为默认字体、100mil。按用户反馈收紧器件间距、缩短内部连线，并把端口文字放到连线外侧。上传版本保留用户手工调整的虚线分区框，统一页内左右边界和间距，电机页底部用闭合折线绕开图签；没有重跑生成器覆盖这些调整。
 
@@ -19,7 +24,7 @@
 | 电机驱动 | 每台MG513XP28_12V各用一片DRV8874PWPR。低桥臂电阻、硬件限流、IPROPI和nFAULT适合本项目的系列3.2A堵转电流。6A是芯片峰值，不能视为本板持续能力。 |
 | 控制模式 | PMODE=GND为PH/EN，IMODE=GND为固定关断时间限流、过流自动重试。此模式的nFAULT不报告每次正常限流斩波。 |
 | 初始限流 | VREF约1.65V、IPROPI负载1.82k，按450uA/A计算ITRIP约2.015A/路，反馈约0.819V/A。阈值受3.3V、阻值及芯片误差影响。 |
-| 编码器 | 每侧独立XH2.50四针，1=GND、2=3.3V、3=A、4=B。每相1k/1nF滤波，经SN74LVC2G17DCKR整形，保留10k上拉。原电机六针线束需转接并核对。 |
+| 电机与编码器 | J4/J6合并为六针，完整针序见[电机接口表](../../../../Documentation/reference/motor-interface.md)。保留每相1k/1nF和SN74LVC2G17整形，VENC仍为3.3V，实际插壳和工作电平待实物核对。 |
 
 选择DRV8874主要为了电流限制和可读取的电流反馈。2A初始限制约为系列3.2A堵转电流的63%，重载启动能力仍需随底盘验证。
 
@@ -31,38 +36,34 @@ SW1关断后电机和本板降压断电；Core仍可由USB单独供电。D3与Co
 
 严格沿用 [C5-EDGE-3](../Shared/interface.csv)。本板作为另一种底板，未复制原Expansion的网口、无线和存储。母座未使用触点明确NC。
 
-| 功能 | MCU端口 | 触点 | 配置 |
-| --- | --- | --- | --- |
-| 左/右PWM | PD12/PD13 | B30/B31 | TIM4_CH1/CH2，AF2，建议20kHz |
-| 左/右方向 | PD10/PD11 | B28/B29 | 推挽GPIO |
-| 共同运行请求 | PE2 | A23 | 默认低，经R6、J10送两片nSLEEP |
-| 左/右故障 | PE4/PE5 | A21/A20 | 低有效输入，外部10k上拉 |
-| 左/右电流 | PA0/PA1 | A4/A3 | ADC模拟输入，1k/100nF采样滤波 |
-| 左编码器A/B | PA15/PB3 | A45/A33 | TIM2_CH1/CH2，AF1 |
-| 右编码器A/B | PC6/PC7 | B34/B35 | TIM3_CH1/CH2，AF2 |
-| SWDIO/SWCLK | PA13/PA14 | B43/A46 | 保留SWD；PB3用于编码器时不用作SWO |
+当前接线与外设配置以[Motor核心板信号分配](../../../../Documentation/reference/motor-core-pins.md)为准，机器表见[core_pin_assignment.csv](docs/core_pin_assignment.csv)。
+左编码器使用TIM5，右编码器使用TIM2，两路PWM使用TIM4；PA0/PA1已改作左编码器，不能继续按旧表接电流采样。
+右编码器A/B分别接CH2/CH1，固件需标定计数方向；左、右电流采样分别使用ADC2、ADC1。
+保留双线SWD，PB3用于编码器时不同时启用SWO；现有固件仍未实现这些外设配置。
 
-J8与现有扩展板相同，1至4脚依次为3.3V/VTref、SWDIO、SWCLK、GND。J9为2×5、2.54mm辅助排针。
-
-| J9针号 | 信号 | J9针号 | 信号 |
-| --- | --- | --- | --- |
-| 1 | 3.3V | 2 | GND |
-| 3 | PB6/I2C1_SCL | 4 | PB7/I2C1_SDA |
-| 5 | PA2/USART2_TX | 6 | PA3/USART2_RX |
-| 7 | PA4/ADC | 8 | PA5/GPIO |
-| 9 | +5V_SYS | 10 | NRST |
+J8与现有扩展板相同，1至4脚依次为3.3V/VTref、SWDIO、SWCLK、GND。
+J9在本轮开始时的实际原理图中已经缺失，原辅助接口的七个标签仍在，不能按旧J9接线表施工。
+本轮保留该既有删除，不擅自恢复器件；M2的接口需求见[资源计划](../../../../Documentation/reference/resource-plan.md)。
 
 J10装短路帽允许运行，也可换接常闭停机开关。断开时R7、R14、R34把nSLEEP拉低。PH/EN模式中PWM=0为低侧制动，nSLEEP=0为高阻滑行。启动、换向、停车和失联处理应在固件落实，按数据手册等待唤醒；本次未修改固件。
 
-编码器和J9的3.3V来自Core，所有外接3.3V负载合计不超过100mA。后续加循迹阵列需核对电源电流与电平，部分8路QTR模块的总电流超过此预算，不能直接接这路3.3V。J9只引出一路备用ADC，裸8路模拟阵列还需增加接口或选带MCU的阵列。
+编码器3.3V来自Core，所有外接3.3V负载合计不超过100mA。
+新增循迹、光栅和无线需要独立辅助电源，不把其负载叠到Core的这路预算。
 
 ## 检查和资源
 
-原生KiCad ERC为0错误、0警告，没有ERC排除项。独立检查通过471项，覆盖326个实体引脚、电源和驱动关键网、全部核心板触点、符号到封装焊盘映射、模型路径及100mil说明，见 [检查记录](docs/verification.json)。
+本轮原生KiCad ERC为0错误、8警告，与删除前的最新设计相同，没有新增ERC排除项。
+完整接口检查共491项，480项通过，11项因J9旧合同及ERC警告失败；新引脚能力、六针输出连接、封装映射、模型路径及J3/J5缺席检查通过。
+PCB DRC仍有2错误、4警告及127个未连接项，原理图/PCB一致性问题为0；未作为制板发布版。
+失败没有删除或改成忽略，见[检查记录](docs/verification.json)。
 
-全部五页均实际渲染复查，检查端口、位号、数值、说明和图签，并检测原生PDF文字与电气导线、文字与文字的交叠，见 [版面检查](docs/visual_check.json)。仅对原生PDF同位置的相同搜索文字去重。
+五页已重新导出PDF并渲染复查。
+本轮重新运行自动版面检查，导线与文字交叠0项、文字相互交叠0项；报告包含当前PDF哈希，见[版面检查](docs/visual_check.json)。
 
-78个实体器件全部绑定封装和可解析模型，共21种模型。J1、SW1为按厂家尺寸建立并标明的通用外形，不是内部结构精确模型。U2/U4使用KiCad HTSSOP包络模型，焊盘按TI PWP0016修订。其余为对应封装通用模型或沿用的母座厂家模型，绑定可解析不代表完成整机机械干涉检查。
+当前75个实体器件均绑定封装及可解析模型，共20种模型。
+新增六针封装与STEP使用本地相对路径。
+J1、SW1为按厂家尺寸建立的通用外形，U2/U4使用KiCad HTSSOP包络模型，焊盘按TI PWP0016修订。
+资源可解析不代表已完成实物插接或整机机械干涉检查。
 
 输入MLCC为0805，输出MLCC为1206，电解电容为D10/P5，属于容量、耐压和纹波需求对0603默认值的例外。其余普通阻容为0603英制。
 

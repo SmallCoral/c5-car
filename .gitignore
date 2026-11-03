@@ -1,0 +1,14 @@
+# Local Python and Node tooling.
+__pycache__/
+*.py[cod]
+.venv/
+node_modules/
+
+# Firmware build products and local editor state.
+Firmware/**/build/
+.vscode/
+
+# KiCad local state; keep source, libraries, BOMs and reports.
+*.kicad_prl
+*.lck
+*-backups/

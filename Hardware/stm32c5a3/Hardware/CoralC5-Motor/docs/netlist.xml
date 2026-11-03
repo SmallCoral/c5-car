@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <export version="E">
   <design>
-    <source>D:\dev\qrs\stm32\Coral-C5\Hardware\CoralC5-Motor\CoralC5-Motor.kicad_sch</source>
-    <date>2026-10-27T12:14:06</date>
-    <tool>Eeschema 10.0.5</tool>
+    <source>D:\dev\qrs\stm32\c5-car\Hardware\stm32c5a3\Hardware\CoralC5-Motor\CoralC5-Motor.kicad_sch</source>
+    <date>2026-11-03T11:05:05</date>
+    <tool>Eeschema 10.0.8</tool>
     <textvar name="AUTHOR">SmallCoral</textvar>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
         <title>Coral-C5 双电机扩展板总览</title>
         <company>SmallCoral / CoralC5-Motor</company>
-        <rev>M1</rev>
-        <date>2026-10-27</date>
+        <rev>M1.1</rev>
+        <date>2026-11-03</date>
         <source>CoralC5-Motor.kicad_sch</source>
         <comment number="1" value="原理图设计；实板电流、温升与线束待验证"/>
         <comment number="2" value=""/>
@@ -27,8 +27,8 @@
       <title_block>
         <title>十二伏入口、拨动总开关与五伏降压</title>
         <company>SmallCoral / CoralC5-Motor</company>
-        <rev>M1</rev>
-        <date>2026-10-27</date>
+        <rev>M1.1</rev>
+        <date>2026-11-03</date>
         <source>02_Power.kicad_sch</source>
         <comment number="1" value="原理图设计；实板电流、温升与线束待验证"/>
         <comment number="2" value=""/>
@@ -45,8 +45,8 @@
       <title_block>
         <title>C5-EDGE-3 核心板接口与调试</title>
         <company>SmallCoral / CoralC5-Motor</company>
-        <rev>M1</rev>
-        <date>2026-10-27</date>
+        <rev>M1.1</rev>
+        <date>2026-11-03</date>
         <source>03_Core_Interface.kicad_sch</source>
         <comment number="1" value="原理图设计；实板电流、温升与线束待验证"/>
         <comment number="2" value=""/>
@@ -63,8 +63,8 @@
       <title_block>
         <title>左电机驱动与霍尔编码器</title>
         <company>SmallCoral / CoralC5-Motor</company>
-        <rev>M1</rev>
-        <date>2026-10-27</date>
+        <rev>M1.1</rev>
+        <date>2026-11-03</date>
         <source>04_Left_Motor.kicad_sch</source>
         <comment number="1" value="原理图设计；实板电流、温升与线束待验证"/>
         <comment number="2" value=""/>
@@ -81,8 +81,8 @@
       <title_block>
         <title>右电机驱动与霍尔编码器</title>
         <company>SmallCoral / CoralC5-Motor</company>
-        <rev>M1</rev>
-        <date>2026-10-27</date>
+        <rev>M1.1</rev>
+        <date>2026-11-03</date>
         <source>05_Right_Motor.kicad_sch</source>
         <comment number="1" value="原理图设计；实板电流、温升与线束待验证"/>
         <comment number="2" value=""/>
@@ -707,38 +707,6 @@
         </unit>
       </units>
     </comp>
-    <comp ref="J9">
-      <value>AUX</value>
-      <footprint>Motor:Connector_PinHeader_2.54mm__PinHeader_2x05_P2.54mm_Vertical</footprint>
-      <fields>
-        <field name="Footprint">Motor:Connector_PinHeader_2.54mm__PinHeader_2x05_P2.54mm_Vertical</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Motor" part="Connector_Generic__Conn_02x05_Odd_Even" description="Generic connector, double row, 02x05, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"/>
-      <property name="Sheetname" value="核心板接口"/>
-      <property name="Sheetfile" value="03_Core_Interface.kicad_sch"/>
-      <property name="ki_keywords" value="connector"/>
-      <property name="ki_fp_filters" value="Connector*:*_2x??_*"/>
-      <sheetpath names="/核心板接口/" tstamps="/c813fdd4-725f-5df7-aa4a-68cd15d401cf/"/>
-      <tstamps>ecb3b053-1a27-516b-8655-8a8866e1cc60</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="3"/>
-            <pin num="5"/>
-            <pin num="7"/>
-            <pin num="9"/>
-            <pin num="2"/>
-            <pin num="4"/>
-            <pin num="6"/>
-            <pin num="8"/>
-            <pin num="10"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
     <comp ref="J10">
       <value>RUN / STOP_NC</value>
       <footprint>Motor:Connector_PinHeader_2.54mm__PinHeader_1x02_P2.54mm_Vertical</footprint>
@@ -1207,43 +1175,18 @@
         </unit>
       </units>
     </comp>
-    <comp ref="J3">
-      <value>MOTOR / 5.08</value>
-      <footprint>Motor:TerminalBlock_Phoenix__TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal</footprint>
-      <fields>
-        <field name="MPN">MKDS 1,5/ 2-5,08</field>
-        <field name="Footprint">Motor:TerminalBlock_Phoenix__TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Motor" part="Connector_Generic__Conn_01x02" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
-      <property name="MPN" value="MKDS 1,5/ 2-5,08"/>
-      <property name="Sheetname" value="左电机与编码器"/>
-      <property name="Sheetfile" value="04_Left_Motor.kicad_sch"/>
-      <property name="ki_keywords" value="connector"/>
-      <property name="ki_fp_filters" value="Connector*:*_1x??_*"/>
-      <sheetpath names="/左电机与编码器/" tstamps="/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/"/>
-      <tstamps>19acb80b-3f0e-5908-a256-63db41d17c9d</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
     <comp ref="J4">
-      <value>ENC / XH2.50</value>
-      <footprint>Motor:Connector_JST__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical</footprint>
+      <value>MG513 / XH2.50 / 6P</value>
+      <footprint>Motor:Connector_JST__JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical</footprint>
+      <description>MG513 six-pin motor and AB encoder connector</description>
       <fields>
-        <field name="MPN">B4B-XH-A</field>
-        <field name="Footprint">Motor:Connector_JST__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical</field>
+        <field name="MPN">B6B-XH-A(LF)(SN)</field>
+        <field name="Footprint">Motor:Connector_JST__JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical</field>
         <field name="Datasheet"/>
-        <field name="Description"/>
+        <field name="Description">MG513 six-pin motor and AB encoder connector</field>
       </fields>
-      <libsource lib="Motor" part="ENCODER_4P" description=""/>
-      <property name="MPN" value="B4B-XH-A"/>
+      <libsource lib="Motor" part="MG513_6P" description=""/>
+      <property name="MPN" value="B6B-XH-A(LF)(SN)"/>
       <property name="Sheetname" value="左电机与编码器"/>
       <property name="Sheetfile" value="04_Left_Motor.kicad_sch"/>
       <sheetpath names="/左电机与编码器/" tstamps="/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/"/>
@@ -1255,6 +1198,8 @@
             <pin num="2"/>
             <pin num="3"/>
             <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
           </pins>
         </unit>
       </units>
@@ -1834,43 +1779,18 @@
         </unit>
       </units>
     </comp>
-    <comp ref="J5">
-      <value>MOTOR / 5.08</value>
-      <footprint>Motor:TerminalBlock_Phoenix__TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal</footprint>
-      <fields>
-        <field name="MPN">MKDS 1,5/ 2-5,08</field>
-        <field name="Footprint">Motor:TerminalBlock_Phoenix__TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Motor" part="Connector_Generic__Conn_01x02" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
-      <property name="MPN" value="MKDS 1,5/ 2-5,08"/>
-      <property name="Sheetname" value="右电机与编码器"/>
-      <property name="Sheetfile" value="05_Right_Motor.kicad_sch"/>
-      <property name="ki_keywords" value="connector"/>
-      <property name="ki_fp_filters" value="Connector*:*_1x??_*"/>
-      <sheetpath names="/右电机与编码器/" tstamps="/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/"/>
-      <tstamps>63ea4dba-2b95-5043-af9a-3460ec5f6420</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
     <comp ref="J6">
-      <value>ENC / XH2.50</value>
-      <footprint>Motor:Connector_JST__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical</footprint>
+      <value>MG513 / XH2.50 / 6P</value>
+      <footprint>Motor:Connector_JST__JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical</footprint>
+      <description>MG513 six-pin motor and AB encoder connector</description>
       <fields>
-        <field name="MPN">B4B-XH-A</field>
-        <field name="Footprint">Motor:Connector_JST__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical</field>
+        <field name="MPN">B6B-XH-A(LF)(SN)</field>
+        <field name="Footprint">Motor:Connector_JST__JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical</field>
         <field name="Datasheet"/>
-        <field name="Description"/>
+        <field name="Description">MG513 six-pin motor and AB encoder connector</field>
       </fields>
-      <libsource lib="Motor" part="ENCODER_4P" description=""/>
-      <property name="MPN" value="B4B-XH-A"/>
+      <libsource lib="Motor" part="MG513_6P" description=""/>
+      <property name="MPN" value="B6B-XH-A(LF)(SN)"/>
       <property name="Sheetname" value="右电机与编码器"/>
       <property name="Sheetfile" value="05_Right_Motor.kicad_sch"/>
       <sheetpath names="/右电机与编码器/" tstamps="/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/"/>
@@ -1882,6 +1802,8 @@
             <pin num="2"/>
             <pin num="3"/>
             <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
           </pins>
         </unit>
       </units>
@@ -2275,31 +2197,6 @@
         <pin num="4" name="Pin_4" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="Motor" part="Connector_Generic__Conn_02x05_Odd_Even">
-      <description>Generic connector, double row, 02x05, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)</description>
-      <footprints>
-        <fp>Connector*:*_2x??_*</fp>
-      </footprints>
-      <fields>
-        <field name="Reference">J</field>
-        <field name="Value">Conn_02x05_Odd_Even</field>
-        <field name="Footprint"/>
-        <field name="Datasheet"/>
-        <field name="Description">Generic connector, double row, 02x05, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)</field>
-      </fields>
-      <pins>
-        <pin num="1" name="Pin_1" type="passive"/>
-        <pin num="2" name="Pin_2" type="passive"/>
-        <pin num="3" name="Pin_3" type="passive"/>
-        <pin num="4" name="Pin_4" type="passive"/>
-        <pin num="5" name="Pin_5" type="passive"/>
-        <pin num="6" name="Pin_6" type="passive"/>
-        <pin num="7" name="Pin_7" type="passive"/>
-        <pin num="8" name="Pin_8" type="passive"/>
-        <pin num="9" name="Pin_9" type="passive"/>
-        <pin num="10" name="Pin_10" type="passive"/>
-      </pins>
-    </libpart>
     <libpart lib="Motor" part="CoralC5_Streamline_Socket">
       <fields>
         <field name="Reference">J</field>
@@ -2606,19 +2503,21 @@
         <pin num="2" name="" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="Motor" part="ENCODER_4P">
+    <libpart lib="Motor" part="MG513_6P">
       <fields>
         <field name="Reference">J</field>
-        <field name="Value">ENCODER / XH2.50</field>
-        <field name="Footprint">Motor:Connector_JST__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical</field>
+        <field name="Value">MG513 / XH2.50 / 6P</field>
+        <field name="Footprint">Motor:Connector_JST__JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <pins>
-        <pin num="1" name="GND" type="passive"/>
-        <pin num="2" name="3V3" type="passive"/>
+        <pin num="1" name="M-" type="passive"/>
+        <pin num="2" name="VENC" type="passive"/>
         <pin num="3" name="A" type="passive"/>
         <pin num="4" name="B" type="passive"/>
+        <pin num="5" name="GND" type="passive"/>
+        <pin num="6" name="M+" type="passive"/>
       </pins>
     </libpart>
     <libpart lib="Motor" part="Regulator_Switching__AP63205WU">
@@ -2692,10 +2591,9 @@
       <node ref="C40" pin="1" pintype="passive"/>
       <node ref="J14" pin="A47" pinfunction="A47_/_+3V3_A47" pintype="power_in"/>
       <node ref="J14" pin="B47" pinfunction="B47_/_+3V3_B47" pintype="power_in"/>
-      <node ref="J4" pin="2" pinfunction="3V3_2" pintype="passive"/>
-      <node ref="J6" pin="2" pinfunction="3V3_2" pintype="passive"/>
+      <node ref="J4" pin="2" pinfunction="VENC_2" pintype="passive"/>
+      <node ref="J6" pin="2" pinfunction="VENC_2" pintype="passive"/>
       <node ref="J8" pin="1" pinfunction="Pin_1_1" pintype="passive"/>
-      <node ref="J9" pin="1" pinfunction="Pin_1_1" pintype="passive"/>
       <node ref="R10" pin="1" pintype="passive"/>
       <node ref="R13" pin="2" pintype="passive"/>
       <node ref="R18" pin="1" pintype="passive"/>
@@ -2736,105 +2634,113 @@
       <node ref="U4" pin="3" pinfunction="nSLEEP_3" pintype="input"/>
     </net>
     <net code="4" name="/右电机与编码器/R_DIR" class="Default">
-      <node ref="J14" pin="B29" pinfunction="B29_/_PD11_B29" pintype="bidirectional"/>
+      <node ref="J14" pin="A34" pinfunction="A34_/_PD7_A34" pintype="bidirectional"/>
       <node ref="U4" pin="2" pinfunction="PH/IN2_2" pintype="input"/>
     </net>
     <net code="5" name="/右电机与编码器/R_ENC_A" class="Default">
-      <node ref="J14" pin="B34" pinfunction="B34_/_PC6_B34" pintype="bidirectional"/>
+      <node ref="J14" pin="A33" pinfunction="A33_/_PB3_A33" pintype="bidirectional"/>
       <node ref="U5" pin="6" pinfunction="1Y_6" pintype="output"/>
     </net>
     <net code="6" name="/右电机与编码器/R_ENC_B" class="Default">
-      <node ref="J14" pin="B35" pinfunction="B35_/_PC7_B35" pintype="bidirectional"/>
+      <node ref="J14" pin="A45" pinfunction="A45_/_PA15_A45" pintype="bidirectional"/>
       <node ref="U5" pin="4" pinfunction="2Y_4" pintype="output"/>
     </net>
     <net code="7" name="/右电机与编码器/R_ISENSE" class="Default">
       <node ref="C36" pin="1" pintype="passive"/>
-      <node ref="J14" pin="A3" pinfunction="A3_/_PA1_A3" pintype="bidirectional"/>
+      <node ref="J14" pin="A11" pinfunction="A11_/_PC0_A11" pintype="bidirectional"/>
       <node ref="R35" pin="2" pintype="passive"/>
     </net>
-    <net code="8" name="/右电机与编码器/R_PWM" class="Default">
-      <node ref="J14" pin="B31" pinfunction="B31_/_PD13_B31" pintype="bidirectional"/>
+    <net code="8" name="/右电机与编码器/R_M_OUT1" class="Default">
+      <node ref="J6" pin="6" pinfunction="M+_6" pintype="passive"/>
+      <node ref="U4" pin="8" pinfunction="OUT1_8" pintype="power_out"/>
+    </net>
+    <net code="9" name="/右电机与编码器/R_M_OUT2" class="Default">
+      <node ref="J6" pin="1" pinfunction="M-_1" pintype="passive"/>
+      <node ref="U4" pin="10" pinfunction="OUT2_10" pintype="power_out"/>
+    </net>
+    <net code="10" name="/右电机与编码器/R_PWM" class="Default">
+      <node ref="J14" pin="A27" pinfunction="A27_/_PB8_A27" pintype="bidirectional"/>
       <node ref="U4" pin="1" pinfunction="EN/IN1_1" pintype="input"/>
     </net>
-    <net code="9" name="/右电机与编码器/R_nFAULT" class="Default">
-      <node ref="J14" pin="A20" pinfunction="A20_/_PE5_A20" pintype="bidirectional"/>
+    <net code="11" name="/右电机与编码器/R_nFAULT" class="Default">
+      <node ref="J14" pin="A35" pinfunction="A35_/_PD6_A35" pintype="bidirectional"/>
       <node ref="R33" pin="1" pintype="passive"/>
       <node ref="U4" pin="4" pinfunction="nFAULT_4" pintype="open_collector"/>
     </net>
-    <net code="10" name="/左电机与编码器/L_DIR" class="Default">
-      <node ref="J14" pin="B28" pinfunction="B28_/_PD10_B28" pintype="bidirectional"/>
+    <net code="12" name="/左电机与编码器/L_DIR" class="Default">
+      <node ref="J14" pin="A8" pinfunction="A8_/_PC3_A8" pintype="bidirectional"/>
       <node ref="U2" pin="2" pinfunction="PH/IN2_2" pintype="input"/>
     </net>
-    <net code="11" name="/左电机与编码器/L_ENC_A" class="Default">
-      <node ref="J14" pin="A45" pinfunction="A45_/_PA15_A45" pintype="bidirectional"/>
+    <net code="13" name="/左电机与编码器/L_ENC_A" class="Default">
+      <node ref="J14" pin="A4" pinfunction="A4_/_PA0_A4" pintype="bidirectional"/>
       <node ref="U3" pin="6" pinfunction="1Y_6" pintype="output"/>
     </net>
-    <net code="12" name="/左电机与编码器/L_ENC_B" class="Default">
-      <node ref="J14" pin="A33" pinfunction="A33_/_PB3_A33" pintype="bidirectional"/>
+    <net code="14" name="/左电机与编码器/L_ENC_B" class="Default">
+      <node ref="J14" pin="A3" pinfunction="A3_/_PA1_A3" pintype="bidirectional"/>
       <node ref="U3" pin="4" pinfunction="2Y_4" pintype="output"/>
     </net>
-    <net code="13" name="/左电机与编码器/L_ISENSE" class="Default">
+    <net code="15" name="/左电机与编码器/L_ISENSE" class="Default">
       <node ref="C16" pin="1" pintype="passive"/>
-      <node ref="J14" pin="A4" pinfunction="A4_/_PA0_A4" pintype="bidirectional"/>
+      <node ref="J14" pin="A5" pinfunction="A5_/_PH5_A5" pintype="bidirectional"/>
       <node ref="R15" pin="2" pintype="passive"/>
     </net>
-    <net code="14" name="/左电机与编码器/L_PWM" class="Default">
-      <node ref="J14" pin="B30" pinfunction="B30_/_PD12_B30" pintype="bidirectional"/>
+    <net code="16" name="/左电机与编码器/L_M_OUT1" class="Default">
+      <node ref="J4" pin="6" pinfunction="M+_6" pintype="passive"/>
+      <node ref="U2" pin="8" pinfunction="OUT1_8" pintype="power_out"/>
+    </net>
+    <net code="17" name="/左电机与编码器/L_M_OUT2" class="Default">
+      <node ref="J4" pin="1" pinfunction="M-_1" pintype="passive"/>
+      <node ref="U2" pin="10" pinfunction="OUT2_10" pintype="power_out"/>
+    </net>
+    <net code="18" name="/左电机与编码器/L_PWM" class="Default">
+      <node ref="J14" pin="A9" pinfunction="A9_/_PC2_A9" pintype="bidirectional"/>
       <node ref="U2" pin="1" pinfunction="EN/IN1_1" pintype="input"/>
     </net>
-    <net code="15" name="/左电机与编码器/L_nFAULT" class="Default">
-      <node ref="J14" pin="A21" pinfunction="A21_/_PE4_A21" pintype="bidirectional"/>
+    <net code="19" name="/左电机与编码器/L_nFAULT" class="Default">
+      <node ref="J14" pin="A7" pinfunction="A7_/_PH4_A7" pintype="bidirectional"/>
       <node ref="R13" pin="1" pintype="passive"/>
       <node ref="U2" pin="4" pinfunction="nFAULT_4" pintype="open_collector"/>
     </net>
-    <net code="16" name="/核心板接口/AUX_ADC" class="Default">
+    <net code="20" name="/核心板接口/AUX_ADC" class="Default">
       <node ref="J14" pin="B3" pinfunction="B3_/_PA4_B3" pintype="bidirectional"/>
-      <node ref="J9" pin="7" pinfunction="Pin_7_7" pintype="passive"/>
     </net>
-    <net code="17" name="/核心板接口/AUX_GPIO" class="Default">
+    <net code="21" name="/核心板接口/AUX_GPIO" class="Default">
       <node ref="J14" pin="B4" pinfunction="B4_/_PA5_B4" pintype="bidirectional"/>
-      <node ref="J9" pin="8" pinfunction="Pin_8_8" pintype="passive"/>
     </net>
-    <net code="18" name="/核心板接口/AUX_I2C_SCL" class="Default">
+    <net code="22" name="/核心板接口/AUX_I2C_SCL" class="Default">
       <node ref="J14" pin="A30" pinfunction="A30_/_PB6_A30" pintype="bidirectional"/>
-      <node ref="J9" pin="3" pinfunction="Pin_3_3" pintype="passive"/>
     </net>
-    <net code="19" name="/核心板接口/AUX_I2C_SDA" class="Default">
+    <net code="23" name="/核心板接口/AUX_I2C_SDA" class="Default">
       <node ref="J14" pin="A29" pinfunction="A29_/_PB7_A29" pintype="bidirectional"/>
-      <node ref="J9" pin="4" pinfunction="Pin_4_4" pintype="passive"/>
     </net>
-    <net code="20" name="/核心板接口/AUX_UART_RX" class="Default">
+    <net code="24" name="/核心板接口/AUX_UART_RX" class="Default">
       <node ref="J14" pin="B2" pinfunction="B2_/_PA3_B2" pintype="bidirectional"/>
-      <node ref="J9" pin="6" pinfunction="Pin_6_6" pintype="passive"/>
     </net>
-    <net code="21" name="/核心板接口/AUX_UART_TX" class="Default">
+    <net code="25" name="/核心板接口/AUX_UART_TX" class="Default">
       <node ref="J14" pin="A2" pinfunction="A2_/_PA2_A2" pintype="bidirectional"/>
-      <node ref="J9" pin="5" pinfunction="Pin_5_5" pintype="passive"/>
     </net>
-    <net code="22" name="/核心板接口/MOTOR_EN_REQ" class="Default">
-      <node ref="J14" pin="A23" pinfunction="A23_/_PE2_A23" pintype="bidirectional"/>
+    <net code="26" name="/核心板接口/MOTOR_EN_REQ" class="Default">
+      <node ref="J14" pin="B13" pinfunction="B13_/_PE8_B13" pintype="bidirectional"/>
       <node ref="R6" pin="1" pintype="passive"/>
     </net>
-    <net code="23" name="/核心板接口/NRST" class="Default">
+    <net code="27" name="/核心板接口/NRST" class="Default">
       <node ref="J14" pin="A12" pinfunction="A12_/_NRST_A12" pintype="bidirectional"/>
-      <node ref="J9" pin="10" pinfunction="Pin_10_10" pintype="passive"/>
     </net>
-    <net code="24" name="/核心板接口/SWCLK" class="Default">
+    <net code="28" name="/核心板接口/SWCLK" class="Default">
       <node ref="J14" pin="A46" pinfunction="A46_/_PA14_A46" pintype="bidirectional"/>
       <node ref="J8" pin="3" pinfunction="Pin_3_3" pintype="passive"/>
     </net>
-    <net code="25" name="/核心板接口/SWDIO" class="Default">
+    <net code="29" name="/核心板接口/SWDIO" class="Default">
       <node ref="J14" pin="B43" pinfunction="B43_/_PA13_B43" pintype="bidirectional"/>
       <node ref="J8" pin="2" pinfunction="Pin_2_2" pintype="passive"/>
     </net>
-    <net code="26" name="/核心板接口/V5_SYS" class="Default">
+    <net code="30" name="/核心板接口/V5_SYS" class="Default">
       <node ref="D3" pin="1" pinfunction="K_1" pintype="passive"/>
       <node ref="J14" pin="A48" pinfunction="A48_/_+5V_SYS_A48" pintype="power_in"/>
       <node ref="J14" pin="B48" pinfunction="B48_/_+5V_SYS_B48" pintype="power_in"/>
-      <node ref="J9" pin="9" pinfunction="Pin_9_9" pintype="passive"/>
       <node ref="R5" pin="1" pintype="passive"/>
     </net>
-    <net code="27" name="/输入、总开关与降压/SW_SOURCE" class="Default">
+    <net code="31" name="/输入、总开关与降压/SW_SOURCE" class="Default">
       <node ref="D1" pin="1" pinfunction="K_1" pintype="passive"/>
       <node ref="Q1" pin="1" pinfunction="S_1" pintype="passive"/>
       <node ref="Q1" pin="2" pinfunction="S_2" pintype="passive"/>
@@ -2845,7 +2751,7 @@
       <node ref="R1" pin="2" pintype="passive"/>
       <node ref="SW1" pin="1" pinfunction="A_1" pintype="passive"/>
     </net>
-    <net code="28" name="GND" class="Default">
+    <net code="32" name="GND" class="Default">
       <node ref="C1" pin="2" pintype="passive"/>
       <node ref="C12" pin="2" pintype="passive"/>
       <node ref="C13" pin="2" pintype="passive"/>
@@ -2878,10 +2784,9 @@
       <node ref="J14" pin="A49" pinfunction="A49_/_GND_A49" pintype="power_in"/>
       <node ref="J14" pin="B1" pinfunction="B1_/_GND_B1" pintype="power_in"/>
       <node ref="J14" pin="B49" pinfunction="B49_/_GND_B49" pintype="power_in"/>
-      <node ref="J4" pin="1" pinfunction="GND_1" pintype="passive"/>
-      <node ref="J6" pin="1" pinfunction="GND_1" pintype="passive"/>
+      <node ref="J4" pin="5" pinfunction="GND_5" pintype="passive"/>
+      <node ref="J6" pin="5" pinfunction="GND_5" pintype="passive"/>
       <node ref="J8" pin="4" pinfunction="Pin_4_4" pintype="passive"/>
-      <node ref="J9" pin="2" pinfunction="Pin_2_2" pintype="passive"/>
       <node ref="R11" pin="2" pintype="passive"/>
       <node ref="R12" pin="2" pintype="passive"/>
       <node ref="R14" pin="2" pintype="passive"/>
@@ -2907,60 +2812,44 @@
       <node ref="U4" pin="9" pinfunction="PGND_9" pintype="power_in"/>
       <node ref="U5" pin="2" pinfunction="GND_2" pintype="power_in"/>
     </net>
-    <net code="29" name="Net-(D1-A)" class="Default">
+    <net code="33" name="Net-(D1-A)" class="Default">
       <node ref="D1" pin="2" pinfunction="A_2" pintype="passive"/>
       <node ref="Q1" pin="4" pinfunction="G_4" pintype="input"/>
       <node ref="Q2" pin="4" pinfunction="G_4" pintype="input"/>
       <node ref="R1" pin="1" pintype="passive"/>
       <node ref="SW1" pin="2" pinfunction="B_2" pintype="passive"/>
     </net>
-    <net code="30" name="Net-(D3-A)" class="Default">
+    <net code="34" name="Net-(D3-A)" class="Default">
       <node ref="C5" pin="1" pintype="passive"/>
       <node ref="C6" pin="1" pintype="passive"/>
       <node ref="D3" pin="2" pinfunction="A_2" pintype="passive"/>
       <node ref="L1" pin="2" pinfunction="2_2" pintype="passive"/>
       <node ref="U1" pin="1" pinfunction="FB_1" pintype="input"/>
     </net>
-    <net code="31" name="Net-(D4-A)" class="Default">
+    <net code="35" name="Net-(D4-A)" class="Default">
       <node ref="D4" pin="2" pinfunction="A_2" pintype="passive"/>
       <node ref="R5" pin="2" pintype="passive"/>
     </net>
-    <net code="32" name="Net-(F1-Pad1)" class="Default">
+    <net code="36" name="Net-(F1-Pad1)" class="Default">
       <node ref="F1" pin="1" pintype="passive"/>
       <node ref="J1" pin="1" pintype="passive"/>
     </net>
-    <net code="33" name="Net-(F1-Pad2)" class="Default">
+    <net code="37" name="Net-(F1-Pad2)" class="Default">
       <node ref="F1" pin="2" pintype="passive"/>
       <node ref="Q1" pin="5" pinfunction="D_5" pintype="passive"/>
       <node ref="Q1" pin="6" pinfunction="D_6" pintype="passive"/>
       <node ref="Q1" pin="7" pinfunction="D_7" pintype="passive"/>
       <node ref="Q1" pin="8" pinfunction="D_8" pintype="passive"/>
     </net>
-    <net code="34" name="Net-(J3-Pin_1)" class="Default">
-      <node ref="J3" pin="1" pinfunction="Pin_1_1" pintype="passive"/>
-      <node ref="U2" pin="8" pinfunction="OUT1_8" pintype="power_out"/>
-    </net>
-    <net code="35" name="Net-(J3-Pin_2)" class="Default">
-      <node ref="J3" pin="2" pinfunction="Pin_2_2" pintype="passive"/>
-      <node ref="U2" pin="10" pinfunction="OUT2_10" pintype="power_out"/>
-    </net>
-    <net code="36" name="Net-(J4-A)" class="Default">
+    <net code="38" name="Net-(J4-A)" class="Default">
       <node ref="J4" pin="3" pinfunction="A_3" pintype="passive"/>
       <node ref="R16" pin="1" pintype="passive"/>
       <node ref="R18" pin="2" pintype="passive"/>
     </net>
-    <net code="37" name="Net-(J4-B)" class="Default">
+    <net code="39" name="Net-(J4-B)" class="Default">
       <node ref="J4" pin="4" pinfunction="B_4" pintype="passive"/>
       <node ref="R17" pin="1" pintype="passive"/>
       <node ref="R19" pin="1" pintype="passive"/>
-    </net>
-    <net code="38" name="Net-(J5-Pin_1)" class="Default">
-      <node ref="J5" pin="1" pinfunction="Pin_1_1" pintype="passive"/>
-      <node ref="U4" pin="8" pinfunction="OUT1_8" pintype="power_out"/>
-    </net>
-    <net code="39" name="Net-(J5-Pin_2)" class="Default">
-      <node ref="J5" pin="2" pinfunction="Pin_2_2" pintype="passive"/>
-      <node ref="U4" pin="10" pinfunction="OUT2_10" pintype="power_out"/>
     </net>
     <net code="40" name="Net-(J6-A)" class="Default">
       <node ref="J6" pin="3" pinfunction="A_3" pintype="passive"/>
@@ -3065,179 +2954,179 @@
     <net code="61" name="unconnected-(J1-Pad2)" class="Default">
       <node ref="J1" pin="2" pintype="passive+no_connect"/>
     </net>
-    <net code="62" name="unconnected-(J14A-A5_{slash}_PH5-PadA5)" class="Default">
-      <node ref="J14" pin="A5" pinfunction="A5_/_PH5_A5" pintype="bidirectional+no_connect"/>
-    </net>
-    <net code="63" name="unconnected-(J14A-A6_{slash}_VREF_MCU-PadA6)" class="Default">
+    <net code="62" name="unconnected-(J14A-A6_{slash}_VREF_MCU-PadA6)" class="Default">
       <node ref="J14" pin="A6" pinfunction="A6_/_VREF_MCU_A6" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="64" name="unconnected-(J14A-A7_{slash}_PH4-PadA7)" class="Default">
-      <node ref="J14" pin="A7" pinfunction="A7_/_PH4_A7" pintype="bidirectional+no_connect"/>
-    </net>
-    <net code="65" name="unconnected-(J14A-A8_{slash}_PC3-PadA8)" class="Default">
-      <node ref="J14" pin="A8" pinfunction="A8_/_PC3_A8" pintype="bidirectional+no_connect"/>
-    </net>
-    <net code="66" name="unconnected-(J14A-A9_{slash}_PC2-PadA9)" class="Default">
-      <node ref="J14" pin="A9" pinfunction="A9_/_PC2_A9" pintype="bidirectional+no_connect"/>
-    </net>
-    <net code="67" name="unconnected-(J14A-A10_{slash}_PC1-PadA10)" class="Default">
+    <net code="63" name="unconnected-(J14A-A10_{slash}_PC1-PadA10)" class="Default">
       <node ref="J14" pin="A10" pinfunction="A10_/_PC1_A10" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="68" name="unconnected-(J14A-A11_{slash}_PC0-PadA11)" class="Default">
-      <node ref="J14" pin="A11" pinfunction="A11_/_PC0_A11" pintype="bidirectional+no_connect"/>
-    </net>
-    <net code="69" name="unconnected-(J14A-A13_{slash}_NC-PadA13)" class="Default">
+    <net code="64" name="unconnected-(J14A-A13_{slash}_NC-PadA13)" class="Default">
       <node ref="J14" pin="A13" pinfunction="A13_/_NC_A13" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="70" name="unconnected-(J14A-A14_{slash}_NC-PadA14)" class="Default">
+    <net code="65" name="unconnected-(J14A-A14_{slash}_NC-PadA14)" class="Default">
       <node ref="J14" pin="A14" pinfunction="A14_/_NC_A14" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="71" name="unconnected-(J14A-A15_{slash}_PC15-PadA15)" class="Default">
+    <net code="66" name="unconnected-(J14A-A15_{slash}_PC15-PadA15)" class="Default">
       <node ref="J14" pin="A15" pinfunction="A15_/_PC15_A15" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="72" name="unconnected-(J14A-A16_{slash}_PC14-PadA16)" class="Default">
+    <net code="67" name="unconnected-(J14A-A16_{slash}_PC14-PadA16)" class="Default">
       <node ref="J14" pin="A16" pinfunction="A16_/_PC14_A16" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="73" name="unconnected-(J14A-A17_{slash}_PC13-PadA17)" class="Default">
+    <net code="68" name="unconnected-(J14A-A17_{slash}_PC13-PadA17)" class="Default">
       <node ref="J14" pin="A17" pinfunction="A17_/_PC13_A17" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="74" name="unconnected-(J14A-A18_{slash}_PH15-PadA18)" class="Default">
+    <net code="69" name="unconnected-(J14A-A18_{slash}_PH15-PadA18)" class="Default">
       <node ref="J14" pin="A18" pinfunction="A18_/_PH15_A18" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="75" name="unconnected-(J14A-A19_{slash}_PE6-PadA19)" class="Default">
+    <net code="70" name="unconnected-(J14A-A19_{slash}_PE6-PadA19)" class="Default">
       <node ref="J14" pin="A19" pinfunction="A19_/_PE6_A19" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="76" name="unconnected-(J14A-A22_{slash}_PE3-PadA22)" class="Default">
+    <net code="71" name="unconnected-(J14A-A20_{slash}_PE5-PadA20)" class="Default">
+      <node ref="J14" pin="A20" pinfunction="A20_/_PE5_A20" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="72" name="unconnected-(J14A-A21_{slash}_PE4-PadA21)" class="Default">
+      <node ref="J14" pin="A21" pinfunction="A21_/_PE4_A21" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="73" name="unconnected-(J14A-A22_{slash}_PE3-PadA22)" class="Default">
       <node ref="J14" pin="A22" pinfunction="A22_/_PE3_A22" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="77" name="unconnected-(J14A-A24_{slash}_PE1-PadA24)" class="Default">
+    <net code="74" name="unconnected-(J14A-A23_{slash}_PE2-PadA23)" class="Default">
+      <node ref="J14" pin="A23" pinfunction="A23_/_PE2_A23" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="75" name="unconnected-(J14A-A24_{slash}_PE1-PadA24)" class="Default">
       <node ref="J14" pin="A24" pinfunction="A24_/_PE1_A24" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="78" name="unconnected-(J14A-A25_{slash}_PE0-PadA25)" class="Default">
+    <net code="76" name="unconnected-(J14A-A25_{slash}_PE0-PadA25)" class="Default">
       <node ref="J14" pin="A25" pinfunction="A25_/_PE0_A25" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="79" name="unconnected-(J14A-B5_{slash}_PA6-PadB5)" class="Default">
+    <net code="77" name="unconnected-(J14A-B5_{slash}_PA6-PadB5)" class="Default">
       <node ref="J14" pin="B5" pinfunction="B5_/_PA6_B5" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="80" name="unconnected-(J14A-B6_{slash}_PA7-PadB6)" class="Default">
+    <net code="78" name="unconnected-(J14A-B6_{slash}_PA7-PadB6)" class="Default">
       <node ref="J14" pin="B6" pinfunction="B6_/_PA7_B6" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="81" name="unconnected-(J14A-B7_{slash}_PC4-PadB7)" class="Default">
+    <net code="79" name="unconnected-(J14A-B7_{slash}_PC4-PadB7)" class="Default">
       <node ref="J14" pin="B7" pinfunction="B7_/_PC4_B7" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="82" name="unconnected-(J14A-B8_{slash}_PC5-PadB8)" class="Default">
+    <net code="80" name="unconnected-(J14A-B8_{slash}_PC5-PadB8)" class="Default">
       <node ref="J14" pin="B8" pinfunction="B8_/_PC5_B8" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="83" name="unconnected-(J14A-B9_{slash}_PB0-PadB9)" class="Default">
+    <net code="81" name="unconnected-(J14A-B9_{slash}_PB0-PadB9)" class="Default">
       <node ref="J14" pin="B9" pinfunction="B9_/_PB0_B9" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="84" name="unconnected-(J14A-B10_{slash}_PB1-PadB10)" class="Default">
+    <net code="82" name="unconnected-(J14A-B10_{slash}_PB1-PadB10)" class="Default">
       <node ref="J14" pin="B10" pinfunction="B10_/_PB1_B10" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="85" name="unconnected-(J14A-B11_{slash}_PB2-PadB11)" class="Default">
+    <net code="83" name="unconnected-(J14A-B11_{slash}_PB2-PadB11)" class="Default">
       <node ref="J14" pin="B11" pinfunction="B11_/_PB2_B11" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="86" name="unconnected-(J14A-B12_{slash}_PE7-PadB12)" class="Default">
+    <net code="84" name="unconnected-(J14A-B12_{slash}_PE7-PadB12)" class="Default">
       <node ref="J14" pin="B12" pinfunction="B12_/_PE7_B12" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="87" name="unconnected-(J14A-B13_{slash}_PE8-PadB13)" class="Default">
-      <node ref="J14" pin="B13" pinfunction="B13_/_PE8_B13" pintype="bidirectional+no_connect"/>
-    </net>
-    <net code="88" name="unconnected-(J14A-B14_{slash}_PE9-PadB14)" class="Default">
+    <net code="85" name="unconnected-(J14A-B14_{slash}_PE9-PadB14)" class="Default">
       <node ref="J14" pin="B14" pinfunction="B14_/_PE9_B14" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="89" name="unconnected-(J14A-B15_{slash}_PE10-PadB15)" class="Default">
+    <net code="86" name="unconnected-(J14A-B15_{slash}_PE10-PadB15)" class="Default">
       <node ref="J14" pin="B15" pinfunction="B15_/_PE10_B15" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="90" name="unconnected-(J14A-B16_{slash}_PE11-PadB16)" class="Default">
+    <net code="87" name="unconnected-(J14A-B16_{slash}_PE11-PadB16)" class="Default">
       <node ref="J14" pin="B16" pinfunction="B16_/_PE11_B16" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="91" name="unconnected-(J14A-B17_{slash}_PE12-PadB17)" class="Default">
+    <net code="88" name="unconnected-(J14A-B17_{slash}_PE12-PadB17)" class="Default">
       <node ref="J14" pin="B17" pinfunction="B17_/_PE12_B17" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="92" name="unconnected-(J14A-B18_{slash}_PE13-PadB18)" class="Default">
+    <net code="89" name="unconnected-(J14A-B18_{slash}_PE13-PadB18)" class="Default">
       <node ref="J14" pin="B18" pinfunction="B18_/_PE13_B18" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="93" name="unconnected-(J14A-B19_{slash}_PE14-PadB19)" class="Default">
+    <net code="90" name="unconnected-(J14A-B19_{slash}_PE14-PadB19)" class="Default">
       <node ref="J14" pin="B19" pinfunction="B19_/_PE14_B19" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="94" name="unconnected-(J14A-B20_{slash}_PE15-PadB20)" class="Default">
+    <net code="91" name="unconnected-(J14A-B20_{slash}_PE15-PadB20)" class="Default">
       <node ref="J14" pin="B20" pinfunction="B20_/_PE15_B20" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="95" name="unconnected-(J14A-B21_{slash}_PB10-PadB21)" class="Default">
+    <net code="92" name="unconnected-(J14A-B21_{slash}_PB10-PadB21)" class="Default">
       <node ref="J14" pin="B21" pinfunction="B21_/_PB10_B21" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="96" name="unconnected-(J14A-B22_{slash}_PB12-PadB22)" class="Default">
+    <net code="93" name="unconnected-(J14A-B22_{slash}_PB12-PadB22)" class="Default">
       <node ref="J14" pin="B22" pinfunction="B22_/_PB12_B22" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="97" name="unconnected-(J14A-B23_{slash}_PB13-PadB23)" class="Default">
+    <net code="94" name="unconnected-(J14A-B23_{slash}_PB13-PadB23)" class="Default">
       <node ref="J14" pin="B23" pinfunction="B23_/_PB13_B23" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="98" name="unconnected-(J14A-B24_{slash}_PB14-PadB24)" class="Default">
+    <net code="95" name="unconnected-(J14A-B24_{slash}_PB14-PadB24)" class="Default">
       <node ref="J14" pin="B24" pinfunction="B24_/_PB14_B24" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="99" name="unconnected-(J14A-B25_{slash}_PB15-PadB25)" class="Default">
+    <net code="96" name="unconnected-(J14A-B25_{slash}_PB15-PadB25)" class="Default">
       <node ref="J14" pin="B25" pinfunction="B25_/_PB15_B25" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="100" name="unconnected-(J14B-A26_{slash}_PB9-PadA26)" class="Default">
+    <net code="97" name="unconnected-(J14B-A26_{slash}_PB9-PadA26)" class="Default">
       <node ref="J14" pin="A26" pinfunction="A26_/_PB9_A26" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="101" name="unconnected-(J14B-A27_{slash}_PB8-PadA27)" class="Default">
-      <node ref="J14" pin="A27" pinfunction="A27_/_PB8_A27" pintype="bidirectional+no_connect"/>
-    </net>
-    <net code="102" name="unconnected-(J14B-A28_{slash}_PH2-PadA28)" class="Default">
+    <net code="98" name="unconnected-(J14B-A28_{slash}_PH2-PadA28)" class="Default">
       <node ref="J14" pin="A28" pinfunction="A28_/_PH2_A28" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="103" name="unconnected-(J14B-A31_{slash}_PB5-PadA31)" class="Default">
+    <net code="99" name="unconnected-(J14B-A31_{slash}_PB5-PadA31)" class="Default">
       <node ref="J14" pin="A31" pinfunction="A31_/_PB5_A31" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="104" name="unconnected-(J14B-A32_{slash}_PB4-PadA32)" class="Default">
+    <net code="100" name="unconnected-(J14B-A32_{slash}_PB4-PadA32)" class="Default">
       <node ref="J14" pin="A32" pinfunction="A32_/_PB4_A32" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="105" name="unconnected-(J14B-A34_{slash}_PD7-PadA34)" class="Default">
-      <node ref="J14" pin="A34" pinfunction="A34_/_PD7_A34" pintype="bidirectional+no_connect"/>
-    </net>
-    <net code="106" name="unconnected-(J14B-A35_{slash}_PD6-PadA35)" class="Default">
-      <node ref="J14" pin="A35" pinfunction="A35_/_PD6_A35" pintype="bidirectional+no_connect"/>
-    </net>
-    <net code="107" name="unconnected-(J14B-A36_{slash}_PD5-PadA36)" class="Default">
+    <net code="101" name="unconnected-(J14B-A36_{slash}_PD5-PadA36)" class="Default">
       <node ref="J14" pin="A36" pinfunction="A36_/_PD5_A36" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="108" name="unconnected-(J14B-A37_{slash}_PD4-PadA37)" class="Default">
+    <net code="102" name="unconnected-(J14B-A37_{slash}_PD4-PadA37)" class="Default">
       <node ref="J14" pin="A37" pinfunction="A37_/_PD4_A37" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="109" name="unconnected-(J14B-A38_{slash}_PD3-PadA38)" class="Default">
+    <net code="103" name="unconnected-(J14B-A38_{slash}_PD3-PadA38)" class="Default">
       <node ref="J14" pin="A38" pinfunction="A38_/_PD3_A38" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="110" name="unconnected-(J14B-A39_{slash}_PD2-PadA39)" class="Default">
+    <net code="104" name="unconnected-(J14B-A39_{slash}_PD2-PadA39)" class="Default">
       <node ref="J14" pin="A39" pinfunction="A39_/_PD2_A39" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="111" name="unconnected-(J14B-A40_{slash}_PD1-PadA40)" class="Default">
+    <net code="105" name="unconnected-(J14B-A40_{slash}_PD1-PadA40)" class="Default">
       <node ref="J14" pin="A40" pinfunction="A40_/_PD1_A40" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="112" name="unconnected-(J14B-A41_{slash}_PD0-PadA41)" class="Default">
+    <net code="106" name="unconnected-(J14B-A41_{slash}_PD0-PadA41)" class="Default">
       <node ref="J14" pin="A41" pinfunction="A41_/_PD0_A41" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="113" name="unconnected-(J14B-A42_{slash}_PC12-PadA42)" class="Default">
+    <net code="107" name="unconnected-(J14B-A42_{slash}_PC12-PadA42)" class="Default">
       <node ref="J14" pin="A42" pinfunction="A42_/_PC12_A42" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="114" name="unconnected-(J14B-A43_{slash}_PC11-PadA43)" class="Default">
+    <net code="108" name="unconnected-(J14B-A43_{slash}_PC11-PadA43)" class="Default">
       <node ref="J14" pin="A43" pinfunction="A43_/_PC11_A43" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="115" name="unconnected-(J14B-A44_{slash}_PC10-PadA44)" class="Default">
+    <net code="109" name="unconnected-(J14B-A44_{slash}_PC10-PadA44)" class="Default">
       <node ref="J14" pin="A44" pinfunction="A44_/_PC10_A44" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="116" name="unconnected-(J14B-B26_{slash}_PD8-PadB26)" class="Default">
+    <net code="110" name="unconnected-(J14B-B26_{slash}_PD8-PadB26)" class="Default">
       <node ref="J14" pin="B26" pinfunction="B26_/_PD8_B26" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="117" name="unconnected-(J14B-B27_{slash}_PD9-PadB27)" class="Default">
+    <net code="111" name="unconnected-(J14B-B27_{slash}_PD9-PadB27)" class="Default">
       <node ref="J14" pin="B27" pinfunction="B27_/_PD9_B27" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="118" name="unconnected-(J14B-B32_{slash}_PD14-PadB32)" class="Default">
+    <net code="112" name="unconnected-(J14B-B28_{slash}_PD10-PadB28)" class="Default">
+      <node ref="J14" pin="B28" pinfunction="B28_/_PD10_B28" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="113" name="unconnected-(J14B-B29_{slash}_PD11-PadB29)" class="Default">
+      <node ref="J14" pin="B29" pinfunction="B29_/_PD11_B29" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="114" name="unconnected-(J14B-B30_{slash}_PD12-PadB30)" class="Default">
+      <node ref="J14" pin="B30" pinfunction="B30_/_PD12_B30" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="115" name="unconnected-(J14B-B31_{slash}_PD13-PadB31)" class="Default">
+      <node ref="J14" pin="B31" pinfunction="B31_/_PD13_B31" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="116" name="unconnected-(J14B-B32_{slash}_PD14-PadB32)" class="Default">
       <node ref="J14" pin="B32" pinfunction="B32_/_PD14_B32" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="119" name="unconnected-(J14B-B33_{slash}_PD15-PadB33)" class="Default">
+    <net code="117" name="unconnected-(J14B-B33_{slash}_PD15-PadB33)" class="Default">
       <node ref="J14" pin="B33" pinfunction="B33_/_PD15_B33" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="118" name="unconnected-(J14B-B34_{slash}_PC6-PadB34)" class="Default">
+      <node ref="J14" pin="B34" pinfunction="B34_/_PC6_B34" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="119" name="unconnected-(J14B-B35_{slash}_PC7-PadB35)" class="Default">
+      <node ref="J14" pin="B35" pinfunction="B35_/_PC7_B35" pintype="bidirectional+no_connect"/>
     </net>
     <net code="120" name="unconnected-(J14B-B36_{slash}_PC8-PadB36)" class="Default">
       <node ref="J14" pin="B36" pinfunction="B36_/_PC8_B36" pintype="bidirectional+no_connect"/>

@@ -1,0 +1,35 @@
+{
+  "date": "2026-11-03",
+  "source_commit": "0b6e5ea0e0e913346a675242086204cccd8a8c60",
+  "working_tree_was_dirty": true,
+  "native_netlist_regression": {
+    "pass": true,
+    "before_net_groups": 129,
+    "after_net_groups": 129,
+    "unexpected_groups": [],
+    "missing_groups": []
+  },
+  "erc_regression": {
+    "unchanged": true,
+    "baseline_count": 7,
+    "current_count": 7
+  },
+  "pcb_unchanged": true,
+  "full_contract": {
+    "checks": 467,
+    "passed": 456,
+    "failed": 11,
+    "result": false
+  },
+  "docs": {
+    "files_checked": 16,
+    "local_links_checked": 73,
+    "broken": []
+  },
+  "skills": {
+    "count": 49,
+    "all_installed_and_matching_pinned_source": true
+  },
+  "hardware_measurements_performed": false,
+  "pcb_sync_performed": false
+}

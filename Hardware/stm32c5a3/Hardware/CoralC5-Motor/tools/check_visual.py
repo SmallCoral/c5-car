@@ -1,6 +1,7 @@
 """Inspect native PDF wire/text intersections on every schematic page."""
 from pathlib import Path
 import json
+import hashlib
 import pymupdf as fitz
 ROOT=Path(__file__).resolve().parents[1]
 doc=fitz.open(ROOT/'docs/CoralC5-Motor_Schematic.pdf')
@@ -37,7 +38,7 @@ for index,page in enumerate(doc):
                 text_overlaps.append({'page':index+1,'first':a['text'],'second':b['text']})
     out=ROOT/'docs/previews';out.mkdir(exist_ok=True)
     page.get_pixmap(matrix=fitz.Matrix(1.7,1.7)).save(str(out/f'page-{index+1}.png'))
-report={'pages':len(doc),'wire_text_intersections':len(findings),'text_text_overlaps':len(text_overlaps),'ignored_identical_pdf_search_spans':duplicate_search_spans,'findings':findings,'text_overlaps':text_overlaps}
+report={'date':'2026-11-03','pdf_sha256':hashlib.sha256((ROOT/'docs/CoralC5-Motor_Schematic.pdf').read_bytes()).hexdigest(),'pages':len(doc),'wire_text_intersections':len(findings),'text_text_overlaps':len(text_overlaps),'ignored_identical_pdf_search_spans':duplicate_search_spans,'findings':findings,'text_overlaps':text_overlaps}
 (ROOT/'docs/visual_check.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 print(json.dumps(report,ensure_ascii=False,indent=2))
 raise SystemExit(1 if findings or text_overlaps else 0)
