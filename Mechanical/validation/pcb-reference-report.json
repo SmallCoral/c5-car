@@ -1,0 +1,640 @@
+{
+  "date": "2026-11-05",
+  "kicad_version": "10.0.6",
+  "sources": {
+    "Hardware\\stm32c5a3\\Hardware\\CoralC5-Core\\CoralC5-Core.kicad_pcb": "e63fadf87b410330031f2aeaf74f3fc9fc07dd3ff3f8d41798139486e7b1cf4b",
+    "Hardware\\stm32c5a3\\Hardware\\CoralC5-Motor\\CoralC5-Motor.kicad_pcb": "a27f714d26e780b7383db031d9bc4d767131950b59325e9566416063031ac634"
+  },
+  "original_boards_unchanged": true,
+  "virtual_motor_board_mm": [
+    99,
+    99
+  ],
+  "virtual_origin_pcb_mm": [
+    132.5,
+    80.375
+  ],
+  "included_parts": [
+    {
+      "reference": "R39",
+      "value": "10k",
+      "xy_mm": [
+        124.3,
+        106.325
+      ]
+    },
+    {
+      "reference": "R10",
+      "value": "10k / 1%",
+      "xy_mm": [
+        135.0,
+        60.689646
+      ]
+    },
+    {
+      "reference": "R6",
+      "value": "100R",
+      "xy_mm": [
+        89.79,
+        65.9
+      ]
+    },
+    {
+      "reference": "R32",
+      "value": "1.82k / 1%",
+      "xy_mm": [
+        114.8,
+        101.825
+      ]
+    },
+    {
+      "reference": "R15",
+      "value": "1k",
+      "xy_mm": [
+        129.0,
+        58.939646
+      ]
+    },
+    {
+      "reference": "C10",
+      "value": "22n / 50V",
+      "xy_mm": [
+        123.25,
+        66.425
+      ]
+    },
+    {
+      "reference": "C37",
+      "value": "1n / 16V",
+      "xy_mm": [
+        121.55,
+        101.175
+      ]
+    },
+    {
+      "reference": "C39",
+      "value": "100n / 16V",
+      "xy_mm": [
+        125.8,
+        106.325
+      ]
+    },
+    {
+      "reference": "R36",
+      "value": "1k",
+      "xy_mm": [
+        121.55,
+        102.675
+      ]
+    },
+    {
+      "reference": "R13",
+      "value": "10k",
+      "xy_mm": [
+        135.0,
+        59.189646
+      ]
+    },
+    {
+      "reference": "C32",
+      "value": "100n / 50V",
+      "xy_mm": [
+        125.55,
+        98.1
+      ]
+    },
+    {
+      "reference": "R38",
+      "value": "10k",
+      "xy_mm": [
+        124.3,
+        103.325
+      ]
+    },
+    {
+      "reference": "R37",
+      "value": "1k",
+      "xy_mm": [
+        121.875,
+        107.075
+      ]
+    },
+    {
+      "reference": "C40",
+      "value": "1u / 10V",
+      "xy_mm": [
+        127.3,
+        106.325
+      ]
+    },
+    {
+      "reference": "C33",
+      "value": "470u / 25V",
+      "xy_mm": [
+        131.55,
+        97.325
+      ]
+    },
+    {
+      "reference": "J8",
+      "value": "SWD / XH2.50",
+      "xy_mm": [
+        95.75,
+        110.5
+      ]
+    },
+    {
+      "reference": "R35",
+      "value": "1k",
+      "xy_mm": [
+        117.8,
+        101.825
+      ]
+    },
+    {
+      "reference": "C35",
+      "value": "10n / 16V",
+      "xy_mm": [
+        116.3,
+        101.825
+      ]
+    },
+    {
+      "reference": "C13",
+      "value": "470u / 25V",
+      "xy_mm": [
+        115.0,
+        63.557323
+      ]
+    },
+    {
+      "reference": "R7",
+      "value": "10k",
+      "xy_mm": [
+        89.79,
+        63.39
+      ]
+    },
+    {
+      "reference": "C34",
+      "value": "100n / 16V",
+      "xy_mm": [
+        110.8,
+        98.575
+      ]
+    },
+    {
+      "reference": "U4",
+      "value": "DRV8874PWPR",
+      "xy_mm": [
+        117.9,
+        96.35
+      ]
+    },
+    {
+      "reference": "J14",
+      "value": "C5-EDGE-3 / 98P",
+      "xy_mm": [
+        98.75,
+        75.5
+      ]
+    },
+    {
+      "reference": "C36",
+      "value": "100n / 16V",
+      "xy_mm": [
+        119.3,
+        101.825
+      ]
+    },
+    {
+      "reference": "R19",
+      "value": "10k",
+      "xy_mm": [
+        123.0,
+        54.425
+      ]
+    },
+    {
+      "reference": "R11",
+      "value": "10k / 1%",
+      "xy_mm": [
+        135.0,
+        62.189646
+      ]
+    },
+    {
+      "reference": "C17",
+      "value": "1n / 16V",
+      "xy_mm": [
+        125.25,
+        59.675
+      ]
+    },
+    {
+      "reference": "U3",
+      "value": "SN74LVC2G17DCKR",
+      "xy_mm": [
+        125.75,
+        55.925
+      ]
+    },
+    {
+      "reference": "C38",
+      "value": "1n / 16V",
+      "xy_mm": [
+        118.8,
+        107.075
+      ]
+    },
+    {
+      "reference": "C20",
+      "value": "1u / 10V",
+      "xy_mm": [
+        121.5,
+        57.425
+      ]
+    },
+    {
+      "reference": "C11",
+      "value": "100n / 16V",
+      "xy_mm": [
+        122.5,
+        64.175
+      ]
+    },
+    {
+      "reference": "U2",
+      "value": "DRV8874PWPR",
+      "xy_mm": [
+        128.65,
+        63.964646
+      ]
+    },
+    {
+      "reference": "R30",
+      "value": "10k / 1%",
+      "xy_mm": [
+        110.8,
+        97.075
+      ]
+    },
+    {
+      "reference": "R17",
+      "value": "1k",
+      "xy_mm": [
+        128.5,
+        54.425
+      ]
+    },
+    {
+      "reference": "C30",
+      "value": "22n / 50V",
+      "xy_mm": [
+        123.3,
+        93.825
+      ]
+    },
+    {
+      "reference": "C31",
+      "value": "100n / 16V",
+      "xy_mm": [
+        124.05,
+        96.55
+      ]
+    },
+    {
+      "reference": "R34",
+      "value": "100k",
+      "xy_mm": [
+        110.8,
+        94.075
+      ]
+    },
+    {
+      "reference": "U5",
+      "value": "SN74LVC2G17DCKR",
+      "xy_mm": [
+        121.7125,
+        105.075
+      ]
+    },
+    {
+      "reference": "C19",
+      "value": "100n / 16V",
+      "xy_mm": [
+        120.0,
+        57.425
+      ]
+    },
+    {
+      "reference": "R18",
+      "value": "10k",
+      "xy_mm": [
+        123.0,
+        57.425
+      ]
+    },
+    {
+      "reference": "R31",
+      "value": "10k / 1%",
+      "xy_mm": [
+        110.8,
+        100.075
+      ]
+    },
+    {
+      "reference": "C14",
+      "value": "100n / 16V",
+      "xy_mm": [
+        135.0,
+        63.689646
+      ]
+    },
+    {
+      "reference": "J6",
+      "value": "MG513 / XH2.50 / 6P",
+      "xy_mm": [
+        128.3,
+        111.85
+      ]
+    },
+    {
+      "reference": "J10",
+      "value": "RUN / STOP_NC",
+      "xy_mm": [
+        89.5,
+        72.0
+      ]
+    },
+    {
+      "reference": "C12",
+      "value": "100n / 50V",
+      "xy_mm": [
+        121.0,
+        62.689646
+      ]
+    },
+    {
+      "reference": "C16",
+      "value": "100n / 16V",
+      "xy_mm": [
+        127.5,
+        58.939646
+      ]
+    },
+    {
+      "reference": "J4",
+      "value": "MG513 / XH2.50 / 6P",
+      "xy_mm": [
+        118.75,
+        48.65
+      ]
+    },
+    {
+      "reference": "C15",
+      "value": "10n / 16V",
+      "xy_mm": [
+        130.5,
+        58.939646
+      ]
+    },
+    {
+      "reference": "C18",
+      "value": "1n / 16V",
+      "xy_mm": [
+        130.0,
+        54.45
+      ]
+    },
+    {
+      "reference": "R33",
+      "value": "10k",
+      "xy_mm": [
+        110.8,
+        95.575
+      ]
+    },
+    {
+      "reference": "R16",
+      "value": "1k",
+      "xy_mm": [
+        125.25,
+        58.175
+      ]
+    },
+    {
+      "reference": "R14",
+      "value": "100k",
+      "xy_mm": [
+        135.0,
+        65.75
+      ]
+    },
+    {
+      "reference": "R12",
+      "value": "1.82k / 1%",
+      "xy_mm": [
+        132.0,
+        58.939646
+      ]
+    }
+  ],
+  "outside_parts_not_relocated": [
+    {
+      "reference": "F1",
+      "value": "4A / 32V",
+      "xy_mm": [
+        213.25,
+        66.9
+      ]
+    },
+    {
+      "reference": "J1",
+      "value": "DC-005-5A-2.0",
+      "xy_mm": [
+        213.0,
+        62.75
+      ]
+    },
+    {
+      "reference": "C4",
+      "value": "100n / 16V",
+      "xy_mm": [
+        210.5,
+        101.0
+      ]
+    },
+    {
+      "reference": "D3",
+      "value": "SS34",
+      "xy_mm": [
+        210.5,
+        106.25
+      ]
+    },
+    {
+      "reference": "C3",
+      "value": "100n / 50V",
+      "xy_mm": [
+        210.25,
+        98.4
+      ]
+    },
+    {
+      "reference": "C6",
+      "value": "22u / 10V",
+      "xy_mm": [
+        205.0,
+        124.77
+      ]
+    },
+    {
+      "reference": "D1",
+      "value": "BZT52C12",
+      "xy_mm": [
+        226.75,
+        69.75
+      ]
+    },
+    {
+      "reference": "D2",
+      "value": "SMAJ15A",
+      "xy_mm": [
+        220.0,
+        79.25
+      ]
+    },
+    {
+      "reference": "C1",
+      "value": "470u / 25V",
+      "xy_mm": [
+        213.382323,
+        87.25
+      ]
+    },
+    {
+      "reference": "R2",
+      "value": "100k",
+      "xy_mm": [
+        218.0,
+        73.575
+      ]
+    },
+    {
+      "reference": "C5",
+      "value": "22u / 10V",
+      "xy_mm": [
+        205.0,
+        121.42
+      ]
+    },
+    {
+      "reference": "U1",
+      "value": "AP63205WU-7",
+      "xy_mm": [
+        214.5,
+        111.75
+      ]
+    },
+    {
+      "reference": "R3",
+      "value": "698k / 1%",
+      "xy_mm": [
+        210.75,
+        112.25
+      ]
+    },
+    {
+      "reference": "D4",
+      "value": "LED_GREEN",
+      "xy_mm": [
+        206.5,
+        105.75
+      ]
+    },
+    {
+      "reference": "C2",
+      "value": "10u / 50V",
+      "xy_mm": [
+        211.75,
+        115.25
+      ]
+    },
+    {
+      "reference": "Q2",
+      "value": "AO4407A",
+      "xy_mm": [
+        210.75,
+        78.9
+      ]
+    },
+    {
+      "reference": "SW1",
+      "value": "SS12D07VG4",
+      "xy_mm": [
+        221.9,
+        71.1125
+      ]
+    },
+    {
+      "reference": "R5",
+      "value": "2.2k",
+      "xy_mm": [
+        206.425,
+        104.25
+      ]
+    },
+    {
+      "reference": "R1",
+      "value": "1M",
+      "xy_mm": [
+        218.0,
+        70.575
+      ]
+    },
+    {
+      "reference": "Q1",
+      "value": "AO4407A",
+      "xy_mm": [
+        210.75,
+        72.5
+      ]
+    },
+    {
+      "reference": "L1",
+      "value": "4.7u / 4.5A",
+      "xy_mm": [
+        220.75,
+        109.25
+      ]
+    },
+    {
+      "reference": "R4",
+      "value": "100k / 1%",
+      "xy_mm": [
+        209.25,
+        112.25
+      ]
+    }
+  ],
+  "exports": {
+    "core": {
+      "exit_code": 2,
+      "stderr": "Cannot use VRML models when exporting to non-mesh formats.\nCannot use VRML models when exporting to non-mesh formats.\nCannot use VRML models when exporting to non-mesh formats.",
+      "output": "Mechanical/reference/CoralC5-Core-current.step",
+      "sha256": "0d207a0e70646388ec21999af11f0ed789e4b6092c56631bfd80d2647f7ba72f"
+    },
+    "motor99": {
+      "exit_code": 0,
+      "stderr": "",
+      "output": "Mechanical/reference/CoralC5-Motor99-planning.step",
+      "sha256": "e5dfaab2d72ea88d787ef05e462fea46c940b1e34da530f6e0008a31486c9364"
+    }
+  },
+  "limitations": [
+    "Motor outline is a mechanical planning copy only.",
+    "Outlying layout components are omitted, never moved into the real board.",
+    "KiCad may omit VRML-only models; nonzero exporter status is retained."
+  ]
+}

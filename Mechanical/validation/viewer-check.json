@@ -1,0 +1,37 @@
+{
+  "date": "2026-11-05",
+  "browser_version": "156.0.8078.80",
+  "node_version": "v24.22.1",
+  "parts": 142,
+  "poses": [
+    {
+      "requested": -6,
+      "displayed": -6,
+      "rod_closure_error_mm": 7.105427357601002e-15,
+      "pass": true
+    },
+    {
+      "requested": 0,
+      "displayed": 0,
+      "rod_closure_error_mm": 6.394884621840902e-14,
+      "pass": true
+    },
+    {
+      "requested": 6,
+      "displayed": 6,
+      "rod_closure_error_mm": 4.081757258616412e-14,
+      "pass": true
+    }
+  ],
+  "toggle_pass": true,
+  "animation_moves": true,
+  "javascript_errors": [],
+  "screenshots": [
+    "preview-isometric.png",
+    "preview-interface.png",
+    "preview-top.png",
+    "preview-side.png",
+    "preview-exploded.png"
+  ],
+  "pass": true
+}

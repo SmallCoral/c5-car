@@ -1,0 +1,9 @@
+COMMAND: "C:\Program Files\KiCad\10.0\bin\kicad-cli.exe" pcb export step --force --subst-models --user-origin 90.95x85.5mm --output C:\Users\sc\Documents\Dev\Hardware\c5-car\Mechanical\reference\CoralC5-Core-current.step C:\Users\sc\Documents\Dev\Hardware\c5-car\Hardware\stm32c5a3\Hardware\CoralC5-Core\CoralC5-Core.kicad_pcb
+EXIT_CODE: 2
+STEP file 'C:/Users/sc/Documents/Dev/Hardware/c5-car/Mechanical/reference/CoralC5-Core-current.step' created.
+
+Export time 2.447 s
+
+Cannot use VRML models when exporting to non-mesh formats.
+Cannot use VRML models when exporting to non-mesh formats.
+Cannot use VRML models when exporting to non-mesh formats.

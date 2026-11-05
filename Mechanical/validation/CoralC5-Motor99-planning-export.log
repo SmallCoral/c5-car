@@ -1,0 +1,6 @@
+COMMAND: "C:\Program Files\KiCad\10.0\bin\kicad-cli.exe" pcb export step --force --subst-models --user-origin 132.5x80.375mm --output C:\Users\sc\Documents\Dev\Hardware\c5-car\Mechanical\reference\CoralC5-Motor99-planning.step --component-filter R39,R10,R6,R32,R15,C10,C37,C39,R36,R13,C32,R38,R37,C40,C33,J8,R35,C35,C13,R7,C34,U4,J14,C36,R19,R11,C17,U3,C38,C20,C11,U2,R30,R17,C30,C31,R34,U5,C19,R18,R31,C14,J6,J10,C12,C16,J4,C15,C18,R33,R16,R14,R12 C:\Users\sc\AppData\Local\Temp\coralc5-mechanical-b3kcvfk_\CoralC5-Motor99-VIRTUAL-NOT-FOR-FAB.kicad_pcb
+EXIT_CODE: 0
+STEP file 'C:/Users/sc/Documents/Dev/Hardware/c5-car/Mechanical/reference/CoralC5-Motor99-planning.step' created.
+
+Export time 8.201 s
+

@@ -1,34 +1,176 @@
-# Draft dimensions, not measured hardware. Units: mm unless stated.
-revision: A-concept-2026-11-03
-status: concept_unverified
-coordinates: {x: forward, y: left, z: up}
-chassis:
-  length: 245
-  width: 180
-  wheel_diameter: null # Measure the actual wheels.
-  track_width: null # Set after measuring motor mounts and tyres.
-  motor_mount_pattern: null # Do not infer from another MG513 variant.
-beam:
-  length: 280
-  hinge: one_end
-  hinge_height_above_plate: 90
-  minimum_height_above_plate: 50
-  working_angle_deg: [-3, 3]
-  hard_limit_angle_deg: [-6, 6]
-  ball_diameter_candidates: [10, 18] # Conflicting contest documents.
-  groove_width: null # Resolve using the actual contest ball.
-  crank_radius_adjustment: [10, 25]
-  actuator_link_position_from_hinge: [250, 270]
-optical_gate:
-  channels: 32
-  pitch: 8
-  first_to_last_span: 248
-  optical_height: adjustable_to_ball_equator
-  prototype_channels: 8
-line_sensor:
-  channels: 12
-  pitch: 6
-  ground_clearance: adjustable_and_experimentally_verified
-camera:
-  purpose: live_view_and_recording
-  mounting_height: null # Derive from the purchased lens field of view.
+{
+  "revision": "A-framework-2026-11-05",
+  "status": "concept_framework_not_manufacturing_release",
+  "units": "mm",
+  "coordinates": {
+    "x": "forward",
+    "y": "left",
+    "z": "up"
+  },
+  "chassis": {
+    "length": 245,
+    "width": 180,
+    "thickness": 3,
+    "plate_bottom": 57.78116728206863,
+    "wheel_diameter": 66.36233456413757,
+    "wheel_width": 26.04100685771158,
+    "track_width": 210,
+    "drive_axis_x": 60,
+    "motor_flange_y": 87,
+    "caster_x": -98,
+    "motor_mount_pattern": {
+      "from_reference_cad": true,
+      "x_pitch": 50,
+      "z_pitch": 26.5
+    }
+  },
+  "electronics": {
+    "motor_board_size": [
+      99,
+      99
+    ],
+    "motor_board_thickness": 1.6,
+    "motor_board_center_xy": [
+      43,
+      0
+    ],
+    "board_bottom": 70.78116728206862,
+    "core_outline": [
+      70,
+      51.45
+    ],
+    "core_thickness": 1.6,
+    "core_bottom_above_motor_top": 4,
+    "tft_size": [
+      35,
+      56,
+      3.5
+    ],
+    "tft_center_xy": [
+      -72,
+      -43
+    ],
+    "button_reservations": 4,
+    "hc08_reserved_box": [
+      40,
+      25,
+      12
+    ]
+  },
+  "beam": {
+    "length": 280,
+    "hinge": "one_end",
+    "hinge_x": -115,
+    "hinge_height_above_plate": 90,
+    "minimum_height_above_plate": 50,
+    "working_angle_deg": [
+      -3,
+      3
+    ],
+    "hard_limit_angle_deg": [
+      -6,
+      6
+    ],
+    "initial_angle_deg": 0,
+    "outer_width": 26,
+    "wall_height": 16,
+    "ball_diameter_candidates": [
+      10,
+      18
+    ],
+    "display_ball_diameter": 18,
+    "groove_width": 20,
+    "crank_radius": 20,
+    "crank_radius_adjustment": [
+      10,
+      25
+    ],
+    "rod_length": 60,
+    "actuator_link_position_from_hinge": [
+      250,
+      270
+    ],
+    "link_position": 260,
+    "stepper_center_xz": [
+      98,
+      117.28116728206862
+    ],
+    "stepper_face_y": -58,
+    "stepper_body_reference": [
+      42,
+      34,
+      42
+    ],
+    "link_plane_y": -38,
+    "rod_lateral_offset": 6
+  },
+  "optical_gate": {
+    "channels": 32,
+    "pitch": 8,
+    "first_to_last_span": 248,
+    "optical_height": "adjustable_to_ball_equator",
+    "prototype_channels": 8
+  },
+  "line_sensor": {
+    "channels": 12,
+    "pitch": 6,
+    "ground_clearance": "unverified_concept"
+  },
+  "camera": {
+    "detection_model": "MaixCAM, user confirmed 2026-11-05",
+    "stream_model": "OV2640, project proposal; exact module unconfirmed",
+    "mast_base_xy": [0,72],
+    "head_plane_above_plate": 343,
+    "maixcam_center_xy": [25,0],
+    "maixcam_body_envelope": [65,45,23],
+    "maixcam_pitch_deg": 0,
+    "stream_center_xy": [25,-50],
+    "stream_pitch_deg": 12,
+    "stream_board_envelope": [36,26,1.6],
+    "mechanical_dimensions_status": "Adjustable clamp envelopes; case, lens and hole dimensions not verified",
+    "fov_reference": "GC4653 H81/V51 and OS04A10 H87/V49 from Sipeed; actual lens variant unconfirmed",
+    "height_adjustment_mm": [-60,30]
+  },
+  "assumptions": {
+    "user_confirmed": [
+      "Self-designed vehicle framework",
+      "99 x 99 mm Motor board planning size",
+      "Reuse reference motors",
+      "Do not edit schematics yet",
+      "Reuse EdgeMind reference wheel motors and casters",
+      "Remove protruding short tops from mounting posts"
+    ],
+    "reference_geometry": [
+      "R3X named encoder-motor assemblies reused at 1:1 scale; standalone MG513X STEP retained as a dimension reference",
+      "Core outline and populated geometry from current PCB",
+      "Motor in-envelope parts retain current PCB positions"
+    ],
+    "not_measured": [
+      "210 mm wheel track; tyre geometry is reused from R3X",
+      "42-stepper housing, shaft and mounting references",
+      "Chassis, battery and brackets",
+      "Core insertion depth",
+      "Button count and HC-08 reserved volume",
+      "Battery height is 25 mm only for layout; its 87 x 49 mm footprint follows the supplied locating rim."
+    ],
+    "manufacturing_status": "Concept assembly only; no print-ready or fabrication release",
+    "format_note": "JSON syntax is a YAML-compatible subset, loadable with the FreeCAD Python standard library."
+  },
+  "battery": {
+    "rim_outer_reference": [
+      91,
+      53,
+      3
+    ],
+    "cell_xy_from_rim": [
+      87,
+      49
+    ],
+    "height_placeholder": 25,
+    "center_xy": [
+      -57,
+      25
+    ],
+    "source": "reference/reused-hardware/battery-bay-source.json"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "date": "2026-11-05",
+  "source_revision": "0b4d74d15b1d01e5a56c54c186ac4865f6cf75db",
+  "pass": true,
+  "original_materials": {
+    "files": 840,
+    "changed_or_missing": []
+  },
+  "protected_baseline": {
+    "files": 4222,
+    "changed_or_missing": [],
+    "allowed_document_edits": [
+      "Documentation/README.md",
+      "Documentation/reference/skills.md",
+      "README.md"
+    ]
+  },
+  "inventory": {
+    "rows": 840,
+    "errors": []
+  },
+  "archive_members": {
+    "checked": 279,
+    "errors": [],
+    "crc_checks": {
+      "Documentation/26电赛/21E 送药小车 天猛星M0.zip": "pass",
+      "Documentation/26电赛/22C 双车跟随 天猛星M0.zip": "pass",
+      "Documentation/26电赛/23E 激光跟随 天空星F4.zip": "pass",
+      "Documentation/26电赛/25E 激光打靶 天猛星M0.zip": "pass",
+      "Documentation/26电赛/26H 平衡球装置 天空星F4.zip": "pass"
+    }
+  },
+  "markdown": {
+    "files": 9,
+    "local_links_checked": 70,
+    "broken_links": [],
+    "format_errors": []
+  },
+  "git_diff_check": {
+    "exit_code": 0,
+    "output": ""
+  },
+  "not_performed": [
+    "旧固件编译/烧录",
+    "EXE 或 RAR 内程序运行",
+    "EDA 电路/ERC/DRC 检查",
+    "电气/机械实测",
+    "全部厂家 SDK 与全部应用函数审查"
+  ]
+}

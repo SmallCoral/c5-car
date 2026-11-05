@@ -1,0 +1,66 @@
+{
+  "date": "2026-11-05",
+  "freecad_version": [
+    "1",
+    "1",
+    "4",
+    "20260928 (Git shallow)",
+    "Unknown",
+    "2026/09/28 13:46:34",
+    "(HEAD detached at 4fd3bf320)",
+    "4fd3bf320d9566a27e60069fc8387448aaa3a094"
+  ],
+  "parts": 142,
+  "all_breps_valid": true,
+  "native_expressions_valid": true,
+  "rod_closure_checked_deg": [
+    -6,
+    0,
+    6
+  ],
+  "reference_topology_repairs": [
+    {
+      "name": "LRearRWheel",
+      "method": "OCC tolerance/topology fix, max 0.001 mm",
+      "valid_after": true,
+      "volume_before_mm3": 44133.40741890523,
+      "volume_after_mm3": 44133.40741890523
+    }
+  ],
+  "mount_tops": [
+    {
+      "name": "MotorBracketR",
+      "removed_mm3": 0.0,
+      "top_limit_mm": 57.78116728206863
+    },
+    {
+      "name": "MotorBracketL",
+      "removed_mm3": 0.0,
+      "top_limit_mm": 57.78116728206863
+    }
+  ],
+  "source_boards_modified": false,
+  "notes": [
+    "Model framework, not a production mechanical release.",
+    "Motor99 includes 53 in-envelope current components; 22 layout components remain omitted.",
+    "Core STEP exporter retains code 2 for three VRML-only models."
+  ],
+  "signed_hinge_coordinate_repair": {
+    "property": "App::PropertyDistance",
+    "hinge_x_mm": -115.0,
+    "poses": [
+      {
+        "angle_deg": -6,
+        "closure_mm": 5.695433295429594e-14
+      },
+      {
+        "angle_deg": 0,
+        "closure_mm": 0.0
+      },
+      {
+        "angle_deg": 6,
+        "closure_mm": 6.365209823104904e-14
+      }
+    ]
+  }
+}

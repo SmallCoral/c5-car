@@ -1,0 +1,1458 @@
+{
+  "date": "2026-11-05",
+  "source_revision": "0b4d74d15b1d01e5a56c54c186ac4865f6cf75db",
+  "source_provided_by": "用户同学；提供来源由用户于2026-11-05确认",
+  "inspection": "静态阅读与文件完整性检查；未编译、烧录或实测",
+  "original_inventory": "classmate-materials-files.csv",
+  "original_file_count": 840,
+  "original_total_bytes": 538093310,
+  "duplicate_package": {
+    "first": "Documentation/Emm_V5.0闭环步进资料",
+    "second": "Documentation/step_motor/Emm_V5.0闭环步进资料",
+    "compared_files": 413,
+    "different_files": 0,
+    "retained_both": true
+  },
+  "archives": [
+    {
+      "path": "Documentation/26电赛/21E 送药小车 天猛星M0.zip",
+      "bytes": 33866332,
+      "sha256": "02dfd6e6b190cc940c2f6c703e77ac4686a76bb767c0848ab05c772f3460a6b8",
+      "member_file_count": 2217,
+      "crc_check": "pass",
+      "application_sources": [
+        {
+          "member": "21E 送药小车 M0G3507/21E/3507mode/empty/empty.c",
+          "bytes": 6917,
+          "sha256": "83a03822f07eb8026073232176d8413d5687bf42108f9e6bff8a25ab7981dfb0"
+        },
+        {
+          "member": "21E 送药小车 M0G3507/21E/3507mode/empty/empty.syscfg",
+          "bytes": 10865,
+          "sha256": "33c39c031088e72a0c060f0a0f5b321ad17e09d55cc389d703c3d34d9370f5da"
+        },
+        {
+          "member": "21E 送药小车 M0G3507/21E/3507mode/empty/Hardware/bsp_system.h",
+          "bytes": 399,
+          "sha256": "960857c93d62475fab41cb3806c3d3a9d2183d2fdea13b442f26f29d9e14abd3"
+        },
+        {
+          "member": "21E 送药小车 M0G3507/21E/3507mode/empty/Hardware/key.c",
+          "bytes": 1871,
+          "sha256": "0fdc699301b3939ddb3dd0e974ebe8479664a7b6aff57ef4164e7038c6120f68"
+        },
+        {
+          "member": "21E 送药小车 M0G3507/21E/3507mode/empty/Hardware/key.h",
+          "bytes": 128,
+          "sha256": "b4429d3da78bb67930f6572ffa7feb582dda31335d396865c84ea722bb0b4bd5"
+        },
+        {
+          "member": "21E 送药小车 M0G3507/21E/3507mode/empty/Hardware/menu.c",
+          "bytes": 2832,
+          "sha256": "bbec0bbd5efe6e86898133205d26384431b8a6c39e4600e5729646eedf0aca15"
+        },
+        {
+          "member": "21E 送药小车 M0G3507/21E/3507mode/empty/Hardware/menu.h",
+          "bytes": 274,
+          "sha256": "fc91b4e9557e1c3bd60d2d01c0e1223a87946c99bd6a076715673718ee40b020"
+        },
+        {
+          "member": "21E 送药小车 M0G3507/21E/3507mode/empty/keil/empty_LP_MSPM0G3507_nortos_keil.uvprojx",
+          "bytes": 24693,
+          "sha256": "f225c0129b927b073bcf233e2259ae970143505741e7dc5520eea927f2ce3c72"
+        },
+        {
+          "member": "21E 送药小车 M0G3507/21E/3507mode/empty/Maixcam/Buffer.c",
+          "bytes": 13732,
+          "sha256": "b517da3658d26432e7db57d5411ef67ab5fd07aa886ee1480fb49b8fcfd3a544"
+        },
+        {
+          "member": "21E 送药小车 M0G3507/21E/3507mode/empty/Maixcam/Buffer.h",
+          "bytes": 2959,
+          "sha256": "8453dc48685963539bbbc3d3724262c085d541c5115e2ed8c3a4f85b6764aed6"
+        },
+        {
+          "member": "21E 送药小车 M0G3507/21E/3507mode/empty/Maixcam/Buffer_Do.c",
+          "bytes": 3747,
+          "sha256": "cae8324fa9adaa9cfbba1533e8f52ffdbe1799da2b4ab517dd4cb8f3e937e523"
+        },
+        {
+          "member": "21E 送药小车 M0G3507/21E/3507mode/empty/Maixcam/Buffer_Do.h",
+          "bytes": 270,
+          "sha256": "0d64e245364915b32be786c3accec0ffc400575508e881ffd69fb2a3381b7c98"
+        },
+        {
+          "member": "21E 送药小车 M0G3507/21E/3507mode/empty/Maixcam/maixcam.c",
+          "bytes": 3485,
+          "sha256": "b97e5c5a238b18ad8606e89b694c0f49e07c8a4145237a9827c20768be7b59d2"
+        },
+        {
+          "member": "21E 送药小车 M0G3507/21E/3507mode/empty/Maixcam/maixcam.h",
+          "bytes": 293,
+          "sha256": "a9c2e2a411118095ce454d9301e4b4ad253881b68e0094215e10df104ae0e933"
+        },
+        {
+          "member": "21E 送药小车 M0G3507/21E/3507mode/empty/OLED/OLED.c",
+          "bytes": 7763,
+          "sha256": "07e3440e303a8c691bdee0036813b8126f38c676465fe249f79681d3ed0d78fc"
+        },
+        {
+          "member": "21E 送药小车 M0G3507/21E/3507mode/empty/OLED/OLED.h",
+          "bytes": 598,
+          "sha256": "4ad80cb85b465fa6c7296bba754c91e739fb5ca9001e81e41b086cc99134d6ab"
+        },
+        {
+          "member": "21E 送药小车 M0G3507/21E/3507mode/empty/OLED/oled_Font.h",
+          "bytes": 9572,
+          "sha256": "5b08bcd868c3efd020154c3facbb1a13e98985c6ffc4d521d5e1b9602af9ea1b"
+        },
+        {
+          "member": "21E 送药小车 M0G3507/21E/3507mode/empty/Practice/send.c",
+          "bytes": 17783,
+          "sha256": "3118b3db4cb6bc31403ce8bffc8a661cda3b3ea62223bf560e2c1c854c017281"
+        },
+        {
+          "member": "21E 送药小车 M0G3507/21E/3507mode/empty/Practice/send.h",
+          "bytes": 2059,
+          "sha256": "d4b6b25afeeb2f83cc119d67f560da9caf809c966eda4b34063ecb8b8c7819e2"
+        },
+        {
+          "member": "21E 送药小车 M0G3507/21E/3507mode/empty/System/Delay.c",
+          "bytes": 1034,
+          "sha256": "8da5390ee6e8274b5ac89e86710ec2cd276611030e43b3d1ddc8530647206e1d"
+        },
+        {
+          "member": "21E 送药小车 M0G3507/21E/3507mode/empty/System/Delay.h",
+          "bytes": 177,
+          "sha256": "5445d1777cc79be7ee33d19fba77cf12a9131d584c067dde542f68ca3fca3047"
+        },
+        {
+          "member": "21E 送药小车 M0G3507/21E/3507mode/empty/ti_msp_dl_config.c",
+          "bytes": 14996,
+          "sha256": "b5ff75cf36d7a49fa4bb3944ea13d57f1b24656dc2f1532b6ede939451eeae6b"
+        },
+        {
+          "member": "21E 送药小车 M0G3507/21E/3507mode/empty/ti_msp_dl_config.h",
+          "bytes": 14277,
+          "sha256": "c8880b0c9e3a34a51a2f298cca6ce3e3cc0d1016d80b605c620a0538153a1a3c"
+        },
+        {
+          "member": "21E 送药小车 M0G3507/21E/3507mode/empty/UART/cam.c",
+          "bytes": 819,
+          "sha256": "70bee5efe66813f4969cd692a3264beadba3a428b2dd7306ca912d091469c743"
+        },
+        {
+          "member": "21E 送药小车 M0G3507/21E/3507mode/empty/UART/cam.h",
+          "bytes": 105,
+          "sha256": "1295c583f5d74a0040ff03e69f357f564d9c5042b6732bd2f8e27b9ae0fb5ce2"
+        },
+        {
+          "member": "21E 送药小车 M0G3507/21E/3507mode/empty/UART/JY.c",
+          "bytes": 3202,
+          "sha256": "8168374b2d7bd0269e809a15428f588d987428926764eba4ca1db1d0e6474be5"
+        },
+        {
+          "member": "21E 送药小车 M0G3507/21E/3507mode/empty/UART/JY.h",
+          "bytes": 191,
+          "sha256": "6207ab47ffc7a45cb95bf2c38d5cef6ad1ef7c4b1d801641d4172f01b95cd02d"
+        },
+        {
+          "member": "21E 送药小车 M0G3507/21E/3507mode/empty/XunJi/Motor.c",
+          "bytes": 1687,
+          "sha256": "7528cd647e29dcce11b15737542603fa6a075529740a5c4b0717cab0da99503d"
+        },
+        {
+          "member": "21E 送药小车 M0G3507/21E/3507mode/empty/XunJi/Motor.h",
+          "bytes": 150,
+          "sha256": "a2f62bbdaf74519a272b3e05751e20d989f82a02dfaa78afc6f4506324186ca3"
+        },
+        {
+          "member": "21E 送药小车 M0G3507/21E/3507mode/empty/XunJi/Xunji.c",
+          "bytes": 5778,
+          "sha256": "441ec1f935d208387394ceb302cf21f2ae5d7e453659bc573b92d8fe7142ad37"
+        },
+        {
+          "member": "21E 送药小车 M0G3507/21E/3507mode/empty/XunJi/Xunji.h",
+          "bytes": 790,
+          "sha256": "65c6d109b2745f6c664698e08b75e7072216789b770194c6e62c3d80d6f21ba8"
+        }
+      ]
+    },
+    {
+      "path": "Documentation/26电赛/22C 双车跟随 天猛星M0.zip",
+      "bytes": 70702738,
+      "sha256": "d3c43279ae53aae943fea1fdbf6890effe79d45fbefd771abb513ebe6682a67d",
+      "member_file_count": 4448,
+      "crc_check": "pass",
+      "application_sources": [
+        {
+          "member": "22C 双车跟随 M0G3507/follow/22C_dicheng/OLED/3507modeOLED/3507mode/empty/app/Buzzer.c",
+          "bytes": 326,
+          "sha256": "1c44ec3d20e7b39275f9c95f91c69acbf07cf3efe64ff7f028b13d81da6d3598"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/follow/22C_dicheng/OLED/3507modeOLED/3507mode/empty/app/Buzzer.h",
+          "bytes": 159,
+          "sha256": "3755a5b96f88a08297fbefa822b19b4fb7677bb6c022483a47183be7618108f6"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/follow/22C_dicheng/OLED/3507modeOLED/3507mode/empty/app/chaos.c",
+          "bytes": 1824,
+          "sha256": "214ba294a562c97765297b745139546cc0a159eabb272510d696c667253af8ec"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/follow/22C_dicheng/OLED/3507modeOLED/3507mode/empty/app/chaos.h",
+          "bytes": 189,
+          "sha256": "8e4fdb8449586f752d55d34c0445bec95b7d244235bf82920eb06f211f7f673e"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/follow/22C_dicheng/OLED/3507modeOLED/3507mode/empty/app/encoder.c",
+          "bytes": 1525,
+          "sha256": "cd5c7068a99e37f9f5b1166df9dc13249b6a4efad84d320d23379e2fbd88bd4e"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/follow/22C_dicheng/OLED/3507modeOLED/3507mode/empty/app/encoder.h",
+          "bytes": 229,
+          "sha256": "17f8cef932726fe5cb2f8cad98a3920067d6b4d1574aada58dc277d3ab6f7832"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/follow/22C_dicheng/OLED/3507modeOLED/3507mode/empty/app/headfile.h",
+          "bytes": 443,
+          "sha256": "a86bb8e3e2772c135582cbf80f60387a94556c30dbb816ead4bd9ef087cbd7c7"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/follow/22C_dicheng/OLED/3507modeOLED/3507mode/empty/app/Key.c",
+          "bytes": 2104,
+          "sha256": "b4c3a5fd630ace52e9be13807f3dc1ca4e641df9cf2ce04a0388a92639473c23"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/follow/22C_dicheng/OLED/3507modeOLED/3507mode/empty/app/Key.h",
+          "bytes": 335,
+          "sha256": "9f934f70c54abe9ee91f369d1c5dbf77db37a70bad6aa93e3a7b69cf21805bbe"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/follow/22C_dicheng/OLED/3507modeOLED/3507mode/empty/app/led.c",
+          "bytes": 1602,
+          "sha256": "d17f5f18637dadddab3e0b1b3ecbcb28cdf2694f109ab6add88b11e0cdeeeac7"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/follow/22C_dicheng/OLED/3507modeOLED/3507mode/empty/app/led.h",
+          "bytes": 527,
+          "sha256": "d422e307aeaf10b393205d10834b44f702eb45bc8a862f31d2a9243cbc041683"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/follow/22C_dicheng/OLED/3507modeOLED/3507mode/empty/app/menu.c",
+          "bytes": 4178,
+          "sha256": "3a6cb082d486ddfe6ca7dfea202879247da2a3672c3504f560472fd830dc4f4c"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/follow/22C_dicheng/OLED/3507modeOLED/3507mode/empty/app/menu.h",
+          "bytes": 252,
+          "sha256": "e845a39d2654bcf5868d795a45761d576b77ccb7a8913dcc95653bce3381b263"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/follow/22C_dicheng/OLED/3507modeOLED/3507mode/empty/app/Motor.c",
+          "bytes": 2515,
+          "sha256": "8d6c26822327dee5b78836c6f1885ec3f22fabf2a99278b3630ab3cb0571d313"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/follow/22C_dicheng/OLED/3507modeOLED/3507mode/empty/app/Motor.h",
+          "bytes": 940,
+          "sha256": "cfd8efbee2adcea06737be5b95070bcff318e150a65f5d23e956783f1683a41d"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/follow/22C_dicheng/OLED/3507modeOLED/3507mode/empty/app/pid.c",
+          "bytes": 2766,
+          "sha256": "d96a69de46ffd9867a2020bd676e3c7a3586457b31dfe7dbe96e0e31a68515c8"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/follow/22C_dicheng/OLED/3507modeOLED/3507mode/empty/app/pid.h",
+          "bytes": 761,
+          "sha256": "23ddea9fe0fb7ed32deac7788c4cb71e0f83d49322b172150f6c77b0d845bf4b"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/follow/22C_dicheng/OLED/3507modeOLED/3507mode/empty/app/Timer.c",
+          "bytes": 1643,
+          "sha256": "af1f1f07767a11c5e6a92afd363f50db4eaa37c4ccb1c58bd9700c69c28c63d3"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/follow/22C_dicheng/OLED/3507modeOLED/3507mode/empty/app/Timer.h",
+          "bytes": 204,
+          "sha256": "257da239498e72bb1fc3af37a4ac900a8ac6ba762ed8592deccc052708d034ce"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/follow/22C_dicheng/OLED/3507modeOLED/3507mode/empty/app/xunji.c",
+          "bytes": 8853,
+          "sha256": "548f90f788008fd5a03031ae8b46baa45b2d130c030bc4e70f8cf457445db224"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/follow/22C_dicheng/OLED/3507modeOLED/3507mode/empty/app/xunji.h",
+          "bytes": 620,
+          "sha256": "7ee7f6dee237bc0be3b9a62ee0514818973fb8f04d0cb920d0272fc9e79fd5b8"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/follow/22C_dicheng/OLED/3507modeOLED/3507mode/empty/empty.c",
+          "bytes": 3030,
+          "sha256": "22aab1b674c9a245a8bebe817fb96fc8b1858b4fc92bc7fd2201e73a5058ea67"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/follow/22C_dicheng/OLED/3507modeOLED/3507mode/empty/empty.syscfg",
+          "bytes": 13361,
+          "sha256": "b0b2096ff806be4ae339674e915a3a0b323a1025c7c5f0338fcefd8932f416f9"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/follow/22C_dicheng/OLED/3507modeOLED/3507mode/empty/keil/empty_LP_MSPM0G3507_nortos_keil.uvprojx",
+          "bytes": 24298,
+          "sha256": "249878243211f321bc7efb188af10580e275b40bddd7bbbd6e32627ee6f26031"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/follow/22C_dicheng/OLED/3507modeOLED/3507mode/empty/keil/RTE_Components.h",
+          "bytes": 330,
+          "sha256": "b20351ff5db79d5906d8493948b12efcb721f14c5380f32460ac69738aa7293a"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/follow/22C_dicheng/OLED/3507modeOLED/3507mode/empty/OLED/OLED.c",
+          "bytes": 52324,
+          "sha256": "9902b6633e28e506bc2dfd3fd79701f1be0cb5ff4f53cfc897af36e51635c49e"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/follow/22C_dicheng/OLED/3507modeOLED/3507mode/empty/OLED/OLED.h",
+          "bytes": 3074,
+          "sha256": "5cbf36662c36f8c403ec0f31afeb3330d934c0ed0f28e0f9eedd9147b7c0d8c7"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/follow/22C_dicheng/OLED/3507modeOLED/3507mode/empty/OLED/OLED_Data.c",
+          "bytes": 16135,
+          "sha256": "e71e6c689ace2b134d1605a9a1541d9de71e7f51d9373a51d7ba033cca4a7867"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/follow/22C_dicheng/OLED/3507modeOLED/3507mode/empty/OLED/OLED_Data.h",
+          "bytes": 1087,
+          "sha256": "edd4de3e8beb955ec0b5db7ae17a9527a5f9161d1eff5fa8460cb20774c2ea9d"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/follow/22C_dicheng/OLED/3507modeOLED/3507mode/empty/System/Delay.c",
+          "bytes": 973,
+          "sha256": "ca082f339462ba0fd4fa40e846d8bf51dbb0a2bd60d1af6efdf70651626e8987"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/follow/22C_dicheng/OLED/3507modeOLED/3507mode/empty/System/Delay.h",
+          "bytes": 177,
+          "sha256": "5445d1777cc79be7ee33d19fba77cf12a9131d584c067dde542f68ca3fca3047"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/follow/22C_dicheng/OLED/3507modeOLED/3507mode/empty/ti_msp_dl_config.c",
+          "bytes": 17676,
+          "sha256": "e1a3d352788d832621bb41f289a6ac762873096be22b1f1072e104eb84d45742"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/follow/22C_dicheng/OLED/3507modeOLED/3507mode/empty/ti_msp_dl_config.h",
+          "bytes": 16332,
+          "sha256": "0eed95a65ca531be0096ccdf6f734e624b324820fe68ba45563620628f23b9a3"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/Head/empty/empty.c",
+          "bytes": 4215,
+          "sha256": "4a5a226d60fcbd22bf6a78934abc3d6777eb1f8b0627280233ffb7ffca2dd646"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/Head/empty/empty.syscfg",
+          "bytes": 14866,
+          "sha256": "735c3391fcab987463dfda26a3a6b29d12ad6ca43a91c82cac9be7adfef064be"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/Head/empty/Hardware/bsp_system.h",
+          "bytes": 438,
+          "sha256": "7743717aa1d218f404cac97ecf09cb55173b72782aa580836afd56775af3e552"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/Head/empty/Hardware/chaos.c",
+          "bytes": 329,
+          "sha256": "c761a36d3060f9ad29b2b40d5f774e84f3dc6539cc033c9c6d10ff3420e0db03"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/Head/empty/Hardware/chaos.h",
+          "bytes": 145,
+          "sha256": "be9382fd47868e7efc5c2b50a7407f0fbaaaf6a4222a47792a2e9f22124e31de"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/Head/empty/Hardware/key.c",
+          "bytes": 1871,
+          "sha256": "0fdc699301b3939ddb3dd0e974ebe8479664a7b6aff57ef4164e7038c6120f68"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/Head/empty/Hardware/key.h",
+          "bytes": 128,
+          "sha256": "b4429d3da78bb67930f6572ffa7feb582dda31335d396865c84ea722bb0b4bd5"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/Head/empty/Hardware/menu.c",
+          "bytes": 2722,
+          "sha256": "e38d857428d89701145b603c204ba7f151fc0e0ac8fa2d1c8a0720febca456f6"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/Head/empty/Hardware/menu.h",
+          "bytes": 274,
+          "sha256": "fc91b4e9557e1c3bd60d2d01c0e1223a87946c99bd6a076715673718ee40b020"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/Head/empty/keil/empty_LP_MSPM0G3507_nortos_keil.uvprojx",
+          "bytes": 23651,
+          "sha256": "d718bc5b4d0b6c5de40edae2da9506aa58effc027af542c21b8e18c5e4abf0c1"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/Head/empty/keil/RTE_Components.h",
+          "bytes": 330,
+          "sha256": "b20351ff5db79d5906d8493948b12efcb721f14c5380f32460ac69738aa7293a"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/Head/empty/OLED/OLED.c",
+          "bytes": 7763,
+          "sha256": "07e3440e303a8c691bdee0036813b8126f38c676465fe249f79681d3ed0d78fc"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/Head/empty/OLED/OLED.h",
+          "bytes": 598,
+          "sha256": "4ad80cb85b465fa6c7296bba754c91e739fb5ca9001e81e41b086cc99134d6ab"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/Head/empty/OLED/oled_Font.h",
+          "bytes": 9572,
+          "sha256": "5b08bcd868c3efd020154c3facbb1a13e98985c6ffc4d521d5e1b9602af9ea1b"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/Head/empty/System/Delay.c",
+          "bytes": 973,
+          "sha256": "ca082f339462ba0fd4fa40e846d8bf51dbb0a2bd60d1af6efdf70651626e8987"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/Head/empty/System/Delay.h",
+          "bytes": 177,
+          "sha256": "5445d1777cc79be7ee33d19fba77cf12a9131d584c067dde542f68ca3fca3047"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/Head/empty/ti_msp_dl_config.c",
+          "bytes": 19821,
+          "sha256": "db6af6c3e228840107fc145b21b228cd0417099c650e299360393db70a693a54"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/Head/empty/ti_msp_dl_config.h",
+          "bytes": 17225,
+          "sha256": "64cefcdd6e0720d79eb63a40c2337990141318a08cdcd80c5e1f560bf1d9981c"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/Head/empty/XunJi/Encode.c",
+          "bytes": 1640,
+          "sha256": "538fce80faf2e709281eb4de298fec17c521512ee7f86c24796c941739611b5d"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/Head/empty/XunJi/Encode.h",
+          "bytes": 313,
+          "sha256": "9cb35db53a970081234e3ccda1af0ad18e0c1fe891bf85dec05aa78384dea996"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/Head/empty/XunJi/Motor.c",
+          "bytes": 1713,
+          "sha256": "fecc593e8412f09f447c679eab0bf7481c6cb4c7bfad94369d27b10e3afe4b98"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/Head/empty/XunJi/Motor.h",
+          "bytes": 179,
+          "sha256": "ea8ea88c223f9f9b5b8b8441628055009e9d5cfbd059e12b6c71c0ab1845b654"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/Head/empty/XunJi/practice.c",
+          "bytes": 4116,
+          "sha256": "a7c91f075fd60a66296f47a02375b87c780930928d9f2969b0ad362b37614eea"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/Head/empty/XunJi/practice.h",
+          "bytes": 937,
+          "sha256": "6ac66fc77de1321d470adb9571cd4f2f46057705f0fbd2fbaa6192ad4c392c70"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/Head/empty/XunJi/Servo.c",
+          "bytes": 317,
+          "sha256": "4c91063b929e91f95b98c020898c6e6380bd75642652ec992e82b4350cb31a11"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/Head/empty/XunJi/Servo.h",
+          "bytes": 145,
+          "sha256": "766dc0cab96b81a986033df10ef0b4a7dbeaafd380e3eb63a1e20bf3b33f1473"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/Head/empty/XunJi/Xunji.c",
+          "bytes": 4763,
+          "sha256": "6d05d09fcfd181dd6569eef35dfe80e8dedf15f12137c3a7d19e32ba8b65a310"
+        },
+        {
+          "member": "22C 双车跟随 M0G3507/Head/empty/XunJi/Xunji.h",
+          "bytes": 618,
+          "sha256": "c8250677553fc245aea6c56589f7779b94e6e976632e52769e8fb9b4001b0d88"
+        }
+      ]
+    },
+    {
+      "path": "Documentation/26电赛/23E 激光跟随 天空星F4.zip",
+      "bytes": 51152728,
+      "sha256": "fd514ff594ee51e976de7a1f579ba1f90ccb68ac33688006a3edd215463385d0",
+      "member_file_count": 4144,
+      "crc_check": "pass",
+      "application_sources": [
+        {
+          "member": "23E 激光跟随 F407/23E_F4_Read/23E_F4.ioc",
+          "bytes": 10690,
+          "sha256": "606c793241b95c785ec5cb91f7144bbf94034c7b1e2bcc73efbf5bfdde146608"
+        },
+        {
+          "member": "23E 激光跟随 F407/23E_F4_Read/Core/Inc/dma.h",
+          "bytes": 1393,
+          "sha256": "7cf6f7450a29d26303cbba5a3ca8c6cb24a02635d6a5ba4d05141fdfc75c4c49"
+        },
+        {
+          "member": "23E 激光跟随 F407/23E_F4_Read/Core/Inc/gpio.h",
+          "bytes": 1313,
+          "sha256": "e2d62f964a0b7f238384ed6a20a181d09df9647240a268dc547acf5b35099f74"
+        },
+        {
+          "member": "23E 激光跟随 F407/23E_F4_Read/Core/Inc/main.h",
+          "bytes": 2003,
+          "sha256": "e07a43ebc634ce451e2f80884378d112e048e06235fb49fdc2d9a2b5057d28c5"
+        },
+        {
+          "member": "23E 激光跟随 F407/23E_F4_Read/Core/Inc/stm32f4xx_hal_conf.h",
+          "bytes": 20036,
+          "sha256": "3f07f2a4f0412b30e9260d23b6678eb3459ed521f86378b11720bd5fdd699b45"
+        },
+        {
+          "member": "23E 激光跟随 F407/23E_F4_Read/Core/Inc/stm32f4xx_it.h",
+          "bytes": 2198,
+          "sha256": "127280f18c2ccdad71fe85ca644bd1e452f855eda9810a6c712c1c25ca6f4526"
+        },
+        {
+          "member": "23E 激光跟随 F407/23E_F4_Read/Core/Inc/tim.h",
+          "bytes": 1521,
+          "sha256": "5607ab0f9fee9868c463e57f7d211c05879b043229dc76ba2d636502ac145639"
+        },
+        {
+          "member": "23E 激光跟随 F407/23E_F4_Read/Core/Inc/usart.h",
+          "bytes": 1568,
+          "sha256": "f0ae01e55c46ccc35720699dbf71f87bf59d6674ee7f6d68b6368f50ee32182e"
+        },
+        {
+          "member": "23E 激光跟随 F407/23E_F4_Read/Core/Src/dma.c",
+          "bytes": 1919,
+          "sha256": "81e9f4359c59118460a57af48a479fa2aaac91d4d16fc618fb9017bccac4fd02"
+        },
+        {
+          "member": "23E 激光跟随 F407/23E_F4_Read/Core/Src/gpio.c",
+          "bytes": 3347,
+          "sha256": "bb055afaf3888464e2e3ae46f039d52ba7832a3accf2f82657aac525315379ac"
+        },
+        {
+          "member": "23E 激光跟随 F407/23E_F4_Read/Core/Src/main.c",
+          "bytes": 9581,
+          "sha256": "a99e4ec64ee2091a7b232be1080cb85914175d390b4cddcc6a36d95cbd3e2d75"
+        },
+        {
+          "member": "23E 激光跟随 F407/23E_F4_Read/Core/Src/stm32f4xx_hal_msp.c",
+          "bytes": 2288,
+          "sha256": "99e2c0c2e05063f19b367339b6ff9ad2ff4608c46db9c1a3a4dd290262273d17"
+        },
+        {
+          "member": "23E 激光跟随 F407/23E_F4_Read/Core/Src/stm32f4xx_it.c",
+          "bytes": 8261,
+          "sha256": "f9ac9da346831142a7aa1f1bf74c074213083140178832c5a616bc15d124b1b8"
+        },
+        {
+          "member": "23E 激光跟随 F407/23E_F4_Read/Core/Src/system_stm32f4xx.c",
+          "bytes": 26695,
+          "sha256": "a31929eab936ac98db060c18917118acf79dc96e1f03ed4b57d614535dd06d70"
+        },
+        {
+          "member": "23E 激光跟随 F407/23E_F4_Read/Core/Src/tim.c",
+          "bytes": 8599,
+          "sha256": "c01b785e192d339f6faac7db240a82b7abbe1c317af0efd42e73a1a5f079de5a"
+        },
+        {
+          "member": "23E 激光跟随 F407/23E_F4_Read/Core/Src/usart.c",
+          "bytes": 13225,
+          "sha256": "dee9a8a6ca139f55eefd2a3e8cae34bc8b6be75b9f6f21719cb3b1bb4f3fbfd5"
+        },
+        {
+          "member": "23E 激光跟随 F407/23E_F4_Read/MDK-ARM/23E_F4.uvprojx",
+          "bytes": 37474,
+          "sha256": "ed6838b43b48f8b669e56c0bbed1b0b878e28abdd92bbe28bcfcd36c45b4ca08"
+        },
+        {
+          "member": "23E 激光跟随 F407/23E_F4_Read/MDK-ARM/Hardware/bsp_system.h",
+          "bytes": 521,
+          "sha256": "773ac1cbedd22bd74da8d1e863d012af7903eec461392b0a889c3ea955fa9990"
+        },
+        {
+          "member": "23E 激光跟随 F407/23E_F4_Read/MDK-ARM/Hardware/key.c",
+          "bytes": 1942,
+          "sha256": "a22e18ecdc7491ead337640cc5980ede35decf5dea2a8f6421215108554e2dd2"
+        },
+        {
+          "member": "23E 激光跟随 F407/23E_F4_Read/MDK-ARM/Hardware/key.h",
+          "bytes": 149,
+          "sha256": "70767fa27643acb26a03819c9388b33cdac7907252385395b0f9688232473dfa"
+        },
+        {
+          "member": "23E 激光跟随 F407/23E_F4_Read/MDK-ARM/Hardware/menu.c",
+          "bytes": 3588,
+          "sha256": "2c67a1caae6aefa3aa97a0d2dc4d38a5d676fd1157df7e49f04022cdc0df7af6"
+        },
+        {
+          "member": "23E 激光跟随 F407/23E_F4_Read/MDK-ARM/Hardware/menu.h",
+          "bytes": 207,
+          "sha256": "82e7268d78d76d92730ad04552106c592f28978f3556f31f5a151d45054139df"
+        },
+        {
+          "member": "23E 激光跟随 F407/23E_F4_Read/MDK-ARM/Hardware/motor_X.c",
+          "bytes": 11127,
+          "sha256": "3e3fe7d03ae8930825290a28aaa729a7188960ee4b5a7f815b66d2cfccabec3f"
+        },
+        {
+          "member": "23E 激光跟随 F407/23E_F4_Read/MDK-ARM/Hardware/motor_X.h",
+          "bytes": 1725,
+          "sha256": "a5fc5aa16a30d7b0bb47fcc6715605efa2dfd7eb137743559dcf4dba8e3b0961"
+        },
+        {
+          "member": "23E 激光跟随 F407/23E_F4_Read/MDK-ARM/Hardware/motor_Y.c",
+          "bytes": 5992,
+          "sha256": "e30d9ceb9d0889dd0e357c7dff83a65a4aca41e1d0435616e9692c81d6aec36c"
+        },
+        {
+          "member": "23E 激光跟随 F407/23E_F4_Read/MDK-ARM/Hardware/motor_Y.h",
+          "bytes": 593,
+          "sha256": "cd5cd60bd5130713026a4883af3c35a14795ca1242d6b6410771e9bcf6b0415f"
+        },
+        {
+          "member": "23E 激光跟随 F407/23E_F4_Read/MDK-ARM/Hardware/oled.c",
+          "bytes": 7646,
+          "sha256": "9bab33380f7c89a334009833a66f3617996318005f4b2f7d2d91182ac8936350"
+        },
+        {
+          "member": "23E 激光跟随 F407/23E_F4_Read/MDK-ARM/Hardware/oled.h",
+          "bytes": 590,
+          "sha256": "680ec130cce5bc182c5c73976d00f8f885812340efe58d7b722061c387bed68d"
+        },
+        {
+          "member": "23E 激光跟随 F407/23E_F4_Read/MDK-ARM/Hardware/oled_Font.h",
+          "bytes": 9188,
+          "sha256": "0acfdebad543858eb43edeec426170b8f1c7fec6a4a18690e7af898809f1b30f"
+        },
+        {
+          "member": "23E 激光跟随 F407/23E_F4_Read/MDK-ARM/Maxicam/Buffer.c",
+          "bytes": 13732,
+          "sha256": "b517da3658d26432e7db57d5411ef67ab5fd07aa886ee1480fb49b8fcfd3a544"
+        },
+        {
+          "member": "23E 激光跟随 F407/23E_F4_Read/MDK-ARM/Maxicam/Buffer.h",
+          "bytes": 2833,
+          "sha256": "7e2c8f2a3fa8c3a66a8b557525fcf0485afc3893ff4224ad402d00e8dc56663c"
+        },
+        {
+          "member": "23E 激光跟随 F407/23E_F4_Read/MDK-ARM/Maxicam/Buffer_Do.c",
+          "bytes": 3449,
+          "sha256": "b0537b827162d7092ec16f1c851a3dec5349e3fd82971664f902b173cb4462cc"
+        },
+        {
+          "member": "23E 激光跟随 F407/23E_F4_Read/MDK-ARM/Maxicam/Buffer_Do.h",
+          "bytes": 258,
+          "sha256": "58ae38e51d4062096dcd254fa71569d92da3fd431dbb35a0aa7db3bc1f07f142"
+        },
+        {
+          "member": "23E 激光跟随 F407/23E_F4_Read/MDK-ARM/Maxicam/maxicam.c",
+          "bytes": 3451,
+          "sha256": "07830c155c5cfe2a4a0e3735fa513864dc90dfc8ac884d163279e5d099d58c74"
+        },
+        {
+          "member": "23E 激光跟随 F407/23E_F4_Read/MDK-ARM/Maxicam/maxicam.h",
+          "bytes": 564,
+          "sha256": "0c56002cf94860cba48f3c7fcced2e5f90f32638f750448c5477cad90d32786c"
+        },
+        {
+          "member": "23E 激光跟随 F407/23E_F4_Read/MDK-ARM/Partical/base.c",
+          "bytes": 15315,
+          "sha256": "8838c22ed94ea1ec91c0d42c00c8ab27a02bf5683fcb69dc2f5a1e6a6465cc11"
+        },
+        {
+          "member": "23E 激光跟随 F407/23E_F4_Read/MDK-ARM/Partical/base.h",
+          "bytes": 1186,
+          "sha256": "24bfd45dcfa9f7eb26ccd8195140ac7d1b0becc292586c4afc6e146a7e1437b3"
+        },
+        {
+          "member": "23E 激光跟随 F407/23E_F4_Read/MDK-ARM/Partical/LY.c",
+          "bytes": 5655,
+          "sha256": "b7c944127cc7f9b7ea996b4dea57fa5e5d13b3a8dd40f18e34ac9db96b61618b"
+        },
+        {
+          "member": "23E 激光跟随 F407/23E_F4_Read/MDK-ARM/Partical/LY.h",
+          "bytes": 155,
+          "sha256": "3fdb9f189a76a14dcf5501b2e8441e23703bef63e1afb02a3623f84fd8e860b6"
+        },
+        {
+          "member": "23E 激光跟随 F407/23E_F4_Read/MDK-ARM/Partical/urt.c",
+          "bytes": 4683,
+          "sha256": "c7c386b460d9dd3f9e759369638f32248be5df4aaf6ef8d148d8cd573173f33b"
+        },
+        {
+          "member": "23E 激光跟随 F407/23E_F4_Read/MDK-ARM/Partical/urt.h",
+          "bytes": 462,
+          "sha256": "19d6e798f45437510894732d2a4f342b0ba122e95fe2e9af80e46b03fd0221ad"
+        },
+        {
+          "member": "23E 激光跟随 F407/23E_F4_Read/MDK-ARM/RTE_Components.h",
+          "bytes": 330,
+          "sha256": "b20351ff5db79d5906d8493948b12efcb721f14c5380f32460ac69738aa7293a"
+        },
+        {
+          "member": "23E 激光跟随 F407/25E_F4_Green/25E_F4_Green.ioc",
+          "bytes": 9539,
+          "sha256": "e650a59d176808428634f9d3248abc9bdf312530d57c29c14fa1880e80238804"
+        },
+        {
+          "member": "23E 激光跟随 F407/25E_F4_Green/Core/Inc/dma.h",
+          "bytes": 1393,
+          "sha256": "7cf6f7450a29d26303cbba5a3ca8c6cb24a02635d6a5ba4d05141fdfc75c4c49"
+        },
+        {
+          "member": "23E 激光跟随 F407/25E_F4_Green/Core/Inc/gpio.h",
+          "bytes": 1313,
+          "sha256": "e2d62f964a0b7f238384ed6a20a181d09df9647240a268dc547acf5b35099f74"
+        },
+        {
+          "member": "23E 激光跟随 F407/25E_F4_Green/Core/Inc/main.h",
+          "bytes": 2003,
+          "sha256": "e07a43ebc634ce451e2f80884378d112e048e06235fb49fdc2d9a2b5057d28c5"
+        },
+        {
+          "member": "23E 激光跟随 F407/25E_F4_Green/Core/Inc/stm32f4xx_hal_conf.h",
+          "bytes": 20036,
+          "sha256": "3f07f2a4f0412b30e9260d23b6678eb3459ed521f86378b11720bd5fdd699b45"
+        },
+        {
+          "member": "23E 激光跟随 F407/25E_F4_Green/Core/Inc/stm32f4xx_it.h",
+          "bytes": 2198,
+          "sha256": "127280f18c2ccdad71fe85ca644bd1e452f855eda9810a6c712c1c25ca6f4526"
+        },
+        {
+          "member": "23E 激光跟随 F407/25E_F4_Green/Core/Inc/tim.h",
+          "bytes": 1345,
+          "sha256": "687f0a84fa12c3709bfe8f4bce41218f258938819a7cc807bdfb6c3a5d565439"
+        },
+        {
+          "member": "23E 激光跟随 F407/25E_F4_Green/Core/Inc/usart.h",
+          "bytes": 1568,
+          "sha256": "f0ae01e55c46ccc35720699dbf71f87bf59d6674ee7f6d68b6368f50ee32182e"
+        },
+        {
+          "member": "23E 激光跟随 F407/25E_F4_Green/Core/Src/dma.c",
+          "bytes": 1919,
+          "sha256": "81e9f4359c59118460a57af48a479fa2aaac91d4d16fc618fb9017bccac4fd02"
+        },
+        {
+          "member": "23E 激光跟随 F407/25E_F4_Green/Core/Src/gpio.c",
+          "bytes": 2266,
+          "sha256": "c25fce22ec54c4e58f413fc41759af1e219f9bb4b97b9e88f81d9baa8b292c5c"
+        },
+        {
+          "member": "23E 激光跟随 F407/25E_F4_Green/Core/Src/main.c",
+          "bytes": 7289,
+          "sha256": "524f05e26e1b1076f11eac67255693e6b38855b35827a959a116b2fc40a21bee"
+        },
+        {
+          "member": "23E 激光跟随 F407/25E_F4_Green/Core/Src/stm32f4xx_hal_msp.c",
+          "bytes": 2288,
+          "sha256": "99e2c0c2e05063f19b367339b6ff9ad2ff4608c46db9c1a3a4dd290262273d17"
+        },
+        {
+          "member": "23E 激光跟随 F407/25E_F4_Green/Core/Src/stm32f4xx_it.c",
+          "bytes": 8261,
+          "sha256": "f9ac9da346831142a7aa1f1bf74c074213083140178832c5a616bc15d124b1b8"
+        },
+        {
+          "member": "23E 激光跟随 F407/25E_F4_Green/Core/Src/system_stm32f4xx.c",
+          "bytes": 26695,
+          "sha256": "a31929eab936ac98db060c18917118acf79dc96e1f03ed4b57d614535dd06d70"
+        },
+        {
+          "member": "23E 激光跟随 F407/25E_F4_Green/Core/Src/tim.c",
+          "bytes": 3045,
+          "sha256": "dbd83b305a291b25c2db02e7d4c833db98e315c054fc84174f53afc344426b5a"
+        },
+        {
+          "member": "23E 激光跟随 F407/25E_F4_Green/Core/Src/usart.c",
+          "bytes": 13156,
+          "sha256": "482e276034ed496eae9983ea78c9a4a29792d89a5079ba84e47bcff79d58db81"
+        },
+        {
+          "member": "23E 激光跟随 F407/25E_F4_Green/MDK-ARM/25E_F4_Green.uvprojx",
+          "bytes": 37874,
+          "sha256": "3b0c458d1722758390899ed996e85ed1bf2c83b498467a9fe16926c7da19dffb"
+        },
+        {
+          "member": "23E 激光跟随 F407/25E_F4_Green/MDK-ARM/Hardware/bsp_system.h",
+          "bytes": 413,
+          "sha256": "52ab87b1c08d721a62645e7300862b8d32c9cc7a5160d7718ae05874ffb47579"
+        },
+        {
+          "member": "23E 激光跟随 F407/25E_F4_Green/MDK-ARM/Hardware/key.c",
+          "bytes": 1942,
+          "sha256": "a22e18ecdc7491ead337640cc5980ede35decf5dea2a8f6421215108554e2dd2"
+        },
+        {
+          "member": "23E 激光跟随 F407/25E_F4_Green/MDK-ARM/Hardware/key.h",
+          "bytes": 149,
+          "sha256": "70767fa27643acb26a03819c9388b33cdac7907252385395b0f9688232473dfa"
+        },
+        {
+          "member": "23E 激光跟随 F407/25E_F4_Green/MDK-ARM/Hardware/LY.c",
+          "bytes": 5202,
+          "sha256": "95926a276151749166b740f680ecb52db931a8a858677db296d63b6e4eb1a819"
+        },
+        {
+          "member": "23E 激光跟随 F407/25E_F4_Green/MDK-ARM/Hardware/LY.h",
+          "bytes": 163,
+          "sha256": "1d5eda9a2f212db969e3dbecdb5f1d371c24ac10aaaf4efe920518dc1178740a"
+        },
+        {
+          "member": "23E 激光跟随 F407/25E_F4_Green/MDK-ARM/Hardware/menu.c",
+          "bytes": 2163,
+          "sha256": "08f04aba704743b8c9363297a10067c86fc6f57c876c67fa491a1a36ef7f50b3"
+        },
+        {
+          "member": "23E 激光跟随 F407/25E_F4_Green/MDK-ARM/Hardware/menu.h",
+          "bytes": 181,
+          "sha256": "c56c00d0bb6b14480d9b1f501becf4e3bf6a8aef3fecd6a09002e94b8420fee2"
+        },
+        {
+          "member": "23E 激光跟随 F407/25E_F4_Green/MDK-ARM/Hardware/motor_X.c",
+          "bytes": 7068,
+          "sha256": "be764cfe00786a167c3d7b8930006daa27b248eabed1817ee157c67e8ebda4fb"
+        },
+        {
+          "member": "23E 激光跟随 F407/25E_F4_Green/MDK-ARM/Hardware/motor_X.h",
+          "bytes": 1631,
+          "sha256": "971481b0fe1f1944ab41ec401964a398ca8423b502f1c1eda2dc7a6ce44f6298"
+        },
+        {
+          "member": "23E 激光跟随 F407/25E_F4_Green/MDK-ARM/Hardware/motor_Y.c",
+          "bytes": 5128,
+          "sha256": "b80a82ae5d5217cab4beeb99eb464ed8b28eece3c1c0dbbf5c57b736240860e9"
+        },
+        {
+          "member": "23E 激光跟随 F407/25E_F4_Green/MDK-ARM/Hardware/motor_Y.h",
+          "bytes": 496,
+          "sha256": "1ef768588454e1afadf5234b7aeff22bb8588c37d286a821470b5a65fdc898b7"
+        },
+        {
+          "member": "23E 激光跟随 F407/25E_F4_Green/MDK-ARM/Hardware/oled.c",
+          "bytes": 7646,
+          "sha256": "9bab33380f7c89a334009833a66f3617996318005f4b2f7d2d91182ac8936350"
+        },
+        {
+          "member": "23E 激光跟随 F407/25E_F4_Green/MDK-ARM/Hardware/oled.h",
+          "bytes": 590,
+          "sha256": "680ec130cce5bc182c5c73976d00f8f885812340efe58d7b722061c387bed68d"
+        },
+        {
+          "member": "23E 激光跟随 F407/25E_F4_Green/MDK-ARM/Hardware/oled_Font.h",
+          "bytes": 9188,
+          "sha256": "0acfdebad543858eb43edeec426170b8f1c7fec6a4a18690e7af898809f1b30f"
+        },
+        {
+          "member": "23E 激光跟随 F407/25E_F4_Green/MDK-ARM/Maxicam/Buffer.c",
+          "bytes": 13732,
+          "sha256": "b517da3658d26432e7db57d5411ef67ab5fd07aa886ee1480fb49b8fcfd3a544"
+        },
+        {
+          "member": "23E 激光跟随 F407/25E_F4_Green/MDK-ARM/Maxicam/Buffer.h",
+          "bytes": 2833,
+          "sha256": "7e2c8f2a3fa8c3a66a8b557525fcf0485afc3893ff4224ad402d00e8dc56663c"
+        },
+        {
+          "member": "23E 激光跟随 F407/25E_F4_Green/MDK-ARM/Maxicam/Buffer_Do.c",
+          "bytes": 3449,
+          "sha256": "b0537b827162d7092ec16f1c851a3dec5349e3fd82971664f902b173cb4462cc"
+        },
+        {
+          "member": "23E 激光跟随 F407/25E_F4_Green/MDK-ARM/Maxicam/Buffer_Do.h",
+          "bytes": 258,
+          "sha256": "58ae38e51d4062096dcd254fa71569d92da3fd431dbb35a0aa7db3bc1f07f142"
+        },
+        {
+          "member": "23E 激光跟随 F407/25E_F4_Green/MDK-ARM/Maxicam/maxicam.c",
+          "bytes": 3611,
+          "sha256": "6bee2ad658dbc112f054a97b4f486a14b926b12537980f79d3220c852e1e5630"
+        },
+        {
+          "member": "23E 激光跟随 F407/25E_F4_Green/MDK-ARM/Maxicam/maxicam.h",
+          "bytes": 597,
+          "sha256": "d0a60acd6b64362804d457cca87da687d30a79a259382c89d3bec8f94f853f0a"
+        },
+        {
+          "member": "23E 激光跟随 F407/25E_F4_Green/MDK-ARM/Partical/exert.c",
+          "bytes": 8256,
+          "sha256": "c8d8f6d35eee108e64692220fe26aba49201981b6d70fcdb6d09cc22a4220d07"
+        },
+        {
+          "member": "23E 激光跟随 F407/25E_F4_Green/MDK-ARM/Partical/exert.h",
+          "bytes": 736,
+          "sha256": "9efb12831063c349e6a58bcd6eaf779b7ec784a90e3ee863117dab0d9242f88a"
+        },
+        {
+          "member": "23E 激光跟随 F407/25E_F4_Green/MDK-ARM/Partical/reset.c",
+          "bytes": 6477,
+          "sha256": "0755772feb7ad95cdfc900ab56311549f9ab46920309124c2ec5768727e4dcdb"
+        },
+        {
+          "member": "23E 激光跟随 F407/25E_F4_Green/MDK-ARM/Partical/reset.h",
+          "bytes": 349,
+          "sha256": "264f3a144399e44d49ce5e0c96ed01f20a4f1649970a862efa2d308ee96cf39a"
+        },
+        {
+          "member": "23E 激光跟随 F407/25E_F4_Green/MDK-ARM/Partical/urt.c",
+          "bytes": 1471,
+          "sha256": "b5f6b7965b7c98b1d3fc79c4c3b7f3fa6837907bb88df2c26ab175fa8acb3ee6"
+        },
+        {
+          "member": "23E 激光跟随 F407/25E_F4_Green/MDK-ARM/Partical/urt.h",
+          "bytes": 269,
+          "sha256": "dfce5e54551601560d3924ff936007873604da6db87ce29240ffaa137c4dbf4d"
+        },
+        {
+          "member": "23E 激光跟随 F407/25E_F4_Green/MDK-ARM/RTE_Components.h",
+          "bytes": 330,
+          "sha256": "b20351ff5db79d5906d8493948b12efcb721f14c5380f32460ac69738aa7293a"
+        }
+      ]
+    },
+    {
+      "path": "Documentation/26电赛/25E 激光打靶 天猛星M0.zip",
+      "bytes": 70523479,
+      "sha256": "70f79da00628c181ee3b671b17a6cacb3fb288432bfe48d94cf2820c6d2f8e58",
+      "member_file_count": 4441,
+      "crc_check": "pass",
+      "application_sources": [
+        {
+          "member": "25E 激光打靶 M0G3507/25E_chassis/empty/empty.c",
+          "bytes": 3347,
+          "sha256": "633c3b5242ff4426f8c60d3a9674623a2f75281ca64f82b4cca677e7cda1bed7"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_chassis/empty/empty.syscfg",
+          "bytes": 8473,
+          "sha256": "be6525539c9541f0bcf7ed04acf425ec9e60b64f7ef081674d8be72ff3454bec"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_chassis/empty/Hardware/bsp_system.h",
+          "bytes": 337,
+          "sha256": "dcee4c01e47dd8d2571fd9be392c5168371be52e66fff47b7fce73503d52fae4"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_chassis/empty/Hardware/key.c",
+          "bytes": 1894,
+          "sha256": "55ddac354923123655ed12ee6e877abfd408d7210c5ea1de26d909f9747f8f8f"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_chassis/empty/Hardware/key.h",
+          "bytes": 128,
+          "sha256": "b4429d3da78bb67930f6572ffa7feb582dda31335d396865c84ea722bb0b4bd5"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_chassis/empty/Hardware/menu.c",
+          "bytes": 3016,
+          "sha256": "641539c79e0c3d587481248502e16ec0f9a7ed000481e92a2fe130a9fba5f5d4"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_chassis/empty/Hardware/menu.h",
+          "bytes": 279,
+          "sha256": "57d9f3bc199f9e97df3d286d7ee805b0ec537c2a7c2ff3e68ebdda05f11016db"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_chassis/empty/keil/empty_LP_MSPM0G3507_nortos_keil.uvprojx",
+          "bytes": 22713,
+          "sha256": "661fc085d6b7eed45940fc937b6544aadbfd9f3d6e95f8d958ad63215ca354ac"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_chassis/empty/keil/RTE_Components.h",
+          "bytes": 330,
+          "sha256": "b20351ff5db79d5906d8493948b12efcb721f14c5380f32460ac69738aa7293a"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_chassis/empty/OLED/OLED.c",
+          "bytes": 7763,
+          "sha256": "07e3440e303a8c691bdee0036813b8126f38c676465fe249f79681d3ed0d78fc"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_chassis/empty/OLED/OLED.h",
+          "bytes": 598,
+          "sha256": "4ad80cb85b465fa6c7296bba754c91e739fb5ca9001e81e41b086cc99134d6ab"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_chassis/empty/OLED/oled_Font.h",
+          "bytes": 9572,
+          "sha256": "5b08bcd868c3efd020154c3facbb1a13e98985c6ffc4d521d5e1b9602af9ea1b"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_chassis/empty/System/Delay.c",
+          "bytes": 973,
+          "sha256": "ca082f339462ba0fd4fa40e846d8bf51dbb0a2bd60d1af6efdf70651626e8987"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_chassis/empty/System/Delay.h",
+          "bytes": 177,
+          "sha256": "5445d1777cc79be7ee33d19fba77cf12a9131d584c067dde542f68ca3fca3047"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_chassis/empty/ti_msp_dl_config.c",
+          "bytes": 13178,
+          "sha256": "b8f47d55ec4f481531aaced1111c213cfec7d1d512b06f0e702fc7ba1da11ef3"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_chassis/empty/ti_msp_dl_config.h",
+          "bytes": 12416,
+          "sha256": "f27f7fbcbbb509b620e07d0e425e651f3cc762a4d55d71f55feef5f0d98b1ed1"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_chassis/empty/UART/JY.c",
+          "bytes": 3271,
+          "sha256": "7847f6274e9380de355846ef6f2be555064c86d676d4eeeffe63febae1a85230"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_chassis/empty/UART/JY.h",
+          "bytes": 191,
+          "sha256": "9c5100e22e906c5c4b2fa00d03857cd4f01a71f28926597d67f4c3e29fa54a70"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_chassis/empty/XunJi/Motor.c",
+          "bytes": 1683,
+          "sha256": "4d6c2ecbb6d492e9353ffee95a4e69ce58e7b14ecae79691e4c9cf0eba796679"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_chassis/empty/XunJi/Motor.h",
+          "bytes": 150,
+          "sha256": "e1107c74316fe18cd6dbff017cb9e0c2ecc96d84bc3a7222873f0253473eac15"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_chassis/empty/XunJi/Xunji.c",
+          "bytes": 8725,
+          "sha256": "9c00691dc42126cbac535ace2804d270cd41e197144fb07be3203714583e931a"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_chassis/empty/XunJi/Xunji.h",
+          "bytes": 752,
+          "sha256": "4f6b1a46c2ab5427795cbf8daab639f1d0c8db738da1a9b6e0833c1d7fd2c160"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_cloud/empty/Cloud/motor_x.c",
+          "bytes": 7269,
+          "sha256": "43092f0e32fd9ee58236b39fecc1c6130f181eff105e7c18f9443692f0b3b934"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_cloud/empty/Cloud/motor_x.h",
+          "bytes": 1533,
+          "sha256": "8c2014b1c4abbb396ba3545171c7667e1c138f3bce1116fbd501ba34087ebaec"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_cloud/empty/Cloud/motor_y.c",
+          "bytes": 5711,
+          "sha256": "884ad3fc4619aff0585606135d21ab7431ab26ac7b65f2003c2fc3564f749cd9"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_cloud/empty/Cloud/motor_y.h",
+          "bytes": 630,
+          "sha256": "9d1bac9c5e0f0d20e05cdf1550021e4d2e0125c8708e9f26d3f3e7b66159b488"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_cloud/empty/empty.c",
+          "bytes": 5199,
+          "sha256": "c25426a4a706db1022811f47b2b26bf77be411b51cd31b58e0023b15ad7a50c9"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_cloud/empty/empty.syscfg",
+          "bytes": 8641,
+          "sha256": "09cf71ce78d1ddd23aa96141cdbf97fc792faac9375ab1e67881e1a3b97092e6"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_cloud/empty/Hardware/bsp_system.h",
+          "bytes": 456,
+          "sha256": "96ffadd7fa30a691a059d9675645877be1b5e4ace9a153913615616276eaa17a"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_cloud/empty/Hardware/key.c",
+          "bytes": 1871,
+          "sha256": "0fdc699301b3939ddb3dd0e974ebe8479664a7b6aff57ef4164e7038c6120f68"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_cloud/empty/Hardware/key.h",
+          "bytes": 128,
+          "sha256": "b4429d3da78bb67930f6572ffa7feb582dda31335d396865c84ea722bb0b4bd5"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_cloud/empty/Hardware/menu.c",
+          "bytes": 3366,
+          "sha256": "e1cad0497b741381c7a428c1648782bf34acdc30cafcc777bfc76615248b9a81"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_cloud/empty/Hardware/menu.h",
+          "bytes": 281,
+          "sha256": "e04c4ff65a4d62b0f566794d593f878768afe1ab116c2bb16ef29848c68cdad1"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_cloud/empty/keil/empty_LP_MSPM0G3507_nortos_keil.uvprojx",
+          "bytes": 25073,
+          "sha256": "f182ce203adf0f2822c976e949207ead302c3cffa26d2e4cbfdae73c87cf4273"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_cloud/empty/keil/RTE_Components.h",
+          "bytes": 330,
+          "sha256": "b20351ff5db79d5906d8493948b12efcb721f14c5380f32460ac69738aa7293a"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_cloud/empty/Maixcam/Buffer.c",
+          "bytes": 13732,
+          "sha256": "b517da3658d26432e7db57d5411ef67ab5fd07aa886ee1480fb49b8fcfd3a544"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_cloud/empty/Maixcam/Buffer.h",
+          "bytes": 2959,
+          "sha256": "8453dc48685963539bbbc3d3724262c085d541c5115e2ed8c3a4f85b6764aed6"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_cloud/empty/Maixcam/Buffer_Do.c",
+          "bytes": 3675,
+          "sha256": "1f018890e829117b473cbd1d3b287deecddff69812fd1b931e233335f7513579"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_cloud/empty/Maixcam/Buffer_Do.h",
+          "bytes": 270,
+          "sha256": "0d64e245364915b32be786c3accec0ffc400575508e881ffd69fb2a3381b7c98"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_cloud/empty/Maixcam/maixcam.c",
+          "bytes": 3898,
+          "sha256": "46d6864cde449bbebee43f282a2096c1d3de77b64a1cf73609268b83f67bb56b"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_cloud/empty/Maixcam/maixcam.h",
+          "bytes": 543,
+          "sha256": "50495ed7d3db649dd076856db976853c21ddc0eda8be1f2512ee766f1a670411"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_cloud/empty/OLED/OLED.c",
+          "bytes": 7763,
+          "sha256": "07e3440e303a8c691bdee0036813b8126f38c676465fe249f79681d3ed0d78fc"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_cloud/empty/OLED/OLED.h",
+          "bytes": 598,
+          "sha256": "4ad80cb85b465fa6c7296bba754c91e739fb5ca9001e81e41b086cc99134d6ab"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_cloud/empty/OLED/oled_Font.h",
+          "bytes": 9572,
+          "sha256": "5b08bcd868c3efd020154c3facbb1a13e98985c6ffc4d521d5e1b9602af9ea1b"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_cloud/empty/Partical/move_shot.c",
+          "bytes": 9302,
+          "sha256": "5b22fd2a0a47fe05395ffff88f8c56a7821903d11e044bb4fd55bf378f0e93ab"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_cloud/empty/Partical/move_shot.h",
+          "bytes": 1064,
+          "sha256": "c176db7447d129fead73ba477b9676e313c69ac4699dd228281cb70e1e55ccc8"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_cloud/empty/Partical/shot.c",
+          "bytes": 6048,
+          "sha256": "8584936db26c11650331e163a5e882d4d332e779992d30dca37a7acd9bad9356"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_cloud/empty/Partical/shot.h",
+          "bytes": 1165,
+          "sha256": "ae2c85fa7e777cd6a202288c715746b8391ee0bf41d0993da9eeb8d151984035"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_cloud/empty/System/Delay.c",
+          "bytes": 973,
+          "sha256": "ca082f339462ba0fd4fa40e846d8bf51dbb0a2bd60d1af6efdf70651626e8987"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_cloud/empty/System/Delay.h",
+          "bytes": 177,
+          "sha256": "5445d1777cc79be7ee33d19fba77cf12a9131d584c067dde542f68ca3fca3047"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_cloud/empty/ti_msp_dl_config.c",
+          "bytes": 13878,
+          "sha256": "2ca741929f7530c0b12d4e5c0ea9e0fbc00b1fbbdea75ff0a027c51de6677a4e"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_cloud/empty/ti_msp_dl_config.h",
+          "bytes": 11979,
+          "sha256": "e491e027a8ac244245182f3e80d0849411d17badbf21e0aeb3b70ab2b02ff5e6"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_cloud/empty/UART/cam.c",
+          "bytes": 819,
+          "sha256": "70bee5efe66813f4969cd692a3264beadba3a428b2dd7306ca912d091469c743"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_cloud/empty/UART/cam.h",
+          "bytes": 105,
+          "sha256": "1295c583f5d74a0040ff03e69f357f564d9c5042b6732bd2f8e27b9ae0fb5ce2"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_cloud/empty/UART/M0.c",
+          "bytes": 3036,
+          "sha256": "14a33ee5cb25aed3510e4ca958cd6b704aeae99a12f4a2c2d26059df5e6939e9"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_cloud/empty/UART/M0.h",
+          "bytes": 189,
+          "sha256": "0fea59407e2dd041dc058a11481316fdff77d61549e55d01527fed11f0a01969"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_cloud/empty/UART/step_y.c",
+          "bytes": 3600,
+          "sha256": "00fc8d3f967f45ff3c842669db2f9c6ac035c236acbe752ece80c6622b4260ec"
+        },
+        {
+          "member": "25E 激光打靶 M0G3507/25E_cloud/empty/UART/step_y.h",
+          "bytes": 237,
+          "sha256": "2b525f5b8066fa51e3653ac2b5904c9923cf7a064e3e290423bbb388ba61fcbd"
+        }
+      ]
+    },
+    {
+      "path": "Documentation/26电赛/26H 平衡球装置 天空星F4.zip",
+      "bytes": 13187936,
+      "sha256": "5539b7c1d03ba859750657405ab61d336136180891c71ab6f60db3450ddbc81a",
+      "member_file_count": 2052,
+      "crc_check": "pass",
+      "application_sources": [
+        {
+          "member": "26H 平衡球装置 F407/26H_F4 _Speed_now/Core/Inc/dma.h",
+          "bytes": 1393,
+          "sha256": "7cf6f7450a29d26303cbba5a3ca8c6cb24a02635d6a5ba4d05141fdfc75c4c49"
+        },
+        {
+          "member": "26H 平衡球装置 F407/26H_F4 _Speed_now/Core/Inc/gpio.h",
+          "bytes": 1313,
+          "sha256": "e2d62f964a0b7f238384ed6a20a181d09df9647240a268dc547acf5b35099f74"
+        },
+        {
+          "member": "26H 平衡球装置 F407/26H_F4 _Speed_now/Core/Inc/main.h",
+          "bytes": 2940,
+          "sha256": "f4128cc2dba3bb686ce0cd3d42a87031a839d039e2c3424914e15e0943229f5a"
+        },
+        {
+          "member": "26H 平衡球装置 F407/26H_F4 _Speed_now/Core/Inc/stm32f4xx_hal_conf.h",
+          "bytes": 20037,
+          "sha256": "6172c3a2b47f99b7b5a3455ce100e3cfd3c4f4e4269d772a6ca0e5606cb7350b"
+        },
+        {
+          "member": "26H 平衡球装置 F407/26H_F4 _Speed_now/Core/Inc/stm32f4xx_it.h",
+          "bytes": 2063,
+          "sha256": "811f10cf4f60fc683075af128ff616941e17c3171c3b8441e5ed8349135d5bed"
+        },
+        {
+          "member": "26H 平衡球装置 F407/26H_F4 _Speed_now/Core/Inc/tim.h",
+          "bytes": 1582,
+          "sha256": "10e9d1830e009a1dbf523620e5151722b3348087c67d3d9d85a51d9680eba3a8"
+        },
+        {
+          "member": "26H 平衡球装置 F407/26H_F4 _Speed_now/Core/Inc/usart.h",
+          "bytes": 1434,
+          "sha256": "621957b3d9cffec01c51a3aa86e741d6bf1ab21678f19935f5322caa6f2d3e8f"
+        },
+        {
+          "member": "26H 平衡球装置 F407/26H_F4 _Speed_now/Core/Src/dma.c",
+          "bytes": 1601,
+          "sha256": "5a9f53cf0991ecb714b94c94a2c0e8cbb870238cbdfb9e41ee344ae31aef7747"
+        },
+        {
+          "member": "26H 平衡球装置 F407/26H_F4 _Speed_now/Core/Src/gpio.c",
+          "bytes": 4631,
+          "sha256": "75ba39aa460585543638226ab284e665dc789ce888094787f16d9b89adea550e"
+        },
+        {
+          "member": "26H 平衡球装置 F407/26H_F4 _Speed_now/Core/Src/main.c",
+          "bytes": 8510,
+          "sha256": "5c576b9f6e7f13f369bbc5a0aa70018fa0a1abe8526c32796e3db89ebb7d3216"
+        },
+        {
+          "member": "26H 平衡球装置 F407/26H_F4 _Speed_now/Core/Src/stm32f4xx_hal_msp.c",
+          "bytes": 2229,
+          "sha256": "3217d99dc7006dc46ac384717641fe84386f05fc71db0a3340fa0eae810bc1b7"
+        },
+        {
+          "member": "26H 平衡球装置 F407/26H_F4 _Speed_now/Core/Src/stm32f4xx_it.c",
+          "bytes": 6841,
+          "sha256": "13c609f1e4fe1985c01bbe0805a4e60104d728b3803658f96d18046d9acbc5a5"
+        },
+        {
+          "member": "26H 平衡球装置 F407/26H_F4 _Speed_now/Core/Src/system_stm32f4xx.c",
+          "bytes": 26695,
+          "sha256": "a31929eab936ac98db060c18917118acf79dc96e1f03ed4b57d614535dd06d70"
+        },
+        {
+          "member": "26H 平衡球装置 F407/26H_F4 _Speed_now/Core/Src/tim.c",
+          "bytes": 10977,
+          "sha256": "92cf504a9a451111f898be560455bee54b4d5862739535d5bd3c8fab457428a8"
+        },
+        {
+          "member": "26H 平衡球装置 F407/26H_F4 _Speed_now/Core/Src/usart.c",
+          "bytes": 6473,
+          "sha256": "829932df1829a0cdc4d542700928b11b3e8f9030fd64d26911c72539bb3baf85"
+        },
+        {
+          "member": "26H 平衡球装置 F407/26H_F4 _Speed_now/Hardware/bsp_system.h",
+          "bytes": 502,
+          "sha256": "d064923b92baa70bc6c113fc5d9274b3d158e1ab440ab0ad081c973468a087d7"
+        },
+        {
+          "member": "26H 平衡球装置 F407/26H_F4 _Speed_now/Hardware/key.c",
+          "bytes": 1846,
+          "sha256": "cbdc86914165a4b9ae7bee8a9a71a067b9a136f88850a49370b618752cf07875"
+        },
+        {
+          "member": "26H 平衡球装置 F407/26H_F4 _Speed_now/Hardware/key.h",
+          "bytes": 118,
+          "sha256": "9715a39c1291323baf5462b078c5f199a15ed2490531cf029f2d8fdcab5b2776"
+        },
+        {
+          "member": "26H 平衡球装置 F407/26H_F4 _Speed_now/Hardware/menu.c",
+          "bytes": 3649,
+          "sha256": "315eb90d9f0f46393ed800913190a56a25533d3a6d687c48548998228e9daa9a"
+        },
+        {
+          "member": "26H 平衡球装置 F407/26H_F4 _Speed_now/Hardware/menu.h",
+          "bytes": 179,
+          "sha256": "f03165db6ad47897f80cabf4469c2508a9033ecfa181f3b67113f69e0526640a"
+        },
+        {
+          "member": "26H 平衡球装置 F407/26H_F4 _Speed_now/Hardware/oled.c",
+          "bytes": 7646,
+          "sha256": "9bab33380f7c89a334009833a66f3617996318005f4b2f7d2d91182ac8936350"
+        },
+        {
+          "member": "26H 平衡球装置 F407/26H_F4 _Speed_now/Hardware/oled.h",
+          "bytes": 590,
+          "sha256": "680ec130cce5bc182c5c73976d00f8f885812340efe58d7b722061c387bed68d"
+        },
+        {
+          "member": "26H 平衡球装置 F407/26H_F4 _Speed_now/Hardware/oled_Font.h",
+          "bytes": 9188,
+          "sha256": "0acfdebad543858eb43edeec426170b8f1c7fec6a4a18690e7af898809f1b30f"
+        },
+        {
+          "member": "26H 平衡球装置 F407/26H_F4 _Speed_now/Maxicam/Buffer.c",
+          "bytes": 13732,
+          "sha256": "b517da3658d26432e7db57d5411ef67ab5fd07aa886ee1480fb49b8fcfd3a544"
+        },
+        {
+          "member": "26H 平衡球装置 F407/26H_F4 _Speed_now/Maxicam/Buffer.h",
+          "bytes": 2833,
+          "sha256": "7e2c8f2a3fa8c3a66a8b557525fcf0485afc3893ff4224ad402d00e8dc56663c"
+        },
+        {
+          "member": "26H 平衡球装置 F407/26H_F4 _Speed_now/Maxicam/Buffer_Do.c",
+          "bytes": 3449,
+          "sha256": "9c6ef4b3b6a3c4cfa02f3b59d63e55175f7c57d28199852dedd10ff51342c739"
+        },
+        {
+          "member": "26H 平衡球装置 F407/26H_F4 _Speed_now/Maxicam/Buffer_Do.h",
+          "bytes": 258,
+          "sha256": "58ae38e51d4062096dcd254fa71569d92da3fd431dbb35a0aa7db3bc1f07f142"
+        },
+        {
+          "member": "26H 平衡球装置 F407/26H_F4 _Speed_now/Maxicam/maxicam.c",
+          "bytes": 2803,
+          "sha256": "2f046c8504f692edafa709f223466f3809ede6fd231afcba999cf5ecaec50f1e"
+        },
+        {
+          "member": "26H 平衡球装置 F407/26H_F4 _Speed_now/Maxicam/maxicam.h",
+          "bytes": 564,
+          "sha256": "0c56002cf94860cba48f3c7fcced2e5f90f32638f750448c5477cad90d32786c"
+        },
+        {
+          "member": "26H 平衡球装置 F407/26H_F4 _Speed_now/MDK-ARM/OLED_Test.uvprojx",
+          "bytes": 37858,
+          "sha256": "1cbad781de184a64b06f37704c198b963f820e23da1b53bd2d875f1aeef9bccc"
+        },
+        {
+          "member": "26H 平衡球装置 F407/26H_F4 _Speed_now/MDK-ARM/RTE_Components.h",
+          "bytes": 330,
+          "sha256": "b20351ff5db79d5906d8493948b12efcb721f14c5380f32460ac69738aa7293a"
+        },
+        {
+          "member": "26H 平衡球装置 F407/26H_F4 _Speed_now/OLED_Test.ioc",
+          "bytes": 10592,
+          "sha256": "f5947b104275b305510c75a8419806d9f2469a5f033bb0c624b0937ead94c2b0"
+        },
+        {
+          "member": "26H 平衡球装置 F407/26H_F4 _Speed_now/Partical/balance.c",
+          "bytes": 6197,
+          "sha256": "e57f00888f7dfb3c03ef7dc20c9720d031bee46979bc059e42ca4e04b734660b"
+        },
+        {
+          "member": "26H 平衡球装置 F407/26H_F4 _Speed_now/Partical/balance.h",
+          "bytes": 865,
+          "sha256": "57bc9e94781fec94e1e4e4ea5d0ee3ba5eeababd6943a8cff61426b23f9c7b58"
+        },
+        {
+          "member": "26H 平衡球装置 F407/26H_F4 _Speed_now/ReadMe.txt",
+          "bytes": 530,
+          "sha256": "25901371fd51dfd0a595622e0b704c6af479d67dc1b93cb1633ce3580f4a9179"
+        },
+        {
+          "member": "26H 平衡球装置 F407/26H_F4 _Speed_now/step_motor/motor_X.c",
+          "bytes": 8372,
+          "sha256": "01d828719afbe63f32e30eb5531874738952052a1a2706bfc7493d72a5242231"
+        },
+        {
+          "member": "26H 平衡球装置 F407/26H_F4 _Speed_now/step_motor/motor_X.h",
+          "bytes": 1683,
+          "sha256": "e27d20e88dbf7b2a5fbc20c0d1671bc73b5facf5f07001975e90bc06d61b7a54"
+        },
+        {
+          "member": "26H 平衡球装置 F407/26H_F4 _Speed_now/UART/urt.c",
+          "bytes": 2164,
+          "sha256": "7640a7db4bce36ede6430affba5ed55a9a117411d16055bfbdc04f853fcf2b17"
+        },
+        {
+          "member": "26H 平衡球装置 F407/26H_F4 _Speed_now/UART/urt.h",
+          "bytes": 364,
+          "sha256": "c24301ff777513d74fd619ebb3d04192ff9af26ea2612c76c61a4174749f8143"
+        },
+        {
+          "member": "26H 平衡球装置 F407/26H_F4 _Speed_now/XunJi/Motor.c",
+          "bytes": 3090,
+          "sha256": "06b108480e060c3da1ecee76c75502e631727f4d5736e99a0261aa4177ef024e"
+        },
+        {
+          "member": "26H 平衡球装置 F407/26H_F4 _Speed_now/XunJi/Motor.h",
+          "bytes": 436,
+          "sha256": "3697d5c0015ad096a7caf79521fd7c61ddbd0d44984c9e6d0b77b5108fbf4e4a"
+        },
+        {
+          "member": "26H 平衡球装置 F407/26H_F4 _Speed_now/XunJi/Xunji.c",
+          "bytes": 12828,
+          "sha256": "ceeba91c5caba1f9f53b0e8785192c7ef058892ff1f7952aa61395fe614743f1"
+        },
+        {
+          "member": "26H 平衡球装置 F407/26H_F4 _Speed_now/XunJi/Xunji.h",
+          "bytes": 1488,
+          "sha256": "6837e942140baf9c518e1284f19f6d268785769c325c60080a2673b2c58d4b57"
+        }
+      ]
+    }
+  ]
+}

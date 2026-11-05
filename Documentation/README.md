@@ -6,15 +6,22 @@
 | --- | --- |
 | 原始赛题 | [2026 校赛题目](2026校赛题目（小车·无人机·嵌入式AI）.pdf)、[AC 器材清单](AC题清单.doc) |
 | 总体方案 | [A 题大纲](explanation/a-system-outline.md) |
-| 机械设计 | [3D 建模大纲](explanation/mechanical-outline.md)、[参数文件](../Mechanical/parameters.yaml) |
+| 同学历史资料 | [资料总索引](reference/classmate-materials.md)、[电赛案例](26电赛/README.md)、[步进控制片段](step_motor/README.md) |
+| 历史控制方案解读 | [平衡球代码与当前方案的关系](explanation/classmate-balance-reference.md) |
+| 机械设计 | [首版 3D 总装与预览](../Mechanical/README.md)、[建模大纲](explanation/mechanical-outline.md)、[参数文件](../Mechanical/parameters.yaml) |
 | 器件参考 | [器件选型与采购](reference/parts-selection.md) |
+| 双摄参考 | [MaixCAM 检测、OV2640 图传与支架参数](reference/cameras.md) |
+| 已提出的后续硬件变更 | [TFT、任务按钮和四脚 HC-08](reference/pending-hardware-changes.md)，当前仅记录 |
 | 接口参考 | [电机六针](reference/motor-interface.md)、[当前GPIO分配](reference/motor-core-pins.md)、[M2 资源计划](reference/resource-plan.md) |
 | 调试步骤 | [分阶段上电与验收](how-to/bring-up.md) |
 | 验证状态 | [最新：布线与引脚调整](validation/2026-11-03-motor-pin-remap.md)、[删除J3/J5](validation/2026-11-03-remove-j3-j5.md)、[此前方案与六针修改](validation/2026-11-03.md) |
+| 参考资料整理记录 | [2026-11-05 资料清点与完整性核对](validation/2026-11-05-classmate-materials.md) |
+| 机械模型验证记录 | [2026-11-05 框架、参考几何与运动检查](validation/2026-11-05-mechanical-framework.md) |
 
 旧项目 `D:/dev/qrs/stm32/Coral-C5` 仅作为历史资料来源。
 本轮只修改当前 `c5-car`，不修改旧项目。
 电机厂家的受限资料不复制入仓库；必要事实及来源摘要见电机接口文档。
+新增同学资料作为历史参考保存；其平台、引脚、控制参数和既有验证结果不代表当前 C5 小车的实现状态。
 
 ## 文档整理方式
 

@@ -1,0 +1,29 @@
+{
+  "date": "2026-11-05",
+  "supplied_step": "C:\\Users\\sc\\Downloads\\EdgeMind_Assembly.step",
+  "supplied_sha256": "dad4fa75e6a76b0a31a578befd13de437d8656ef0ea82c90c444e1cca452439f",
+  "matches_native_companion_export": true,
+  "native_source": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\model\\chassis\\v5-rgb-touch-display\\EdgeMind_Chassis.FCStd",
+  "native_sha256": "e29256b87eaaaaadf1b3a7dd413986369cb6ffbb05eaca3358ceca7e10724d37",
+  "object": "LowerTray",
+  "extraction_source_box_mm": [
+    -26.5,
+    26.5,
+    -10.5,
+    80.5,
+    62.7811671820691,
+    65.7811671820691
+  ],
+  "outer_mm": [
+    53,
+    91,
+    3
+  ],
+  "inner_xy_mm": [
+    49,
+    87
+  ],
+  "interpretation": "The identified protrusion is a battery locating rim integral with the bottom tray, not a separate cell solid. Reuse the exact rim; cell height stays unmeasured.",
+  "volume_mm3": 1680.0000000000005,
+  "valid": true
+}

@@ -1,0 +1,148 @@
+{
+  "date": "2026-11-05",
+  "native_readback": true,
+  "parts": 142,
+  "invalid_breps": [],
+  "native_poses": [
+    {
+      "angle_deg": -6,
+      "rod_closure_error_mm": 5.695433295429594e-14,
+      "free_end_above_plate_mm": 60.73203028505704,
+      "pass": true
+    },
+    {
+      "angle_deg": 0,
+      "rod_closure_error_mm": 0.0,
+      "free_end_above_plate_mm": 90.0,
+      "pass": true
+    },
+    {
+      "angle_deg": 6,
+      "rod_closure_error_mm": 6.365209823104904e-14,
+      "free_end_above_plate_mm": 119.26796971494298,
+      "pass": true
+    }
+  ],
+  "critical_interferences": [],
+  "camera_coverage_conditional": [
+    {
+      "angle_deg": -6,
+      "required_full_horizontal_fov_deg": 69.67054483602479,
+      "required_full_vertical_fov_deg": 7.512336087886994,
+      "conditional_gc4653_pass": true
+    },
+    {
+      "angle_deg": 0,
+      "required_full_horizontal_fov_deg": 70.55331449651464,
+      "required_full_vertical_fov_deg": 7.516690531778001,
+      "conditional_gc4653_pass": true
+    },
+    {
+      "angle_deg": 6,
+      "required_full_horizontal_fov_deg": 77.84494463018113,
+      "required_full_vertical_fov_deg": 8.810544996987788,
+      "conditional_gc4653_pass": true
+    }
+  ],
+  "mount_top_checks": [
+    {
+      "name": "LMotorBracketR",
+      "top_mm": 57.781167282069674,
+      "limit_mm": 57.78116728206863,
+      "pass": true
+    },
+    {
+      "name": "RMotorBracketL",
+      "top_mm": 57.781167282068644,
+      "limit_mm": 57.78116728206863,
+      "pass": true
+    },
+    {
+      "name": "LCasterPost0",
+      "top_mm": 57.78116728206863,
+      "limit_mm": 57.78116728206863,
+      "pass": true
+    },
+    {
+      "name": "LCasterPost1",
+      "top_mm": 57.78116728206863,
+      "limit_mm": 57.78116728206863,
+      "pass": true
+    },
+    {
+      "name": "LCasterPost2",
+      "top_mm": 57.78116728206863,
+      "limit_mm": 57.78116728206863,
+      "pass": true
+    },
+    {
+      "name": "LCasterPost3",
+      "top_mm": 57.78116728206863,
+      "limit_mm": 57.78116728206863,
+      "pass": true
+    },
+    {
+      "name": "RCasterPost0",
+      "top_mm": 57.78116728206863,
+      "limit_mm": 57.78116728206863,
+      "pass": true
+    },
+    {
+      "name": "RCasterPost1",
+      "top_mm": 57.78116728206863,
+      "limit_mm": 57.78116728206863,
+      "pass": true
+    },
+    {
+      "name": "RCasterPost2",
+      "top_mm": 57.78116728206863,
+      "limit_mm": 57.78116728206863,
+      "pass": true
+    },
+    {
+      "name": "RCasterPost3",
+      "top_mm": 57.78116728206863,
+      "limit_mm": 57.78116728206863,
+      "pass": true
+    }
+  ],
+  "source_files": [
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\model\\chassis\\v4-lidar-imu\\EdgeMind_Chassis.FCStd",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\model\\hardware\\R3X-320x240-reference.step",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\model\\hardware\\直流电机-MG513X（霍尔编码器）\\直流电机-MG513X（霍尔编码器）.stp",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\sc\\Downloads\\EdgeMind_Assembly.step",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\model\\chassis\\v5-rgb-touch-display\\EdgeMind_Chassis.FCStd",
+      "unchanged": true
+    }
+  ],
+  "native_color_records": 142,
+  "motor_pcb_xy_mm": [
+    99.0,
+    99.0
+  ],
+  "core_board_height_mm": 51.450002000000026,
+  "reference_limits": [
+    "Battery thickness is a layout assumption.",
+    "Mounting holes, clamps, load capacity, printability and tolerances are not production validated.",
+    "Only listed structural interferences are checked; this is not an exhaustive assembly DRC."
+  ],
+  "overall_envelope_at_zero_mm": [
+    287.5,
+    236.041006857711,
+    449.78116738206865
+  ],
+  "pass": true
+}

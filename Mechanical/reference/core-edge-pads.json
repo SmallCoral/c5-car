@@ -1,0 +1,1304 @@
+{
+  "pads": [
+    {
+      "number": "",
+      "xy": [
+        58.95,
+        37.05
+      ],
+      "size": [
+        3.0,
+        3.0
+      ],
+      "front": true,
+      "back": true
+    },
+    {
+      "number": "",
+      "xy": [
+        122.95,
+        37.05
+      ],
+      "size": [
+        3.0,
+        3.0
+      ],
+      "front": true,
+      "back": true
+    },
+    {
+      "number": "A1",
+      "xy": [
+        66.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": false,
+      "back": true
+    },
+    {
+      "number": "A2",
+      "xy": [
+        67.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": false,
+      "back": true
+    },
+    {
+      "number": "A3",
+      "xy": [
+        68.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": false,
+      "back": true
+    },
+    {
+      "number": "A4",
+      "xy": [
+        69.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": false,
+      "back": true
+    },
+    {
+      "number": "A5",
+      "xy": [
+        70.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": false,
+      "back": true
+    },
+    {
+      "number": "A6",
+      "xy": [
+        71.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": false,
+      "back": true
+    },
+    {
+      "number": "A7",
+      "xy": [
+        72.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": false,
+      "back": true
+    },
+    {
+      "number": "A8",
+      "xy": [
+        73.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": false,
+      "back": true
+    },
+    {
+      "number": "A9",
+      "xy": [
+        74.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": false,
+      "back": true
+    },
+    {
+      "number": "A10",
+      "xy": [
+        75.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": false,
+      "back": true
+    },
+    {
+      "number": "A11",
+      "xy": [
+        76.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": false,
+      "back": true
+    },
+    {
+      "number": "A12",
+      "xy": [
+        79.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": false,
+      "back": true
+    },
+    {
+      "number": "A13",
+      "xy": [
+        80.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": false,
+      "back": true
+    },
+    {
+      "number": "A14",
+      "xy": [
+        81.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": false,
+      "back": true
+    },
+    {
+      "number": "A15",
+      "xy": [
+        82.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": false,
+      "back": true
+    },
+    {
+      "number": "A16",
+      "xy": [
+        83.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": false,
+      "back": true
+    },
+    {
+      "number": "A17",
+      "xy": [
+        84.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": false,
+      "back": true
+    },
+    {
+      "number": "A18",
+      "xy": [
+        85.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": false,
+      "back": true
+    },
+    {
+      "number": "A19",
+      "xy": [
+        86.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": false,
+      "back": true
+    },
+    {
+      "number": "A20",
+      "xy": [
+        87.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": false,
+      "back": true
+    },
+    {
+      "number": "A21",
+      "xy": [
+        88.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": false,
+      "back": true
+    },
+    {
+      "number": "A22",
+      "xy": [
+        89.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": false,
+      "back": true
+    },
+    {
+      "number": "A23",
+      "xy": [
+        90.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": false,
+      "back": true
+    },
+    {
+      "number": "A24",
+      "xy": [
+        91.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": false,
+      "back": true
+    },
+    {
+      "number": "A25",
+      "xy": [
+        92.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": false,
+      "back": true
+    },
+    {
+      "number": "A26",
+      "xy": [
+        93.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": false,
+      "back": true
+    },
+    {
+      "number": "A27",
+      "xy": [
+        94.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": false,
+      "back": true
+    },
+    {
+      "number": "A28",
+      "xy": [
+        95.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": false,
+      "back": true
+    },
+    {
+      "number": "A29",
+      "xy": [
+        96.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": false,
+      "back": true
+    },
+    {
+      "number": "A30",
+      "xy": [
+        97.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": false,
+      "back": true
+    },
+    {
+      "number": "A31",
+      "xy": [
+        98.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": false,
+      "back": true
+    },
+    {
+      "number": "A32",
+      "xy": [
+        99.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": false,
+      "back": true
+    },
+    {
+      "number": "A33",
+      "xy": [
+        100.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": false,
+      "back": true
+    },
+    {
+      "number": "A34",
+      "xy": [
+        101.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": false,
+      "back": true
+    },
+    {
+      "number": "A35",
+      "xy": [
+        102.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": false,
+      "back": true
+    },
+    {
+      "number": "A36",
+      "xy": [
+        103.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": false,
+      "back": true
+    },
+    {
+      "number": "A37",
+      "xy": [
+        104.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": false,
+      "back": true
+    },
+    {
+      "number": "A38",
+      "xy": [
+        105.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": false,
+      "back": true
+    },
+    {
+      "number": "A39",
+      "xy": [
+        106.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": false,
+      "back": true
+    },
+    {
+      "number": "A40",
+      "xy": [
+        107.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": false,
+      "back": true
+    },
+    {
+      "number": "A41",
+      "xy": [
+        108.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": false,
+      "back": true
+    },
+    {
+      "number": "A42",
+      "xy": [
+        109.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": false,
+      "back": true
+    },
+    {
+      "number": "A43",
+      "xy": [
+        110.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": false,
+      "back": true
+    },
+    {
+      "number": "A44",
+      "xy": [
+        111.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": false,
+      "back": true
+    },
+    {
+      "number": "A45",
+      "xy": [
+        112.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": false,
+      "back": true
+    },
+    {
+      "number": "A46",
+      "xy": [
+        113.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": false,
+      "back": true
+    },
+    {
+      "number": "A47",
+      "xy": [
+        114.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": false,
+      "back": true
+    },
+    {
+      "number": "A48",
+      "xy": [
+        115.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": false,
+      "back": true
+    },
+    {
+      "number": "A49",
+      "xy": [
+        116.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": false,
+      "back": true
+    },
+    {
+      "number": "B1",
+      "xy": [
+        66.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": true,
+      "back": false
+    },
+    {
+      "number": "B2",
+      "xy": [
+        67.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": true,
+      "back": false
+    },
+    {
+      "number": "B3",
+      "xy": [
+        68.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": true,
+      "back": false
+    },
+    {
+      "number": "B4",
+      "xy": [
+        69.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": true,
+      "back": false
+    },
+    {
+      "number": "B5",
+      "xy": [
+        70.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": true,
+      "back": false
+    },
+    {
+      "number": "B6",
+      "xy": [
+        71.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": true,
+      "back": false
+    },
+    {
+      "number": "B7",
+      "xy": [
+        72.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": true,
+      "back": false
+    },
+    {
+      "number": "B8",
+      "xy": [
+        73.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": true,
+      "back": false
+    },
+    {
+      "number": "B9",
+      "xy": [
+        74.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": true,
+      "back": false
+    },
+    {
+      "number": "B10",
+      "xy": [
+        75.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": true,
+      "back": false
+    },
+    {
+      "number": "B11",
+      "xy": [
+        76.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": true,
+      "back": false
+    },
+    {
+      "number": "B12",
+      "xy": [
+        79.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": true,
+      "back": false
+    },
+    {
+      "number": "B13",
+      "xy": [
+        80.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": true,
+      "back": false
+    },
+    {
+      "number": "B14",
+      "xy": [
+        81.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": true,
+      "back": false
+    },
+    {
+      "number": "B15",
+      "xy": [
+        82.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": true,
+      "back": false
+    },
+    {
+      "number": "B16",
+      "xy": [
+        83.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": true,
+      "back": false
+    },
+    {
+      "number": "B17",
+      "xy": [
+        84.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": true,
+      "back": false
+    },
+    {
+      "number": "B18",
+      "xy": [
+        85.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": true,
+      "back": false
+    },
+    {
+      "number": "B19",
+      "xy": [
+        86.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": true,
+      "back": false
+    },
+    {
+      "number": "B20",
+      "xy": [
+        87.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": true,
+      "back": false
+    },
+    {
+      "number": "B21",
+      "xy": [
+        88.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": true,
+      "back": false
+    },
+    {
+      "number": "B22",
+      "xy": [
+        89.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": true,
+      "back": false
+    },
+    {
+      "number": "B23",
+      "xy": [
+        90.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": true,
+      "back": false
+    },
+    {
+      "number": "B24",
+      "xy": [
+        91.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": true,
+      "back": false
+    },
+    {
+      "number": "B25",
+      "xy": [
+        92.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": true,
+      "back": false
+    },
+    {
+      "number": "B26",
+      "xy": [
+        93.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": true,
+      "back": false
+    },
+    {
+      "number": "B27",
+      "xy": [
+        94.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": true,
+      "back": false
+    },
+    {
+      "number": "B28",
+      "xy": [
+        95.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": true,
+      "back": false
+    },
+    {
+      "number": "B29",
+      "xy": [
+        96.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": true,
+      "back": false
+    },
+    {
+      "number": "B30",
+      "xy": [
+        97.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": true,
+      "back": false
+    },
+    {
+      "number": "B31",
+      "xy": [
+        98.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": true,
+      "back": false
+    },
+    {
+      "number": "B32",
+      "xy": [
+        99.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": true,
+      "back": false
+    },
+    {
+      "number": "B33",
+      "xy": [
+        100.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": true,
+      "back": false
+    },
+    {
+      "number": "B34",
+      "xy": [
+        101.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": true,
+      "back": false
+    },
+    {
+      "number": "B35",
+      "xy": [
+        102.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": true,
+      "back": false
+    },
+    {
+      "number": "B36",
+      "xy": [
+        103.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": true,
+      "back": false
+    },
+    {
+      "number": "B37",
+      "xy": [
+        104.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": true,
+      "back": false
+    },
+    {
+      "number": "B38",
+      "xy": [
+        105.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": true,
+      "back": false
+    },
+    {
+      "number": "B39",
+      "xy": [
+        106.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": true,
+      "back": false
+    },
+    {
+      "number": "B40",
+      "xy": [
+        107.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": true,
+      "back": false
+    },
+    {
+      "number": "B41",
+      "xy": [
+        108.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": true,
+      "back": false
+    },
+    {
+      "number": "B42",
+      "xy": [
+        109.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": true,
+      "back": false
+    },
+    {
+      "number": "B43",
+      "xy": [
+        110.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": true,
+      "back": false
+    },
+    {
+      "number": "B44",
+      "xy": [
+        111.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": true,
+      "back": false
+    },
+    {
+      "number": "B45",
+      "xy": [
+        112.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": true,
+      "back": false
+    },
+    {
+      "number": "B46",
+      "xy": [
+        113.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": true,
+      "back": false
+    },
+    {
+      "number": "B47",
+      "xy": [
+        114.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": true,
+      "back": false
+    },
+    {
+      "number": "B48",
+      "xy": [
+        115.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": true,
+      "back": false
+    },
+    {
+      "number": "B49",
+      "xy": [
+        116.45,
+        82.05
+      ],
+      "size": [
+        0.7,
+        4.3
+      ],
+      "front": true,
+      "back": false
+    }
+  ]
+}

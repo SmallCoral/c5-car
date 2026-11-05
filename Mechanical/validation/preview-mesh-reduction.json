@@ -1,0 +1,23 @@
+{
+  "native_cad_unchanged": true,
+  "changes": [
+    {
+      "name": "LRearRWheel",
+      "triangles_before": 469280,
+      "triangles_after": 70000,
+      "requested_error_tolerance_mm": 0.08
+    },
+    {
+      "name": "RRearLWheel",
+      "triangles_before": 470738,
+      "triangles_after": 70000,
+      "requested_error_tolerance_mm": 0.08
+    },
+    {
+      "name": "MotorExistingParts",
+      "triangles_before": 186204,
+      "triangles_after": 60000,
+      "requested_error_tolerance_mm": 0.08
+    }
+  ]
+}

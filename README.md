@@ -8,10 +8,11 @@
 | 内容 | 入口 |
 | --- | --- |
 | 任务、总体架构和阶段交付 | [A 题方案大纲](Documentation/explanation/a-system-outline.md) |
+| 同学历史代码、闭环步进资料及参考边界 | [同学资料索引](Documentation/reference/classmate-materials.md) |
 | 元器件用途、选型依据和采购入口 | [器件选型](Documentation/reference/parts-selection.md) |
 | MG513 六针接口及电平 | [电机接口](Documentation/reference/motor-interface.md) |
 | 按当前Motor布局规划核心板信号 | [GPIO分配与布线建议](Documentation/reference/motor-core-pins.md) |
-| 机械总装与 3D 模型拆分 | [机械建模大纲](Documentation/explanation/mechanical-outline.md) |
+| 小车 3D 总装、预览与参数 | [机械模型](Mechanical/README.md) |
 | M2 扩展板功能分配 | [资源与集成计划](Documentation/reference/resource-plan.md) |
 | 检查结果、问题和边界 | [布线与引脚调整记录](Documentation/validation/2026-11-03-motor-pin-remap.md) |
 | 原理图编辑 | [CoralC5-Motor 工程](Hardware/stm32c5a3/Hardware/CoralC5-Motor/CoralC5-Motor.kicad_pro) |
@@ -26,6 +27,7 @@ Motor的原理图和PCB均使用J4、J6六针电机口，J3、J5两针端子已�
 
 循迹、摆杆驱动、钢球检测和图传目前属于方案设计，尚未画入 Motor 原理图。
 固件仍为系统初始化后进入空循环的生成工程。
+已生成首版小车 3D 框架，包含参考轮组、电池定位框、实际 Core、99×99 mm Motor 规划外形、摆杆执行机构及双摄支架。检测端按用户确认的 MaixCAM 规划，图传端沿用 OV2640 方案；机械布局尚未完成实物装配与加工验证。
 当前文件不是整车可运行版或制板发布版。
 
 ## 文件归属
@@ -33,7 +35,7 @@ Motor的原理图和PCB均使用J4、J6六针电机口，J3、J5两针端子已�
 `Documentation` 保存比赛原件、总体方案、器件依据和检查记录。
 `Hardware/stm32c5a3/Hardware` 保存 Core、Expansion、Motor 和共享接口。
 `Firmware` 保存 STM32 配置与源码。
-`Mechanical` 保存建模参数和模型任务单；板内 `Models` 仅用于元器件外形。
+`Mechanical` 保存原生总装、STEP、交互预览及机械参数；板内 `Models` 用于元器件外形。
 现有硬件工程不搬家，避免破坏本地库、模型及用户手工设计。
 
 第三方资源和许可见 [来源说明](Hardware/stm32c5a3/THIRD_PARTY.md)。

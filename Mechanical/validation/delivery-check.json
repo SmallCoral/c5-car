@@ -1,0 +1,60 @@
+{
+  "date": "2026-11-05",
+  "source_revision": "0b4d74d15b1d01e5a56c54c186ac4865f6cf75db",
+  "baseline_path": "C:\\Users\\sc\\.codex\\visualizations\\2026\\11\\03\\01a1a08e-6411-7c12-ae04-d49bee901009\\tmp\\car-3d-framework\\baseline.json",
+  "protected_files_checked": 815,
+  "changed_protected_files": [
+    "Hardware/stm32c5a3/Hardware/CoralC5-Motor/03_Core_Interface.kicad_sch",
+    "Hardware/stm32c5a3/Hardware/CoralC5-Motor/CoralC5-Motor.kicad_pcb",
+    "Hardware/stm32c5a3/Hardware/CoralC5-Motor/CoralC5-Motor.kicad_prl",
+    "Hardware/stm32c5a3/Hardware/CoralC5-Motor/~CoralC5-Motor.kicad_sch.lck",
+    "Hardware/stm32c5a3/Hardware/CoralC5-Motor/.history/03_Core_Interface.kicad_sch",
+    "Hardware/stm32c5a3/Hardware/CoralC5-Motor/.history/CoralC5-Motor.kicad_pcb",
+    "Hardware/stm32c5a3/Hardware/CoralC5-Motor/.history/.git/index",
+    "Hardware/stm32c5a3/Hardware/CoralC5-Motor/.history/.git/logs/HEAD",
+    "Hardware/stm32c5a3/Hardware/CoralC5-Motor/.history/.git/logs/refs/heads/master",
+    "Hardware/stm32c5a3/Hardware/CoralC5-Motor/.history/.git/refs/heads/master",
+    "Hardware/stm32c5a3/Hardware/CoralC5-Motor/.history/.git/refs/tags/Last_Save_pcb",
+    "Hardware/stm32c5a3/Hardware/CoralC5-Motor/.history/.git/refs/tags/Last_Save_sch"
+  ],
+  "glb_structure_and_indices_valid": true,
+  "missing_local_links": [],
+  "artifacts": [
+    {
+      "file": "source/CoralC5_Framework.FCStd",
+      "bytes": 17354063,
+      "sha256": "268ad61d68561588ec9aade7ae1494b299ec18248fd271eb48612308d499d7f8"
+    },
+    {
+      "file": "step/CoralC5_Framework.step",
+      "bytes": 41335483,
+      "sha256": "c57b173255ff17a3670400050b4ed82dc9fe5e2af2f1fdecfc08a22f302c3f01"
+    },
+    {
+      "file": "step/CoralC5_Framework.glb",
+      "bytes": 10577560,
+      "sha256": "790d17cd27c39c7ac74c969a313d27e52bc066687d8ffe820f8b0d73466d17c2"
+    },
+    {
+      "file": "preview/查看模型.html",
+      "bytes": 13930332,
+      "sha256": "1473db1fecb0e3228e7739d156d9544bcdc3ef454ab03ce00da9fc88a65cb0df"
+    },
+    {
+      "file": "preview/preview-isometric.png",
+      "bytes": 253806,
+      "sha256": "3118028c832cc146d4dbbfaf0a1f9ed6da99c8dca234e40c474c8d4a900e810c"
+    }
+  ],
+  "pcb_export_snapshot_current": [
+    {
+      "file": "Hardware\\stm32c5a3\\Hardware\\CoralC5-Core\\CoralC5-Core.kicad_pcb",
+      "matches_export_snapshot": true
+    },
+    {
+      "file": "Hardware\\stm32c5a3\\Hardware\\CoralC5-Motor\\CoralC5-Motor.kicad_pcb",
+      "matches_export_snapshot": false
+    }
+  ],
+  "pass": false
+}
