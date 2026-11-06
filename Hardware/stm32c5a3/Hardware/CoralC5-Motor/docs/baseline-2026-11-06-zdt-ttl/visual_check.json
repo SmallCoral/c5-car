@@ -1,0 +1,10 @@
+{
+  "date": "2026-11-06",
+  "pdf_sha256": "c3724f61110ef1d3c11735009e91d35d8504b34b3959209ed9aebe71a88fb286",
+  "pages": 9,
+  "wire_text_intersections": 0,
+  "text_text_overlaps": 0,
+  "ignored_identical_pdf_search_spans": 30,
+  "findings": [],
+  "text_overlaps": []
+}

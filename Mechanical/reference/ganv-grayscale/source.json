@@ -1,0 +1,36 @@
+{
+  "date": "2026-11-06",
+  "url": "https://www.ganv.com.cn/downloads/%E7%81%B0%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8%E6%96%9C%E8%A3%85%E6%94%AF%E6%9E%B6.zip",
+  "sha256": "9bdb0ec801676e164b4f025786f58795b402e3369995a9dc426a54877559fff0",
+  "bytes": 130559,
+  "files": [
+    {
+      "name": "灰度斜装钣金.pdf",
+      "bytes": 102178,
+      "sha256": "f03fbae38d1362e0b969233f19710feffd30740393379c72d064f5cc5f9ca086"
+    },
+    {
+      "name": "灰度斜装钣金.STEP",
+      "bytes": 138187,
+      "sha256": "ecc9e4c8e52f47e46803c3c7a959928c9eaec353547576166da3ee4cebcb7f71"
+    },
+    {
+      "name": "灰度斜装钣金.STL",
+      "bytes": 74284,
+      "sha256": "13a8b0850de1deb7bbbf617469521a54f9c607aaa32139c66430d139d3c9dbf5"
+    }
+  ],
+  "archive_crc": "pass",
+  "freecad_check": {
+    "version": "1.1.4",
+    "valid": true,
+    "solid_count": 1,
+    "bbox_mm": [
+      56.00000000000001,
+      9.002305298172237,
+      30.861728694932488
+    ],
+    "volume_mm3": 1855.5564606358291,
+    "physical_match_confirmed": false
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "date": "2026-11-06",
+  "revision": "M2.4",
+  "baseline": "docs\\baseline-2026-11-06-jumpers",
+  "J10": {
+    "footprint": "Motor:Connector_PinHeader_2.54mm__PinHeader_1x02_P2.54mm_Vertical",
+    "function": "2P jumper enables MCU control of left/right wheel nSLEEP only; open disables both wheels"
+  },
+  "bluetooth_fixed_supply": "V3V3_EXT",
+  "removed_references": [
+    "J16"
+  ],
+  "removed_symbol_uuid": "99979e2a-6ddc-51ff-854b-c5d48bf66753",
+  "removed_hierarchical_ports": {
+    "09_Bluetooth_Stepper.kicad_sch": [
+      "V5_EXT"
+    ]
+  },
+  "removed_hierarchical_port_uuid": "779d8cca-c3d0-54b4-a90d-cbb632f2d8b7",
+  "removed_net": "VBT",
+  "J15_pin1_name": "VCC_3V3",
+  "source_sha256": {
+    "02_Power.kicad_sch": "926b93f999c93d9348e0a87cd272aebea8ea49c10504758bee2b8161bc30d19e",
+    "03_Core_Interface.kicad_sch": "0401706698cf7175f7be05e248da270d1c04980ff8d8df889dc1049c97dfeed0",
+    "04_Left_Motor.kicad_sch": "60fc822f453ed916ef35b7c6fe33ab7227a5f66d594bb757bce41a5ec71ae79a",
+    "05_Right_Motor.kicad_sch": "6eb0fa22af4bd8654a458879ebc59abc1171967d7e913c1d911561a8e76df5e3",
+    "06_Module_Power.kicad_sch": "d6d4278ca6047bc9f7f4fb451bf9748d2ddfb382f3f887022337c3b56764d4ef",
+    "07_TFT_Buttons.kicad_sch": "390b7cbe01217a04a12eb85645ae8cf63d5d93358e6b4473b18430677c48fd87",
+    "08_Grayscale_Cameras.kicad_sch": "18231d2397e6b848f4ce601f7f9d92a374feb54d426c0822b97cf883d511f496",
+    "09_Bluetooth_Stepper.kicad_sch": "77e4817cad9d7b2d9fef701cc82b684fc77c48faa0a181639da2cf399188faad",
+    "CoralC5-Motor.kicad_sch": "544ae4c5da027d46418b84acdf9f757a0a958e7cd2d18d1ce69cf8766cdbbec0"
+  },
+  "pcb_accessed": false,
+  "preserved_project_metadata": {
+    "path": [
+      "board",
+      "ipc2581",
+      "sch_revision"
+    ],
+    "original_layout_baseline_value": "M2",
+    "preexisting_followup_value": "M2.3",
+    "note": "Only IPC2581 export revision metadata differed before project audit. No project file write performed by this edit."
+  },
+  "project_sha256": "7e0ee9c5756f108b3d9a0e130e0d72c023391951034b98458e411a3ffc0039fc"
+}

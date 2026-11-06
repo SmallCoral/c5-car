@@ -1,0 +1,4572 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>C:\Users\sc\Documents\Dev\Hardware\c5-car\Hardware\stm32c5a3\Hardware\CoralC5-Motor\CoralC5-Motor.kicad_sch</source>
+    <date>2026-11-06T17:45:18</date>
+    <tool>Eeschema 10.0.6</tool>
+    <textvar name="AUTHOR">SmallCoral</textvar>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>Coral-C5 小车扩展板 M2 总览</title>
+        <company>SmallCoral / CoralC5-Motor</company>
+        <rev>M2.2</rev>
+        <date>2026-11-06</date>
+        <source>CoralC5-Motor.kicad_sch</source>
+        <comment number="1" value="原理图设计；实板电流、温升与线束待验证"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="2" name="/输入、总开关与降压/" tstamps="/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/">
+      <title_block>
+        <title>十二伏入口、拨动总开关与五伏降压</title>
+        <company>SmallCoral / CoralC5-Motor</company>
+        <rev>M2.2</rev>
+        <date>2026-11-06</date>
+        <source>02_Power.kicad_sch</source>
+        <comment number="1" value="原理图设计；实板电流、温升与线束待验证"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="3" name="/核心板接口/" tstamps="/c813fdd4-725f-5df7-aa4a-68cd15d401cf/">
+      <title_block>
+        <title>C5-EDGE-3 核心板接口与调试</title>
+        <company>SmallCoral / CoralC5-Motor</company>
+        <rev>M2.2</rev>
+        <date>2026-11-06</date>
+        <source>03_Core_Interface.kicad_sch</source>
+        <comment number="1" value="原理图设计；实板电流、温升与线束待验证"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="4" name="/左电机与编码器/" tstamps="/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/">
+      <title_block>
+        <title>左电机驱动与霍尔编码器</title>
+        <company>SmallCoral / CoralC5-Motor</company>
+        <rev>M2.2</rev>
+        <date>2026-11-06</date>
+        <source>04_Left_Motor.kicad_sch</source>
+        <comment number="1" value="原理图设计；实板电流、温升与线束待验证"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="5" name="/右电机与编码器/" tstamps="/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/">
+      <title_block>
+        <title>右电机驱动与霍尔编码器</title>
+        <company>SmallCoral / CoralC5-Motor</company>
+        <rev>M2.2</rev>
+        <date>2026-11-06</date>
+        <source>05_Right_Motor.kicad_sch</source>
+        <comment number="1" value="原理图设计；实板电流、温升与线束待验证"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="6" name="/中景园屏幕与四个操作按钮/" tstamps="/433415cc-03a8-5189-8d36-253244603d4b/">
+      <title_block>
+        <title>中景园屏幕与四个操作按钮</title>
+        <company>SmallCoral / CoralC5-Motor</company>
+        <rev>M2.2</rev>
+        <date>2026-11-06</date>
+        <source>07_TFT_Buttons.kicad_sch</source>
+        <comment number="1" value="原理图设计；实板电流、温升与线束待验证"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="7" name="/八路灰度与双摄像头模块接口/" tstamps="/d6318ee1-12d4-5089-84c2-bb1addcd6fe6/">
+      <title_block>
+        <title>八路灰度与双摄像头模块接口</title>
+        <company>SmallCoral / CoralC5-Motor</company>
+        <rev>M2.2</rev>
+        <date>2026-11-06</date>
+        <source>08_Grayscale_Cameras.kicad_sch</source>
+        <comment number="1" value="原理图设计；实板电流、温升与线束待验证"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="8" name="/外设独立五伏与三伏三供电/" tstamps="/259119ae-63bb-582f-a484-b0d1b9da613b/">
+      <title_block>
+        <title>外设独立五伏与三伏三供电</title>
+        <company>SmallCoral / CoralC5-Motor</company>
+        <rev>M2.2</rev>
+        <date>2026-11-06</date>
+        <source>06_Module_Power.kicad_sch</source>
+        <comment number="1" value="原理图设计；实板电流、温升与线束待验证"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="9" name="/四脚蓝牙与外接步进驱动接口/" tstamps="/6805c229-363d-5720-8872-3a09dea05270/">
+      <title_block>
+        <title>四脚蓝牙与外接步进驱动接口</title>
+        <company>SmallCoral / CoralC5-Motor</company>
+        <rev>M2.2</rev>
+        <date>2026-11-06</date>
+        <source>09_Bluetooth_Stepper.kicad_sch</source>
+        <comment number="1" value="原理图设计；实板电流、温升与线束待验证"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="C1">
+      <value>470u / 25V</value>
+      <footprint>Motor:Capacitor_THT__CP_Radial_D10.0mm_P5.00mm</footprint>
+      <fields>
+        <field name="MPN">EEU-FR1E471</field>
+        <field name="Footprint">Motor:Capacitor_THT__CP_Radial_D10.0mm_P5.00mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__C_Polarized" description="Polarized capacitor"/>
+      <property name="MPN" value="EEU-FR1E471"/>
+      <property name="Sheetname" value="输入、总开关与降压"/>
+      <property name="Sheetfile" value="02_Power.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="CP_*"/>
+      <sheetpath names="/输入、总开关与降压/" tstamps="/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/"/>
+      <tstamps>28467901-7765-502f-8925-40d984cd4ff2</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C2">
+      <value>10u / 50V</value>
+      <footprint>Motor:Capacitor_SMD__C_0805_2012Metric</footprint>
+      <fields>
+        <field name="MPN">GRM21BR61H106KE43L</field>
+        <field name="Footprint">Motor:Capacitor_SMD__C_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
+      <property name="MPN" value="GRM21BR61H106KE43L"/>
+      <property name="Sheetname" value="输入、总开关与降压"/>
+      <property name="Sheetfile" value="02_Power.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/输入、总开关与降压/" tstamps="/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/"/>
+      <tstamps>64cb930f-4544-5ee1-b1b0-2df262df5e0c</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C3">
+      <value>100n / 50V</value>
+      <footprint>Motor:Capacitor_SMD__C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Capacitor_SMD__C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="输入、总开关与降压"/>
+      <property name="Sheetfile" value="02_Power.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/输入、总开关与降压/" tstamps="/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/"/>
+      <tstamps>15eb334f-40ca-5a99-aedb-6b038a647172</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C4">
+      <value>100n / 16V</value>
+      <footprint>Motor:Capacitor_SMD__C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Capacitor_SMD__C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="输入、总开关与降压"/>
+      <property name="Sheetfile" value="02_Power.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/输入、总开关与降压/" tstamps="/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/"/>
+      <tstamps>8f37288a-447f-591f-943b-a696d47ed71f</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C5">
+      <value>22u / 10V</value>
+      <footprint>Motor:Capacitor_SMD__C_1206_3216Metric</footprint>
+      <fields>
+        <field name="MPN">GRM31CR71A226KE15L</field>
+        <field name="Footprint">Motor:Capacitor_SMD__C_1206_3216Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
+      <property name="MPN" value="GRM31CR71A226KE15L"/>
+      <property name="Sheetname" value="输入、总开关与降压"/>
+      <property name="Sheetfile" value="02_Power.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/输入、总开关与降压/" tstamps="/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/"/>
+      <tstamps>164e1ba5-99c2-5663-80d4-1c1bf907cf77</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C6">
+      <value>22u / 10V</value>
+      <footprint>Motor:Capacitor_SMD__C_1206_3216Metric</footprint>
+      <fields>
+        <field name="MPN">GRM31CR71A226KE15L</field>
+        <field name="Footprint">Motor:Capacitor_SMD__C_1206_3216Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
+      <property name="MPN" value="GRM31CR71A226KE15L"/>
+      <property name="Sheetname" value="输入、总开关与降压"/>
+      <property name="Sheetfile" value="02_Power.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/输入、总开关与降压/" tstamps="/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/"/>
+      <tstamps>7892b113-0ea4-5106-aebf-55933f9f23c0</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D1">
+      <value>BZT52C12</value>
+      <footprint>Motor:Diode_SMD__D_SOD-123</footprint>
+      <fields>
+        <field name="MPN">BZT52C12</field>
+        <field name="Footprint">Motor:Diode_SMD__D_SOD-123</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__D_Zener" description="Zener diode"/>
+      <property name="MPN" value="BZT52C12"/>
+      <property name="Sheetname" value="输入、总开关与降压"/>
+      <property name="Sheetfile" value="02_Power.kicad_sch"/>
+      <property name="ki_keywords" value="diode"/>
+      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
+      <sheetpath names="/输入、总开关与降压/" tstamps="/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/"/>
+      <tstamps>0d44296b-4734-59b0-b1f5-160008121361</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D2">
+      <value>SMAJ15A</value>
+      <footprint>Motor:Diode_SMD__D_SMA</footprint>
+      <fields>
+        <field name="MPN">SMAJ15A</field>
+        <field name="Footprint">Motor:Diode_SMD__D_SMA</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__D_Zener" description="Zener diode"/>
+      <property name="MPN" value="SMAJ15A"/>
+      <property name="Sheetname" value="输入、总开关与降压"/>
+      <property name="Sheetfile" value="02_Power.kicad_sch"/>
+      <property name="ki_keywords" value="diode"/>
+      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
+      <sheetpath names="/输入、总开关与降压/" tstamps="/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/"/>
+      <tstamps>3f71b181-3086-5290-8579-18571c410c85</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D3">
+      <value>SS34</value>
+      <footprint>Motor:Diode_SMD__D_SMA</footprint>
+      <fields>
+        <field name="MPN">SS34</field>
+        <field name="Footprint">Motor:Diode_SMD__D_SMA</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__D_Schottky" description="Schottky diode"/>
+      <property name="MPN" value="SS34"/>
+      <property name="Sheetname" value="输入、总开关与降压"/>
+      <property name="Sheetfile" value="02_Power.kicad_sch"/>
+      <property name="ki_keywords" value="diode Schottky"/>
+      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
+      <sheetpath names="/输入、总开关与降压/" tstamps="/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/"/>
+      <tstamps>02080cb2-b2d2-5762-b28f-6ddb11e73bfc</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D4">
+      <value>LED_GREEN</value>
+      <footprint>Motor:LED_SMD__LED_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">LTST-C190KGKT</field>
+        <field name="Footprint">Motor:LED_SMD__LED_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__LED" description="Light emitting diode"/>
+      <property name="MPN" value="LTST-C190KGKT"/>
+      <property name="Sheetname" value="输入、总开关与降压"/>
+      <property name="Sheetfile" value="02_Power.kicad_sch"/>
+      <property name="ki_keywords" value="LED diode"/>
+      <property name="ki_fp_filters" value="LED* LED_SMD:* LED_THT:*"/>
+      <sheetpath names="/输入、总开关与降压/" tstamps="/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/"/>
+      <tstamps>14a766d8-35b9-51a7-be28-2bb192fcd787</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="F1">
+      <value>4A / 32V</value>
+      <footprint>Motor:Fuse__Fuse_1206_3216Metric</footprint>
+      <fields>
+        <field name="MPN">0466004.NR</field>
+        <field name="Footprint">Motor:Fuse__Fuse_1206_3216Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__Fuse" description="Fuse"/>
+      <property name="MPN" value="0466004.NR"/>
+      <property name="Sheetname" value="输入、总开关与降压"/>
+      <property name="Sheetfile" value="02_Power.kicad_sch"/>
+      <property name="ki_keywords" value="fuse"/>
+      <property name="ki_fp_filters" value="*Fuse*"/>
+      <sheetpath names="/输入、总开关与降压/" tstamps="/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/"/>
+      <tstamps>666ca98d-29dc-53b2-993a-7473f8d22717</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J1">
+      <value>XT60PW-M</value>
+      <footprint>Motor:AMASS_XT60PW-M_1x02_P7.20mm_Horizontal</footprint>
+      <datasheet>https://www.china-amass.com/biao/289.html</datasheet>
+      <fields>
+        <field name="MPN">XT60PW-M</field>
+        <field name="Footprint">Motor:AMASS_XT60PW-M_1x02_P7.20mm_Horizontal</field>
+        <field name="Datasheet">https://www.china-amass.com/biao/289.html</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="XT60PW_M_Power" description=""/>
+      <property name="MPN" value="XT60PW-M"/>
+      <property name="Sheetname" value="输入、总开关与降压"/>
+      <property name="Sheetfile" value="02_Power.kicad_sch"/>
+      <sheetpath names="/输入、总开关与降压/" tstamps="/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/"/>
+      <tstamps>9ad6e83c-e568-56d0-85fd-21fcc1de997a</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="L1">
+      <value>4.7u / 4.5A</value>
+      <footprint>Motor:Inductor_SMD__L_Bourns_SRN6045TA</footprint>
+      <fields>
+        <field name="MPN">SRN6045TA-4R7M</field>
+        <field name="Footprint">Motor:Inductor_SMD__L_Bourns_SRN6045TA</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__L" description="Inductor"/>
+      <property name="MPN" value="SRN6045TA-4R7M"/>
+      <property name="Sheetname" value="输入、总开关与降压"/>
+      <property name="Sheetfile" value="02_Power.kicad_sch"/>
+      <property name="ki_keywords" value="inductor choke coil reactor magnetic"/>
+      <property name="ki_fp_filters" value="Choke_* *Coil* Inductor_* L_*"/>
+      <sheetpath names="/输入、总开关与降压/" tstamps="/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/"/>
+      <tstamps>f57e20bc-8297-5453-8677-cd4d7e3bd5e4</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="Q1">
+      <value>AO4407A</value>
+      <footprint>Motor:Package_SO__SOIC-8_3.9x4.9mm_P1.27mm</footprint>
+      <datasheet>https://aosmd.com/sites/default/files/res/datasheets/AO4407A.pdf</datasheet>
+      <fields>
+        <field name="MPN">AO4407A</field>
+        <field name="Footprint">Motor:Package_SO__SOIC-8_3.9x4.9mm_P1.27mm</field>
+        <field name="Datasheet">https://aosmd.com/sites/default/files/res/datasheets/AO4407A.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="AO4407A" description="P-MOSFET transistor, gate/source/drain"/>
+      <property name="MPN" value="AO4407A"/>
+      <property name="Sheetname" value="输入、总开关与降压"/>
+      <property name="Sheetfile" value="02_Power.kicad_sch"/>
+      <property name="ki_keywords" value="transistor PMOS P-MOS P-MOSFET"/>
+      <sheetpath names="/输入、总开关与降压/" tstamps="/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/"/>
+      <tstamps>ddf56888-05ba-5f47-9c6b-7d22ae71b0e5</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+            <pin num="7"/>
+            <pin num="8"/>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="Q2">
+      <value>AO4407A</value>
+      <footprint>Motor:Package_SO__SOIC-8_3.9x4.9mm_P1.27mm</footprint>
+      <datasheet>https://aosmd.com/sites/default/files/res/datasheets/AO4407A.pdf</datasheet>
+      <fields>
+        <field name="MPN">AO4407A</field>
+        <field name="Footprint">Motor:Package_SO__SOIC-8_3.9x4.9mm_P1.27mm</field>
+        <field name="Datasheet">https://aosmd.com/sites/default/files/res/datasheets/AO4407A.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="AO4407A_Mirrored" description="P-MOSFET transistor, gate/source/drain"/>
+      <property name="MPN" value="AO4407A"/>
+      <property name="Sheetname" value="输入、总开关与降压"/>
+      <property name="Sheetfile" value="02_Power.kicad_sch"/>
+      <property name="ki_keywords" value="transistor PMOS P-MOS P-MOSFET"/>
+      <sheetpath names="/输入、总开关与降压/" tstamps="/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/"/>
+      <tstamps>93963961-26dc-57b1-9c27-fe1dd3d98e4a</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="4"/>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="5"/>
+            <pin num="6"/>
+            <pin num="7"/>
+            <pin num="8"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R1">
+      <value>1M</value>
+      <footprint>Motor:Resistor_SMD__R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Resistor_SMD__R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__R" description="Resistor"/>
+      <property name="Sheetname" value="输入、总开关与降压"/>
+      <property name="Sheetfile" value="02_Power.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/输入、总开关与降压/" tstamps="/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/"/>
+      <tstamps>2e495721-e040-5ae2-a010-fcc0377ae8eb</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R2">
+      <value>100k</value>
+      <footprint>Motor:Resistor_SMD__R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Resistor_SMD__R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__R" description="Resistor"/>
+      <property name="Sheetname" value="输入、总开关与降压"/>
+      <property name="Sheetfile" value="02_Power.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/输入、总开关与降压/" tstamps="/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/"/>
+      <tstamps>bff91d5c-3d8d-55fe-b0ab-102c468c34aa</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R3">
+      <value>698k / 1%</value>
+      <footprint>Motor:Resistor_SMD__R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Resistor_SMD__R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__R" description="Resistor"/>
+      <property name="Sheetname" value="输入、总开关与降压"/>
+      <property name="Sheetfile" value="02_Power.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/输入、总开关与降压/" tstamps="/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/"/>
+      <tstamps>89563f64-6018-5dd0-9052-fa2927e40c35</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R4">
+      <value>100k / 1%</value>
+      <footprint>Motor:Resistor_SMD__R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Resistor_SMD__R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__R" description="Resistor"/>
+      <property name="Sheetname" value="输入、总开关与降压"/>
+      <property name="Sheetfile" value="02_Power.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/输入、总开关与降压/" tstamps="/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/"/>
+      <tstamps>5e81910f-c218-5cfc-b13d-8bc7aa8dffad</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R5">
+      <value>2.2k</value>
+      <footprint>Motor:Resistor_SMD__R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Resistor_SMD__R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__R" description="Resistor"/>
+      <property name="Sheetname" value="输入、总开关与降压"/>
+      <property name="Sheetfile" value="02_Power.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/输入、总开关与降压/" tstamps="/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/"/>
+      <tstamps>67eab74a-7b0b-5afc-a1aa-5bd19baa2420</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="SW1">
+      <value>SS12D07VG4</value>
+      <footprint>Motor:SS12D07VG4</footprint>
+      <fields>
+        <field name="MPN">SS12D07VG4</field>
+        <field name="LCSC">C431546</field>
+        <field name="Footprint">Motor:SS12D07VG4</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Switch__SW_SPDT" description="Switch, single pole double throw"/>
+      <property name="MPN" value="SS12D07VG4"/>
+      <property name="LCSC" value="C431546"/>
+      <property name="Sheetname" value="输入、总开关与降压"/>
+      <property name="Sheetfile" value="02_Power.kicad_sch"/>
+      <property name="ki_keywords" value="switch single-pole double-throw spdt ON-ON"/>
+      <sheetpath names="/输入、总开关与降压/" tstamps="/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/"/>
+      <tstamps>ba612015-4035-5e1b-9e6f-0a1091abd1ea</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="2"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="1"/>
+            <pin num="3"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U1">
+      <value>AP63205WU-7</value>
+      <footprint>Motor:Package_TO_SOT_SMD__TSOT-23-6</footprint>
+      <datasheet>https://www.diodes.com/assets/Datasheets/AP63200-AP63201-AP63203-AP63205.pdf</datasheet>
+      <fields>
+        <field name="MPN">AP63205WU-7</field>
+        <field name="Footprint">Motor:Package_TO_SOT_SMD__TSOT-23-6</field>
+        <field name="Datasheet">https://www.diodes.com/assets/Datasheets/AP63200-AP63201-AP63203-AP63205.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Regulator_Switching__AP63205WU" description="2A, 1.1MHz Buck DC/DC Converter, fixed 5.0V output voltage, TSOT-23-6"/>
+      <property name="MPN" value="AP63205WU-7"/>
+      <property name="Sheetname" value="输入、总开关与降压"/>
+      <property name="Sheetfile" value="02_Power.kicad_sch"/>
+      <property name="ki_keywords" value="2A Buck DC/DC"/>
+      <property name="ki_fp_filters" value="TSOT?23*"/>
+      <sheetpath names="/输入、总开关与降压/" tstamps="/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/"/>
+      <tstamps>77b68585-8fa4-50e3-8e91-c710f896a3b4</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="3"/>
+            <pin num="2"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J8">
+      <value>SWD / XH2.50</value>
+      <footprint>Motor:Connector_JST__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical</footprint>
+      <fields>
+        <field name="MPN">B4B-XH-A</field>
+        <field name="Footprint">Motor:Connector_JST__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Connector_Generic__Conn_01x04" description="Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="MPN" value="B4B-XH-A"/>
+      <property name="Sheetname" value="核心板接口"/>
+      <property name="Sheetfile" value="03_Core_Interface.kicad_sch"/>
+      <property name="ki_keywords" value="connector"/>
+      <property name="ki_fp_filters" value="Connector*:*_1x??_*"/>
+      <sheetpath names="/核心板接口/" tstamps="/c813fdd4-725f-5df7-aa4a-68cd15d401cf/"/>
+      <tstamps>6f4b2b4b-c536-52a1-8a19-1d784e9568a1</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J10">
+      <value>RUN / STOP_NC</value>
+      <footprint>Motor:Connector_PinHeader_2.54mm__PinHeader_1x02_P2.54mm_Vertical</footprint>
+      <fields>
+        <field name="Footprint">Motor:Connector_PinHeader_2.54mm__PinHeader_1x02_P2.54mm_Vertical</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Connector_Generic__Conn_01x02" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value="核心板接口"/>
+      <property name="Sheetfile" value="03_Core_Interface.kicad_sch"/>
+      <property name="ki_keywords" value="connector"/>
+      <property name="ki_fp_filters" value="Connector*:*_1x??_*"/>
+      <sheetpath names="/核心板接口/" tstamps="/c813fdd4-725f-5df7-aa4a-68cd15d401cf/"/>
+      <tstamps>48ad319f-f102-53d1-9834-e252929c329c</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J14">
+      <value>C5-EDGE-3 / 98P</value>
+      <footprint>Motor:C5_EDGE_3_Socket</footprint>
+      <fields>
+        <field name="MPN">X1611WVS-98-9TV01</field>
+        <field name="Footprint">Motor:C5_EDGE_3_Socket</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="CoralC5_Streamline_Socket" description=""/>
+      <property name="MPN" value="X1611WVS-98-9TV01"/>
+      <property name="Sheetname" value="核心板接口"/>
+      <property name="Sheetfile" value="03_Core_Interface.kicad_sch"/>
+      <sheetpath names="/核心板接口/" tstamps="/c813fdd4-725f-5df7-aa4a-68cd15d401cf/"/>
+      <tstamps>8c9c7b19-b75d-593c-a829-0649560b29f7 b37c04c5-9b5f-511b-9c74-f377aa32d4bc 30a59f44-06c2-5f5a-bb1c-18c06bfa40da</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="A1"/>
+            <pin num="A2"/>
+            <pin num="A3"/>
+            <pin num="A4"/>
+            <pin num="A5"/>
+            <pin num="A6"/>
+            <pin num="A7"/>
+            <pin num="A8"/>
+            <pin num="A9"/>
+            <pin num="A10"/>
+            <pin num="A11"/>
+            <pin num="A12"/>
+            <pin num="A13"/>
+            <pin num="A14"/>
+            <pin num="A15"/>
+            <pin num="A16"/>
+            <pin num="A17"/>
+            <pin num="A18"/>
+            <pin num="A19"/>
+            <pin num="A20"/>
+            <pin num="A21"/>
+            <pin num="A22"/>
+            <pin num="A23"/>
+            <pin num="A24"/>
+            <pin num="A25"/>
+            <pin num="B1"/>
+            <pin num="B2"/>
+            <pin num="B3"/>
+            <pin num="B4"/>
+            <pin num="B5"/>
+            <pin num="B6"/>
+            <pin num="B7"/>
+            <pin num="B8"/>
+            <pin num="B9"/>
+            <pin num="B10"/>
+            <pin num="B11"/>
+            <pin num="B12"/>
+            <pin num="B13"/>
+            <pin num="B14"/>
+            <pin num="B15"/>
+            <pin num="B16"/>
+            <pin num="B17"/>
+            <pin num="B18"/>
+            <pin num="B19"/>
+            <pin num="B20"/>
+            <pin num="B21"/>
+            <pin num="B22"/>
+            <pin num="B23"/>
+            <pin num="B24"/>
+            <pin num="B25"/>
+          </pins>
+        </unit>
+        <unit name="B">
+          <pins>
+            <pin num="A26"/>
+            <pin num="A27"/>
+            <pin num="A28"/>
+            <pin num="A29"/>
+            <pin num="A30"/>
+            <pin num="A31"/>
+            <pin num="A32"/>
+            <pin num="A33"/>
+            <pin num="A34"/>
+            <pin num="A35"/>
+            <pin num="A36"/>
+            <pin num="A37"/>
+            <pin num="A38"/>
+            <pin num="A39"/>
+            <pin num="A40"/>
+            <pin num="A41"/>
+            <pin num="A42"/>
+            <pin num="A43"/>
+            <pin num="A44"/>
+            <pin num="A45"/>
+            <pin num="A46"/>
+            <pin num="A47"/>
+            <pin num="A48"/>
+            <pin num="A49"/>
+            <pin num="B26"/>
+            <pin num="B27"/>
+            <pin num="B28"/>
+            <pin num="B29"/>
+            <pin num="B30"/>
+            <pin num="B31"/>
+            <pin num="B32"/>
+            <pin num="B33"/>
+            <pin num="B34"/>
+            <pin num="B35"/>
+            <pin num="B36"/>
+            <pin num="B37"/>
+            <pin num="B38"/>
+            <pin num="B39"/>
+            <pin num="B40"/>
+            <pin num="B41"/>
+            <pin num="B42"/>
+            <pin num="B43"/>
+            <pin num="B44"/>
+            <pin num="B45"/>
+            <pin num="B46"/>
+            <pin num="B47"/>
+            <pin num="B48"/>
+            <pin num="B49"/>
+          </pins>
+        </unit>
+        <unit name="C">
+          <pins>
+            <pin num="50"/>
+            <pin num="51"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R6">
+      <value>100R</value>
+      <footprint>Motor:Resistor_SMD__R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Resistor_SMD__R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__R" description="Resistor"/>
+      <property name="Sheetname" value="核心板接口"/>
+      <property name="Sheetfile" value="03_Core_Interface.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/核心板接口/" tstamps="/c813fdd4-725f-5df7-aa4a-68cd15d401cf/"/>
+      <tstamps>eae3443a-b80e-5d60-a872-fcc73b5a8045</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R7">
+      <value>10k</value>
+      <footprint>Motor:Resistor_SMD__R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Resistor_SMD__R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__R" description="Resistor"/>
+      <property name="Sheetname" value="核心板接口"/>
+      <property name="Sheetfile" value="03_Core_Interface.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/核心板接口/" tstamps="/c813fdd4-725f-5df7-aa4a-68cd15d401cf/"/>
+      <tstamps>1f638f28-e443-5fa1-864f-31e2ac19e58a</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C10">
+      <value>22n / 50V</value>
+      <footprint>Motor:Capacitor_SMD__C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Capacitor_SMD__C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="左电机与编码器"/>
+      <property name="Sheetfile" value="04_Left_Motor.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/左电机与编码器/" tstamps="/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/"/>
+      <tstamps>54288062-110c-5979-91de-fa208ec547ab</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C11">
+      <value>100n / 16V</value>
+      <footprint>Motor:Capacitor_SMD__C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Capacitor_SMD__C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="左电机与编码器"/>
+      <property name="Sheetfile" value="04_Left_Motor.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/左电机与编码器/" tstamps="/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/"/>
+      <tstamps>8f7217b2-5003-51e3-867a-af6a943f5d7a</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C12">
+      <value>100n / 50V</value>
+      <footprint>Motor:Capacitor_SMD__C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Capacitor_SMD__C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="左电机与编码器"/>
+      <property name="Sheetfile" value="04_Left_Motor.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/左电机与编码器/" tstamps="/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/"/>
+      <tstamps>11a8b11d-34d2-5df1-bd90-a7c89486ca38</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C13">
+      <value>470u / 25V</value>
+      <footprint>Motor:Capacitor_THT__CP_Radial_D10.0mm_P5.00mm</footprint>
+      <fields>
+        <field name="MPN">EEU-FR1E471</field>
+        <field name="Footprint">Motor:Capacitor_THT__CP_Radial_D10.0mm_P5.00mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__C_Polarized" description="Polarized capacitor"/>
+      <property name="MPN" value="EEU-FR1E471"/>
+      <property name="Sheetname" value="左电机与编码器"/>
+      <property name="Sheetfile" value="04_Left_Motor.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="CP_*"/>
+      <sheetpath names="/左电机与编码器/" tstamps="/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/"/>
+      <tstamps>ba66066a-a3be-5aaf-852a-7dbd4ddcad32</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C14">
+      <value>100n / 16V</value>
+      <footprint>Motor:Capacitor_SMD__C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Capacitor_SMD__C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="左电机与编码器"/>
+      <property name="Sheetfile" value="04_Left_Motor.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/左电机与编码器/" tstamps="/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/"/>
+      <tstamps>7f9cdff6-d43a-5d38-9e50-e75692d64c69</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C15">
+      <value>10n / 16V</value>
+      <footprint>Motor:Capacitor_SMD__C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Capacitor_SMD__C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="左电机与编码器"/>
+      <property name="Sheetfile" value="04_Left_Motor.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/左电机与编码器/" tstamps="/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/"/>
+      <tstamps>68e530ce-35db-5b8a-8471-bbc16e57b7c7</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C16">
+      <value>100n / 16V</value>
+      <footprint>Motor:Capacitor_SMD__C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Capacitor_SMD__C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="左电机与编码器"/>
+      <property name="Sheetfile" value="04_Left_Motor.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/左电机与编码器/" tstamps="/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/"/>
+      <tstamps>a1fa0d4e-f8fb-5e36-af2c-b9baa65e2d1f</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C17">
+      <value>1n / 16V</value>
+      <footprint>Motor:Capacitor_SMD__C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Capacitor_SMD__C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="左电机与编码器"/>
+      <property name="Sheetfile" value="04_Left_Motor.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/左电机与编码器/" tstamps="/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/"/>
+      <tstamps>c4be2d74-a87f-5dd9-8923-622a4727fbb6</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C18">
+      <value>1n / 16V</value>
+      <footprint>Motor:Capacitor_SMD__C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Capacitor_SMD__C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="左电机与编码器"/>
+      <property name="Sheetfile" value="04_Left_Motor.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/左电机与编码器/" tstamps="/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/"/>
+      <tstamps>cec6b45a-7e73-59da-b8a6-b6535488f457</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C19">
+      <value>100n / 16V</value>
+      <footprint>Motor:Capacitor_SMD__C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Capacitor_SMD__C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="左电机与编码器"/>
+      <property name="Sheetfile" value="04_Left_Motor.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/左电机与编码器/" tstamps="/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/"/>
+      <tstamps>7e68754e-d775-5a11-a177-e054a0cb5f57</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C20">
+      <value>1u / 10V</value>
+      <footprint>Motor:Capacitor_SMD__C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Capacitor_SMD__C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="左电机与编码器"/>
+      <property name="Sheetfile" value="04_Left_Motor.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/左电机与编码器/" tstamps="/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/"/>
+      <tstamps>0d54f58b-d82c-598e-b021-f0122957501f</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J4">
+      <value>MG513 / XH2.50 / 6P</value>
+      <footprint>Motor:Connector_JST__JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical</footprint>
+      <description>MG513 six-pin motor and AB encoder connector</description>
+      <fields>
+        <field name="MPN">B6B-XH-A(LF)(SN)</field>
+        <field name="Footprint">Motor:Connector_JST__JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical</field>
+        <field name="Datasheet"/>
+        <field name="Description">MG513 six-pin motor and AB encoder connector</field>
+      </fields>
+      <libsource lib="Motor" part="MG513_6P" description=""/>
+      <property name="MPN" value="B6B-XH-A(LF)(SN)"/>
+      <property name="Sheetname" value="左电机与编码器"/>
+      <property name="Sheetfile" value="04_Left_Motor.kicad_sch"/>
+      <sheetpath names="/左电机与编码器/" tstamps="/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/"/>
+      <tstamps>5082133d-013f-53b2-8977-a3e56e5274bb</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R10">
+      <value>10k / 1%</value>
+      <footprint>Motor:Resistor_SMD__R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Resistor_SMD__R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__R" description="Resistor"/>
+      <property name="Sheetname" value="左电机与编码器"/>
+      <property name="Sheetfile" value="04_Left_Motor.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/左电机与编码器/" tstamps="/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/"/>
+      <tstamps>d1d17ec3-697e-53fc-84db-ad8f96957050</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R11">
+      <value>10k / 1%</value>
+      <footprint>Motor:Resistor_SMD__R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Resistor_SMD__R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__R" description="Resistor"/>
+      <property name="Sheetname" value="左电机与编码器"/>
+      <property name="Sheetfile" value="04_Left_Motor.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/左电机与编码器/" tstamps="/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/"/>
+      <tstamps>4d5b9b02-73c8-53ce-a502-c6f7428a6e9d</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R12">
+      <value>1.82k / 1%</value>
+      <footprint>Motor:Resistor_SMD__R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Resistor_SMD__R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__R" description="Resistor"/>
+      <property name="Sheetname" value="左电机与编码器"/>
+      <property name="Sheetfile" value="04_Left_Motor.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/左电机与编码器/" tstamps="/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/"/>
+      <tstamps>9d8a39c6-7d38-55ef-97b6-bc39072ff4ac</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R13">
+      <value>10k</value>
+      <footprint>Motor:Resistor_SMD__R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Resistor_SMD__R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__R" description="Resistor"/>
+      <property name="Sheetname" value="左电机与编码器"/>
+      <property name="Sheetfile" value="04_Left_Motor.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/左电机与编码器/" tstamps="/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/"/>
+      <tstamps>ad591694-6209-5436-94e4-3aae010386a7</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R14">
+      <value>100k</value>
+      <footprint>Motor:Resistor_SMD__R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Resistor_SMD__R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__R" description="Resistor"/>
+      <property name="Sheetname" value="左电机与编码器"/>
+      <property name="Sheetfile" value="04_Left_Motor.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/左电机与编码器/" tstamps="/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/"/>
+      <tstamps>561f7ac6-dac4-5bce-88b5-aa0c0cea1829</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R15">
+      <value>1k</value>
+      <footprint>Motor:Resistor_SMD__R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Resistor_SMD__R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__R" description="Resistor"/>
+      <property name="Sheetname" value="左电机与编码器"/>
+      <property name="Sheetfile" value="04_Left_Motor.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/左电机与编码器/" tstamps="/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/"/>
+      <tstamps>47931b1f-2f3b-578f-9cc8-5e957ed22934</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R16">
+      <value>1k</value>
+      <footprint>Motor:Resistor_SMD__R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Resistor_SMD__R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__R" description="Resistor"/>
+      <property name="Sheetname" value="左电机与编码器"/>
+      <property name="Sheetfile" value="04_Left_Motor.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/左电机与编码器/" tstamps="/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/"/>
+      <tstamps>5d989995-10d5-5a21-bb69-a98e3d9666ff</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R17">
+      <value>1k</value>
+      <footprint>Motor:Resistor_SMD__R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Resistor_SMD__R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__R" description="Resistor"/>
+      <property name="Sheetname" value="左电机与编码器"/>
+      <property name="Sheetfile" value="04_Left_Motor.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/左电机与编码器/" tstamps="/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/"/>
+      <tstamps>cbe5f3da-facb-5b6f-a650-6afa1daedbe5</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R18">
+      <value>10k</value>
+      <footprint>Motor:Resistor_SMD__R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Resistor_SMD__R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__R" description="Resistor"/>
+      <property name="Sheetname" value="左电机与编码器"/>
+      <property name="Sheetfile" value="04_Left_Motor.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/左电机与编码器/" tstamps="/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/"/>
+      <tstamps>4d8788a1-9e6f-5a3c-bb23-0b7634ca7583</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R19">
+      <value>10k</value>
+      <footprint>Motor:Resistor_SMD__R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Resistor_SMD__R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__R" description="Resistor"/>
+      <property name="Sheetname" value="左电机与编码器"/>
+      <property name="Sheetfile" value="04_Left_Motor.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/左电机与编码器/" tstamps="/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/"/>
+      <tstamps>5e8db4eb-3c7e-5674-9814-9b4e861b3f5e</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U2">
+      <value>DRV8874PWPR</value>
+      <footprint>Motor:DRV8874_PWP0016</footprint>
+      <datasheet>https://www.ti.com/lit/ds/symlink/drv8874.pdf</datasheet>
+      <fields>
+        <field name="MPN">DRV8874PWPR</field>
+        <field name="Footprint">Motor:DRV8874_PWP0016</field>
+        <field name="Datasheet">https://www.ti.com/lit/ds/symlink/drv8874.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="DRV8874PWPR" description=""/>
+      <property name="MPN" value="DRV8874PWPR"/>
+      <property name="Sheetname" value="左电机与编码器"/>
+      <property name="Sheetfile" value="04_Left_Motor.kicad_sch"/>
+      <sheetpath names="/左电机与编码器/" tstamps="/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/"/>
+      <tstamps>cf99371c-f8c3-542e-93c7-fd1947fb7378</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+            <pin num="16"/>
+            <pin num="7"/>
+            <pin num="11"/>
+            <pin num="9"/>
+            <pin num="15"/>
+            <pin num="17"/>
+            <pin num="12"/>
+            <pin num="8"/>
+            <pin num="10"/>
+            <pin num="13"/>
+            <pin num="14"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U3">
+      <value>SN74LVC2G17DCKR</value>
+      <footprint>Motor:Package_TO_SOT_SMD__SOT-363_SC-70-6</footprint>
+      <datasheet>https://www.ti.com/lit/ds/symlink/sn74lvc2g17.pdf</datasheet>
+      <fields>
+        <field name="MPN">SN74LVC2G17DCKR</field>
+        <field name="Footprint">Motor:Package_TO_SOT_SMD__SOT-363_SC-70-6</field>
+        <field name="Datasheet">https://www.ti.com/lit/ds/symlink/sn74lvc2g17.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="SN74LVC2G17DCKR" description=""/>
+      <property name="MPN" value="SN74LVC2G17DCKR"/>
+      <property name="Sheetname" value="左电机与编码器"/>
+      <property name="Sheetfile" value="04_Left_Motor.kicad_sch"/>
+      <sheetpath names="/左电机与编码器/" tstamps="/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/"/>
+      <tstamps>7d00eb73-22d9-59b7-ab58-4cf6577fda4f</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="3"/>
+            <pin num="5"/>
+            <pin num="2"/>
+            <pin num="6"/>
+            <pin num="4"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C30">
+      <value>22n / 50V</value>
+      <footprint>Motor:Capacitor_SMD__C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Capacitor_SMD__C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="右电机与编码器"/>
+      <property name="Sheetfile" value="05_Right_Motor.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/右电机与编码器/" tstamps="/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/"/>
+      <tstamps>9a8f53f9-df9d-52cb-b1c2-1fd1990e12d9</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C31">
+      <value>100n / 16V</value>
+      <footprint>Motor:Capacitor_SMD__C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Capacitor_SMD__C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="右电机与编码器"/>
+      <property name="Sheetfile" value="05_Right_Motor.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/右电机与编码器/" tstamps="/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/"/>
+      <tstamps>97b2e262-f103-5578-b37b-af8734010614</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C32">
+      <value>100n / 50V</value>
+      <footprint>Motor:Capacitor_SMD__C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Capacitor_SMD__C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="右电机与编码器"/>
+      <property name="Sheetfile" value="05_Right_Motor.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/右电机与编码器/" tstamps="/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/"/>
+      <tstamps>6d44271f-69dc-5c9c-9056-93979b3227d8</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C33">
+      <value>470u / 25V</value>
+      <footprint>Motor:Capacitor_THT__CP_Radial_D10.0mm_P5.00mm</footprint>
+      <fields>
+        <field name="MPN">EEU-FR1E471</field>
+        <field name="Footprint">Motor:Capacitor_THT__CP_Radial_D10.0mm_P5.00mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__C_Polarized" description="Polarized capacitor"/>
+      <property name="MPN" value="EEU-FR1E471"/>
+      <property name="Sheetname" value="右电机与编码器"/>
+      <property name="Sheetfile" value="05_Right_Motor.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="CP_*"/>
+      <sheetpath names="/右电机与编码器/" tstamps="/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/"/>
+      <tstamps>c7ba900a-61de-57fb-aa03-a3f62fcf5d5e</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C34">
+      <value>100n / 16V</value>
+      <footprint>Motor:Capacitor_SMD__C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Capacitor_SMD__C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="右电机与编码器"/>
+      <property name="Sheetfile" value="05_Right_Motor.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/右电机与编码器/" tstamps="/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/"/>
+      <tstamps>0075081c-6386-5b07-ad9d-fb8489905d27</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C35">
+      <value>10n / 16V</value>
+      <footprint>Motor:Capacitor_SMD__C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Capacitor_SMD__C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="右电机与编码器"/>
+      <property name="Sheetfile" value="05_Right_Motor.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/右电机与编码器/" tstamps="/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/"/>
+      <tstamps>3f213709-f838-5af9-830a-7199fa046c84</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C36">
+      <value>100n / 16V</value>
+      <footprint>Motor:Capacitor_SMD__C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Capacitor_SMD__C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="右电机与编码器"/>
+      <property name="Sheetfile" value="05_Right_Motor.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/右电机与编码器/" tstamps="/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/"/>
+      <tstamps>e8bb7895-fb87-5fa3-a259-9ce5b1b625fc</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C37">
+      <value>1n / 16V</value>
+      <footprint>Motor:Capacitor_SMD__C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Capacitor_SMD__C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="右电机与编码器"/>
+      <property name="Sheetfile" value="05_Right_Motor.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/右电机与编码器/" tstamps="/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/"/>
+      <tstamps>74569979-6b0a-536c-808e-c9a9ec2f2ca0</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C38">
+      <value>1n / 16V</value>
+      <footprint>Motor:Capacitor_SMD__C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Capacitor_SMD__C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="右电机与编码器"/>
+      <property name="Sheetfile" value="05_Right_Motor.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/右电机与编码器/" tstamps="/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/"/>
+      <tstamps>426780d1-f82a-51e5-964c-c5326876a600</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C39">
+      <value>100n / 16V</value>
+      <footprint>Motor:Capacitor_SMD__C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Capacitor_SMD__C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="右电机与编码器"/>
+      <property name="Sheetfile" value="05_Right_Motor.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/右电机与编码器/" tstamps="/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/"/>
+      <tstamps>4e6312df-fe32-5628-a542-6bc8141615a6</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C40">
+      <value>1u / 10V</value>
+      <footprint>Motor:Capacitor_SMD__C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Capacitor_SMD__C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="右电机与编码器"/>
+      <property name="Sheetfile" value="05_Right_Motor.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/右电机与编码器/" tstamps="/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/"/>
+      <tstamps>7037d517-0f26-5ac5-860b-d03191601f55</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J6">
+      <value>MG513 / XH2.50 / 6P</value>
+      <footprint>Motor:Connector_JST__JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical</footprint>
+      <description>MG513 six-pin motor and AB encoder connector</description>
+      <fields>
+        <field name="MPN">B6B-XH-A(LF)(SN)</field>
+        <field name="Footprint">Motor:Connector_JST__JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical</field>
+        <field name="Datasheet"/>
+        <field name="Description">MG513 six-pin motor and AB encoder connector</field>
+      </fields>
+      <libsource lib="Motor" part="MG513_6P" description=""/>
+      <property name="MPN" value="B6B-XH-A(LF)(SN)"/>
+      <property name="Sheetname" value="右电机与编码器"/>
+      <property name="Sheetfile" value="05_Right_Motor.kicad_sch"/>
+      <sheetpath names="/右电机与编码器/" tstamps="/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/"/>
+      <tstamps>07f80107-8ca5-55fe-84ab-4cb77cfcbb6c</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R30">
+      <value>10k / 1%</value>
+      <footprint>Motor:Resistor_SMD__R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Resistor_SMD__R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__R" description="Resistor"/>
+      <property name="Sheetname" value="右电机与编码器"/>
+      <property name="Sheetfile" value="05_Right_Motor.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/右电机与编码器/" tstamps="/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/"/>
+      <tstamps>74ffe331-6e4d-50b6-ad78-bd5ee2f6d348</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R31">
+      <value>10k / 1%</value>
+      <footprint>Motor:Resistor_SMD__R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Resistor_SMD__R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__R" description="Resistor"/>
+      <property name="Sheetname" value="右电机与编码器"/>
+      <property name="Sheetfile" value="05_Right_Motor.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/右电机与编码器/" tstamps="/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/"/>
+      <tstamps>87dd5e49-f26a-5f26-9bac-c14b70edd487</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R32">
+      <value>1.82k / 1%</value>
+      <footprint>Motor:Resistor_SMD__R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Resistor_SMD__R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__R" description="Resistor"/>
+      <property name="Sheetname" value="右电机与编码器"/>
+      <property name="Sheetfile" value="05_Right_Motor.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/右电机与编码器/" tstamps="/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/"/>
+      <tstamps>e3b8d925-0d0d-550e-b236-7a3d94c8729d</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R33">
+      <value>10k</value>
+      <footprint>Motor:Resistor_SMD__R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Resistor_SMD__R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__R" description="Resistor"/>
+      <property name="Sheetname" value="右电机与编码器"/>
+      <property name="Sheetfile" value="05_Right_Motor.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/右电机与编码器/" tstamps="/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/"/>
+      <tstamps>6fc61e65-f992-5efe-99eb-61712b1fcf53</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R34">
+      <value>100k</value>
+      <footprint>Motor:Resistor_SMD__R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Resistor_SMD__R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__R" description="Resistor"/>
+      <property name="Sheetname" value="右电机与编码器"/>
+      <property name="Sheetfile" value="05_Right_Motor.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/右电机与编码器/" tstamps="/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/"/>
+      <tstamps>dfb37ac0-8cee-5cd5-bbe5-2bb74fbcee1f</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R35">
+      <value>1k</value>
+      <footprint>Motor:Resistor_SMD__R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Resistor_SMD__R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__R" description="Resistor"/>
+      <property name="Sheetname" value="右电机与编码器"/>
+      <property name="Sheetfile" value="05_Right_Motor.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/右电机与编码器/" tstamps="/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/"/>
+      <tstamps>5514eda7-fc41-5055-83ee-db6562559f22</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R36">
+      <value>1k</value>
+      <footprint>Motor:Resistor_SMD__R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Resistor_SMD__R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__R" description="Resistor"/>
+      <property name="Sheetname" value="右电机与编码器"/>
+      <property name="Sheetfile" value="05_Right_Motor.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/右电机与编码器/" tstamps="/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/"/>
+      <tstamps>fdf397f8-760b-52d4-a3f9-083b5227ff8a</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R37">
+      <value>1k</value>
+      <footprint>Motor:Resistor_SMD__R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Resistor_SMD__R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__R" description="Resistor"/>
+      <property name="Sheetname" value="右电机与编码器"/>
+      <property name="Sheetfile" value="05_Right_Motor.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/右电机与编码器/" tstamps="/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/"/>
+      <tstamps>45c3e72d-3d06-59ee-a503-07ff452c7b64</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R38">
+      <value>10k</value>
+      <footprint>Motor:Resistor_SMD__R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Resistor_SMD__R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__R" description="Resistor"/>
+      <property name="Sheetname" value="右电机与编码器"/>
+      <property name="Sheetfile" value="05_Right_Motor.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/右电机与编码器/" tstamps="/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/"/>
+      <tstamps>84fbefb2-fce4-52ae-94ea-33225d019665</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R39">
+      <value>10k</value>
+      <footprint>Motor:Resistor_SMD__R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Resistor_SMD__R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__R" description="Resistor"/>
+      <property name="Sheetname" value="右电机与编码器"/>
+      <property name="Sheetfile" value="05_Right_Motor.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/右电机与编码器/" tstamps="/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/"/>
+      <tstamps>d8b406d0-ec21-52a0-a7c0-76d25c8b1203</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U4">
+      <value>DRV8874PWPR</value>
+      <footprint>Motor:DRV8874_PWP0016</footprint>
+      <datasheet>https://www.ti.com/lit/ds/symlink/drv8874.pdf</datasheet>
+      <fields>
+        <field name="MPN">DRV8874PWPR</field>
+        <field name="Footprint">Motor:DRV8874_PWP0016</field>
+        <field name="Datasheet">https://www.ti.com/lit/ds/symlink/drv8874.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="DRV8874PWPR" description=""/>
+      <property name="MPN" value="DRV8874PWPR"/>
+      <property name="Sheetname" value="右电机与编码器"/>
+      <property name="Sheetfile" value="05_Right_Motor.kicad_sch"/>
+      <sheetpath names="/右电机与编码器/" tstamps="/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/"/>
+      <tstamps>f6db182d-1574-5709-b755-398f2e7ccd20</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+            <pin num="16"/>
+            <pin num="7"/>
+            <pin num="11"/>
+            <pin num="9"/>
+            <pin num="15"/>
+            <pin num="17"/>
+            <pin num="12"/>
+            <pin num="8"/>
+            <pin num="10"/>
+            <pin num="13"/>
+            <pin num="14"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U5">
+      <value>SN74LVC2G17DCKR</value>
+      <footprint>Motor:Package_TO_SOT_SMD__SOT-363_SC-70-6</footprint>
+      <datasheet>https://www.ti.com/lit/ds/symlink/sn74lvc2g17.pdf</datasheet>
+      <fields>
+        <field name="MPN">SN74LVC2G17DCKR</field>
+        <field name="Footprint">Motor:Package_TO_SOT_SMD__SOT-363_SC-70-6</field>
+        <field name="Datasheet">https://www.ti.com/lit/ds/symlink/sn74lvc2g17.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="SN74LVC2G17DCKR" description=""/>
+      <property name="MPN" value="SN74LVC2G17DCKR"/>
+      <property name="Sheetname" value="右电机与编码器"/>
+      <property name="Sheetfile" value="05_Right_Motor.kicad_sch"/>
+      <sheetpath names="/右电机与编码器/" tstamps="/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/"/>
+      <tstamps>cd830b44-f213-5a60-9243-209443087a7d</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="3"/>
+            <pin num="5"/>
+            <pin num="2"/>
+            <pin num="6"/>
+            <pin num="4"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C56">
+      <value>100nF/10V</value>
+      <footprint>Motor:Capacitor_SMD__C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Capacitor_SMD__C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="中景园屏幕与四个操作按钮"/>
+      <property name="Sheetfile" value="07_TFT_Buttons.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/中景园屏幕与四个操作按钮/" tstamps="/433415cc-03a8-5189-8d36-253244603d4b/"/>
+      <tstamps>452f5539-3f9e-5f9a-8190-26b1f59f8502</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C57">
+      <value>100nF</value>
+      <footprint>Motor:Capacitor_SMD__C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Capacitor_SMD__C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="中景园屏幕与四个操作按钮"/>
+      <property name="Sheetfile" value="07_TFT_Buttons.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/中景园屏幕与四个操作按钮/" tstamps="/433415cc-03a8-5189-8d36-253244603d4b/"/>
+      <tstamps>71f2cbed-52f5-5c44-bffe-abf9d3e4599a</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C58">
+      <value>100nF</value>
+      <footprint>Motor:Capacitor_SMD__C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Capacitor_SMD__C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="中景园屏幕与四个操作按钮"/>
+      <property name="Sheetfile" value="07_TFT_Buttons.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/中景园屏幕与四个操作按钮/" tstamps="/433415cc-03a8-5189-8d36-253244603d4b/"/>
+      <tstamps>9c4f9cc7-3d27-57b8-95bf-ed6744075f18</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C59">
+      <value>100nF</value>
+      <footprint>Motor:Capacitor_SMD__C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Capacitor_SMD__C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="中景园屏幕与四个操作按钮"/>
+      <property name="Sheetfile" value="07_TFT_Buttons.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/中景园屏幕与四个操作按钮/" tstamps="/433415cc-03a8-5189-8d36-253244603d4b/"/>
+      <tstamps>b140f196-19e8-544a-80ca-abe02fba297e</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C60">
+      <value>100nF</value>
+      <footprint>Motor:Capacitor_SMD__C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Capacitor_SMD__C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="中景园屏幕与四个操作按钮"/>
+      <property name="Sheetfile" value="07_TFT_Buttons.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/中景园屏幕与四个操作按钮/" tstamps="/433415cc-03a8-5189-8d36-253244603d4b/"/>
+      <tstamps>93643c9d-a51b-5ff7-8f90-7b0b175e6ccd</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="H1">
+      <value>TFT孔 D2.0</value>
+      <footprint>Motor:MountingHole__MountingHole_2mm</footprint>
+      <fields>
+        <field name="Footprint">Motor:MountingHole__MountingHole_2mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Mechanical__MountingHole" description="Mounting Hole without connection"/>
+      <property name="Sheetname" value="中景园屏幕与四个操作按钮"/>
+      <property name="Sheetfile" value="07_TFT_Buttons.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <property name="ki_keywords" value="mounting hole"/>
+      <property name="ki_fp_filters" value="MountingHole*"/>
+      <sheetpath names="/中景园屏幕与四个操作按钮/" tstamps="/433415cc-03a8-5189-8d36-253244603d4b/"/>
+      <tstamps>5b5c36cc-dfe6-557c-8de1-774a4acff67e</tstamps>
+      <units>
+        <unit name="A">
+          <pins/>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="H2">
+      <value>TFT孔 D2.0</value>
+      <footprint>Motor:MountingHole__MountingHole_2mm</footprint>
+      <fields>
+        <field name="Footprint">Motor:MountingHole__MountingHole_2mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Mechanical__MountingHole" description="Mounting Hole without connection"/>
+      <property name="Sheetname" value="中景园屏幕与四个操作按钮"/>
+      <property name="Sheetfile" value="07_TFT_Buttons.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <property name="ki_keywords" value="mounting hole"/>
+      <property name="ki_fp_filters" value="MountingHole*"/>
+      <sheetpath names="/中景园屏幕与四个操作按钮/" tstamps="/433415cc-03a8-5189-8d36-253244603d4b/"/>
+      <tstamps>2ed80d46-8d88-5598-8984-13dacbd572e1</tstamps>
+      <units>
+        <unit name="A">
+          <pins/>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J17">
+      <value>TFT_ZJY180S0800TG01</value>
+      <footprint>Motor:Connector_PinHeader_2.54mm__PinHeader_1x08_P2.54mm_Vertical</footprint>
+      <fields>
+        <field name="Footprint">Motor:Connector_PinHeader_2.54mm__PinHeader_1x08_P2.54mm_Vertical</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="M2_J17" description=""/>
+      <property name="Sheetname" value="中景园屏幕与四个操作按钮"/>
+      <property name="Sheetfile" value="07_TFT_Buttons.kicad_sch"/>
+      <sheetpath names="/中景园屏幕与四个操作按钮/" tstamps="/433415cc-03a8-5189-8d36-253244603d4b/"/>
+      <tstamps>05a1ce2f-0b1d-5e03-8e95-01a554ef6e54</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+            <pin num="7"/>
+            <pin num="8"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R50">
+      <value>10k</value>
+      <footprint>Motor:Resistor_SMD__R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Resistor_SMD__R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__R" description="Resistor"/>
+      <property name="Sheetname" value="中景园屏幕与四个操作按钮"/>
+      <property name="Sheetfile" value="07_TFT_Buttons.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/中景园屏幕与四个操作按钮/" tstamps="/433415cc-03a8-5189-8d36-253244603d4b/"/>
+      <tstamps>af7563a7-ecd8-5377-9dfe-6ec9682adff7</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R51">
+      <value>10k</value>
+      <footprint>Motor:Resistor_SMD__R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Resistor_SMD__R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__R" description="Resistor"/>
+      <property name="Sheetname" value="中景园屏幕与四个操作按钮"/>
+      <property name="Sheetfile" value="07_TFT_Buttons.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/中景园屏幕与四个操作按钮/" tstamps="/433415cc-03a8-5189-8d36-253244603d4b/"/>
+      <tstamps>a41469c6-09e7-5a22-adb4-16fd19c38d1b</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R52">
+      <value>10k</value>
+      <footprint>Motor:Resistor_SMD__R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Resistor_SMD__R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__R" description="Resistor"/>
+      <property name="Sheetname" value="中景园屏幕与四个操作按钮"/>
+      <property name="Sheetfile" value="07_TFT_Buttons.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/中景园屏幕与四个操作按钮/" tstamps="/433415cc-03a8-5189-8d36-253244603d4b/"/>
+      <tstamps>2398b687-70bd-5621-a910-a764a77ab62f</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R53">
+      <value>10k</value>
+      <footprint>Motor:Resistor_SMD__R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Resistor_SMD__R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__R" description="Resistor"/>
+      <property name="Sheetname" value="中景园屏幕与四个操作按钮"/>
+      <property name="Sheetfile" value="07_TFT_Buttons.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/中景园屏幕与四个操作按钮/" tstamps="/433415cc-03a8-5189-8d36-253244603d4b/"/>
+      <tstamps>55303e53-a0bf-5cc4-bd66-589d61e97fcb</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R55">
+      <value>10k</value>
+      <footprint>Motor:Resistor_SMD__R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Resistor_SMD__R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__R" description="Resistor"/>
+      <property name="Sheetname" value="中景园屏幕与四个操作按钮"/>
+      <property name="Sheetfile" value="07_TFT_Buttons.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/中景园屏幕与四个操作按钮/" tstamps="/433415cc-03a8-5189-8d36-253244603d4b/"/>
+      <tstamps>d85703a0-0f81-5d27-8f30-e448605158ec</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R56">
+      <value>10k</value>
+      <footprint>Motor:Resistor_SMD__R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Resistor_SMD__R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__R" description="Resistor"/>
+      <property name="Sheetname" value="中景园屏幕与四个操作按钮"/>
+      <property name="Sheetfile" value="07_TFT_Buttons.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/中景园屏幕与四个操作按钮/" tstamps="/433415cc-03a8-5189-8d36-253244603d4b/"/>
+      <tstamps>6a051781-e45e-5919-a9db-5209c1751042</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="SW2">
+      <value>模式</value>
+      <footprint>Motor:Button_Switch_THT__SW_PUSH_6mm_H4.3mm</footprint>
+      <fields>
+        <field name="Footprint">Motor:Button_Switch_THT__SW_PUSH_6mm_H4.3mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Switch__SW_Push" description="Push button switch, generic, two pins"/>
+      <property name="Sheetname" value="中景园屏幕与四个操作按钮"/>
+      <property name="Sheetfile" value="07_TFT_Buttons.kicad_sch"/>
+      <property name="ki_keywords" value="switch normally-open pushbutton push-button"/>
+      <sheetpath names="/中景园屏幕与四个操作按钮/" tstamps="/433415cc-03a8-5189-8d36-253244603d4b/"/>
+      <tstamps>d26ba1eb-63fd-54e7-acc7-ea0f9d027747</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="SW3">
+      <value>下一项</value>
+      <footprint>Motor:Button_Switch_THT__SW_PUSH_6mm_H4.3mm</footprint>
+      <fields>
+        <field name="Footprint">Motor:Button_Switch_THT__SW_PUSH_6mm_H4.3mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Switch__SW_Push" description="Push button switch, generic, two pins"/>
+      <property name="Sheetname" value="中景园屏幕与四个操作按钮"/>
+      <property name="Sheetfile" value="07_TFT_Buttons.kicad_sch"/>
+      <property name="ki_keywords" value="switch normally-open pushbutton push-button"/>
+      <sheetpath names="/中景园屏幕与四个操作按钮/" tstamps="/433415cc-03a8-5189-8d36-253244603d4b/"/>
+      <tstamps>c8c3557d-78ae-5a67-a7ee-a654dac61479</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="SW4">
+      <value>确认</value>
+      <footprint>Motor:Button_Switch_THT__SW_PUSH_6mm_H4.3mm</footprint>
+      <fields>
+        <field name="Footprint">Motor:Button_Switch_THT__SW_PUSH_6mm_H4.3mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Switch__SW_Push" description="Push button switch, generic, two pins"/>
+      <property name="Sheetname" value="中景园屏幕与四个操作按钮"/>
+      <property name="Sheetfile" value="07_TFT_Buttons.kicad_sch"/>
+      <property name="ki_keywords" value="switch normally-open pushbutton push-button"/>
+      <sheetpath names="/中景园屏幕与四个操作按钮/" tstamps="/433415cc-03a8-5189-8d36-253244603d4b/"/>
+      <tstamps>e737fb66-a700-5651-8791-24184504ad9d</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="SW5">
+      <value>启动</value>
+      <footprint>Motor:Button_Switch_THT__SW_PUSH_6mm_H4.3mm</footprint>
+      <fields>
+        <field name="Footprint">Motor:Button_Switch_THT__SW_PUSH_6mm_H4.3mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Switch__SW_Push" description="Push button switch, generic, two pins"/>
+      <property name="Sheetname" value="中景园屏幕与四个操作按钮"/>
+      <property name="Sheetfile" value="07_TFT_Buttons.kicad_sch"/>
+      <property name="ki_keywords" value="switch normally-open pushbutton push-button"/>
+      <sheetpath names="/中景园屏幕与四个操作按钮/" tstamps="/433415cc-03a8-5189-8d36-253244603d4b/"/>
+      <tstamps>c73459e1-4371-5933-9b70-7f409f1f54d3</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C61">
+      <value>10uF/10V</value>
+      <footprint>Motor:Capacitor_SMD__C_0805_2012Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Capacitor_SMD__C_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="八路灰度与双摄像头模块接口"/>
+      <property name="Sheetfile" value="08_Grayscale_Cameras.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/八路灰度与双摄像头模块接口/" tstamps="/d6318ee1-12d4-5089-84c2-bb1addcd6fe6/"/>
+      <tstamps>6e3d2de6-fe39-5730-848a-f5c47a12f530</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C62">
+      <value>10uF/10V</value>
+      <footprint>Motor:Capacitor_SMD__C_0805_2012Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Capacitor_SMD__C_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="八路灰度与双摄像头模块接口"/>
+      <property name="Sheetfile" value="08_Grayscale_Cameras.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/八路灰度与双摄像头模块接口/" tstamps="/d6318ee1-12d4-5089-84c2-bb1addcd6fe6/"/>
+      <tstamps>ecc1ba8e-1525-5f3f-9259-63c4f5fb74c9</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J18">
+      <value>MaixCAM_检测</value>
+      <footprint>Motor:Connector_PinHeader_2.54mm__PinHeader_1x04_P2.54mm_Vertical</footprint>
+      <fields>
+        <field name="Footprint">Motor:Connector_PinHeader_2.54mm__PinHeader_1x04_P2.54mm_Vertical</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="M2_J18" description=""/>
+      <property name="Sheetname" value="八路灰度与双摄像头模块接口"/>
+      <property name="Sheetfile" value="08_Grayscale_Cameras.kicad_sch"/>
+      <sheetpath names="/八路灰度与双摄像头模块接口/" tstamps="/d6318ee1-12d4-5089-84c2-bb1addcd6fe6/"/>
+      <tstamps>76f96c8a-3649-5493-8198-a1830bf71bde</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J19">
+      <value>图传处理板</value>
+      <footprint>Motor:Connector_PinHeader_2.54mm__PinHeader_1x04_P2.54mm_Vertical</footprint>
+      <fields>
+        <field name="Footprint">Motor:Connector_PinHeader_2.54mm__PinHeader_1x04_P2.54mm_Vertical</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="M2_J19" description=""/>
+      <property name="Sheetname" value="八路灰度与双摄像头模块接口"/>
+      <property name="Sheetfile" value="08_Grayscale_Cameras.kicad_sch"/>
+      <sheetpath names="/八路灰度与双摄像头模块接口/" tstamps="/d6318ee1-12d4-5089-84c2-bb1addcd6fe6/"/>
+      <tstamps>be2fbbe8-0e37-5cc4-aad1-dfdd6d9451ef</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J20">
+      <value>灰度并行_辅助板</value>
+      <footprint>Motor:Connector_PinHeader_2.54mm__PinHeader_1x10_P2.54mm_Vertical</footprint>
+      <fields>
+        <field name="Footprint">Motor:Connector_PinHeader_2.54mm__PinHeader_1x10_P2.54mm_Vertical</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="M2_J20" description=""/>
+      <property name="Sheetname" value="八路灰度与双摄像头模块接口"/>
+      <property name="Sheetfile" value="08_Grayscale_Cameras.kicad_sch"/>
+      <sheetpath names="/八路灰度与双摄像头模块接口/" tstamps="/d6318ee1-12d4-5089-84c2-bb1addcd6fe6/"/>
+      <tstamps>118b5d92-717b-53c8-a3fc-6fe2692857f8</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+            <pin num="7"/>
+            <pin num="8"/>
+            <pin num="9"/>
+            <pin num="10"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J21">
+      <value>灰度同步串行_选用</value>
+      <footprint>Motor:Connector_PinHeader_2.54mm__PinHeader_1x04_P2.54mm_Vertical</footprint>
+      <fields>
+        <field name="Footprint">Motor:Connector_PinHeader_2.54mm__PinHeader_1x04_P2.54mm_Vertical</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="M2_J21" description=""/>
+      <property name="Sheetname" value="八路灰度与双摄像头模块接口"/>
+      <property name="Sheetfile" value="08_Grayscale_Cameras.kicad_sch"/>
+      <sheetpath names="/八路灰度与双摄像头模块接口/" tstamps="/d6318ee1-12d4-5089-84c2-bb1addcd6fe6/"/>
+      <tstamps>847600a7-35d5-59b1-ab60-aba2a2a70b96</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C50">
+      <value>10uF/25V X7R</value>
+      <footprint>Motor:Capacitor_SMD__C_1206_3216Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Capacitor_SMD__C_1206_3216Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="外设独立五伏与三伏三供电"/>
+      <property name="Sheetfile" value="06_Module_Power.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/外设独立五伏与三伏三供电/" tstamps="/259119ae-63bb-582f-a484-b0d1b9da613b/"/>
+      <tstamps>7f80004c-2488-54a6-823c-e5fd75593734</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C51">
+      <value>100nF/50V</value>
+      <footprint>Motor:Capacitor_SMD__C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Capacitor_SMD__C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="外设独立五伏与三伏三供电"/>
+      <property name="Sheetfile" value="06_Module_Power.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/外设独立五伏与三伏三供电/" tstamps="/259119ae-63bb-582f-a484-b0d1b9da613b/"/>
+      <tstamps>ec186818-fb5b-535a-b39d-51dc960ebf2f</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C52">
+      <value>22uF/10V X7R</value>
+      <footprint>Motor:Capacitor_SMD__C_1206_3216Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Capacitor_SMD__C_1206_3216Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="外设独立五伏与三伏三供电"/>
+      <property name="Sheetfile" value="06_Module_Power.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/外设独立五伏与三伏三供电/" tstamps="/259119ae-63bb-582f-a484-b0d1b9da613b/"/>
+      <tstamps>5423293c-8421-564a-936b-bd3822c64a0c</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C53">
+      <value>22uF/10V X7R</value>
+      <footprint>Motor:Capacitor_SMD__C_1206_3216Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Capacitor_SMD__C_1206_3216Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="外设独立五伏与三伏三供电"/>
+      <property name="Sheetfile" value="06_Module_Power.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/外设独立五伏与三伏三供电/" tstamps="/259119ae-63bb-582f-a484-b0d1b9da613b/"/>
+      <tstamps>f3cb870e-0e56-5f58-a78e-e8f103082168</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C54">
+      <value>1uF/10V X7R</value>
+      <footprint>Motor:Capacitor_SMD__C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Capacitor_SMD__C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="外设独立五伏与三伏三供电"/>
+      <property name="Sheetfile" value="06_Module_Power.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/外设独立五伏与三伏三供电/" tstamps="/259119ae-63bb-582f-a484-b0d1b9da613b/"/>
+      <tstamps>4e7370fc-fa18-527c-800b-75be2b3d08a0</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C55">
+      <value>1uF/10V X7R</value>
+      <footprint>Motor:Capacitor_SMD__C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Capacitor_SMD__C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="外设独立五伏与三伏三供电"/>
+      <property name="Sheetfile" value="06_Module_Power.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/外设独立五伏与三伏三供电/" tstamps="/259119ae-63bb-582f-a484-b0d1b9da613b/"/>
+      <tstamps>216dfea8-262e-5b31-9978-cec2b0367e3d</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="L2">
+      <value>4.7uH Isat&gt;=3.5A</value>
+      <footprint>Motor:Inductor_SMD__L_Bourns_SRN6045TA</footprint>
+      <fields>
+        <field name="Footprint">Motor:Inductor_SMD__L_Bourns_SRN6045TA</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__L" description="Inductor"/>
+      <property name="Sheetname" value="外设独立五伏与三伏三供电"/>
+      <property name="Sheetfile" value="06_Module_Power.kicad_sch"/>
+      <property name="ki_keywords" value="inductor choke coil reactor magnetic"/>
+      <property name="ki_fp_filters" value="Choke_* *Coil* Inductor_* L_*"/>
+      <sheetpath names="/外设独立五伏与三伏三供电/" tstamps="/259119ae-63bb-582f-a484-b0d1b9da613b/"/>
+      <tstamps>2ee22e04-a702-5844-85e3-d80a17346b71</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U6">
+      <value>AP63205WU-7</value>
+      <footprint>Motor:Package_TO_SOT_SMD__TSOT-23-6</footprint>
+      <datasheet>https://www.diodes.com/assets/Datasheets/AP63200-AP63201-AP63203-AP63205.pdf</datasheet>
+      <fields>
+        <field name="Footprint">Motor:Package_TO_SOT_SMD__TSOT-23-6</field>
+        <field name="Datasheet">https://www.diodes.com/assets/Datasheets/AP63200-AP63201-AP63203-AP63205.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Regulator_Switching__AP63205WU" description="2A, 1.1MHz Buck DC/DC Converter, fixed 5.0V output voltage, TSOT-23-6"/>
+      <property name="Sheetname" value="外设独立五伏与三伏三供电"/>
+      <property name="Sheetfile" value="06_Module_Power.kicad_sch"/>
+      <property name="ki_keywords" value="2A Buck DC/DC"/>
+      <property name="ki_fp_filters" value="TSOT?23*"/>
+      <sheetpath names="/外设独立五伏与三伏三供电/" tstamps="/259119ae-63bb-582f-a484-b0d1b9da613b/"/>
+      <tstamps>345c4c9b-2fa1-51c8-bab5-8770cf0a7baa</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="3"/>
+            <pin num="2"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U7">
+      <value>AP2112K-3.3TRG1</value>
+      <footprint>Motor:Package_TO_SOT_SMD__SOT-23-5</footprint>
+      <datasheet>https://www.diodes.com/assets/Datasheets/AP2112.pdf</datasheet>
+      <fields>
+        <field name="Footprint">Motor:Package_TO_SOT_SMD__SOT-23-5</field>
+        <field name="Datasheet">https://www.diodes.com/assets/Datasheets/AP2112.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Regulator_Linear__AP2112K-3.3" description="600mA low dropout linear regulator, with enable pin, 3.8V-6V input voltage range, 3.3V fixed positive output, SOT-23-5"/>
+      <property name="Sheetname" value="外设独立五伏与三伏三供电"/>
+      <property name="Sheetfile" value="06_Module_Power.kicad_sch"/>
+      <property name="ki_keywords" value="linear regulator ldo fixed positive"/>
+      <property name="ki_fp_filters" value="SOT?23?5*"/>
+      <sheetpath names="/外设独立五伏与三伏三供电/" tstamps="/259119ae-63bb-582f-a484-b0d1b9da613b/"/>
+      <tstamps>cd655322-6f93-5166-9689-32bf1868a953</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="3"/>
+            <pin num="2"/>
+            <pin num="4"/>
+            <pin num="5"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J15">
+      <value>HC-08_四脚接口</value>
+      <footprint>Motor:Connector_PinHeader_2.54mm__PinHeader_1x04_P2.54mm_Vertical</footprint>
+      <fields>
+        <field name="Footprint">Motor:Connector_PinHeader_2.54mm__PinHeader_1x04_P2.54mm_Vertical</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="M2_J15" description=""/>
+      <property name="Sheetname" value="四脚蓝牙与外接步进驱动接口"/>
+      <property name="Sheetfile" value="09_Bluetooth_Stepper.kicad_sch"/>
+      <sheetpath names="/四脚蓝牙与外接步进驱动接口/" tstamps="/6805c229-363d-5720-8872-3a09dea05270/"/>
+      <tstamps>9892de13-76a2-5c5a-8165-ce6e72a72be3</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J16">
+      <value>蓝牙电源选择</value>
+      <footprint>Motor:Connector_PinHeader_2.54mm__PinHeader_1x03_P2.54mm_Vertical</footprint>
+      <fields>
+        <field name="Footprint">Motor:Connector_PinHeader_2.54mm__PinHeader_1x03_P2.54mm_Vertical</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="M2_J16" description=""/>
+      <property name="Sheetname" value="四脚蓝牙与外接步进驱动接口"/>
+      <property name="Sheetfile" value="09_Bluetooth_Stepper.kicad_sch"/>
+      <sheetpath names="/四脚蓝牙与外接步进驱动接口/" tstamps="/6805c229-363d-5720-8872-3a09dea05270/"/>
+      <tstamps>99979e2a-6ddc-51ff-854b-c5d48bf66753</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J22">
+      <value>步进_脉冲控制</value>
+      <footprint>Motor:Connector_PinHeader_2.54mm__PinHeader_1x06_P2.54mm_Vertical</footprint>
+      <fields>
+        <field name="Footprint">Motor:Connector_PinHeader_2.54mm__PinHeader_1x06_P2.54mm_Vertical</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="M2_J22" description=""/>
+      <property name="Sheetname" value="四脚蓝牙与外接步进驱动接口"/>
+      <property name="Sheetfile" value="09_Bluetooth_Stepper.kicad_sch"/>
+      <sheetpath names="/四脚蓝牙与外接步进驱动接口/" tstamps="/6805c229-363d-5720-8872-3a09dea05270/"/>
+      <tstamps>9798aed5-1ba0-5a7f-8046-b806c007fbf9</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J23">
+      <value>ZDT_XS_TTL_8P</value>
+      <footprint>Motor:Connector_PinHeader_2.54mm__PinHeader_1x08_P2.54mm_Vertical</footprint>
+      <datasheet>${KIPRJMOD}/../../../../Documentation/ZDT_XS系列第二代闭环步进电机资料/3. 说明书/ZDT_X42S第二代闭环步进电机用户手册V1.0.5_260527.pdf</datasheet>
+      <fields>
+        <field name="Footprint">Motor:Connector_PinHeader_2.54mm__PinHeader_1x08_P2.54mm_Vertical</field>
+        <field name="Datasheet">${KIPRJMOD}/../../../../Documentation/ZDT_XS系列第二代闭环步进电机资料/3. 说明书/ZDT_X42S第二代闭环步进电机用户手册V1.0.5_260527.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="M2_J23" description=""/>
+      <property name="Sheetname" value="四脚蓝牙与外接步进驱动接口"/>
+      <property name="Sheetfile" value="09_Bluetooth_Stepper.kicad_sch"/>
+      <sheetpath names="/四脚蓝牙与外接步进驱动接口/" tstamps="/6805c229-363d-5720-8872-3a09dea05270/"/>
+      <tstamps>230c5bc2-7169-5c41-a8f1-bf4de2dc0586</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+            <pin num="7"/>
+            <pin num="8"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J24">
+      <value>步进驱动电源</value>
+      <footprint>Motor:TerminalBlock_Phoenix__TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal</footprint>
+      <fields>
+        <field name="Footprint">Motor:TerminalBlock_Phoenix__TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="M2_J24" description=""/>
+      <property name="Sheetname" value="四脚蓝牙与外接步进驱动接口"/>
+      <property name="Sheetfile" value="09_Bluetooth_Stepper.kicad_sch"/>
+      <sheetpath names="/四脚蓝牙与外接步进驱动接口/" tstamps="/6805c229-363d-5720-8872-3a09dea05270/"/>
+      <tstamps>28180198-85ef-5f9f-aefd-c57082e39bd6</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R54">
+      <value>10k</value>
+      <footprint>Motor:Resistor_SMD__R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Resistor_SMD__R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__R" description="Resistor"/>
+      <property name="Sheetname" value="四脚蓝牙与外接步进驱动接口"/>
+      <property name="Sheetfile" value="09_Bluetooth_Stepper.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/四脚蓝牙与外接步进驱动接口/" tstamps="/6805c229-363d-5720-8872-3a09dea05270/"/>
+      <tstamps>ed0e170d-e740-5e06-934c-c020d616f57b</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R57">
+      <value>10k</value>
+      <footprint>Motor:Resistor_SMD__R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Resistor_SMD__R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__R" description="Resistor"/>
+      <property name="Sheetname" value="四脚蓝牙与外接步进驱动接口"/>
+      <property name="Sheetfile" value="09_Bluetooth_Stepper.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/四脚蓝牙与外接步进驱动接口/" tstamps="/6805c229-363d-5720-8872-3a09dea05270/"/>
+      <tstamps>b0d49af9-13d1-5d86-bd91-0e7001485704</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R58">
+      <value>10k</value>
+      <footprint>Motor:Resistor_SMD__R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Motor:Resistor_SMD__R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Motor" part="Device__R" description="Resistor"/>
+      <property name="Sheetname" value="四脚蓝牙与外接步进驱动接口"/>
+      <property name="Sheetfile" value="09_Bluetooth_Stepper.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/四脚蓝牙与外接步进驱动接口/" tstamps="/6805c229-363d-5720-8872-3a09dea05270/"/>
+      <tstamps>639c33a1-cded-5a96-a818-835b26966b80</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Motor" part="AO4407A">
+      <description>P-MOSFET transistor, gate/source/drain</description>
+      <docs>https://aosmd.com/sites/default/files/res/datasheets/AO4407A.pdf</docs>
+      <fields>
+        <field name="Reference">Q</field>
+        <field name="Value">AO4407A</field>
+        <field name="Footprint">Motor:Package_SO__SOIC-8_3.9x4.9mm_P1.27mm</field>
+        <field name="Datasheet">https://aosmd.com/sites/default/files/res/datasheets/AO4407A.pdf</field>
+        <field name="Description">P-MOSFET transistor, gate/source/drain</field>
+      </fields>
+      <pins>
+        <pin num="1" name="S" type="passive"/>
+        <pin num="2" name="S" type="passive"/>
+        <pin num="3" name="S" type="passive"/>
+        <pin num="4" name="G" type="input"/>
+        <pin num="5" name="D" type="passive"/>
+        <pin num="6" name="D" type="passive"/>
+        <pin num="7" name="D" type="passive"/>
+        <pin num="8" name="D" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Motor" part="AO4407A_Mirrored">
+      <description>P-MOSFET transistor, gate/source/drain</description>
+      <docs>https://aosmd.com/sites/default/files/res/datasheets/AO4407A.pdf</docs>
+      <fields>
+        <field name="Reference">Q</field>
+        <field name="Value">AO4407A</field>
+        <field name="Footprint">Motor:Package_SO__SOIC-8_3.9x4.9mm_P1.27mm</field>
+        <field name="Datasheet">https://aosmd.com/sites/default/files/res/datasheets/AO4407A.pdf</field>
+        <field name="Description">P-MOSFET transistor, gate/source/drain</field>
+      </fields>
+      <pins>
+        <pin num="1" name="S" type="passive"/>
+        <pin num="2" name="S" type="passive"/>
+        <pin num="3" name="S" type="passive"/>
+        <pin num="4" name="G" type="input"/>
+        <pin num="5" name="D" type="passive"/>
+        <pin num="6" name="D" type="passive"/>
+        <pin num="7" name="D" type="passive"/>
+        <pin num="8" name="D" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Motor" part="Connector_Generic__Conn_01x02">
+      <description>Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x02</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Motor" part="Connector_Generic__Conn_01x04">
+      <description>Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x04</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+        <pin num="4" name="Pin_4" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Motor" part="CoralC5_Streamline_Socket">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">CoralC5_Streamline_Socket</field>
+        <field name="Footprint">Motor:C5_EDGE_3_Socket</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="50" name="MP1_/_GND" type="passive"/>
+        <pin num="51" name="MP2_/_GND" type="passive"/>
+        <pin num="A1" name="A1_/_GND" type="power_in"/>
+        <pin num="A2" name="A2_/_PA2" type="bidirectional"/>
+        <pin num="A3" name="A3_/_PA1" type="bidirectional"/>
+        <pin num="A4" name="A4_/_PA0" type="bidirectional"/>
+        <pin num="A5" name="A5_/_PH5" type="bidirectional"/>
+        <pin num="A6" name="A6_/_VREF_MCU" type="bidirectional"/>
+        <pin num="A7" name="A7_/_PH4" type="bidirectional"/>
+        <pin num="A8" name="A8_/_PC3" type="bidirectional"/>
+        <pin num="A9" name="A9_/_PC2" type="bidirectional"/>
+        <pin num="A10" name="A10_/_PC1" type="bidirectional"/>
+        <pin num="A11" name="A11_/_PC0" type="bidirectional"/>
+        <pin num="A12" name="A12_/_NRST" type="bidirectional"/>
+        <pin num="A13" name="A13_/_NC" type="bidirectional"/>
+        <pin num="A14" name="A14_/_NC" type="bidirectional"/>
+        <pin num="A15" name="A15_/_PC15" type="bidirectional"/>
+        <pin num="A16" name="A16_/_PC14" type="bidirectional"/>
+        <pin num="A17" name="A17_/_PC13" type="bidirectional"/>
+        <pin num="A18" name="A18_/_PH15" type="bidirectional"/>
+        <pin num="A19" name="A19_/_PE6" type="bidirectional"/>
+        <pin num="A20" name="A20_/_PE5" type="bidirectional"/>
+        <pin num="A21" name="A21_/_PE4" type="bidirectional"/>
+        <pin num="A22" name="A22_/_PE3" type="bidirectional"/>
+        <pin num="A23" name="A23_/_PE2" type="bidirectional"/>
+        <pin num="A24" name="A24_/_PE1" type="bidirectional"/>
+        <pin num="A25" name="A25_/_PE0" type="bidirectional"/>
+        <pin num="A26" name="A26_/_PB9" type="bidirectional"/>
+        <pin num="A27" name="A27_/_PB8" type="bidirectional"/>
+        <pin num="A28" name="A28_/_PH2" type="bidirectional"/>
+        <pin num="A29" name="A29_/_PB7" type="bidirectional"/>
+        <pin num="A30" name="A30_/_PB6" type="bidirectional"/>
+        <pin num="A31" name="A31_/_PB5" type="bidirectional"/>
+        <pin num="A32" name="A32_/_PB4" type="bidirectional"/>
+        <pin num="A33" name="A33_/_PB3" type="bidirectional"/>
+        <pin num="A34" name="A34_/_PD7" type="bidirectional"/>
+        <pin num="A35" name="A35_/_PD6" type="bidirectional"/>
+        <pin num="A36" name="A36_/_PD5" type="bidirectional"/>
+        <pin num="A37" name="A37_/_PD4" type="bidirectional"/>
+        <pin num="A38" name="A38_/_PD3" type="bidirectional"/>
+        <pin num="A39" name="A39_/_PD2" type="bidirectional"/>
+        <pin num="A40" name="A40_/_PD1" type="bidirectional"/>
+        <pin num="A41" name="A41_/_PD0" type="bidirectional"/>
+        <pin num="A42" name="A42_/_PC12" type="bidirectional"/>
+        <pin num="A43" name="A43_/_PC11" type="bidirectional"/>
+        <pin num="A44" name="A44_/_PC10" type="bidirectional"/>
+        <pin num="A45" name="A45_/_PA15" type="bidirectional"/>
+        <pin num="A46" name="A46_/_PA14" type="bidirectional"/>
+        <pin num="A47" name="A47_/_+3V3" type="power_in"/>
+        <pin num="A48" name="A48_/_+5V_SYS" type="power_in"/>
+        <pin num="A49" name="A49_/_GND" type="power_in"/>
+        <pin num="B1" name="B1_/_GND" type="power_in"/>
+        <pin num="B2" name="B2_/_PA3" type="bidirectional"/>
+        <pin num="B3" name="B3_/_PA4" type="bidirectional"/>
+        <pin num="B4" name="B4_/_PA5" type="bidirectional"/>
+        <pin num="B5" name="B5_/_PA6" type="bidirectional"/>
+        <pin num="B6" name="B6_/_PA7" type="bidirectional"/>
+        <pin num="B7" name="B7_/_PC4" type="bidirectional"/>
+        <pin num="B8" name="B8_/_PC5" type="bidirectional"/>
+        <pin num="B9" name="B9_/_PB0" type="bidirectional"/>
+        <pin num="B10" name="B10_/_PB1" type="bidirectional"/>
+        <pin num="B11" name="B11_/_PB2" type="bidirectional"/>
+        <pin num="B12" name="B12_/_PE7" type="bidirectional"/>
+        <pin num="B13" name="B13_/_PE8" type="bidirectional"/>
+        <pin num="B14" name="B14_/_PE9" type="bidirectional"/>
+        <pin num="B15" name="B15_/_PE10" type="bidirectional"/>
+        <pin num="B16" name="B16_/_PE11" type="bidirectional"/>
+        <pin num="B17" name="B17_/_PE12" type="bidirectional"/>
+        <pin num="B18" name="B18_/_PE13" type="bidirectional"/>
+        <pin num="B19" name="B19_/_PE14" type="bidirectional"/>
+        <pin num="B20" name="B20_/_PE15" type="bidirectional"/>
+        <pin num="B21" name="B21_/_PB10" type="bidirectional"/>
+        <pin num="B22" name="B22_/_PB12" type="bidirectional"/>
+        <pin num="B23" name="B23_/_PB13" type="bidirectional"/>
+        <pin num="B24" name="B24_/_PB14" type="bidirectional"/>
+        <pin num="B25" name="B25_/_PB15" type="bidirectional"/>
+        <pin num="B26" name="B26_/_PD8" type="bidirectional"/>
+        <pin num="B27" name="B27_/_PD9" type="bidirectional"/>
+        <pin num="B28" name="B28_/_PD10" type="bidirectional"/>
+        <pin num="B29" name="B29_/_PD11" type="bidirectional"/>
+        <pin num="B30" name="B30_/_PD12" type="bidirectional"/>
+        <pin num="B31" name="B31_/_PD13" type="bidirectional"/>
+        <pin num="B32" name="B32_/_PD14" type="bidirectional"/>
+        <pin num="B33" name="B33_/_PD15" type="bidirectional"/>
+        <pin num="B34" name="B34_/_PC6" type="bidirectional"/>
+        <pin num="B35" name="B35_/_PC7" type="bidirectional"/>
+        <pin num="B36" name="B36_/_PC8" type="bidirectional"/>
+        <pin num="B37" name="B37_/_PC9" type="bidirectional"/>
+        <pin num="B38" name="B38_/_PA8" type="bidirectional"/>
+        <pin num="B39" name="B39_/_PA9" type="bidirectional"/>
+        <pin num="B40" name="B40_/_PA10" type="bidirectional"/>
+        <pin num="B41" name="B41_/_PA11" type="bidirectional"/>
+        <pin num="B42" name="B42_/_PA12" type="bidirectional"/>
+        <pin num="B43" name="B43_/_PA13" type="bidirectional"/>
+        <pin num="B44" name="B44_/_PH3" type="bidirectional"/>
+        <pin num="B45" name="B45_/_NC" type="bidirectional"/>
+        <pin num="B46" name="B46_/_NC" type="bidirectional"/>
+        <pin num="B47" name="B47_/_+3V3" type="power_in"/>
+        <pin num="B48" name="B48_/_+5V_SYS" type="power_in"/>
+        <pin num="B49" name="B49_/_GND" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="Motor" part="DRV8874PWPR">
+      <docs>https://www.ti.com/lit/ds/symlink/drv8874.pdf</docs>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">DRV8874PWPR</field>
+        <field name="Footprint">Motor:DRV8874_PWP0016</field>
+        <field name="Datasheet">https://www.ti.com/lit/ds/symlink/drv8874.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="EN/IN1" type="input"/>
+        <pin num="2" name="PH/IN2" type="input"/>
+        <pin num="3" name="nSLEEP" type="input"/>
+        <pin num="4" name="nFAULT" type="open_collector"/>
+        <pin num="5" name="VREF" type="input"/>
+        <pin num="6" name="IPROPI" type="output"/>
+        <pin num="7" name="IMODE" type="input"/>
+        <pin num="8" name="OUT1" type="power_out"/>
+        <pin num="9" name="PGND" type="power_in"/>
+        <pin num="10" name="OUT2" type="power_out"/>
+        <pin num="11" name="VM" type="power_in"/>
+        <pin num="12" name="VCP" type="passive"/>
+        <pin num="13" name="CPH" type="passive"/>
+        <pin num="14" name="CPL" type="passive"/>
+        <pin num="15" name="GND" type="power_in"/>
+        <pin num="16" name="PMODE" type="input"/>
+        <pin num="17" name="EP" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="Motor" part="Device__C">
+      <description>Unpolarized capacitor</description>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Unpolarized capacitor</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Motor" part="Device__C_Polarized">
+      <description>Polarized capacitor</description>
+      <footprints>
+        <fp>CP_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C_Polarized</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Polarized capacitor</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Motor" part="Device__D_Schottky">
+      <description>Schottky diode</description>
+      <footprints>
+        <fp>TO-???*</fp>
+        <fp>*_Diode_*</fp>
+        <fp>*SingleDiode*</fp>
+        <fp>D_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">D_Schottky</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Schottky diode</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Motor" part="Device__D_Zener">
+      <description>Zener diode</description>
+      <footprints>
+        <fp>TO-???*</fp>
+        <fp>*_Diode_*</fp>
+        <fp>*SingleDiode*</fp>
+        <fp>D_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">D_Zener</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Zener diode</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Motor" part="Device__Fuse">
+      <description>Fuse</description>
+      <footprints>
+        <fp>*Fuse*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">F</field>
+        <field name="Value">Fuse</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Fuse</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Motor" part="Device__L">
+      <description>Inductor</description>
+      <footprints>
+        <fp>Choke_*</fp>
+        <fp>*Coil*</fp>
+        <fp>Inductor_*</fp>
+        <fp>L_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">L</field>
+        <field name="Value">L</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Inductor</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Motor" part="Device__LED">
+      <description>Light emitting diode</description>
+      <footprints>
+        <fp>LED*</fp>
+        <fp>LED_SMD:*</fp>
+        <fp>LED_THT:*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">LED</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Light emitting diode</field>
+        <field name="Sim.Pins">1=K 2=A</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Motor" part="Device__R">
+      <description>Resistor</description>
+      <footprints>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Resistor</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Motor" part="M2_J15">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">HC-08_四脚接口</field>
+        <field name="Footprint">Motor:Connector_PinHeader_2.54mm__PinHeader_1x04_P2.54mm_Vertical</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="VBT" type="passive"/>
+        <pin num="2" name="GND" type="passive"/>
+        <pin num="3" name="MCU_TX" type="passive"/>
+        <pin num="4" name="MCU_RX" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Motor" part="M2_J16">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">蓝牙电源选择</field>
+        <field name="Footprint">Motor:Connector_PinHeader_2.54mm__PinHeader_1x03_P2.54mm_Vertical</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="3V3_EXT" type="passive"/>
+        <pin num="2" name="VBT" type="passive"/>
+        <pin num="3" name="5V_EXT" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Motor" part="M2_J17">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">TFT_ZJY180S0800TG01</field>
+        <field name="Footprint">Motor:Connector_PinHeader_2.54mm__PinHeader_1x08_P2.54mm_Vertical</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="GND" type="passive"/>
+        <pin num="2" name="VCC_3V3" type="passive"/>
+        <pin num="3" name="SCL" type="passive"/>
+        <pin num="4" name="SDA" type="passive"/>
+        <pin num="5" name="RES" type="passive"/>
+        <pin num="6" name="DC" type="passive"/>
+        <pin num="7" name="CS" type="passive"/>
+        <pin num="8" name="BL" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Motor" part="M2_J18">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">MaixCAM_检测</field>
+        <field name="Footprint">Motor:Connector_PinHeader_2.54mm__PinHeader_1x04_P2.54mm_Vertical</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="5V" type="passive"/>
+        <pin num="2" name="GND" type="passive"/>
+        <pin num="3" name="MCU_TX" type="passive"/>
+        <pin num="4" name="MCU_RX" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Motor" part="M2_J19">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">图传处理板</field>
+        <field name="Footprint">Motor:Connector_PinHeader_2.54mm__PinHeader_1x04_P2.54mm_Vertical</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="5V" type="passive"/>
+        <pin num="2" name="GND" type="passive"/>
+        <pin num="3" name="MCU_TX" type="passive"/>
+        <pin num="4" name="MCU_RX" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Motor" part="M2_J20">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">灰度并行_辅助板</field>
+        <field name="Footprint">Motor:Connector_PinHeader_2.54mm__PinHeader_1x10_P2.54mm_Vertical</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="5V" type="passive"/>
+        <pin num="2" name="GND" type="passive"/>
+        <pin num="3" name="CH1" type="passive"/>
+        <pin num="4" name="CH2" type="passive"/>
+        <pin num="5" name="CH3" type="passive"/>
+        <pin num="6" name="CH4" type="passive"/>
+        <pin num="7" name="CH5" type="passive"/>
+        <pin num="8" name="CH6" type="passive"/>
+        <pin num="9" name="CH7" type="passive"/>
+        <pin num="10" name="CH8" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Motor" part="M2_J21">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">灰度同步串行_选用</field>
+        <field name="Footprint">Motor:Connector_PinHeader_2.54mm__PinHeader_1x04_P2.54mm_Vertical</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="5V" type="passive"/>
+        <pin num="2" name="GND" type="passive"/>
+        <pin num="3" name="CLK" type="passive"/>
+        <pin num="4" name="DAT" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Motor" part="M2_J22">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">步进_脉冲控制</field>
+        <field name="Footprint">Motor:Connector_PinHeader_2.54mm__PinHeader_1x06_P2.54mm_Vertical</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="3V3_REF" type="passive"/>
+        <pin num="2" name="GND" type="passive"/>
+        <pin num="3" name="STEP" type="passive"/>
+        <pin num="4" name="DIR" type="passive"/>
+        <pin num="5" name="nEN" type="passive"/>
+        <pin num="6" name="GND" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Motor" part="M2_J23">
+      <docs>${KIPRJMOD}/../../../../Documentation/ZDT_XS系列第二代闭环步进电机资料/3. 说明书/ZDT_X42S第二代闭环步进电机用户手册V1.0.5_260527.pdf</docs>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">ZDT_XS_TTL_8P</field>
+        <field name="Footprint">Motor:Connector_PinHeader_2.54mm__PinHeader_1x08_P2.54mm_Vertical</field>
+        <field name="Datasheet">${KIPRJMOD}/../../../../Documentation/ZDT_XS系列第二代闭环步进电机资料/3. 说明书/ZDT_X42S第二代闭环步进电机用户手册V1.0.5_260527.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="VM_V+" type="passive"/>
+        <pin num="2" name="GND" type="passive"/>
+        <pin num="3" name="COM_NC" type="passive"/>
+        <pin num="4" name="EN_NC" type="passive"/>
+        <pin num="5" name="STEP_NC" type="passive"/>
+        <pin num="6" name="DIR_NC" type="passive"/>
+        <pin num="7" name="R/A/H_RX" type="passive"/>
+        <pin num="8" name="T/B/L_TX" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Motor" part="M2_J24">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">步进驱动电源</field>
+        <field name="Footprint">Motor:TerminalBlock_Phoenix__TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="VM" type="passive"/>
+        <pin num="2" name="GND" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Motor" part="MG513_6P">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">MG513 / XH2.50 / 6P</field>
+        <field name="Footprint">Motor:Connector_JST__JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="M-" type="passive"/>
+        <pin num="2" name="VENC" type="passive"/>
+        <pin num="3" name="A" type="passive"/>
+        <pin num="4" name="B" type="passive"/>
+        <pin num="5" name="GND" type="passive"/>
+        <pin num="6" name="M+" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Motor" part="Mechanical__MountingHole">
+      <description>Mounting Hole without connection</description>
+      <footprints>
+        <fp>MountingHole*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">H</field>
+        <field name="Value">MountingHole</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Mounting Hole without connection</field>
+      </fields>
+    </libpart>
+    <libpart lib="Motor" part="Regulator_Linear__AP2112K-3.3">
+      <description>600mA low dropout linear regulator, with enable pin, 3.8V-6V input voltage range, 3.3V fixed positive output, SOT-23-5</description>
+      <docs>https://www.diodes.com/assets/Datasheets/AP2112.pdf</docs>
+      <footprints>
+        <fp>SOT?23?5*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">AP2112K-3.3</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-5</field>
+        <field name="Datasheet">https://www.diodes.com/assets/Datasheets/AP2112.pdf</field>
+        <field name="Description">600mA low dropout linear regulator, with enable pin, 3.8V-6V input voltage range, 3.3V fixed positive output, SOT-23-5</field>
+      </fields>
+      <pins>
+        <pin num="1" name="VIN" type="power_in"/>
+        <pin num="2" name="GND" type="power_in"/>
+        <pin num="3" name="EN" type="input"/>
+        <pin num="4" name="NC" type="no_connect"/>
+        <pin num="5" name="VOUT" type="power_out"/>
+      </pins>
+    </libpart>
+    <libpart lib="Motor" part="Regulator_Switching__AP63205WU">
+      <description>2A, 1.1MHz Buck DC/DC Converter, fixed 5.0V output voltage, TSOT-23-6</description>
+      <docs>https://www.diodes.com/assets/Datasheets/AP63200-AP63201-AP63203-AP63205.pdf</docs>
+      <footprints>
+        <fp>TSOT?23*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">AP63205WU</field>
+        <field name="Footprint">Package_TO_SOT_SMD:TSOT-23-6</field>
+        <field name="Datasheet">https://www.diodes.com/assets/Datasheets/AP63200-AP63201-AP63203-AP63205.pdf</field>
+        <field name="Description">2A, 1.1MHz Buck DC/DC Converter, fixed 5.0V output voltage, TSOT-23-6</field>
+      </fields>
+      <pins>
+        <pin num="1" name="FB" type="input"/>
+        <pin num="2" name="EN" type="input"/>
+        <pin num="3" name="IN" type="power_in"/>
+        <pin num="4" name="GND" type="power_in"/>
+        <pin num="5" name="SW" type="output"/>
+        <pin num="6" name="BST" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Motor" part="SN74LVC2G17DCKR">
+      <docs>https://www.ti.com/lit/ds/symlink/sn74lvc2g17.pdf</docs>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">SN74LVC2G17DCKR</field>
+        <field name="Footprint">Motor:Package_TO_SOT_SMD__SOT-363_SC-70-6</field>
+        <field name="Datasheet">https://www.ti.com/lit/ds/symlink/sn74lvc2g17.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1A" type="input"/>
+        <pin num="2" name="GND" type="power_in"/>
+        <pin num="3" name="2A" type="input"/>
+        <pin num="4" name="2Y" type="output"/>
+        <pin num="5" name="VCC" type="power_in"/>
+        <pin num="6" name="1Y" type="output"/>
+      </pins>
+    </libpart>
+    <libpart lib="Motor" part="Switch__SW_Push">
+      <description>Push button switch, generic, two pins</description>
+      <fields>
+        <field name="Reference">SW</field>
+        <field name="Value">SW_Push</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Push button switch, generic, two pins</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Motor" part="Switch__SW_SPDT">
+      <description>Switch, single pole double throw</description>
+      <fields>
+        <field name="Reference">SW</field>
+        <field name="Value">SW_SPDT</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Switch, single pole double throw</field>
+      </fields>
+      <pins>
+        <pin num="1" name="A" type="passive"/>
+        <pin num="2" name="B" type="passive"/>
+        <pin num="3" name="C" type="passive"/>
+        <pin num="4" name="CASE" type="passive"/>
+        <pin num="5" name="CASE" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Motor" part="XT60PW_M_Power">
+      <docs>https://www.china-amass.com/biao/289.html</docs>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">XT60PW-M</field>
+        <field name="Footprint">Motor:AMASS_XT60PW-M_1x02_P7.20mm_Horizontal</field>
+        <field name="Datasheet">https://www.china-amass.com/biao/289.html</field>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="BAT+" type="passive"/>
+        <pin num="2" name="GND" type="passive"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Motor">
+      <uri>${KIPRJMOD}/Motor.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="/V3V3" class="Default">
+      <node ref="C19" pin="1" pintype="passive"/>
+      <node ref="C20" pin="1" pintype="passive"/>
+      <node ref="C39" pin="1" pintype="passive"/>
+      <node ref="C40" pin="1" pintype="passive"/>
+      <node ref="J14" pin="A47" pinfunction="A47_/_+3V3_A47" pintype="power_in"/>
+      <node ref="J14" pin="B47" pinfunction="B47_/_+3V3_B47" pintype="power_in"/>
+      <node ref="J22" pin="1" pinfunction="3V3_REF_1" pintype="passive"/>
+      <node ref="J4" pin="2" pinfunction="VENC_2" pintype="passive"/>
+      <node ref="J6" pin="2" pinfunction="VENC_2" pintype="passive"/>
+      <node ref="J8" pin="1" pinfunction="Pin_1_1" pintype="passive"/>
+      <node ref="R10" pin="1" pintype="passive"/>
+      <node ref="R13" pin="2" pintype="passive"/>
+      <node ref="R18" pin="1" pintype="passive"/>
+      <node ref="R19" pin="2" pintype="passive"/>
+      <node ref="R30" pin="1" pintype="passive"/>
+      <node ref="R33" pin="2" pintype="passive"/>
+      <node ref="R38" pin="1" pintype="passive"/>
+      <node ref="R39" pin="2" pintype="passive"/>
+      <node ref="R50" pin="1" pintype="passive"/>
+      <node ref="R51" pin="1" pintype="passive"/>
+      <node ref="R52" pin="1" pintype="passive"/>
+      <node ref="R53" pin="1" pintype="passive"/>
+      <node ref="R54" pin="1" pintype="passive"/>
+      <node ref="U3" pin="5" pinfunction="VCC_5" pintype="power_in"/>
+      <node ref="U5" pin="5" pinfunction="VCC_5" pintype="power_in"/>
+    </net>
+    <net code="2" name="/V3V3_EXT" class="Default">
+      <node ref="C55" pin="1" pintype="passive"/>
+      <node ref="C56" pin="1" pintype="passive"/>
+      <node ref="J16" pin="1" pinfunction="3V3_EXT_1" pintype="passive"/>
+      <node ref="J17" pin="2" pinfunction="VCC_3V3_2" pintype="passive"/>
+      <node ref="R55" pin="1" pintype="passive"/>
+      <node ref="R56" pin="1" pintype="passive"/>
+      <node ref="U7" pin="5" pinfunction="VOUT_5" pintype="power_out"/>
+    </net>
+    <net code="3" name="/V5_EXT" class="Default">
+      <node ref="C52" pin="1" pintype="passive"/>
+      <node ref="C53" pin="1" pintype="passive"/>
+      <node ref="C54" pin="1" pintype="passive"/>
+      <node ref="C61" pin="1" pintype="passive"/>
+      <node ref="C62" pin="1" pintype="passive"/>
+      <node ref="J16" pin="3" pinfunction="5V_EXT_3" pintype="passive"/>
+      <node ref="J18" pin="1" pinfunction="5V_1" pintype="passive"/>
+      <node ref="J19" pin="1" pinfunction="5V_1" pintype="passive"/>
+      <node ref="J20" pin="1" pinfunction="5V_1" pintype="passive"/>
+      <node ref="J21" pin="1" pinfunction="5V_1" pintype="passive"/>
+      <node ref="L2" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="U6" pin="1" pinfunction="FB_1" pintype="input"/>
+      <node ref="U7" pin="1" pinfunction="VIN_1" pintype="power_in"/>
+      <node ref="U7" pin="3" pinfunction="EN_3" pintype="input"/>
+    </net>
+    <net code="4" name="/V5_SYS" class="Default">
+      <node ref="D3" pin="1" pinfunction="K_1" pintype="passive"/>
+      <node ref="J14" pin="A48" pinfunction="A48_/_+5V_SYS_A48" pintype="power_in"/>
+      <node ref="J14" pin="B48" pinfunction="B48_/_+5V_SYS_B48" pintype="power_in"/>
+      <node ref="R5" pin="1" pintype="passive"/>
+    </net>
+    <net code="5" name="/VM" class="Default">
+      <node ref="C1" pin="1" pintype="passive"/>
+      <node ref="C11" pin="1" pintype="passive"/>
+      <node ref="C12" pin="1" pintype="passive"/>
+      <node ref="C13" pin="1" pintype="passive"/>
+      <node ref="C2" pin="1" pintype="passive"/>
+      <node ref="C3" pin="1" pintype="passive"/>
+      <node ref="C31" pin="1" pintype="passive"/>
+      <node ref="C32" pin="1" pintype="passive"/>
+      <node ref="C33" pin="1" pintype="passive"/>
+      <node ref="C50" pin="1" pintype="passive"/>
+      <node ref="D2" pin="1" pinfunction="K_1" pintype="passive"/>
+      <node ref="J23" pin="1" pinfunction="VM_V+_1" pintype="passive"/>
+      <node ref="J24" pin="1" pinfunction="VM_1" pintype="passive"/>
+      <node ref="Q2" pin="5" pinfunction="D_5" pintype="passive"/>
+      <node ref="Q2" pin="6" pinfunction="D_6" pintype="passive"/>
+      <node ref="Q2" pin="7" pinfunction="D_7" pintype="passive"/>
+      <node ref="Q2" pin="8" pinfunction="D_8" pintype="passive"/>
+      <node ref="R3" pin="1" pintype="passive"/>
+      <node ref="U1" pin="3" pinfunction="IN_3" pintype="power_in"/>
+      <node ref="U2" pin="11" pinfunction="VM_11" pintype="power_in"/>
+      <node ref="U4" pin="11" pinfunction="VM_11" pintype="power_in"/>
+      <node ref="U6" pin="2" pinfunction="EN_2" pintype="input"/>
+      <node ref="U6" pin="3" pinfunction="IN_3" pintype="power_in"/>
+    </net>
+    <net code="6" name="/中景园屏幕与四个操作按钮/KEY_MODE" class="Default">
+      <node ref="C57" pin="1" pintype="passive"/>
+      <node ref="J14" pin="B7" pinfunction="B7_/_PC4_B7" pintype="bidirectional"/>
+      <node ref="R50" pin="2" pintype="passive"/>
+      <node ref="SW2" pin="1" pinfunction="1_1" pintype="passive"/>
+    </net>
+    <net code="7" name="/中景园屏幕与四个操作按钮/KEY_NEXT" class="Default">
+      <node ref="C58" pin="1" pintype="passive"/>
+      <node ref="J14" pin="B8" pinfunction="B8_/_PC5_B8" pintype="bidirectional"/>
+      <node ref="R51" pin="2" pintype="passive"/>
+      <node ref="SW3" pin="1" pinfunction="1_1" pintype="passive"/>
+    </net>
+    <net code="8" name="/中景园屏幕与四个操作按钮/KEY_OK" class="Default">
+      <node ref="C59" pin="1" pintype="passive"/>
+      <node ref="J14" pin="B11" pinfunction="B11_/_PB2_B11" pintype="bidirectional"/>
+      <node ref="R52" pin="2" pintype="passive"/>
+      <node ref="SW4" pin="1" pinfunction="1_1" pintype="passive"/>
+    </net>
+    <net code="9" name="/中景园屏幕与四个操作按钮/KEY_START" class="Default">
+      <node ref="C60" pin="1" pintype="passive"/>
+      <node ref="J14" pin="B12" pinfunction="B12_/_PE7_B12" pintype="bidirectional"/>
+      <node ref="R53" pin="2" pintype="passive"/>
+      <node ref="SW5" pin="1" pinfunction="1_1" pintype="passive"/>
+    </net>
+    <net code="10" name="/中景园屏幕与四个操作按钮/TFT_BL" class="Default">
+      <node ref="J14" pin="A32" pinfunction="A32_/_PB4_A32" pintype="bidirectional"/>
+      <node ref="J17" pin="8" pinfunction="BL_8" pintype="passive"/>
+    </net>
+    <net code="11" name="/中景园屏幕与四个操作按钮/TFT_CS" class="Default">
+      <node ref="J14" pin="B3" pinfunction="B3_/_PA4_B3" pintype="bidirectional"/>
+      <node ref="J17" pin="7" pinfunction="CS_7" pintype="passive"/>
+      <node ref="R55" pin="2" pintype="passive"/>
+    </net>
+    <net code="12" name="/中景园屏幕与四个操作按钮/TFT_DC" class="Default">
+      <node ref="J14" pin="B10" pinfunction="B10_/_PB1_B10" pintype="bidirectional"/>
+      <node ref="J17" pin="6" pinfunction="DC_6" pintype="passive"/>
+    </net>
+    <net code="13" name="/中景园屏幕与四个操作按钮/TFT_MOSI" class="Default">
+      <node ref="J14" pin="B6" pinfunction="B6_/_PA7_B6" pintype="bidirectional"/>
+      <node ref="J17" pin="4" pinfunction="SDA_4" pintype="passive"/>
+    </net>
+    <net code="14" name="/中景园屏幕与四个操作按钮/TFT_RES" class="Default">
+      <node ref="J14" pin="B9" pinfunction="B9_/_PB0_B9" pintype="bidirectional"/>
+      <node ref="J17" pin="5" pinfunction="RES_5" pintype="passive"/>
+      <node ref="R56" pin="2" pintype="passive"/>
+    </net>
+    <net code="15" name="/中景园屏幕与四个操作按钮/TFT_SCK" class="Default">
+      <node ref="J14" pin="B4" pinfunction="B4_/_PA5_B4" pintype="bidirectional"/>
+      <node ref="J17" pin="3" pinfunction="SCL_3" pintype="passive"/>
+    </net>
+    <net code="16" name="/八路灰度与双摄像头模块接口/GRAY_CH1" class="Default">
+      <node ref="J14" pin="B15" pinfunction="B15_/_PE10_B15" pintype="bidirectional"/>
+      <node ref="J20" pin="3" pinfunction="CH1_3" pintype="passive"/>
+    </net>
+    <net code="17" name="/八路灰度与双摄像头模块接口/GRAY_CH2" class="Default">
+      <node ref="J14" pin="B16" pinfunction="B16_/_PE11_B16" pintype="bidirectional"/>
+      <node ref="J20" pin="4" pinfunction="CH2_4" pintype="passive"/>
+    </net>
+    <net code="18" name="/八路灰度与双摄像头模块接口/GRAY_CH3" class="Default">
+      <node ref="J14" pin="B17" pinfunction="B17_/_PE12_B17" pintype="bidirectional"/>
+      <node ref="J20" pin="5" pinfunction="CH3_5" pintype="passive"/>
+    </net>
+    <net code="19" name="/八路灰度与双摄像头模块接口/GRAY_CH4" class="Default">
+      <node ref="J14" pin="B18" pinfunction="B18_/_PE13_B18" pintype="bidirectional"/>
+      <node ref="J20" pin="6" pinfunction="CH4_6" pintype="passive"/>
+    </net>
+    <net code="20" name="/八路灰度与双摄像头模块接口/GRAY_CH5" class="Default">
+      <node ref="J14" pin="B19" pinfunction="B19_/_PE14_B19" pintype="bidirectional"/>
+      <node ref="J20" pin="7" pinfunction="CH5_7" pintype="passive"/>
+    </net>
+    <net code="21" name="/八路灰度与双摄像头模块接口/GRAY_CH6" class="Default">
+      <node ref="J14" pin="B20" pinfunction="B20_/_PE15_B20" pintype="bidirectional"/>
+      <node ref="J20" pin="8" pinfunction="CH6_8" pintype="passive"/>
+    </net>
+    <net code="22" name="/八路灰度与双摄像头模块接口/GRAY_CH7" class="Default">
+      <node ref="J14" pin="B28" pinfunction="B28_/_PD10_B28" pintype="bidirectional"/>
+      <node ref="J20" pin="9" pinfunction="CH7_9" pintype="passive"/>
+    </net>
+    <net code="23" name="/八路灰度与双摄像头模块接口/GRAY_CH8" class="Default">
+      <node ref="J14" pin="B29" pinfunction="B29_/_PD11_B29" pintype="bidirectional"/>
+      <node ref="J20" pin="10" pinfunction="CH8_10" pintype="passive"/>
+    </net>
+    <net code="24" name="/八路灰度与双摄像头模块接口/GRAY_CLK" class="Default">
+      <node ref="J14" pin="B30" pinfunction="B30_/_PD12_B30" pintype="bidirectional"/>
+      <node ref="J21" pin="3" pinfunction="CLK_3" pintype="passive"/>
+    </net>
+    <net code="25" name="/八路灰度与双摄像头模块接口/GRAY_DAT" class="Default">
+      <node ref="J14" pin="B31" pinfunction="B31_/_PD13_B31" pintype="bidirectional"/>
+      <node ref="J21" pin="4" pinfunction="DAT_4" pintype="passive"/>
+    </net>
+    <net code="26" name="/八路灰度与双摄像头模块接口/MAIX_RX" class="Default">
+      <node ref="J14" pin="B27" pinfunction="B27_/_PD9_B27" pintype="bidirectional"/>
+      <node ref="J18" pin="4" pinfunction="MCU_RX_4" pintype="passive"/>
+    </net>
+    <net code="27" name="/八路灰度与双摄像头模块接口/MAIX_TX" class="Default">
+      <node ref="J14" pin="B26" pinfunction="B26_/_PD8_B26" pintype="bidirectional"/>
+      <node ref="J18" pin="3" pinfunction="MCU_TX_3" pintype="passive"/>
+    </net>
+    <net code="28" name="/八路灰度与双摄像头模块接口/VIDEO_RX" class="Default">
+      <node ref="J14" pin="B35" pinfunction="B35_/_PC7_B35" pintype="bidirectional"/>
+      <node ref="J19" pin="4" pinfunction="MCU_RX_4" pintype="passive"/>
+    </net>
+    <net code="29" name="/八路灰度与双摄像头模块接口/VIDEO_TX" class="Default">
+      <node ref="J14" pin="B34" pinfunction="B34_/_PC6_B34" pintype="bidirectional"/>
+      <node ref="J19" pin="3" pinfunction="MCU_TX_3" pintype="passive"/>
+    </net>
+    <net code="30" name="/右电机与编码器/MOTOR_RUN" class="Default">
+      <node ref="J10" pin="2" pinfunction="Pin_2_2" pintype="passive"/>
+      <node ref="R14" pin="1" pintype="passive"/>
+      <node ref="R34" pin="1" pintype="passive"/>
+      <node ref="R7" pin="1" pintype="passive"/>
+      <node ref="U2" pin="3" pinfunction="nSLEEP_3" pintype="input"/>
+      <node ref="U4" pin="3" pinfunction="nSLEEP_3" pintype="input"/>
+    </net>
+    <net code="31" name="/右电机与编码器/R_DIR" class="Default">
+      <node ref="J14" pin="A34" pinfunction="A34_/_PD7_A34" pintype="bidirectional"/>
+      <node ref="U4" pin="2" pinfunction="PH/IN2_2" pintype="input"/>
+    </net>
+    <net code="32" name="/右电机与编码器/R_ENC_A" class="Default">
+      <node ref="J14" pin="A33" pinfunction="A33_/_PB3_A33" pintype="bidirectional"/>
+      <node ref="U5" pin="6" pinfunction="1Y_6" pintype="output"/>
+    </net>
+    <net code="33" name="/右电机与编码器/R_ENC_B" class="Default">
+      <node ref="J14" pin="A45" pinfunction="A45_/_PA15_A45" pintype="bidirectional"/>
+      <node ref="U5" pin="4" pinfunction="2Y_4" pintype="output"/>
+    </net>
+    <net code="34" name="/右电机与编码器/R_ISENSE" class="Default">
+      <node ref="C36" pin="1" pintype="passive"/>
+      <node ref="J14" pin="A11" pinfunction="A11_/_PC0_A11" pintype="bidirectional"/>
+      <node ref="R35" pin="2" pintype="passive"/>
+    </net>
+    <net code="35" name="/右电机与编码器/R_M_OUT1" class="Default">
+      <node ref="J6" pin="6" pinfunction="M+_6" pintype="passive"/>
+      <node ref="U4" pin="8" pinfunction="OUT1_8" pintype="power_out"/>
+    </net>
+    <net code="36" name="/右电机与编码器/R_M_OUT2" class="Default">
+      <node ref="J6" pin="1" pinfunction="M-_1" pintype="passive"/>
+      <node ref="U4" pin="10" pinfunction="OUT2_10" pintype="power_out"/>
+    </net>
+    <net code="37" name="/右电机与编码器/R_PWM" class="Default">
+      <node ref="J14" pin="A27" pinfunction="A27_/_PB8_A27" pintype="bidirectional"/>
+      <node ref="U4" pin="1" pinfunction="EN/IN1_1" pintype="input"/>
+    </net>
+    <net code="38" name="/右电机与编码器/R_nFAULT" class="Default">
+      <node ref="J14" pin="A35" pinfunction="A35_/_PD6_A35" pintype="bidirectional"/>
+      <node ref="R33" pin="1" pintype="passive"/>
+      <node ref="U4" pin="4" pinfunction="nFAULT_4" pintype="open_collector"/>
+    </net>
+    <net code="39" name="/四脚蓝牙与外接步进驱动接口/BT_RX" class="Default">
+      <node ref="J14" pin="B2" pinfunction="B2_/_PA3_B2" pintype="bidirectional"/>
+      <node ref="J15" pin="4" pinfunction="MCU_RX_4" pintype="passive"/>
+    </net>
+    <net code="40" name="/四脚蓝牙与外接步进驱动接口/BT_TX" class="Default">
+      <node ref="J14" pin="A2" pinfunction="A2_/_PA2_A2" pintype="bidirectional"/>
+      <node ref="J15" pin="3" pinfunction="MCU_TX_3" pintype="passive"/>
+    </net>
+    <net code="41" name="/四脚蓝牙与外接步进驱动接口/STEP_DIR" class="Default">
+      <node ref="J14" pin="B32" pinfunction="B32_/_PD14_B32" pintype="bidirectional"/>
+      <node ref="J22" pin="4" pinfunction="DIR_4" pintype="passive"/>
+      <node ref="R58" pin="1" pintype="passive"/>
+    </net>
+    <net code="42" name="/四脚蓝牙与外接步进驱动接口/STEP_PUL" class="Default">
+      <node ref="J14" pin="B14" pinfunction="B14_/_PE9_B14" pintype="bidirectional"/>
+      <node ref="J22" pin="3" pinfunction="STEP_3" pintype="passive"/>
+      <node ref="R57" pin="1" pintype="passive"/>
+    </net>
+    <net code="43" name="/四脚蓝牙与外接步进驱动接口/STEP_UART_RX" class="Default">
+      <node ref="J14" pin="A29" pinfunction="A29_/_PB7_A29" pintype="bidirectional"/>
+      <node ref="J23" pin="8" pinfunction="T/B/L_TX_8" pintype="passive"/>
+    </net>
+    <net code="44" name="/四脚蓝牙与外接步进驱动接口/STEP_UART_TX" class="Default">
+      <node ref="J14" pin="A30" pinfunction="A30_/_PB6_A30" pintype="bidirectional"/>
+      <node ref="J23" pin="7" pinfunction="R/A/H_RX_7" pintype="passive"/>
+    </net>
+    <net code="45" name="/四脚蓝牙与外接步进驱动接口/STEP_nEN" class="Default">
+      <node ref="J14" pin="B33" pinfunction="B33_/_PD15_B33" pintype="bidirectional"/>
+      <node ref="J22" pin="5" pinfunction="nEN_5" pintype="passive"/>
+      <node ref="R54" pin="2" pintype="passive"/>
+    </net>
+    <net code="46" name="/四脚蓝牙与外接步进驱动接口/VBT" class="Default">
+      <node ref="J15" pin="1" pinfunction="VBT_1" pintype="passive"/>
+      <node ref="J16" pin="2" pinfunction="VBT_2" pintype="passive"/>
+    </net>
+    <net code="47" name="/左电机与编码器/L_DIR" class="Default">
+      <node ref="J14" pin="A8" pinfunction="A8_/_PC3_A8" pintype="bidirectional"/>
+      <node ref="U2" pin="2" pinfunction="PH/IN2_2" pintype="input"/>
+    </net>
+    <net code="48" name="/左电机与编码器/L_ENC_A" class="Default">
+      <node ref="J14" pin="A4" pinfunction="A4_/_PA0_A4" pintype="bidirectional"/>
+      <node ref="U3" pin="6" pinfunction="1Y_6" pintype="output"/>
+    </net>
+    <net code="49" name="/左电机与编码器/L_ENC_B" class="Default">
+      <node ref="J14" pin="A3" pinfunction="A3_/_PA1_A3" pintype="bidirectional"/>
+      <node ref="U3" pin="4" pinfunction="2Y_4" pintype="output"/>
+    </net>
+    <net code="50" name="/左电机与编码器/L_ISENSE" class="Default">
+      <node ref="C16" pin="1" pintype="passive"/>
+      <node ref="J14" pin="A5" pinfunction="A5_/_PH5_A5" pintype="bidirectional"/>
+      <node ref="R15" pin="2" pintype="passive"/>
+    </net>
+    <net code="51" name="/左电机与编码器/L_M_OUT1" class="Default">
+      <node ref="J4" pin="6" pinfunction="M+_6" pintype="passive"/>
+      <node ref="U2" pin="8" pinfunction="OUT1_8" pintype="power_out"/>
+    </net>
+    <net code="52" name="/左电机与编码器/L_M_OUT2" class="Default">
+      <node ref="J4" pin="1" pinfunction="M-_1" pintype="passive"/>
+      <node ref="U2" pin="10" pinfunction="OUT2_10" pintype="power_out"/>
+    </net>
+    <net code="53" name="/左电机与编码器/L_PWM" class="Default">
+      <node ref="J14" pin="A9" pinfunction="A9_/_PC2_A9" pintype="bidirectional"/>
+      <node ref="U2" pin="1" pinfunction="EN/IN1_1" pintype="input"/>
+    </net>
+    <net code="54" name="/左电机与编码器/L_nFAULT" class="Default">
+      <node ref="J14" pin="A7" pinfunction="A7_/_PH4_A7" pintype="bidirectional"/>
+      <node ref="R13" pin="1" pintype="passive"/>
+      <node ref="U2" pin="4" pinfunction="nFAULT_4" pintype="open_collector"/>
+    </net>
+    <net code="55" name="/核心板接口/MOTOR_EN_REQ" class="Default">
+      <node ref="J14" pin="B13" pinfunction="B13_/_PE8_B13" pintype="bidirectional"/>
+      <node ref="R6" pin="1" pintype="passive"/>
+    </net>
+    <net code="56" name="/核心板接口/SWCLK" class="Default">
+      <node ref="J14" pin="A46" pinfunction="A46_/_PA14_A46" pintype="bidirectional"/>
+      <node ref="J8" pin="3" pinfunction="Pin_3_3" pintype="passive"/>
+    </net>
+    <net code="57" name="/核心板接口/SWDIO" class="Default">
+      <node ref="J14" pin="B43" pinfunction="B43_/_PA13_B43" pintype="bidirectional"/>
+      <node ref="J8" pin="2" pinfunction="Pin_2_2" pintype="passive"/>
+    </net>
+    <net code="58" name="/输入、总开关与降压/SW_SOURCE" class="Default">
+      <node ref="D1" pin="1" pinfunction="K_1" pintype="passive"/>
+      <node ref="Q1" pin="1" pinfunction="S_1" pintype="passive"/>
+      <node ref="Q1" pin="2" pinfunction="S_2" pintype="passive"/>
+      <node ref="Q1" pin="3" pinfunction="S_3" pintype="passive"/>
+      <node ref="Q2" pin="1" pinfunction="S_1" pintype="passive"/>
+      <node ref="Q2" pin="2" pinfunction="S_2" pintype="passive"/>
+      <node ref="Q2" pin="3" pinfunction="S_3" pintype="passive"/>
+      <node ref="R1" pin="2" pintype="passive"/>
+      <node ref="SW1" pin="1" pinfunction="A_1" pintype="passive"/>
+    </net>
+    <net code="59" name="GND" class="Default">
+      <node ref="C1" pin="2" pintype="passive"/>
+      <node ref="C12" pin="2" pintype="passive"/>
+      <node ref="C13" pin="2" pintype="passive"/>
+      <node ref="C14" pin="2" pintype="passive"/>
+      <node ref="C15" pin="2" pintype="passive"/>
+      <node ref="C16" pin="2" pintype="passive"/>
+      <node ref="C17" pin="1" pintype="passive"/>
+      <node ref="C18" pin="2" pintype="passive"/>
+      <node ref="C19" pin="2" pintype="passive"/>
+      <node ref="C2" pin="2" pintype="passive"/>
+      <node ref="C20" pin="2" pintype="passive"/>
+      <node ref="C3" pin="2" pintype="passive"/>
+      <node ref="C32" pin="2" pintype="passive"/>
+      <node ref="C33" pin="2" pintype="passive"/>
+      <node ref="C34" pin="2" pintype="passive"/>
+      <node ref="C35" pin="2" pintype="passive"/>
+      <node ref="C36" pin="2" pintype="passive"/>
+      <node ref="C37" pin="1" pintype="passive"/>
+      <node ref="C38" pin="2" pintype="passive"/>
+      <node ref="C39" pin="2" pintype="passive"/>
+      <node ref="C40" pin="2" pintype="passive"/>
+      <node ref="C5" pin="2" pintype="passive"/>
+      <node ref="C50" pin="2" pintype="passive"/>
+      <node ref="C52" pin="2" pintype="passive"/>
+      <node ref="C53" pin="2" pintype="passive"/>
+      <node ref="C54" pin="2" pintype="passive"/>
+      <node ref="C55" pin="2" pintype="passive"/>
+      <node ref="C56" pin="2" pintype="passive"/>
+      <node ref="C57" pin="2" pintype="passive"/>
+      <node ref="C58" pin="2" pintype="passive"/>
+      <node ref="C59" pin="2" pintype="passive"/>
+      <node ref="C6" pin="2" pintype="passive"/>
+      <node ref="C60" pin="2" pintype="passive"/>
+      <node ref="C61" pin="2" pintype="passive"/>
+      <node ref="C62" pin="2" pintype="passive"/>
+      <node ref="D2" pin="2" pinfunction="A_2" pintype="passive"/>
+      <node ref="D4" pin="1" pinfunction="K_1" pintype="passive"/>
+      <node ref="J1" pin="2" pinfunction="GND_2" pintype="passive"/>
+      <node ref="J14" pin="50" pinfunction="MP1_/_GND_50" pintype="passive"/>
+      <node ref="J14" pin="51" pinfunction="MP2_/_GND_51" pintype="passive"/>
+      <node ref="J14" pin="A1" pinfunction="A1_/_GND_A1" pintype="power_in"/>
+      <node ref="J14" pin="A49" pinfunction="A49_/_GND_A49" pintype="power_in"/>
+      <node ref="J14" pin="B1" pinfunction="B1_/_GND_B1" pintype="power_in"/>
+      <node ref="J14" pin="B49" pinfunction="B49_/_GND_B49" pintype="power_in"/>
+      <node ref="J15" pin="2" pinfunction="GND_2" pintype="passive"/>
+      <node ref="J17" pin="1" pinfunction="GND_1" pintype="passive"/>
+      <node ref="J18" pin="2" pinfunction="GND_2" pintype="passive"/>
+      <node ref="J19" pin="2" pinfunction="GND_2" pintype="passive"/>
+      <node ref="J20" pin="2" pinfunction="GND_2" pintype="passive"/>
+      <node ref="J21" pin="2" pinfunction="GND_2" pintype="passive"/>
+      <node ref="J22" pin="2" pinfunction="GND_2" pintype="passive"/>
+      <node ref="J22" pin="6" pinfunction="GND_6" pintype="passive"/>
+      <node ref="J23" pin="2" pinfunction="GND_2" pintype="passive"/>
+      <node ref="J24" pin="2" pinfunction="GND_2" pintype="passive"/>
+      <node ref="J4" pin="5" pinfunction="GND_5" pintype="passive"/>
+      <node ref="J6" pin="5" pinfunction="GND_5" pintype="passive"/>
+      <node ref="J8" pin="4" pinfunction="Pin_4_4" pintype="passive"/>
+      <node ref="R11" pin="2" pintype="passive"/>
+      <node ref="R12" pin="2" pintype="passive"/>
+      <node ref="R14" pin="2" pintype="passive"/>
+      <node ref="R2" pin="2" pintype="passive"/>
+      <node ref="R31" pin="2" pintype="passive"/>
+      <node ref="R32" pin="2" pintype="passive"/>
+      <node ref="R34" pin="2" pintype="passive"/>
+      <node ref="R4" pin="2" pintype="passive"/>
+      <node ref="R57" pin="2" pintype="passive"/>
+      <node ref="R58" pin="2" pintype="passive"/>
+      <node ref="R7" pin="2" pintype="passive"/>
+      <node ref="SW1" pin="4" pinfunction="CASE_4" pintype="passive"/>
+      <node ref="SW1" pin="5" pinfunction="CASE_5" pintype="passive"/>
+      <node ref="SW2" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="SW3" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="SW4" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="SW5" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="U1" pin="4" pinfunction="GND_4" pintype="power_in"/>
+      <node ref="U2" pin="15" pinfunction="GND_15" pintype="power_in"/>
+      <node ref="U2" pin="16" pinfunction="PMODE_16" pintype="input"/>
+      <node ref="U2" pin="17" pinfunction="EP_17" pintype="power_in"/>
+      <node ref="U2" pin="7" pinfunction="IMODE_7" pintype="input"/>
+      <node ref="U2" pin="9" pinfunction="PGND_9" pintype="power_in"/>
+      <node ref="U3" pin="2" pinfunction="GND_2" pintype="power_in"/>
+      <node ref="U4" pin="15" pinfunction="GND_15" pintype="power_in"/>
+      <node ref="U4" pin="16" pinfunction="PMODE_16" pintype="input"/>
+      <node ref="U4" pin="17" pinfunction="EP_17" pintype="power_in"/>
+      <node ref="U4" pin="7" pinfunction="IMODE_7" pintype="input"/>
+      <node ref="U4" pin="9" pinfunction="PGND_9" pintype="power_in"/>
+      <node ref="U5" pin="2" pinfunction="GND_2" pintype="power_in"/>
+      <node ref="U6" pin="4" pinfunction="GND_4" pintype="power_in"/>
+      <node ref="U7" pin="2" pinfunction="GND_2" pintype="power_in"/>
+    </net>
+    <net code="60" name="Net-(D1-A)" class="Default">
+      <node ref="D1" pin="2" pinfunction="A_2" pintype="passive"/>
+      <node ref="Q1" pin="4" pinfunction="G_4" pintype="input"/>
+      <node ref="Q2" pin="4" pinfunction="G_4" pintype="input"/>
+      <node ref="R1" pin="1" pintype="passive"/>
+      <node ref="SW1" pin="2" pinfunction="B_2" pintype="passive"/>
+    </net>
+    <net code="61" name="Net-(D3-A)" class="Default">
+      <node ref="C5" pin="1" pintype="passive"/>
+      <node ref="C6" pin="1" pintype="passive"/>
+      <node ref="D3" pin="2" pinfunction="A_2" pintype="passive"/>
+      <node ref="L1" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="U1" pin="1" pinfunction="FB_1" pintype="input"/>
+    </net>
+    <net code="62" name="Net-(D4-A)" class="Default">
+      <node ref="D4" pin="2" pinfunction="A_2" pintype="passive"/>
+      <node ref="R5" pin="2" pintype="passive"/>
+    </net>
+    <net code="63" name="Net-(F1-Pad2)" class="Default">
+      <node ref="F1" pin="2" pintype="passive"/>
+      <node ref="Q1" pin="5" pinfunction="D_5" pintype="passive"/>
+      <node ref="Q1" pin="6" pinfunction="D_6" pintype="passive"/>
+      <node ref="Q1" pin="7" pinfunction="D_7" pintype="passive"/>
+      <node ref="Q1" pin="8" pinfunction="D_8" pintype="passive"/>
+    </net>
+    <net code="64" name="Net-(J1-BAT+)" class="Default">
+      <node ref="F1" pin="1" pintype="passive"/>
+      <node ref="J1" pin="1" pinfunction="BAT+_1" pintype="passive"/>
+    </net>
+    <net code="65" name="Net-(J4-A)" class="Default">
+      <node ref="J4" pin="3" pinfunction="A_3" pintype="passive"/>
+      <node ref="R16" pin="1" pintype="passive"/>
+      <node ref="R18" pin="2" pintype="passive"/>
+    </net>
+    <net code="66" name="Net-(J4-B)" class="Default">
+      <node ref="J4" pin="4" pinfunction="B_4" pintype="passive"/>
+      <node ref="R17" pin="1" pintype="passive"/>
+      <node ref="R19" pin="1" pintype="passive"/>
+    </net>
+    <net code="67" name="Net-(J6-A)" class="Default">
+      <node ref="J6" pin="3" pinfunction="A_3" pintype="passive"/>
+      <node ref="R36" pin="1" pintype="passive"/>
+      <node ref="R38" pin="2" pintype="passive"/>
+    </net>
+    <net code="68" name="Net-(J6-B)" class="Default">
+      <node ref="J6" pin="4" pinfunction="B_4" pintype="passive"/>
+      <node ref="R37" pin="1" pintype="passive"/>
+      <node ref="R39" pin="1" pintype="passive"/>
+    </net>
+    <net code="69" name="Net-(J10-Pin_1)" class="Default">
+      <node ref="J10" pin="1" pinfunction="Pin_1_1" pintype="passive"/>
+      <node ref="R6" pin="2" pintype="passive"/>
+    </net>
+    <net code="70" name="Net-(SW1-C)" class="Default">
+      <node ref="R2" pin="1" pintype="passive"/>
+      <node ref="SW1" pin="3" pinfunction="C_3" pintype="passive"/>
+    </net>
+    <net code="71" name="Net-(U1-BST)" class="Default">
+      <node ref="C4" pin="2" pintype="passive"/>
+      <node ref="U1" pin="6" pinfunction="BST_6" pintype="passive"/>
+    </net>
+    <net code="72" name="Net-(U1-EN)" class="Default">
+      <node ref="R3" pin="2" pintype="passive"/>
+      <node ref="R4" pin="1" pintype="passive"/>
+      <node ref="U1" pin="2" pinfunction="EN_2" pintype="input"/>
+    </net>
+    <net code="73" name="Net-(U1-SW)" class="Default">
+      <node ref="C4" pin="1" pintype="passive"/>
+      <node ref="L1" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="U1" pin="5" pinfunction="SW_5" pintype="output"/>
+    </net>
+    <net code="74" name="Net-(U2-CPH)" class="Default">
+      <node ref="C10" pin="1" pintype="passive"/>
+      <node ref="U2" pin="13" pinfunction="CPH_13" pintype="passive"/>
+    </net>
+    <net code="75" name="Net-(U2-CPL)" class="Default">
+      <node ref="C10" pin="2" pintype="passive"/>
+      <node ref="U2" pin="14" pinfunction="CPL_14" pintype="passive"/>
+    </net>
+    <net code="76" name="Net-(U2-IPROPI)" class="Default">
+      <node ref="C15" pin="1" pintype="passive"/>
+      <node ref="R12" pin="1" pintype="passive"/>
+      <node ref="R15" pin="1" pintype="passive"/>
+      <node ref="U2" pin="6" pinfunction="IPROPI_6" pintype="output"/>
+    </net>
+    <net code="77" name="Net-(U2-VCP)" class="Default">
+      <node ref="C11" pin="2" pintype="passive"/>
+      <node ref="U2" pin="12" pinfunction="VCP_12" pintype="passive"/>
+    </net>
+    <net code="78" name="Net-(U2-VREF)" class="Default">
+      <node ref="C14" pin="1" pintype="passive"/>
+      <node ref="R10" pin="2" pintype="passive"/>
+      <node ref="R11" pin="1" pintype="passive"/>
+      <node ref="U2" pin="5" pinfunction="VREF_5" pintype="input"/>
+    </net>
+    <net code="79" name="Net-(U3-1A)" class="Default">
+      <node ref="C17" pin="2" pintype="passive"/>
+      <node ref="R16" pin="2" pintype="passive"/>
+      <node ref="U3" pin="1" pinfunction="1A_1" pintype="input"/>
+    </net>
+    <net code="80" name="Net-(U3-2A)" class="Default">
+      <node ref="C18" pin="1" pintype="passive"/>
+      <node ref="R17" pin="2" pintype="passive"/>
+      <node ref="U3" pin="3" pinfunction="2A_3" pintype="input"/>
+    </net>
+    <net code="81" name="Net-(U4-CPH)" class="Default">
+      <node ref="C30" pin="1" pintype="passive"/>
+      <node ref="U4" pin="13" pinfunction="CPH_13" pintype="passive"/>
+    </net>
+    <net code="82" name="Net-(U4-CPL)" class="Default">
+      <node ref="C30" pin="2" pintype="passive"/>
+      <node ref="U4" pin="14" pinfunction="CPL_14" pintype="passive"/>
+    </net>
+    <net code="83" name="Net-(U4-IPROPI)" class="Default">
+      <node ref="C35" pin="1" pintype="passive"/>
+      <node ref="R32" pin="1" pintype="passive"/>
+      <node ref="R35" pin="1" pintype="passive"/>
+      <node ref="U4" pin="6" pinfunction="IPROPI_6" pintype="output"/>
+    </net>
+    <net code="84" name="Net-(U4-VCP)" class="Default">
+      <node ref="C31" pin="2" pintype="passive"/>
+      <node ref="U4" pin="12" pinfunction="VCP_12" pintype="passive"/>
+    </net>
+    <net code="85" name="Net-(U4-VREF)" class="Default">
+      <node ref="C34" pin="1" pintype="passive"/>
+      <node ref="R30" pin="2" pintype="passive"/>
+      <node ref="R31" pin="1" pintype="passive"/>
+      <node ref="U4" pin="5" pinfunction="VREF_5" pintype="input"/>
+    </net>
+    <net code="86" name="Net-(U5-1A)" class="Default">
+      <node ref="C37" pin="2" pintype="passive"/>
+      <node ref="R36" pin="2" pintype="passive"/>
+      <node ref="U5" pin="1" pinfunction="1A_1" pintype="input"/>
+    </net>
+    <net code="87" name="Net-(U5-2A)" class="Default">
+      <node ref="C38" pin="1" pintype="passive"/>
+      <node ref="R37" pin="2" pintype="passive"/>
+      <node ref="U5" pin="3" pinfunction="2A_3" pintype="input"/>
+    </net>
+    <net code="88" name="Net-(U6-BST)" class="Default">
+      <node ref="C51" pin="1" pintype="passive"/>
+      <node ref="U6" pin="6" pinfunction="BST_6" pintype="passive"/>
+    </net>
+    <net code="89" name="Net-(U6-SW)" class="Default">
+      <node ref="C51" pin="2" pintype="passive"/>
+      <node ref="L2" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="U6" pin="5" pinfunction="SW_5" pintype="output"/>
+    </net>
+    <net code="90" name="unconnected-(J14A-A6_{slash}_VREF_MCU-PadA6)" class="Default">
+      <node ref="J14" pin="A6" pinfunction="A6_/_VREF_MCU_A6" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="91" name="unconnected-(J14A-A10_{slash}_PC1-PadA10)" class="Default">
+      <node ref="J14" pin="A10" pinfunction="A10_/_PC1_A10" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="92" name="unconnected-(J14A-A12_{slash}_NRST-PadA12)" class="Default">
+      <node ref="J14" pin="A12" pinfunction="A12_/_NRST_A12" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="93" name="unconnected-(J14A-A13_{slash}_NC-PadA13)" class="Default">
+      <node ref="J14" pin="A13" pinfunction="A13_/_NC_A13" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="94" name="unconnected-(J14A-A14_{slash}_NC-PadA14)" class="Default">
+      <node ref="J14" pin="A14" pinfunction="A14_/_NC_A14" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="95" name="unconnected-(J14A-A15_{slash}_PC15-PadA15)" class="Default">
+      <node ref="J14" pin="A15" pinfunction="A15_/_PC15_A15" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="96" name="unconnected-(J14A-A16_{slash}_PC14-PadA16)" class="Default">
+      <node ref="J14" pin="A16" pinfunction="A16_/_PC14_A16" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="97" name="unconnected-(J14A-A17_{slash}_PC13-PadA17)" class="Default">
+      <node ref="J14" pin="A17" pinfunction="A17_/_PC13_A17" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="98" name="unconnected-(J14A-A18_{slash}_PH15-PadA18)" class="Default">
+      <node ref="J14" pin="A18" pinfunction="A18_/_PH15_A18" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="99" name="unconnected-(J14A-A19_{slash}_PE6-PadA19)" class="Default">
+      <node ref="J14" pin="A19" pinfunction="A19_/_PE6_A19" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="100" name="unconnected-(J14A-A20_{slash}_PE5-PadA20)" class="Default">
+      <node ref="J14" pin="A20" pinfunction="A20_/_PE5_A20" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="101" name="unconnected-(J14A-A21_{slash}_PE4-PadA21)" class="Default">
+      <node ref="J14" pin="A21" pinfunction="A21_/_PE4_A21" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="102" name="unconnected-(J14A-A22_{slash}_PE3-PadA22)" class="Default">
+      <node ref="J14" pin="A22" pinfunction="A22_/_PE3_A22" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="103" name="unconnected-(J14A-A23_{slash}_PE2-PadA23)" class="Default">
+      <node ref="J14" pin="A23" pinfunction="A23_/_PE2_A23" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="104" name="unconnected-(J14A-A24_{slash}_PE1-PadA24)" class="Default">
+      <node ref="J14" pin="A24" pinfunction="A24_/_PE1_A24" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="105" name="unconnected-(J14A-A25_{slash}_PE0-PadA25)" class="Default">
+      <node ref="J14" pin="A25" pinfunction="A25_/_PE0_A25" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="106" name="unconnected-(J14A-B5_{slash}_PA6-PadB5)" class="Default">
+      <node ref="J14" pin="B5" pinfunction="B5_/_PA6_B5" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="107" name="unconnected-(J14A-B21_{slash}_PB10-PadB21)" class="Default">
+      <node ref="J14" pin="B21" pinfunction="B21_/_PB10_B21" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="108" name="unconnected-(J14A-B22_{slash}_PB12-PadB22)" class="Default">
+      <node ref="J14" pin="B22" pinfunction="B22_/_PB12_B22" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="109" name="unconnected-(J14A-B23_{slash}_PB13-PadB23)" class="Default">
+      <node ref="J14" pin="B23" pinfunction="B23_/_PB13_B23" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="110" name="unconnected-(J14A-B24_{slash}_PB14-PadB24)" class="Default">
+      <node ref="J14" pin="B24" pinfunction="B24_/_PB14_B24" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="111" name="unconnected-(J14A-B25_{slash}_PB15-PadB25)" class="Default">
+      <node ref="J14" pin="B25" pinfunction="B25_/_PB15_B25" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="112" name="unconnected-(J14B-A26_{slash}_PB9-PadA26)" class="Default">
+      <node ref="J14" pin="A26" pinfunction="A26_/_PB9_A26" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="113" name="unconnected-(J14B-A28_{slash}_PH2-PadA28)" class="Default">
+      <node ref="J14" pin="A28" pinfunction="A28_/_PH2_A28" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="114" name="unconnected-(J14B-A31_{slash}_PB5-PadA31)" class="Default">
+      <node ref="J14" pin="A31" pinfunction="A31_/_PB5_A31" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="115" name="unconnected-(J14B-A36_{slash}_PD5-PadA36)" class="Default">
+      <node ref="J14" pin="A36" pinfunction="A36_/_PD5_A36" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="116" name="unconnected-(J14B-A37_{slash}_PD4-PadA37)" class="Default">
+      <node ref="J14" pin="A37" pinfunction="A37_/_PD4_A37" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="117" name="unconnected-(J14B-A38_{slash}_PD3-PadA38)" class="Default">
+      <node ref="J14" pin="A38" pinfunction="A38_/_PD3_A38" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="118" name="unconnected-(J14B-A39_{slash}_PD2-PadA39)" class="Default">
+      <node ref="J14" pin="A39" pinfunction="A39_/_PD2_A39" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="119" name="unconnected-(J14B-A40_{slash}_PD1-PadA40)" class="Default">
+      <node ref="J14" pin="A40" pinfunction="A40_/_PD1_A40" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="120" name="unconnected-(J14B-A41_{slash}_PD0-PadA41)" class="Default">
+      <node ref="J14" pin="A41" pinfunction="A41_/_PD0_A41" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="121" name="unconnected-(J14B-A42_{slash}_PC12-PadA42)" class="Default">
+      <node ref="J14" pin="A42" pinfunction="A42_/_PC12_A42" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="122" name="unconnected-(J14B-A43_{slash}_PC11-PadA43)" class="Default">
+      <node ref="J14" pin="A43" pinfunction="A43_/_PC11_A43" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="123" name="unconnected-(J14B-A44_{slash}_PC10-PadA44)" class="Default">
+      <node ref="J14" pin="A44" pinfunction="A44_/_PC10_A44" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="124" name="unconnected-(J14B-B36_{slash}_PC8-PadB36)" class="Default">
+      <node ref="J14" pin="B36" pinfunction="B36_/_PC8_B36" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="125" name="unconnected-(J14B-B37_{slash}_PC9-PadB37)" class="Default">
+      <node ref="J14" pin="B37" pinfunction="B37_/_PC9_B37" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="126" name="unconnected-(J14B-B38_{slash}_PA8-PadB38)" class="Default">
+      <node ref="J14" pin="B38" pinfunction="B38_/_PA8_B38" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="127" name="unconnected-(J14B-B39_{slash}_PA9-PadB39)" class="Default">
+      <node ref="J14" pin="B39" pinfunction="B39_/_PA9_B39" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="128" name="unconnected-(J14B-B40_{slash}_PA10-PadB40)" class="Default">
+      <node ref="J14" pin="B40" pinfunction="B40_/_PA10_B40" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="129" name="unconnected-(J14B-B41_{slash}_PA11-PadB41)" class="Default">
+      <node ref="J14" pin="B41" pinfunction="B41_/_PA11_B41" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="130" name="unconnected-(J14B-B42_{slash}_PA12-PadB42)" class="Default">
+      <node ref="J14" pin="B42" pinfunction="B42_/_PA12_B42" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="131" name="unconnected-(J14B-B44_{slash}_PH3-PadB44)" class="Default">
+      <node ref="J14" pin="B44" pinfunction="B44_/_PH3_B44" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="132" name="unconnected-(J14B-B45_{slash}_NC-PadB45)" class="Default">
+      <node ref="J14" pin="B45" pinfunction="B45_/_NC_B45" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="133" name="unconnected-(J14B-B46_{slash}_NC-PadB46)" class="Default">
+      <node ref="J14" pin="B46" pinfunction="B46_/_NC_B46" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="134" name="unconnected-(J23-COM_NC-Pad3)" class="Default">
+      <node ref="J23" pin="3" pinfunction="COM_NC_3" pintype="passive+no_connect"/>
+    </net>
+    <net code="135" name="unconnected-(J23-DIR_NC-Pad6)" class="Default">
+      <node ref="J23" pin="6" pinfunction="DIR_NC_6" pintype="passive+no_connect"/>
+    </net>
+    <net code="136" name="unconnected-(J23-EN_NC-Pad4)" class="Default">
+      <node ref="J23" pin="4" pinfunction="EN_NC_4" pintype="passive+no_connect"/>
+    </net>
+    <net code="137" name="unconnected-(J23-STEP_NC-Pad5)" class="Default">
+      <node ref="J23" pin="5" pinfunction="STEP_NC_5" pintype="passive+no_connect"/>
+    </net>
+    <net code="138" name="unconnected-(U7-NC-Pad4)" class="Default">
+      <node ref="U7" pin="4" pinfunction="NC_4" pintype="no_connect"/>
+    </net>
+  </nets>
+</export>

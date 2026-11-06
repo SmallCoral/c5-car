@@ -1,0 +1,15 @@
+{
+  "date": "2026-11-06",
+  "python": "3.12.14",
+  "original_file_copies_checked": 27,
+  "links_checked": 114,
+  "application_python_candidates": {
+    "21E 送药小车 天猛星M0.zip": [],
+    "22C 双车跟随 天猛星M0.zip": [],
+    "23E 激光跟随 天空星F4.zip": [],
+    "25E 激光打靶 天猛星M0.zip": [],
+    "26H 平衡球装置 天空星F4.zip": []
+  },
+  "issues": [],
+  "pass": true
+}

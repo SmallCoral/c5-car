@@ -1,0 +1,163 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-11-06T13:21:39",
+    "ignored_checks": [
+        {
+            "description": "Global label only appears once in the schematic",
+            "key": "single_global_label"
+        },
+        {
+            "description": "Four connection points are joined together",
+            "key": "four_way_junction"
+        },
+        {
+            "description": "SPICE model issue",
+            "key": "simulation_model_issue"
+        },
+        {
+            "description": "Assigned footprint doesn't match footprint filters",
+            "key": "footprint_filter"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.6",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709",
+            "violations": [
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "标签 'AUX_UART_TX'",
+                            "pos": {
+                                "x": 0.2032,
+                                "y": 0.3683
+                            },
+                            "uuid": "62937244-79d5-5ec6-97cb-745e3ecbcbd6"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "标签 'NRST'",
+                            "pos": {
+                                "x": 0.2032,
+                                "y": 0.6223
+                            },
+                            "uuid": "d5369d7e-f311-5e82-80e9-4e29d8cbd26f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "标签 'AUX_UART_RX'",
+                            "pos": {
+                                "x": 1.0414,
+                                "y": 0.3683
+                            },
+                            "uuid": "a015a2df-ee36-5426-ae3c-81efdaf5439b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "标签 'AUX_ADC'",
+                            "pos": {
+                                "x": 1.0414,
+                                "y": 0.3937
+                            },
+                            "uuid": "f80472cc-0521-5e32-956e-5b3cbcf1b1a2"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "标签 'AUX_GPIO'",
+                            "pos": {
+                                "x": 1.0414,
+                                "y": 0.4191
+                            },
+                            "uuid": "47f261d6-cdfc-5294-9bfe-032951553159"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "标签 'AUX_I2C_SDA'",
+                            "pos": {
+                                "x": 1.2954,
+                                "y": 0.4318
+                            },
+                            "uuid": "8db46343-362a-515c-8bf7-23f3604a336b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "标签 'AUX_I2C_SCL'",
+                            "pos": {
+                                "x": 1.2954,
+                                "y": 0.4572
+                            },
+                            "uuid": "48dbb370-bf71-5e38-8a86-d79ef4c9ac66"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                }
+            ]
+        },
+        {
+            "path": "/输入、总开关与降压/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709/3e4d7eec-bf94-5ef7-a88d-e072db9975b7",
+            "violations": []
+        },
+        {
+            "path": "/核心板接口/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709/c813fdd4-725f-5df7-aa4a-68cd15d401cf",
+            "violations": []
+        },
+        {
+            "path": "/左电机与编码器/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9",
+            "violations": []
+        },
+        {
+            "path": "/右电机与编码器/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709/ddf41ba8-06a1-59de-bdac-eecd21fc55cb",
+            "violations": []
+        }
+    ],
+    "source": "CoralC5-Motor.kicad_sch"
+}

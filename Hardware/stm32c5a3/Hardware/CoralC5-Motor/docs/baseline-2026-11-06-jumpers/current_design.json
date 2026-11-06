@@ -1,0 +1,59 @@
+{
+  "date": "2026-11-06",
+  "revision": "M2.3",
+  "schematic_pages": 9,
+  "overview_paper": "A3",
+  "functional_paper": "A4",
+  "native_nets": 139,
+  "checks": 1572,
+  "native_ERC_errors": 0,
+  "native_ERC_warnings": 0,
+  "passive_0603_count": 67,
+  "passive_gap_mm": 0.85,
+  "power_budget": {
+    "battery_voltage_range_v": [
+      10,
+      12.6
+    ],
+    "wheel_input_budget_a_each": 2,
+    "wheel_count": 2,
+    "stepper_input_budget_a": 3,
+    "stepper_budget_is_measurement": false,
+    "core_5v_output_budget_a": 0.75,
+    "peripheral_5v_output_budget_a": 1.5,
+    "assumed_buck_efficiency": 0.85,
+    "threev3_is_included_in_5v_not_added_again": true,
+    "max_low_voltage_output_power_w": 11.25,
+    "input_current_a": {
+      "10": 8.3235,
+      "12": 8.1029,
+      "12.6": 8.0504
+    },
+    "normal_operation_current_a": "unknown; measure actual motors and modules",
+    "fuse_standard_continuous_derating": 0.75,
+    "F1_continuous_design_budget_a_at_25c": 9,
+    "MOS_cold_pair_loss_w_at_10v_input_budget_using_10mohm_each": 1.3856,
+    "J23_XH_continuous_rating_a": 3,
+    "F2_is_not_an_exact_3a_current_limiter": true
+  },
+  "authoritative_interfaces": "m2_pin_assignment.csv and native schematic",
+  "current_record_overlays": [
+    "zdt_ttl_design.json",
+    "connector_revision.json",
+    "power_revision.json",
+    "passive_0603_revision.json"
+  ],
+  "source_sha256": {
+    "02_Power.kicad_sch": "99c36bc6d810f344e616c0db30d10c944ed246b4f24f7045080e4b8aba3b9588",
+    "03_Core_Interface.kicad_sch": "878cd3959ceaf9731257ef725bc89eaa1eaf92a5a045fd20be244120a7d068a0",
+    "04_Left_Motor.kicad_sch": "686282a2b562522329fbe683f15486bb41552e7443ea455fe30952d991db1f3e",
+    "05_Right_Motor.kicad_sch": "017602591f6c946ae9a00297bcaa3889256e8c350b1a31f1bf91fd792b2a0279",
+    "06_Module_Power.kicad_sch": "fc3f920cbee81d268f4c0749cebc058a88ff8d406deeba7c2e0ea3bfa7fb511f",
+    "07_TFT_Buttons.kicad_sch": "e2eb110be5356d7a85ec4289b29a1de8a1af1da132b34a380f8471ce2492b81f",
+    "08_Grayscale_Cameras.kicad_sch": "08dbcddd267b8b6ae346d67ab09eb36a0928e69a0d2f15cbb7a6010ea42a1b4f",
+    "09_Bluetooth_Stepper.kicad_sch": "2a78528be0cfdfa6530647e92df18f9b8a2742051826cacb5afd690f7b4ce2d8",
+    "CoralC5-Motor.kicad_sch": "486ee0a416791c68b71241c783db274aaeb405ad83cf588036928bb2e5312023"
+  },
+  "symbol_library_sha256": "4efc90aa4fe4a2f3a7c0daddb4c32586b4eb6ee847f45f208acad11b715c2327",
+  "pcb_accessed": false
+}

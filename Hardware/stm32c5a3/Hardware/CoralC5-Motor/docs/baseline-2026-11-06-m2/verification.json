@@ -1,0 +1,3017 @@
+{
+  "date": "2026-11-03",
+  "pass": false,
+  "checks": 491,
+  "failed": [
+    {
+      "name": "core supply after isolation",
+      "pass": false,
+      "detail": {
+        "missing": [
+          "J9:9"
+        ],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "core 3.3V loads",
+      "pass": false,
+      "detail": {
+        "missing": [
+          "J9:1"
+        ],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "NRST",
+      "pass": false,
+      "detail": {
+        "missing": [
+          "J9:10"
+        ],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "aux 3",
+      "pass": false,
+      "detail": {
+        "missing": [
+          "J9:3"
+        ],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "aux 4",
+      "pass": false,
+      "detail": {
+        "missing": [
+          "J9:4"
+        ],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "aux 5",
+      "pass": false,
+      "detail": {
+        "missing": [
+          "J9:5"
+        ],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "aux 6",
+      "pass": false,
+      "detail": {
+        "missing": [
+          "J9:6"
+        ],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "aux 7",
+      "pass": false,
+      "detail": {
+        "missing": [
+          "J9:7"
+        ],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "aux 8",
+      "pass": false,
+      "detail": {
+        "missing": [
+          "J9:8"
+        ],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "all ground returns, EP, PH/EN and fixed off-time straps",
+      "pass": false,
+      "detail": {
+        "missing": [
+          "J9:2"
+        ],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "native ERC no violations",
+      "pass": false,
+      "detail": ""
+    }
+  ],
+  "physical_references": 75,
+  "physical_pins": 316,
+  "models": 20,
+  "native_erc_errors": 0,
+  "native_erc_warnings": 8,
+  "model_exceptions": {
+    "J1": "generic manufacturer-dimension external envelope, not exact internal assembly",
+    "SW1": "generic manufacturer-dimension external envelope, not exact internal assembly",
+    "U2,U4": "KiCad HTSSOP envelope; custom footprint follows TI PWP0016 drawing"
+  },
+  "limitations": [
+    "J3/J5 removed from schematic and PCB; native PCB DRC and parity results are separate from this schematic audit; no prototype verified",
+    "J9 is absent from the current schematic; original auxiliary-header contract is intentionally retained and its failures are reported",
+    "Battery usable energy and runtime are estimates",
+    "Cable polarity, connector mating direction and encoder operation at 3.3 V require hardware confirmation"
+  ],
+  "artifacts_sha256": {
+    "02_Power.kicad_sch": "82f61be660e540e143985f00babc8bfec9bacc95351249dcb384dc6c67e135b4",
+    "03_Core_Interface.kicad_sch": "62167e2a2a1d72e25d7b4f7b854d7912451cc1d7d68913fc9376e56f4d5de3da",
+    "04_Left_Motor.kicad_sch": "58c43abfa910463273620cd4c1bb83eb6f0fd3b2a91bc7e51453aac83c8368fd",
+    "05_Right_Motor.kicad_sch": "ea975a74456adf147ea5e55b2cd1a14b0ed3d985d8d5c0f96b2ad4eb0fe298e1",
+    "CoralC5-Motor.kicad_sch": "1c392c93c2d535ea4d98c9f023c817b977c37d6e05302551581ca836854485c9"
+  },
+  "results": [
+    {
+      "name": "external input",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "fused MOS input",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "back-to-back common sources",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "switch gates, default off",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "ON throw gate resistor",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "protected motor rail",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "buck bootstrap",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "buck switch",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "buck enable divider",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "fixed output feedback before isolation",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "core supply after isolation",
+      "pass": false,
+      "detail": {
+        "missing": [
+          "J9:9"
+        ],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "power LED",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "run request",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "NC stop loop supply",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "common run and pulldowns",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "core 3.3V loads",
+      "pass": false,
+      "detail": {
+        "missing": [
+          "J9:1"
+        ],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "SWDIO",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "SWCLK",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "NRST",
+      "pass": false,
+      "detail": {
+        "missing": [
+          "J9:10"
+        ],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "aux 3",
+      "pass": false,
+      "detail": {
+        "missing": [
+          "J9:3"
+        ],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "aux 4",
+      "pass": false,
+      "detail": {
+        "missing": [
+          "J9:4"
+        ],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "aux 5",
+      "pass": false,
+      "detail": {
+        "missing": [
+          "J9:5"
+        ],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "aux 6",
+      "pass": false,
+      "detail": {
+        "missing": [
+          "J9:6"
+        ],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "aux 7",
+      "pass": false,
+      "detail": {
+        "missing": [
+          "J9:7"
+        ],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "aux 8",
+      "pass": false,
+      "detail": {
+        "missing": [
+          "J9:8"
+        ],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "L PWM",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "L DIR",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "L fault",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "L output1",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "L output2",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "L charge pump",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "L flying cap high",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "L flying cap low",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "L VREF",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "L IPROPI burden",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "L ADC filter",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "L encoder A raw",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "L encoder B raw",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "L Schmitt A",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "L Schmitt B",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "L encoder A to timer",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "L encoder B to timer",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "R PWM",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "R DIR",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "R fault",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "R output1",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "R output2",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "R charge pump",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "R flying cap high",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "R flying cap low",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "R VREF",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "R IPROPI burden",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "R ADC filter",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "R encoder A raw",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "R encoder B raw",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "R Schmitt A",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "R Schmitt B",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "R encoder A to timer",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "R encoder B to timer",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "all ground returns, EP, PH/EN and fixed off-time straps",
+      "pass": false,
+      "detail": {
+        "missing": [
+          "J9:2"
+        ],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "CoralC5-Motor.kicad_sch A4",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "CoralC5-Motor.kicad_sch note size",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "CoralC5-Motor.kicad_sch note size",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "CoralC5-Motor.kicad_sch note size",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "02_Power.kicad_sch A4",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "02_Power.kicad_sch note size",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "02_Power.kicad_sch note size",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "02_Power.kicad_sch note size",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "02_Power.kicad_sch note size",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "02_Power.kicad_sch note size",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "02_Power.kicad_sch note size",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "03_Core_Interface.kicad_sch A4",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "03_Core_Interface.kicad_sch note size",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "03_Core_Interface.kicad_sch note size",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "03_Core_Interface.kicad_sch note size",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "03_Core_Interface.kicad_sch note size",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "03_Core_Interface.kicad_sch note size",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "03_Core_Interface.kicad_sch note size",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "04_Left_Motor.kicad_sch A4",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "04_Left_Motor.kicad_sch note size",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "04_Left_Motor.kicad_sch note size",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "04_Left_Motor.kicad_sch note size",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "04_Left_Motor.kicad_sch note size",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "05_Right_Motor.kicad_sch A4",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "05_Right_Motor.kicad_sch note size",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "05_Right_Motor.kicad_sch note size",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "05_Right_Motor.kicad_sch note size",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "05_Right_Motor.kicad_sch note size",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "J3 removed",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "J5 removed",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "all 13 motor roles assigned",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "motor GPIOs unique",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "motor contacts unique",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "reserved interfaces retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "L_ENC_A Core contact",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "L_ENC_A datasheet AF",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "L_ENC_B Core contact",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "L_ENC_B datasheet AF",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R_ENC_A Core contact",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R_ENC_A datasheet AF",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R_ENC_B Core contact",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R_ENC_B datasheet AF",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "L_PWM Core contact",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "L_PWM datasheet AF",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R_PWM Core contact",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R_PWM datasheet AF",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "L_DIR Core contact",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R_DIR Core contact",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "L_nFAULT Core contact",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R_nFAULT Core contact",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "L_ISENSE Core contact",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "L_ISENSE datasheet analog input",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R_ISENSE Core contact",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R_ISENSE datasheet analog input",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "MOTOR_EN_REQ Core contact",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "L hardware encoder pair",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R hardware encoder pair",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "independent encoder timers",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "PWM shared timer and separate channels",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "PWM timers separate from encoders",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "D3 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "D3 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "D3 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "D3 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Diode_SMD__D_SMA__D_SMA.step"
+    },
+    {
+      "name": "D1 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "D1 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "D1 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "D1 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Diode_SMD__D_SOD-123__D_SOD-123.step"
+    },
+    {
+      "name": "D4 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "D4 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "D4 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "D4 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/LED_SMD__LED_0603_1608Metric__LED_0603_1608Metric.step"
+    },
+    {
+      "name": "C3 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C3 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "C3 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C3 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "C5 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C5 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "C5 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C5 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_1206_3216Metric__C_1206_3216Metric.step"
+    },
+    {
+      "name": "C1 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C1 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "C1 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C1 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_THT__CP_Radial_D10.0mm_P5.00mm__CP_Radial_D10.0mm_P5.00mm.step"
+    },
+    {
+      "name": "R1 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R1 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "R1 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R1 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "D2 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "D2 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "D2 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "D2 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Diode_SMD__D_SMA__D_SMA.step"
+    },
+    {
+      "name": "R4 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R4 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "R4 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R4 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "C2 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C2 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "C2 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C2 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0805_2012Metric__C_0805_2012Metric.step"
+    },
+    {
+      "name": "F1 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "F1 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "F1 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "F1 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Fuse__Fuse_1206_3216Metric__Fuse_1206_3216Metric.step"
+    },
+    {
+      "name": "R5 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R5 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "R5 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R5 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "U1 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "U1 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "U1 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "U1 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Package_TO_SOT_SMD__TSOT-23-6__TSOT-23-6.step"
+    },
+    {
+      "name": "C6 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C6 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "C6 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C6 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_1206_3216Metric__C_1206_3216Metric.step"
+    },
+    {
+      "name": "R3 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R3 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "R3 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R3 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "C4 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C4 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "C4 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C4 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "Q2 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Q2 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "Q2 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Q2 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Package_SO__SOIC-8_3.9x4.9mm_P1.27mm__SOIC-8_3.9x4.9mm_P1.27mm.step"
+    },
+    {
+      "name": "J1 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "J1 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "J1 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "J1 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/DC005_XKB_5A_2mm.wrl"
+    },
+    {
+      "name": "SW1 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "SW1 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "SW1 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "SW1 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/SS12D07VG4.wrl"
+    },
+    {
+      "name": "R2 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R2 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "R2 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R2 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "Q1 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Q1 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "Q1 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Q1 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Package_SO__SOIC-8_3.9x4.9mm_P1.27mm__SOIC-8_3.9x4.9mm_P1.27mm.step"
+    },
+    {
+      "name": "L1 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "L1 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "L1 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "L1 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Inductor_SMD__L_Bourns_SRN6045TA__L_Bourns_SRN6045TA.step"
+    },
+    {
+      "name": "R7 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R7 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "R7 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R7 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "J14 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "J14 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "J14 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "J14 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/C5_EDGE_3_Socket__Streamline_Socket.step"
+    },
+    {
+      "name": "J10 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "J10 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "J10 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "J10 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Connector_PinHeader_2.54mm__PinHeader_1x02_P2.54mm_Vertical__PinHeader_1x02_P2.54mm_Vertical.step"
+    },
+    {
+      "name": "J8 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "J8 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "J8 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "J8 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Connector_JST__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical.step"
+    },
+    {
+      "name": "R6 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R6 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "R6 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R6 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "C20 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C20 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "C20 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C20 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "C12 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C12 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "C12 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C12 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "R15 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R15 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "R15 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R15 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "R11 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R11 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "R11 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R11 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "R18 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R18 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "R18 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R18 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "J4 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "J4 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "J4 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "J4 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical.step"
+    },
+    {
+      "name": "C10 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C10 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "C10 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C10 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "R14 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R14 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "R14 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R14 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "R16 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R16 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "R16 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R16 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "R19 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R19 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "R19 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R19 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "C15 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C15 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "C15 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C15 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "U3 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "U3 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "U3 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "U3 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Package_TO_SOT_SMD__SOT-363_SC-70-6__SOT-363_SC-70-6.step"
+    },
+    {
+      "name": "C19 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C19 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "C19 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C19 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "C14 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C14 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "C14 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C14 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "C11 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C11 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "C11 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C11 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "R12 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R12 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "R12 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R12 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "C16 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C16 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "C16 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C16 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "R13 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R13 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "R13 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R13 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "C13 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C13 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "C13 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C13 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_THT__CP_Radial_D10.0mm_P5.00mm__CP_Radial_D10.0mm_P5.00mm.step"
+    },
+    {
+      "name": "C17 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C17 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "C17 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C17 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "R17 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R17 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "R17 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R17 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "C18 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C18 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "C18 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C18 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "U2 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "U2 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "U2 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "U2 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/DRV8874_PWP0016__HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.78x3.37mm.step"
+    },
+    {
+      "name": "R10 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R10 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "R10 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R10 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "C34 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C34 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "C34 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C34 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "J6 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "J6 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "J6 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "J6 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical.step"
+    },
+    {
+      "name": "C35 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C35 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "C35 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C35 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "C38 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C38 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "C38 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C38 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "R37 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R37 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "R37 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R37 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "C39 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C39 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "C39 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C39 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "R35 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R35 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "R35 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R35 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "C32 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C32 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "C32 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C32 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "R33 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R33 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "R33 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R33 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "C40 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C40 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "C40 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C40 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "C37 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C37 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "C37 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C37 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "R30 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R30 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "R30 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R30 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "R38 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R38 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "R38 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R38 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "R31 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R31 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "R31 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R31 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "C31 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C31 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "C31 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C31 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "C30 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C30 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "C30 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C30 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "C33 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C33 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "C33 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C33 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_THT__CP_Radial_D10.0mm_P5.00mm__CP_Radial_D10.0mm_P5.00mm.step"
+    },
+    {
+      "name": "U5 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "U5 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "U5 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "U5 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Package_TO_SOT_SMD__SOT-363_SC-70-6__SOT-363_SC-70-6.step"
+    },
+    {
+      "name": "R39 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R39 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "R39 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R39 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "R34 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R34 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "R34 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R34 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "R32 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R32 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "R32 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R32 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "C36 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C36 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "C36 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C36 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "U4 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "U4 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "U4 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "U4 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/DRV8874_PWP0016__HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.78x3.37mm.step"
+    },
+    {
+      "name": "R36 portable footprint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R36 symbol to pad map",
+      "pass": true,
+      "detail": {
+        "symbol_only": [],
+        "pad_only": []
+      }
+    },
+    {
+      "name": "R36 model bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R36 model path",
+      "pass": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "unused finger A42",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger A13",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger A39",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger A21",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger A41",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger A40",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B39",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B30",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B5",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B33",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B25",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B36",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B34",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B26",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B29",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger A26",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B10",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B42",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B16",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B46",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B18",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B11",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B27",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B17",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B19",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger A14",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger A24",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B31",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger A31",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger A15",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B21",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger A6",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger A37",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger A20",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B23",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B35",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger A32",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B15",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger A18",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B8",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B37",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B40",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B14",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B24",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B6",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger A10",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B7",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B22",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger A19",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger A23",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B12",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B45",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B38",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger A44",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger A22",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger A16",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger A28",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B44",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B20",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger A25",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B32",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B9",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger A17",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B41",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger A43",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger B28",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger A36",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unused finger A38",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "jack switched contact NC",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "native ERC no violations",
+      "pass": false,
+      "detail": ""
+    },
+    {
+      "name": "no ERC exclusions",
+      "pass": true,
+      "detail": ""
+    }
+  ]
+}

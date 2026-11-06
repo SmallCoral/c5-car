@@ -19,3 +19,30 @@
 电机参照 `D:/dev/EdgeMind-Robot/model/hardware/直流电机-MG513X（霍尔编码器）/` 及该项目 `doc/电机/拟用电机资料核对.md`。后者记录了实物MG513XP28_12V及WHEELTEC系列12V、0.36A额定、3.2A堵转、1:28、13PPR霍尔资料。原手册附有传播限制，未复制原件，实际线束和工作电流仍需核实。
 
 用户指定的 [schematic-design skill](https://github.com/SmallCoral/schematic-design-skill/blob/main/SKILL.md) 快照为 `schematic-design_SKILL.md`。封装、符号和大部分通用模型来自本机KiCad 10安装库；母座沿用现有工程及共享Streamline来源。J1、SW1外形VRML由厂家尺寸建立并作为通用替代。第三方说明见项目根 `THIRD_PARTY.md` 与共享MIT许可。
+
+
+## 2026-11-06 M2 实际增量
+
+原 DC005 资料保留为 M1 历史依据，J1 当前已改 XT60PW-M。
+
+| 资料 | 本轮用途 |
+| --- | --- |
+| [AMASS 原厂目录](AMASS_XT60PW.pdf)，2023 产品手册，第15页；[产品页](https://www.china-amass.com/biao/289.html) | 卧式 XT60PW，KiCad 对应7.2mm针距封装；准确卧式模型暂缺 |
+| [AP63205 DS41326 Rev3](AP63205_DS41326.pdf)，2024-11，第2、13～14页 | U6 五伏，4.7uH、10uF、两颗22uF、100nF；芯片额定2A，设计预算1.5A |
+| [AP2112 DS39724 Rev2](https://www.diodes.com/datasheet/download/AP2112.pdf)，2017-06，第1～3页 | U7 SOT25 引脚及1uF输入输出；实际预算150mA |
+| [中景园原规格书](../../../../../../Documentation/中景园ZJY180S0800TG01技术资料/01-规格书与控制芯片手册/ZJY180S0800TG01.pdf)，Rev A，第5～8页 | 三伏三、八针定义、板载背光驱动、2mm孔与30mm短边孔距 |
+
+原厂外设实物版本、主板线束方向与上游四安预算尚待实测。普通排针、SOT25、按钮及钻孔采用 KiCad10 本地库资源；模型路径使用项目相对引用，J1 没有绑定错误的立式模型。
+
+## 2026-11-06 M2.3 后续修改
+
+此前四安入口及普通排针描述属于初始 M2，当前方案已更新。
+实际记录见 [M2.3 验证](../../../../../../Documentation/validation/2026-11-06-m23-power-connectors.md)。
+
+| 资料 | 当前用途 |
+| --- | --- |
+| [DMP3007LK3 原厂 PDF](DMP3007LK3_DS40137.pdf)，DS40137 Rev2-2 | Q1/Q2，1=G、2=D、3=S，7mΩ/-10V 或 10mΩ/-4.5V，TO252 封装及热条件 |
+| [SHOU HAN SS12D10G5](SS12D10G5_SHOUHAN.pdf)，2020-06-24 | SW1 三针、4.8mm 针距、12.7×6.7mm；仅作 MOS 栅极开关；通用外形模型明确标识 |
+| [Littelfuse 452/454](https://www.littelfuse.com/assetdocs/fuse-452-and-454-datasheet?assetguid=8c87aa93-80a7-4ea8-8749-a19ba03901c2)，2025-10-16 | F1 12A 延时、F2 4A 延时，连续降额与 6.10×2.69mm 推荐焊盘；原厂在线 PDF 已读取，本地精确模型缺失，使用标识的包络模型 |
+| [JST XH 原厂](https://www.jst-mfg.com/product/index.php?lang=2&series=277) | 普通 XH，非 XHB 卡扣款，2.50mm、3A/AWG22；TFT/蓝牙改为 2.54mm 排母 |
+| KiCad 10 本地 0603 普通/手焊库 | 实算 R/C/LED 间隙 0.85/0.65/0.70mm，67 个实例统一为 0.85mm 内侧间隙与 0.975×0.95mm 焊盘 |

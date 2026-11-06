@@ -1,0 +1,61 @@
+{
+  "date": "2026-11-06",
+  "revision": "M2.2",
+  "user_confirmed": "ZDT_XS second-generation integrated closed-loop motor kit, TTL variant",
+  "baseline": "docs\\baseline-2026-11-06-zdt-ttl",
+  "manual": "${KIPRJMOD}/../../../../Documentation/ZDT_XS系列第二代闭环步进电机资料/3. 说明书/ZDT_X42S第二代闭环步进电机用户手册V1.0.5_260527.pdf",
+  "manual_pages": [
+    6,
+    10,
+    12,
+    16,
+    23,
+    26
+  ],
+  "J23": {
+    "pins": {
+      "1": "GND",
+      "2": "STEP_UART_TX",
+      "3": "STEP_UART_RX"
+    },
+    "footprint": "Motor:Connector_PinHeader_2.54mm__PinHeader_1x03_P2.54mm_Vertical",
+    "driver_wires": {
+      "1": "Gnd",
+      "2": "R/A/H (RX)",
+      "3": "T/B/L (TX)"
+    }
+  },
+  "J24": {
+    "pins": {
+      "1": "VM",
+      "2": "GND"
+    },
+    "driver_wires": {
+      "1": "V+",
+      "2": "Gnd"
+    }
+  },
+  "J22": "6P pulse alternative; PLC COM unused, optocoupler COM=3V3; En=L required for nEN pull-up disable; default Hold ignores En",
+  "intentional_pin_map": {
+    "J23:1": null,
+    "J23:2": "J23:1",
+    "J23:3": "J23:2",
+    "J23:4": "J23:3"
+  },
+  "supply_minimum_v": 10,
+  "manufacturer_recommended_source_a_minimum": 3,
+  "upstream_fuse_a_unchanged": 4,
+  "PCB_accessed": false,
+  "source_sha256": {
+    "02_Power.kicad_sch": "51d3a5e20575118fb848bfd3a10f9a670fba928993b0a0106f340c18416ffe24",
+    "03_Core_Interface.kicad_sch": "c278b5d0a748dd82e78c3ced0b68189ef38954dada2b59c0b16dc30225a3803f",
+    "04_Left_Motor.kicad_sch": "0f87a5a9543a9fea7ca93895ca7536ec5da998677443309d3a6324a8bd16af50",
+    "05_Right_Motor.kicad_sch": "674de480e5846e00ab5763c0f2d83d7647f46ec958f9eef4923aa4474a8989d9",
+    "06_Module_Power.kicad_sch": "569fc087417a0d3684b785b0a50398d0d928718976dc85aede94b6382cf12195",
+    "07_TFT_Buttons.kicad_sch": "e205caae0a768e77d35c6e86b266e2f3be52f549ecc79fd933aa7ffe6941fa18",
+    "08_Grayscale_Cameras.kicad_sch": "fa8769a24c3c523dbcf53fbe145038b60e71283e81da459f1013d8cc925d70ec",
+    "09_Bluetooth_Stepper.kicad_sch": "7267191a38a8f028e9d7b0f6285502cea64d641eac30f757ced845fe8855b540",
+    "CoralC5-Motor.kicad_sch": "db9ec83076dfc9c591b480a11d1a265d2d9ed817ae47bd1c67393ab01fdd8b8f",
+    "Motor.kicad_sym": "f7c396aed1a03fbd295c5df2dbb365e5041cc9d03f4243c479cfad9093b4374d"
+  }
+}

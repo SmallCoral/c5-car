@@ -1,0 +1,375 @@
+{
+  "date": "2026-11-06",
+  "scope": "Motor nine schematic pages only; no PCB access",
+  "baseline": "docs\\baseline-2026-11-06-0603",
+  "count": 67,
+  "gap_mm": 0.85,
+  "pad_size_mm": [
+    0.975,
+    0.95
+  ],
+  "pad_center_x_mm": [
+    -0.9125,
+    0.9125
+  ],
+  "largest_checked_stock_gap_mm": 0.85,
+  "stock_gap_comparison_mm": {
+    "R normal and hand-solder": 0.85,
+    "C normal and hand-solder": 0.65,
+    "LED normal and hand-solder": 0.7
+  },
+  "typed_models_and_LED_polarity_retained": true,
+  "changes": {
+    "D4": {
+      "old_footprint": "Motor:LED_SMD__LED_0603_1608Metric",
+      "footprint": "Motor:LED_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "LED"
+    },
+    "C3": {
+      "old_footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "C"
+    },
+    "R1": {
+      "old_footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "R"
+    },
+    "R4": {
+      "old_footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "R"
+    },
+    "R5": {
+      "old_footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "R"
+    },
+    "R3": {
+      "old_footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "R"
+    },
+    "C4": {
+      "old_footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "C"
+    },
+    "R2": {
+      "old_footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "R"
+    },
+    "R7": {
+      "old_footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "R"
+    },
+    "R6": {
+      "old_footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "R"
+    },
+    "C20": {
+      "old_footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "C"
+    },
+    "C12": {
+      "old_footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "C"
+    },
+    "R15": {
+      "old_footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "R"
+    },
+    "R11": {
+      "old_footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "R"
+    },
+    "R18": {
+      "old_footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "R"
+    },
+    "C10": {
+      "old_footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "C"
+    },
+    "R14": {
+      "old_footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "R"
+    },
+    "R16": {
+      "old_footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "R"
+    },
+    "R19": {
+      "old_footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "R"
+    },
+    "C15": {
+      "old_footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "C"
+    },
+    "C19": {
+      "old_footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "C"
+    },
+    "C14": {
+      "old_footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "C"
+    },
+    "C11": {
+      "old_footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "C"
+    },
+    "R12": {
+      "old_footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "R"
+    },
+    "C16": {
+      "old_footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "C"
+    },
+    "R13": {
+      "old_footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "R"
+    },
+    "C17": {
+      "old_footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "C"
+    },
+    "R17": {
+      "old_footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "R"
+    },
+    "C18": {
+      "old_footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "C"
+    },
+    "R10": {
+      "old_footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "R"
+    },
+    "C34": {
+      "old_footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "C"
+    },
+    "C35": {
+      "old_footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "C"
+    },
+    "C38": {
+      "old_footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "C"
+    },
+    "R37": {
+      "old_footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "R"
+    },
+    "C39": {
+      "old_footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "C"
+    },
+    "R35": {
+      "old_footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "R"
+    },
+    "C32": {
+      "old_footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "C"
+    },
+    "R33": {
+      "old_footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "R"
+    },
+    "C40": {
+      "old_footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "C"
+    },
+    "C37": {
+      "old_footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "C"
+    },
+    "R30": {
+      "old_footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "R"
+    },
+    "R38": {
+      "old_footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "R"
+    },
+    "R31": {
+      "old_footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "R"
+    },
+    "C31": {
+      "old_footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "C"
+    },
+    "C30": {
+      "old_footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "C"
+    },
+    "R39": {
+      "old_footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "R"
+    },
+    "R34": {
+      "old_footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "R"
+    },
+    "R32": {
+      "old_footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "R"
+    },
+    "C36": {
+      "old_footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "C"
+    },
+    "R36": {
+      "old_footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "R"
+    },
+    "C55": {
+      "old_footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "C"
+    },
+    "C54": {
+      "old_footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "C"
+    },
+    "C51": {
+      "old_footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "C"
+    },
+    "R52": {
+      "old_footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "R"
+    },
+    "C56": {
+      "old_footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "C"
+    },
+    "R53": {
+      "old_footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "R"
+    },
+    "R56": {
+      "old_footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "R"
+    },
+    "C57": {
+      "old_footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "C"
+    },
+    "C60": {
+      "old_footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "C"
+    },
+    "C58": {
+      "old_footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "C"
+    },
+    "R51": {
+      "old_footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "R"
+    },
+    "R50": {
+      "old_footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "R"
+    },
+    "C59": {
+      "old_footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "C"
+    },
+    "R55": {
+      "old_footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "R"
+    },
+    "R58": {
+      "old_footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "R"
+    },
+    "R57": {
+      "old_footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "R"
+    },
+    "R54": {
+      "old_footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "kind": "R"
+    }
+  },
+  "footprint_sha256": {
+    "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder": "5f086871a78d457678b71301e5015680bbd5d157d36c559aff3b64c7579fb11c",
+    "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder": "97b6814a05d2f6c6077889c863b8e9dc09f5b72e2f9bf719903ed4fd8639055d",
+    "Motor:LED_0603_1608Metric_Gap0.85mm_HandSolder": "e92ac0c83f6ccd4d6be349f3f0e620146567029097aee174f62aa7abfc722640"
+  },
+  "source_sha256": {
+    "02_Power.kicad_sch": "9ca9b9a706a1a60c9606c0789c2d098411b0456112e546128780e1642c74af58",
+    "03_Core_Interface.kicad_sch": "878cd3959ceaf9731257ef725bc89eaa1eaf92a5a045fd20be244120a7d068a0",
+    "04_Left_Motor.kicad_sch": "686282a2b562522329fbe683f15486bb41552e7443ea455fe30952d991db1f3e",
+    "05_Right_Motor.kicad_sch": "017602591f6c946ae9a00297bcaa3889256e8c350b1a31f1bf91fd792b2a0279",
+    "06_Module_Power.kicad_sch": "fc3f920cbee81d268f4c0749cebc058a88ff8d406deeba7c2e0ea3bfa7fb511f",
+    "07_TFT_Buttons.kicad_sch": "e2eb110be5356d7a85ec4289b29a1de8a1af1da132b34a380f8471ce2492b81f",
+    "08_Grayscale_Cameras.kicad_sch": "08dbcddd267b8b6ae346d67ab09eb36a0928e69a0d2f15cbb7a6010ea42a1b4f",
+    "09_Bluetooth_Stepper.kicad_sch": "2a78528be0cfdfa6530647e92df18f9b8a2742051826cacb5afd690f7b4ce2d8",
+    "CoralC5-Motor.kicad_sch": "486ee0a416791c68b71241c783db274aaeb405ad83cf588036928bb2e5312023"
+  }
+}

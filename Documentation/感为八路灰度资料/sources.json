@@ -1,0 +1,204 @@
+{
+  "date": "2026-11-06",
+  "archive_path": "C:\\Users\\sc\\Downloads\\MSPM0L1306辅助板开源.zip",
+  "archive_bytes": 141625920,
+  "archive_sha256": "6bdc506b82199d0474a229a3417317d5ab6f0b2d6305a239300be95c54c5653a",
+  "archive_crc": "pass",
+  "archive_members": 6895,
+  "imported_files": [
+    {
+      "member": "MSPM0L1306辅助板开源/MSPM0L1306辅助板源码/NO_MCU_BOARD/boot_config.c",
+      "local": "Documentation/感为八路灰度资料/original/MSPM0L1306辅助板源码/NO_MCU_BOARD/boot_config.c",
+      "bytes": 5410,
+      "sha256": "9f297b0fb4798a85ddd4d44daeb05ce1b453ed8bdb8cbabf1c72eaeea3e074a2"
+    },
+    {
+      "member": "MSPM0L1306辅助板开源/MSPM0L1306辅助板源码/NO_MCU_BOARD/boot_config.h",
+      "local": "Documentation/感为八路灰度资料/original/MSPM0L1306辅助板源码/NO_MCU_BOARD/boot_config.h",
+      "bytes": 14907,
+      "sha256": "f4772a039493d2500fb8a2affa7a9323bb6e26b56b8eb64ddfdbb51da413b39b"
+    },
+    {
+      "member": "MSPM0L1306辅助板开源/MSPM0L1306辅助板源码/NO_MCU_BOARD/BSP/adc.c",
+      "local": "Documentation/感为八路灰度资料/original/MSPM0L1306辅助板源码/NO_MCU_BOARD/BSP/adc.c",
+      "bytes": 627,
+      "sha256": "d6212cb815e7611d3d568aadd021ac270c6f69abb46b7633af8a4eee95d8318b"
+    },
+    {
+      "member": "MSPM0L1306辅助板开源/MSPM0L1306辅助板源码/NO_MCU_BOARD/BSP/adc.h",
+      "local": "Documentation/感为八路灰度资料/original/MSPM0L1306辅助板源码/NO_MCU_BOARD/BSP/adc.h",
+      "bytes": 186,
+      "sha256": "bff290275f1683a2dbc2e49afc6b408494e2041ea27f6efee2f5e486888e1b56"
+    },
+    {
+      "member": "MSPM0L1306辅助板开源/MSPM0L1306辅助板源码/NO_MCU_BOARD/BSP/delay.c",
+      "local": "Documentation/感为八路灰度资料/original/MSPM0L1306辅助板源码/NO_MCU_BOARD/BSP/delay.c",
+      "bytes": 683,
+      "sha256": "39aa7524cabe840465c30bd7b2c95205fcf6aba1ec48179ad79db075805c91cf"
+    },
+    {
+      "member": "MSPM0L1306辅助板开源/MSPM0L1306辅助板源码/NO_MCU_BOARD/BSP/delay.h",
+      "local": "Documentation/感为八路灰度资料/original/MSPM0L1306辅助板源码/NO_MCU_BOARD/BSP/delay.h",
+      "bytes": 290,
+      "sha256": "1a3d940a7c999d7c6b82a1a69c04c84c773bc69f6e6f47d9bd54eec2e8e725d5"
+    },
+    {
+      "member": "MSPM0L1306辅助板开源/MSPM0L1306辅助板源码/NO_MCU_BOARD/BSP/flash.c",
+      "local": "Documentation/感为八路灰度资料/original/MSPM0L1306辅助板源码/NO_MCU_BOARD/BSP/flash.c",
+      "bytes": 2883,
+      "sha256": "6614c9b051f4ba281d27595f809e1bf04d12722bc7b0b890e79d5a3a7bd5219f"
+    },
+    {
+      "member": "MSPM0L1306辅助板开源/MSPM0L1306辅助板源码/NO_MCU_BOARD/BSP/flash.h",
+      "local": "Documentation/感为八路灰度资料/original/MSPM0L1306辅助板源码/NO_MCU_BOARD/BSP/flash.h",
+      "bytes": 327,
+      "sha256": "d9af847ac6c254be047f9359dfce2e5785ef4682c3024cce1870bad6c17d15e9"
+    },
+    {
+      "member": "MSPM0L1306辅助板开源/MSPM0L1306辅助板源码/NO_MCU_BOARD/BSP/uart.c",
+      "local": "Documentation/感为八路灰度资料/original/MSPM0L1306辅助板源码/NO_MCU_BOARD/BSP/uart.c",
+      "bytes": 255,
+      "sha256": "019e35abfd3a648c85bb5569dcbe6a71868d72c836f6761aff211e972547f050"
+    },
+    {
+      "member": "MSPM0L1306辅助板开源/MSPM0L1306辅助板源码/NO_MCU_BOARD/BSP/uart.h",
+      "local": "Documentation/感为八路灰度资料/original/MSPM0L1306辅助板源码/NO_MCU_BOARD/BSP/uart.h",
+      "bytes": 171,
+      "sha256": "2f8cface3a8b069f6c94f5c550dad66c9b7a04f10a5e82838d59e34845529157"
+    },
+    {
+      "member": "MSPM0L1306辅助板开源/MSPM0L1306辅助板源码/NO_MCU_BOARD/Driver/key.c",
+      "local": "Documentation/感为八路灰度资料/original/MSPM0L1306辅助板源码/NO_MCU_BOARD/Driver/key.c",
+      "bytes": 6319,
+      "sha256": "ceefa292810a3c320d5e8438a81c085790a222d7b8494d278407971fbe2875a9"
+    },
+    {
+      "member": "MSPM0L1306辅助板开源/MSPM0L1306辅助板源码/NO_MCU_BOARD/Driver/key.h",
+      "local": "Documentation/感为八路灰度资料/original/MSPM0L1306辅助板源码/NO_MCU_BOARD/Driver/key.h",
+      "bytes": 1025,
+      "sha256": "e5c34f5619078b5356513cce767fde4c43b29c7152bc5fedcace8d7d3a4ab22f"
+    },
+    {
+      "member": "MSPM0L1306辅助板开源/MSPM0L1306辅助板源码/NO_MCU_BOARD/Driver/led.c",
+      "local": "Documentation/感为八路灰度资料/original/MSPM0L1306辅助板源码/NO_MCU_BOARD/Driver/led.c",
+      "bytes": 7246,
+      "sha256": "f1711f3dafae450635b0f3e61c7faa11aa6bd65f6496ad84d2de6b97dc97d234"
+    },
+    {
+      "member": "MSPM0L1306辅助板开源/MSPM0L1306辅助板源码/NO_MCU_BOARD/Driver/led.h",
+      "local": "Documentation/感为八路灰度资料/original/MSPM0L1306辅助板源码/NO_MCU_BOARD/Driver/led.h",
+      "bytes": 1707,
+      "sha256": "d1c65193294d9d4c72a35b6fa4df467fcae8731b38d20ea2b5c82fad52b41a9b"
+    },
+    {
+      "member": "MSPM0L1306辅助板开源/MSPM0L1306辅助板源码/NO_MCU_BOARD/Driver/No_Mcu_Ganv_Grayscale_Sensor.c",
+      "local": "Documentation/感为八路灰度资料/original/MSPM0L1306辅助板源码/NO_MCU_BOARD/Driver/No_Mcu_Ganv_Grayscale_Sensor.c",
+      "bytes": 7480,
+      "sha256": "ad3ac068f75cbaa3b9cb603850e74785ae5bfd54dd257417c1861f87c93e73a9"
+    },
+    {
+      "member": "MSPM0L1306辅助板开源/MSPM0L1306辅助板源码/NO_MCU_BOARD/Driver/No_Mcu_Ganv_Grayscale_Sensor_Config.h",
+      "local": "Documentation/感为八路灰度资料/original/MSPM0L1306辅助板源码/NO_MCU_BOARD/Driver/No_Mcu_Ganv_Grayscale_Sensor_Config.h",
+      "bytes": 4362,
+      "sha256": "776fc0752e46ab1f8b53233b5b9a60b56c8adbdd85ab0f5cb048b9e88049b872"
+    },
+    {
+      "member": "MSPM0L1306辅助板开源/MSPM0L1306辅助板源码/NO_MCU_BOARD/empty.c",
+      "local": "Documentation/感为八路灰度资料/original/MSPM0L1306辅助板源码/NO_MCU_BOARD/empty.c",
+      "bytes": 6857,
+      "sha256": "3100e758ba3d57148d150cd517c26e89aff92454726f5dc927c7c71c9d4cbfcc"
+    },
+    {
+      "member": "MSPM0L1306辅助板开源/MSPM0L1306辅助板源码/NO_MCU_BOARD/empty.syscfg",
+      "local": "Documentation/感为八路灰度资料/original/MSPM0L1306辅助板源码/NO_MCU_BOARD/empty.syscfg",
+      "bytes": 6043,
+      "sha256": "5d55abf1a32f92c1058fb6361dc8019218045b293c357d74912b52bb5368c606"
+    },
+    {
+      "member": "MSPM0L1306辅助板开源/MSPM0L1306辅助板源码/NO_MCU_BOARD/gpio_toggle_output.syscfg",
+      "local": "Documentation/感为八路灰度资料/original/MSPM0L1306辅助板源码/NO_MCU_BOARD/gpio_toggle_output.syscfg",
+      "bytes": 4127,
+      "sha256": "0c4f256d601c721d75cf6b2589caafab528933fd12d966af766b4a7680340c49"
+    },
+    {
+      "member": "MSPM0L1306辅助板开源/MSPM0L1306辅助板源码/NO_MCU_BOARD/ti_msp_dl_config.c",
+      "local": "Documentation/感为八路灰度资料/original/MSPM0L1306辅助板源码/NO_MCU_BOARD/ti_msp_dl_config.c",
+      "bytes": 8299,
+      "sha256": "c10ec7bf97e00f710a5acd64ad46555e86eb97597cb978ba62a1a221277aac48"
+    },
+    {
+      "member": "MSPM0L1306辅助板开源/MSPM0L1306辅助板源码/NO_MCU_BOARD/ti_msp_dl_config.h",
+      "local": "Documentation/感为八路灰度资料/original/MSPM0L1306辅助板源码/NO_MCU_BOARD/ti_msp_dl_config.h",
+      "bytes": 9265,
+      "sha256": "1eccc84cb8656bf51141be7c097607762db2d81a8dba160389c602a130442e43"
+    },
+    {
+      "member": "MSPM0L1306辅助板开源/灰度辅助板M0V1.3硬件开源_立创EDA专业版.eprj",
+      "local": "Documentation/感为八路灰度资料/original/灰度辅助板M0V1.3硬件开源_立创EDA专业版.eprj",
+      "bytes": 2224128,
+      "sha256": "b5999c47200e0826ee72f3ad6f4bed7911cf8f5c250727b88beaf172926be66e"
+    },
+    {
+      "member": "MSPM0L1306辅助板开源/请先阅读这里.txt",
+      "local": "Documentation/感为八路灰度资料/original/请先阅读这里.txt",
+      "bytes": 514,
+      "sha256": "2cab01e14af7e5d19fe9485f6dac80e3761d1d6c11cfe73a3862ece2e046f8b4"
+    },
+    {
+      "member": "MSPM0L1306辅助板开源/辅助板MSPM0G3507串行例程/examples/gpio_toggle_output.c",
+      "local": "Documentation/感为八路灰度资料/original/辅助板MSPM0G3507串行例程/examples/gpio_toggle_output.c",
+      "bytes": 1698,
+      "sha256": "eb05745b34b539124cccaf3c85460bb8055142dce6ce66dd13969f67fcd8bb2b"
+    },
+    {
+      "member": "MSPM0L1306辅助板开源/辅助板MSPM0G3507串行例程/examples/gpio_toggle_output.syscfg",
+      "local": "Documentation/感为八路灰度资料/original/辅助板MSPM0G3507串行例程/examples/gpio_toggle_output.syscfg",
+      "bytes": 4572,
+      "sha256": "190b24ee3996d13a8c8029a33e8053fceae0462f4921bb25a058ce52bb330e59"
+    },
+    {
+      "member": "MSPM0L1306辅助板开源/辅助板MSPM0G3507串行例程/examples/ti_msp_dl_config.c",
+      "local": "Documentation/感为八路灰度资料/original/辅助板MSPM0G3507串行例程/examples/ti_msp_dl_config.c",
+      "bytes": 6767,
+      "sha256": "315c8ef832b2e67d586bd6e14dfb75f8250938046131e3643e039e230b1abf3d"
+    },
+    {
+      "member": "MSPM0L1306辅助板开源/辅助板MSPM0G3507串行例程/examples/ti_msp_dl_config.h",
+      "local": "Documentation/感为八路灰度资料/original/辅助板MSPM0G3507串行例程/examples/ti_msp_dl_config.h",
+      "bytes": 7263,
+      "sha256": "c92a1264257bf6dd080d7f66f27f4b7881a1a231840fdc08e21f005a092031eb"
+    }
+  ],
+  "downloaded_manuals": [
+    {
+      "url": "https://ganv.com.cn/downloads/%E6%84%9F%E4%B8%BA%E6%97%A0MCU%E5%85%AB%E8%B7%AF%E7%81%B0%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8%E6%89%8B%E5%86%8C.pdf",
+      "local": "Documentation/感为八路灰度资料/manuals/感为无MCU八路灰度传感器手册.pdf",
+      "bytes": 14353770,
+      "sha256": "2608238e3e9a5a37c594c34bfe0c513263d1d91235ea5e45cef12e892f5053b1"
+    },
+    {
+      "url": "https://ganv.com.cn/downloads/%E6%84%9F%E4%B8%BA%E5%85%AB%E8%B7%AF%E7%81%B0%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8%E6%89%8B%E5%86%8C.pdf",
+      "local": "Documentation/感为八路灰度资料/manuals/感为八路灰度传感器手册.pdf",
+      "bytes": 11258849,
+      "sha256": "889042c12fe2113172dadc6b9e052aa1b69002092278d6c2a269791a4688051b"
+    }
+  ],
+  "user_photos": [
+    {
+      "source": "C:\\Users\\sc\\AppData\\Local\\Temp\\codex-clipboard-c337a1d6-319c-493d-ad93-505f3ef29eab.png",
+      "local": "Documentation/感为八路灰度资料/photos/user-gray-1.png",
+      "sha256": "87e4e40c45e172d3f2f5987f44a797a0b613633a5577e108d94f5dcd8723d0fc"
+    },
+    {
+      "source": "C:\\Users\\sc\\AppData\\Local\\Temp\\codex-clipboard-8c3fc1a1-ce2d-4ce1-9a8f-d252187f2cda.png",
+      "local": "Documentation/感为八路灰度资料/photos/user-gray-2.png",
+      "sha256": "9d6073bedd33a823e5483405b315eccbccedbd99bb56a4f2030bfaaab1a13125"
+    },
+    {
+      "source": "C:\\Users\\sc\\AppData\\Local\\Temp\\codex-clipboard-afc3b748-159a-456d-ab7d-7b674f1d4bc2.png",
+      "local": "Documentation/感为八路灰度资料/photos/user-gray-3.png",
+      "sha256": "f52ccd123a0061ef2275576b7e3df361d99211ff72a4045224f67771dfdba5b1"
+    }
+  ],
+  "scope": "Selected raw source copies for reference; original archive retained externally, SDK/executables not run."
+}

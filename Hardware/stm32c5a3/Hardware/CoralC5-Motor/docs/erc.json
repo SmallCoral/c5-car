@@ -1,7 +1,7 @@
 {
     "$schema": "https://schemas.kicad.org/erc.v1.json",
     "coordinate_units": "mm",
-    "date": "2026-11-03T11:05:10",
+    "date": "2026-11-06T19:15:38",
     "ignored_checks": [
         {
             "description": "Global label only appears once in the schematic",
@@ -22,120 +22,15 @@
     ],
     "included_severities": [
         "error",
-        "warning"
+        "warning",
+        "exclusion"
     ],
-    "kicad_version": "10.0.8",
+    "kicad_version": "10.0.6",
     "sheets": [
         {
             "path": "/",
             "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709",
-            "violations": [
-                {
-                    "description": "Label connected to only one pin",
-                    "items": [
-                        {
-                            "description": "标签 'AUX_UART_TX'",
-                            "pos": {
-                                "x": 20.32,
-                                "y": 36.83
-                            },
-                            "uuid": "62937244-79d5-5ec6-97cb-745e3ecbcbd6"
-                        }
-                    ],
-                    "severity": "warning",
-                    "type": "isolated_pin_label"
-                },
-                {
-                    "description": "Label connected to only one pin",
-                    "items": [
-                        {
-                            "description": "标签 'NRST'",
-                            "pos": {
-                                "x": 20.32,
-                                "y": 62.23
-                            },
-                            "uuid": "d5369d7e-f311-5e82-80e9-4e29d8cbd26f"
-                        }
-                    ],
-                    "severity": "warning",
-                    "type": "isolated_pin_label"
-                },
-                {
-                    "description": "Label connected to only one pin",
-                    "items": [
-                        {
-                            "description": "标签 'AUX_UART_RX'",
-                            "pos": {
-                                "x": 104.14,
-                                "y": 36.83
-                            },
-                            "uuid": "a015a2df-ee36-5426-ae3c-81efdaf5439b"
-                        }
-                    ],
-                    "severity": "warning",
-                    "type": "isolated_pin_label"
-                },
-                {
-                    "description": "Label connected to only one pin",
-                    "items": [
-                        {
-                            "description": "标签 'AUX_ADC'",
-                            "pos": {
-                                "x": 104.14,
-                                "y": 39.37
-                            },
-                            "uuid": "f80472cc-0521-5e32-956e-5b3cbcf1b1a2"
-                        }
-                    ],
-                    "severity": "warning",
-                    "type": "isolated_pin_label"
-                },
-                {
-                    "description": "Label connected to only one pin",
-                    "items": [
-                        {
-                            "description": "标签 'AUX_GPIO'",
-                            "pos": {
-                                "x": 104.14,
-                                "y": 41.91
-                            },
-                            "uuid": "47f261d6-cdfc-5294-9bfe-032951553159"
-                        }
-                    ],
-                    "severity": "warning",
-                    "type": "isolated_pin_label"
-                },
-                {
-                    "description": "Label connected to only one pin",
-                    "items": [
-                        {
-                            "description": "标签 'AUX_I2C_SDA'",
-                            "pos": {
-                                "x": 129.54,
-                                "y": 43.18
-                            },
-                            "uuid": "8db46343-362a-515c-8bf7-23f3604a336b"
-                        }
-                    ],
-                    "severity": "warning",
-                    "type": "isolated_pin_label"
-                },
-                {
-                    "description": "Label connected to only one pin",
-                    "items": [
-                        {
-                            "description": "标签 'AUX_I2C_SCL'",
-                            "pos": {
-                                "x": 129.54,
-                                "y": 45.72
-                            },
-                            "uuid": "48dbb370-bf71-5e38-8a86-d79ef4c9ac66"
-                        }
-                    ],
-                    "severity": "warning",
-                    "type": "isolated_pin_label"
-                }
-            ]
+            "violations": []
         },
         {
             "path": "/输入、总开关与降压/",
@@ -150,35 +45,31 @@
         {
             "path": "/左电机与编码器/",
             "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9",
-            "violations": [
-                {
-                    "description": "Local and global labels have same name",
-                    "items": [
-                        {
-                            "description": "Symbol #PWR014 引脚 1 [Power input, Line]",
-                            "pos": {
-                                "x": 195.58,
-                                "y": 41.91
-                            },
-                            "uuid": "004bec0c-c113-5dee-9865-3b485d213b77"
-                        },
-                        {
-                            "description": "标签 'GND'",
-                            "pos": {
-                                "x": 250.19,
-                                "y": 69.85
-                            },
-                            "uuid": "55cfc17b-f0b4-5a0b-b7d0-79f4411a7f52"
-                        }
-                    ],
-                    "severity": "warning",
-                    "type": "same_local_global_label"
-                }
-            ]
+            "violations": []
         },
         {
             "path": "/右电机与编码器/",
             "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709/ddf41ba8-06a1-59de-bdac-eecd21fc55cb",
+            "violations": []
+        },
+        {
+            "path": "/中景园屏幕与四个操作按钮/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709/433415cc-03a8-5189-8d36-253244603d4b",
+            "violations": []
+        },
+        {
+            "path": "/八路灰度与双摄像头模块接口/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709/d6318ee1-12d4-5089-84c2-bb1addcd6fe6",
+            "violations": []
+        },
+        {
+            "path": "/外设独立五伏与三伏三供电/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709/259119ae-63bb-582f-a484-b0d1b9da613b",
+            "violations": []
+        },
+        {
+            "path": "/四脚蓝牙与外接步进驱动接口/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709/6805c229-363d-5720-8872-3a09dea05270",
             "violations": []
         }
     ],

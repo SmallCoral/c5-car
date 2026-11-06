@@ -2,6 +2,7 @@
 
 整理日期：2026-11-03。
 2026-11-05 更新：用户确认两只摄像头，检测端用 MaixCAM，图传端沿用 OV2640 规划。光栅条目为此前备选，本轮未据此采购或加入生产 BOM。见 [双摄资料](cameras.md)。
+2026-11-06 更新：循迹采用用户已有的感为八路灰度＋MSPM0L1306 辅助板，原 QRE1113GR 和 74HC4067 探头方案不再作为当前主选。见 [实物资料](../感为八路灰度资料/README.md)。
 以下区分已在 Motor 使用的器件、推荐新增器件和候选项。
 报价来自查询到的销售页，可能含搜索缓存；币种保留USD，不按假定汇率伪装成人民币现价。
 报价不含运费、税费、PCB、贴装和机械加工，库存需在下单时复核。
@@ -15,19 +16,20 @@ LCSC社区查询API本轮返回403，供货依据改用销售商商品页。
 | 视觉检测 | MaixCAM×1，用户确认 | 顶部俯视钢球；镜头与外壳版本、通讯和供电待核对 | 用户本轮确认；[原厂资料](https://wiki.sipeed.com/hardware/zh/maixcam/maixcam.html) |
 | 左右轮 | 现有 MG513XP28_12V×2 | 编码器轮速闭环，六芯线束接J4/J6 | 复用；[接口表](motor-interface.md) |
 | 直流驱动 | DRV8874PWPR×2，C1855818 | 保留硬件限流、电流反馈和故障输出，比换成无反馈廉价桥更利于调试 | [LCSC](https://www.lcsc.com/product-detail/Motor-Driver-ICs_Texas-Instruments-DRV8874PWPR_C1855818.html)：1片$1.1886，页面显示9851片 |
-| 摆杆执行 | 现有42BYGH34-401A×1 | 电机固定底盘，通过曲柄连杆抬升摆杆自由端 | 复用；铭牌1.5A并非电源输入电流 |
-| 步进驱动 | TMC2209-LA-T×1，C2150710 | 裸芯片集成，STEP/DIR执行、UART设电流及读诊断；回零仍靠独立限位 | [LCSC](https://www.lcsc.com/zh-CN/category/1016.html)：1片$2.8518、10片$2.523，页面显示19179片；搜索定位C2150710 |
+| 摆杆执行 | 用户已购 ZDT_XS 第二代 TTL 驱动及电机一体套件×1 | 电机固定底盘，通过曲柄连杆抬升摆杆自由端；J23 八针仅接四根有效线 | 用户最新确认；[当前接线](m2-interfaces.md)，不把此前裸电机铭牌相电流当成套件输入电流 |
+| 此前步进驱动候选 | TMC2209-LA-T×1，C2150710；本轮未集成 | 当前已选 ZDT 一体套件，本项仅为历史候选 | [LCSC](https://www.lcsc.com/zh-CN/category/1016.html)：此前报价快照1片$2.8518、10片$2.523，页面显示19179片；搜索定位C2150710 |
 | 摆杆角度 | AS5600-ASOT×1，C499458 | 安在摆杆铰轴，测实际摆杆角度；不只测电机轴 | [LCSC](https://www.lcsc.com/product-detail/C499458.html)：1片$1.3747，页面显示2611片 |
-| 循迹 | QRE1113GR×12，C232862 | 自研模拟阵列；开/关灯采样、逐路归一化、加权中心；最低版可减至8路 | [LCSC](https://www.lcsc.com/zh-CN/product-detail/Optical-Sensors_ON-Semiconductor-ON-Semiconductor-QRE1113GR_C232862.html)：10片档$0.5167/片，页面显示9092片 |
-| 循迹模拟复用 | 74HC4067PW,118×1，C179326 | 在探头板用3.3V供电，12入1出；切换后留ADC建立时间 | [Nexperia器件页](https://www.nexperia.com/products/analog-logic-ics/analog-switches-and-multiplexers/analog-switches/series/74HC4067-74HCT4067.html)、[LCSC](https://www.lcsc.com/product-detail/C179326.html)；本轮未取得可靠现货单价 |
+| 循迹 | 用户已有感为无MCU八路灰度＋MSPM0L1306辅助板 | 读取辅助板的八路数字量或CLK/DAT；不用C5直接采样本体 | 用户照片及[厂家资料](../感为八路灰度资料/README.md)，本轮未采购 |
+| 此前循迹备选 | QRE1113GR＋74HC4067 自研探头 | 保留历史方案，不纳入当前感为组件用料 | 原方案记录；本轮不选型采购 |
 | 钢球光栅发射 | IR333-A×32，备料按40只，C264290 | 940nm、5mm灯珠；沿杆8mm节距，4组错时发光 | [LCSC](https://www.lcsc.com/product-detail/C264290.html?is_substitute=1&original_product_code=C2936543&original_unit_price=0.1582)：10片档$0.0557/片，页面显示36500片，10只起/10只倍数 |
 | 钢球光栅接收 | PT204-6B×32 | 940nm黑色3mm光敏三极管，配遮光孔；买一小批先验证光路 | [DigiKey](https://www.digikey.com/en/products/detail/everlight-electronics-co-ltd/PT204-6B/2675642)：10片档$0.236/片，页面显示14953片；国内批量报价待核 |
 | 光栅读取 | SN74HCS165PWR×4，C2867845 | 在接收条串联读取32位；输入自带施密特，不把慢光电边沿直接送普通HC165 | [LCSC](https://www.lcsc.com/fr/product-detail/C2867845.html)有商品；[Mouser](https://www.mouser.com/ProductDetail/Texas-Instruments/SN74HCS165PWR?qs=DPoM0jnrROXHipdFjx%2FLiA%3D%3D)1片$0.69、10片$0.489，页面显示1903片 |
 | 发挥图传 | ESP32-S3-WROOM-1-N8R8×1，C2913201 | 自研电路上的射频模组，PSRAM用于图像缓冲；不买ESP32-CAM开发板代替设计 | [LCSC](https://lcsc.com/product-detail/wifi%20modules_espressif%20systems_esp32-s3-wroom-1-n8r8_C2913201.html)显示1片$5.515、1661片，但该价格快照较旧；[原厂模组页](https://www.espressif.com/products/modules)提供销售入口 |
 | 摄像头和存储 | OV2640成像组件×1、microSD插座×1、正规卡×1 | 只用镜头/传感器组件，主板自做处理、存储与供电；最终FPC针序按具体货源锁定 | [乐鑫相机驱动](https://github.com/espressif/esp32-camera)支持OV2640；本轮未锁定镜头组件商家，价格不作为已核报价 |
 
-现有AP63205、AO4407A、SN74LVC2G17及电源保护先沿用。
-M2新增AP63203WU-7独立辅助3.3V支路为候选，需重新核算开关频率、负载、滤波与热。
+AP63205、SN74LVC2G17 保留；M2.3 按当前负载将主功率 MOS 改为 DMP3007LK3-13、开关改为 SS12D10G5，并重新选择主保险和步进支路保险。
+当前器件与电流预算以[本轮验证](../validation/2026-11-06-m23-power-connectors.md)和原生原理图为准，以上历史候选及报价不自动转为当前生产 BOM。
+2026-11-06 原理图实际新增 AP63205WU-7 五伏外设支路与 AP2112K-3.3 三伏三支路，分别按 1.5A 和 150mA 设计预算；此前 AP63203 为候选，未采用。完整已绘制接口与边界见 [M2 接线表](m2-interfaces.md)。
 光栅、循迹与图传不从Core的100mA外接预算取电。
 
 低成本优先通过复用电机和主控、取消不需要的网口、按阶段装配图传来实现。

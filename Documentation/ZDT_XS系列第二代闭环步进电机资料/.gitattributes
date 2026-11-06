@@ -1,0 +1,4 @@
+# Keep vendor archives, desktop tools and videos out of ordinary Git blobs.
+*.rar filter=lfs diff=lfs merge=lfs -text
+*.exe filter=lfs diff=lfs merge=lfs -text
+*.mp4 filter=lfs diff=lfs merge=lfs -text

@@ -6,8 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "左电机驱动与霍尔编码器")
-		(date "2026-11-03")
-		(rev "M1.1")
+		(date "2026-11-06")
+		(rev "M2.4")
 		(company "SmallCoral / CoralC5-Motor")
 		(comment 1 "原理图设计；实板电流、温升与线束待验证")
 	)
@@ -42,7 +42,7 @@
 					)
 				)
 			)
-			(property "Footprint" ""
+			(property "Footprint" "Motor:Connector_PinHeader_2.54mm__PinHeader_1x02_P2.54mm_Vertical"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3280,7 +3280,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Motor:Capacitor_SMD__C_0603_1608Metric"
+		(property "Footprint" "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder"
 			(at 83.82 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -3360,7 +3360,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Motor:Capacitor_SMD__C_0603_1608Metric"
+		(property "Footprint" "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder"
 			(at 195.58 36.83 0)
 			(hide yes)
 			(show_name no)
@@ -3823,7 +3823,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Motor:Resistor_SMD__R_0603_1608Metric"
+		(property "Footprint" "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder"
 			(at 184.15 92.71 0)
 			(hide yes)
 			(show_name no)
@@ -3903,7 +3903,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Motor:Resistor_SMD__R_0603_1608Metric"
+		(property "Footprint" "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder"
 			(at 60.96 78.74 0)
 			(hide yes)
 			(show_name no)
@@ -3983,7 +3983,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Motor:Resistor_SMD__R_0603_1608Metric"
+		(property "Footprint" "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder"
 			(at 68.58 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -4165,7 +4165,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Motor:Capacitor_SMD__C_0603_1608Metric"
+		(property "Footprint" "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder"
 			(at 175.26 63.5 0)
 			(hide yes)
 			(show_name no)
@@ -4245,7 +4245,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Motor:Resistor_SMD__R_0603_1608Metric"
+		(property "Footprint" "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder"
 			(at 88.9 99.06 0)
 			(hide yes)
 			(show_name no)
@@ -4323,7 +4323,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Motor:Resistor_SMD__R_0603_1608Metric"
+		(property "Footprint" "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder"
 			(at 88.9 146.05 0)
 			(hide yes)
 			(show_name no)
@@ -4403,7 +4403,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Motor:Resistor_SMD__R_0603_1608Metric"
+		(property "Footprint" "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder"
 			(at 68.58 170.18 0)
 			(hide yes)
 			(show_name no)
@@ -4483,7 +4483,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Motor:Capacitor_SMD__C_0603_1608Metric"
+		(property "Footprint" "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder"
 			(at 163.83 100.33 0)
 			(hide yes)
 			(show_name no)
@@ -4741,7 +4741,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Motor:Capacitor_SMD__C_0603_1608Metric"
+		(property "Footprint" "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder"
 			(at 182.88 135.89 0)
 			(hide yes)
 			(show_name no)
@@ -4821,7 +4821,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Motor:Capacitor_SMD__C_0603_1608Metric"
+		(property "Footprint" "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder"
 			(at 83.82 78.74 0)
 			(hide yes)
 			(show_name no)
@@ -4978,7 +4978,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Motor:Capacitor_SMD__C_0603_1608Metric"
+		(property "Footprint" "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder"
 			(at 175.26 33.02 0)
 			(hide yes)
 			(show_name no)
@@ -5135,7 +5135,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Motor:Resistor_SMD__R_0603_1608Metric"
+		(property "Footprint" "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder"
 			(at 139.7 100.33 0)
 			(hide yes)
 			(show_name no)
@@ -5215,7 +5215,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Motor:Capacitor_SMD__C_0603_1608Metric"
+		(property "Footprint" "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder"
 			(at 208.28 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -5295,7 +5295,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Motor:Resistor_SMD__R_0603_1608Metric"
+		(property "Footprint" "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder"
 			(at 113.03 67.31 0)
 			(hide yes)
 			(show_name no)
@@ -5541,7 +5541,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Motor:Capacitor_SMD__C_0603_1608Metric"
+		(property "Footprint" "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder"
 			(at 111.76 142.24 0)
 			(hide yes)
 			(show_name no)
@@ -5696,7 +5696,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Motor:Resistor_SMD__R_0603_1608Metric"
+		(property "Footprint" "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder"
 			(at 88.9 162.56 0)
 			(hide yes)
 			(show_name no)
@@ -5776,7 +5776,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Motor:Capacitor_SMD__C_0603_1608Metric"
+		(property "Footprint" "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder"
 			(at 114.3 171.45 0)
 			(hide yes)
 			(show_name no)
@@ -5990,7 +5990,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Motor:Resistor_SMD__R_0603_1608Metric"
+		(property "Footprint" "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder"
 			(at 60.96 57.15 0)
 			(hide yes)
 			(show_name no)

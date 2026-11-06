@@ -24,7 +24,7 @@ GPIO与触点关系仍由[公共接口表](../../Hardware/stm32c5a3/Hardware/Sha
 | MOTOR_EN_REQ | PE8 | B13 | 默认低的推挽GPIO，经R6/J10使能 | PE2/A23 |
 
 SWDIO仍为PA13/B43，SWCLK仍为PA14/A46。
-USART2的PA2/PA3、I²C1的PB6/PB7和USB的PA11/PA12保留。
+2026-11-06 的 M2 新接口已分配：PA2/PA3 为 HC-08 的 USART2，PB6/PB7 为步进的 USART1，不再保留 I²C1。完整新增引脚与接线见 [M2 接口](m2-interfaces.md)。USB 的 PA11/PA12 保留。
 Core的PE3用户灯、PD2用户键、PH2启动脚不参与分配。
 左右六针电机插座的线序、编码器滤波和电机功率电路均不变。
 
@@ -48,7 +48,7 @@ Core的PE3用户灯、PD2用户键、PH2启动脚不参与分配。
 
 左编码器改用TIM5，右编码器改用TIM2，两个计数器独立。
 TIM4仅负责左右PWM，CH4与CH3共享频率，不能与编码器复用同一个计数器。
-原TIM3被释放，可供后续功能规划使用。
+M2 已将 TIM3_CH1/PB4 分配给 TFT 背光，TIM1_CH1/PE9 分配给步进脉冲。
 
 右编码器的物理A相接TIM2的CH2，物理B相接CH1。
 这是为方便布线选择的相位顺序，编码器接口仍使用TI1/TI2配对；固件需按车轮前进方向标定计数符号。

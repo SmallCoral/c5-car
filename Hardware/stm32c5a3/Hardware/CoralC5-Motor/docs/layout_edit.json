@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-06",
+  "revision": "M2.1",
+  "baseline": "docs/baseline-2026-11-06-layout",
+  "scope": "Schematic presentation only; no PCB access",
+  "source_sha256": {
+    "02_Power.kicad_sch": "faad5182d4774948216680808b0c9579642bd8573f3a8eaae040de34878bdb35",
+    "03_Core_Interface.kicad_sch": "9b8d2a4fdf215ebbd557c353e659ab8017aec93d6b4fcd69c94aef3aeb5aefb2",
+    "04_Left_Motor.kicad_sch": "906a86cea74db41fb646735f644a25ba836852161ae09732bf80db9e661858a8",
+    "05_Right_Motor.kicad_sch": "b4915310853a84b3a00699b0a3ff980df5497d346c2511813a062872af87dc5d",
+    "06_Module_Power.kicad_sch": "e44081d6ec40be165dffa264611251faf2d8f86d769b1a48801f22520ab13412",
+    "07_TFT_Buttons.kicad_sch": "0334137fbcfdcd85797b0de3fb68c3425566d1b63279bf36771f748a98e74c61",
+    "08_Grayscale_Cameras.kicad_sch": "a2239911ad4fea2bffd8c0e1ec24f88dc732801054ad742a6154937ac28c5e13",
+    "09_Bluetooth_Stepper.kicad_sch": "c8b691df70865ce3105304203d51e5c972af8e94f91e74ebe5043aacc1522ddd",
+    "CoralC5-Motor.kicad_sch": "06cde64c5ff5aa2f96c364a2e7ca55738336025981fd61030948a0a6e5e8de57"
+  }
+}

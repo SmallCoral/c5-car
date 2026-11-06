@@ -1,0 +1,33 @@
+{
+  "date": "2026-11-06",
+  "revision": "M2.4",
+  "baseline": "docs\\baseline-2026-11-06-bluetooth-pinout",
+  "photo_path": "../../../../Documentation/蓝牙/HC08_实物针序_2026-11-06.png",
+  "photo_sha256": "17b5de31f9d1eec1575ae6a134c305fffe3d1088630ac5e1b6277a8878c18229",
+  "photo_view": "Provided photo, pins upward, white HC-08 text face visible; left to right 3V3 GND RXD TXD. This specifies ordering, not the future PCB assembly rotation.",
+  "J15_module_side_names": {
+    "1": "3V3",
+    "2": "GND",
+    "3": "RXD",
+    "4": "TXD"
+  },
+  "electrical_pin_nets": {
+    "1": "V3V3_EXT",
+    "2": "GND",
+    "3": "BT_TX (MCU USART2_TX PA2)",
+    "4": "BT_RX (MCU USART2_RX PA3)"
+  },
+  "electrical_connectivity_changed": false,
+  "source_sha256": {
+    "02_Power.kicad_sch": "926b93f999c93d9348e0a87cd272aebea8ea49c10504758bee2b8161bc30d19e",
+    "03_Core_Interface.kicad_sch": "0401706698cf7175f7be05e248da270d1c04980ff8d8df889dc1049c97dfeed0",
+    "04_Left_Motor.kicad_sch": "60fc822f453ed916ef35b7c6fe33ab7227a5f66d594bb757bce41a5ec71ae79a",
+    "05_Right_Motor.kicad_sch": "6eb0fa22af4bd8654a458879ebc59abc1171967d7e913c1d911561a8e76df5e3",
+    "06_Module_Power.kicad_sch": "d6d4278ca6047bc9f7f4fb451bf9748d2ddfb382f3f887022337c3b56764d4ef",
+    "07_TFT_Buttons.kicad_sch": "390b7cbe01217a04a12eb85645ae8cf63d5d93358e6b4473b18430677c48fd87",
+    "08_Grayscale_Cameras.kicad_sch": "18231d2397e6b848f4ce601f7f9d92a374feb54d426c0822b97cf883d511f496",
+    "09_Bluetooth_Stepper.kicad_sch": "d89b9ae0f71b5d63455a57d39a047575956c7977a3ba1a32083c123d9431e79b",
+    "CoralC5-Motor.kicad_sch": "544ae4c5da027d46418b84acdf9f757a0a958e7cd2d18d1ce69cf8766cdbbec0"
+  },
+  "pcb_accessed": false
+}

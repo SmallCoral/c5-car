@@ -1,0 +1,804 @@
+{
+  "date": "2026-11-06",
+  "roles": [
+    {
+      "signal": "BT_TX",
+      "gpio": "PA2",
+      "contact": "A2",
+      "mcu_pin": "25",
+      "function": "USART2_TX",
+      "af": 7,
+      "direction": "output",
+      "endpoint": "J15:3"
+    },
+    {
+      "signal": "BT_RX",
+      "gpio": "PA3",
+      "contact": "B2",
+      "mcu_pin": "26",
+      "function": "USART2_RX",
+      "af": 7,
+      "direction": "input",
+      "endpoint": "J15:4"
+    },
+    {
+      "signal": "MAIX_TX",
+      "gpio": "PD8",
+      "contact": "B26",
+      "mcu_pin": "55",
+      "function": "USART3_TX",
+      "af": 7,
+      "direction": "output",
+      "endpoint": "J18:3"
+    },
+    {
+      "signal": "MAIX_RX",
+      "gpio": "PD9",
+      "contact": "B27",
+      "mcu_pin": "56",
+      "function": "USART3_RX",
+      "af": 7,
+      "direction": "input",
+      "endpoint": "J18:4"
+    },
+    {
+      "signal": "VIDEO_TX",
+      "gpio": "PC6",
+      "contact": "B34",
+      "mcu_pin": "63",
+      "function": "USART6_TX",
+      "af": 7,
+      "direction": "output",
+      "endpoint": "J19:3"
+    },
+    {
+      "signal": "VIDEO_RX",
+      "gpio": "PC7",
+      "contact": "B35",
+      "mcu_pin": "64",
+      "function": "USART6_RX",
+      "af": 7,
+      "direction": "input",
+      "endpoint": "J19:4"
+    },
+    {
+      "signal": "STEP_UART_TX",
+      "gpio": "PB6",
+      "contact": "A30",
+      "mcu_pin": "92",
+      "function": "USART1_TX",
+      "af": 7,
+      "direction": "output",
+      "endpoint": "J23:3"
+    },
+    {
+      "signal": "STEP_UART_RX",
+      "gpio": "PB7",
+      "contact": "A29",
+      "mcu_pin": "93",
+      "function": "USART1_RX",
+      "af": 7,
+      "direction": "input",
+      "endpoint": "J23:4"
+    },
+    {
+      "signal": "TFT_SCK",
+      "gpio": "PA5",
+      "contact": "B4",
+      "mcu_pin": "30",
+      "function": "SPI1_SCK",
+      "af": 5,
+      "direction": "output",
+      "endpoint": "J17:3"
+    },
+    {
+      "signal": "TFT_MOSI",
+      "gpio": "PA7",
+      "contact": "B6",
+      "mcu_pin": "32",
+      "function": "SPI1_MOSI",
+      "af": 5,
+      "direction": "output",
+      "endpoint": "J17:4"
+    },
+    {
+      "signal": "TFT_RES",
+      "gpio": "PB0",
+      "contact": "B9",
+      "mcu_pin": "35",
+      "function": "GPIO",
+      "af": null,
+      "direction": "output",
+      "endpoint": "J17:5"
+    },
+    {
+      "signal": "TFT_DC",
+      "gpio": "PB1",
+      "contact": "B10",
+      "mcu_pin": "36",
+      "function": "GPIO",
+      "af": null,
+      "direction": "output",
+      "endpoint": "J17:6"
+    },
+    {
+      "signal": "TFT_CS",
+      "gpio": "PA4",
+      "contact": "B3",
+      "mcu_pin": "29",
+      "function": "GPIO",
+      "af": null,
+      "direction": "output",
+      "endpoint": "J17:7"
+    },
+    {
+      "signal": "TFT_BL",
+      "gpio": "PB4",
+      "contact": "A32",
+      "mcu_pin": "90",
+      "function": "TIM3_CH1",
+      "af": 2,
+      "direction": "output",
+      "endpoint": "J17:8"
+    },
+    {
+      "signal": "GRAY_CH1",
+      "gpio": "PE10",
+      "contact": "B15",
+      "mcu_pin": "41",
+      "function": "GPIO",
+      "af": null,
+      "direction": "input",
+      "endpoint": "J20:3"
+    },
+    {
+      "signal": "GRAY_CH2",
+      "gpio": "PE11",
+      "contact": "B16",
+      "mcu_pin": "42",
+      "function": "GPIO",
+      "af": null,
+      "direction": "input",
+      "endpoint": "J20:4"
+    },
+    {
+      "signal": "GRAY_CH3",
+      "gpio": "PE12",
+      "contact": "B17",
+      "mcu_pin": "43",
+      "function": "GPIO",
+      "af": null,
+      "direction": "input",
+      "endpoint": "J20:5"
+    },
+    {
+      "signal": "GRAY_CH4",
+      "gpio": "PE13",
+      "contact": "B18",
+      "mcu_pin": "44",
+      "function": "GPIO",
+      "af": null,
+      "direction": "input",
+      "endpoint": "J20:6"
+    },
+    {
+      "signal": "GRAY_CH5",
+      "gpio": "PE14",
+      "contact": "B19",
+      "mcu_pin": "45",
+      "function": "GPIO",
+      "af": null,
+      "direction": "input",
+      "endpoint": "J20:7"
+    },
+    {
+      "signal": "GRAY_CH6",
+      "gpio": "PE15",
+      "contact": "B20",
+      "mcu_pin": "46",
+      "function": "GPIO",
+      "af": null,
+      "direction": "input",
+      "endpoint": "J20:8"
+    },
+    {
+      "signal": "GRAY_CH7",
+      "gpio": "PD10",
+      "contact": "B28",
+      "mcu_pin": "57",
+      "function": "GPIO",
+      "af": null,
+      "direction": "input",
+      "endpoint": "J20:9"
+    },
+    {
+      "signal": "GRAY_CH8",
+      "gpio": "PD11",
+      "contact": "B29",
+      "mcu_pin": "58",
+      "function": "GPIO",
+      "af": null,
+      "direction": "input",
+      "endpoint": "J20:10"
+    },
+    {
+      "signal": "GRAY_CLK",
+      "gpio": "PD12",
+      "contact": "B30",
+      "mcu_pin": "59",
+      "function": "GPIO",
+      "af": null,
+      "direction": "output",
+      "endpoint": "J21:3"
+    },
+    {
+      "signal": "GRAY_DAT",
+      "gpio": "PD13",
+      "contact": "B31",
+      "mcu_pin": "60",
+      "function": "GPIO",
+      "af": null,
+      "direction": "input",
+      "endpoint": "J21:4"
+    },
+    {
+      "signal": "STEP_PUL",
+      "gpio": "PE9",
+      "contact": "B14",
+      "mcu_pin": "40",
+      "function": "TIM1_CH1",
+      "af": 1,
+      "direction": "output",
+      "endpoint": "J22:3"
+    },
+    {
+      "signal": "STEP_DIR",
+      "gpio": "PD14",
+      "contact": "B32",
+      "mcu_pin": "61",
+      "function": "GPIO",
+      "af": null,
+      "direction": "output",
+      "endpoint": "J22:4"
+    },
+    {
+      "signal": "STEP_nEN",
+      "gpio": "PD15",
+      "contact": "B33",
+      "mcu_pin": "62",
+      "function": "GPIO",
+      "af": null,
+      "direction": "output",
+      "endpoint": "J22:5"
+    },
+    {
+      "signal": "KEY_MODE",
+      "gpio": "PC4",
+      "contact": "B7",
+      "mcu_pin": "33",
+      "function": "GPIO",
+      "af": null,
+      "direction": "input",
+      "endpoint": "SW2:1"
+    },
+    {
+      "signal": "KEY_NEXT",
+      "gpio": "PC5",
+      "contact": "B8",
+      "mcu_pin": "34",
+      "function": "GPIO",
+      "af": null,
+      "direction": "input",
+      "endpoint": "SW3:1"
+    },
+    {
+      "signal": "KEY_OK",
+      "gpio": "PB2",
+      "contact": "B11",
+      "mcu_pin": "37",
+      "function": "GPIO",
+      "af": null,
+      "direction": "input",
+      "endpoint": "SW4:1"
+    },
+    {
+      "signal": "KEY_START",
+      "gpio": "PE7",
+      "contact": "B12",
+      "mcu_pin": "38",
+      "function": "GPIO",
+      "af": null,
+      "direction": "input",
+      "endpoint": "SW5:1"
+    }
+  ],
+  "new_parts": [
+    {
+      "reference": "U6",
+      "value": "AP63205WU-7",
+      "mpn": "",
+      "footprint": "Motor:Package_TO_SOT_SMD__TSOT-23-6",
+      "page": 6,
+      "datasheet": "https://www.diodes.com/assets/Datasheets/AP63200-AP63201-AP63203-AP63205.pdf"
+    },
+    {
+      "reference": "C50",
+      "value": "10uF/25V X7R",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_1206_3216Metric",
+      "page": 6,
+      "datasheet": ""
+    },
+    {
+      "reference": "C51",
+      "value": "100nF/50V",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "page": 6,
+      "datasheet": ""
+    },
+    {
+      "reference": "L2",
+      "value": "4.7uH Isat>=3.5A",
+      "mpn": "",
+      "footprint": "Motor:Inductor_SMD__L_Bourns_SRN6045TA",
+      "page": 6,
+      "datasheet": ""
+    },
+    {
+      "reference": "C52",
+      "value": "22uF/10V X7R",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_1206_3216Metric",
+      "page": 6,
+      "datasheet": ""
+    },
+    {
+      "reference": "C53",
+      "value": "22uF/10V X7R",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_1206_3216Metric",
+      "page": 6,
+      "datasheet": ""
+    },
+    {
+      "reference": "U7",
+      "value": "AP2112K-3.3TRG1",
+      "mpn": "",
+      "footprint": "Motor:Package_TO_SOT_SMD__SOT-23-5",
+      "page": 6,
+      "datasheet": "https://www.diodes.com/assets/Datasheets/AP2112.pdf"
+    },
+    {
+      "reference": "C54",
+      "value": "1uF/10V X7R",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "page": 6,
+      "datasheet": ""
+    },
+    {
+      "reference": "C55",
+      "value": "1uF/10V X7R",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "page": 6,
+      "datasheet": ""
+    },
+    {
+      "reference": "J17",
+      "value": "TFT_ZJY180S0800TG01",
+      "mpn": "",
+      "footprint": "Motor:Connector_PinHeader_2.54mm__PinHeader_1x08_P2.54mm_Vertical",
+      "page": 7,
+      "datasheet": ""
+    },
+    {
+      "reference": "C56",
+      "value": "100nF/10V",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "page": 7,
+      "datasheet": ""
+    },
+    {
+      "reference": "R55",
+      "value": "10k",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "page": 7,
+      "datasheet": ""
+    },
+    {
+      "reference": "R56",
+      "value": "10k",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "page": 7,
+      "datasheet": ""
+    },
+    {
+      "reference": "H1",
+      "value": "TFT孔 D2.0",
+      "mpn": "",
+      "footprint": "Motor:MountingHole__MountingHole_2mm",
+      "page": 7,
+      "datasheet": ""
+    },
+    {
+      "reference": "H2",
+      "value": "TFT孔 D2.0",
+      "mpn": "",
+      "footprint": "Motor:MountingHole__MountingHole_2mm",
+      "page": 7,
+      "datasheet": ""
+    },
+    {
+      "reference": "SW2",
+      "value": "模式",
+      "mpn": "",
+      "footprint": "Motor:Button_Switch_THT__SW_PUSH_6mm_H4.3mm",
+      "page": 7,
+      "datasheet": ""
+    },
+    {
+      "reference": "R50",
+      "value": "10k",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "page": 7,
+      "datasheet": ""
+    },
+    {
+      "reference": "C57",
+      "value": "100nF",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "page": 7,
+      "datasheet": ""
+    },
+    {
+      "reference": "SW3",
+      "value": "下一项",
+      "mpn": "",
+      "footprint": "Motor:Button_Switch_THT__SW_PUSH_6mm_H4.3mm",
+      "page": 7,
+      "datasheet": ""
+    },
+    {
+      "reference": "R51",
+      "value": "10k",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "page": 7,
+      "datasheet": ""
+    },
+    {
+      "reference": "C58",
+      "value": "100nF",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "page": 7,
+      "datasheet": ""
+    },
+    {
+      "reference": "SW4",
+      "value": "确认",
+      "mpn": "",
+      "footprint": "Motor:Button_Switch_THT__SW_PUSH_6mm_H4.3mm",
+      "page": 7,
+      "datasheet": ""
+    },
+    {
+      "reference": "R52",
+      "value": "10k",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "page": 7,
+      "datasheet": ""
+    },
+    {
+      "reference": "C59",
+      "value": "100nF",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "page": 7,
+      "datasheet": ""
+    },
+    {
+      "reference": "SW5",
+      "value": "启动",
+      "mpn": "",
+      "footprint": "Motor:Button_Switch_THT__SW_PUSH_6mm_H4.3mm",
+      "page": 7,
+      "datasheet": ""
+    },
+    {
+      "reference": "R53",
+      "value": "10k",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "page": 7,
+      "datasheet": ""
+    },
+    {
+      "reference": "C60",
+      "value": "100nF",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "page": 7,
+      "datasheet": ""
+    },
+    {
+      "reference": "J20",
+      "value": "灰度并行_辅助板",
+      "mpn": "",
+      "footprint": "Motor:Connector_PinHeader_2.54mm__PinHeader_1x10_P2.54mm_Vertical",
+      "page": 8,
+      "datasheet": ""
+    },
+    {
+      "reference": "J21",
+      "value": "灰度同步串行_选用",
+      "mpn": "",
+      "footprint": "Motor:Connector_PinHeader_2.54mm__PinHeader_1x04_P2.54mm_Vertical",
+      "page": 8,
+      "datasheet": ""
+    },
+    {
+      "reference": "J18",
+      "value": "MaixCAM_检测",
+      "mpn": "",
+      "footprint": "Motor:Connector_PinHeader_2.54mm__PinHeader_1x04_P2.54mm_Vertical",
+      "page": 8,
+      "datasheet": ""
+    },
+    {
+      "reference": "C61",
+      "value": "10uF/10V",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0805_2012Metric",
+      "page": 8,
+      "datasheet": ""
+    },
+    {
+      "reference": "J19",
+      "value": "图传处理板",
+      "mpn": "",
+      "footprint": "Motor:Connector_PinHeader_2.54mm__PinHeader_1x04_P2.54mm_Vertical",
+      "page": 8,
+      "datasheet": ""
+    },
+    {
+      "reference": "C62",
+      "value": "10uF/10V",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0805_2012Metric",
+      "page": 8,
+      "datasheet": ""
+    },
+    {
+      "reference": "J15",
+      "value": "HC-08_四脚接口",
+      "mpn": "",
+      "footprint": "Motor:Connector_PinHeader_2.54mm__PinHeader_1x04_P2.54mm_Vertical",
+      "page": 9,
+      "datasheet": ""
+    },
+    {
+      "reference": "J16",
+      "value": "蓝牙电源选择",
+      "mpn": "",
+      "footprint": "Motor:Connector_PinHeader_2.54mm__PinHeader_1x03_P2.54mm_Vertical",
+      "page": 9,
+      "datasheet": ""
+    },
+    {
+      "reference": "J22",
+      "value": "步进_脉冲控制",
+      "mpn": "",
+      "footprint": "Motor:Connector_PinHeader_2.54mm__PinHeader_1x06_P2.54mm_Vertical",
+      "page": 9,
+      "datasheet": ""
+    },
+    {
+      "reference": "J23",
+      "value": "步进_UART控制",
+      "mpn": "",
+      "footprint": "Motor:Connector_PinHeader_2.54mm__PinHeader_1x04_P2.54mm_Vertical",
+      "page": 9,
+      "datasheet": ""
+    },
+    {
+      "reference": "J24",
+      "value": "步进驱动电源",
+      "mpn": "",
+      "footprint": "Motor:TerminalBlock_Phoenix__TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal",
+      "page": 9,
+      "datasheet": ""
+    },
+    {
+      "reference": "R54",
+      "value": "10k",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "page": 9,
+      "datasheet": ""
+    },
+    {
+      "reference": "R57",
+      "value": "10k",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "page": 9,
+      "datasheet": ""
+    },
+    {
+      "reference": "R58",
+      "value": "10k",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "page": 9,
+      "datasheet": ""
+    }
+  ],
+  "footprints": {
+    "Motor:Connector_PinHeader_2.54mm__PinHeader_1x03_P2.54mm_Vertical": {
+      "source": "C:\\Program Files\\KiCad\\10.0\\share\\kicad\\footprints\\Connector_PinHeader_2.54mm.pretty\\PinHeader_1x03_P2.54mm_Vertical.kicad_mod",
+      "models": [
+        "Connector_PinHeader_2.54mm__PinHeader_1x03_P2.54mm_Vertical__PinHeader_1x03_P2.54mm_Vertical.step"
+      ],
+      "model_status": "KiCad package geometry"
+    },
+    "Motor:Connector_PinHeader_2.54mm__PinHeader_1x04_P2.54mm_Vertical": {
+      "source": "C:\\Program Files\\KiCad\\10.0\\share\\kicad\\footprints\\Connector_PinHeader_2.54mm.pretty\\PinHeader_1x04_P2.54mm_Vertical.kicad_mod",
+      "models": [
+        "Connector_PinHeader_2.54mm__PinHeader_1x04_P2.54mm_Vertical__PinHeader_1x04_P2.54mm_Vertical.step"
+      ],
+      "model_status": "KiCad package geometry"
+    },
+    "Motor:Connector_PinHeader_2.54mm__PinHeader_1x06_P2.54mm_Vertical": {
+      "source": "C:\\Program Files\\KiCad\\10.0\\share\\kicad\\footprints\\Connector_PinHeader_2.54mm.pretty\\PinHeader_1x06_P2.54mm_Vertical.kicad_mod",
+      "models": [
+        "Connector_PinHeader_2.54mm__PinHeader_1x06_P2.54mm_Vertical__PinHeader_1x06_P2.54mm_Vertical.step"
+      ],
+      "model_status": "KiCad package geometry"
+    },
+    "Motor:Connector_PinHeader_2.54mm__PinHeader_1x08_P2.54mm_Vertical": {
+      "source": "C:\\Program Files\\KiCad\\10.0\\share\\kicad\\footprints\\Connector_PinHeader_2.54mm.pretty\\PinHeader_1x08_P2.54mm_Vertical.kicad_mod",
+      "models": [
+        "Connector_PinHeader_2.54mm__PinHeader_1x08_P2.54mm_Vertical__PinHeader_1x08_P2.54mm_Vertical.step"
+      ],
+      "model_status": "KiCad package geometry"
+    },
+    "Motor:Connector_PinHeader_2.54mm__PinHeader_1x10_P2.54mm_Vertical": {
+      "source": "C:\\Program Files\\KiCad\\10.0\\share\\kicad\\footprints\\Connector_PinHeader_2.54mm.pretty\\PinHeader_1x10_P2.54mm_Vertical.kicad_mod",
+      "models": [
+        "Connector_PinHeader_2.54mm__PinHeader_1x10_P2.54mm_Vertical__PinHeader_1x10_P2.54mm_Vertical.step"
+      ],
+      "model_status": "KiCad package geometry"
+    },
+    "Motor:Package_TO_SOT_SMD__SOT-23-5": {
+      "source": "C:\\Program Files\\KiCad\\10.0\\share\\kicad\\footprints\\Package_TO_SOT_SMD.pretty\\SOT-23-5.kicad_mod",
+      "models": [
+        "Package_TO_SOT_SMD__SOT-23-5__SOT-23-5.step"
+      ],
+      "model_status": "KiCad package geometry"
+    },
+    "Motor:Button_Switch_THT__SW_PUSH_6mm_H4.3mm": {
+      "source": "C:\\Program Files\\KiCad\\10.0\\share\\kicad\\footprints\\Button_Switch_THT.pretty\\SW_PUSH_6mm_H4.3mm.kicad_mod",
+      "models": [
+        "Button_Switch_THT__SW_PUSH_6mm_H4.3mm__SW_PUSH_6mm_H4.3mm.step"
+      ],
+      "model_status": "KiCad package geometry"
+    },
+    "Motor:MountingHole__MountingHole_2mm": {
+      "source": "C:\\Program Files\\KiCad\\10.0\\share\\kicad\\footprints\\MountingHole.pretty\\MountingHole_2mm.kicad_mod",
+      "models": [],
+      "model_status": "KiCad package geometry"
+    }
+  },
+  "model_missing": [
+    "J1: exact XT60PW-M horizontal model"
+  ],
+  "mounting_holes": {
+    "references": [
+      "H1",
+      "H2"
+    ],
+    "diameter_mm": 2,
+    "center_distance_mm": 30,
+    "source": "ZJY180S0800TG01 Rev A p5; two holes on one short side",
+    "edge_offset_mm": 2.5,
+    "derivation": "35 - 2 * 2.5 = 30mm; confirm actual module before PCB placement"
+  },
+  "initial_m2_all_sheets_paper": "A4",
+  "current_sheet_paper": {
+    "overview": "A3",
+    "functional_sheets": "A4"
+  },
+  "authored_source_hashes": {
+    "02_Power.kicad_sch": "7e04987cb7a579500bef15ca919881ebe455b5a487091bc42721ed662e7f8667",
+    "03_Core_Interface.kicad_sch": "d2da9a9f6e17934c722e64f6103a993705c6127b1bf42ad7ee91e31242a9a4bd",
+    "04_Left_Motor.kicad_sch": "58c43abfa910463273620cd4c1bb83eb6f0fd3b2a91bc7e51453aac83c8368fd",
+    "05_Right_Motor.kicad_sch": "ea975a74456adf147ea5e55b2cd1a14b0ed3d985d8d5c0f96b2ad4eb0fe298e1",
+    "06_Module_Power.kicad_sch": "cc2205b13da0789028d771a810c42bac126a4abdfb562f569589ca58997ae124",
+    "07_TFT_Buttons.kicad_sch": "27e23ddce46d2fa0c078f2c2f14d5872abe24718a929c483669cab53bc765e88",
+    "08_Grayscale_Cameras.kicad_sch": "741c25ffccd1ac5c8e7a8285cc088f9b0debc8b3ca22bf80531f6980e2671933",
+    "09_Bluetooth_Stepper.kicad_sch": "aef3b85a6228737a106f72b2654602ed166ec46713481783bb60fb013b6d696b",
+    "CoralC5-Motor.kicad_sch": "96ab96e3c7be0eee458e131375d8acaa381bdef6c19f1c1d416a5e5ce610babb",
+    "Motor.kicad_sym": "e6ed93fa70d5336a5270246030d5b1bcb4459ea486e2ec2bba42ecffc1972cd3",
+    "Motor.pretty/AMASS_XT60PW-M_1x02_P7.20mm_Horizontal.kicad_mod": "011ace658c3e7b0fa49fcd8e3b5439ab4f063306655e8de7b42ac5b9481b4b92",
+    "Motor.pretty/Button_Switch_THT__SW_PUSH_6mm_H4.3mm.kicad_mod": "ec89a786797ea971e6e0c95b70335f3e9d991c9ee887eadd3133afe078352009",
+    "Motor.pretty/C5_EDGE_3_Socket.kicad_mod": "aec42efaf42628b350afbe148c4010d16db738c7cab8bdf313dbf4cd0676bb92",
+    "Motor.pretty/Capacitor_SMD__C_0603_1608Metric.kicad_mod": "79ec3b2c39e6e647d335728f8be409f012ab766c54c3c30d32d49bd06ae85cc6",
+    "Motor.pretty/Capacitor_SMD__C_0805_2012Metric.kicad_mod": "4873f1399797f3c1e184963426edd32b7a238df39d7c9c6e5076cd489424d973",
+    "Motor.pretty/Capacitor_SMD__C_1206_3216Metric.kicad_mod": "7be6965e789ea8446e4a4627d807a3af9028cead8f45073a6e164c5a11cb9e36",
+    "Motor.pretty/Capacitor_THT__CP_Radial_D10.0mm_P5.00mm.kicad_mod": "6a9a29f2e211c84e32413b742726daccdb80e9dfae2e3fbd4787ed288c3f47d2",
+    "Motor.pretty/Connector_JST__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical.kicad_mod": "94ea11ddd72b8a7bd9bcad483be371cfdd2e46e1f2f75f547c29e4663397e8f2",
+    "Motor.pretty/Connector_JST__JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical.kicad_mod": "64ef2442f302051a816b00daac6c20db5c56a4a4a4d7c57b7fcb5c9364af52f4",
+    "Motor.pretty/Connector_PinHeader_2.54mm__PinHeader_1x02_P2.54mm_Vertical.kicad_mod": "8d66bf0ae458a071cd7fd16fcbd837ffb02e6b639de532ded54f05fa456a1271",
+    "Motor.pretty/Connector_PinHeader_2.54mm__PinHeader_1x03_P2.54mm_Vertical.kicad_mod": "0a770fbe4d717c7a4d748d4889cb8d24a8a63c5ebbd9ed52f60f7ec29a54f2e2",
+    "Motor.pretty/Connector_PinHeader_2.54mm__PinHeader_1x04_P2.54mm_Vertical.kicad_mod": "b9d3b13cff4364434fb4f0529b6c951f1665bc50b5f156a89cf69b3a7b484a1f",
+    "Motor.pretty/Connector_PinHeader_2.54mm__PinHeader_1x06_P2.54mm_Vertical.kicad_mod": "4c0a40c880ebf73fa28bded25da563adb191725e493894c63f71448a1b922fe5",
+    "Motor.pretty/Connector_PinHeader_2.54mm__PinHeader_1x08_P2.54mm_Vertical.kicad_mod": "8e6708fa7d7d47fe2fc72539db7cf6de17d8ab0b389b1c6ad426422247586a82",
+    "Motor.pretty/Connector_PinHeader_2.54mm__PinHeader_1x10_P2.54mm_Vertical.kicad_mod": "65fd6b14aa02b14b5074f2eea553bcc4b3f1e0252a5909ba1c0eb41f54e12ae5",
+    "Motor.pretty/Connector_PinHeader_2.54mm__PinHeader_2x05_P2.54mm_Vertical.kicad_mod": "cd9de65415150302dac3b56f0fdb77eb37414a8fe8ae9f199b9542eeb6abd33c",
+    "Motor.pretty/DC005_XKB_5A_2mm.kicad_mod": "4af937778947f7d57c9bd6820d8464529515ea765419bf341592a53118c090e9",
+    "Motor.pretty/Diode_SMD__D_SMA.kicad_mod": "b552ee31ac7d793a42f246928f5aad96e5cc9e9d99d3ef873d021af46d81883d",
+    "Motor.pretty/Diode_SMD__D_SOD-123.kicad_mod": "f4dc7acfa22e39742d69891b91b6f2e563c98ed8b131774e6e999ef2a6c9e223",
+    "Motor.pretty/DRV8874_PWP0016.kicad_mod": "87e2fe3852694ecb64462a23a5cb3e745b0325ace0d421a200830e516a71fbe5",
+    "Motor.pretty/Fuse__Fuse_1206_3216Metric.kicad_mod": "8edc0b6de660ea6296852ec099e9b4a736c5ab2a53a48d68963241010f4cc988",
+    "Motor.pretty/Inductor_SMD__L_Bourns_SRN6045TA.kicad_mod": "4f7fb26ac6fb3853622166fad68b4c7409c11ebbb5118600a29de9d89d5afa91",
+    "Motor.pretty/LED_SMD__LED_0603_1608Metric.kicad_mod": "ba25c89576e67f922c23efc1b63f9b363aba53cc8b91fea4ab5cbf89b9f49f28",
+    "Motor.pretty/MountingHole__MountingHole_2mm.kicad_mod": "811eccfe916f261f644bb403d20dfa0c2cf8c8bc79295a028b7b2b410431c43d",
+    "Motor.pretty/Package_SO__SOIC-8_3.9x4.9mm_P1.27mm.kicad_mod": "2af6a5ff644d055ddbca439ea1a25d9ffb507672cd86bf1e9bd636cf657ce8b9",
+    "Motor.pretty/Package_TO_SOT_SMD__SOT-23-5.kicad_mod": "398e345dfaf10f5cc4310e08a5e8e66517dd67af669cb8600c2bc262117b3c88",
+    "Motor.pretty/Package_TO_SOT_SMD__SOT-363_SC-70-6.kicad_mod": "4a1d9acb5502c4e036ebab23f9024f7e0d4aa357d5f3fb595335e27d5fdcb3da",
+    "Motor.pretty/Package_TO_SOT_SMD__TSOT-23-6.kicad_mod": "40a4195cd32a9d9c1bd6e4923235d6514dfdd84b339c9482eed4b6cd81dd7131",
+    "Motor.pretty/Resistor_SMD__R_0603_1608Metric.kicad_mod": "b42f66f3460a80268060e37da2c7ca9e42e683536688cdd2fea86d8decdef6a9",
+    "Motor.pretty/SS12D07VG4.kicad_mod": "f0d7de7ad67804b6592a9a78e046df1f6af0ed6369f65caf66266cb3a193c0bc",
+    "Motor.pretty/TerminalBlock_Phoenix__TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal.kicad_mod": "b07eb74312e31ed96235d04e9db61ef1f30125f10f6250ae64ab768408b99518",
+    "Models/Button_Switch_THT__SW_PUSH_6mm_H4.3mm__SW_PUSH_6mm_H4.3mm.step": "c3579f109e5a65792c6accbe6d17dab1bf0a32c1c6612aed55ab5a0706cca130",
+    "Models/C5_EDGE_3_Socket__Streamline_Socket.step": "32d43c7803e76c89d8f19ae974a4d9962257ac55d3e23d6dffbfdff7d8693866",
+    "Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step": "4857b3dc717675bf1fb22edda622ac3b3ae03cf44d81eefaf3fa3ba3a86d84c1",
+    "Models/Capacitor_SMD__C_0805_2012Metric__C_0805_2012Metric.step": "9a669c1a2f1ea25b88b401acef6efeaa80a067bd7da9db6993de719a7fbe155c",
+    "Models/Capacitor_SMD__C_1206_3216Metric__C_1206_3216Metric.step": "11e948c72c90e2b6322436b72745f40ff4e8ba0da64fb2a0df943dfa61e89c1a",
+    "Models/Capacitor_THT__CP_Radial_D10.0mm_P5.00mm__CP_Radial_D10.0mm_P5.00mm.step": "7367f35dd5439e325ba3912de65e9200831fdc6698080ffd056cd268649ba41d",
+    "Models/Connector_JST__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical.step": "7eb17ded8ec4a3216753a234254e22a2d8e07826f0816045bfb803a19cac75ea",
+    "Models/Connector_PinHeader_2.54mm__PinHeader_1x02_P2.54mm_Vertical__PinHeader_1x02_P2.54mm_Vertical.step": "ea4d0799007ebdd3945072bf255d673d2fe87eb05fda85fd8d7993ad9397da41",
+    "Models/Connector_PinHeader_2.54mm__PinHeader_1x03_P2.54mm_Vertical__PinHeader_1x03_P2.54mm_Vertical.step": "b91b4ac5acf1a0d28a676703db972d17b8f11ef26a85b58d60786a69246b921b",
+    "Models/Connector_PinHeader_2.54mm__PinHeader_1x04_P2.54mm_Vertical__PinHeader_1x04_P2.54mm_Vertical.step": "a74079b8d06bda78847623b39ee1855ffd1d9a8c1e896b349e4f1dc2056d44d9",
+    "Models/Connector_PinHeader_2.54mm__PinHeader_1x06_P2.54mm_Vertical__PinHeader_1x06_P2.54mm_Vertical.step": "d6113af109a14a67c50dcefd1cfc7b43b59b59afa85d808b2319e2452da91318",
+    "Models/Connector_PinHeader_2.54mm__PinHeader_1x08_P2.54mm_Vertical__PinHeader_1x08_P2.54mm_Vertical.step": "081e2b47a2d73a4502efc64d77b9002c9a28047b5776a46043c3d9ca37bac9e1",
+    "Models/Connector_PinHeader_2.54mm__PinHeader_1x10_P2.54mm_Vertical__PinHeader_1x10_P2.54mm_Vertical.step": "a2f7a9c513c3be0cbd5de8cdd22fdbf1c2e3510c72d682fd089d252fe71b9dc7",
+    "Models/Connector_PinHeader_2.54mm__PinHeader_2x05_P2.54mm_Vertical__PinHeader_2x05_P2.54mm_Vertical.step": "cd99322b0ccc253157acbe9c5c672ce9b37dbcd4d59fb001240a93110052cdce",
+    "Models/DC005_XKB_5A_2mm.wrl": "db940f39999fc353ed39d8526294ef2f14dd74d4ef2569926e9ab1966e3c3d77",
+    "Models/Diode_SMD__D_SMA__D_SMA.step": "1cfddd4e3b1bf22b8fc6ee3258c2aade882ed7b85b528e23b9db42437775a1db",
+    "Models/Diode_SMD__D_SOD-123__D_SOD-123.step": "b3dc4065573abc72e3d5b4cca0e908f72a24205a41b6284b1f75ccacbe99adf8",
+    "Models/DRV8874_PWP0016__HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.78x3.37mm.step": "86692c129d85404197323d6581d043856729deaffaf4edde8a17f096ee208d19",
+    "Models/Fuse__Fuse_1206_3216Metric__Fuse_1206_3216Metric.step": "5e6dcbe286696143d35a8ea37d91eef4b54ff3d1bd7c2c2b4dedda83d3f8e203",
+    "Models/Inductor_SMD__L_Bourns_SRN6045TA__L_Bourns_SRN6045TA.step": "5464de33dcd974504045ea4d428515d8cab35e348d943f8073efb9df666ae346",
+    "Models/JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical.step": "5a74ac21b099c174928a7afd6783a9e1d26e23a1f2418d4cb4856ad6430e9c2a",
+    "Models/LED_SMD__LED_0603_1608Metric__LED_0603_1608Metric.step": "98343205ec260ec165026ba2d44329a23096779ac36c553ea84aa7b370242e6d",
+    "Models/Package_SO__SOIC-8_3.9x4.9mm_P1.27mm__SOIC-8_3.9x4.9mm_P1.27mm.step": "07f46cff378d30e6c27dfd5a03092c795323f86d91c71fc7e743f4f418dc553a",
+    "Models/Package_TO_SOT_SMD__SOT-23-5__SOT-23-5.step": "720a6eab0024069bbee68e7cb4c3ff1149468a34611225cdc852662c5d0ec2b7",
+    "Models/Package_TO_SOT_SMD__SOT-363_SC-70-6__SOT-363_SC-70-6.step": "045cc95e18ee7a13d1623c3ce6604fc833049bdb4f952f68c26e3c5767d122e4",
+    "Models/Package_TO_SOT_SMD__TSOT-23-6__TSOT-23-6.step": "1007b8f67a3e81e2c5182bfd1fd27afe4d8d3710e0bfa1a14b8a91db8b595eb5",
+    "Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step": "1875571c326d0d9e96f36b4efeb8094068ef7619f0a449c781caf0b49c2e5861",
+    "Models/SS12D07VG4.wrl": "4c6ca4f825c251ecba480173c301ce1b29427ebee49143f109078b7332574adf",
+    "Models/TerminalBlock_Phoenix__TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal__TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal.step": "2684469b03d2dd46f26862eb86eb283215344c311dd485db877e7139b5381497"
+  },
+  "layout_revision": "M2.1",
+  "layout_edit_record": "docs/layout_edit.json",
+  "record_scope": "Historical initial M2 generation data; current native schematics and verification.json are authoritative. User changes are recorded as explicit overlays.",
+  "current_revision": "M2.4",
+  "current_revision_records": [
+    "zdt_ttl_design.json",
+    "connector_revision.json",
+    "power_revision.json",
+    "passive_0603_revision.json",
+    "jumpers_revision.json",
+    "bluetooth_pinout_revision.json"
+  ]
+}

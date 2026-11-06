@@ -1,0 +1,7 @@
+{
+  "Hardware\\stm32c5a3\\Hardware\\CoralC5-Core\\02_Power_USB.kicad_sch": "aa0680ea3030634c77f194650583659558c84b7650c1c2526428167c6dab94a9",
+  "Hardware\\stm32c5a3\\Hardware\\CoralC5-Core\\03_MCU.kicad_sch": "beb7bd1584cb1eb6f64bda20b870ae0482f6356b3e52781526f579e225b1d752",
+  "Hardware\\stm32c5a3\\Hardware\\CoralC5-Core\\04_Interface.kicad_sch": "0e7829cee3c4c2b2f0929dd47b0a38ecfee75a60b4d58bbad6cc571589de3ff4",
+  "Hardware\\stm32c5a3\\Hardware\\CoralC5-Core\\CoralC5-Core.kicad_sch": "fd0c69b501ebba8d38292d40d285f869d0c951c52321b79d7911eecde637be66",
+  "Hardware\\stm32c5a3\\Hardware\\Shared\\interface.csv": "d5ba6e294f1c89fd945ad932b6d14007c828b77f620a9c12b363c7ad26c07718"
+}
