@@ -7,12 +7,12 @@
 	(title_block
 		(title "Coral-C5 小车扩展板 M2 总览")
 		(date "2026-11-06")
-		(rev "M2.4")
+		(rev "M2.5")
 		(company "SmallCoral / CoralC5-Motor")
 		(comment 1 "原理图设计；实板电流、温升与线束待验证")
 	)
 	(lib_symbols)
-	(text "小车扩展板 M2：信号逐路层次连接\nMCU_TX 接模块 RX，所有逻辑三伏三\n公共电源按同名网络连接，完整针序见功能页"
+	(text "小车扩展板 M2.5：信号逐路层次连接\nMCU_TX 接模块 RX，核心侧逻辑三伏三\n公共电源按同名网络连接，完整针序见功能页"
 		(exclude_from_sim no)
 		(at 17.78 15.24 0)
 		(effects
@@ -23,7 +23,7 @@
 		)
 		(uuid "17cb0c0e-9c7e-5bb8-a140-428f02f0eef7")
 	)
-	(text "98 触点\n44 路 GPIO\n硬件停机回路"
+	(text "98 触点\n42 路 GPIO\n硬件停机回路"
 		(exclude_from_sim no)
 		(at 208.28 87.63 0)
 		(effects
@@ -45,7 +45,7 @@
 		)
 		(uuid "4cfd3c9e-8051-5fa5-8aba-7e7879c1c8b1")
 	)
-	(text "八路灰度\nMaixCAM 检测\n独立图传"
+	(text "八路灰度\n荔枝派识别\nMaixCAM2 图传"
 		(exclude_from_sim no)
 		(at 43.18 130.81 0)
 		(effects
@@ -127,17 +127,6 @@
 			(type default)
 		)
 		(uuid "008959bc-521b-5713-a8fc-b6e8cfb156d3")
-	)
-	(wire
-		(pts
-			(xy 109.22 149.86)
-			(xy 165.1 149.86)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "037e1409-7bc5-5235-b7d0-182cb245c081")
 	)
 	(wire
 		(pts
@@ -688,17 +677,6 @@
 			(type default)
 		)
 		(uuid "cd1b31e5-9a12-51ec-b22a-d1015811e282")
-	)
-	(wire
-		(pts
-			(xy 109.22 146.05)
-			(xy 165.1 146.05)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d2a6e056-df88-59c2-b2f2-ba4fcf26c6ee")
 	)
 	(wire
 		(pts
@@ -1788,27 +1766,7 @@
 				(justify left)
 			)
 		)
-		(pin "GRAY_CLK" bidirectional
-			(at 165.1 146.05 180)
-			(uuid "df42afd0-821f-590f-86d7-93f3d2db460c")
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-				(justify left)
-			)
-		)
-		(pin "GRAY_DAT" bidirectional
-			(at 165.1 149.86 180)
-			(uuid "9d17d1c4-92bf-5419-8760-16e678b314f2")
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-				(justify left)
-			)
-		)
-		(pin "MAIX_TX" bidirectional
+		(pin "LPI_TX" bidirectional
 			(at 165.1 153.67 180)
 			(uuid "980335bf-642a-5711-b96d-f3706bdd4a5b")
 			(effects
@@ -1818,7 +1776,7 @@
 				(justify left)
 			)
 		)
-		(pin "MAIX_RX" bidirectional
+		(pin "LPI_RX" bidirectional
 			(at 165.1 157.48 180)
 			(uuid "326a9743-a18c-5d5e-ba5b-8764c6baa15e")
 			(effects
@@ -2053,27 +2011,7 @@
 				(justify right)
 			)
 		)
-		(pin "GRAY_CLK" bidirectional
-			(at 109.22 146.05 0)
-			(uuid "4c85a7a5-b20e-54b7-ac8e-d4a9a4a40f86")
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-				(justify right)
-			)
-		)
-		(pin "GRAY_DAT" bidirectional
-			(at 109.22 149.86 0)
-			(uuid "8f4bcb96-0fac-5fa8-925d-a1c18c0930a1")
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-				(justify right)
-			)
-		)
-		(pin "MAIX_TX" bidirectional
+		(pin "LPI_TX" bidirectional
 			(at 109.22 153.67 0)
 			(uuid "bccdcf8e-7c9a-5dde-96fc-ea57c5be29f9")
 			(effects
@@ -2083,7 +2021,7 @@
 				(justify right)
 			)
 		)
-		(pin "MAIX_RX" bidirectional
+		(pin "LPI_RX" bidirectional
 			(at 109.22 157.48 0)
 			(uuid "e6d2af39-e230-5f53-9422-3dec9842bcc1")
 			(effects
@@ -2119,6 +2057,16 @@
 					(page "7")
 				)
 			)
+		)
+		(pin "V3V3" input
+			(at 38.1 181.61 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "84b50da0-ecbc-5ece-8c89-c0b5501754f0")
 		)
 	)
 	(sheet
@@ -2397,4 +2345,85 @@
 		)
 	)
 	(embedded_fonts no)
+	(sheet
+		(at 165.1 255.27)
+		(size 86.36 25.4)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "d4aae58c-ddd7-5da3-9fd9-693f95a2fcb9")
+		(property "Sheetname" "荔枝派独立供电"
+			(at 165.1 254 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sheetfile" "10_Lichee_Power.kicad_sch"
+			(at 165.1 282 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "VM" input
+			(at 165.1 269.24 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "828c3635-ffbb-5b76-b588-7173c9a44763")
+		)
+	)
+	(wire
+		(pts
+			(xy 157.48 269.24)
+			(xy 165.1 269.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fbf46403-338f-5c62-984f-03d664aca08c")
+	)
+	(label "VM"
+		(at 157.48 269.24 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "40fab85c-d6dc-52bc-9da3-68ce611144d3")
+	)
+	(wire
+		(pts
+			(xy 30.48 181.61)
+			(xy 38.1 181.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a91b23df-db2a-5392-b71e-c695af8356e3")
+	)
+	(label "V3V3"
+		(at 30.48 181.61 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "a23e02a0-4b57-564d-bd20-3634e60dd821")
+	)
 )

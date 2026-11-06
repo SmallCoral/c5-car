@@ -1,6 +1,6 @@
 """Native-netlist audit of M2; preserves the real pre-edit contract. No PCB access."""
 from pathlib import Path
-import sys,csv,json,hashlib,re,copy,xml.etree.ElementTree as ET
+import sys,csv,json,hashlib,re,copy,subprocess,xml.etree.ElementTree as ET
 ROOT=Path(__file__).resolve().parents[1];DOC=ROOT/'docs';BASE=DOC/'baseline-2026-11-06-m2'
 sys.path.insert(0,str(ROOT.parent/'Shared/design_tools'))
 from sexpr import parse,node,nodes,prop
@@ -45,10 +45,11 @@ def main():
    check(file+' circuit objects preserved across presentation edit',all(nodes(old,t)==nodes(new,t) for t in ['symbol','wire','junction','no_connect','label','global_label','hierarchical_label']))
   else:check(file+' byte preserved',(ROOT/file).read_bytes()==(BASE/file).read_bytes())
  schemas={p.name:parse(p.read_text(encoding='utf-8')) for p in ROOT.glob('*.kicad_sch')}
- check('nine sheets',len(schemas)==9)
+ check('authorized sheet count',len(schemas)==9+len(rev.vision.get('new_sheets',{})))
  components={};allpins=set();nc=[]
  for file,d in schemas.items():
-  check(file+' paper',node(d,'paper')[1]==('A3' if file=='CoralC5-Motor.kicad_sch' and (DOC/'layout_edit.json').exists() else 'A4'))
+  expected_paper=rev.vision.get('paper',{}).get(file,'A3' if file=='CoralC5-Motor.kicad_sch' and (DOC/'layout_edit.json').exists() else 'A4')
+  check(file+' paper',node(d,'paper')[1]==expected_paper)
   for z in nodes(d,'text'):check(file+' 100mil Chinese note',list(map(float,node(node(node(z,'effects'),'font'),'size')[1:]))==[2.54,2.54])
   nc.extend((file,tuple(map(float,node(z,'at')[1:3]))) for z in nodes(d,'no_connect'))
   for z in nodes(d,'symbol'):
@@ -73,7 +74,8 @@ def main():
  oldroles=json.loads((BASE/'design_manifest.json').read_text(encoding='utf-8-sig'))['motor_pin_assignment']['entries']
  assignments=oldroles+m2
  reserved={'PA9','PA11','PA12','PA13','PA14','PH2','PE3','PD2'}
- check('44 unique GPIO roles',len(assignments)==44 and len({r['gpio'] for r in assignments})==44)
+ expected_roles=42 if rev.gray else 44
+ check(str(expected_roles)+' unique GPIO roles',len(assignments)==expected_roles and len({r['gpio'] for r in assignments})==expected_roles)
  check('reserved Core/USB/SWD pins not assigned',not reserved&{r['gpio'] for r in assignments})
  functions=parse_alternate_functions((ROOT.parent/'Shared/sources/DS15137_STM32C5Axxx_Datasheet_Rev3.pdf.txt').read_text(encoding='utf-8-sig'))
  for r in contract:
@@ -94,9 +96,10 @@ def main():
   if value is not None:check(r['signal']+' datasheet AF',functions.get((r['gpio'],r['function']))==value)
   joined(r['signal']+' reaches endpoint','J14:'+r['contact'],r['endpoint'])
  # Independently specified connector pin contracts.
- for ref,power,tx,rx in [('J15','V3V3_EXT' if rev.jumpers else 'VBT','BT_TX','BT_RX'),('J18','V5_EXT','MAIX_TX','MAIX_RX'),('J19','V5_EXT','VIDEO_TX','VIDEO_RX')]+([] if rev.zdt else [('J23','V3V3','STEP_UART_TX','STEP_UART_RX')]):
+ for ref,power,tx,rx in [('J15','V3V3_EXT' if rev.jumpers else 'VBT','BT_TX','BT_RX')]+([] if rev.vision else [('J18','V5_EXT','MAIX_TX','MAIX_RX'),('J19','V5_EXT','VIDEO_TX','VIDEO_RX')])+([] if rev.zdt else [('J23','V3V3','STEP_UART_TX','STEP_UART_RX')]):
   for pin,net in enumerate([power,'GND',tx,rx],1):check(ref+':'+str(pin)+' expected net',ref+':'+str(pin) in next((p for name,p in names.items() if name.split('/')[-1]==net),frozenset()),net)
  extra={'TFT_CS':['R55:2'],'TFT_RES':['R56:2'],'STEP_PUL':['R57:1'],'STEP_DIR':['R58:1'],'STEP_nEN':['R54:2']}
+ if rev.vision:extra.update(LPI_TX=['R79:2'],VIDEO_TX=['R80:2'])
  for r in m2:
   expected=['J14:'+r['contact'],r['endpoint']]+extra.get(r['signal'],[])
   if r['signal'].startswith('KEY_'):
@@ -107,13 +110,14 @@ def main():
  check('XT60 procurement metadata',prop(j1,'MPN')[2]=='XT60PW-M' and prop(j1,'LCSC') is None)
  group('auxiliary bootstrap','U6:6 C51:1');group('auxiliary switch','U6:5 C51:2 L2:1')
  group('independent peripheral 3V3','U7:5 C55:1 C56:1 J17:2 R55:1 R56:1 '+('J15:1' if rev.jumpers else 'J16:1'))
- group('independent peripheral 5V','U6:1 L2:2 C52:1 C53:1 U7:1 U7:3 C54:1 C61:1 C62:1 J18:1 J19:1 J20:1 J21:1'+('' if rev.jumpers else ' J16:3'))
+ if rev.vision:group('independent peripheral 5V','L2:2 C52:1 C53:1 U7:1 U7:3 C54:1 J21:2 R59:2 C63:2 U10:5 C72:1 J27:1 R70:1')
+ else:group('independent peripheral 5V','U6:1 L2:2 C52:1 C53:1 U7:1 U7:3 C54:1 C61:1 C62:1 J18:1 J19:1 '+('J21:2' if rev.gray else 'J20:1 J21:1')+('' if rev.jumpers else ' J16:3'))
  if rev.jumpers:joined('BT fixed 3V3 supply','J15:1','U7:5')
  else:group('BT selected supply','J16:2 J15:1')
  if rev.power:
   group('ZDT protected step supply','F2:2 J23:1 J24:1');joined('step fuse from protected VM','F2:1','Q2:2','U6:3')
  else:joined('external driver protected VM','J24:1','Q2:5','U6:3')
- for pin in ['J17:1','J20:2','J21:2','J22:2','J22:6','J23:2','J24:2','R57:2','R58:2']:joined(pin+' ground',pin,'J1:2')
+ for pin in ['J17:1',*(['J21:1'] if rev.gray else ['J20:2','J21:2']),'J22:2','J22:6','J23:2','J24:2','R57:2','R58:2']:joined(pin+' ground',pin,'J1:2')
  check('peripheral 3V3 not joined to Core',actual['U7:5']!=actual['J14:A47'])
  check('peripheral 5V not joined to Core USB rail',actual['U7:1']!=actual['J14:A48'])
  for contact in set(bycontact)-{z['contact'] for z in assignments}-{'A1','A49','B1','B49','A47','B47','A48','B48','A46','B43'}:
@@ -157,6 +161,20 @@ def main():
  if rev.bt_pinout:
   result['limitations'][3]='HC-08 pin order is confirmed against the user photo; final connector mounting orientation, fit and other external module mating orders still require physical validation'
   (DOC/'verification.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+ if rev.buttons:
+  result['limitations'].append('SW2-SW5 use a generic 6x6x4.3mm SMD reference footprint and model; actual unbranded lead span, contact pairs and ratings are not measured or manufacturer-confirmed')
+ if rev.vision:
+  result['revision']='M2.5'
+  result['unbound_models']=missing_models
+  result['generic_model_references']=sorted(set(rev.vision['generic_models']+['SW1','F2','SW2','SW3','SW4','SW5']))
+  result['missing_exact_models']=sorted(set(missing_models+result['generic_model_references']))
+  result['limitations'][4]='Current budget is 10.6765A at 10V, not a measurement; F1 is 15A/85V very-fast and F2 remains 4A/125V time-delay. Inrush, battery fault interruption, MOS SOA/temperature and harness loading require physical validation'
+  result['limitations'].extend(['Lichee separate 5V/3A output and Maix 2A charging-inclusive budget require real startup, load and cable-drop tests','Maix six-pin 5V and USB VBUS are common inside the module: remove J27 before ordinary powered USB debug; the battery may keep the module alive','J25 is a two-wire supply terminal, not a USB-C source controller: use a correctly wired 3A power lead with appropriate CC handling','Lichee UART1 header RX has onboard 1/2 divider and TX is 1.8V; LV1T buffer inputs have no positive clamp, but the part is not advertised as output Ioff isolated. Keep UART pins in the specified direction'])
+ try:
+  current_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,stderr=subprocess.DEVNULL).decode().strip()
+ except (OSError,subprocess.CalledProcessError):current_commit='unavailable'
+ result['baseline_source_commit']=result['source_commit'];result['source_commit']=current_commit
+ (DOC/'verification.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
  print(json.dumps({k:v for k,v in result.items() if k not in ['results','resources','artifacts_sha256']},ensure_ascii=False,indent=2))
  return 0 if result['pass'] else 1
 

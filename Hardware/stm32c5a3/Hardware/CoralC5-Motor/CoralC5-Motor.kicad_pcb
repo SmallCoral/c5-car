@@ -25164,7 +25164,7 @@
 	(footprint "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder"
 		(layer "F.Cu")
 		(uuid "c094a76b-b27d-4b99-84c3-880f9f3698f4")
-		(at 197.025 140.25)
+		(at 198 140.25)
 		(descr "0603 imperial / 1608 metric; 0.85mm inner gap, 0.975x0.95mm hand-solder pads; typed geometry/model retained")
 		(tags "resistor handsolder")
 		(property "Reference" "R1"
@@ -30626,6 +30626,14 @@
 		(uuid "00b79c4e-80ac-4a3f-9659-49b33a744402")
 	)
 	(segment
+		(start 174.8 104.225)
+		(end 174.8 105.4875)
+		(width 0.35)
+		(layer "F.Cu")
+		(net "/V3V3")
+		(uuid "0492c379-7ea2-4158-9e33-55d540ca6b41")
+	)
+	(segment
 		(start 168.5 42.810354)
 		(end 170.25 44.560354)
 		(width 0.2)
@@ -30658,12 +30666,12 @@
 		(uuid "328789db-1856-4ac1-ab66-07b1e9e8a0e5")
 	)
 	(segment
-		(start 174.375 105.15)
-		(end 174.8 105.575)
+		(start 173.05 105.15)
+		(end 174.4625 105.15)
 		(width 0.35)
 		(layer "F.Cu")
 		(net "/V3V3")
-		(uuid "4bbfdd99-689c-491f-b997-bb9b3186a6bf")
+		(uuid "6704d4f7-acb2-4a6d-bf48-23611a066368")
 	)
 	(segment
 		(start 170.25 44.560354)
@@ -30698,20 +30706,20 @@
 		(uuid "ac6e2fa9-dff0-47fb-82d3-9cb0ec753983")
 	)
 	(segment
-		(start 174.8 104.725)
-		(end 174.375 105.15)
-		(width 0.35)
-		(layer "F.Cu")
-		(net "/V3V3")
-		(uuid "b3ae28c7-0213-45e7-9419-151f0f81be3b")
-	)
-	(segment
 		(start 170.925 45.235354)
 		(end 170.25 45.910354)
 		(width 0.2)
 		(layer "F.Cu")
 		(net "/V3V3")
 		(uuid "b6eab433-f23a-4605-9ada-d7e8797cd0ad")
+	)
+	(segment
+		(start 174.4625 105.15)
+		(end 174.8 105.4875)
+		(width 0.35)
+		(layer "F.Cu")
+		(net "/V3V3")
+		(uuid "bb67320a-f449-4a40-b168-383e0985ae99")
 	)
 	(segment
 		(start 179.05 107.9)
@@ -30744,22 +30752,6 @@
 		(layer "F.Cu")
 		(net "/V3V3")
 		(uuid "f177e2c0-e5d5-4a93-a281-6e96ed887528")
-	)
-	(segment
-		(start 173.05 105.15)
-		(end 174.375 105.15)
-		(width 0.35)
-		(layer "F.Cu")
-		(net "/V3V3")
-		(uuid "f866db4c-fb54-4fff-96f3-5fa71e39d8b0")
-	)
-	(segment
-		(start 174.8 104.225)
-		(end 174.8 104.725)
-		(width 0.35)
-		(layer "F.Cu")
-		(net "/V3V3")
-		(uuid "fb1f9325-9b2d-4bc4-81d0-6bd449fc644d")
 	)
 	(segment
 		(start 167.3 45.910354)

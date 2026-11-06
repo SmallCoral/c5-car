@@ -1,0 +1,48 @@
+{
+  "date": "2026-11-06",
+  "source_urls": {
+    "Lichee_carrier": "https://dl.sipeed.com/fileList/LICHEE/licheepi4a/02_Schematic/SIPEED_TH1520_EXPAND_LPI4A_51602_SCH.pdf",
+    "Lichee_uart": "https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/6_peripheral.html",
+    "MaixCAM2": "https://dl.sipeed.com/fileList/MaixCAM/MaixCAM2/Hardware/board_maixcam2/SCH_MaixCam2_379C.pdf",
+    "AP63300": "https://www.diodes.com/datasheet/download/AP63300_AP63301.pdf",
+    "TPS25947": "https://www.ti.com/lit/ds/symlink/tps25947.pdf",
+    "LV1T125": "https://www.ti.com/lit/ds/symlink/sn74lv1t125.pdf",
+    "BSS138BK": "https://assets.nexperia.com/documents/data-sheet/BSS138BK.pdf",
+    "SRN8040TA": "https://www.bourns.com/docs/product-datasheets/srn8040ta.pdf"
+  },
+  "files": {
+    "LicheePi4A_FAQ原文.md": {
+      "bytes": 9343,
+      "sha256": "e9555b1c9826508b21fefc6563773277d8fbfcb37018428babe486d6362e1ba7"
+    },
+    "LicheePi4A_外设原文.md": {
+      "bytes": 38685,
+      "sha256": "50c0e64c52e752328103e0178339b4ff3d19c10a3546289497c5fca9250a1710"
+    },
+    "LicheePi4A_官方IO图.png": {
+      "bytes": 218020,
+      "sha256": "1e97807a65e108a89d63cddf082517fcce2a3fdbeea8eebbdfc7b7ba22d085d4"
+    },
+    "MaixCAM2_六针接口_用户实物.png": {
+      "bytes": 1660600,
+      "sha256": "7f4f7b2a11866db689d546aa9f257ac9bc5fd7843640984c84e69f1c92de84b8"
+    },
+    "MaixCAM2_官方针序.jpg": {
+      "bytes": 469344,
+      "sha256": "0396f2e54226ddc120e9b80a42234482915853c1137fe374f2dc04f297809a9b"
+    },
+    "README.md": {
+      "bytes": 1510,
+      "sha256": "4143a545cb18627b00857417f9553ae741bfaadc3af9f8b695f8f1245a0eeb5b"
+    },
+    "SCH_MaixCam2_379C.pdf": {
+      "bytes": 1827975,
+      "sha256": "b1a04ea929e1880eec5ecb6ee35064ca4b6cd53cb9785f046efcfbef4961a625"
+    },
+    "SIPEED_TH1520_EXPAND_LPI4A_51602_SCH.pdf": {
+      "bytes": 1940102,
+      "sha256": "27929fdf51266abcb403f43f9721daf65c10efa50b95f64bbfbb455950266139"
+    }
+  },
+  "EdgeMind_read_only": true
+}

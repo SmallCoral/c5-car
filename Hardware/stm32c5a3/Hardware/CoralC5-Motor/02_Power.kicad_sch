@@ -7,7 +7,7 @@
 	(title_block
 		(title "十二伏入口、拨动总开关与五伏降压")
 		(date "2026-11-06")
-		(rev "M2.4")
+		(rev "M2.5")
 		(company "SmallCoral / CoralC5-Motor")
 		(comment 1 "原理图设计；实板电流、温升与线束待验证")
 	)
@@ -3054,7 +3054,7 @@
 		)
 		(uuid "104d5ad2-2b37-5370-9bf9-310f67df94ad")
 	)
-	(text "整车设计预算约八点四安，主保险十二安延时。\n开关只控制栅极，双 MOS 承担负载电流。\n步进电源不低于十伏，启动、短路与温升须验证。"
+	(text "整车预算约十点七安，主保险十五安快断。\n开关只控制栅极，双 MOS 承担负载电流。\n步进不低于十伏，浪涌、分断与温升须验证。"
 		(exclude_from_sim no)
 		(at 17.78 85.09 0)
 		(effects
@@ -5323,7 +5323,7 @@
 				)
 			)
 		)
-		(property "Value" "12A / 75V 延时"
+		(property "Value" "15A/85V FAST"
 			(at 46.99 26.67 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5333,7 +5333,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Motor:Fuse_NANO2_454_6.10x2.69mm"
+		(property "Footprint" "Motor:Fuse_Littelfuse_448_6.10x2.69mm_GenericBody"
 			(at 46.99 31.75 0)
 			(hide yes)
 			(show_name no)
@@ -5344,7 +5344,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.littelfuse.com/assetdocs/fuse-452-and-454-datasheet?assetguid=8c87aa93-80a7-4ea8-8749-a19ba03901c2"
+		(property "Datasheet" "https://www.littelfuse.com/assetdocs/littelfuse_fuse_448_datasheet.pdf?assetguid=12c1a28d-212b-4f45-9d77-c982b871378a"
 			(at 46.99 31.75 0)
 			(hide yes)
 			(show_name no)
@@ -5355,7 +5355,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "448系列15A/85V快断；通用尺寸模型；浪涌和故障分断能力待实测"
 			(at 46.99 31.75 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5364,8 +5364,9 @@
 					(size 1.27 1.27)
 				)
 			)
+			(hide yes)
 		)
-		(property "MPN" "0454012.MR"
+		(property "MPN" "0448015.MR"
 			(at 46.99 31.75 0)
 			(hide yes)
 			(show_name no)

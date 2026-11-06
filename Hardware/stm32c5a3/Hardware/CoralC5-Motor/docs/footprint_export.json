@@ -1,9 +1,16 @@
 {
   "date": "2026-11-06",
   "kicad_version": "10.0.6",
-  "command": "kicad-cli fp export svg --layers F.Cu,F.SilkS,F.Fab Motor.pretty",
+  "command": "kicad-cli fp export svg --layers F.Cu,F.SilkS,F.Fab --output docs/footprint-previews Motor.pretty",
   "exit_code": 0,
-  "library_footprints": 42,
-  "exported_svg": 42,
-  "pcb_accessed": false
+  "library_footprints": 48,
+  "exported_svg": 48,
+  "pcb_accessed": false,
+  "new_resource_review": {
+    "TPS25947": "RPW0010A, datasheet p5 pin map and p73 land pattern; 14 pad primitives for 10 electrical pins; corner L shapes are same-number unions",
+    "TPS25947_generic_model": "2x2x1mm envelope only",
+    "SRN8040TA": "KiCad package drawing plus 8x8x4.5mm declared generic body",
+    "F1": "448 and 454 share nominal 6.10x2.69 body; 448 generic footprint named separately; not an exact manufacturer model",
+    "schematic_symbol_bottom_ground": "pin 8 moved within rectangular body; electrical number and net unchanged"
+  }
 }

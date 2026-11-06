@@ -1,16 +1,27 @@
 {
   "date": "2026-11-06",
   "kicad_version": "10.0.6",
-  "source_commit": "4cf36a2ce5a0d5bb6b469a9a82320fcfbcc38c1f",
-  "checks": 1571,
+  "source_commit": "31b3e7e7154e511c48ea62b1ed1c7e3de3b91dca",
+  "checks": 1872,
   "failed": [],
   "native_erc_errors": 0,
   "native_erc_warnings": 0,
-  "physical_references": 116,
-  "model_bound_references": 113,
+  "physical_references": 164,
+  "model_bound_references": 161,
   "mechanical_holes": 2,
   "missing_exact_models": [
-    "J1"
+    "F1",
+    "F2",
+    "J1",
+    "L2",
+    "L3",
+    "SW1",
+    "SW2",
+    "SW3",
+    "SW4",
+    "SW5",
+    "U10",
+    "U9"
   ],
   "resources": [
     {
@@ -342,6 +353,118 @@
       "mechanical_hole": false
     },
     {
+      "reference": "C63",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+      ],
+      "mechanical_hole": false
+    },
+    {
+      "reference": "C64",
+      "footprint": "Motor:Capacitor_SMD__C_1206_3216Metric",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_1206_3216Metric__C_1206_3216Metric.step"
+      ],
+      "mechanical_hole": false
+    },
+    {
+      "reference": "C65",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+      ],
+      "mechanical_hole": false
+    },
+    {
+      "reference": "C66",
+      "footprint": "Motor:Capacitor_SMD__C_1206_3216Metric",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_1206_3216Metric__C_1206_3216Metric.step"
+      ],
+      "mechanical_hole": false
+    },
+    {
+      "reference": "C67",
+      "footprint": "Motor:Capacitor_SMD__C_1206_3216Metric",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_1206_3216Metric__C_1206_3216Metric.step"
+      ],
+      "mechanical_hole": false
+    },
+    {
+      "reference": "C68",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+      ],
+      "mechanical_hole": false
+    },
+    {
+      "reference": "C69",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+      ],
+      "mechanical_hole": false
+    },
+    {
+      "reference": "C70",
+      "footprint": "Motor:Capacitor_SMD__C_0805_2012Metric",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0805_2012Metric__C_0805_2012Metric.step"
+      ],
+      "mechanical_hole": false
+    },
+    {
+      "reference": "C71",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+      ],
+      "mechanical_hole": false
+    },
+    {
+      "reference": "C72",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+      ],
+      "mechanical_hole": false
+    },
+    {
+      "reference": "C73",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+      ],
+      "mechanical_hole": false
+    },
+    {
+      "reference": "C74",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+      ],
+      "mechanical_hole": false
+    },
+    {
+      "reference": "C75",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+      ],
+      "mechanical_hole": false
+    },
+    {
+      "reference": "C76",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+      ],
+      "mechanical_hole": false
+    },
+    {
       "reference": "D1",
       "footprint": "Motor:Diode_SMD__D_SOD-123",
       "models": [
@@ -375,7 +498,7 @@
     },
     {
       "reference": "F1",
-      "footprint": "Motor:Fuse_NANO2_454_6.10x2.69mm",
+      "footprint": "Motor:Fuse_Littelfuse_448_6.10x2.69mm_GenericBody",
       "models": [
         "${KIPRJMOD}/Models/Fuse_454_generic.wrl"
       ],
@@ -457,17 +580,17 @@
     },
     {
       "reference": "J20",
-      "footprint": "Motor:Connector_JST__JST_XH_B10B-XH-A_1x10_P2.50mm_Vertical",
+      "footprint": "Motor:Connector_JST__JST_XH_B8B-XH-A_1x08_P2.50mm_Vertical",
       "models": [
-        "${KIPRJMOD}/Models/Connector_JST__JST_XH_B10B-XH-A_1x10_P2.50mm_Vertical.step"
+        "${KIPRJMOD}/Models/Connector_JST__JST_XH_B8B-XH-A_1x08_P2.50mm_Vertical.step"
       ],
       "mechanical_hole": false
     },
     {
       "reference": "J21",
-      "footprint": "Motor:Connector_JST__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical",
+      "footprint": "Motor:Connector_JST__JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical",
       "models": [
-        "${KIPRJMOD}/Models/Connector_JST__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical.step"
+        "${KIPRJMOD}/Models/Connector_JST__JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical.step"
       ],
       "mechanical_hole": false
     },
@@ -492,6 +615,30 @@
       "footprint": "Motor:TerminalBlock_Phoenix__TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal",
       "models": [
         "${KIPRJMOD}/Models/TerminalBlock_Phoenix__TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal__TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal.step"
+      ],
+      "mechanical_hole": false
+    },
+    {
+      "reference": "J25",
+      "footprint": "Motor:TerminalBlock_Phoenix__TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal",
+      "models": [
+        "${KIPRJMOD}/Models/TerminalBlock_Phoenix__TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal__TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal.step"
+      ],
+      "mechanical_hole": false
+    },
+    {
+      "reference": "J26",
+      "footprint": "Motor:Connector_PinHeader_2.54mm__PinHeader_1x02_P2.54mm_Vertical",
+      "models": [
+        "${KIPRJMOD}/Models/Connector_PinHeader_2.54mm__PinHeader_1x02_P2.54mm_Vertical__PinHeader_1x02_P2.54mm_Vertical.step"
+      ],
+      "mechanical_hole": false
+    },
+    {
+      "reference": "J27",
+      "footprint": "Motor:Connector_PinHeader_2.54mm__PinHeader_1x02_P2.54mm_Vertical",
+      "models": [
+        "${KIPRJMOD}/Models/Connector_PinHeader_2.54mm__PinHeader_1x02_P2.54mm_Vertical__PinHeader_1x02_P2.54mm_Vertical.step"
       ],
       "mechanical_hole": false
     },
@@ -529,9 +676,17 @@
     },
     {
       "reference": "L2",
-      "footprint": "Motor:Inductor_SMD__L_Bourns_SRN6045TA",
+      "footprint": "Motor:L_Bourns_SRN8040TA_GenericBody",
       "models": [
-        "${KIPRJMOD}/Models/Inductor_SMD__L_Bourns_SRN6045TA__L_Bourns_SRN6045TA.step"
+        "${KIPRJMOD}/Models/L_Bourns_SRN8040TA_GenericBody.wrl"
+      ],
+      "mechanical_hole": false
+    },
+    {
+      "reference": "L3",
+      "footprint": "Motor:L_Bourns_SRN8040TA_GenericBody",
+      "models": [
+        "${KIPRJMOD}/Models/L_Bourns_SRN8040TA_GenericBody.wrl"
       ],
       "mechanical_hole": false
     },
@@ -548,6 +703,22 @@
       "footprint": "Motor:Package_TO_SOT_SMD__TO-252-2",
       "models": [
         "${KIPRJMOD}/Models/Package_TO_SOT_SMD__TO-252-2.step"
+      ],
+      "mechanical_hole": false
+    },
+    {
+      "reference": "Q3",
+      "footprint": "Motor:Package_TO_SOT_SMD__SOT-23",
+      "models": [
+        "${KIPRJMOD}/Models/Package_TO_SOT_SMD__SOT-23__SOT-23.step"
+      ],
+      "mechanical_hole": false
+    },
+    {
+      "reference": "Q4",
+      "footprint": "Motor:Package_TO_SOT_SMD__SOT-23",
+      "models": [
+        "${KIPRJMOD}/Models/Package_TO_SOT_SMD__SOT-23__SOT-23.step"
       ],
       "mechanical_hole": false
     },
@@ -824,6 +995,14 @@
       "mechanical_hole": false
     },
     {
+      "reference": "R59",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ],
+      "mechanical_hole": false
+    },
+    {
       "reference": "R6",
       "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
       "models": [
@@ -832,7 +1011,175 @@
       "mechanical_hole": false
     },
     {
+      "reference": "R60",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ],
+      "mechanical_hole": false
+    },
+    {
+      "reference": "R61",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ],
+      "mechanical_hole": false
+    },
+    {
+      "reference": "R62",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ],
+      "mechanical_hole": false
+    },
+    {
+      "reference": "R63",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ],
+      "mechanical_hole": false
+    },
+    {
+      "reference": "R64",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ],
+      "mechanical_hole": false
+    },
+    {
+      "reference": "R65",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ],
+      "mechanical_hole": false
+    },
+    {
+      "reference": "R66",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ],
+      "mechanical_hole": false
+    },
+    {
+      "reference": "R67",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ],
+      "mechanical_hole": false
+    },
+    {
+      "reference": "R68",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ],
+      "mechanical_hole": false
+    },
+    {
+      "reference": "R69",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ],
+      "mechanical_hole": false
+    },
+    {
       "reference": "R7",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ],
+      "mechanical_hole": false
+    },
+    {
+      "reference": "R70",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ],
+      "mechanical_hole": false
+    },
+    {
+      "reference": "R71",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ],
+      "mechanical_hole": false
+    },
+    {
+      "reference": "R72",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ],
+      "mechanical_hole": false
+    },
+    {
+      "reference": "R73",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ],
+      "mechanical_hole": false
+    },
+    {
+      "reference": "R74",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ],
+      "mechanical_hole": false
+    },
+    {
+      "reference": "R75",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ],
+      "mechanical_hole": false
+    },
+    {
+      "reference": "R76",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ],
+      "mechanical_hole": false
+    },
+    {
+      "reference": "R77",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ],
+      "mechanical_hole": false
+    },
+    {
+      "reference": "R78",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ],
+      "mechanical_hole": false
+    },
+    {
+      "reference": "R79",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ],
+      "mechanical_hole": false
+    },
+    {
+      "reference": "R80",
       "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
       "models": [
         "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
@@ -849,33 +1196,33 @@
     },
     {
       "reference": "SW2",
-      "footprint": "Motor:Button_Switch_THT__SW_PUSH_6mm_H4.3mm",
+      "footprint": "Motor:SW_Push_6x6x4.3mm_SMD_4Pad_Generic",
       "models": [
-        "${KIPRJMOD}/Models/Button_Switch_THT__SW_PUSH_6mm_H4.3mm__SW_PUSH_6mm_H4.3mm.step"
+        "${KIPRJMOD}/Models/SW_Push_6x6x4.3mm_SMD_Generic.step"
       ],
       "mechanical_hole": false
     },
     {
       "reference": "SW3",
-      "footprint": "Motor:Button_Switch_THT__SW_PUSH_6mm_H4.3mm",
+      "footprint": "Motor:SW_Push_6x6x4.3mm_SMD_4Pad_Generic",
       "models": [
-        "${KIPRJMOD}/Models/Button_Switch_THT__SW_PUSH_6mm_H4.3mm__SW_PUSH_6mm_H4.3mm.step"
+        "${KIPRJMOD}/Models/SW_Push_6x6x4.3mm_SMD_Generic.step"
       ],
       "mechanical_hole": false
     },
     {
       "reference": "SW4",
-      "footprint": "Motor:Button_Switch_THT__SW_PUSH_6mm_H4.3mm",
+      "footprint": "Motor:SW_Push_6x6x4.3mm_SMD_4Pad_Generic",
       "models": [
-        "${KIPRJMOD}/Models/Button_Switch_THT__SW_PUSH_6mm_H4.3mm__SW_PUSH_6mm_H4.3mm.step"
+        "${KIPRJMOD}/Models/SW_Push_6x6x4.3mm_SMD_Generic.step"
       ],
       "mechanical_hole": false
     },
     {
       "reference": "SW5",
-      "footprint": "Motor:Button_Switch_THT__SW_PUSH_6mm_H4.3mm",
+      "footprint": "Motor:SW_Push_6x6x4.3mm_SMD_4Pad_Generic",
       "models": [
-        "${KIPRJMOD}/Models/Button_Switch_THT__SW_PUSH_6mm_H4.3mm__SW_PUSH_6mm_H4.3mm.step"
+        "${KIPRJMOD}/Models/SW_Push_6x6x4.3mm_SMD_Generic.step"
       ],
       "mechanical_hole": false
     },
@@ -884,6 +1231,38 @@
       "footprint": "Motor:Package_TO_SOT_SMD__TSOT-23-6",
       "models": [
         "${KIPRJMOD}/Models/Package_TO_SOT_SMD__TSOT-23-6__TSOT-23-6.step"
+      ],
+      "mechanical_hole": false
+    },
+    {
+      "reference": "U10",
+      "footprint": "Motor:TPS25947_RPW0010A_VQFN-HR_2x2mm",
+      "models": [
+        "${KIPRJMOD}/Models/TPS25947_GenericBody.wrl"
+      ],
+      "mechanical_hole": false
+    },
+    {
+      "reference": "U11",
+      "footprint": "Motor:Package_TO_SOT_SMD__SOT-23-5",
+      "models": [
+        "${KIPRJMOD}/Models/Package_TO_SOT_SMD__SOT-23-5__SOT-23-5.step"
+      ],
+      "mechanical_hole": false
+    },
+    {
+      "reference": "U12",
+      "footprint": "Motor:Package_TO_SOT_SMD__SOT-23-5",
+      "models": [
+        "${KIPRJMOD}/Models/Package_TO_SOT_SMD__SOT-23-5__SOT-23-5.step"
+      ],
+      "mechanical_hole": false
+    },
+    {
+      "reference": "U13",
+      "footprint": "Motor:Package_SO__SSOP-8_2.95x2.8mm_P0.65mm",
+      "models": [
+        "${KIPRJMOD}/Models/Package_SO__SSOP-8_2.95x2.8mm_P0.65mm__SSOP-8_2.95x2.8mm_P0.65mm.step"
       ],
       "mechanical_hole": false
     },
@@ -934,18 +1313,35 @@
         "${KIPRJMOD}/Models/Package_TO_SOT_SMD__SOT-23-5__SOT-23-5.step"
       ],
       "mechanical_hole": false
+    },
+    {
+      "reference": "U8",
+      "footprint": "Motor:Package_TO_SOT_SMD__TSOT-23-6",
+      "models": [
+        "${KIPRJMOD}/Models/Package_TO_SOT_SMD__TSOT-23-6__TSOT-23-6.step"
+      ],
+      "mechanical_hole": false
+    },
+    {
+      "reference": "U9",
+      "footprint": "Motor:TPS25947_RPW0010A_VQFN-HR_2x2mm",
+      "models": [
+        "${KIPRJMOD}/Models/TPS25947_GenericBody.wrl"
+      ],
+      "mechanical_hole": false
     }
   ],
   "artifacts_sha256": {
-    "02_Power.kicad_sch": "926b93f999c93d9348e0a87cd272aebea8ea49c10504758bee2b8161bc30d19e",
-    "03_Core_Interface.kicad_sch": "0401706698cf7175f7be05e248da270d1c04980ff8d8df889dc1049c97dfeed0",
-    "04_Left_Motor.kicad_sch": "60fc822f453ed916ef35b7c6fe33ab7227a5f66d594bb757bce41a5ec71ae79a",
-    "05_Right_Motor.kicad_sch": "6eb0fa22af4bd8654a458879ebc59abc1171967d7e913c1d911561a8e76df5e3",
-    "06_Module_Power.kicad_sch": "d6d4278ca6047bc9f7f4fb451bf9748d2ddfb382f3f887022337c3b56764d4ef",
-    "07_TFT_Buttons.kicad_sch": "390b7cbe01217a04a12eb85645ae8cf63d5d93358e6b4473b18430677c48fd87",
-    "08_Grayscale_Cameras.kicad_sch": "18231d2397e6b848f4ce601f7f9d92a374feb54d426c0822b97cf883d511f496",
-    "09_Bluetooth_Stepper.kicad_sch": "d89b9ae0f71b5d63455a57d39a047575956c7977a3ba1a32083c123d9431e79b",
-    "CoralC5-Motor.kicad_sch": "544ae4c5da027d46418b84acdf9f757a0a958e7cd2d18d1ce69cf8766cdbbec0"
+    "02_Power.kicad_sch": "2f6eb28aa872fb9099f96de937fb9346d2e2451c24e21d1be1dab44ee5eda2f2",
+    "03_Core_Interface.kicad_sch": "4505dd9f902d870eb7e5652336d94a01a7713d829d5e3d711dd84ca3e309ef14",
+    "04_Left_Motor.kicad_sch": "b19fc4e2c2458ac1b7fdbc981db31f13bd8a4b4730cd95da42e1fb5fa3681054",
+    "05_Right_Motor.kicad_sch": "78bcdcaf4b9141c2ecfd1204446ec6b6cbc1881edac40dbf00b897ee7dcc523d",
+    "06_Module_Power.kicad_sch": "f8d1e771a6080d69e9dd29a1b1c009d5495108fadac284502c17cf18eebc75cc",
+    "07_TFT_Buttons.kicad_sch": "08f8e0e07d69890413366379d82aba19d595b81eac93de796beff1be3e6827c3",
+    "08_Grayscale_Cameras.kicad_sch": "522c9795324491b4fd4eefab1c5023fe57dfd194379be44258e75a3a5688e7ff",
+    "09_Bluetooth_Stepper.kicad_sch": "cd8e1fbd3f7a79407481d585d09be94074398fe127598246d86a3dd3dbbdb099",
+    "10_Lichee_Power.kicad_sch": "ea0a0d8d255aa951e235670f57ea7370fdc238aeda174fe8d7ff88126dd6fdcc",
+    "CoralC5-Motor.kicad_sch": "2b7616a3508ee798a7cbca1ad70edd47673a01290a76985d10665fc1129666e1"
   },
   "results": [
     {
@@ -1983,7 +2379,7 @@
       "pass": true
     },
     {
-      "name": "nine sheets",
+      "name": "authorized sheet count",
       "detail": null,
       "pass": true
     },
@@ -2229,6 +2625,36 @@
     },
     {
       "name": "09_Bluetooth_Stepper.kicad_sch 100mil Chinese note",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "10_Lichee_Power.kicad_sch paper",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "10_Lichee_Power.kicad_sch 100mil Chinese note",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "10_Lichee_Power.kicad_sch 100mil Chinese note",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "10_Lichee_Power.kicad_sch 100mil Chinese note",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "10_Lichee_Power.kicad_sch 100mil Chinese note",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "10_Lichee_Power.kicad_sch 100mil Chinese note",
       "detail": null,
       "pass": true
     },
@@ -2673,7 +3099,7 @@
       "pass": true
     },
     {
-      "name": "44 unique GPIO roles",
+      "name": "42 unique GPIO roles",
       "detail": null,
       "pass": true
     },
@@ -4318,38 +4744,38 @@
       "pass": true
     },
     {
-      "name": "MAIX_TX contact contract",
+      "name": "LPI_TX contact contract",
       "detail": null,
       "pass": true
     },
     {
-      "name": "MAIX_TX datasheet AF",
+      "name": "LPI_TX datasheet AF",
       "detail": null,
       "pass": true
     },
     {
-      "name": "MAIX_TX reaches endpoint",
+      "name": "LPI_TX reaches endpoint",
       "detail": [
         "J14:B26",
-        "J18:3"
+        "U12:2"
       ],
       "pass": true
     },
     {
-      "name": "MAIX_RX contact contract",
+      "name": "LPI_RX contact contract",
       "detail": null,
       "pass": true
     },
     {
-      "name": "MAIX_RX datasheet AF",
+      "name": "LPI_RX datasheet AF",
       "detail": null,
       "pass": true
     },
     {
-      "name": "MAIX_RX reaches endpoint",
+      "name": "LPI_RX reaches endpoint",
       "detail": [
         "J14:B27",
-        "J18:4"
+        "U11:4"
       ],
       "pass": true
     },
@@ -4367,7 +4793,7 @@
       "name": "VIDEO_TX reaches endpoint",
       "detail": [
         "J14:B34",
-        "J19:3"
+        "U13:2"
       ],
       "pass": true
     },
@@ -4385,7 +4811,7 @@
       "name": "VIDEO_RX reaches endpoint",
       "detail": [
         "J14:B35",
-        "J19:4"
+        "U13:3"
       ],
       "pass": true
     },
@@ -4527,7 +4953,7 @@
       "name": "GRAY_CH1 reaches endpoint",
       "detail": [
         "J14:B15",
-        "J20:3"
+        "J20:1"
       ],
       "pass": true
     },
@@ -4540,7 +4966,7 @@
       "name": "GRAY_CH2 reaches endpoint",
       "detail": [
         "J14:B16",
-        "J20:4"
+        "J20:2"
       ],
       "pass": true
     },
@@ -4553,7 +4979,7 @@
       "name": "GRAY_CH3 reaches endpoint",
       "detail": [
         "J14:B17",
-        "J20:5"
+        "J20:3"
       ],
       "pass": true
     },
@@ -4566,7 +4992,7 @@
       "name": "GRAY_CH4 reaches endpoint",
       "detail": [
         "J14:B18",
-        "J20:6"
+        "J20:4"
       ],
       "pass": true
     },
@@ -4579,7 +5005,7 @@
       "name": "GRAY_CH5 reaches endpoint",
       "detail": [
         "J14:B19",
-        "J20:7"
+        "J20:5"
       ],
       "pass": true
     },
@@ -4592,7 +5018,7 @@
       "name": "GRAY_CH6 reaches endpoint",
       "detail": [
         "J14:B20",
-        "J20:8"
+        "J20:6"
       ],
       "pass": true
     },
@@ -4605,7 +5031,7 @@
       "name": "GRAY_CH7 reaches endpoint",
       "detail": [
         "J14:B28",
-        "J20:9"
+        "J20:7"
       ],
       "pass": true
     },
@@ -4618,33 +5044,7 @@
       "name": "GRAY_CH8 reaches endpoint",
       "detail": [
         "J14:B29",
-        "J20:10"
-      ],
-      "pass": true
-    },
-    {
-      "name": "GRAY_CLK contact contract",
-      "detail": null,
-      "pass": true
-    },
-    {
-      "name": "GRAY_CLK reaches endpoint",
-      "detail": [
-        "J14:B30",
-        "J21:3"
-      ],
-      "pass": true
-    },
-    {
-      "name": "GRAY_DAT contact contract",
-      "detail": null,
-      "pass": true
-    },
-    {
-      "name": "GRAY_DAT reaches endpoint",
-      "detail": [
-        "J14:B31",
-        "J21:4"
+        "J20:8"
       ],
       "pass": true
     },
@@ -4765,46 +5165,6 @@
       "pass": true
     },
     {
-      "name": "J18:1 expected net",
-      "detail": "V5_EXT",
-      "pass": true
-    },
-    {
-      "name": "J18:2 expected net",
-      "detail": "GND",
-      "pass": true
-    },
-    {
-      "name": "J18:3 expected net",
-      "detail": "MAIX_TX",
-      "pass": true
-    },
-    {
-      "name": "J18:4 expected net",
-      "detail": "MAIX_RX",
-      "pass": true
-    },
-    {
-      "name": "J19:1 expected net",
-      "detail": "V5_EXT",
-      "pass": true
-    },
-    {
-      "name": "J19:2 expected net",
-      "detail": "GND",
-      "pass": true
-    },
-    {
-      "name": "J19:3 expected net",
-      "detail": "VIDEO_TX",
-      "pass": true
-    },
-    {
-      "name": "J19:4 expected net",
-      "detail": "VIDEO_RX",
-      "pass": true
-    },
-    {
       "name": "BT_TX exact membership",
       "detail": {
         "missing": [],
@@ -4821,7 +5181,7 @@
       "pass": true
     },
     {
-      "name": "MAIX_TX exact membership",
+      "name": "LPI_TX exact membership",
       "detail": {
         "missing": [],
         "unexpected": []
@@ -4829,7 +5189,7 @@
       "pass": true
     },
     {
-      "name": "MAIX_RX exact membership",
+      "name": "LPI_RX exact membership",
       "detail": {
         "missing": [],
         "unexpected": []
@@ -4981,22 +5341,6 @@
       "pass": true
     },
     {
-      "name": "GRAY_CLK exact membership",
-      "detail": {
-        "missing": [],
-        "unexpected": []
-      },
-      "pass": true
-    },
-    {
-      "name": "GRAY_DAT exact membership",
-      "detail": {
-        "missing": [],
-        "unexpected": []
-      },
-      "pass": true
-    },
-    {
       "name": "STEP_PUL exact membership",
       "detail": {
         "missing": [],
@@ -5139,17 +5483,9 @@
       "pass": true
     },
     {
-      "name": "J20:2 ground",
+      "name": "J21:1 ground",
       "detail": [
-        "J20:2",
-        "J1:2"
-      ],
-      "pass": true
-    },
-    {
-      "name": "J21:2 ground",
-      "detail": [
-        "J21:2",
+        "J21:1",
         "J1:2"
       ],
       "pass": true
@@ -5213,6 +5549,121 @@
       "pass": true
     },
     {
+      "name": "A43 remains single unused finger",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "B22 remains single unused finger",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "B41 remains single unused finger",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "A15 remains single unused finger",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "A22 remains single unused finger",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "A10 remains single unused finger",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "A23 remains single unused finger",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "B46 remains single unused finger",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "A18 remains single unused finger",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "A20 remains single unused finger",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "A36 remains single unused finger",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "B39 remains single unused finger",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "A14 remains single unused finger",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "B42 remains single unused finger",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "A25 remains single unused finger",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "B36 remains single unused finger",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "A24 remains single unused finger",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "B37 remains single unused finger",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "B23 remains single unused finger",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "A38 remains single unused finger",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "A13 remains single unused finger",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "A6 remains single unused finger",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "A42 remains single unused finger",
+      "detail": null,
+      "pass": true
+    },
+    {
       "name": "A12 remains single unused finger",
       "detail": null,
       "pass": true
@@ -5223,122 +5674,7 @@
       "pass": true
     },
     {
-      "name": "A22 remains single unused finger",
-      "detail": null,
-      "pass": true
-    },
-    {
-      "name": "A25 remains single unused finger",
-      "detail": null,
-      "pass": true
-    },
-    {
-      "name": "B41 remains single unused finger",
-      "detail": null,
-      "pass": true
-    },
-    {
-      "name": "A6 remains single unused finger",
-      "detail": null,
-      "pass": true
-    },
-    {
-      "name": "A13 remains single unused finger",
-      "detail": null,
-      "pass": true
-    },
-    {
-      "name": "A19 remains single unused finger",
-      "detail": null,
-      "pass": true
-    },
-    {
-      "name": "A41 remains single unused finger",
-      "detail": null,
-      "pass": true
-    },
-    {
-      "name": "A17 remains single unused finger",
-      "detail": null,
-      "pass": true
-    },
-    {
-      "name": "A43 remains single unused finger",
-      "detail": null,
-      "pass": true
-    },
-    {
-      "name": "B21 remains single unused finger",
-      "detail": null,
-      "pass": true
-    },
-    {
-      "name": "A24 remains single unused finger",
-      "detail": null,
-      "pass": true
-    },
-    {
-      "name": "A10 remains single unused finger",
-      "detail": null,
-      "pass": true
-    },
-    {
-      "name": "B42 remains single unused finger",
-      "detail": null,
-      "pass": true
-    },
-    {
-      "name": "B25 remains single unused finger",
-      "detail": null,
-      "pass": true
-    },
-    {
-      "name": "B23 remains single unused finger",
-      "detail": null,
-      "pass": true
-    },
-    {
-      "name": "B37 remains single unused finger",
-      "detail": null,
-      "pass": true
-    },
-    {
-      "name": "A31 remains single unused finger",
-      "detail": null,
-      "pass": true
-    },
-    {
-      "name": "A20 remains single unused finger",
-      "detail": null,
-      "pass": true
-    },
-    {
       "name": "B24 remains single unused finger",
-      "detail": null,
-      "pass": true
-    },
-    {
-      "name": "B36 remains single unused finger",
-      "detail": null,
-      "pass": true
-    },
-    {
-      "name": "A18 remains single unused finger",
-      "detail": null,
-      "pass": true
-    },
-    {
-      "name": "B44 remains single unused finger",
-      "detail": null,
-      "pass": true
-    },
-    {
-      "name": "A16 remains single unused finger",
-      "detail": null,
-      "pass": true
-    },
-    {
-      "name": "A38 remains single unused finger",
       "detail": null,
       "pass": true
     },
@@ -5348,17 +5684,7 @@
       "pass": true
     },
     {
-      "name": "B22 remains single unused finger",
-      "detail": null,
-      "pass": true
-    },
-    {
-      "name": "A36 remains single unused finger",
-      "detail": null,
-      "pass": true
-    },
-    {
-      "name": "A40 remains single unused finger",
+      "name": "A28 remains single unused finger",
       "detail": null,
       "pass": true
     },
@@ -5368,12 +5694,22 @@
       "pass": true
     },
     {
-      "name": "A42 remains single unused finger",
+      "name": "B31 remains single unused finger",
       "detail": null,
       "pass": true
     },
     {
-      "name": "A21 remains single unused finger",
+      "name": "A40 remains single unused finger",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "B30 remains single unused finger",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "B21 remains single unused finger",
       "detail": null,
       "pass": true
     },
@@ -5383,37 +5719,12 @@
       "pass": true
     },
     {
-      "name": "A15 remains single unused finger",
+      "name": "A31 remains single unused finger",
       "detail": null,
       "pass": true
     },
     {
-      "name": "A23 remains single unused finger",
-      "detail": null,
-      "pass": true
-    },
-    {
-      "name": "A14 remains single unused finger",
-      "detail": null,
-      "pass": true
-    },
-    {
-      "name": "A28 remains single unused finger",
-      "detail": null,
-      "pass": true
-    },
-    {
-      "name": "B39 remains single unused finger",
-      "detail": null,
-      "pass": true
-    },
-    {
-      "name": "B46 remains single unused finger",
-      "detail": null,
-      "pass": true
-    },
-    {
-      "name": "A26 remains single unused finger",
+      "name": "B44 remains single unused finger",
       "detail": null,
       "pass": true
     },
@@ -5423,12 +5734,47 @@
       "pass": true
     },
     {
-      "name": "A44 remains single unused finger",
+      "name": "B25 remains single unused finger",
       "detail": null,
       "pass": true
     },
     {
       "name": "B5 remains single unused finger",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "A41 remains single unused finger",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "A21 remains single unused finger",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "A17 remains single unused finger",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "A19 remains single unused finger",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "A44 remains single unused finger",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "A16 remains single unused finger",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "A26 remains single unused finger",
       "detail": null,
       "pass": true
     },
@@ -6622,6 +6968,412 @@
       "pass": true
     },
     {
+      "name": "C63 local footprint",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C63 footprint exists",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C63 symbol/pad set",
+      "detail": {
+        "pins": [
+          "1",
+          "2"
+        ],
+        "pads": [
+          "1",
+          "2"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "C63 portable model",
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step",
+      "pass": true
+    },
+    {
+      "name": "C64 local footprint",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C64 footprint exists",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C64 symbol/pad set",
+      "detail": {
+        "pins": [
+          "1",
+          "2"
+        ],
+        "pads": [
+          "1",
+          "2"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "C64 portable model",
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_1206_3216Metric__C_1206_3216Metric.step",
+      "pass": true
+    },
+    {
+      "name": "C65 local footprint",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C65 footprint exists",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C65 symbol/pad set",
+      "detail": {
+        "pins": [
+          "1",
+          "2"
+        ],
+        "pads": [
+          "1",
+          "2"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "C65 portable model",
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step",
+      "pass": true
+    },
+    {
+      "name": "C66 local footprint",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C66 footprint exists",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C66 symbol/pad set",
+      "detail": {
+        "pins": [
+          "1",
+          "2"
+        ],
+        "pads": [
+          "1",
+          "2"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "C66 portable model",
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_1206_3216Metric__C_1206_3216Metric.step",
+      "pass": true
+    },
+    {
+      "name": "C67 local footprint",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C67 footprint exists",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C67 symbol/pad set",
+      "detail": {
+        "pins": [
+          "1",
+          "2"
+        ],
+        "pads": [
+          "1",
+          "2"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "C67 portable model",
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_1206_3216Metric__C_1206_3216Metric.step",
+      "pass": true
+    },
+    {
+      "name": "C68 local footprint",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C68 footprint exists",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C68 symbol/pad set",
+      "detail": {
+        "pins": [
+          "1",
+          "2"
+        ],
+        "pads": [
+          "1",
+          "2"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "C68 portable model",
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step",
+      "pass": true
+    },
+    {
+      "name": "C69 local footprint",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C69 footprint exists",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C69 symbol/pad set",
+      "detail": {
+        "pins": [
+          "1",
+          "2"
+        ],
+        "pads": [
+          "1",
+          "2"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "C69 portable model",
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step",
+      "pass": true
+    },
+    {
+      "name": "C70 local footprint",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C70 footprint exists",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C70 symbol/pad set",
+      "detail": {
+        "pins": [
+          "1",
+          "2"
+        ],
+        "pads": [
+          "1",
+          "2"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "C70 portable model",
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0805_2012Metric__C_0805_2012Metric.step",
+      "pass": true
+    },
+    {
+      "name": "C71 local footprint",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C71 footprint exists",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C71 symbol/pad set",
+      "detail": {
+        "pins": [
+          "1",
+          "2"
+        ],
+        "pads": [
+          "1",
+          "2"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "C71 portable model",
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step",
+      "pass": true
+    },
+    {
+      "name": "C72 local footprint",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C72 footprint exists",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C72 symbol/pad set",
+      "detail": {
+        "pins": [
+          "1",
+          "2"
+        ],
+        "pads": [
+          "1",
+          "2"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "C72 portable model",
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step",
+      "pass": true
+    },
+    {
+      "name": "C73 local footprint",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C73 footprint exists",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C73 symbol/pad set",
+      "detail": {
+        "pins": [
+          "1",
+          "2"
+        ],
+        "pads": [
+          "1",
+          "2"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "C73 portable model",
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step",
+      "pass": true
+    },
+    {
+      "name": "C74 local footprint",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C74 footprint exists",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C74 symbol/pad set",
+      "detail": {
+        "pins": [
+          "1",
+          "2"
+        ],
+        "pads": [
+          "1",
+          "2"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "C74 portable model",
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step",
+      "pass": true
+    },
+    {
+      "name": "C75 local footprint",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C75 footprint exists",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C75 symbol/pad set",
+      "detail": {
+        "pins": [
+          "1",
+          "2"
+        ],
+        "pads": [
+          "1",
+          "2"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "C75 portable model",
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step",
+      "pass": true
+    },
+    {
+      "name": "C76 local footprint",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C76 footprint exists",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C76 symbol/pad set",
+      "detail": {
+        "pins": [
+          "1",
+          "2"
+        ],
+        "pads": [
+          "1",
+          "2"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "C76 portable model",
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step",
+      "pass": true
+    },
+    {
       "name": "D1 local footprint",
       "detail": null,
       "pass": true
@@ -7264,34 +8016,30 @@
       "detail": {
         "pins": [
           "1",
-          "10",
           "2",
           "3",
           "4",
           "5",
           "6",
           "7",
-          "8",
-          "9"
+          "8"
         ],
         "pads": [
           "1",
-          "10",
           "2",
           "3",
           "4",
           "5",
           "6",
           "7",
-          "8",
-          "9"
+          "8"
         ]
       },
       "pass": true
     },
     {
       "name": "J20 portable model",
-      "detail": "${KIPRJMOD}/Models/Connector_JST__JST_XH_B10B-XH-A_1x10_P2.50mm_Vertical.step",
+      "detail": "${KIPRJMOD}/Models/Connector_JST__JST_XH_B8B-XH-A_1x08_P2.50mm_Vertical.step",
       "pass": true
     },
     {
@@ -7309,22 +8057,18 @@
       "detail": {
         "pins": [
           "1",
-          "2",
-          "3",
-          "4"
+          "2"
         ],
         "pads": [
           "1",
-          "2",
-          "3",
-          "4"
+          "2"
         ]
       },
       "pass": true
     },
     {
       "name": "J21 portable model",
-      "detail": "${KIPRJMOD}/Models/Connector_JST__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical.step",
+      "detail": "${KIPRJMOD}/Models/Connector_JST__JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical.step",
       "pass": true
     },
     {
@@ -7432,6 +8176,93 @@
     {
       "name": "J24 portable model",
       "detail": "${KIPRJMOD}/Models/TerminalBlock_Phoenix__TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal__TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal.step",
+      "pass": true
+    },
+    {
+      "name": "J25 local footprint",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J25 footprint exists",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J25 symbol/pad set",
+      "detail": {
+        "pins": [
+          "1",
+          "2"
+        ],
+        "pads": [
+          "1",
+          "2"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "J25 portable model",
+      "detail": "${KIPRJMOD}/Models/TerminalBlock_Phoenix__TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal__TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal.step",
+      "pass": true
+    },
+    {
+      "name": "J26 local footprint",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J26 footprint exists",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J26 symbol/pad set",
+      "detail": {
+        "pins": [
+          "1",
+          "2"
+        ],
+        "pads": [
+          "1",
+          "2"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "J26 portable model",
+      "detail": "${KIPRJMOD}/Models/Connector_PinHeader_2.54mm__PinHeader_1x02_P2.54mm_Vertical__PinHeader_1x02_P2.54mm_Vertical.step",
+      "pass": true
+    },
+    {
+      "name": "J27 local footprint",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J27 footprint exists",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J27 symbol/pad set",
+      "detail": {
+        "pins": [
+          "1",
+          "2"
+        ],
+        "pads": [
+          "1",
+          "2"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "J27 portable model",
+      "detail": "${KIPRJMOD}/Models/Connector_PinHeader_2.54mm__PinHeader_1x02_P2.54mm_Vertical__PinHeader_1x02_P2.54mm_Vertical.step",
       "pass": true
     },
     {
@@ -7596,7 +8427,36 @@
     },
     {
       "name": "L2 portable model",
-      "detail": "${KIPRJMOD}/Models/Inductor_SMD__L_Bourns_SRN6045TA__L_Bourns_SRN6045TA.step",
+      "detail": "${KIPRJMOD}/Models/L_Bourns_SRN8040TA_GenericBody.wrl",
+      "pass": true
+    },
+    {
+      "name": "L3 local footprint",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "L3 footprint exists",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "L3 symbol/pad set",
+      "detail": {
+        "pins": [
+          "1",
+          "2"
+        ],
+        "pads": [
+          "1",
+          "2"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "L3 portable model",
+      "detail": "${KIPRJMOD}/Models/L_Bourns_SRN8040TA_GenericBody.wrl",
       "pass": true
     },
     {
@@ -7659,6 +8519,68 @@
     {
       "name": "Q2 portable model",
       "detail": "${KIPRJMOD}/Models/Package_TO_SOT_SMD__TO-252-2.step",
+      "pass": true
+    },
+    {
+      "name": "Q3 local footprint",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "Q3 footprint exists",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "Q3 symbol/pad set",
+      "detail": {
+        "pins": [
+          "1",
+          "2",
+          "3"
+        ],
+        "pads": [
+          "1",
+          "2",
+          "3"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "Q3 portable model",
+      "detail": "${KIPRJMOD}/Models/Package_TO_SOT_SMD__SOT-23__SOT-23.step",
+      "pass": true
+    },
+    {
+      "name": "Q4 local footprint",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "Q4 footprint exists",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "Q4 symbol/pad set",
+      "detail": {
+        "pins": [
+          "1",
+          "2",
+          "3"
+        ],
+        "pads": [
+          "1",
+          "2",
+          "3"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "Q4 portable model",
+      "detail": "${KIPRJMOD}/Models/Package_TO_SOT_SMD__SOT-23__SOT-23.step",
       "pass": true
     },
     {
@@ -8648,6 +9570,35 @@
       "pass": true
     },
     {
+      "name": "R59 local footprint",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R59 footprint exists",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R59 symbol/pad set",
+      "detail": {
+        "pins": [
+          "1",
+          "2"
+        ],
+        "pads": [
+          "1",
+          "2"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "R59 portable model",
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step",
+      "pass": true
+    },
+    {
       "name": "R6 local footprint",
       "detail": null,
       "pass": true
@@ -8677,6 +9628,296 @@
       "pass": true
     },
     {
+      "name": "R60 local footprint",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R60 footprint exists",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R60 symbol/pad set",
+      "detail": {
+        "pins": [
+          "1",
+          "2"
+        ],
+        "pads": [
+          "1",
+          "2"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "R60 portable model",
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step",
+      "pass": true
+    },
+    {
+      "name": "R61 local footprint",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R61 footprint exists",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R61 symbol/pad set",
+      "detail": {
+        "pins": [
+          "1",
+          "2"
+        ],
+        "pads": [
+          "1",
+          "2"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "R61 portable model",
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step",
+      "pass": true
+    },
+    {
+      "name": "R62 local footprint",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R62 footprint exists",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R62 symbol/pad set",
+      "detail": {
+        "pins": [
+          "1",
+          "2"
+        ],
+        "pads": [
+          "1",
+          "2"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "R62 portable model",
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step",
+      "pass": true
+    },
+    {
+      "name": "R63 local footprint",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R63 footprint exists",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R63 symbol/pad set",
+      "detail": {
+        "pins": [
+          "1",
+          "2"
+        ],
+        "pads": [
+          "1",
+          "2"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "R63 portable model",
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step",
+      "pass": true
+    },
+    {
+      "name": "R64 local footprint",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R64 footprint exists",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R64 symbol/pad set",
+      "detail": {
+        "pins": [
+          "1",
+          "2"
+        ],
+        "pads": [
+          "1",
+          "2"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "R64 portable model",
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step",
+      "pass": true
+    },
+    {
+      "name": "R65 local footprint",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R65 footprint exists",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R65 symbol/pad set",
+      "detail": {
+        "pins": [
+          "1",
+          "2"
+        ],
+        "pads": [
+          "1",
+          "2"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "R65 portable model",
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step",
+      "pass": true
+    },
+    {
+      "name": "R66 local footprint",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R66 footprint exists",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R66 symbol/pad set",
+      "detail": {
+        "pins": [
+          "1",
+          "2"
+        ],
+        "pads": [
+          "1",
+          "2"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "R66 portable model",
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step",
+      "pass": true
+    },
+    {
+      "name": "R67 local footprint",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R67 footprint exists",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R67 symbol/pad set",
+      "detail": {
+        "pins": [
+          "1",
+          "2"
+        ],
+        "pads": [
+          "1",
+          "2"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "R67 portable model",
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step",
+      "pass": true
+    },
+    {
+      "name": "R68 local footprint",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R68 footprint exists",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R68 symbol/pad set",
+      "detail": {
+        "pins": [
+          "1",
+          "2"
+        ],
+        "pads": [
+          "1",
+          "2"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "R68 portable model",
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step",
+      "pass": true
+    },
+    {
+      "name": "R69 local footprint",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R69 footprint exists",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R69 symbol/pad set",
+      "detail": {
+        "pins": [
+          "1",
+          "2"
+        ],
+        "pads": [
+          "1",
+          "2"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "R69 portable model",
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step",
+      "pass": true
+    },
+    {
       "name": "R7 local footprint",
       "detail": null,
       "pass": true
@@ -8702,6 +9943,325 @@
     },
     {
       "name": "R7 portable model",
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step",
+      "pass": true
+    },
+    {
+      "name": "R70 local footprint",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R70 footprint exists",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R70 symbol/pad set",
+      "detail": {
+        "pins": [
+          "1",
+          "2"
+        ],
+        "pads": [
+          "1",
+          "2"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "R70 portable model",
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step",
+      "pass": true
+    },
+    {
+      "name": "R71 local footprint",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R71 footprint exists",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R71 symbol/pad set",
+      "detail": {
+        "pins": [
+          "1",
+          "2"
+        ],
+        "pads": [
+          "1",
+          "2"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "R71 portable model",
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step",
+      "pass": true
+    },
+    {
+      "name": "R72 local footprint",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R72 footprint exists",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R72 symbol/pad set",
+      "detail": {
+        "pins": [
+          "1",
+          "2"
+        ],
+        "pads": [
+          "1",
+          "2"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "R72 portable model",
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step",
+      "pass": true
+    },
+    {
+      "name": "R73 local footprint",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R73 footprint exists",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R73 symbol/pad set",
+      "detail": {
+        "pins": [
+          "1",
+          "2"
+        ],
+        "pads": [
+          "1",
+          "2"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "R73 portable model",
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step",
+      "pass": true
+    },
+    {
+      "name": "R74 local footprint",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R74 footprint exists",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R74 symbol/pad set",
+      "detail": {
+        "pins": [
+          "1",
+          "2"
+        ],
+        "pads": [
+          "1",
+          "2"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "R74 portable model",
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step",
+      "pass": true
+    },
+    {
+      "name": "R75 local footprint",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R75 footprint exists",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R75 symbol/pad set",
+      "detail": {
+        "pins": [
+          "1",
+          "2"
+        ],
+        "pads": [
+          "1",
+          "2"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "R75 portable model",
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step",
+      "pass": true
+    },
+    {
+      "name": "R76 local footprint",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R76 footprint exists",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R76 symbol/pad set",
+      "detail": {
+        "pins": [
+          "1",
+          "2"
+        ],
+        "pads": [
+          "1",
+          "2"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "R76 portable model",
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step",
+      "pass": true
+    },
+    {
+      "name": "R77 local footprint",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R77 footprint exists",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R77 symbol/pad set",
+      "detail": {
+        "pins": [
+          "1",
+          "2"
+        ],
+        "pads": [
+          "1",
+          "2"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "R77 portable model",
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step",
+      "pass": true
+    },
+    {
+      "name": "R78 local footprint",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R78 footprint exists",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R78 symbol/pad set",
+      "detail": {
+        "pins": [
+          "1",
+          "2"
+        ],
+        "pads": [
+          "1",
+          "2"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "R78 portable model",
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step",
+      "pass": true
+    },
+    {
+      "name": "R79 local footprint",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R79 footprint exists",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R79 symbol/pad set",
+      "detail": {
+        "pins": [
+          "1",
+          "2"
+        ],
+        "pads": [
+          "1",
+          "2"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "R79 portable model",
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step",
+      "pass": true
+    },
+    {
+      "name": "R80 local footprint",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R80 footprint exists",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R80 symbol/pad set",
+      "detail": {
+        "pins": [
+          "1",
+          "2"
+        ],
+        "pads": [
+          "1",
+          "2"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "R80 portable model",
       "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step",
       "pass": true
     },
@@ -8762,7 +10322,7 @@
     },
     {
       "name": "SW2 portable model",
-      "detail": "${KIPRJMOD}/Models/Button_Switch_THT__SW_PUSH_6mm_H4.3mm__SW_PUSH_6mm_H4.3mm.step",
+      "detail": "${KIPRJMOD}/Models/SW_Push_6x6x4.3mm_SMD_Generic.step",
       "pass": true
     },
     {
@@ -8791,7 +10351,7 @@
     },
     {
       "name": "SW3 portable model",
-      "detail": "${KIPRJMOD}/Models/Button_Switch_THT__SW_PUSH_6mm_H4.3mm__SW_PUSH_6mm_H4.3mm.step",
+      "detail": "${KIPRJMOD}/Models/SW_Push_6x6x4.3mm_SMD_Generic.step",
       "pass": true
     },
     {
@@ -8820,7 +10380,7 @@
     },
     {
       "name": "SW4 portable model",
-      "detail": "${KIPRJMOD}/Models/Button_Switch_THT__SW_PUSH_6mm_H4.3mm__SW_PUSH_6mm_H4.3mm.step",
+      "detail": "${KIPRJMOD}/Models/SW_Push_6x6x4.3mm_SMD_Generic.step",
       "pass": true
     },
     {
@@ -8849,7 +10409,7 @@
     },
     {
       "name": "SW5 portable model",
-      "detail": "${KIPRJMOD}/Models/Button_Switch_THT__SW_PUSH_6mm_H4.3mm__SW_PUSH_6mm_H4.3mm.step",
+      "detail": "${KIPRJMOD}/Models/SW_Push_6x6x4.3mm_SMD_Generic.step",
       "pass": true
     },
     {
@@ -8887,6 +10447,162 @@
     {
       "name": "U1 portable model",
       "detail": "${KIPRJMOD}/Models/Package_TO_SOT_SMD__TSOT-23-6__TSOT-23-6.step",
+      "pass": true
+    },
+    {
+      "name": "U10 local footprint",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U10 footprint exists",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U10 symbol/pad set",
+      "detail": {
+        "pins": [
+          "1",
+          "10",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9"
+        ],
+        "pads": [
+          "1",
+          "10",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "U10 portable model",
+      "detail": "${KIPRJMOD}/Models/TPS25947_GenericBody.wrl",
+      "pass": true
+    },
+    {
+      "name": "U11 local footprint",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U11 footprint exists",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U11 symbol/pad set",
+      "detail": {
+        "pins": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "pads": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "U11 portable model",
+      "detail": "${KIPRJMOD}/Models/Package_TO_SOT_SMD__SOT-23-5__SOT-23-5.step",
+      "pass": true
+    },
+    {
+      "name": "U12 local footprint",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U12 footprint exists",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U12 symbol/pad set",
+      "detail": {
+        "pins": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "pads": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "U12 portable model",
+      "detail": "${KIPRJMOD}/Models/Package_TO_SOT_SMD__SOT-23-5__SOT-23-5.step",
+      "pass": true
+    },
+    {
+      "name": "U13 local footprint",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U13 footprint exists",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U13 symbol/pad set",
+      "detail": {
+        "pins": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "pads": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "U13 portable model",
+      "detail": "${KIPRJMOD}/Models/Package_SO__SSOP-8_2.95x2.8mm_P0.65mm__SSOP-8_2.95x2.8mm_P0.65mm.step",
       "pass": true
     },
     {
@@ -9154,6 +10870,88 @@
       "pass": true
     },
     {
+      "name": "U8 local footprint",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U8 footprint exists",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U8 symbol/pad set",
+      "detail": {
+        "pins": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "pads": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "U8 portable model",
+      "detail": "${KIPRJMOD}/Models/Package_TO_SOT_SMD__TSOT-23-6__TSOT-23-6.step",
+      "pass": true
+    },
+    {
+      "name": "U9 local footprint",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U9 footprint exists",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U9 symbol/pad set",
+      "detail": {
+        "pins": [
+          "1",
+          "10",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9"
+        ],
+        "pads": [
+          "1",
+          "10",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "U9 portable model",
+      "detail": "${KIPRJMOD}/Models/TPS25947_GenericBody.wrl",
+      "pass": true
+    },
+    {
       "name": "accurate XT60 model gap explicitly declared",
       "detail": [
         "J1"
@@ -9224,6 +11022,11 @@
       "pass": true
     },
     {
+      "name": "layout: 02_Power.kicad_sch explicit extra power ports",
+      "detail": null,
+      "pass": true
+    },
+    {
       "name": "layout: 02_Power.kicad_sch original ports retained and unique GPIO ports retain existing label UUIDs",
       "detail": null,
       "pass": true
@@ -9248,6 +11051,11 @@
     },
     {
       "name": "layout: 03_Core_Interface.kicad_sch cached symbols match explicit change contract",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "layout: 03_Core_Interface.kicad_sch explicit extra power ports",
       "detail": null,
       "pass": true
     },
@@ -9280,6 +11088,11 @@
       "pass": true
     },
     {
+      "name": "layout: 04_Left_Motor.kicad_sch explicit extra power ports",
+      "detail": null,
+      "pass": true
+    },
+    {
       "name": "layout: 04_Left_Motor.kicad_sch original ports retained and unique GPIO ports retain existing label UUIDs",
       "detail": null,
       "pass": true
@@ -9308,6 +11121,11 @@
       "pass": true
     },
     {
+      "name": "layout: 05_Right_Motor.kicad_sch explicit extra power ports",
+      "detail": null,
+      "pass": true
+    },
+    {
       "name": "layout: 05_Right_Motor.kicad_sch original ports retained and unique GPIO ports retain existing label UUIDs",
       "detail": null,
       "pass": true
@@ -9321,7 +11139,12 @@
       "name": "layout: 06_Module_Power.kicad_sch symbol UUIDs retained except explicit addition/removal",
       "detail": {
         "removed": [],
-        "added": []
+        "added": [
+          "#PWR301",
+          "C63",
+          "R59",
+          "R60"
+        ]
       },
       "pass": true
     },
@@ -9332,6 +11155,11 @@
     },
     {
       "name": "layout: 06_Module_Power.kicad_sch cached symbols match explicit change contract",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "layout: 06_Module_Power.kicad_sch explicit extra power ports",
       "detail": null,
       "pass": true
     },
@@ -9364,6 +11192,11 @@
       "pass": true
     },
     {
+      "name": "layout: 07_TFT_Buttons.kicad_sch explicit extra power ports",
+      "detail": null,
+      "pass": true
+    },
+    {
       "name": "layout: 07_TFT_Buttons.kicad_sch original ports retained and unique GPIO ports retain existing label UUIDs",
       "detail": null,
       "pass": true
@@ -9377,7 +11210,55 @@
       "name": "layout: 08_Grayscale_Cameras.kicad_sch symbol UUIDs retained except explicit addition/removal",
       "detail": {
         "removed": [],
-        "added": []
+        "added": [
+          "#PWR302",
+          "#PWR303",
+          "#PWR304",
+          "#PWR305",
+          "#PWR306",
+          "#PWR307",
+          "#PWR308",
+          "#PWR309",
+          "#PWR310",
+          "#PWR311",
+          "#PWR312",
+          "#PWR313",
+          "#PWR314",
+          "#PWR315",
+          "#PWR316",
+          "#PWR317",
+          "#PWR318",
+          "#PWR319",
+          "#PWR320",
+          "#PWR321",
+          "#PWR322",
+          "#PWR323",
+          "C72",
+          "C73",
+          "C74",
+          "C75",
+          "C76",
+          "J27",
+          "Q3",
+          "Q4",
+          "R68",
+          "R69",
+          "R70",
+          "R71",
+          "R72",
+          "R73",
+          "R74",
+          "R75",
+          "R76",
+          "R77",
+          "R78",
+          "R79",
+          "R80",
+          "U10",
+          "U11",
+          "U12",
+          "U13"
+        ]
       },
       "pass": true
     },
@@ -9388,6 +11269,11 @@
     },
     {
       "name": "layout: 08_Grayscale_Cameras.kicad_sch cached symbols match explicit change contract",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "layout: 08_Grayscale_Cameras.kicad_sch explicit extra power ports",
       "detail": null,
       "pass": true
     },
@@ -9424,12 +11310,22 @@
       "pass": true
     },
     {
+      "name": "layout: 09_Bluetooth_Stepper.kicad_sch explicit extra power ports",
+      "detail": null,
+      "pass": true
+    },
+    {
       "name": "layout: 09_Bluetooth_Stepper.kicad_sch original ports retained and unique GPIO ports retain existing label UUIDs",
       "detail": null,
       "pass": true
     },
     {
       "name": "layout: 09_Bluetooth_Stepper.kicad_sch new GPIO signals use hierarchy, not global bypass",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "layout: 10_Lichee_Power.kicad_sch explicitly authorized new references",
       "detail": null,
       "pass": true
     },
@@ -9448,6 +11344,11 @@
     },
     {
       "name": "layout: CoralC5-Motor.kicad_sch cached symbols match explicit change contract",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "layout: CoralC5-Motor.kicad_sch explicit extra power ports",
       "detail": null,
       "pass": true
     },
@@ -9817,22 +11718,12 @@
       "pass": true
     },
     {
-      "name": "overview: 03_Core_Interface.kicad_sch:GRAY_CLK has an actual wire",
+      "name": "overview: 03_Core_Interface.kicad_sch:LPI_TX has an actual wire",
       "detail": null,
       "pass": true
     },
     {
-      "name": "overview: 03_Core_Interface.kicad_sch:GRAY_DAT has an actual wire",
-      "detail": null,
-      "pass": true
-    },
-    {
-      "name": "overview: 03_Core_Interface.kicad_sch:MAIX_TX has an actual wire",
-      "detail": null,
-      "pass": true
-    },
-    {
-      "name": "overview: 03_Core_Interface.kicad_sch:MAIX_RX has an actual wire",
+      "name": "overview: 03_Core_Interface.kicad_sch:LPI_RX has an actual wire",
       "detail": null,
       "pass": true
     },
@@ -9937,22 +11828,12 @@
       "pass": true
     },
     {
-      "name": "overview: 08_Grayscale_Cameras.kicad_sch:GRAY_CLK has an actual wire",
+      "name": "overview: 08_Grayscale_Cameras.kicad_sch:LPI_TX has an actual wire",
       "detail": null,
       "pass": true
     },
     {
-      "name": "overview: 08_Grayscale_Cameras.kicad_sch:GRAY_DAT has an actual wire",
-      "detail": null,
-      "pass": true
-    },
-    {
-      "name": "overview: 08_Grayscale_Cameras.kicad_sch:MAIX_TX has an actual wire",
-      "detail": null,
-      "pass": true
-    },
-    {
-      "name": "overview: 08_Grayscale_Cameras.kicad_sch:MAIX_RX has an actual wire",
+      "name": "overview: 08_Grayscale_Cameras.kicad_sch:LPI_RX has an actual wire",
       "detail": null,
       "pass": true
     },
@@ -9963,6 +11844,11 @@
     },
     {
       "name": "overview: 08_Grayscale_Cameras.kicad_sch:VIDEO_RX has an actual wire",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "overview: 08_Grayscale_Cameras.kicad_sch:V3V3 has an actual wire",
       "detail": null,
       "pass": true
     },
@@ -10077,6 +11963,21 @@
       "pass": true
     },
     {
+      "name": "overview: 10_Lichee_Power.kicad_sch existing pin UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "overview: 10_Lichee_Power.kicad_sch pins exactly match child hierarchical labels",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "overview: 10_Lichee_Power.kicad_sch:VM has an actual wire",
+      "detail": null,
+      "pass": true
+    },
+    {
       "name": "overview: BT_TX continuously wired from Core to module",
       "detail": null,
       "pass": true
@@ -10087,12 +11988,12 @@
       "pass": true
     },
     {
-      "name": "overview: MAIX_TX continuously wired from Core to module",
+      "name": "overview: LPI_TX continuously wired from Core to module",
       "detail": null,
       "pass": true
     },
     {
-      "name": "overview: MAIX_RX continuously wired from Core to module",
+      "name": "overview: LPI_RX continuously wired from Core to module",
       "detail": null,
       "pass": true
     },
@@ -10183,16 +12084,6 @@
     },
     {
       "name": "overview: GRAY_CH8 continuously wired from Core to module",
-      "detail": null,
-      "pass": true
-    },
-    {
-      "name": "overview: GRAY_CLK continuously wired from Core to module",
-      "detail": null,
-      "pass": true
-    },
-    {
-      "name": "overview: GRAY_DAT continuously wired from Core to module",
       "detail": null,
       "pass": true
     },
@@ -10368,47 +12259,47 @@
     },
     {
       "name": "revision: J10 selected connector footprint",
-      "detail": "2P 2.54mm male jumper header, not XH",
+      "detail": "Motor:Connector_PinHeader_2.54mm__PinHeader_1x02_P2.54mm_Vertical",
       "pass": true
     },
     {
       "name": "revision: J17 selected connector footprint",
-      "detail": "female header",
+      "detail": "Motor:Connector_PinSocket_2.54mm__PinSocket_1x08_P2.54mm_Vertical",
       "pass": true
     },
     {
       "name": "revision: J20 selected connector footprint",
-      "detail": "ordinary XH; not XHB positive latch",
+      "detail": "Motor:Connector_JST__JST_XH_B8B-XH-A_1x08_P2.50mm_Vertical",
       "pass": true
     },
     {
       "name": "revision: J18 selected connector footprint",
-      "detail": "ordinary XH; not XHB positive latch",
+      "detail": "Motor:Connector_JST__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical",
       "pass": true
     },
     {
       "name": "revision: J21 selected connector footprint",
-      "detail": "ordinary XH; not XHB positive latch",
+      "detail": "Motor:Connector_JST__JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical",
       "pass": true
     },
     {
       "name": "revision: J19 selected connector footprint",
-      "detail": "ordinary XH; not XHB positive latch",
+      "detail": "Motor:Connector_JST__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical",
       "pass": true
     },
     {
       "name": "revision: J23 selected connector footprint",
-      "detail": "ordinary XH; not XHB positive latch",
+      "detail": "Motor:Connector_JST__JST_XH_B8B-XH-A_1x08_P2.50mm_Vertical",
       "pass": true
     },
     {
       "name": "revision: J22 selected connector footprint",
-      "detail": "ordinary XH; not XHB positive latch",
+      "detail": "Motor:Connector_JST__JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical",
       "pass": true
     },
     {
       "name": "revision: J15 selected connector footprint",
-      "detail": "female header",
+      "detail": "Motor:Connector_PinSocket_2.54mm__PinSocket_1x04_P2.54mm_Vertical",
       "pass": true
     },
     {
@@ -10428,6 +12319,156 @@
     },
     {
       "name": "revision: J15 module-side silkscreen order matches user photo",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "revision: SW5 generic SMD button explicitly bound",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "revision: SW3 generic SMD button explicitly bound",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "revision: SW2 generic SMD button explicitly bound",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "revision: SW4 generic SMD button explicitly bound",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "revision: button has four SMD pads and no drill holes",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "revision: button duplicate pad numbers form two contact groups",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "revision: button reference lands match the declared pattern",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "revision: button generic model is explicitly identified",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "revision: button replacement preserves native connectivity with explicit subsequent revisions",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "revision: gray CH1 exactly reaches its Core input",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "revision: gray CH2 exactly reaches its Core input",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "revision: gray CH3 exactly reaches its Core input",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "revision: gray CH4 exactly reaches its Core input",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "revision: gray CH5 exactly reaches its Core input",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "revision: gray CH6 exactly reaches its Core input",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "revision: gray CH7 exactly reaches its Core input",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "revision: gray CH8 exactly reaches its Core input",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "revision: gray 2P supply is GND then 5V",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "revision: B30 serial-only GPIO released as isolated contact",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "revision: B31 serial-only GPIO released as isolated contact",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "revision: 02_Power.kicad_sch removed gray serial ports absent",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "revision: 03_Core_Interface.kicad_sch removed gray serial ports absent",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "revision: 04_Left_Motor.kicad_sch removed gray serial ports absent",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "revision: 05_Right_Motor.kicad_sch removed gray serial ports absent",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "revision: 06_Module_Power.kicad_sch removed gray serial ports absent",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "revision: 07_TFT_Buttons.kicad_sch removed gray serial ports absent",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "revision: 08_Grayscale_Cameras.kicad_sch removed gray serial ports absent",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "revision: 09_Bluetooth_Stepper.kicad_sch removed gray serial ports absent",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "revision: 10_Lichee_Power.kicad_sch removed gray serial ports absent",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "revision: CoralC5-Motor.kicad_sch removed gray serial ports absent",
       "detail": null,
       "pass": true
     },
@@ -10897,7 +12938,7 @@
       "pass": true
     },
     {
-      "name": "revision: 12A fuse after 25 percent continuous derating covers declared budget",
+      "name": "revision: historical M2.3 current record retained",
       "detail": null,
       "pass": true
     },
@@ -10941,6 +12982,396 @@
         "8": "T/B/L_TX"
       },
       "pass": true
+    },
+    {
+      "name": "vision: R59 authorized values and package",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: R60 authorized values and package",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: C63 authorized values and package",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: U12 authorized values and package",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: U11 authorized values and package",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: C74 authorized values and package",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: C75 authorized values and package",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: R73 authorized values and package",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: Q3 authorized values and package",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: R74 authorized values and package",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: R75 authorized values and package",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: U10 authorized values and package",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: R68 authorized values and package",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: R69 authorized values and package",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: R70 authorized values and package",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: R71 authorized values and package",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: R72 authorized values and package",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: C73 authorized values and package",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: C72 authorized values and package",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: J27 authorized values and package",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: Q4 authorized values and package",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: R77 authorized values and package",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: U13 authorized values and package",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: R76 authorized values and package",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: C76 authorized values and package",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: R78 authorized values and package",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: U8 authorized values and package",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: C64 authorized values and package",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: C65 authorized values and package",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: L3 authorized values and package",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: C66 authorized values and package",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: C67 authorized values and package",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: R61 authorized values and package",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: R62 authorized values and package",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: C68 authorized values and package",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: U9 authorized values and package",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: R63 authorized values and package",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: R64 authorized values and package",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: R65 authorized values and package",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: R66 authorized values and package",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: R67 authorized values and package",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: C71 authorized values and package",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: C69 authorized values and package",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: J26 authorized values and package",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: C70 authorized values and package",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: J25 authorized values and package",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: R79 authorized values and package",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: R80 authorized values and package",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: U6 exact selected MPN",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: U8 exact selected MPN",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: U9 exact selected MPN",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: U10 exact selected MPN",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: U11 exact selected MPN",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: U12 exact selected MPN",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: U13 exact selected MPN",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: F1 exact selected MPN",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: U9 open AUXOFF/nFLT/ITIMER only",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: U9 ground pin 8",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: U10 open AUXOFF/nFLT/ITIMER only",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: U10 ground pin 8",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: R65 protection setting",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: R66 protection setting",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: R70 protection setting",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: R71 protection setting",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: R67 protection setting",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: R72 protection setting",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: Q3 low gate voltage rated FET",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: Q4 low gate voltage rated FET",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: separate 5V rails",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: Lichee power connector after protection",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: Lichee header sense is input only",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: Lichee UART TX 1.8V goes into low-threshold buffer",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: Lichee divided RX gets 3.3V buffered drive",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: buffers powered from Core rail",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: Maix input power and UART gates share protected rail",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: current budget uses converted power",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: 15A fuse 75% continuous derating covers declared budget",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "vision: threshold record includes resistor, threshold and input leakage tolerances",
+      "detail": null,
+      "pass": true
     }
   ],
   "limitations": [
@@ -10948,9 +13379,31 @@
     "PCB not opened or modified; no PCB DRC or schematic/PCB parity performed",
     "TFT 30mm pitch is calculated from drawing offsets; confirm the actual module before PCB placement",
     "HC-08 pin order is confirmed against the user photo; final connector mounting orientation, fit and other external module mating orders still require physical validation",
-    "Current estimates are design budgets, not measured consumption; 12A/4A time-delay fuses, MOS startup/SOA/thermal behavior, battery fault-current interruption and XH 3A harness loading require validation",
-    "SW1 and F1/F2 use explicitly generic dimensioned 3D envelopes, not exact manufacturer assembly models"
+    "Current budget is 10.6765A at 10V, not a measurement; F1 is 15A/85V very-fast and F2 remains 4A/125V time-delay. Inrush, battery fault interruption, MOS SOA/temperature and harness loading require physical validation",
+    "SW1 and F1/F2 use explicitly generic dimensioned 3D envelopes, not exact manufacturer assembly models",
+    "SW2-SW5 use a generic 6x6x4.3mm SMD reference footprint and model; actual unbranded lead span, contact pairs and ratings are not measured or manufacturer-confirmed",
+    "Lichee separate 5V/3A output and Maix 2A charging-inclusive budget require real startup, load and cable-drop tests",
+    "Maix six-pin 5V and USB VBUS are common inside the module: remove J27 before ordinary powered USB debug; the battery may keep the module alive",
+    "J25 is a two-wire supply terminal, not a USB-C source controller: use a correctly wired 3A power lead with appropriate CC handling",
+    "Lichee UART1 header RX has onboard 1/2 divider and TX is 1.8V; LV1T buffer inputs have no positive clamp, but the part is not advertised as output Ioff isolated. Keep UART pins in the specified direction"
   ],
   "pass": true,
-  "revision": "M2.4"
+  "revision": "M2.5",
+  "unbound_models": [
+    "J1"
+  ],
+  "generic_model_references": [
+    "F1",
+    "F2",
+    "L2",
+    "L3",
+    "SW1",
+    "SW2",
+    "SW3",
+    "SW4",
+    "SW5",
+    "U10",
+    "U9"
+  ],
+  "baseline_source_commit": "4cf36a2ce5a0d5bb6b469a9a82320fcfbcc38c1f"
 }

@@ -1,32 +1,24 @@
 # CoralC5-Motor
 
-2026-11-06 更新到 M2.4。
-用 KiCad 10 打开[工程](CoralC5-Motor.kicad_pro)或[主原理图](CoralC5-Motor.kicad_sch)，预览见[九页电路 PDF](docs/CoralC5-Motor_Schematic.pdf)。
-总览为 A3，八张功能页为 A4，主页模块信号已有实际层次连线。
+2026-11-06 更新至 M2.5。用 KiCad 10 打开 [主原理图](CoralC5-Motor.kicad_sch)，或查看 [十页 PDF](docs/CoralC5-Motor_Schematic.pdf)。总览、灰度与视觉接口、荔枝派电源为 A3，其余七张为 A4。
 
-TFT 与 HC-08 使用排母，其余模块线束采用普通 XH；J10 恢复两针跳帽排针，蓝牙固定接 3V3_EXT，删除 J16 电压选择跳帽和蓝牙五伏分支。
-XT60 和备用电源端子保留。[最新验证](../../../../Documentation/validation/2026-11-06-m24-fixed-bluetooth.md)记录本次变更。
-ZDT_XS 第二代 TTL 一体步进使用 J23 八针，仅接 1/2/7/8；完整针序只在 [M2 接线表](../../../../Documentation/reference/m2-interfaces.md)维护。
-67 个英制 0603 实例统一为 0.85mm 内侧间隙、0.975×0.95mm 焊盘，按电阻、电容和 LED 保留模型及极性。
+荔枝派 4A 负责识别，J18 接板端 UART1，J25 提供独立五伏三安电源。MaixCAM2 负责图传，J19 通过四线线束转接机身 MX1.25 六针。U6/U8 为 AP63300 三安降压，U9/U10 提供过压关断、限流、软启动与防反灌；J26/J27 是使能跳帽。普通带电 USB 调试 MaixCAM2 前拔 J27，模块内置电池仍可能运行。
 
-SW1 为 SS12D10G5，控制两只 DMP3007LK3-13 的栅极，R1/R2 为 100k/4.7k。
-主保险 F1 为 12A 延时，步进分路 F2 为 4A 延时；保险丝不是精确限流器，XH 负载仍受其 3A 额定条件限制。
-整车设计预算为 12V 时约 8.10A、10V 时约 8.32A，计算假设、原厂依据和未验证项见[本轮记录](../../../../Documentation/validation/2026-11-06-m23-power-connectors.md)。
+灰度 J20 为 CH1～CH8，J21 为 GND／五伏两针，KEY、Err、CLK、DAT 不接。SW2～SW5 改为 6×6×4.3mm 四脚 SMD 通用封装，实物焊脚跨度与触点分组待测。TFT 与 HC-08 仍用排母，模块线束用普通 XH，功率端子 J24/J25 保留 5.08mm 螺钉端子；J10 与新增 J26/J27 使用 2.54mm 跳帽排针。
 
-| 结果 | 状态 |
+SW1 保留 SS12D10G5，控制 DMP3007LK3 双 MOS。F1 改为 0448015.MR、15A／85V 快断，F2 保留 4A 延时。电池端预算在 10V 时约 10.68A、12V 时约 10.06A，包含荔枝派 3A 和原外设 2.5A 的五伏折算；温升、浪涌、线缆压降和电池故障分断仍待实测。
+
+| 检查 | 当前结果 |
 | --- | --- |
 | 原生 ERC | 0 错误、0 警告 |
-| 原理图、接口与资源合同 | 1571 项通过 |
-| 九页自动版面检查 | 导线/文字交叠 0，文字相互交叠 0 |
-| 原生封装库导出 | SVG 导出成功；不是 PCB DRC |
-| 资源 | 116 个实体位号含两个孔，113 个位号有可解析模型；J1 准确卧式模型仍缺；SW1/F1/F2 使用通用尺寸包络 |
-| PCB、固件和实物 | 本轮未修改或验证 |
+| 原理图、接口与资源合同 | 1872 项通过 |
+| 十页图面 | 导线／文字交叠 0，文字交叠 0；已渲染检查 |
+| 封装库 | 48 个原生 SVG 导出成功；属于库检查 |
+| 资源 | 164 个实体位号含两孔，161 个有可解析模型，其中 11 个为明确声明的通用参考外形；J1 准确卧式模型未绑定 |
+| PCB、固件、机械和实物 | 本轮未修改或验证 |
 
-Core 和 98 触点合同、原 13 路轮控制、J4/J6 六针线序、J8 调试及 J10 停机功能保留。
-新增 31 路 GPIO 的机器表见 [m2_pin_assignment.csv](docs/m2_pin_assignment.csv)。
-五伏外设预算 1.5A、三伏三外设预算 150mA、Core 外接三伏三预算 100mA；提高总保险不会扩大这些稳压支路。
-TFT 的 H1/H2 是两个 2mm 孔，30mm 孔距为资料推算约束，仍须复核实物。
+98 触点合同、13 路轮控制、J4/J6 六针线序与 J10 停机功能保留。新增接口占用 29 路 GPIO，合计 42 路；PD12/B30 与 PD13/B31 已释放。当前有 99 个 0603 实例统一使用 0.85mm 内侧间隙。
 
-[M2 用料草表](docs/BOM_M2_SCHEMATIC_DRAFT.csv)已按当前原理图更新，不是生产发布 BOM。
-旧 `docs/BOM.csv` 和初始生成清单保留为历史资料，不能替代当前原生原理图。
-后续使用 KiCad 手工编辑；先保存基线，再导出原生网表/ERC，运行 `tools/verify_schematic.py`，导出 PDF 后运行 `tools/check_visual.py`。
+完整针序只在 [M2 接线表](../../../../Documentation/reference/m2-interfaces.md)维护；[M2.5 记录](../../../../Documentation/validation/2026-11-06-m25-vision-power.md)保存原厂依据、计算与未验证项。[用料草表](docs/BOM_M2_SCHEMATIC_DRAFT.csv)有 162 个电气装配位号，不是生产发布 BOM。旧生成清单、旧 BOM 和基线仅供历史参考，禁止用旧生成器覆盖用户设计。
+
+先保存基线再编辑，导出原生网表/ERC 并运行 `tools/verify_schematic.py`，导出 PDF 后运行 `tools/check_visual.py`。本轮不读取或修改 PCB，也不运行 DRC。

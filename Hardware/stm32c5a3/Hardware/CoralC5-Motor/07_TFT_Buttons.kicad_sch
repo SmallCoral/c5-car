@@ -7,7 +7,7 @@
 	(title_block
 		(title "中景园屏幕与四个操作按钮")
 		(date "2026-11-06")
-		(rev "M2.4")
+		(rev "M2.5")
 		(company "SmallCoral / CoralC5-Motor")
 		(comment 1 "原理图设计；实板电流、温升与线束待验证")
 	)
@@ -953,7 +953,7 @@
 		)
 		(uuid "2018acc0-bd3c-5992-b65e-5965979b72ea")
 	)
-	(text "四个操作按键：低有效输入"
+	(text "四个贴片按键：低有效输入"
 		(exclude_from_sim no)
 		(at 16.51 107.95 0)
 		(effects
@@ -975,7 +975,7 @@
 		)
 		(uuid "47974833-4d7e-50cc-8b2a-6d1b08dde9c7")
 	)
-	(text "十千欧上拉与约一毫秒滤波，软件仍须消抖。\n安装孔在原理图中仅作约束，实际孔位由用户定位。"
+	(text "十千欧上拉与约一毫秒滤波，软件仍须消抖。\n按键为六毫米方形贴片、高四点三毫米，焊脚尺寸待实测。\n安装孔在原理图中仅作约束，实际孔位由用户定位。"
 		(exclude_from_sim no)
 		(at 17.78 173.99 0)
 		(effects
@@ -3066,7 +3066,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Motor:Button_Switch_THT__SW_PUSH_6mm_H4.3mm"
+		(property "Footprint" "Motor:SW_Push_6x6x4.3mm_SMD_4Pad_Generic"
 			(at 227.33 139.7 0)
 			(hide yes)
 			(show_name no)
@@ -3088,7 +3088,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "四脚贴片轻触开关 6×6×4.3mm；通用封装；焊脚尺寸与触点分组待实测"
 			(at 227.33 139.7 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3096,6 +3096,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -3144,7 +3145,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Motor:Button_Switch_THT__SW_PUSH_6mm_H4.3mm"
+		(property "Footprint" "Motor:SW_Push_6x6x4.3mm_SMD_4Pad_Generic"
 			(at 102.87 139.7 0)
 			(hide yes)
 			(show_name no)
@@ -3166,7 +3167,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "四脚贴片轻触开关 6×6×4.3mm；通用封装；焊脚尺寸与触点分组待实测"
 			(at 102.87 139.7 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3174,6 +3175,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -3299,7 +3301,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Motor:Button_Switch_THT__SW_PUSH_6mm_H4.3mm"
+		(property "Footprint" "Motor:SW_Push_6x6x4.3mm_SMD_4Pad_Generic"
 			(at 40.64 139.7 0)
 			(hide yes)
 			(show_name no)
@@ -3321,7 +3323,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "四脚贴片轻触开关 6×6×4.3mm；通用封装；焊脚尺寸与触点分组待实测"
 			(at 40.64 139.7 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3329,6 +3331,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -3457,7 +3460,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Motor:Button_Switch_THT__SW_PUSH_6mm_H4.3mm"
+		(property "Footprint" "Motor:SW_Push_6x6x4.3mm_SMD_4Pad_Generic"
 			(at 165.1 139.7 0)
 			(hide yes)
 			(show_name no)
@@ -3479,7 +3482,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "四脚贴片轻触开关 6×6×4.3mm；通用封装；焊脚尺寸与触点分组待实测"
 			(at 165.1 139.7 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3487,6 +3490,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"

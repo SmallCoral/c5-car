@@ -1,0 +1,161 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-11-06T22:39:34",
+    "ignored_checks": [
+        {
+            "description": "Global label only appears once in the schematic",
+            "key": "single_global_label"
+        },
+        {
+            "description": "Four connection points are joined together",
+            "key": "four_way_junction"
+        },
+        {
+            "description": "SPICE model issue",
+            "key": "simulation_model_issue"
+        },
+        {
+            "description": "Assigned footprint doesn't match footprint filters",
+            "key": "footprint_filter"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.6",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709",
+            "violations": [
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 1.1684 mm",
+                            "pos": {
+                                "x": 1.1684,
+                                "y": 0.9144
+                            },
+                            "uuid": "d2a5c377-ad23-59b2-b9ac-6c1fcf47ee2f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                }
+            ]
+        },
+        {
+            "path": "/输入、总开关与降压/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709/3e4d7eec-bf94-5ef7-a88d-e072db9975b7",
+            "violations": []
+        },
+        {
+            "path": "/核心板接口/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709/c813fdd4-725f-5df7-aa4a-68cd15d401cf",
+            "violations": []
+        },
+        {
+            "path": "/左电机与编码器/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9",
+            "violations": []
+        },
+        {
+            "path": "/右电机与编码器/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709/ddf41ba8-06a1-59de-bdac-eecd21fc55cb",
+            "violations": []
+        },
+        {
+            "path": "/中景园屏幕与四个操作按钮/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709/433415cc-03a8-5189-8d36-253244603d4b",
+            "violations": []
+        },
+        {
+            "path": "/八路灰度与双摄像头模块接口/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709/d6318ee1-12d4-5089-84c2-bb1addcd6fe6",
+            "violations": [
+                {
+                    "description": "类型为 Tri-state 和 Power input 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol U12 引脚 4 [Y, Tri-state, Line]",
+                            "pos": {
+                                "x": 0.9652,
+                                "y": 1.5621
+                            },
+                            "uuid": "4f506d93-f520-50b5-86dd-5098ede9962d"
+                        },
+                        {
+                            "description": "Symbol U12 引脚 3 [GND, Power input, Line]",
+                            "pos": {
+                                "x": 0.8128,
+                                "y": 1.7653
+                            },
+                            "uuid": "73d7b0df-c956-5b34-82d2-d2affad0669c"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "类型为 Tri-state 和 Power input 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol U13 引脚 6 [1Y, Tri-state, Line]",
+                            "pos": {
+                                "x": 2.9464,
+                                "y": 1.8034
+                            },
+                            "uuid": "ad6288e9-4e4e-5e11-86d5-5c1f9785e561"
+                        },
+                        {
+                            "description": "Symbol U13 引脚 4 [GND, Power input, Line]",
+                            "pos": {
+                                "x": 2.7686,
+                                "y": 2.0828
+                            },
+                            "uuid": "fc30ca86-c2cc-5094-98d7-7c3cea796050"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                }
+            ]
+        },
+        {
+            "path": "/外设独立五伏与三伏三供电/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709/259119ae-63bb-582f-a484-b0d1b9da613b",
+            "violations": []
+        },
+        {
+            "path": "/四脚蓝牙与外接步进驱动接口/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709/6805c229-363d-5720-8872-3a09dea05270",
+            "violations": []
+        },
+        {
+            "path": "/荔枝派独立供电/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709/d4aae58c-ddd7-5da3-9fd9-693f95a2fcb9",
+            "violations": [
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U9 引脚 5 [IN, Power input, Line]",
+                            "pos": {
+                                "x": 1.397,
+                                "y": 1.7272
+                            },
+                            "uuid": "abda05a9-120e-5a30-a176-a8e3d9e2986d"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                }
+            ]
+        }
+    ],
+    "source": "CoralC5-Motor.kicad_sch"
+}

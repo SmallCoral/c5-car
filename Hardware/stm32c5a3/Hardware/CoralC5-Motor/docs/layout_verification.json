@@ -1,6 +1,6 @@
 {
   "date": "2026-11-06",
-  "revision": "M2.4",
+  "revision": "M2.5",
   "pass": true,
   "checks": [
     {
@@ -28,6 +28,11 @@
     },
     {
       "name": "layout: 02_Power.kicad_sch cached symbols match explicit change contract",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "layout: 02_Power.kicad_sch explicit extra power ports",
       "pass": true,
       "detail": null
     },
@@ -60,6 +65,11 @@
       "detail": null
     },
     {
+      "name": "layout: 03_Core_Interface.kicad_sch explicit extra power ports",
+      "pass": true,
+      "detail": null
+    },
+    {
       "name": "layout: 03_Core_Interface.kicad_sch original ports retained and unique GPIO ports retain existing label UUIDs",
       "pass": true,
       "detail": null
@@ -84,6 +94,11 @@
     },
     {
       "name": "layout: 04_Left_Motor.kicad_sch cached symbols match explicit change contract",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "layout: 04_Left_Motor.kicad_sch explicit extra power ports",
       "pass": true,
       "detail": null
     },
@@ -116,6 +131,11 @@
       "detail": null
     },
     {
+      "name": "layout: 05_Right_Motor.kicad_sch explicit extra power ports",
+      "pass": true,
+      "detail": null
+    },
+    {
       "name": "layout: 05_Right_Motor.kicad_sch original ports retained and unique GPIO ports retain existing label UUIDs",
       "pass": true,
       "detail": null
@@ -130,7 +150,12 @@
       "pass": true,
       "detail": {
         "removed": [],
-        "added": []
+        "added": [
+          "#PWR301",
+          "C63",
+          "R59",
+          "R60"
+        ]
       }
     },
     {
@@ -140,6 +165,11 @@
     },
     {
       "name": "layout: 06_Module_Power.kicad_sch cached symbols match explicit change contract",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "layout: 06_Module_Power.kicad_sch explicit extra power ports",
       "pass": true,
       "detail": null
     },
@@ -172,6 +202,11 @@
       "detail": null
     },
     {
+      "name": "layout: 07_TFT_Buttons.kicad_sch explicit extra power ports",
+      "pass": true,
+      "detail": null
+    },
+    {
       "name": "layout: 07_TFT_Buttons.kicad_sch original ports retained and unique GPIO ports retain existing label UUIDs",
       "pass": true,
       "detail": null
@@ -186,7 +221,55 @@
       "pass": true,
       "detail": {
         "removed": [],
-        "added": []
+        "added": [
+          "#PWR302",
+          "#PWR303",
+          "#PWR304",
+          "#PWR305",
+          "#PWR306",
+          "#PWR307",
+          "#PWR308",
+          "#PWR309",
+          "#PWR310",
+          "#PWR311",
+          "#PWR312",
+          "#PWR313",
+          "#PWR314",
+          "#PWR315",
+          "#PWR316",
+          "#PWR317",
+          "#PWR318",
+          "#PWR319",
+          "#PWR320",
+          "#PWR321",
+          "#PWR322",
+          "#PWR323",
+          "C72",
+          "C73",
+          "C74",
+          "C75",
+          "C76",
+          "J27",
+          "Q3",
+          "Q4",
+          "R68",
+          "R69",
+          "R70",
+          "R71",
+          "R72",
+          "R73",
+          "R74",
+          "R75",
+          "R76",
+          "R77",
+          "R78",
+          "R79",
+          "R80",
+          "U10",
+          "U11",
+          "U12",
+          "U13"
+        ]
       }
     },
     {
@@ -196,6 +279,11 @@
     },
     {
       "name": "layout: 08_Grayscale_Cameras.kicad_sch cached symbols match explicit change contract",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "layout: 08_Grayscale_Cameras.kicad_sch explicit extra power ports",
       "pass": true,
       "detail": null
     },
@@ -232,12 +320,22 @@
       "detail": null
     },
     {
+      "name": "layout: 09_Bluetooth_Stepper.kicad_sch explicit extra power ports",
+      "pass": true,
+      "detail": null
+    },
+    {
       "name": "layout: 09_Bluetooth_Stepper.kicad_sch original ports retained and unique GPIO ports retain existing label UUIDs",
       "pass": true,
       "detail": null
     },
     {
       "name": "layout: 09_Bluetooth_Stepper.kicad_sch new GPIO signals use hierarchy, not global bypass",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "layout: 10_Lichee_Power.kicad_sch explicitly authorized new references",
       "pass": true,
       "detail": null
     },
@@ -256,6 +354,11 @@
     },
     {
       "name": "layout: CoralC5-Motor.kicad_sch cached symbols match explicit change contract",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "layout: CoralC5-Motor.kicad_sch explicit extra power ports",
       "pass": true,
       "detail": null
     },
@@ -625,22 +728,12 @@
       "detail": null
     },
     {
-      "name": "overview: 03_Core_Interface.kicad_sch:GRAY_CLK has an actual wire",
+      "name": "overview: 03_Core_Interface.kicad_sch:LPI_TX has an actual wire",
       "pass": true,
       "detail": null
     },
     {
-      "name": "overview: 03_Core_Interface.kicad_sch:GRAY_DAT has an actual wire",
-      "pass": true,
-      "detail": null
-    },
-    {
-      "name": "overview: 03_Core_Interface.kicad_sch:MAIX_TX has an actual wire",
-      "pass": true,
-      "detail": null
-    },
-    {
-      "name": "overview: 03_Core_Interface.kicad_sch:MAIX_RX has an actual wire",
+      "name": "overview: 03_Core_Interface.kicad_sch:LPI_RX has an actual wire",
       "pass": true,
       "detail": null
     },
@@ -745,22 +838,12 @@
       "detail": null
     },
     {
-      "name": "overview: 08_Grayscale_Cameras.kicad_sch:GRAY_CLK has an actual wire",
+      "name": "overview: 08_Grayscale_Cameras.kicad_sch:LPI_TX has an actual wire",
       "pass": true,
       "detail": null
     },
     {
-      "name": "overview: 08_Grayscale_Cameras.kicad_sch:GRAY_DAT has an actual wire",
-      "pass": true,
-      "detail": null
-    },
-    {
-      "name": "overview: 08_Grayscale_Cameras.kicad_sch:MAIX_TX has an actual wire",
-      "pass": true,
-      "detail": null
-    },
-    {
-      "name": "overview: 08_Grayscale_Cameras.kicad_sch:MAIX_RX has an actual wire",
+      "name": "overview: 08_Grayscale_Cameras.kicad_sch:LPI_RX has an actual wire",
       "pass": true,
       "detail": null
     },
@@ -771,6 +854,11 @@
     },
     {
       "name": "overview: 08_Grayscale_Cameras.kicad_sch:VIDEO_RX has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 08_Grayscale_Cameras.kicad_sch:V3V3 has an actual wire",
       "pass": true,
       "detail": null
     },
@@ -885,6 +973,21 @@
       "detail": null
     },
     {
+      "name": "overview: 10_Lichee_Power.kicad_sch existing pin UUIDs retained",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 10_Lichee_Power.kicad_sch pins exactly match child hierarchical labels",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 10_Lichee_Power.kicad_sch:VM has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
       "name": "overview: BT_TX continuously wired from Core to module",
       "pass": true,
       "detail": null
@@ -895,12 +998,12 @@
       "detail": null
     },
     {
-      "name": "overview: MAIX_TX continuously wired from Core to module",
+      "name": "overview: LPI_TX continuously wired from Core to module",
       "pass": true,
       "detail": null
     },
     {
-      "name": "overview: MAIX_RX continuously wired from Core to module",
+      "name": "overview: LPI_RX continuously wired from Core to module",
       "pass": true,
       "detail": null
     },
@@ -991,16 +1094,6 @@
     },
     {
       "name": "overview: GRAY_CH8 continuously wired from Core to module",
-      "pass": true,
-      "detail": null
-    },
-    {
-      "name": "overview: GRAY_CLK continuously wired from Core to module",
-      "pass": true,
-      "detail": null
-    },
-    {
-      "name": "overview: GRAY_DAT continuously wired from Core to module",
       "pass": true,
       "detail": null
     },
@@ -1131,9 +1224,9 @@
     }
   ],
   "baseline": "baseline-2026-11-06-layout",
-  "native_nets": 138,
-  "symbol_instances": 175,
-  "physical_symbol_instances": 118,
+  "native_nets": 168,
+  "symbol_instances": 260,
+  "physical_symbol_instances": 166,
   "moved_instances": [
     "#PWR203",
     "J17",
@@ -1177,14 +1270,15 @@
   ],
   "pcb_accessed": false,
   "sha256": {
-    "02_Power.kicad_sch": "926b93f999c93d9348e0a87cd272aebea8ea49c10504758bee2b8161bc30d19e",
-    "03_Core_Interface.kicad_sch": "0401706698cf7175f7be05e248da270d1c04980ff8d8df889dc1049c97dfeed0",
-    "04_Left_Motor.kicad_sch": "60fc822f453ed916ef35b7c6fe33ab7227a5f66d594bb757bce41a5ec71ae79a",
-    "05_Right_Motor.kicad_sch": "6eb0fa22af4bd8654a458879ebc59abc1171967d7e913c1d911561a8e76df5e3",
-    "06_Module_Power.kicad_sch": "d6d4278ca6047bc9f7f4fb451bf9748d2ddfb382f3f887022337c3b56764d4ef",
-    "07_TFT_Buttons.kicad_sch": "390b7cbe01217a04a12eb85645ae8cf63d5d93358e6b4473b18430677c48fd87",
-    "08_Grayscale_Cameras.kicad_sch": "18231d2397e6b848f4ce601f7f9d92a374feb54d426c0822b97cf883d511f496",
-    "09_Bluetooth_Stepper.kicad_sch": "d89b9ae0f71b5d63455a57d39a047575956c7977a3ba1a32083c123d9431e79b",
-    "CoralC5-Motor.kicad_sch": "544ae4c5da027d46418b84acdf9f757a0a958e7cd2d18d1ce69cf8766cdbbec0"
+    "02_Power.kicad_sch": "2f6eb28aa872fb9099f96de937fb9346d2e2451c24e21d1be1dab44ee5eda2f2",
+    "03_Core_Interface.kicad_sch": "4505dd9f902d870eb7e5652336d94a01a7713d829d5e3d711dd84ca3e309ef14",
+    "04_Left_Motor.kicad_sch": "b19fc4e2c2458ac1b7fdbc981db31f13bd8a4b4730cd95da42e1fb5fa3681054",
+    "05_Right_Motor.kicad_sch": "78bcdcaf4b9141c2ecfd1204446ec6b6cbc1881edac40dbf00b897ee7dcc523d",
+    "06_Module_Power.kicad_sch": "f8d1e771a6080d69e9dd29a1b1c009d5495108fadac284502c17cf18eebc75cc",
+    "07_TFT_Buttons.kicad_sch": "08f8e0e07d69890413366379d82aba19d595b81eac93de796beff1be3e6827c3",
+    "08_Grayscale_Cameras.kicad_sch": "522c9795324491b4fd4eefab1c5023fe57dfd194379be44258e75a3a5688e7ff",
+    "09_Bluetooth_Stepper.kicad_sch": "cd8e1fbd3f7a79407481d585d09be94074398fe127598246d86a3dd3dbbdb099",
+    "10_Lichee_Power.kicad_sch": "ea0a0d8d255aa951e235670f57ea7370fdc238aeda174fe8d7ff88126dd6fdcc",
+    "CoralC5-Motor.kicad_sch": "2b7616a3508ee798a7cbca1ad70edd47673a01290a76985d10665fc1129666e1"
   }
 }

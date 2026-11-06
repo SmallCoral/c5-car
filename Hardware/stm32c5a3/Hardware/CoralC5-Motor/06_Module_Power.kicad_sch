@@ -7,7 +7,7 @@
 	(title_block
 		(title "外设独立五伏与三伏三供电")
 		(date "2026-11-06")
-		(rev "M2.4")
+		(rev "M2.5")
 		(company "SmallCoral / CoralC5-Motor")
 		(comment 1 "原理图设计；实板电流、温升与线束待验证")
 	)
@@ -987,6 +987,352 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Motor:AP63300WU"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(symbol "AP63300WU_0_1"
+				(rectangle
+					(start -7.62 5.08)
+					(end 7.62 -5.08)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "AP63300WU_1_1"
+				(pin input line
+					(at 10.16 -2.54 180)
+					(length 2.54)
+					(name "FB"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -10.16 -2.54 0)
+					(length 2.54)
+					(name "EN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -10.16 2.54 0)
+					(length 2.54)
+					(name "IN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 -7.62 90)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 10.16 2.54 180)
+					(length 2.54)
+					(name "SW"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 10.16 0 180)
+					(length 2.54)
+					(name "BST"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+			(property "Reference" "U"
+				(at -7.62 6.35 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "AP63300WU-7"
+				(at 2.54 6.35 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Motor:Package_TO_SOT_SMD__TSOT-23-6"
+				(at 0 -22.86 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://www.diodes.com/datasheet/download/AP63300_AP63301.pdf"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "3A adjustable 500kHz buck, TSOT-23-6"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "3A Buck DC/DC"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "TSOT?23*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+		)
+		(symbol "Motor:Device__R"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "R"
+				(at 2.032 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "R"
+				(at 0 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at -1.778 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Resistor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "R res resistor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "R_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Device__R_0_1"
+				(rectangle
+					(start -1.016 -2.54)
+					(end 1.016 2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Device__R_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 	)
 	(polyline
 		(pts
@@ -1019,7 +1365,7 @@
 		)
 		(uuid "d2f8c601-1f4c-53d4-b094-655a4fbd12a8")
 	)
-	(text "外设总预算 1.5A；芯片额定 2A，须验证启动峰值与散热。"
+	(text "合计预算 2.5A；三安芯片，图传含充电电流。"
 		(exclude_from_sim no)
 		(at 17.78 106.68 0)
 		(effects
@@ -1052,7 +1398,7 @@
 		)
 		(uuid "83996bf2-25bb-5e0c-9965-9cf1ff32d4d4")
 	)
-	(text "外设预算 0.15A，与 Core 电源分开。\n主路按十安等级核算，持续能力须验证。"
+	(text "外设预算 0.15A，与 Core 电源分开。\n主路按新总预算核算，持续能力须验证。"
 		(exclude_from_sim no)
 		(at 17.78 173.99 0)
 		(effects
@@ -1295,17 +1641,6 @@
 	)
 	(wire
 		(pts
-			(xy 116.84 66.04)
-			(xy 116.84 91.44)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "58e5eca7-1865-51dc-9672-5816890f1141")
-	)
-	(wire
-		(pts
 			(xy 149.86 60.96)
 			(xy 149.86 80.01)
 		)
@@ -1526,7 +1861,7 @@
 	)
 	(wire
 		(pts
-			(xy 116.84 91.44)
+			(xy 121.92 91.44)
 			(xy 233.68 91.44)
 		)
 		(stroke
@@ -1767,7 +2102,7 @@
 				)
 			)
 		)
-		(property "Value" "4.7uH Isat>=3.5A"
+		(property "Value" "6.8uH / 5.1A"
 			(at 158.75 55.88 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1777,7 +2112,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Motor:Inductor_SMD__L_Bourns_SRN6045TA"
+		(property "Footprint" "Motor:L_Bourns_SRN8040TA_GenericBody"
 			(at 158.75 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -1788,7 +2123,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.bourns.com/docs/product-datasheets/srn8040ta.pdf"
 			(at 158.75 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -1823,9 +2158,18 @@
 				)
 			)
 		)
+		(property "MPN" "SRN8040TA-6R8M"
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 	)
 	(symbol
-		(lib_id "Motor:Regulator_Switching__AP63205WU")
+		(lib_id "Motor:AP63300WU")
 		(at 106.68 63.5 0)
 		(unit 1)
 		(body_style 1)
@@ -1845,7 +2189,7 @@
 				)
 			)
 		)
-		(property "Value" "AP63205WU-7"
+		(property "Value" "AP63300WU-7"
 			(at 106.68 53.34 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1866,7 +2210,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/AP63200-AP63201-AP63203-AP63205.pdf"
+		(property "Datasheet" "https://www.diodes.com/datasheet/download/AP63300_AP63301.pdf"
 			(at 106.68 63.5 0)
 			(hide yes)
 			(show_name no)
@@ -1911,6 +2255,15 @@
 					(reference "U6")
 					(unit 1)
 				)
+			)
+		)
+		(property "MPN" "AP63300WU-7"
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 	)
@@ -2708,5 +3061,305 @@
 				)
 			)
 		)
+	)
+	(symbol
+		(lib_id "Motor:Device__R")
+		(at 121.92 87.63 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "7f0be9bd-1bff-53b6-ad96-6a7df1566181")
+		(property "Reference" "R59"
+			(at 124.46 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "158k / 0.1%"
+			(at 124.46 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder"
+			(at 121.92 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 121.92 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7ef35dea-97d7-5e1e-b249-08214f8a193c")
+		)
+		(pin "2"
+			(uuid "eadaae62-3e55-593b-be25-3c49cc8c653c")
+		)
+		(instances
+			(project "CoralC5-Motor"
+				(path "/b6138eaf-d20b-5b43-a04a-d71eca329709/259119ae-63bb-582f-a484-b0d1b9da613b"
+					(reference "R59")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Motor:Device__R")
+		(at 259.08 87.63 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "35cd8025-e506-56e8-9884-6ddbc345f506")
+		(property "Reference" "R60"
+			(at 261.62 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "30.1k / 0.1%"
+			(at 261.62 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder"
+			(at 259.08 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 259.08 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "dc5694ec-fe81-5de1-834d-ad06a646a902")
+		)
+		(pin "2"
+			(uuid "308fb121-e985-5ac3-a0d1-8503b114227d")
+		)
+		(instances
+			(project "CoralC5-Motor"
+				(path "/b6138eaf-d20b-5b43-a04a-d71eca329709/259119ae-63bb-582f-a484-b0d1b9da613b"
+					(reference "R60")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Motor:Device__C")
+		(at 170.18 87.63 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "66d5cea2-cb07-51ad-9e34-61d209d810b6")
+		(property "Reference" "C63"
+			(at 172.72 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "47pF/50V C0G"
+			(at 172.72 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder"
+			(at 170.18 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 170.18 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8508a1b1-f4ef-5813-8d7d-3f98a5a23095")
+		)
+		(pin "2"
+			(uuid "1b43d727-b4fc-5a03-b8f9-2a9a6d3901d2")
+		)
+		(instances
+			(project "CoralC5-Motor"
+				(path "/b6138eaf-d20b-5b43-a04a-d71eca329709/259119ae-63bb-582f-a484-b0d1b9da613b"
+					(reference "C63")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Motor:power__GND")
+		(at 259.08 96.52 0)
+		(unit 1)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "c2eba9ba-133f-5b76-a147-c6faf847955b")
+		(property "Reference" "#PWR301"
+			(at 259.08 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 259.08 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 259.08 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 259.08 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "430caa6a-bbf8-5f9a-b0d7-73c8e105420e")
+		)
+		(instances
+			(project "CoralC5-Motor"
+				(path "/b6138eaf-d20b-5b43-a04a-d71eca329709/259119ae-63bb-582f-a484-b0d1b9da613b"
+					(reference "#PWR301")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 116.84 66.04)
+			(xy 121.92 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "67cb771a-b252-5367-8085-9d7c83538d12")
+	)
+	(wire
+		(pts
+			(xy 121.92 66.04)
+			(xy 121.92 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "39e62a61-ab1b-58f5-9b49-f5b591462c61")
+	)
+	(wire
+		(pts
+			(xy 121.92 83.82)
+			(xy 170.18 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4c4a7621-cc0e-593b-9391-78d3fc28b9b0")
+	)
+	(wire
+		(pts
+			(xy 170.18 83.82)
+			(xy 259.08 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d98f6c08-7f9e-525e-9692-f7b9d4f2f1ff")
+	)
+	(wire
+		(pts
+			(xy 259.08 91.44)
+			(xy 259.08 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5fd05fb0-1553-5e00-a3d2-49db266ee28f")
+	)
+	(junction
+		(at 121.92 91.44)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0cdcc934-0e11-5d09-8972-bee7574e3f64")
+	)
+	(junction
+		(at 170.18 91.44)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "96e70c9f-fe3b-5d7d-b5fd-ca470ad3aa66")
 	)
 )

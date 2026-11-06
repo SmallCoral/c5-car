@@ -1,0 +1,120 @@
+{
+  "date": "2026-11-06",
+  "revision": "M2.4",
+  "source_commit": "31b3e7e7154e511c48ea62b1ed1c7e3de3b91dca",
+  "baseline": "baseline-2026-11-06-smd-buttons",
+  "user_confirmed": "Unbranded 6x6x4.3mm SMD four-leg tactile buttons; use generic footprint and explicitly mark physical dimensions pending",
+  "photo_path": "../../../../Documentation/按键/6x6x4.3_SMD四脚_实物_2026-11-06.png",
+  "photo_sha256": "fcbafd040165c161da64c389561bf0502075a255dfcdc46eaa652658312620ea",
+  "changes": {
+    "SW5": {
+      "Footprint": "Motor:SW_Push_6x6x4.3mm_SMD_4Pad_Generic",
+      "Description": "四脚贴片轻触开关 6×6×4.3mm；通用封装；焊脚尺寸与触点分组待实测"
+    },
+    "SW3": {
+      "Footprint": "Motor:SW_Push_6x6x4.3mm_SMD_4Pad_Generic",
+      "Description": "四脚贴片轻触开关 6×6×4.3mm；通用封装；焊脚尺寸与触点分组待实测"
+    },
+    "SW2": {
+      "Footprint": "Motor:SW_Push_6x6x4.3mm_SMD_4Pad_Generic",
+      "Description": "四脚贴片轻触开关 6×6×4.3mm；通用封装；焊脚尺寸与触点分组待实测"
+    },
+    "SW4": {
+      "Footprint": "Motor:SW_Push_6x6x4.3mm_SMD_4Pad_Generic",
+      "Description": "四脚贴片轻触开关 6×6×4.3mm；通用封装；焊脚尺寸与触点分组待实测"
+    }
+  },
+  "package_label": {
+    "body_mm": [
+      6,
+      6
+    ],
+    "height_mm": 4.3,
+    "mounting": "SMD",
+    "physical_leads": 4,
+    "manufacturer": null,
+    "MPN": null,
+    "warehouse_codes": [
+      "A51785",
+      "3625483",
+      "B-42-03-10"
+    ],
+    "warehouse_codes_are_MPN": false
+  },
+  "reference_only": {
+    "manufacturer": "E-Switch",
+    "MPN": "TL3301NF160QG",
+    "datasheet": "https://configured-product-images.s3.amazonaws.com/2D/specs/TL3301NF160QG.pdf",
+    "revision": "F / ECO-103973 / 2026-03-06",
+    "source_footprint": "C:\\Program Files\\KiCad\\10.0\\share\\kicad\\footprints\\Button_Switch_SMD.pretty\\SW_Push_1P1T_NO_E-Switch_TL3301NxxxxxG.kicad_mod",
+    "source_footprint_sha256": "d0169ff7486ad76332e2ed1b5a9c50ff4ab0e35be8c7ac76d5fc4079ffdf77f1",
+    "source_model_sha256": "481b6420fcfc668cbad880c1ed5aad067d341adc9f3aaa28925464d9637728bc"
+  },
+  "footprint": {
+    "name": "Motor:SW_Push_6x6x4.3mm_SMD_4Pad_Generic",
+    "sha256": "42dc97d68df79ae860df34801b533abe940d3d89425330e1549a4ff9ff9b82a4",
+    "pads": {
+      "1": [
+        [
+          -4.55,
+          -2.25
+        ],
+        [
+          4.55,
+          -2.25
+        ]
+      ],
+      "2": [
+        [
+          -4.55,
+          2.25
+        ],
+        [
+          4.55,
+          2.25
+        ]
+      ]
+    },
+    "pad_size_mm": [
+      2.1,
+      1.4
+    ],
+    "pad_center_span_mm": [
+      9.1,
+      4.5
+    ],
+    "reference_outer_lead_span_mm": 10.0,
+    "physical_mating_verified": false
+  },
+  "model": {
+    "path": "Models/SW_Push_6x6x4.3mm_SMD_Generic.step",
+    "sha256": "481b6420fcfc668cbad880c1ed5aad067d341adc9f3aaa28925464d9637728bc",
+    "status": "Generic reference envelope from KiCad TL3301N model, not exact identified user part"
+  },
+  "unchanged_button_circuit": {
+    "pullups": "R50-R53, 10k to Core 3V3",
+    "filters": "C57-C60, 100nF",
+    "steady_pressed_current_mA": 0.33,
+    "RC_ms": 1.0,
+    "polarity": "active low, normally-open momentary",
+    "software_debounce_required": true
+  },
+  "electrical_connectivity_changed": false,
+  "unverified": [
+    "actual unbranded terminal span and coplanarity",
+    "actual two internally connected contact pairs",
+    "actuation force, life, travel and electrical ratings"
+  ],
+  "pcb_accessed": false,
+  "source_sha256": {
+    "02_Power.kicad_sch": "926b93f999c93d9348e0a87cd272aebea8ea49c10504758bee2b8161bc30d19e",
+    "03_Core_Interface.kicad_sch": "0401706698cf7175f7be05e248da270d1c04980ff8d8df889dc1049c97dfeed0",
+    "04_Left_Motor.kicad_sch": "60fc822f453ed916ef35b7c6fe33ab7227a5f66d594bb757bce41a5ec71ae79a",
+    "05_Right_Motor.kicad_sch": "6eb0fa22af4bd8654a458879ebc59abc1171967d7e913c1d911561a8e76df5e3",
+    "06_Module_Power.kicad_sch": "d6d4278ca6047bc9f7f4fb451bf9748d2ddfb382f3f887022337c3b56764d4ef",
+    "07_TFT_Buttons.kicad_sch": "7763f5a44d1d5b271267dcfb0e226ec64e934075df3a5ca11d4e5e024946f8e8",
+    "08_Grayscale_Cameras.kicad_sch": "18231d2397e6b848f4ce601f7f9d92a374feb54d426c0822b97cf883d511f496",
+    "09_Bluetooth_Stepper.kicad_sch": "d89b9ae0f71b5d63455a57d39a047575956c7977a3ba1a32083c123d9431e79b",
+    "CoralC5-Motor.kicad_sch": "544ae4c5da027d46418b84acdf9f757a0a958e7cd2d18d1ce69cf8766cdbbec0"
+  }
+}

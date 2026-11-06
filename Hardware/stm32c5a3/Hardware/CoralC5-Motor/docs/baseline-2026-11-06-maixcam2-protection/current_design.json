@@ -1,0 +1,74 @@
+{
+  "date": "2026-11-06",
+  "revision": "M2.4",
+  "schematic_pages": 9,
+  "overview_paper": "A3",
+  "functional_paper": "A4",
+  "native_nets": 138,
+  "checks": 1571,
+  "native_ERC_errors": 0,
+  "native_ERC_warnings": 0,
+  "passive_0603_count": 67,
+  "passive_gap_mm": 0.85,
+  "power_budget": {
+    "battery_voltage_range_v": [
+      10,
+      12.6
+    ],
+    "wheel_input_budget_a_each": 2,
+    "wheel_count": 2,
+    "stepper_input_budget_a": 3,
+    "stepper_budget_is_measurement": false,
+    "core_5v_output_budget_a": 0.75,
+    "peripheral_5v_output_budget_a": 1.5,
+    "assumed_buck_efficiency": 0.85,
+    "threev3_is_included_in_5v_not_added_again": true,
+    "max_low_voltage_output_power_w": 11.25,
+    "input_current_a": {
+      "10": 8.3235,
+      "12": 8.1029,
+      "12.6": 8.0504
+    },
+    "normal_operation_current_a": "unknown; measure actual motors and modules",
+    "fuse_standard_continuous_derating": 0.75,
+    "F1_continuous_design_budget_a_at_25c": 9,
+    "MOS_cold_pair_loss_w_at_10v_input_budget_using_10mohm_each": 1.3856,
+    "J23_XH_continuous_rating_a": 3,
+    "F2_is_not_an_exact_3a_current_limiter": true
+  },
+  "authoritative_interfaces": "m2_pin_assignment.csv and native schematic",
+  "current_record_overlays": [
+    "zdt_ttl_design.json",
+    "connector_revision.json",
+    "power_revision.json",
+    "passive_0603_revision.json",
+    "jumpers_revision.json",
+    "bluetooth_pinout_revision.json"
+  ],
+  "source_sha256": {
+    "02_Power.kicad_sch": "926b93f999c93d9348e0a87cd272aebea8ea49c10504758bee2b8161bc30d19e",
+    "03_Core_Interface.kicad_sch": "0401706698cf7175f7be05e248da270d1c04980ff8d8df889dc1049c97dfeed0",
+    "04_Left_Motor.kicad_sch": "60fc822f453ed916ef35b7c6fe33ab7227a5f66d594bb757bce41a5ec71ae79a",
+    "05_Right_Motor.kicad_sch": "6eb0fa22af4bd8654a458879ebc59abc1171967d7e913c1d911561a8e76df5e3",
+    "06_Module_Power.kicad_sch": "d6d4278ca6047bc9f7f4fb451bf9748d2ddfb382f3f887022337c3b56764d4ef",
+    "07_TFT_Buttons.kicad_sch": "390b7cbe01217a04a12eb85645ae8cf63d5d93358e6b4473b18430677c48fd87",
+    "08_Grayscale_Cameras.kicad_sch": "18231d2397e6b848f4ce601f7f9d92a374feb54d426c0822b97cf883d511f496",
+    "09_Bluetooth_Stepper.kicad_sch": "d89b9ae0f71b5d63455a57d39a047575956c7977a3ba1a32083c123d9431e79b",
+    "CoralC5-Motor.kicad_sch": "544ae4c5da027d46418b84acdf9f757a0a958e7cd2d18d1ce69cf8766cdbbec0"
+  },
+  "symbol_library_sha256": "257f00d72362714e44f08916be09a857ea9205e175a2d9e301aabc42d1356f0a",
+  "pcb_accessed": false,
+  "bluetooth_supply": "V3V3_EXT, fixed",
+  "removed_references": [
+    "J16"
+  ],
+  "hardware_jumper": "J10, 2P 2.54mm male header",
+  "bluetooth_module_pinout": {
+    "photo_order": "3V3 GND RXD TXD",
+    "J15_1": "V3V3_EXT",
+    "J15_2": "GND",
+    "J15_3": "BT_TX / PA2 / USART2_TX",
+    "J15_4": "BT_RX / PA3 / USART2_RX",
+    "connectivity_changed": false
+  }
+}

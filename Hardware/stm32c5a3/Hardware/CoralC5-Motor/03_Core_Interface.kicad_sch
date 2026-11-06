@@ -7,7 +7,7 @@
 	(title_block
 		(title "C5-EDGE-3 核心板接口与调试")
 		(date "2026-11-06")
-		(rev "M2.4")
+		(rev "M2.5")
 		(company "SmallCoral / CoralC5-Motor")
 		(comment 1 "原理图设计；实板电流、温升与线束待验证")
 	)
@@ -3093,17 +3093,6 @@
 	)
 	(wire
 		(pts
-			(xy 199.39 45.72)
-			(xy 208.28 45.72)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "345dca78-f7a1-5079-b8f1-26a27992b7c1")
-	)
-	(wire
-		(pts
 			(xy 90.17 46.99)
 			(xy 99.06 46.99)
 		)
@@ -3431,17 +3420,6 @@
 			(type default)
 		)
 		(uuid "b7e07eba-e090-508c-aa08-d8ffd640a257")
-	)
-	(wire
-		(pts
-			(xy 199.39 48.26)
-			(xy 208.28 48.26)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ba27abcf-5b93-5de5-ae18-9ddd12b92d3c")
 	)
 	(wire
 		(pts
@@ -3975,17 +3953,6 @@
 		)
 		(uuid "39bfc046-af61-5d84-a264-3ec8859d53b7")
 	)
-	(hierarchical_label "GRAY_CLK"
-		(shape bidirectional)
-		(at 208.28 45.72 0)
-		(effects
-			(font
-				(size 1.016 1.016)
-			)
-			(justify left)
-		)
-		(uuid "4037052a-a737-5f14-911a-dc3d30ee0916")
-	)
 	(hierarchical_label "L_DIR"
 		(shape output)
 		(at 30.48 52.07 180)
@@ -4085,17 +4052,6 @@
 		)
 		(uuid "6c6a3bef-3ec9-55db-8f74-c0f226b16708")
 	)
-	(hierarchical_label "GRAY_DAT"
-		(shape bidirectional)
-		(at 208.28 48.26 0)
-		(effects
-			(font
-				(size 1.016 1.016)
-			)
-			(justify left)
-		)
-		(uuid "721a80c7-7ab5-53c7-9190-105aa650cfdc")
-	)
 	(hierarchical_label "V3V3"
 		(shape output)
 		(at 139.7 88.9 180)
@@ -4184,7 +4140,7 @@
 		)
 		(uuid "910eeebb-bf98-59ff-849d-0cdc93d0256e")
 	)
-	(hierarchical_label "MAIX_RX"
+	(hierarchical_label "LPI_RX"
 		(shape bidirectional)
 		(at 208.28 38.1 0)
 		(effects
@@ -4250,7 +4206,7 @@
 		)
 		(uuid "c13b7b74-a000-52a7-80d7-02b6d85b140b")
 	)
-	(hierarchical_label "MAIX_TX"
+	(hierarchical_label "LPI_TX"
 		(shape bidirectional)
 		(at 208.28 35.56 0)
 		(effects
@@ -6015,5 +5971,13 @@
 				)
 			)
 		)
+	)
+	(no_connect
+		(at 199.39 45.72)
+		(uuid "5214f09b-4687-5292-b72a-80d81aa433e7")
+	)
+	(no_connect
+		(at 199.39 48.26)
+		(uuid "20f2e42a-2fdf-5c7c-82fb-436700b2fd2a")
 	)
 )

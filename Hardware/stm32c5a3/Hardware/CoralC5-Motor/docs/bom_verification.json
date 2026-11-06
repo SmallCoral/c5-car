@@ -1,9 +1,11 @@
 {
   "date": "2026-11-06",
-  "revision": "M2.4",
-  "physical_bom_references": 114,
-  "csv_rows": 114,
+  "revision": "M2.5",
+  "source": "native netlist.xml",
+  "native_netlist_sha256": "876379a402b1a13a3f5b86298d7670a9ade4a384da8c86e576113fb2e4df3e9b",
+  "physical_bom_references": 162,
+  "csv_rows": 162,
   "pass": true,
   "errors": [],
-  "csv_sha256": "c5eb4541ef48760d718fa7e9509ae2a29d3da6b52aed63c49b5dce7ce7199aec"
+  "csv_sha256": "861b8cc321a7569b0b0f87ae7c9fa437c05862fa36074a2d052a4ed4410a1512"
 }

@@ -792,13 +792,12 @@
   "layout_revision": "M2.1",
   "layout_edit_record": "docs/layout_edit.json",
   "record_scope": "Historical initial M2 generation data; current native schematics and verification.json are authoritative. User changes are recorded as explicit overlays.",
-  "current_revision": "M2.4",
+  "current_revision": "M2.5",
   "current_revision_records": [
-    "zdt_ttl_design.json",
-    "connector_revision.json",
-    "power_revision.json",
-    "passive_0603_revision.json",
-    "jumpers_revision.json",
-    "bluetooth_pinout_revision.json"
-  ]
+    "smd_buttons_revision.json",
+    "grayscale_photo_revision.json",
+    "vision_power_revision.json",
+    "current_design.json"
+  ],
+  "historical_authoring_manifest": true
 }
