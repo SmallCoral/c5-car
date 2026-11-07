@@ -1,26 +1,41 @@
 # A 题器件选型与采购
 
-2026-11-07 M2.7：MaixCAM2 识别，Action 4 仅供电作图传，荔枝派继续删除。扩展板只保留一路 TPS56837RPAR 总五伏降压和 TFT/蓝牙共用 AP2112K 三伏三 LDO。Core 从 D3 后 A48/B48 输入五伏，本板 AP63203 产生三伏三，两个三伏三输出不并联。
+2026-11-07 M2.8，保留荔枝派 4A、MaixCAM2 与 Action 4。扩展板 U1/U6 为双路 AP64500SP-13，标称 5.088V、500kHz；U7 单独供 TFT/蓝牙三伏三。Core 仍由 D3 后 A48/B48 供电并由本板 AP63203 降压，三伏三不并联。
 
-新选型已画入原理图并核对 PCB 元器件，一致性问题为 0；板级 DRC、布线与实物未完成，仍为用料草表。[当前接线](m2-interfaces.md)、[M2.7 验证](../validation/2026-11-07-m27-unified-power.md)。8A 为主降压芯片等级，并非板级实测输出。U10 及 U14/Q5 的相机保护、步进默认断电控制保留。
+22 种新增或修订 SKU 已取得立创国内直接商品页、明确型号和本地仓现货记录，覆盖全部 33 个新增器件及修订的旧器件。该范围之外的旧料尚未逐项重新核价；178 位号草表不是生产采购清单。见 [草表](../../Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/BOM_M2_SCHEMATIC_DRAFT.csv)、[原始记录](../../Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/procurement_m28.json)、[M2.8 验证](../validation/2026-11-07-m28-resume.md)。
 
-## 本轮主要新器件与国内库存
+## 新增与修订器件快照
 
-查询日 2026-11-07，以下均为国内商城直接现货、1 个起购，未作价格承诺、未采购。库存快照和完整 C 编号在[记录](../../Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/procurement_m27.json)，下单时须复核。
+查询日为 2026-11-07；库存、价格来自 `szlcsc.com` 国内商品记录，不采用海外、询价或订货替代。价格为页面默认阶梯的人民币含税单价快照，最小采购量及数量阶梯以原始页面为准，不是按整板数量结算的报价。未下单，库存会变。
 
-| 位号 | 型号 | 立创编号 | 当日库存 | 依据与限制 |
+| 位号 | 完整型号 | C 编号 | 国内库存快照 | 默认阶梯单价 CNY |
 | --- | --- | --- | --- | --- |
-| U1 | [TPS56837RPAR](https://item.szlcsc.com/24052010.html) | C22428366 | 1725 | 8A 同步降压；3×3mm HotRod，底部焊盘需适当工艺 |
-| U16 | [TPS25810RVCR](https://item.szlcsc.com/480472.html) | C473913 | 6128 | 集成 Type-C 源端及功率开关，5V/3A 通告，无 PD/PPS |
-| J28 | [USB4125-GF-A](https://item.szlcsc.com/3712352.html) | C3151650 | 31 | 六触点供电 Type-C 母座，3A |
-| J19 | [ZX-MX1.25-6PWT](https://item.szlcsc.com/8430341.html) | C7430472 | 27474 | 与 Maix 模块同型号，1.25mm，额定 1A |
-| L1 | [744325330](https://item.szlcsc.com/5735814.html) | C5129929 | 15 | 3.3µH，额定电流与饱和定义须按厂商条件区分 |
-| C5 C50 | [GRM32ER71E226KE15L](https://item.szlcsc.com/22114.html) | C21397 | 52316 | 22µF/25V X7R，1210，TI 推荐料号 |
-| C81 | [16SVP150M](https://item.szlcsc.com/189739.html) | C178346 | 62 | 150µF/16V；最小 120µF，满足源端储能；NRND，长期生产应重选 |
+| C90,C91 | [CC0603KRX7R9BB103](https://item.szlcsc.com/101256.html) | C100042 | 579041 | 0.0135 |
+| C63,C89 | [CC0603JRNPO9BN471](https://item.szlcsc.com/107426.html) | C106211 | 402124 | 0.0155 |
+| C94 | [CL21A106KAYNNNE](https://item.szlcsc.com/16532.html) | C15850 | 7431502 | 0.1201 |
+| C74,C75,C85,C87,C93 | [CL10B104KB8NNNC](https://item.szlcsc.com/1943.html) | C1591 | 1802765 | 0.0223 |
+| C92 | [16SVP150M](https://item.szlcsc.com/189739.html) | C178346 | 62 | 5.65 |
+| U1,U6 | [AP64500SP-13](https://item.szlcsc.com/2162503.html) | C2070920 | 1788 | 6.33 |
+| C86,C88 | [GRM32ER71E226KE15L](https://item.szlcsc.com/22114.html) | C21397 | 52241 | 1.15 |
+| R66,R67 | [0603WAF1582T5E](https://item.szlcsc.com/23607.html) | C22880 | 8260 | 0.0086 |
+| R61 | [0603WAF8202T5E](https://item.szlcsc.com/23981.html) | C23254 | 772676 | 0.0079 |
+| U12 | [SN74LVC1G125DBVR](https://item.szlcsc.com/24390.html) | C23654 | 161199 | 0.2175 |
+| R73,R75,R79,R93 | [0603WAF1003T5E](https://item.szlcsc.com/26546.html) | C25803 | 7497373 | 0.0088 |
+| R62,R74 | [0603WAF1002T5E](https://item.szlcsc.com/26547.html) | C25804 | 3820389 | 0.0089 |
+| R63,R92 | [0603WAF2003T5E](https://item.szlcsc.com/26554.html) | C25811 | 1063003 | 0.0059 |
+| R59,R64 | [ARG03BTC5362](https://item.szlcsc.com/2782693.html) | C2684559 | 3975 | 0.1178 |
+| Q3 | [BSS138BK,215](https://item.szlcsc.com/268469.html) | C282529 | 8268 | 0.1213 |
+| R60,R65 | [ARG03BTC1002](https://item.szlcsc.com/292745.html) | C309083 | 863791 | 0.0786 |
+| J25 | [USB4125-GF-A](https://item.szlcsc.com/3712352.html) | C3151650 | 31 | 3.4 |
+| C84 | [GRM21BR61H106KE43L](https://item.szlcsc.com/439567.html) | C440198 | 193410 | 0.568 |
+| U11 | [SN74LV1T125DBVR](https://item.szlcsc.com/480066.html) | C473338 | 86579 | 0.59 |
+| U8 | [TPS25810RVCR](https://item.szlcsc.com/480472.html) | C473913 | 6108 | 1.9 |
+| L1,L2 | [744325330](https://item.szlcsc.com/5735814.html) | C5129929 | 15 | 25.62 |
+| J18 | [HX PZ2.54-2x6P ZZ](https://item.szlcsc.com/34444559.html) | C32713279 | 23349 | 0.2915 |
 
-精密阻容仍按图纸列参数，未锁定具体国内 SKU；后续商品详情查询返回 HTTP 405，不能据搜索收录声称全部有货。本轮没有选海外代购或订货替代，草表不是可直接采购的生产 BOM。
+L1/L2 的 744325330 仅余 15 个快照、J25 Type-C 仅 31 个，16SVP150M 为 NRND 且仅 62 个，适合作原型备料依据，长期生产应重新评估。C63/C89 改 470pF/50V C0G，R59/R64 与 R60/R65 均锁定 0.1% 分压电阻；补偿 15.8k+10nF 仍是待实测初值。J18 按厂家图核对 2.54mm 双排、1.0mm 推荐孔和 0.64mm 方针，选择直针型号，不以弯针或简牛代替。
 
-R59/R60=73.2k/10k、0.1%，主五伏标称 4.992V；R92=30.1k/1%，MODE 为 500kHz 高限流档。Maix R70/R71=42.2k/15k、0.1%，过压典型 5.301V；R72=95.3k/1%，限流公式标称 0.9986A，不是全温严格上界。六针座额定 1A，识别加充电必须实测。四键删 C57～C60，改由固件消抖，保留上拉。完整取值与原厂章节见本轮验证。
+U11 是 SN74LV1T125DBVR，不能把 SN74LVC1G125 当成等价的 1.8V 升压接收器；后者仅用于 U12 的三伏三路径。U8/U16 为 TPS25810RVCR，固定五伏源端与 3A 通告，无 PD/PPS。芯片电流额定、连接器额定与板级实测分别报告，详见 [本轮电源核算](../validation/2026-11-07-m28-resume.md#电源核算与原厂条件)。
 
 ### C1、C13、C33 的必要性
 

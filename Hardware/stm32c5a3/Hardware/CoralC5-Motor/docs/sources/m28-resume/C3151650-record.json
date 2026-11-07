@@ -1,0 +1,76 @@
+{
+  "date": "2026-11-07",
+  "queried_utc": "2026-11-07T15:33:54.0730833Z",
+  "url": "https://item.szlcsc.com/3712352.html",
+  "http_status": 200,
+  "product": {
+    "theRatio": 1,
+    "productArrange": "编带",
+    "productModel": "USB4125-GF-A",
+    "stockNumber": 31,
+    "encapsulationModel": "SMD",
+    "hasStockNow": "yes",
+    "productCycle": "normal",
+    "smtLabel": "SMT扩展库",
+    "isDisplayUsableTransitNum": true,
+    "remark": "",
+    "productUnit": "个",
+    "luceneBreviaryImageUrls": "https://alimg.szlcsc.com/upload/public/product/breviary/20240702/6B8E8A98F4FBFC8B0F1DECE5C6CCD6B0.jpg<$>https://alimg.szlcsc.com/upload/public/product/breviary/20240702/F8A484CCA2A048542728E307E720FD21.jpg<$>https://alimg.szlcsc.com/upload/public/product/breviary/20240702/16DB5C3AFC200303804A9FEEE403BDF3.jpg",
+    "productMinEncapsulationUnit": "圆盘",
+    "productName": "Type-C 母 卧贴",
+    "returnCouponDesc": [],
+    "productGradePlateId": "12602",
+    "isShowQuotedPriceBtn": false,
+    "validStockNumber": 31,
+    "fileTypeVOList": [
+      {
+        "detailVOList": [
+          {
+            "fileName": "GCTUSB连接器规格书",
+            "fileUrl": "/upload/public/pdf/source/20220622/D82A7326A70B8039624EBE00774CB093.pdf"
+          }
+        ],
+        "fileType": "pdf_property"
+      },
+      {
+        "detailVOList": [
+          {
+            "fileName": "全量通用_ROHS认证@@REACH认证@@Proposition 65@@TSCA认证_ GCT.pdf",
+            "fileUrl": "/upload/public/pdf/source/20260814/850D68E132FE8F70CAD6F8757779247D.pdf"
+          },
+          {
+            "fileName": "连接器系列全量通用_RoHS认证@@REACH认证@@TSCA认证(英文版)_GCT.pdf",
+            "fileUrl": "/upload/public/pdf/source/20250702/0110CB4DA930F7179850377C8F854FAB.pdf"
+          }
+        ],
+        "fileType": "certification_data_property"
+      }
+    ],
+    "isEnvironment": true,
+    "isReturnCoupon": false,
+    "productType": "USB连接器",
+    "encaptionPrice": 3400,
+    "minBuyNumber": 1,
+    "minWholeNumber": 1000,
+    "saleRuleGroupId": 1,
+    "convesionRatio": 1,
+    "productId": "3712352",
+    "productGradePlateName": "GCT",
+    "eccnCode": "EAR99",
+    "productWeight": 0.00062,
+    "usableTransitNum": 0,
+    "isDisplay": true,
+    "pdfDESProductId": "8163D1FADC58C19C62C20E132BF121C8",
+    "productCode": "C3151650",
+    "breviaryImageUrl": "https://alimg.szlcsc.com/upload/public/product/breviary/20240702/6B8E8A98F4FBFC8B0F1DECE5C6CCD6B0.jpg",
+    "isShowPrice": true,
+    "productMinEncapsulationNumber": 1000,
+    "inEdaWhiteList": false,
+    "productStockStatus": "yes",
+    "productUnsealVendition": "yes"
+  },
+  "price": 3.4,
+  "gdWarehouseStockNumber": 31,
+  "jsWarehouseStockNumber": 0,
+  "pageGeneratedAt": "2026-11-07T15:33:54.024Z"
+}

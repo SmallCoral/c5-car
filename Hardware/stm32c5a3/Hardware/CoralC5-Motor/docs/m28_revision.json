@@ -195,33 +195,57 @@
       "Footprint": "Motor:Diodes_SO8EP_AP64500",
       "Datasheet": "https://www.diodes.com/datasheet/download/AP64500.pdf",
       "MPN": "AP64500SP-13",
-      "LCSC": "C2070920"
+      "LCSC": "C2070920",
+      "Purchase_URL": "https://item.szlcsc.com/2162503.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
     },
     "R3": {},
     "R4": {},
     "R92": {
       "Value": "200k / 1%",
       "MPN": "0603WAF2003T5E",
-      "LCSC": "C25811"
+      "LCSC": "C25811",
+      "Purchase_URL": "https://item.szlcsc.com/26554.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
     },
     "C2": {},
     "C50": {},
     "C3": {},
     "C4": {},
     "L1": {
-      "Datasheet": ""
+      "Datasheet": "",
+      "MPN": "744325330",
+      "LCSC": "C5129929",
+      "Purchase_URL": "https://item.szlcsc.com/5735814.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
     },
     "C5": {},
     "R59": {
       "Value": "53.6k / 0.1%",
       "MPN": "ARG03BTC5362",
-      "LCSC": "C2684559"
+      "LCSC": "C2684559",
+      "Purchase_URL": "https://item.szlcsc.com/2782693.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
     },
-    "R60": {},
+    "R60": {
+      "MPN": "ARG03BTC1002",
+      "LCSC": "C309083",
+      "Purchase_URL": "https://item.szlcsc.com/292745.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft",
+      "Value": "10k / 0.1%"
+    },
     "C63": {
-      "Value": "39pF/50V C0G",
-      "MPN": "CC0603JRNPO9BN390",
-      "LCSC": "C107049"
+      "Value": "470pF/50V C0G",
+      "MPN": "CC0603JRNPO9BN471",
+      "LCSC": "C106211",
+      "Purchase_URL": "https://item.szlcsc.com/107426.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
     },
     "D3": {},
     "D4": {},
@@ -418,10 +442,250 @@
     "#PWR431": {},
     "Q7": {},
     "R84": {},
-    "U15": {}
+    "U15": {},
+    "U6": {
+      "MPN": "AP64500SP-13",
+      "LCSC": "C2070920",
+      "Purchase_URL": "https://item.szlcsc.com/2162503.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
+    },
+    "U8": {
+      "MPN": "TPS25810RVCR",
+      "LCSC": "C473913",
+      "Purchase_URL": "https://item.szlcsc.com/480472.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
+    },
+    "U11": {
+      "MPN": "SN74LV1T125DBVR",
+      "LCSC": "C473338",
+      "Purchase_URL": "https://item.szlcsc.com/480066.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
+    },
+    "U12": {
+      "MPN": "SN74LVC1G125DBVR",
+      "LCSC": "C23654",
+      "Purchase_URL": "https://item.szlcsc.com/24390.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
+    },
+    "L2": {
+      "MPN": "744325330",
+      "LCSC": "C5129929",
+      "Purchase_URL": "https://item.szlcsc.com/5735814.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
+    },
+    "Q3": {
+      "MPN": "BSS138BK,215",
+      "LCSC": "C282529",
+      "Purchase_URL": "https://item.szlcsc.com/268469.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
+    },
+    "J25": {
+      "MPN": "USB4125-GF-A",
+      "LCSC": "C3151650",
+      "Purchase_URL": "https://item.szlcsc.com/3712352.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
+    },
+    "R64": {
+      "MPN": "ARG03BTC5362",
+      "LCSC": "C2684559",
+      "Purchase_URL": "https://item.szlcsc.com/2782693.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
+    },
+    "R65": {
+      "MPN": "ARG03BTC1002",
+      "LCSC": "C309083",
+      "Purchase_URL": "https://item.szlcsc.com/292745.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft",
+      "Value": "10k / 0.1%"
+    },
+    "R61": {
+      "MPN": "0603WAF8202T5E",
+      "LCSC": "C23254",
+      "Purchase_URL": "https://item.szlcsc.com/23981.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
+    },
+    "R62": {
+      "MPN": "0603WAF1002T5E",
+      "LCSC": "C25804",
+      "Purchase_URL": "https://item.szlcsc.com/26547.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
+    },
+    "R74": {
+      "MPN": "0603WAF1002T5E",
+      "LCSC": "C25804",
+      "Purchase_URL": "https://item.szlcsc.com/26547.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
+    },
+    "R63": {
+      "MPN": "0603WAF2003T5E",
+      "LCSC": "C25811",
+      "Purchase_URL": "https://item.szlcsc.com/26554.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
+    },
+    "R66": {
+      "MPN": "0603WAF1582T5E",
+      "LCSC": "C22880",
+      "Purchase_URL": "https://item.szlcsc.com/23607.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
+    },
+    "R67": {
+      "MPN": "0603WAF1582T5E",
+      "LCSC": "C22880",
+      "Purchase_URL": "https://item.szlcsc.com/23607.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
+    },
+    "R73": {
+      "MPN": "0603WAF1003T5E",
+      "LCSC": "C25803",
+      "Purchase_URL": "https://item.szlcsc.com/26546.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
+    },
+    "R75": {
+      "MPN": "0603WAF1003T5E",
+      "LCSC": "C25803",
+      "Purchase_URL": "https://item.szlcsc.com/26546.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
+    },
+    "R79": {
+      "MPN": "0603WAF1003T5E",
+      "LCSC": "C25803",
+      "Purchase_URL": "https://item.szlcsc.com/26546.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
+    },
+    "R93": {
+      "MPN": "0603WAF1003T5E",
+      "LCSC": "C25803",
+      "Purchase_URL": "https://item.szlcsc.com/26546.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
+    },
+    "C74": {
+      "MPN": "CL10B104KB8NNNC",
+      "LCSC": "C1591",
+      "Purchase_URL": "https://item.szlcsc.com/1943.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft",
+      "Value": "100nF/50V X7R"
+    },
+    "C75": {
+      "MPN": "CL10B104KB8NNNC",
+      "LCSC": "C1591",
+      "Purchase_URL": "https://item.szlcsc.com/1943.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft",
+      "Value": "100nF/50V X7R"
+    },
+    "C85": {
+      "MPN": "CL10B104KB8NNNC",
+      "LCSC": "C1591",
+      "Purchase_URL": "https://item.szlcsc.com/1943.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft",
+      "Value": "100nF/50V X7R"
+    },
+    "C87": {
+      "MPN": "CL10B104KB8NNNC",
+      "LCSC": "C1591",
+      "Purchase_URL": "https://item.szlcsc.com/1943.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft",
+      "Value": "100nF/50V X7R"
+    },
+    "C93": {
+      "MPN": "CL10B104KB8NNNC",
+      "LCSC": "C1591",
+      "Purchase_URL": "https://item.szlcsc.com/1943.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft",
+      "Value": "100nF/50V X7R"
+    },
+    "C84": {
+      "MPN": "GRM21BR61H106KE43L",
+      "LCSC": "C440198",
+      "Purchase_URL": "https://item.szlcsc.com/439567.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
+    },
+    "C86": {
+      "MPN": "GRM32ER71E226KE15L",
+      "LCSC": "C21397",
+      "Purchase_URL": "https://item.szlcsc.com/22114.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
+    },
+    "C88": {
+      "MPN": "GRM32ER71E226KE15L",
+      "LCSC": "C21397",
+      "Purchase_URL": "https://item.szlcsc.com/22114.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
+    },
+    "C89": {
+      "MPN": "CC0603JRNPO9BN471",
+      "LCSC": "C106211",
+      "Purchase_URL": "https://item.szlcsc.com/107426.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft",
+      "Value": "470pF/50V C0G"
+    },
+    "C90": {
+      "MPN": "CC0603KRX7R9BB103",
+      "LCSC": "C100042",
+      "Purchase_URL": "https://item.szlcsc.com/101256.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
+    },
+    "C91": {
+      "MPN": "CC0603KRX7R9BB103",
+      "LCSC": "C100042",
+      "Purchase_URL": "https://item.szlcsc.com/101256.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
+    },
+    "C92": {
+      "MPN": "16SVP150M",
+      "LCSC": "C178346",
+      "Purchase_URL": "https://item.szlcsc.com/189739.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
+    },
+    "C94": {
+      "MPN": "CL21A106KAYNNNE",
+      "LCSC": "C15850",
+      "Purchase_URL": "https://item.szlcsc.com/16532.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft",
+      "Value": "10uF/25V X5R"
+    },
+    "J18": {
+      "MPN": "HX PZ2.54-2x6P ZZ",
+      "LCSC": "C32713279",
+      "Purchase_URL": "https://item.szlcsc.com/34444559.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft",
+      "Datasheet": "https://atta.szlcsc.com/upload/public/pdf/source/20240723/7CFD6BBE81D942E4FB6053E60626E655.pdf"
+    }
   },
   "paper": {
-    "02_Power.kicad_sch": "A4",
+    "02_Power.kicad_sch": "A3",
     "03_Core_Interface.kicad_sch": "A4",
     "04_Left_Motor.kicad_sch": "A4",
     "05_Right_Motor.kicad_sch": "A4",
@@ -540,5 +804,306 @@
     "buck_efficiency_assumed": 0.85,
     "input_current_a": 11.09035294117647,
     "measurement": false
-  }
+  },
+  "resume_baseline": "baseline-2026-11-07-m28-resume-local-ee068449",
+  "resume_property_edits": {
+    "U1": {
+      "MPN": "AP64500SP-13",
+      "LCSC": "C2070920",
+      "Purchase_URL": "https://item.szlcsc.com/2162503.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
+    },
+    "U6": {
+      "MPN": "AP64500SP-13",
+      "LCSC": "C2070920",
+      "Purchase_URL": "https://item.szlcsc.com/2162503.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
+    },
+    "U8": {
+      "MPN": "TPS25810RVCR",
+      "LCSC": "C473913",
+      "Purchase_URL": "https://item.szlcsc.com/480472.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
+    },
+    "U11": {
+      "MPN": "SN74LV1T125DBVR",
+      "LCSC": "C473338",
+      "Purchase_URL": "https://item.szlcsc.com/480066.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
+    },
+    "U12": {
+      "MPN": "SN74LVC1G125DBVR",
+      "LCSC": "C23654",
+      "Purchase_URL": "https://item.szlcsc.com/24390.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
+    },
+    "L1": {
+      "MPN": "744325330",
+      "LCSC": "C5129929",
+      "Purchase_URL": "https://item.szlcsc.com/5735814.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
+    },
+    "L2": {
+      "MPN": "744325330",
+      "LCSC": "C5129929",
+      "Purchase_URL": "https://item.szlcsc.com/5735814.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
+    },
+    "Q3": {
+      "MPN": "BSS138BK,215",
+      "LCSC": "C282529",
+      "Purchase_URL": "https://item.szlcsc.com/268469.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
+    },
+    "J25": {
+      "MPN": "USB4125-GF-A",
+      "LCSC": "C3151650",
+      "Purchase_URL": "https://item.szlcsc.com/3712352.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
+    },
+    "R59": {
+      "MPN": "ARG03BTC5362",
+      "LCSC": "C2684559",
+      "Purchase_URL": "https://item.szlcsc.com/2782693.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
+    },
+    "R64": {
+      "MPN": "ARG03BTC5362",
+      "LCSC": "C2684559",
+      "Purchase_URL": "https://item.szlcsc.com/2782693.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
+    },
+    "R60": {
+      "MPN": "ARG03BTC1002",
+      "LCSC": "C309083",
+      "Purchase_URL": "https://item.szlcsc.com/292745.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft",
+      "Value": "10k / 0.1%"
+    },
+    "R65": {
+      "MPN": "ARG03BTC1002",
+      "LCSC": "C309083",
+      "Purchase_URL": "https://item.szlcsc.com/292745.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft",
+      "Value": "10k / 0.1%"
+    },
+    "R61": {
+      "MPN": "0603WAF8202T5E",
+      "LCSC": "C23254",
+      "Purchase_URL": "https://item.szlcsc.com/23981.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
+    },
+    "R62": {
+      "MPN": "0603WAF1002T5E",
+      "LCSC": "C25804",
+      "Purchase_URL": "https://item.szlcsc.com/26547.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
+    },
+    "R74": {
+      "MPN": "0603WAF1002T5E",
+      "LCSC": "C25804",
+      "Purchase_URL": "https://item.szlcsc.com/26547.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
+    },
+    "R63": {
+      "MPN": "0603WAF2003T5E",
+      "LCSC": "C25811",
+      "Purchase_URL": "https://item.szlcsc.com/26554.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
+    },
+    "R92": {
+      "MPN": "0603WAF2003T5E",
+      "LCSC": "C25811",
+      "Purchase_URL": "https://item.szlcsc.com/26554.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
+    },
+    "R66": {
+      "MPN": "0603WAF1582T5E",
+      "LCSC": "C22880",
+      "Purchase_URL": "https://item.szlcsc.com/23607.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
+    },
+    "R67": {
+      "MPN": "0603WAF1582T5E",
+      "LCSC": "C22880",
+      "Purchase_URL": "https://item.szlcsc.com/23607.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
+    },
+    "R73": {
+      "MPN": "0603WAF1003T5E",
+      "LCSC": "C25803",
+      "Purchase_URL": "https://item.szlcsc.com/26546.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
+    },
+    "R75": {
+      "MPN": "0603WAF1003T5E",
+      "LCSC": "C25803",
+      "Purchase_URL": "https://item.szlcsc.com/26546.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
+    },
+    "R79": {
+      "MPN": "0603WAF1003T5E",
+      "LCSC": "C25803",
+      "Purchase_URL": "https://item.szlcsc.com/26546.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
+    },
+    "R93": {
+      "MPN": "0603WAF1003T5E",
+      "LCSC": "C25803",
+      "Purchase_URL": "https://item.szlcsc.com/26546.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
+    },
+    "C74": {
+      "MPN": "CL10B104KB8NNNC",
+      "LCSC": "C1591",
+      "Purchase_URL": "https://item.szlcsc.com/1943.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft",
+      "Value": "100nF/50V X7R"
+    },
+    "C75": {
+      "MPN": "CL10B104KB8NNNC",
+      "LCSC": "C1591",
+      "Purchase_URL": "https://item.szlcsc.com/1943.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft",
+      "Value": "100nF/50V X7R"
+    },
+    "C85": {
+      "MPN": "CL10B104KB8NNNC",
+      "LCSC": "C1591",
+      "Purchase_URL": "https://item.szlcsc.com/1943.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft",
+      "Value": "100nF/50V X7R"
+    },
+    "C87": {
+      "MPN": "CL10B104KB8NNNC",
+      "LCSC": "C1591",
+      "Purchase_URL": "https://item.szlcsc.com/1943.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft",
+      "Value": "100nF/50V X7R"
+    },
+    "C93": {
+      "MPN": "CL10B104KB8NNNC",
+      "LCSC": "C1591",
+      "Purchase_URL": "https://item.szlcsc.com/1943.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft",
+      "Value": "100nF/50V X7R"
+    },
+    "C84": {
+      "MPN": "GRM21BR61H106KE43L",
+      "LCSC": "C440198",
+      "Purchase_URL": "https://item.szlcsc.com/439567.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
+    },
+    "C86": {
+      "MPN": "GRM32ER71E226KE15L",
+      "LCSC": "C21397",
+      "Purchase_URL": "https://item.szlcsc.com/22114.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
+    },
+    "C88": {
+      "MPN": "GRM32ER71E226KE15L",
+      "LCSC": "C21397",
+      "Purchase_URL": "https://item.szlcsc.com/22114.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
+    },
+    "C89": {
+      "MPN": "CC0603JRNPO9BN471",
+      "LCSC": "C106211",
+      "Purchase_URL": "https://item.szlcsc.com/107426.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft",
+      "Value": "470pF/50V C0G"
+    },
+    "C63": {
+      "MPN": "CC0603JRNPO9BN471",
+      "LCSC": "C106211",
+      "Purchase_URL": "https://item.szlcsc.com/107426.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft",
+      "Value": "470pF/50V C0G"
+    },
+    "C90": {
+      "MPN": "CC0603KRX7R9BB103",
+      "LCSC": "C100042",
+      "Purchase_URL": "https://item.szlcsc.com/101256.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
+    },
+    "C91": {
+      "MPN": "CC0603KRX7R9BB103",
+      "LCSC": "C100042",
+      "Purchase_URL": "https://item.szlcsc.com/101256.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
+    },
+    "C92": {
+      "MPN": "16SVP150M",
+      "LCSC": "C178346",
+      "Purchase_URL": "https://item.szlcsc.com/189739.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft"
+    },
+    "C94": {
+      "MPN": "CL21A106KAYNNNE",
+      "LCSC": "C15850",
+      "Purchase_URL": "https://item.szlcsc.com/16532.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft",
+      "Value": "10uF/25V X5R"
+    },
+    "J18": {
+      "MPN": "HX PZ2.54-2x6P ZZ",
+      "LCSC": "C32713279",
+      "Purchase_URL": "https://item.szlcsc.com/34444559.html",
+      "Stock_Checked": "2026-11-07",
+      "Procurement_Status": "domestic in-stock snapshot; prototype draft",
+      "Datasheet": "https://atta.szlcsc.com/upload/public/pdf/source/20240723/7CFD6BBE81D942E4FB6053E60626E655.pdf"
+    }
+  },
+  "resume_annotation_edits": {
+    "local_GND_to_global_passive": 10,
+    "sheets": [
+      "03_Core_Interface.kicad_sch",
+      "07_TFT_Buttons.kicad_sch",
+      "08_Grayscale_Cameras.kicad_sch",
+      "09_Bluetooth_Stepper.kicad_sch"
+    ],
+    "power_compensation_notes": "39pF to470pF twice",
+    "Lichee_hierarchical_ports": "LICHEE_TX/RX shifted right to40.64mm; wire endpoint shortened, same UUID/net",
+    "sheet_revisions": "07 and09 annotation revisions M2.8; unchanged04/05 retain historical local sheet revision"
+  },
+  "net_intent_module": "tools/m28_contract.py; static edits applied to saved M2.7 live netlist",
+  "procurement_unresolved": []
 }

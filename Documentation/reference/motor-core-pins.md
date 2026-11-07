@@ -1,6 +1,6 @@
 # Motor核心板信号分配
 
-更新日期：2026-11-03，按当前Motor布局重新分配。
+轮控制分配日期：2026-11-03；M2.8 状态更新：2026-11-07。轮控制 13 路保留，完整资源已增至 40 路 GPIO。
 本次只修改Motor使用哪些GPIO，不改Core的98触点针序，也不改Core或网络Expansion的PCB。
 完整机器表为[core_pin_assignment.csv](../../Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/core_pin_assignment.csv)。
 GPIO与触点关系仍由[公共接口表](../../Hardware/stm32c5a3/Hardware/Shared/interface.csv)维护。
@@ -48,7 +48,7 @@ Core的PE3用户灯、PD2用户键、PH2启动脚不参与分配。
 
 左编码器改用TIM5，右编码器改用TIM2，两个计数器独立。
 TIM4仅负责左右PWM，CH4与CH3共享频率，不能与编码器复用同一个计数器。
-M2 已将 TIM3_CH1/PB4 分配给 TFT 背光，TIM1_CH1/PE9 分配给步进脉冲。
+M2.8 将 TIM3_CH1/PB4 用于 TFT 背光；步进采用 USART1 TTL，不再占 TIM1_CH1/PE9。PD8/PD9 为荔枝派 USART3，PD12 是步进高有效控电。
 
 右编码器的物理A相接TIM2的CH2，物理B相接CH1。
 这是为方便布线选择的相位顺序，编码器接口仍使用TI1/TI2配对；固件需按车轮前进方向标定计数符号。

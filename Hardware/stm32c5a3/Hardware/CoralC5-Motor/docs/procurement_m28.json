@@ -1,0 +1,357 @@
+{
+  "date": "2026-11-07",
+  "currency": "CNY",
+  "scope": "M2.8 new and revised selections only; not all legacy parts or production BOM",
+  "parts": [
+    {
+      "lcsc": "C100042",
+      "mpn": "CC0603KRX7R9BB103",
+      "references": [
+        "C90",
+        "C91"
+      ],
+      "url": "https://item.szlcsc.com/101256.html",
+      "stock": 579041,
+      "domestic_gd": 579000,
+      "domestic_js": 0,
+      "queried_utc": "2026-11-07T15:32:55.8984169Z",
+      "price_cny": 0.0135,
+      "record": "sources/m28-resume/C100042-record.json",
+      "status": "domestic in-stock snapshot; not ordered"
+    },
+    {
+      "lcsc": "C106211",
+      "mpn": "CC0603JRNPO9BN471",
+      "references": [
+        "C63",
+        "C89"
+      ],
+      "url": "https://item.szlcsc.com/107426.html",
+      "stock": 402124,
+      "domestic_gd": 402100,
+      "domestic_js": 0,
+      "queried_utc": "2026-11-07T15:32:56.4755069Z",
+      "price_cny": 0.0155,
+      "record": "sources/m28-resume/C106211-record.json",
+      "status": "domestic in-stock snapshot; not ordered"
+    },
+    {
+      "lcsc": "C15850",
+      "mpn": "CL21A106KAYNNNE",
+      "references": [
+        "C94"
+      ],
+      "url": "https://item.szlcsc.com/16532.html",
+      "stock": 7431502,
+      "domestic_gd": 7431500,
+      "domestic_js": 0,
+      "queried_utc": "2026-11-07T15:33:54.1592664Z",
+      "price_cny": 0.1201,
+      "record": "sources/m28-resume/C15850-record.json",
+      "status": "domestic in-stock snapshot; not ordered"
+    },
+    {
+      "lcsc": "C1591",
+      "mpn": "CL10B104KB8NNNC",
+      "references": [
+        "C74",
+        "C75",
+        "C85",
+        "C87",
+        "C93"
+      ],
+      "url": "https://item.szlcsc.com/1943.html",
+      "stock": 1802765,
+      "domestic_gd": 1802700,
+      "domestic_js": 0,
+      "queried_utc": "2026-11-07T15:45:25.5386671Z",
+      "price_cny": 0.0223,
+      "record": "sources/m28-resume/C1591-record.json",
+      "status": "domestic in-stock snapshot; not ordered"
+    },
+    {
+      "lcsc": "C178346",
+      "mpn": "16SVP150M",
+      "references": [
+        "C92"
+      ],
+      "url": "https://item.szlcsc.com/189739.html",
+      "stock": 62,
+      "domestic_gd": 62,
+      "domestic_js": 0,
+      "queried_utc": "2026-11-07T15:32:55.3273099Z",
+      "price_cny": 5.65,
+      "record": "sources/m28-resume/C178346-record.json",
+      "status": "domestic in-stock snapshot; not ordered"
+    },
+    {
+      "lcsc": "C2070920",
+      "mpn": "AP64500SP-13",
+      "references": [
+        "U1",
+        "U6"
+      ],
+      "url": "https://item.szlcsc.com/2162503.html",
+      "stock": 1788,
+      "domestic_gd": 1788,
+      "domestic_js": 0,
+      "queried_utc": "2026-11-07T15:32:54.1004970Z",
+      "price_cny": 6.33,
+      "record": "sources/m28-resume/C2070920-record.json",
+      "status": "domestic in-stock snapshot; not ordered"
+    },
+    {
+      "lcsc": "C21397",
+      "mpn": "GRM32ER71E226KE15L",
+      "references": [
+        "C86",
+        "C88"
+      ],
+      "url": "https://item.szlcsc.com/22114.html",
+      "stock": 52241,
+      "domestic_gd": 52241,
+      "domestic_js": 0,
+      "queried_utc": "2026-11-07T15:32:54.7353546Z",
+      "price_cny": 1.15,
+      "record": "sources/m28-resume/C21397-record.json",
+      "status": "domestic in-stock snapshot; not ordered"
+    },
+    {
+      "lcsc": "C22880",
+      "mpn": "0603WAF1582T5E",
+      "references": [
+        "R66",
+        "R67"
+      ],
+      "url": "https://item.szlcsc.com/23607.html",
+      "stock": 8260,
+      "domestic_gd": 8200,
+      "domestic_js": 0,
+      "queried_utc": "2026-11-07T15:32:55.3194879Z",
+      "price_cny": 0.0086,
+      "record": "sources/m28-resume/C22880-record.json",
+      "status": "domestic in-stock snapshot; not ordered"
+    },
+    {
+      "lcsc": "C23254",
+      "mpn": "0603WAF8202T5E",
+      "references": [
+        "R61"
+      ],
+      "url": "https://item.szlcsc.com/23981.html",
+      "stock": 772676,
+      "domestic_gd": 772600,
+      "domestic_js": 0,
+      "queried_utc": "2026-11-07T15:32:56.4699318Z",
+      "price_cny": 0.0079,
+      "record": "sources/m28-resume/C23254-record.json",
+      "status": "domestic in-stock snapshot; not ordered"
+    },
+    {
+      "lcsc": "C23654",
+      "mpn": "SN74LVC1G125DBVR",
+      "references": [
+        "U12"
+      ],
+      "url": "https://item.szlcsc.com/24390.html",
+      "stock": 161199,
+      "domestic_gd": 152050,
+      "domestic_js": 0,
+      "queried_utc": "2026-11-07T15:32:54.7457036Z",
+      "price_cny": 0.2175,
+      "record": "sources/m28-resume/C23654-record.json",
+      "status": "domestic in-stock snapshot; not ordered"
+    },
+    {
+      "lcsc": "C25803",
+      "mpn": "0603WAF1003T5E",
+      "references": [
+        "R73",
+        "R75",
+        "R79",
+        "R93"
+      ],
+      "url": "https://item.szlcsc.com/26546.html",
+      "stock": 7497373,
+      "domestic_gd": 7497300,
+      "domestic_js": 0,
+      "queried_utc": "2026-11-07T15:33:53.2181721Z",
+      "price_cny": 0.0088,
+      "record": "sources/m28-resume/C25803-record.json",
+      "status": "domestic in-stock snapshot; not ordered"
+    },
+    {
+      "lcsc": "C25804",
+      "mpn": "0603WAF1002T5E",
+      "references": [
+        "R62",
+        "R74"
+      ],
+      "url": "https://item.szlcsc.com/26547.html",
+      "stock": 3820389,
+      "domestic_gd": 3820300,
+      "domestic_js": 0,
+      "queried_utc": "2026-11-07T15:33:53.2177792Z",
+      "price_cny": 0.0089,
+      "record": "sources/m28-resume/C25804-record.json",
+      "status": "domestic in-stock snapshot; not ordered"
+    },
+    {
+      "lcsc": "C25811",
+      "mpn": "0603WAF2003T5E",
+      "references": [
+        "R63",
+        "R92"
+      ],
+      "url": "https://item.szlcsc.com/26554.html",
+      "stock": 1063003,
+      "domestic_gd": 1063000,
+      "domestic_js": 0,
+      "queried_utc": "2026-11-07T15:32:55.8897652Z",
+      "price_cny": 0.0059,
+      "record": "sources/m28-resume/C25811-record.json",
+      "status": "domestic in-stock snapshot; not ordered"
+    },
+    {
+      "lcsc": "C2684559",
+      "mpn": "ARG03BTC5362",
+      "references": [
+        "R59",
+        "R64"
+      ],
+      "url": "https://item.szlcsc.com/2782693.html",
+      "stock": 3975,
+      "domestic_gd": 3960,
+      "domestic_js": 0,
+      "queried_utc": "2026-11-07T15:32:55.3242769Z",
+      "price_cny": 0.1178,
+      "record": "sources/m28-resume/C2684559-record.json",
+      "status": "domestic in-stock snapshot; not ordered"
+    },
+    {
+      "lcsc": "C282529",
+      "mpn": "BSS138BK,215",
+      "references": [
+        "Q3"
+      ],
+      "url": "https://item.szlcsc.com/268469.html",
+      "stock": 8268,
+      "domestic_gd": 8260,
+      "domestic_js": 0,
+      "queried_utc": "2026-11-07T15:32:56.4680008Z",
+      "price_cny": 0.1213,
+      "record": "sources/m28-resume/C282529-record.json",
+      "status": "domestic in-stock snapshot; not ordered"
+    },
+    {
+      "lcsc": "C309083",
+      "mpn": "ARG03BTC1002",
+      "references": [
+        "R60",
+        "R65"
+      ],
+      "url": "https://item.szlcsc.com/292745.html",
+      "stock": 863791,
+      "domestic_gd": 863780,
+      "domestic_js": 0,
+      "queried_utc": "2026-11-07T15:32:54.1007526Z",
+      "price_cny": 0.0786,
+      "record": "sources/m28-resume/C309083-record.json",
+      "status": "domestic in-stock snapshot; not ordered"
+    },
+    {
+      "lcsc": "C3151650",
+      "mpn": "USB4125-GF-A",
+      "references": [
+        "J25"
+      ],
+      "url": "https://item.szlcsc.com/3712352.html",
+      "stock": 31,
+      "domestic_gd": 31,
+      "domestic_js": 0,
+      "queried_utc": "2026-11-07T15:33:54.0730833Z",
+      "price_cny": 3.4,
+      "record": "sources/m28-resume/C3151650-record.json",
+      "status": "domestic in-stock snapshot; not ordered"
+    },
+    {
+      "lcsc": "C440198",
+      "mpn": "GRM21BR61H106KE43L",
+      "references": [
+        "C84"
+      ],
+      "url": "https://item.szlcsc.com/439567.html",
+      "stock": 193410,
+      "domestic_gd": 193410,
+      "domestic_js": 0,
+      "queried_utc": "2026-11-07T15:32:55.8926078Z",
+      "price_cny": 0.568,
+      "record": "sources/m28-resume/C440198-record.json",
+      "status": "domestic in-stock snapshot; not ordered"
+    },
+    {
+      "lcsc": "C473338",
+      "mpn": "SN74LV1T125DBVR",
+      "references": [
+        "U11"
+      ],
+      "url": "https://item.szlcsc.com/480066.html",
+      "stock": 86579,
+      "domestic_gd": 84845,
+      "domestic_js": 0,
+      "queried_utc": "2026-11-07T15:32:54.1003943Z",
+      "price_cny": 0.59,
+      "record": "sources/m28-resume/C473338-record.json",
+      "status": "domestic in-stock snapshot; not ordered"
+    },
+    {
+      "lcsc": "C473913",
+      "mpn": "TPS25810RVCR",
+      "references": [
+        "U8"
+      ],
+      "url": "https://item.szlcsc.com/480472.html",
+      "stock": 6108,
+      "domestic_gd": 6108,
+      "domestic_js": 0,
+      "queried_utc": "2026-11-07T15:43:33.5392524Z",
+      "price_cny": 1.9,
+      "record": "sources/m28-resume/C473913-record.json",
+      "status": "domestic in-stock snapshot; not ordered"
+    },
+    {
+      "lcsc": "C5129929",
+      "mpn": "744325330",
+      "references": [
+        "L1",
+        "L2"
+      ],
+      "url": "https://item.szlcsc.com/5735814.html",
+      "stock": 15,
+      "domestic_gd": 15,
+      "domestic_js": 0,
+      "queried_utc": "2026-11-07T15:32:54.7479375Z",
+      "price_cny": 25.62,
+      "record": "sources/m28-resume/C5129929-record.json",
+      "status": "domestic in-stock snapshot; not ordered"
+    },
+    {
+      "lcsc": "C32713279",
+      "mpn": "HX PZ2.54-2x6P ZZ",
+      "references": [
+        "J18"
+      ],
+      "url": "https://item.szlcsc.com/34444559.html",
+      "stock": 23349,
+      "domestic_gd": 23345,
+      "domestic_js": 0,
+      "queried_utc": "2026-11-07T15:53:34.3453531Z",
+      "price_cny": 0.2915,
+      "record": "sources/m28-resume/C32713279-record.json",
+      "status": "domestic in-stock snapshot; not ordered",
+      "drawing": "sources/m28-resume/HX-PZ2.54-2x6P-ZZ.pdf page1",
+      "land_check": "2.54mm pitch/row,1.0mm hole,0.64mm square post;6mm mating,3mm tail,2.5mm insulator; generic header model"
+    }
+  ],
+  "unresolved": []
+}

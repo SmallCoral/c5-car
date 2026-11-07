@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <export version="E">
   <design>
-    <source>C:\Users\sc\Documents\Dev\Hardware\c5-car\Hardware\stm32c5a3\Hardware\CoralC5-Motor\CoralC5-Motor.kicad_sch</source>
-    <date>2026-11-07T18:55:58</date>
-    <tool>Eeschema 10.0.6</tool>
+    <source>D:\dev\qrs\stm32\c5-car\Hardware\stm32c5a3\Hardware\CoralC5-Motor\CoralC5-Motor.kicad_sch</source>
+    <date>2026-11-07T23:56:32</date>
+    <tool>Eeschema 10.0.8</tool>
     <textvar name="AUTHOR">SmallCoral</textvar>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -99,7 +99,7 @@
       <title_block>
         <title>中景园屏幕与四个操作按钮</title>
         <company>SmallCoral / CoralC5-Motor</company>
-        <rev>M2.7</rev>
+        <rev>M2.8</rev>
         <date>2026-11-07</date>
         <source>07_TFT_Buttons.kicad_sch</source>
         <comment number="1" value="原理图设计；实板电流、温升与线束待验证"/>
@@ -153,7 +153,7 @@
       <title_block>
         <title>四脚蓝牙与外接步进驱动接口</title>
         <company>SmallCoral / CoralC5-Motor</company>
-        <rev>M2.6</rev>
+        <rev>M2.8</rev>
         <date>2026-11-07</date>
         <source>09_Bluetooth_Stepper.kicad_sch</source>
         <comment number="1" value="原理图设计；实板电流、温升与线束待验证"/>
@@ -344,18 +344,24 @@
       </units>
     </comp>
     <comp ref="C63">
-      <value>39pF/50V C0G</value>
+      <value>470pF/50V C0G</value>
       <footprint>Motor:C_0603_1608Metric_Gap0.85mm_HandSolder</footprint>
       <fields>
-        <field name="MPN">CC0603JRNPO9BN390</field>
-        <field name="LCSC">C107049</field>
+        <field name="MPN">CC0603JRNPO9BN471</field>
+        <field name="LCSC">C106211</field>
+        <field name="Purchase_URL">https://item.szlcsc.com/107426.html</field>
+        <field name="Stock_Checked">2026-11-07</field>
+        <field name="Procurement_Status">domestic in-stock snapshot; prototype draft</field>
         <field name="Footprint">Motor:C_0603_1608Metric_Gap0.85mm_HandSolder</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
-      <property name="MPN" value="CC0603JRNPO9BN390"/>
-      <property name="LCSC" value="C107049"/>
+      <property name="MPN" value="CC0603JRNPO9BN471"/>
+      <property name="LCSC" value="C106211"/>
+      <property name="Purchase_URL" value="https://item.szlcsc.com/107426.html"/>
+      <property name="Stock_Checked" value="2026-11-07"/>
+      <property name="Procurement_Status" value="domestic in-stock snapshot; prototype draft"/>
       <property name="Sheetname" value="输入、总开关与降压"/>
       <property name="Sheetfile" value="02_Power.kicad_sch"/>
       <property name="ki_keywords" value="cap capacitor"/>
@@ -375,11 +381,21 @@
       <value>10uF/50V X5R</value>
       <footprint>Motor:Capacitor_SMD__C_0805_2012Metric</footprint>
       <fields>
+        <field name="MPN">GRM21BR61H106KE43L</field>
+        <field name="LCSC">C440198</field>
+        <field name="Purchase_URL">https://item.szlcsc.com/439567.html</field>
+        <field name="Stock_Checked">2026-11-07</field>
+        <field name="Procurement_Status">domestic in-stock snapshot; prototype draft</field>
         <field name="Footprint">Motor:Capacitor_SMD__C_0805_2012Metric</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
+      <property name="MPN" value="GRM21BR61H106KE43L"/>
+      <property name="LCSC" value="C440198"/>
+      <property name="Purchase_URL" value="https://item.szlcsc.com/439567.html"/>
+      <property name="Stock_Checked" value="2026-11-07"/>
+      <property name="Procurement_Status" value="domestic in-stock snapshot; prototype draft"/>
       <property name="Sheetname" value="输入、总开关与降压"/>
       <property name="Sheetfile" value="02_Power.kicad_sch"/>
       <property name="ki_keywords" value="cap capacitor"/>
@@ -396,14 +412,24 @@
       </units>
     </comp>
     <comp ref="C85">
-      <value>100nF/50V</value>
+      <value>100nF/50V X7R</value>
       <footprint>Motor:C_0603_1608Metric_Gap0.85mm_HandSolder</footprint>
       <fields>
+        <field name="MPN">CL10B104KB8NNNC</field>
+        <field name="LCSC">C1591</field>
+        <field name="Purchase_URL">https://item.szlcsc.com/1943.html</field>
+        <field name="Stock_Checked">2026-11-07</field>
+        <field name="Procurement_Status">domestic in-stock snapshot; prototype draft</field>
         <field name="Footprint">Motor:C_0603_1608Metric_Gap0.85mm_HandSolder</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
+      <property name="MPN" value="CL10B104KB8NNNC"/>
+      <property name="LCSC" value="C1591"/>
+      <property name="Purchase_URL" value="https://item.szlcsc.com/1943.html"/>
+      <property name="Stock_Checked" value="2026-11-07"/>
+      <property name="Procurement_Status" value="domestic in-stock snapshot; prototype draft"/>
       <property name="Sheetname" value="输入、总开关与降压"/>
       <property name="Sheetfile" value="02_Power.kicad_sch"/>
       <property name="ki_keywords" value="cap capacitor"/>
@@ -425,6 +451,9 @@
       <fields>
         <field name="MPN">GRM32ER71E226KE15L</field>
         <field name="LCSC">C21397</field>
+        <field name="Purchase_URL">https://item.szlcsc.com/22114.html</field>
+        <field name="Stock_Checked">2026-11-07</field>
+        <field name="Procurement_Status">domestic in-stock snapshot; prototype draft</field>
         <field name="Footprint">Motor:Capacitor_SMD__C_1210_3225Metric</field>
         <field name="Datasheet"/>
         <field name="Description"/>
@@ -432,6 +461,9 @@
       <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
       <property name="MPN" value="GRM32ER71E226KE15L"/>
       <property name="LCSC" value="C21397"/>
+      <property name="Purchase_URL" value="https://item.szlcsc.com/22114.html"/>
+      <property name="Stock_Checked" value="2026-11-07"/>
+      <property name="Procurement_Status" value="domestic in-stock snapshot; prototype draft"/>
       <property name="Sheetname" value="输入、总开关与降压"/>
       <property name="Sheetfile" value="02_Power.kicad_sch"/>
       <property name="ki_keywords" value="cap capacitor"/>
@@ -448,14 +480,24 @@
       </units>
     </comp>
     <comp ref="C87">
-      <value>100nF/16V</value>
+      <value>100nF/50V X7R</value>
       <footprint>Motor:C_0603_1608Metric_Gap0.85mm_HandSolder</footprint>
       <fields>
+        <field name="MPN">CL10B104KB8NNNC</field>
+        <field name="LCSC">C1591</field>
+        <field name="Purchase_URL">https://item.szlcsc.com/1943.html</field>
+        <field name="Stock_Checked">2026-11-07</field>
+        <field name="Procurement_Status">domestic in-stock snapshot; prototype draft</field>
         <field name="Footprint">Motor:C_0603_1608Metric_Gap0.85mm_HandSolder</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
+      <property name="MPN" value="CL10B104KB8NNNC"/>
+      <property name="LCSC" value="C1591"/>
+      <property name="Purchase_URL" value="https://item.szlcsc.com/1943.html"/>
+      <property name="Stock_Checked" value="2026-11-07"/>
+      <property name="Procurement_Status" value="domestic in-stock snapshot; prototype draft"/>
       <property name="Sheetname" value="输入、总开关与降压"/>
       <property name="Sheetfile" value="02_Power.kicad_sch"/>
       <property name="ki_keywords" value="cap capacitor"/>
@@ -477,6 +519,9 @@
       <fields>
         <field name="MPN">GRM32ER71E226KE15L</field>
         <field name="LCSC">C21397</field>
+        <field name="Purchase_URL">https://item.szlcsc.com/22114.html</field>
+        <field name="Stock_Checked">2026-11-07</field>
+        <field name="Procurement_Status">domestic in-stock snapshot; prototype draft</field>
         <field name="Footprint">Motor:Capacitor_SMD__C_1210_3225Metric</field>
         <field name="Datasheet"/>
         <field name="Description"/>
@@ -484,6 +529,9 @@
       <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
       <property name="MPN" value="GRM32ER71E226KE15L"/>
       <property name="LCSC" value="C21397"/>
+      <property name="Purchase_URL" value="https://item.szlcsc.com/22114.html"/>
+      <property name="Stock_Checked" value="2026-11-07"/>
+      <property name="Procurement_Status" value="domestic in-stock snapshot; prototype draft"/>
       <property name="Sheetname" value="输入、总开关与降压"/>
       <property name="Sheetfile" value="02_Power.kicad_sch"/>
       <property name="ki_keywords" value="cap capacitor"/>
@@ -500,18 +548,24 @@
       </units>
     </comp>
     <comp ref="C89">
-      <value>39pF/50V C0G</value>
+      <value>470pF/50V C0G</value>
       <footprint>Motor:C_0603_1608Metric_Gap0.85mm_HandSolder</footprint>
       <fields>
-        <field name="MPN">CC0603JRNPO9BN390</field>
-        <field name="LCSC">C107049</field>
+        <field name="MPN">CC0603JRNPO9BN471</field>
+        <field name="LCSC">C106211</field>
+        <field name="Purchase_URL">https://item.szlcsc.com/107426.html</field>
+        <field name="Stock_Checked">2026-11-07</field>
+        <field name="Procurement_Status">domestic in-stock snapshot; prototype draft</field>
         <field name="Footprint">Motor:C_0603_1608Metric_Gap0.85mm_HandSolder</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
-      <property name="MPN" value="CC0603JRNPO9BN390"/>
-      <property name="LCSC" value="C107049"/>
+      <property name="MPN" value="CC0603JRNPO9BN471"/>
+      <property name="LCSC" value="C106211"/>
+      <property name="Purchase_URL" value="https://item.szlcsc.com/107426.html"/>
+      <property name="Stock_Checked" value="2026-11-07"/>
+      <property name="Procurement_Status" value="domestic in-stock snapshot; prototype draft"/>
       <property name="Sheetname" value="输入、总开关与降压"/>
       <property name="Sheetfile" value="02_Power.kicad_sch"/>
       <property name="ki_keywords" value="cap capacitor"/>
@@ -533,6 +587,9 @@
       <fields>
         <field name="MPN">CC0603KRX7R9BB103</field>
         <field name="LCSC">C100042</field>
+        <field name="Purchase_URL">https://item.szlcsc.com/101256.html</field>
+        <field name="Stock_Checked">2026-11-07</field>
+        <field name="Procurement_Status">domestic in-stock snapshot; prototype draft</field>
         <field name="Footprint">Motor:C_0603_1608Metric_Gap0.85mm_HandSolder</field>
         <field name="Datasheet"/>
         <field name="Description"/>
@@ -540,6 +597,9 @@
       <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
       <property name="MPN" value="CC0603KRX7R9BB103"/>
       <property name="LCSC" value="C100042"/>
+      <property name="Purchase_URL" value="https://item.szlcsc.com/101256.html"/>
+      <property name="Stock_Checked" value="2026-11-07"/>
+      <property name="Procurement_Status" value="domestic in-stock snapshot; prototype draft"/>
       <property name="Sheetname" value="输入、总开关与降压"/>
       <property name="Sheetfile" value="02_Power.kicad_sch"/>
       <property name="ki_keywords" value="cap capacitor"/>
@@ -561,6 +621,9 @@
       <fields>
         <field name="MPN">CC0603KRX7R9BB103</field>
         <field name="LCSC">C100042</field>
+        <field name="Purchase_URL">https://item.szlcsc.com/101256.html</field>
+        <field name="Stock_Checked">2026-11-07</field>
+        <field name="Procurement_Status">domestic in-stock snapshot; prototype draft</field>
         <field name="Footprint">Motor:C_0603_1608Metric_Gap0.85mm_HandSolder</field>
         <field name="Datasheet"/>
         <field name="Description"/>
@@ -568,6 +631,9 @@
       <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
       <property name="MPN" value="CC0603KRX7R9BB103"/>
       <property name="LCSC" value="C100042"/>
+      <property name="Purchase_URL" value="https://item.szlcsc.com/101256.html"/>
+      <property name="Stock_Checked" value="2026-11-07"/>
+      <property name="Procurement_Status" value="domestic in-stock snapshot; prototype draft"/>
       <property name="Sheetname" value="输入、总开关与降压"/>
       <property name="Sheetfile" value="02_Power.kicad_sch"/>
       <property name="ki_keywords" value="cap capacitor"/>
@@ -746,6 +812,9 @@
       <fields>
         <field name="MPN">744325330</field>
         <field name="LCSC">C5129929</field>
+        <field name="Purchase_URL">https://item.szlcsc.com/5735814.html</field>
+        <field name="Stock_Checked">2026-11-07</field>
+        <field name="Procurement_Status">domestic in-stock snapshot; prototype draft</field>
         <field name="Footprint">Motor:Inductor_SMD__L_Wuerth_HCI-1050</field>
         <field name="Datasheet"/>
         <field name="Description"/>
@@ -753,6 +822,9 @@
       <libsource lib="Motor" part="Device__L" description="Inductor"/>
       <property name="MPN" value="744325330"/>
       <property name="LCSC" value="C5129929"/>
+      <property name="Purchase_URL" value="https://item.szlcsc.com/5735814.html"/>
+      <property name="Stock_Checked" value="2026-11-07"/>
+      <property name="Procurement_Status" value="domestic in-stock snapshot; prototype draft"/>
       <property name="Sheetname" value="输入、总开关与降压"/>
       <property name="Sheetfile" value="02_Power.kicad_sch"/>
       <property name="ki_keywords" value="inductor choke coil reactor magnetic"/>
@@ -774,6 +846,9 @@
       <fields>
         <field name="MPN">744325330</field>
         <field name="LCSC">C5129929</field>
+        <field name="Purchase_URL">https://item.szlcsc.com/5735814.html</field>
+        <field name="Stock_Checked">2026-11-07</field>
+        <field name="Procurement_Status">domestic in-stock snapshot; prototype draft</field>
         <field name="Footprint">Motor:Inductor_SMD__L_Wuerth_HCI-1050</field>
         <field name="Datasheet"/>
         <field name="Description"/>
@@ -781,6 +856,9 @@
       <libsource lib="Motor" part="Device__L" description="Inductor"/>
       <property name="MPN" value="744325330"/>
       <property name="LCSC" value="C5129929"/>
+      <property name="Purchase_URL" value="https://item.szlcsc.com/5735814.html"/>
+      <property name="Stock_Checked" value="2026-11-07"/>
+      <property name="Procurement_Status" value="domestic in-stock snapshot; prototype draft"/>
       <property name="Sheetname" value="输入、总开关与降压"/>
       <property name="Sheetfile" value="02_Power.kicad_sch"/>
       <property name="ki_keywords" value="inductor choke coil reactor magnetic"/>
@@ -981,6 +1059,9 @@
         <field name="MPN">ARG03BTC5362</field>
         <field name="LCSC">C2684559</field>
         <field name="Tolerance">0.1%</field>
+        <field name="Purchase_URL">https://item.szlcsc.com/2782693.html</field>
+        <field name="Stock_Checked">2026-11-07</field>
+        <field name="Procurement_Status">domestic in-stock snapshot; prototype draft</field>
         <field name="Footprint">Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</field>
         <field name="Datasheet"/>
         <field name="Description"/>
@@ -989,6 +1070,9 @@
       <property name="MPN" value="ARG03BTC5362"/>
       <property name="LCSC" value="C2684559"/>
       <property name="Tolerance" value="0.1%"/>
+      <property name="Purchase_URL" value="https://item.szlcsc.com/2782693.html"/>
+      <property name="Stock_Checked" value="2026-11-07"/>
+      <property name="Procurement_Status" value="domestic in-stock snapshot; prototype draft"/>
       <property name="Sheetname" value="输入、总开关与降压"/>
       <property name="Sheetfile" value="02_Power.kicad_sch"/>
       <property name="ki_keywords" value="R res resistor"/>
@@ -1009,12 +1093,22 @@
       <footprint>Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</footprint>
       <fields>
         <field name="Tolerance">0.1%</field>
+        <field name="MPN">ARG03BTC1002</field>
+        <field name="LCSC">C309083</field>
+        <field name="Purchase_URL">https://item.szlcsc.com/292745.html</field>
+        <field name="Stock_Checked">2026-11-07</field>
+        <field name="Procurement_Status">domestic in-stock snapshot; prototype draft</field>
         <field name="Footprint">Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="Motor" part="Device__R" description="Resistor"/>
       <property name="Tolerance" value="0.1%"/>
+      <property name="MPN" value="ARG03BTC1002"/>
+      <property name="LCSC" value="C309083"/>
+      <property name="Purchase_URL" value="https://item.szlcsc.com/292745.html"/>
+      <property name="Stock_Checked" value="2026-11-07"/>
+      <property name="Procurement_Status" value="domestic in-stock snapshot; prototype draft"/>
       <property name="Sheetname" value="输入、总开关与降压"/>
       <property name="Sheetfile" value="02_Power.kicad_sch"/>
       <property name="ki_keywords" value="R res resistor"/>
@@ -1034,11 +1128,21 @@
       <value>82k / 1%</value>
       <footprint>Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</footprint>
       <fields>
+        <field name="MPN">0603WAF8202T5E</field>
+        <field name="LCSC">C23254</field>
+        <field name="Purchase_URL">https://item.szlcsc.com/23981.html</field>
+        <field name="Stock_Checked">2026-11-07</field>
+        <field name="Procurement_Status">domestic in-stock snapshot; prototype draft</field>
         <field name="Footprint">Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="Motor" part="Device__R" description="Resistor"/>
+      <property name="MPN" value="0603WAF8202T5E"/>
+      <property name="LCSC" value="C23254"/>
+      <property name="Purchase_URL" value="https://item.szlcsc.com/23981.html"/>
+      <property name="Stock_Checked" value="2026-11-07"/>
+      <property name="Procurement_Status" value="domestic in-stock snapshot; prototype draft"/>
       <property name="Sheetname" value="输入、总开关与降压"/>
       <property name="Sheetfile" value="02_Power.kicad_sch"/>
       <property name="ki_keywords" value="R res resistor"/>
@@ -1058,11 +1162,21 @@
       <value>10k / 1%</value>
       <footprint>Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</footprint>
       <fields>
+        <field name="MPN">0603WAF1002T5E</field>
+        <field name="LCSC">C25804</field>
+        <field name="Purchase_URL">https://item.szlcsc.com/26547.html</field>
+        <field name="Stock_Checked">2026-11-07</field>
+        <field name="Procurement_Status">domestic in-stock snapshot; prototype draft</field>
         <field name="Footprint">Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="Motor" part="Device__R" description="Resistor"/>
+      <property name="MPN" value="0603WAF1002T5E"/>
+      <property name="LCSC" value="C25804"/>
+      <property name="Purchase_URL" value="https://item.szlcsc.com/26547.html"/>
+      <property name="Stock_Checked" value="2026-11-07"/>
+      <property name="Procurement_Status" value="domestic in-stock snapshot; prototype draft"/>
       <property name="Sheetname" value="输入、总开关与降压"/>
       <property name="Sheetfile" value="02_Power.kicad_sch"/>
       <property name="ki_keywords" value="R res resistor"/>
@@ -1084,6 +1198,9 @@
       <fields>
         <field name="MPN">0603WAF2003T5E</field>
         <field name="LCSC">C25811</field>
+        <field name="Purchase_URL">https://item.szlcsc.com/26554.html</field>
+        <field name="Stock_Checked">2026-11-07</field>
+        <field name="Procurement_Status">domestic in-stock snapshot; prototype draft</field>
         <field name="Footprint">Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</field>
         <field name="Datasheet"/>
         <field name="Description"/>
@@ -1091,6 +1208,9 @@
       <libsource lib="Motor" part="Device__R" description="Resistor"/>
       <property name="MPN" value="0603WAF2003T5E"/>
       <property name="LCSC" value="C25811"/>
+      <property name="Purchase_URL" value="https://item.szlcsc.com/26554.html"/>
+      <property name="Stock_Checked" value="2026-11-07"/>
+      <property name="Procurement_Status" value="domestic in-stock snapshot; prototype draft"/>
       <property name="Sheetname" value="输入、总开关与降压"/>
       <property name="Sheetfile" value="02_Power.kicad_sch"/>
       <property name="ki_keywords" value="R res resistor"/>
@@ -1113,6 +1233,9 @@
         <field name="MPN">ARG03BTC5362</field>
         <field name="LCSC">C2684559</field>
         <field name="Tolerance">0.1%</field>
+        <field name="Purchase_URL">https://item.szlcsc.com/2782693.html</field>
+        <field name="Stock_Checked">2026-11-07</field>
+        <field name="Procurement_Status">domestic in-stock snapshot; prototype draft</field>
         <field name="Footprint">Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</field>
         <field name="Datasheet"/>
         <field name="Description"/>
@@ -1121,6 +1244,9 @@
       <property name="MPN" value="ARG03BTC5362"/>
       <property name="LCSC" value="C2684559"/>
       <property name="Tolerance" value="0.1%"/>
+      <property name="Purchase_URL" value="https://item.szlcsc.com/2782693.html"/>
+      <property name="Stock_Checked" value="2026-11-07"/>
+      <property name="Procurement_Status" value="domestic in-stock snapshot; prototype draft"/>
       <property name="Sheetname" value="输入、总开关与降压"/>
       <property name="Sheetfile" value="02_Power.kicad_sch"/>
       <property name="ki_keywords" value="R res resistor"/>
@@ -1141,12 +1267,22 @@
       <footprint>Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</footprint>
       <fields>
         <field name="Tolerance">0.1%</field>
+        <field name="MPN">ARG03BTC1002</field>
+        <field name="LCSC">C309083</field>
+        <field name="Purchase_URL">https://item.szlcsc.com/292745.html</field>
+        <field name="Stock_Checked">2026-11-07</field>
+        <field name="Procurement_Status">domestic in-stock snapshot; prototype draft</field>
         <field name="Footprint">Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="Motor" part="Device__R" description="Resistor"/>
       <property name="Tolerance" value="0.1%"/>
+      <property name="MPN" value="ARG03BTC1002"/>
+      <property name="LCSC" value="C309083"/>
+      <property name="Purchase_URL" value="https://item.szlcsc.com/292745.html"/>
+      <property name="Stock_Checked" value="2026-11-07"/>
+      <property name="Procurement_Status" value="domestic in-stock snapshot; prototype draft"/>
       <property name="Sheetname" value="输入、总开关与降压"/>
       <property name="Sheetfile" value="02_Power.kicad_sch"/>
       <property name="ki_keywords" value="R res resistor"/>
@@ -1168,6 +1304,9 @@
       <fields>
         <field name="MPN">0603WAF1582T5E</field>
         <field name="LCSC">C22880</field>
+        <field name="Purchase_URL">https://item.szlcsc.com/23607.html</field>
+        <field name="Stock_Checked">2026-11-07</field>
+        <field name="Procurement_Status">domestic in-stock snapshot; prototype draft</field>
         <field name="Footprint">Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</field>
         <field name="Datasheet"/>
         <field name="Description"/>
@@ -1175,6 +1314,9 @@
       <libsource lib="Motor" part="Device__R" description="Resistor"/>
       <property name="MPN" value="0603WAF1582T5E"/>
       <property name="LCSC" value="C22880"/>
+      <property name="Purchase_URL" value="https://item.szlcsc.com/23607.html"/>
+      <property name="Stock_Checked" value="2026-11-07"/>
+      <property name="Procurement_Status" value="domestic in-stock snapshot; prototype draft"/>
       <property name="Sheetname" value="输入、总开关与降压"/>
       <property name="Sheetfile" value="02_Power.kicad_sch"/>
       <property name="ki_keywords" value="R res resistor"/>
@@ -1196,6 +1338,9 @@
       <fields>
         <field name="MPN">0603WAF1582T5E</field>
         <field name="LCSC">C22880</field>
+        <field name="Purchase_URL">https://item.szlcsc.com/23607.html</field>
+        <field name="Stock_Checked">2026-11-07</field>
+        <field name="Procurement_Status">domestic in-stock snapshot; prototype draft</field>
         <field name="Footprint">Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</field>
         <field name="Datasheet"/>
         <field name="Description"/>
@@ -1203,6 +1348,9 @@
       <libsource lib="Motor" part="Device__R" description="Resistor"/>
       <property name="MPN" value="0603WAF1582T5E"/>
       <property name="LCSC" value="C22880"/>
+      <property name="Purchase_URL" value="https://item.szlcsc.com/23607.html"/>
+      <property name="Stock_Checked" value="2026-11-07"/>
+      <property name="Procurement_Status" value="domestic in-stock snapshot; prototype draft"/>
       <property name="Sheetname" value="输入、总开关与降压"/>
       <property name="Sheetfile" value="02_Power.kicad_sch"/>
       <property name="ki_keywords" value="R res resistor"/>
@@ -1224,6 +1372,9 @@
       <fields>
         <field name="MPN">0603WAF2003T5E</field>
         <field name="LCSC">C25811</field>
+        <field name="Purchase_URL">https://item.szlcsc.com/26554.html</field>
+        <field name="Stock_Checked">2026-11-07</field>
+        <field name="Procurement_Status">domestic in-stock snapshot; prototype draft</field>
         <field name="Footprint">Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</field>
         <field name="Datasheet"/>
         <field name="Description"/>
@@ -1231,6 +1382,9 @@
       <libsource lib="Motor" part="Device__R" description="Resistor"/>
       <property name="MPN" value="0603WAF2003T5E"/>
       <property name="LCSC" value="C25811"/>
+      <property name="Purchase_URL" value="https://item.szlcsc.com/26554.html"/>
+      <property name="Stock_Checked" value="2026-11-07"/>
+      <property name="Procurement_Status" value="domestic in-stock snapshot; prototype draft"/>
       <property name="Sheetname" value="输入、总开关与降压"/>
       <property name="Sheetfile" value="02_Power.kicad_sch"/>
       <property name="ki_keywords" value="R res resistor"/>
@@ -1282,6 +1436,9 @@
       <fields>
         <field name="MPN">AP64500SP-13</field>
         <field name="LCSC">C2070920</field>
+        <field name="Purchase_URL">https://item.szlcsc.com/2162503.html</field>
+        <field name="Stock_Checked">2026-11-07</field>
+        <field name="Procurement_Status">domestic in-stock snapshot; prototype draft</field>
         <field name="Footprint">Motor:Diodes_SO8EP_AP64500</field>
         <field name="Datasheet">https://www.diodes.com/datasheet/download/AP64500.pdf</field>
         <field name="Description"/>
@@ -1289,6 +1446,9 @@
       <libsource lib="Motor" part="AP64500_SO8EP" description=""/>
       <property name="MPN" value="AP64500SP-13"/>
       <property name="LCSC" value="C2070920"/>
+      <property name="Purchase_URL" value="https://item.szlcsc.com/2162503.html"/>
+      <property name="Stock_Checked" value="2026-11-07"/>
+      <property name="Procurement_Status" value="domestic in-stock snapshot; prototype draft"/>
       <property name="Sheetname" value="输入、总开关与降压"/>
       <property name="Sheetfile" value="02_Power.kicad_sch"/>
       <sheetpath names="/输入、总开关与降压/" tstamps="/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/"/>
@@ -1316,6 +1476,9 @@
       <fields>
         <field name="MPN">AP64500SP-13</field>
         <field name="LCSC">C2070920</field>
+        <field name="Purchase_URL">https://item.szlcsc.com/2162503.html</field>
+        <field name="Stock_Checked">2026-11-07</field>
+        <field name="Procurement_Status">domestic in-stock snapshot; prototype draft</field>
         <field name="Footprint">Motor:Diodes_SO8EP_AP64500</field>
         <field name="Datasheet">https://www.diodes.com/datasheet/download/AP64500.pdf</field>
         <field name="Description"/>
@@ -1323,6 +1486,9 @@
       <libsource lib="Motor" part="AP64500_SO8EP" description=""/>
       <property name="MPN" value="AP64500SP-13"/>
       <property name="LCSC" value="C2070920"/>
+      <property name="Purchase_URL" value="https://item.szlcsc.com/2162503.html"/>
+      <property name="Stock_Checked" value="2026-11-07"/>
+      <property name="Procurement_Status" value="domestic in-stock snapshot; prototype draft"/>
       <property name="Sheetname" value="输入、总开关与降压"/>
       <property name="Sheetfile" value="02_Power.kicad_sch"/>
       <sheetpath names="/输入、总开关与降压/" tstamps="/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/"/>
@@ -4521,14 +4687,24 @@
       </units>
     </comp>
     <comp ref="C74">
-      <value>100nF/50V</value>
+      <value>100nF/50V X7R</value>
       <footprint>Motor:C_0603_1608Metric_Gap0.85mm_HandSolder</footprint>
       <fields>
+        <field name="MPN">CL10B104KB8NNNC</field>
+        <field name="LCSC">C1591</field>
+        <field name="Purchase_URL">https://item.szlcsc.com/1943.html</field>
+        <field name="Stock_Checked">2026-11-07</field>
+        <field name="Procurement_Status">domestic in-stock snapshot; prototype draft</field>
         <field name="Footprint">Motor:C_0603_1608Metric_Gap0.85mm_HandSolder</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
+      <property name="MPN" value="CL10B104KB8NNNC"/>
+      <property name="LCSC" value="C1591"/>
+      <property name="Purchase_URL" value="https://item.szlcsc.com/1943.html"/>
+      <property name="Stock_Checked" value="2026-11-07"/>
+      <property name="Procurement_Status" value="domestic in-stock snapshot; prototype draft"/>
       <property name="Sheetname" value="荔枝派 4A：Type-C 与 UART1"/>
       <property name="Sheetfile" value="10_Lichee_Interface.kicad_sch"/>
       <property name="ki_keywords" value="cap capacitor"/>
@@ -4545,14 +4721,24 @@
       </units>
     </comp>
     <comp ref="C75">
-      <value>100nF/50V</value>
+      <value>100nF/50V X7R</value>
       <footprint>Motor:C_0603_1608Metric_Gap0.85mm_HandSolder</footprint>
       <fields>
+        <field name="MPN">CL10B104KB8NNNC</field>
+        <field name="LCSC">C1591</field>
+        <field name="Purchase_URL">https://item.szlcsc.com/1943.html</field>
+        <field name="Stock_Checked">2026-11-07</field>
+        <field name="Procurement_Status">domestic in-stock snapshot; prototype draft</field>
         <field name="Footprint">Motor:C_0603_1608Metric_Gap0.85mm_HandSolder</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
+      <property name="MPN" value="CL10B104KB8NNNC"/>
+      <property name="LCSC" value="C1591"/>
+      <property name="Purchase_URL" value="https://item.szlcsc.com/1943.html"/>
+      <property name="Stock_Checked" value="2026-11-07"/>
+      <property name="Procurement_Status" value="domestic in-stock snapshot; prototype draft"/>
       <property name="Sheetname" value="荔枝派 4A：Type-C 与 UART1"/>
       <property name="Sheetfile" value="10_Lichee_Interface.kicad_sch"/>
       <property name="ki_keywords" value="cap capacitor"/>
@@ -4574,6 +4760,9 @@
       <fields>
         <field name="MPN">16SVP150M</field>
         <field name="LCSC">C178346</field>
+        <field name="Purchase_URL">https://item.szlcsc.com/189739.html</field>
+        <field name="Stock_Checked">2026-11-07</field>
+        <field name="Procurement_Status">domestic in-stock snapshot; prototype draft</field>
         <field name="Footprint">Motor:Capacitor_SMD__CP_Elec_10x7.9</field>
         <field name="Datasheet"/>
         <field name="Description"/>
@@ -4581,6 +4770,9 @@
       <libsource lib="Motor" part="Device__C_Polarized" description="Polarized capacitor"/>
       <property name="MPN" value="16SVP150M"/>
       <property name="LCSC" value="C178346"/>
+      <property name="Purchase_URL" value="https://item.szlcsc.com/189739.html"/>
+      <property name="Stock_Checked" value="2026-11-07"/>
+      <property name="Procurement_Status" value="domestic in-stock snapshot; prototype draft"/>
       <property name="Sheetname" value="荔枝派 4A：Type-C 与 UART1"/>
       <property name="Sheetfile" value="10_Lichee_Interface.kicad_sch"/>
       <property name="ki_keywords" value="cap capacitor"/>
@@ -4597,14 +4789,24 @@
       </units>
     </comp>
     <comp ref="C93">
-      <value>100nF/50V</value>
+      <value>100nF/50V X7R</value>
       <footprint>Motor:C_0603_1608Metric_Gap0.85mm_HandSolder</footprint>
       <fields>
+        <field name="MPN">CL10B104KB8NNNC</field>
+        <field name="LCSC">C1591</field>
+        <field name="Purchase_URL">https://item.szlcsc.com/1943.html</field>
+        <field name="Stock_Checked">2026-11-07</field>
+        <field name="Procurement_Status">domestic in-stock snapshot; prototype draft</field>
         <field name="Footprint">Motor:C_0603_1608Metric_Gap0.85mm_HandSolder</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
+      <property name="MPN" value="CL10B104KB8NNNC"/>
+      <property name="LCSC" value="C1591"/>
+      <property name="Purchase_URL" value="https://item.szlcsc.com/1943.html"/>
+      <property name="Stock_Checked" value="2026-11-07"/>
+      <property name="Procurement_Status" value="domestic in-stock snapshot; prototype draft"/>
       <property name="Sheetname" value="荔枝派 4A：Type-C 与 UART1"/>
       <property name="Sheetfile" value="10_Lichee_Interface.kicad_sch"/>
       <property name="ki_keywords" value="cap capacitor"/>
@@ -4621,14 +4823,24 @@
       </units>
     </comp>
     <comp ref="C94">
-      <value>10uF/10V X7R</value>
+      <value>10uF/25V X5R</value>
       <footprint>Motor:Capacitor_SMD__C_0805_2012Metric</footprint>
       <fields>
+        <field name="MPN">CL21A106KAYNNNE</field>
+        <field name="LCSC">C15850</field>
+        <field name="Purchase_URL">https://item.szlcsc.com/16532.html</field>
+        <field name="Stock_Checked">2026-11-07</field>
+        <field name="Procurement_Status">domestic in-stock snapshot; prototype draft</field>
         <field name="Footprint">Motor:Capacitor_SMD__C_0805_2012Metric</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
+      <property name="MPN" value="CL21A106KAYNNNE"/>
+      <property name="LCSC" value="C15850"/>
+      <property name="Purchase_URL" value="https://item.szlcsc.com/16532.html"/>
+      <property name="Stock_Checked" value="2026-11-07"/>
+      <property name="Procurement_Status" value="domestic in-stock snapshot; prototype draft"/>
       <property name="Sheetname" value="荔枝派 4A：Type-C 与 UART1"/>
       <property name="Sheetfile" value="10_Lichee_Interface.kicad_sch"/>
       <property name="ki_keywords" value="cap capacitor"/>
@@ -4647,13 +4859,23 @@
     <comp ref="J18">
       <value>LicheePi4A_2x06</value>
       <footprint>Motor:Connector_PinHeader_2.54mm__PinHeader_2x06_P2.54mm_Vertical</footprint>
-      <datasheet>https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/6_peripheral.html</datasheet>
+      <datasheet>https://atta.szlcsc.com/upload/public/pdf/source/20240723/7CFD6BBE81D942E4FB6053E60626E655.pdf</datasheet>
       <fields>
+        <field name="MPN">HX PZ2.54-2x6P ZZ</field>
+        <field name="LCSC">C32713279</field>
+        <field name="Purchase_URL">https://item.szlcsc.com/34444559.html</field>
+        <field name="Stock_Checked">2026-11-07</field>
+        <field name="Procurement_Status">domestic in-stock snapshot; prototype draft</field>
         <field name="Footprint">Motor:Connector_PinHeader_2.54mm__PinHeader_2x06_P2.54mm_Vertical</field>
-        <field name="Datasheet">https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/6_peripheral.html</field>
+        <field name="Datasheet">https://atta.szlcsc.com/upload/public/pdf/source/20240723/7CFD6BBE81D942E4FB6053E60626E655.pdf</field>
         <field name="Description"/>
       </fields>
       <libsource lib="Motor" part="LicheePi4A_2x06_UART1" description=""/>
+      <property name="MPN" value="HX PZ2.54-2x6P ZZ"/>
+      <property name="LCSC" value="C32713279"/>
+      <property name="Purchase_URL" value="https://item.szlcsc.com/34444559.html"/>
+      <property name="Stock_Checked" value="2026-11-07"/>
+      <property name="Procurement_Status" value="domestic in-stock snapshot; prototype draft"/>
       <property name="Sheetname" value="荔枝派 4A：Type-C 与 UART1"/>
       <property name="Sheetfile" value="10_Lichee_Interface.kicad_sch"/>
       <sheetpath names="/荔枝派 4A：Type-C 与 UART1/" tstamps="/185fc758-680e-5cca-9205-ee46946e4fad/"/>
@@ -4684,6 +4906,9 @@
       <fields>
         <field name="MPN">USB4125-GF-A</field>
         <field name="LCSC">C3151650</field>
+        <field name="Purchase_URL">https://item.szlcsc.com/3712352.html</field>
+        <field name="Stock_Checked">2026-11-07</field>
+        <field name="Procurement_Status">domestic in-stock snapshot; prototype draft</field>
         <field name="Footprint">Motor:Connector_USB__USB_C_Receptacle_GCT_USB4125-xx-x_6P_TopMnt_Horizontal</field>
         <field name="Datasheet">https://gct.co/files/drawings/usb4125.pdf</field>
         <field name="Description"/>
@@ -4691,6 +4916,9 @@
       <libsource lib="Motor" part="GCT_USB4125_PowerSource" description=""/>
       <property name="MPN" value="USB4125-GF-A"/>
       <property name="LCSC" value="C3151650"/>
+      <property name="Purchase_URL" value="https://item.szlcsc.com/3712352.html"/>
+      <property name="Stock_Checked" value="2026-11-07"/>
+      <property name="Procurement_Status" value="domestic in-stock snapshot; prototype draft"/>
       <property name="Sheetname" value="荔枝派 4A：Type-C 与 UART1"/>
       <property name="Sheetfile" value="10_Lichee_Interface.kicad_sch"/>
       <sheetpath names="/荔枝派 4A：Type-C 与 UART1/" tstamps="/185fc758-680e-5cca-9205-ee46946e4fad/"/>
@@ -4715,12 +4943,20 @@
       <datasheet>https://assets.nexperia.com/documents/data-sheet/BSS138BK.pdf</datasheet>
       <fields>
         <field name="MPN">BSS138BK,215</field>
+        <field name="LCSC">C282529</field>
+        <field name="Purchase_URL">https://item.szlcsc.com/268469.html</field>
+        <field name="Stock_Checked">2026-11-07</field>
+        <field name="Procurement_Status">domestic in-stock snapshot; prototype draft</field>
         <field name="Footprint">Motor:Package_TO_SOT_SMD__SOT-23</field>
         <field name="Datasheet">https://assets.nexperia.com/documents/data-sheet/BSS138BK.pdf</field>
         <field name="Description"/>
       </fields>
       <libsource lib="Motor" part="BSS138BK_SOT23" description=""/>
       <property name="MPN" value="BSS138BK,215"/>
+      <property name="LCSC" value="C282529"/>
+      <property name="Purchase_URL" value="https://item.szlcsc.com/268469.html"/>
+      <property name="Stock_Checked" value="2026-11-07"/>
+      <property name="Procurement_Status" value="domestic in-stock snapshot; prototype draft"/>
       <property name="Sheetname" value="荔枝派 4A：Type-C 与 UART1"/>
       <property name="Sheetfile" value="10_Lichee_Interface.kicad_sch"/>
       <sheetpath names="/荔枝派 4A：Type-C 与 UART1/" tstamps="/185fc758-680e-5cca-9205-ee46946e4fad/"/>
@@ -4739,11 +4975,21 @@
       <value>100k</value>
       <footprint>Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</footprint>
       <fields>
+        <field name="MPN">0603WAF1003T5E</field>
+        <field name="LCSC">C25803</field>
+        <field name="Purchase_URL">https://item.szlcsc.com/26546.html</field>
+        <field name="Stock_Checked">2026-11-07</field>
+        <field name="Procurement_Status">domestic in-stock snapshot; prototype draft</field>
         <field name="Footprint">Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="Motor" part="Device__R" description="Resistor"/>
+      <property name="MPN" value="0603WAF1003T5E"/>
+      <property name="LCSC" value="C25803"/>
+      <property name="Purchase_URL" value="https://item.szlcsc.com/26546.html"/>
+      <property name="Stock_Checked" value="2026-11-07"/>
+      <property name="Procurement_Status" value="domestic in-stock snapshot; prototype draft"/>
       <property name="Sheetname" value="荔枝派 4A：Type-C 与 UART1"/>
       <property name="Sheetfile" value="10_Lichee_Interface.kicad_sch"/>
       <property name="ki_keywords" value="R res resistor"/>
@@ -4763,11 +5009,21 @@
       <value>10k</value>
       <footprint>Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</footprint>
       <fields>
+        <field name="MPN">0603WAF1002T5E</field>
+        <field name="LCSC">C25804</field>
+        <field name="Purchase_URL">https://item.szlcsc.com/26547.html</field>
+        <field name="Stock_Checked">2026-11-07</field>
+        <field name="Procurement_Status">domestic in-stock snapshot; prototype draft</field>
         <field name="Footprint">Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="Motor" part="Device__R" description="Resistor"/>
+      <property name="MPN" value="0603WAF1002T5E"/>
+      <property name="LCSC" value="C25804"/>
+      <property name="Purchase_URL" value="https://item.szlcsc.com/26547.html"/>
+      <property name="Stock_Checked" value="2026-11-07"/>
+      <property name="Procurement_Status" value="domestic in-stock snapshot; prototype draft"/>
       <property name="Sheetname" value="荔枝派 4A：Type-C 与 UART1"/>
       <property name="Sheetfile" value="10_Lichee_Interface.kicad_sch"/>
       <property name="ki_keywords" value="R res resistor"/>
@@ -4787,11 +5043,21 @@
       <value>100k</value>
       <footprint>Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</footprint>
       <fields>
+        <field name="MPN">0603WAF1003T5E</field>
+        <field name="LCSC">C25803</field>
+        <field name="Purchase_URL">https://item.szlcsc.com/26546.html</field>
+        <field name="Stock_Checked">2026-11-07</field>
+        <field name="Procurement_Status">domestic in-stock snapshot; prototype draft</field>
         <field name="Footprint">Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="Motor" part="Device__R" description="Resistor"/>
+      <property name="MPN" value="0603WAF1003T5E"/>
+      <property name="LCSC" value="C25803"/>
+      <property name="Purchase_URL" value="https://item.szlcsc.com/26546.html"/>
+      <property name="Stock_Checked" value="2026-11-07"/>
+      <property name="Procurement_Status" value="domestic in-stock snapshot; prototype draft"/>
       <property name="Sheetname" value="荔枝派 4A：Type-C 与 UART1"/>
       <property name="Sheetfile" value="10_Lichee_Interface.kicad_sch"/>
       <property name="ki_keywords" value="R res resistor"/>
@@ -4811,11 +5077,21 @@
       <value>100k</value>
       <footprint>Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</footprint>
       <fields>
+        <field name="MPN">0603WAF1003T5E</field>
+        <field name="LCSC">C25803</field>
+        <field name="Purchase_URL">https://item.szlcsc.com/26546.html</field>
+        <field name="Stock_Checked">2026-11-07</field>
+        <field name="Procurement_Status">domestic in-stock snapshot; prototype draft</field>
         <field name="Footprint">Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="Motor" part="Device__R" description="Resistor"/>
+      <property name="MPN" value="0603WAF1003T5E"/>
+      <property name="LCSC" value="C25803"/>
+      <property name="Purchase_URL" value="https://item.szlcsc.com/26546.html"/>
+      <property name="Stock_Checked" value="2026-11-07"/>
+      <property name="Procurement_Status" value="domestic in-stock snapshot; prototype draft"/>
       <property name="Sheetname" value="荔枝派 4A：Type-C 与 UART1"/>
       <property name="Sheetfile" value="10_Lichee_Interface.kicad_sch"/>
       <property name="ki_keywords" value="R res resistor"/>
@@ -4835,11 +5111,21 @@
       <value>100k / 1%</value>
       <footprint>Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</footprint>
       <fields>
+        <field name="MPN">0603WAF1003T5E</field>
+        <field name="LCSC">C25803</field>
+        <field name="Purchase_URL">https://item.szlcsc.com/26546.html</field>
+        <field name="Stock_Checked">2026-11-07</field>
+        <field name="Procurement_Status">domestic in-stock snapshot; prototype draft</field>
         <field name="Footprint">Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="Motor" part="Device__R" description="Resistor"/>
+      <property name="MPN" value="0603WAF1003T5E"/>
+      <property name="LCSC" value="C25803"/>
+      <property name="Purchase_URL" value="https://item.szlcsc.com/26546.html"/>
+      <property name="Stock_Checked" value="2026-11-07"/>
+      <property name="Procurement_Status" value="domestic in-stock snapshot; prototype draft"/>
       <property name="Sheetname" value="荔枝派 4A：Type-C 与 UART1"/>
       <property name="Sheetfile" value="10_Lichee_Interface.kicad_sch"/>
       <property name="ki_keywords" value="R res resistor"/>
@@ -4862,6 +5148,9 @@
       <fields>
         <field name="MPN">TPS25810RVCR</field>
         <field name="LCSC">C473913</field>
+        <field name="Purchase_URL">https://item.szlcsc.com/480472.html</field>
+        <field name="Stock_Checked">2026-11-07</field>
+        <field name="Procurement_Status">domestic in-stock snapshot; prototype draft</field>
         <field name="Footprint">Motor:Package_DFN_QFN__Texas_RVC0020A_WQFN-20-1EP_3x4mm_P0.5mm_EP1.6x2.6mm</field>
         <field name="Datasheet">https://www.ti.com/lit/ds/symlink/tps25810.pdf</field>
         <field name="Description"/>
@@ -4869,6 +5158,9 @@
       <libsource lib="Motor" part="TPS25810_RVC" description=""/>
       <property name="MPN" value="TPS25810RVCR"/>
       <property name="LCSC" value="C473913"/>
+      <property name="Purchase_URL" value="https://item.szlcsc.com/480472.html"/>
+      <property name="Stock_Checked" value="2026-11-07"/>
+      <property name="Procurement_Status" value="domestic in-stock snapshot; prototype draft"/>
       <property name="Sheetname" value="荔枝派 4A：Type-C 与 UART1"/>
       <property name="Sheetfile" value="10_Lichee_Interface.kicad_sch"/>
       <sheetpath names="/荔枝派 4A：Type-C 与 UART1/" tstamps="/185fc758-680e-5cca-9205-ee46946e4fad/"/>
@@ -4908,6 +5200,9 @@
       <fields>
         <field name="MPN">SN74LV1T125DBVR</field>
         <field name="LCSC">C473338</field>
+        <field name="Purchase_URL">https://item.szlcsc.com/480066.html</field>
+        <field name="Stock_Checked">2026-11-07</field>
+        <field name="Procurement_Status">domestic in-stock snapshot; prototype draft</field>
         <field name="Footprint">Motor:Package_TO_SOT_SMD__SOT-23-5</field>
         <field name="Datasheet">https://www.ti.com/lit/ds/symlink/sn74lv1t125.pdf</field>
         <field name="Description"/>
@@ -4915,6 +5210,9 @@
       <libsource lib="Motor" part="SN74LV1T125_DBV_M28_RX" description=""/>
       <property name="MPN" value="SN74LV1T125DBVR"/>
       <property name="LCSC" value="C473338"/>
+      <property name="Purchase_URL" value="https://item.szlcsc.com/480066.html"/>
+      <property name="Stock_Checked" value="2026-11-07"/>
+      <property name="Procurement_Status" value="domestic in-stock snapshot; prototype draft"/>
       <property name="Sheetname" value="荔枝派 4A：Type-C 与 UART1"/>
       <property name="Sheetfile" value="10_Lichee_Interface.kicad_sch"/>
       <sheetpath names="/荔枝派 4A：Type-C 与 UART1/" tstamps="/185fc758-680e-5cca-9205-ee46946e4fad/"/>
@@ -4938,6 +5236,9 @@
       <fields>
         <field name="MPN">SN74LVC1G125DBVR</field>
         <field name="LCSC">C23654</field>
+        <field name="Purchase_URL">https://item.szlcsc.com/24390.html</field>
+        <field name="Stock_Checked">2026-11-07</field>
+        <field name="Procurement_Status">domestic in-stock snapshot; prototype draft</field>
         <field name="Footprint">Motor:Package_TO_SOT_SMD__SOT-23-5</field>
         <field name="Datasheet">https://www.ti.com/lit/ds/symlink/sn74lvc1g125.pdf</field>
         <field name="Description"/>
@@ -4945,6 +5246,9 @@
       <libsource lib="Motor" part="SN74LVC1G125_DBV_M28" description=""/>
       <property name="MPN" value="SN74LVC1G125DBVR"/>
       <property name="LCSC" value="C23654"/>
+      <property name="Purchase_URL" value="https://item.szlcsc.com/24390.html"/>
+      <property name="Stock_Checked" value="2026-11-07"/>
+      <property name="Procurement_Status" value="domestic in-stock snapshot; prototype draft"/>
       <property name="Sheetname" value="荔枝派 4A：Type-C 与 UART1"/>
       <property name="Sheetfile" value="10_Lichee_Interface.kicad_sch"/>
       <sheetpath names="/荔枝派 4A：Type-C 与 UART1/" tstamps="/185fc758-680e-5cca-9205-ee46946e4fad/"/>

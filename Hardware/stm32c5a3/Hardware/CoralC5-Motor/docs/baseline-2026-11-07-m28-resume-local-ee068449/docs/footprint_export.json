@@ -1,0 +1,24 @@
+{
+  "date": "2026-11-07",
+  "revision": "M2.7",
+  "kicad_version": "10.0.6",
+  "command": "kicad-cli fp export svg --layers F.Cu,F.SilkS,F.Fab --footprint NAME --output docs/footprint-previews Motor.pretty (seven M2.7 resources)",
+  "exit_code": 0,
+  "library_footprints": 56,
+  "exported_svg": 56,
+  "pcb_accessed": false,
+  "new_resource_review": {
+    "U10": "SGM2531C SOIC-8 EP; 1.27mm pitch; 1.91x0.61mm lead lands at +/-2.78mm; ground EP pad9 is 2.33x3.22mm per manufacturer p15. Attached SOIC exterior body is explicitly generic, without exact EP geometry. Courtyard expanded to +/-4mm in X, at least 0.25mm beyond outer leads.",
+    "Q5_Q6_Q7": "Reuse already selected DMP3007LK3 TO252 geometry and model; symbol 1G/2D/3S verified.",
+    "Q8": "MMBT3904-7-F SOT23, 1B/2E/3C.",
+    "U14": "LTC4412ES6 TSOT23-6, 1VIN/2GND/3CTL/4STAT/5GATE/6SENSE.",
+    "U15": "SN74LVC2G125DCTR, reused SSOP-8 and model.",
+    "D5": "BZT52-C12, SOD123, pin1K and pin2A."
+  },
+  "pcb_accessed_for_export": false,
+  "m27_resource_review": {
+    "U1": "TI RPA0010A exact pad positions: VIN main land x=+0.95, overlapping three fingers. 10 electrical pins, no invented EP11. Generic 3x3x1mm exterior model.",
+    "J19": "MX125 six contacts at 1.25mm, 0.7x1.7mm lands; side MP x=±5.225,y=-2.5,size1.8x2.5, outer edge 3mm from outer signal center. Generic body-only model.",
+    "U16_J28_L1_C5_C50_C81": "Local copies of matching installed KiCad footprints and portable package models."
+  }
+}

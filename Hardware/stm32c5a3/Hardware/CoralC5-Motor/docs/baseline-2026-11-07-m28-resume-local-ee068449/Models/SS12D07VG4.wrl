@@ -1,0 +1,4 @@
+#VRML V2.0 utf8
+# Generic external envelope, not a manufacturer assembly model.
+Transform { translation 0.0 0.0 0.925197 children [ Shape { appearance Appearance { material Material { diffuseColor 0.5 0.5 0.5 } } geometry Box { size 3.464567 1.811024 1.850394 } } ] }
+Transform { translation -0.393701 0.0 2.637795 children [ Shape { appearance Appearance { material Material { diffuseColor 0.08 0.08 0.08 } } geometry Box { size 0.787402 0.866142 1.574803 } } ] }

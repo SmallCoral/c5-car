@@ -791,13 +791,16 @@
   },
   "layout_revision": "M2.1",
   "layout_edit_record": "docs/layout_edit.json",
-  "record_scope": "Historical initial M2 generation data; current native schematics and verification.json are authoritative. User changes are recorded as explicit overlays.",
-  "current_revision": "M2.5",
+  "record_scope": "Historical authoring data retained. Current inventory/checks/BOM: current_design.json, m28_revision.json and fresh native netlist; never rerun old generators.",
+  "current_revision": "M2.8",
   "current_revision_records": [
-    "smd_buttons_revision.json",
-    "grayscale_photo_revision.json",
-    "vision_power_revision.json",
-    "current_design.json"
+    "m28_revision.json",
+    "m28_power_analysis.json",
+    "procurement_m28.json",
+    "pcb_sync_m28.json",
+    "verification.json",
+    "pcb_sync_verification.json",
+    "visual_check.json"
   ],
   "historical_authoring_manifest": true
 }

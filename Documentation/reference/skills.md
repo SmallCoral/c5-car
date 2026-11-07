@@ -35,3 +35,7 @@ UI、视频录制、遥测、GitHub PR和自动发布没有对应任务，本轮
 本轮从[相同固定提交](https://github.com/mthines/agent-skills/tree/2b8d75d325c4816c4c1f5f3e982f682442b79c5d)取得完整支持树，在临时工作区读取 `skills/authoring/docs/SKILL.md` 及所需规则。
 采用 `update` 模式，范围为新增同学参考资料及其索引。
 没有全局安装、升级技能或生成新的代理配置。
+
+## 2026-11-07 M2.8 续接
+
+当前 Shan_ 环境从原完整支持树读取 `skills/authoring/docs/SKILL.md` 及其 routing、placement、writing、drift 规则，采用 update 模式。未重装或升级技能；本轮补齐当前入口、接口、采购、验证及交接，历史报告继续保留。PowerShell、lcsc 与 PDF skill 按实际任务使用，没有触发全套自动 PR 流程或 computer-use。

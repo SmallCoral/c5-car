@@ -1,0 +1,272 @@
+{
+  "date": "2026-11-07",
+  "revision": "M2.8",
+  "baseline_file": "docs/baseline-2026-11-07-m28-resume-local-ee068449/CoralC5-Motor.kicad_pcb",
+  "input_pcb_sha256": "c8fe2600a7aec6cc1627188a5c0e4b1c9985cbafa91eda6d5d0ecd78e8bced77",
+  "output_pcb_sha256": "00a8f4df9f2de84503631e53f272d768f1cbecb6c0b6373d4bcd2ee2f693e43f",
+  "added_references": [
+    "C74",
+    "C75",
+    "C84",
+    "C85",
+    "C86",
+    "C87",
+    "C88",
+    "C89",
+    "C90",
+    "C91",
+    "C92",
+    "C93",
+    "C94",
+    "J18",
+    "J25",
+    "L2",
+    "Q3",
+    "R61",
+    "R62",
+    "R63",
+    "R64",
+    "R65",
+    "R66",
+    "R67",
+    "R73",
+    "R74",
+    "R75",
+    "R79",
+    "R93",
+    "U11",
+    "U12",
+    "U6",
+    "U8"
+  ],
+  "staging_positions_mm": {
+    "C74": [
+      330.0,
+      40.0,
+      0.0
+    ],
+    "C75": [
+      360.0,
+      40.0,
+      0.0
+    ],
+    "C84": [
+      390.0,
+      40.0,
+      0.0
+    ],
+    "C85": [
+      420.0,
+      40.0,
+      0.0
+    ],
+    "C86": [
+      450.0,
+      40.0,
+      0.0
+    ],
+    "C87": [
+      480.0,
+      40.0,
+      0.0
+    ],
+    "C88": [
+      510.0,
+      40.0,
+      0.0
+    ],
+    "C89": [
+      330.0,
+      70.0,
+      0.0
+    ],
+    "C90": [
+      360.0,
+      70.0,
+      0.0
+    ],
+    "C91": [
+      390.0,
+      70.0,
+      0.0
+    ],
+    "C92": [
+      420.0,
+      70.0,
+      0.0
+    ],
+    "C93": [
+      450.0,
+      70.0,
+      0.0
+    ],
+    "C94": [
+      480.0,
+      70.0,
+      0.0
+    ],
+    "J18": [
+      510.0,
+      70.0,
+      0.0
+    ],
+    "J25": [
+      330.0,
+      100.0,
+      0.0
+    ],
+    "L2": [
+      360.0,
+      100.0,
+      0.0
+    ],
+    "Q3": [
+      390.0,
+      100.0,
+      0.0
+    ],
+    "R61": [
+      420.0,
+      100.0,
+      0.0
+    ],
+    "R62": [
+      450.0,
+      100.0,
+      0.0
+    ],
+    "R63": [
+      480.0,
+      100.0,
+      0.0
+    ],
+    "R64": [
+      510.0,
+      100.0,
+      0.0
+    ],
+    "R65": [
+      330.0,
+      130.0,
+      0.0
+    ],
+    "R66": [
+      360.0,
+      130.0,
+      0.0
+    ],
+    "R67": [
+      390.0,
+      130.0,
+      0.0
+    ],
+    "R73": [
+      420.0,
+      130.0,
+      0.0
+    ],
+    "R74": [
+      450.0,
+      130.0,
+      0.0
+    ],
+    "R75": [
+      480.0,
+      130.0,
+      0.0
+    ],
+    "R79": [
+      510.0,
+      130.0,
+      0.0
+    ],
+    "R93": [
+      330.0,
+      160.0,
+      0.0
+    ],
+    "U11": [
+      360.0,
+      160.0,
+      0.0
+    ],
+    "U12": [
+      390.0,
+      160.0,
+      0.0
+    ],
+    "U6": [
+      420.0,
+      160.0,
+      0.0
+    ],
+    "U8": [
+      450.0,
+      160.0,
+      0.0
+    ]
+  },
+  "staging_note": "Existing input has no Edge.Cuts outline. New parts staged right of original component envelope, not laid out.",
+  "replacement": "U1 package changed from RPA QFN to SO8EP; footprint UUID/centre/angle retained",
+  "U1_pad_uuid_map": [
+    {
+      "new_pin": "1",
+      "retained_uuid": "b88c71cb-7fb7-4098-944c-c3f6fa90781a",
+      "prior_pin": "7",
+      "other_retired_copper_pad_uuids": []
+    },
+    {
+      "new_pin": "2",
+      "retained_uuid": "3cdfbb25-8388-4bc9-97b9-d1f832012058",
+      "prior_pin": "8",
+      "other_retired_copper_pad_uuids": [
+        "fda3af67-7568-41d6-b836-4ba56d26c709",
+        "3db930c8-762a-49ed-8260-7c02558b9099",
+        "b8463f03-f1ad-4dce-a1eb-9a71ce7b3cae"
+      ]
+    },
+    {
+      "new_pin": "3",
+      "retained_uuid": "6088eeb6-1c4b-4c4f-9504-2063e40c00fe",
+      "prior_pin": "1",
+      "other_retired_copper_pad_uuids": []
+    },
+    {
+      "new_pin": "4",
+      "retained_uuid": "f2d1c041-97a0-4e30-8cce-ab8ec01370a5",
+      "prior_pin": "10",
+      "other_retired_copper_pad_uuids": []
+    },
+    {
+      "new_pin": "5",
+      "retained_uuid": "758f321e-7992-4737-9df5-935c82f33202",
+      "prior_pin": "2",
+      "other_retired_copper_pad_uuids": []
+    },
+    {
+      "new_pin": "7",
+      "retained_uuid": "7dbada6d-6b30-4d20-9372-8055ec4cc6be",
+      "prior_pin": "3",
+      "other_retired_copper_pad_uuids": []
+    },
+    {
+      "new_pin": "8",
+      "retained_uuid": "f4e007f6-0214-4eaa-8996-80f5105a952e",
+      "prior_pin": "6",
+      "other_retired_copper_pad_uuids": []
+    },
+    {
+      "new_pin": "9",
+      "retained_uuid": "a136687a-c36a-43aa-a888-515049ad951d",
+      "prior_pin": "9",
+      "other_retired_copper_pad_uuids": []
+    }
+  ],
+  "U1_removed_pins": [
+    "4(PG)",
+    "5(SS)"
+  ],
+  "U1_new_pin": "6(COMP), new UUID",
+  "policy": "All original segments/vias/zones/graphics/settings kept exactly, including old net names. Re-routing and thermal design are pending.",
+  "native_net_encoding": "Preserve {slash}; escape literal slash inside generated Net-(...) and unconnected-(...) pin names; retain hierarchy separators. Native schematic parity verifies encoding."
+}

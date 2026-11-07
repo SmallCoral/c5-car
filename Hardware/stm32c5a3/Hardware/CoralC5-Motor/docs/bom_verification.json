@@ -1,11 +1,11 @@
 {
   "date": "2026-11-07",
-  "revision": "M2.7",
-  "source": "native netlist.xml; exclude_from_bom respected",
-  "native_netlist_sha256": "831987d8fce0603bd87e93ec26dc94364a6e2315dad2fd8e2328c52cd89c0e01",
-  "physical_bom_references": 145,
-  "csv_rows": 145,
+  "revision": "M2.8",
+  "source": "fresh native netlist; H1/H2 excluded",
+  "native_netlist_sha256": "13dba5282aabd167fb976dbc2fb3a4876d57c435213e54ca5aa1d346e31e9642",
+  "physical_bom_references": 178,
+  "csv_rows": 178,
   "errors": [],
-  "csv_sha256": "5a257cb1c85bbee84573b4a957ba2fa86d5451022f998a68d727624ed56d2b12",
+  "csv_sha256": "2fbcaa4330af4c27089b7be81331572f215c7a38c2220d7d404c68ec7f3581c8",
   "pass": true
 }

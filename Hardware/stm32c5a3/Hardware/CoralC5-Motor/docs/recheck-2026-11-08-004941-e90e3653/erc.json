@@ -1,0 +1,128 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-11-08T00:50:05",
+    "ignored_checks": [
+        {
+            "description": "Global label only appears once in the schematic",
+            "key": "single_global_label"
+        },
+        {
+            "description": "Four connection points are joined together",
+            "key": "four_way_junction"
+        },
+        {
+            "description": "SPICE model issue",
+            "key": "simulation_model_issue"
+        },
+        {
+            "description": "Assigned footprint doesn't match footprint filters",
+            "key": "footprint_filter"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.8",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709",
+            "violations": [
+                {
+                    "description": "符号 'SGM2531C_PS8' 与来源库 'Motor' 中的符号存在差异",
+                    "items": [
+                        {
+                            "description": "符号 U10 [SGM2531C_PS8]",
+                            "pos": {
+                                "x": 307.34,
+                                "y": 88.9
+                            },
+                            "uuid": "371ac57a-fa63-5267-a2b1-5d65ff20b923"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_mismatch"
+                },
+                {
+                    "description": "符号 'SN74LVC1G125_DBV_M28' 与来源库 'Motor' 中的符号存在差异",
+                    "items": [
+                        {
+                            "description": "符号 U12 [SN74LVC1G125_DBV_M28]",
+                            "pos": {
+                                "x": 125.73,
+                                "y": 160.02
+                            },
+                            "uuid": "72d6c094-5acc-5dd2-b603-2dd54eac1feb"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_mismatch"
+                },
+                {
+                    "description": "符号 'SN74LV1T125_DBV_M28_RX' 与来源库 'Motor' 中的符号存在差异",
+                    "items": [
+                        {
+                            "description": "符号 U11 [SN74LV1T125_DBV_M28_RX]",
+                            "pos": {
+                                "x": 228.6,
+                                "y": 236.22
+                            },
+                            "uuid": "44bd0b30-3fd4-57cb-8cb8-3e04b565f5e4"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_mismatch"
+                }
+            ]
+        },
+        {
+            "path": "/输入、总开关与降压/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709/3e4d7eec-bf94-5ef7-a88d-e072db9975b7",
+            "violations": []
+        },
+        {
+            "path": "/核心板接口/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709/c813fdd4-725f-5df7-aa4a-68cd15d401cf",
+            "violations": []
+        },
+        {
+            "path": "/左电机与编码器/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9",
+            "violations": []
+        },
+        {
+            "path": "/右电机与编码器/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709/ddf41ba8-06a1-59de-bdac-eecd21fc55cb",
+            "violations": []
+        },
+        {
+            "path": "/中景园屏幕与四个操作按钮/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709/433415cc-03a8-5189-8d36-253244603d4b",
+            "violations": []
+        },
+        {
+            "path": "/灰度与 MaixCAM2 识别/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709/d6318ee1-12d4-5089-84c2-bb1addcd6fe6",
+            "violations": []
+        },
+        {
+            "path": "/共享五伏的 USB-C 与三伏三/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709/259119ae-63bb-582f-a484-b0d1b9da613b",
+            "violations": []
+        },
+        {
+            "path": "/四脚蓝牙与外接步进驱动接口/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709/6805c229-363d-5720-8872-3a09dea05270",
+            "violations": []
+        },
+        {
+            "path": "/荔枝派 4A：Type-C 与 UART1/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709/185fc758-680e-5cca-9205-ee46946e4fad",
+            "violations": []
+        }
+    ],
+    "source": "CoralC5-Motor.kicad_sch"
+}

@@ -1,0 +1,76 @@
+{
+  "date": "2026-11-07",
+  "queried_utc": "2026-11-07T15:32:54.1007526Z",
+  "url": "https://item.szlcsc.com/292745.html",
+  "http_status": 200,
+  "product": {
+    "theRatio": 20,
+    "productArrange": "编带",
+    "productModel": "ARG03BTC1002",
+    "stockNumber": 863791,
+    "encapsulationModel": "0603",
+    "hasStockNow": "yes",
+    "productCycle": "normal",
+    "smtLabel": "SMT扩展库",
+    "isDisplayUsableTransitNum": false,
+    "remark": "特性：先进的薄膜技术。专为自动插入设计的贴片式。宽电阻范围:1ohm ~ 2.49Mega ohm。应用：医疗设备。测试/测量设备",
+    "productUnit": "个",
+    "luceneBreviaryImageUrls": "https://alimg.szlcsc.com/upload/public/product/breviary/20230109/1B434A316AD83454DA21F5B907F81BAA.jpg<$>https://alimg.szlcsc.com/upload/public/product/breviary/20230109/069B5D4D3360F69C50630727EB00196D.jpg<$>https://alimg.szlcsc.com/upload/public/product/breviary/20230109/747CEA2FEE202F418A01994640DF51C4.jpg",
+    "productMinEncapsulationUnit": "圆盘",
+    "productName": "薄膜电阻 10kΩ ±0.1% 100mW",
+    "returnCouponDesc": [],
+    "productGradePlateId": "346",
+    "isShowQuotedPriceBtn": false,
+    "validStockNumber": 43189,
+    "fileTypeVOList": [
+      {
+        "detailVOList": [
+          {
+            "fileName": "wj172121",
+            "fileUrl": "/upload/public/pdf/source/20190816/C412422_E173BA386C6DD8245B6A88358EF9877A.pdf"
+          }
+        ],
+        "fileType": "pdf_property"
+      },
+      {
+        "detailVOList": [
+          {
+            "fileName": "ARG系列_ROHS认证_Viking(光颉).pdf",
+            "fileUrl": "/upload/public/pdf/source/20260203/8A13D34C50F97C37D282773EEA4A19E3.pdf"
+          },
+          {
+            "fileName": "文件列表所示_REACH认证_Viking(光颉).pdf",
+            "fileUrl": "/upload/public/pdf/source/20251014/1F6DAE2DEF1D414E26FC04B250611D78.pdf"
+          }
+        ],
+        "fileType": "certification_data_property"
+      }
+    ],
+    "isEnvironment": true,
+    "isReturnCoupon": false,
+    "productType": "贴片电阻",
+    "encaptionPrice": 393,
+    "minBuyNumber": 1,
+    "minWholeNumber": 5000,
+    "saleRuleGroupId": 10039,
+    "convesionRatio": 20,
+    "productId": "292745",
+    "productGradePlateName": "Viking(光颉)",
+    "eccnCode": "",
+    "productWeight": 2.3E-05,
+    "usableTransitNum": 0,
+    "isDisplay": true,
+    "pdfDESProductId": "31B448398ECA311C296C67311B688FC3",
+    "productCode": "C309083",
+    "breviaryImageUrl": "https://alimg.szlcsc.com/upload/public/product/breviary/20230109/1B434A316AD83454DA21F5B907F81BAA.jpg",
+    "isShowPrice": true,
+    "productMinEncapsulationNumber": 5000,
+    "inEdaWhiteList": false,
+    "productStockStatus": "yes",
+    "productUnsealVendition": "yes"
+  },
+  "price": 0.0786,
+  "gdWarehouseStockNumber": 863780,
+  "jsWarehouseStockNumber": 0,
+  "pageGeneratedAt": "2026-11-07T15:32:41.141Z"
+}

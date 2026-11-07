@@ -1,0 +1,112 @@
+{
+  "date": "2026-11-07",
+  "queried_utc": "2026-11-07T15:32:54.1004970Z",
+  "url": "https://item.szlcsc.com/2162503.html",
+  "http_status": 200,
+  "product": {
+    "theRatio": 1,
+    "productArrange": "编带",
+    "productModel": "AP64500SP-13",
+    "stockNumber": 1788,
+    "encapsulationModel": "SO-8-EP",
+    "hasStockNow": "yes",
+    "productCycle": "normal",
+    "smtLabel": "SMT扩展库",
+    "isDisplayUsableTransitNum": true,
+    "remark": "AP64500是一款5A同步降压转换器,具有3.8V至40V的宽输入电压范围。该器件集成了45mΩ高侧和20mΩ低侧功率MOSFET,提供高效能的降压DC-DC转换。采用峰值电流模式控制,减少外部组件数量,优化EMI性能。",
+    "productUnit": "个",
+    "luceneBreviaryImageUrls": "https://alimg.szlcsc.com/upload/public/product/breviary/20230624/370BAADC67750BEB11E2B0C653B3029F.jpg<$>https://alimg.szlcsc.com/upload/public/product/breviary/20230624/375965F21ED00C3C0F11E6C48A1C6F5A.jpg<$>https://alimg.szlcsc.com/upload/public/product/breviary/20230624/7C3DB5FA3DB617FEFAC8964ED15CCB79.jpg",
+    "productMinEncapsulationUnit": "圆盘",
+    "productName": "降压型 5A 3.8V~40V",
+    "returnCouponDesc": [],
+    "productGradePlateId": "296",
+    "isShowQuotedPriceBtn": false,
+    "validStockNumber": 1788,
+    "fileTypeVOList": [
+      {
+        "detailVOList": [
+          {
+            "fileName": "wj1544909.pdf",
+            "fileUrl": "/upload/public/pdf/source/20241225/2D39DAD958D85302AAB7C03D29A39CC0.pdf"
+          }
+        ],
+        "fileType": "pdf_property"
+      },
+      {
+        "detailVOList": [
+          {
+            "fileName": "全量通用_RoHS认证(英文版)@@REACH认证(英文版)@@TSCA认证(英文版)_DIODES.pdf",
+            "fileUrl": "/upload/public/pdf/source/20251221/dgkr1940.pdf"
+          },
+          {
+            "fileName": "全量通用_MSDS认证_DIODES(美台).pdf",
+            "fileUrl": "/upload/public/pdf/source/20250903/61FA791645016FDD3FCD071B3C76DE06.pdf"
+          },
+          {
+            "fileName": "半导体晶圆制造_ISO认证(英文版)_DIODES(美台).pdf",
+            "fileUrl": "/upload/public/pdf/source/20231120/66132F4B415A93B4D1B33D43C3745A2F.pdf"
+          },
+          {
+            "fileName": "集成电路和分立半导体器件_IATF认证(英文版)_DIODES(美台).pdf",
+            "fileUrl": "/upload/public/pdf/source/20231120/0D86EB9D8F53E9E8FAFFCD669AB29B1A.pdf"
+          },
+          {
+            "fileName": "半导体晶圆制造_ISO认证(英文版)_DIODES(美台).pdf",
+            "fileUrl": "/upload/public/pdf/source/20231120/55271B130560DC35193CD46045DE311A.pdf"
+          },
+          {
+            "fileName": "集成电路和分立半导体器件_ISO认证(英文版)_DIODES(美台).pdf",
+            "fileUrl": "/upload/public/pdf/source/20231120/BC7C278033E171EBCB77CB264D6F27BC.pdf"
+          },
+          {
+            "fileName": "全量通用_REACH认证(英文版)_DIODES(美台).pdf",
+            "fileUrl": "/upload/public/pdf/source/20250318/60EEED84A267197BEC74DDE818F785B6.pdf"
+          },
+          {
+            "fileName": "全量通用_ROHS认证_DIODES(美台).pdf",
+            "fileUrl": "/upload/public/pdf/source/20250221/72F66EB621A755B6E0B5FA37859048BB.pdf"
+          },
+          {
+            "fileName": "如文件列表_ROHS认证(英文版)_DIODES(美台).pdf",
+            "fileUrl": "/upload/public/pdf/source/20231120/115B0A0F272628D6489106562657C0DB.pdf"
+          },
+          {
+            "fileName": "指定产品适用_ROHS认证@@REACH认证@@HF(无卤素)认证@@TSCA认证_DIODES(美台).pdf",
+            "fileUrl": "/upload/public/pdf/source/20231120/C55CB0325DE59A4BD3A592A69D9A0CBD.pdf"
+          },
+          {
+            "fileName": "二极管_REACH认证_DIODES(美台).pdf",
+            "fileUrl": "/upload/public/pdf/source/20250221/E985FDE9D34EE2FEF500A3501D1338AE.pdf"
+          }
+        ],
+        "fileType": "certification_data_property"
+      }
+    ],
+    "isEnvironment": true,
+    "isReturnCoupon": false,
+    "productType": "DC-DC电源芯片",
+    "encaptionPrice": 25320,
+    "minBuyNumber": 1,
+    "minWholeNumber": 4000,
+    "saleRuleGroupId": 10039,
+    "convesionRatio": 1,
+    "productId": "2162503",
+    "productGradePlateName": "DIODES(美台)",
+    "eccnCode": "EAR99",
+    "productWeight": 0.00020415,
+    "usableTransitNum": 0,
+    "isDisplay": true,
+    "pdfDESProductId": "753943387713E13862C20E132BF121C8",
+    "productCode": "C2070920",
+    "breviaryImageUrl": "https://alimg.szlcsc.com/upload/public/product/breviary/20230624/370BAADC67750BEB11E2B0C653B3029F.jpg",
+    "isShowPrice": true,
+    "productMinEncapsulationNumber": 4000,
+    "inEdaWhiteList": false,
+    "productStockStatus": "yes",
+    "productUnsealVendition": "yes"
+  },
+  "price": 6.33,
+  "gdWarehouseStockNumber": 1788,
+  "jsWarehouseStockNumber": 0,
+  "pageGeneratedAt": "2026-11-07T15:32:41.289Z"
+}

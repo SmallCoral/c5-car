@@ -1,0 +1,80 @@
+{
+  "date": "2026-11-07",
+  "queried_utc": "2026-11-07T15:53:34.3242329Z",
+  "url": "https://item.szlcsc.com/290306.html",
+  "http_status": 200,
+  "product": {
+    "theRatio": 1,
+    "productArrange": "盒装",
+    "productModel": "826925-6",
+    "stockNumber": 122,
+    "encapsulationModel": "插件,P=2.54mm",
+    "hasStockNow": "yes",
+    "productCycle": "normal",
+    "smtLabel": "SMT扩展库",
+    "remark": "PCB 安装式排针，垂直式，板对板，12 针，中心线间距 2.54 mm [.1 in]，可断开，镀锡（Sn），通孔焊接，AMPMODU 排针",
+    "productUnit": "个",
+    "luceneBreviaryImageUrls": "https://alimg.szlcsc.com/upload/public/product/breviary/20230108/8F5856F88295FBA943C35CFCDFACC060.jpg<$>https://alimg.szlcsc.com/upload/public/product/breviary/20230108/C32E75563BE51801C27CB1E539EB597F.jpg<$>https://alimg.szlcsc.com/upload/public/product/breviary/20230108/1458C21713353D9B12AEAFDE203B2D05.jpg",
+    "productMinEncapsulationUnit": "盒",
+    "productName": "2x6P 间距:2.54mm 方针 直插",
+    "returnCouponDesc": [],
+    "productGradePlateId": "109",
+    "isShowQuotedPriceBtn": false,
+    "validStockNumber": 122,
+    "fileTypeVOList": [
+      {
+        "detailVOList": [
+          {
+            "fileName": "TE Connectivity(美国泰科)排针规格书",
+            "fileUrl": "/upload/public/pdf/source/20181105/C306220_A1767197311F9EA18E5C41C77B28DC02.pdf"
+          }
+        ],
+        "fileType": "pdf_property"
+      },
+      {
+        "detailVOList": [
+          {
+            "fileName": "全量通用_颜色色差说明_TE Connectivity(泰科电子).pdf",
+            "fileUrl": "/upload/public/pdf/source/20260831/EE4698BDA8282266AFB9A44C1F8C954C.pdf"
+          }
+        ],
+        "fileType": "industry_information"
+      },
+      {
+        "detailVOList": [
+          {
+            "fileName": "AS 9100@@IATF 16949@@IECQ QC 080000@@ISO 9001@@ISO 13485@@ISO 14001@@ISO/IEC 17025@@ISO 45001_TE Connectivity(泰科电子)",
+            "linkAddress": "https://www.te.com.cn/chn-zh/utilities/management-system-certifications.html?f1=0"
+          }
+        ],
+        "fileType": "certification_data_property"
+      }
+    ],
+    "isEnvironment": true,
+    "isReturnCoupon": false,
+    "productType": "排针",
+    "encaptionPrice": 4095,
+    "minBuyNumber": 1,
+    "minWholeNumber": 500,
+    "saleRuleGroupId": 1,
+    "convesionRatio": 1,
+    "productId": "290306",
+    "productGradePlateName": "TE Connectivity(泰科电子)",
+    "eccnCode": "EAR99",
+    "productWeight": 0.003,
+    "usableTransitNum": 0,
+    "isDisplay": true,
+    "pdfDESProductId": "356DA6E4DAAF2684296C67311B688FC3",
+    "productCode": "C306220",
+    "breviaryImageUrl": "https://alimg.szlcsc.com/upload/public/product/breviary/20230108/8F5856F88295FBA943C35CFCDFACC060.jpg",
+    "isShowPrice": true,
+    "productMinEncapsulationNumber": 500,
+    "inEdaWhiteList": false,
+    "productStockStatus": "yes",
+    "productUnsealVendition": "yes"
+  },
+  "price": 9.16,
+  "gdWarehouseStockNumber": 122,
+  "jsWarehouseStockNumber": 0,
+  "pageGeneratedAt": "2026-11-07T15:53:34.207Z"
+}

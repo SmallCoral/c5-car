@@ -3431,7 +3431,7 @@
 	)
 	(rectangle
 		(start 13.97 107.95)
-		(end 203.2 287.02)
+		(end 203.2 279.4)
 		(stroke
 			(width 0.254)
 			(type dash)
@@ -3455,7 +3455,7 @@
 	)
 	(rectangle
 		(start 204.47 107.95)
-		(end 393.7 260.35)
+		(end 405.13 246.38)
 		(stroke
 			(width 0.254)
 			(type dash)
@@ -3498,9 +3498,9 @@
 		)
 		(uuid "3abf0cc5-93c1-5554-9774-05360f3faa43")
 	)
-	(text "标称 5.088V，500kHz；芯片额定五安。\nCOMP：15.8k + 10nF，旁路 39pF。\n输出总电容含 USB 入口 150uF；稳定性待实测。"
+	(text "标称 5.088V，500kHz；芯片额定五安。\nCOMP：15.8k + 10nF，旁路 470pF。\n输出总电容含 USB 入口 150uF；稳定性待实测。"
 		(exclude_from_sim no)
-		(at 20.32 209.55 0)
+		(at 18.288 209.042 0)
 		(effects
 			(font
 				(size 2.54 2.54)
@@ -3509,7 +3509,7 @@
 		)
 		(uuid "744aa184-0303-5376-b1db-cdad81fd922b")
 	)
-	(text "标称 5.088V，500kHz；芯片额定五安。\nCOMP：15.8k + 10nF，旁路 39pF。\n输出总电容含 USB 入口 150uF；稳定性待实测。"
+	(text "标称 5.088V，500kHz；芯片额定五安。\nCOMP：15.8k + 10nF，旁路 470pF。\n输出总电容含 USB 入口 150uF；稳定性待实测。"
 		(exclude_from_sim no)
 		(at 210.82 209.55 0)
 		(effects
@@ -3544,7 +3544,7 @@
 	)
 	(text "开"
 		(exclude_from_sim no)
-		(at 165.1 63.5 0)
+		(at 166.37 69.85 0)
 		(effects
 			(font
 				(size 2.54 2.54)
@@ -3555,7 +3555,7 @@
 	)
 	(text "D3 后接核心板 A48/B48；Core USB 不反供外设。\n两路散热焊盘均须接地焊接，额定电流不代表实板能力。"
 		(exclude_from_sim no)
-		(at 20.32 255.27 0)
+		(at 18.288 229.87 0)
 		(effects
 			(font
 				(size 2.54 2.54)
@@ -3566,7 +3566,7 @@
 	)
 	(text "预算 4.2A；荔枝派三安、Core 0.75A。\n灰度 0.30A、屏幕蓝牙 LDO 0.15A。"
 		(exclude_from_sim no)
-		(at 20.32 274.32 0)
+		(at 18.288 244.856 0)
 		(effects
 			(font
 				(size 2.54 2.54)
@@ -3577,7 +3577,7 @@
 	)
 	(text "关"
 		(exclude_from_sim no)
-		(at 172.72 49.53 0)
+		(at 173.99 55.88 0)
 		(effects
 			(font
 				(size 2.54 2.54)
@@ -3587,7 +3587,7 @@
 		(uuid "deca1d37-58bc-5841-abc2-e42fc2a44379")
 	)
 	(junction
-		(at 191.77 240.03)
+		(at 165.1 240.03)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "128cd9bd-e025-5c0d-947e-4d53a9bccb4a")
@@ -3597,6 +3597,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "19f0c550-561b-5593-a973-75fb6d149be3")
+	)
+	(junction
+		(at 41.91 57.15)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1ad5d5cf-55b2-4749-ab9a-30e44039334c")
 	)
 	(junction
 		(at 313.69 163.83)
@@ -3611,7 +3617,7 @@
 		(uuid "37b5dea3-55bc-5fb9-ba41-f678e19fa675")
 	)
 	(junction
-		(at 99.06 44.45)
+		(at 100.33 50.8)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "38d5568c-a178-5b0b-add0-5702892a81c1")
@@ -3635,13 +3641,13 @@
 		(uuid "55bf2667-9bda-50ff-a220-f1e22e2939ce")
 	)
 	(junction
-		(at 173.99 143.51)
+		(at 165.1 143.51)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "6d047287-375e-567c-b124-852c81a213ae")
 	)
 	(junction
-		(at 240.03 24.13)
+		(at 241.3 30.48)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "7e051b41-8bad-5f51-bdc0-b4cea0cb48a7")
@@ -3671,7 +3677,7 @@
 		(uuid "bcb96faa-d860-5feb-859c-c5c0c4fe64a8")
 	)
 	(junction
-		(at 173.99 166.37)
+		(at 165.1 166.37)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c70792e2-4c82-52e0-a773-3746dd324f07")
@@ -3683,13 +3689,13 @@
 		(uuid "d22868f6-869c-5b62-bde8-a96ec17d129a")
 	)
 	(junction
-		(at 207.01 24.13)
+		(at 208.28 30.48)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d9de307b-fe61-531b-9546-27300a0bab26")
 	)
 	(junction
-		(at 85.09 44.45)
+		(at 86.36 50.8)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "da36e23f-d53d-54bf-a079-a451a663a1cb")
@@ -3707,19 +3713,19 @@
 		(uuid "e0c40069-5389-5748-9a87-b95775301763")
 	)
 	(junction
-		(at 85.09 24.13)
+		(at 86.36 30.48)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e1570fd4-efda-5f9c-8325-4c42dc955ab2")
 	)
 	(junction
-		(at 195.58 143.51)
+		(at 187.96 143.51)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ef380476-b2b6-5e50-b708-4f5304ce1627")
 	)
 	(junction
-		(at 109.22 44.45)
+		(at 110.49 50.8)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f4316441-3af8-5015-8150-bf1c963db434")
@@ -3766,7 +3772,7 @@
 	)
 	(wire
 		(pts
-			(xy 60.96 24.13) (xy 66.04 24.13)
+			(xy 62.23 30.48) (xy 67.31 30.48)
 		)
 		(stroke
 			(width 0)
@@ -3796,7 +3802,7 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 44.45) (xy 99.06 44.45)
+			(xy 86.36 50.8) (xy 100.33 50.8)
 		)
 		(stroke
 			(width 0)
@@ -3836,7 +3842,7 @@
 	)
 	(wire
 		(pts
-			(xy 109.22 44.45) (xy 109.22 53.34)
+			(xy 110.49 50.8) (xy 110.49 59.69)
 		)
 		(stroke
 			(width 0)
@@ -3846,7 +3852,7 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 240.03) (xy 191.77 240.03)
+			(xy 148.59 240.03) (xy 176.53 240.03)
 		)
 		(stroke
 			(width 0)
@@ -3856,7 +3862,7 @@
 	)
 	(wire
 		(pts
-			(xy 130.81 57.15) (xy 138.43 57.15)
+			(xy 132.08 63.5) (xy 139.7 63.5)
 		)
 		(stroke
 			(width 0)
@@ -3906,7 +3912,7 @@
 	)
 	(wire
 		(pts
-			(xy 207.01 24.13) (xy 240.03 24.13)
+			(xy 208.28 30.48) (xy 241.3 30.48)
 		)
 		(stroke
 			(width 0)
@@ -3936,7 +3942,7 @@
 	)
 	(wire
 		(pts
-			(xy 240.03 24.13) (xy 269.24 24.13)
+			(xy 241.3 30.48) (xy 270.51 30.48)
 		)
 		(stroke
 			(width 0)
@@ -3946,7 +3952,7 @@
 	)
 	(wire
 		(pts
-			(xy 180.34 73.66) (xy 180.34 81.28)
+			(xy 181.61 80.01) (xy 181.61 87.63)
 		)
 		(stroke
 			(width 0)
@@ -3966,7 +3972,7 @@
 	)
 	(wire
 		(pts
-			(xy 104.14 24.13) (xy 207.01 24.13)
+			(xy 105.41 30.48) (xy 208.28 30.48)
 		)
 		(stroke
 			(width 0)
@@ -3976,7 +3982,7 @@
 	)
 	(wire
 		(pts
-			(xy 60.96 24.13) (xy 60.96 31.75)
+			(xy 62.23 30.48) (xy 62.23 38.1)
 		)
 		(stroke
 			(width 0)
@@ -4006,7 +4012,7 @@
 	)
 	(wire
 		(pts
-			(xy 71.12 44.45) (xy 85.09 44.45)
+			(xy 72.39 50.8) (xy 86.36 50.8)
 		)
 		(stroke
 			(width 0)
@@ -4016,7 +4022,7 @@
 	)
 	(wire
 		(pts
-			(xy 50.8 31.75) (xy 60.96 31.75)
+			(xy 52.07 38.1) (xy 62.23 38.1)
 		)
 		(stroke
 			(width 0)
@@ -4046,7 +4052,7 @@
 	)
 	(wire
 		(pts
-			(xy 76.2 24.13) (xy 85.09 24.13)
+			(xy 77.47 30.48) (xy 86.36 30.48)
 		)
 		(stroke
 			(width 0)
@@ -4056,7 +4062,7 @@
 	)
 	(wire
 		(pts
-			(xy 364.49 123.19) (xy 364.49 128.27)
+			(xy 359.41 124.46) (xy 359.41 129.54)
 		)
 		(stroke
 			(width 0)
@@ -4066,7 +4072,7 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 44.45) (xy 85.09 53.34)
+			(xy 86.36 50.8) (xy 86.36 59.69)
 		)
 		(stroke
 			(width 0)
@@ -4086,7 +4092,7 @@
 	)
 	(wire
 		(pts
-			(xy 191.77 251.46) (xy 191.77 256.54)
+			(xy 165.1 251.46) (xy 165.1 256.54)
 		)
 		(stroke
 			(width 0)
@@ -4096,7 +4102,7 @@
 	)
 	(wire
 		(pts
-			(xy 99.06 44.45) (xy 109.22 44.45)
+			(xy 100.33 50.8) (xy 110.49 50.8)
 		)
 		(stroke
 			(width 0)
@@ -4116,16 +4122,6 @@
 	)
 	(wire
 		(pts
-			(xy 173.99 143.51) (xy 195.58 143.51)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4bb41d2b-683c-5f77-984c-46dc5b4d4279")
-	)
-	(wire
-		(pts
 			(xy 218.44 160.02) (xy 231.14 160.02)
 		)
 		(stroke
@@ -4136,7 +4132,7 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 54.61) (xy 165.1 54.61)
+			(xy 149.86 60.96) (xy 166.37 60.96)
 		)
 		(stroke
 			(width 0)
@@ -4146,7 +4142,7 @@
 	)
 	(wire
 		(pts
-			(xy 33.02 31.75) (xy 43.18 31.75)
+			(xy 34.29 38.1) (xy 44.45 38.1)
 		)
 		(stroke
 			(width 0)
@@ -4156,7 +4152,7 @@
 	)
 	(wire
 		(pts
-			(xy 269.24 19.05) (xy 269.24 24.13)
+			(xy 270.51 25.4) (xy 270.51 30.48)
 		)
 		(stroke
 			(width 0)
@@ -4246,7 +4242,7 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 17.78) (xy 85.09 24.13)
+			(xy 86.36 24.13) (xy 86.36 30.48)
 		)
 		(stroke
 			(width 0)
@@ -4266,23 +4262,13 @@
 	)
 	(wire
 		(pts
-			(xy 195.58 158.75) (xy 195.58 163.83)
+			(xy 187.96 158.75) (xy 187.96 163.83)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "72f15340-2107-5923-ac27-1b11621b0432")
-	)
-	(wire
-		(pts
-			(xy 195.58 143.51) (xy 200.66 143.51)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "73d01cbf-928e-5e21-a5db-bb5e6432c3e2")
 	)
 	(wire
 		(pts
@@ -4296,7 +4282,7 @@
 	)
 	(wire
 		(pts
-			(xy 173.99 157.48) (xy 173.99 166.37)
+			(xy 165.1 157.48) (xy 165.1 166.37)
 		)
 		(stroke
 			(width 0)
@@ -4326,7 +4312,7 @@
 	)
 	(wire
 		(pts
-			(xy 173.99 123.19) (xy 173.99 128.27)
+			(xy 162.56 128.27) (xy 162.56 133.35)
 		)
 		(stroke
 			(width 0)
@@ -4356,7 +4342,7 @@
 	)
 	(wire
 		(pts
-			(xy 173.99 143.51) (xy 173.99 149.86)
+			(xy 165.1 143.51) (xy 165.1 149.86)
 		)
 		(stroke
 			(width 0)
@@ -4376,7 +4362,7 @@
 	)
 	(wire
 		(pts
-			(xy 33.02 36.83) (xy 40.64 36.83)
+			(xy 34.29 43.18) (xy 41.91 43.18)
 		)
 		(stroke
 			(width 0)
@@ -4386,7 +4372,7 @@
 	)
 	(wire
 		(pts
-			(xy 109.22 60.96) (xy 109.22 69.85)
+			(xy 110.49 67.31) (xy 110.49 76.2)
 		)
 		(stroke
 			(width 0)
@@ -4486,7 +4472,7 @@
 	)
 	(wire
 		(pts
-			(xy 71.12 31.75) (xy 71.12 44.45)
+			(xy 72.39 38.1) (xy 72.39 50.8)
 		)
 		(stroke
 			(width 0)
@@ -4506,7 +4492,7 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 24.13) (xy 93.98 24.13)
+			(xy 86.36 30.48) (xy 95.25 30.48)
 		)
 		(stroke
 			(width 0)
@@ -4516,7 +4502,7 @@
 	)
 	(wire
 		(pts
-			(xy 109.22 44.45) (xy 130.81 44.45)
+			(xy 110.49 50.8) (xy 132.08 50.8)
 		)
 		(stroke
 			(width 0)
@@ -4566,7 +4552,7 @@
 	)
 	(wire
 		(pts
-			(xy 191.77 240.03) (xy 191.77 243.84)
+			(xy 165.1 240.03) (xy 165.1 243.84)
 		)
 		(stroke
 			(width 0)
@@ -4576,7 +4562,7 @@
 	)
 	(wire
 		(pts
-			(xy 173.99 166.37) (xy 173.99 175.26)
+			(xy 165.1 166.37) (xy 165.1 175.26)
 		)
 		(stroke
 			(width 0)
@@ -4596,7 +4582,7 @@
 	)
 	(wire
 		(pts
-			(xy 173.99 110.49) (xy 173.99 115.57)
+			(xy 162.56 115.57) (xy 162.56 120.65)
 		)
 		(stroke
 			(width 0)
@@ -4613,16 +4599,6 @@
 			(type default)
 		)
 		(uuid "aa9464ca-e287-529f-9fd8-cc551fca740f")
-	)
-	(wire
-		(pts
-			(xy 191.77 240.03) (xy 200.66 240.03)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "adf97d9e-8c63-556b-8bde-cf6359b97fd1")
 	)
 	(wire
 		(pts
@@ -4646,7 +4622,7 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 60.96) (xy 85.09 69.85)
+			(xy 86.36 67.31) (xy 86.36 76.2)
 		)
 		(stroke
 			(width 0)
@@ -4666,7 +4642,7 @@
 	)
 	(wire
 		(pts
-			(xy 158.75 166.37) (xy 173.99 166.37)
+			(xy 158.75 166.37) (xy 165.1 166.37)
 		)
 		(stroke
 			(width 0)
@@ -4716,7 +4692,7 @@
 	)
 	(wire
 		(pts
-			(xy 99.06 31.75) (xy 99.06 44.45)
+			(xy 100.33 38.1) (xy 100.33 50.8)
 		)
 		(stroke
 			(width 0)
@@ -4736,7 +4712,7 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 143.51) (xy 173.99 143.51)
+			(xy 140.97 143.51) (xy 193.04 143.51)
 		)
 		(stroke
 			(width 0)
@@ -4746,7 +4722,7 @@
 	)
 	(wire
 		(pts
-			(xy 180.34 59.69) (xy 180.34 66.04)
+			(xy 181.61 66.04) (xy 181.61 72.39)
 		)
 		(stroke
 			(width 0)
@@ -4756,7 +4732,7 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 59.69) (xy 180.34 59.69)
+			(xy 149.86 66.04) (xy 181.61 66.04)
 		)
 		(stroke
 			(width 0)
@@ -4776,7 +4752,7 @@
 	)
 	(wire
 		(pts
-			(xy 207.01 54.61) (xy 207.01 66.04)
+			(xy 208.28 60.96) (xy 208.28 72.39)
 		)
 		(stroke
 			(width 0)
@@ -4786,7 +4762,7 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 69.85) (xy 109.22 69.85)
+			(xy 86.36 76.2) (xy 110.49 76.2)
 		)
 		(stroke
 			(width 0)
@@ -4816,7 +4792,7 @@
 	)
 	(wire
 		(pts
-			(xy 240.03 24.13) (xy 240.03 46.99)
+			(xy 241.3 30.48) (xy 241.3 53.34)
 		)
 		(stroke
 			(width 0)
@@ -4846,7 +4822,7 @@
 	)
 	(wire
 		(pts
-			(xy 130.81 44.45) (xy 130.81 57.15)
+			(xy 132.08 50.8) (xy 132.08 63.5)
 		)
 		(stroke
 			(width 0)
@@ -4886,7 +4862,7 @@
 	)
 	(wire
 		(pts
-			(xy 173.99 182.88) (xy 173.99 187.96)
+			(xy 165.1 182.88) (xy 165.1 187.96)
 		)
 		(stroke
 			(width 0)
@@ -4906,7 +4882,7 @@
 	)
 	(wire
 		(pts
-			(xy 207.01 24.13) (xy 207.01 46.99)
+			(xy 208.28 30.48) (xy 208.28 53.34)
 		)
 		(stroke
 			(width 0)
@@ -4916,7 +4892,7 @@
 	)
 	(wire
 		(pts
-			(xy 364.49 110.49) (xy 364.49 115.57)
+			(xy 359.41 111.76) (xy 359.41 116.84)
 		)
 		(stroke
 			(width 0)
@@ -5046,7 +5022,7 @@
 	)
 	(wire
 		(pts
-			(xy 191.77 264.16) (xy 191.77 269.24)
+			(xy 165.1 264.16) (xy 165.1 269.24)
 		)
 		(stroke
 			(width 0)
@@ -5056,7 +5032,7 @@
 	)
 	(wire
 		(pts
-			(xy 40.64 36.83) (xy 40.64 50.8)
+			(xy 41.91 43.18) (xy 41.91 57.15)
 		)
 		(stroke
 			(width 0)
@@ -5086,7 +5062,7 @@
 	)
 	(wire
 		(pts
-			(xy 195.58 143.51) (xy 195.58 151.13)
+			(xy 187.96 143.51) (xy 187.96 151.13)
 		)
 		(stroke
 			(width 0)
@@ -5116,7 +5092,7 @@
 	)
 	(wire
 		(pts
-			(xy 240.03 54.61) (xy 240.03 66.04)
+			(xy 241.3 60.96) (xy 241.3 72.39)
 		)
 		(stroke
 			(width 0)
@@ -5145,7 +5121,7 @@
 		(uuid "2276f541-4720-5b8e-bf2f-582b0bf82825")
 	)
 	(label "VM"
-		(at 364.49 110.49 0)
+		(at 359.41 111.76 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5155,7 +5131,7 @@
 		(uuid "3e03d9da-0b78-5ec2-ae50-3ece308ee975")
 	)
 	(label "V5_EXT"
-		(at 189.23 143.51 0)
+		(at 184.15 143.51 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5175,7 +5151,7 @@
 		(uuid "62aaa0d0-e380-58c6-8bfb-a961a9e585ae")
 	)
 	(label "SW_SOURCE"
-		(at 85.09 69.85 0)
+		(at 86.36 76.2 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5195,7 +5171,7 @@
 		(uuid "6a22a20a-146e-5a00-9b0c-76b0e4f97b9e")
 	)
 	(label "VM"
-		(at 173.99 110.49 0)
+		(at 162.56 115.57 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5205,7 +5181,7 @@
 		(uuid "994994d8-e593-5483-b969-fc784c1512a9")
 	)
 	(label "SW_SOURCE"
-		(at 85.09 17.78 0)
+		(at 86.36 24.13 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5215,7 +5191,7 @@
 		(uuid "e209902c-0617-5621-be26-a6aee31a57f5")
 	)
 	(label "SW_SOURCE"
-		(at 165.1 54.61 180)
+		(at 166.37 60.96 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5226,7 +5202,7 @@
 	)
 	(hierarchical_label "V5_SYS"
 		(shape output)
-		(at 200.66 240.03 0)
+		(at 176.53 240.03 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5237,7 +5213,7 @@
 	)
 	(hierarchical_label "V5_EXT"
 		(shape output)
-		(at 200.66 143.51 0)
+		(at 193.04 143.51 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5248,7 +5224,7 @@
 	)
 	(hierarchical_label "VM"
 		(shape output)
-		(at 269.24 24.13 0)
+		(at 270.51 30.48 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5598,6 +5574,42 @@
 				)
 			)
 		)
+		(property "Purchase_URL" "https://item.szlcsc.com/23607.html"
+			(at 125.73 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Stock_Checked" "2026-11-07"
+			(at 125.73 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Procurement_Status" "domestic in-stock snapshot; prototype draft"
+			(at 125.73 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
 		(pin "1"
 			(uuid "f75c59fb-c9e7-55f6-8b54-85572581b3ba")
 		)
@@ -5615,7 +5627,7 @@
 	)
 	(symbol
 		(lib_id "Motor:power__GND")
-		(at 364.49 128.27 0)
+		(at 359.41 129.54 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5625,7 +5637,7 @@
 		(dnp no)
 		(uuid "07d8d87e-e38d-559b-8fa9-503aef8ca2e6")
 		(property "Reference" "#PWR813"
-			(at 364.49 128.27 0)
+			(at 359.41 129.54 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5636,7 +5648,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 364.49 132.08 0)
+			(at 359.41 133.35 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5647,7 +5659,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 364.49 128.27 0)
+			(at 359.41 129.54 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5658,7 +5670,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 364.49 128.27 0)
+			(at 359.41 129.54 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5669,7 +5681,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 364.49 128.27 0)
+			(at 359.41 129.54 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5846,7 +5858,7 @@
 	)
 	(symbol
 		(lib_id "Motor:Device__D_Zener")
-		(at 109.22 57.15 90)
+		(at 110.49 63.5 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5856,7 +5868,7 @@
 		(dnp no)
 		(uuid "0d44296b-4734-59b0-b1f5-160008121361")
 		(property "Reference" "D1"
-			(at 124.46 55.88 90)
+			(at 125.73 62.23 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5867,7 +5879,7 @@
 			)
 		)
 		(property "Value" "BZT52C12"
-			(at 124.46 58.42 90)
+			(at 125.73 64.77 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5878,7 +5890,7 @@
 			)
 		)
 		(property "Footprint" "Motor:Diode_SMD__D_SOD-123"
-			(at 109.22 57.15 0)
+			(at 110.49 63.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5889,7 +5901,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 109.22 57.15 0)
+			(at 110.49 63.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5900,7 +5912,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 109.22 57.15 0)
+			(at 110.49 63.5 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5910,7 +5922,7 @@
 			)
 		)
 		(property "MPN" "BZT52C12"
-			(at 109.22 57.15 0)
+			(at 110.49 63.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6011,6 +6023,66 @@
 				)
 			)
 		)
+		(property "MPN" "ARG03BTC1002"
+			(at 367.03 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "LCSC" "C309083"
+			(at 367.03 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Purchase_URL" "https://item.szlcsc.com/292745.html"
+			(at 367.03 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Stock_Checked" "2026-11-07"
+			(at 367.03 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Procurement_Status" "domestic in-stock snapshot; prototype draft"
+			(at 367.03 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
 		(pin "1"
 			(uuid "ede7e40d-361d-5e62-a0f1-f11c5f265dea")
 		)
@@ -6028,7 +6100,7 @@
 	)
 	(symbol
 		(lib_id "Motor:power__PWR_FLAG")
-		(at 200.66 143.51 0)
+		(at 193.04 143.51 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6038,7 +6110,7 @@
 		(dnp no)
 		(uuid "1244943e-89e3-5db1-8f2a-0d0ba5286962")
 		(property "Reference" "#FLG801"
-			(at 200.66 143.51 0)
+			(at 193.04 143.51 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6049,7 +6121,7 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 200.66 143.51 0)
+			(at 193.04 143.51 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6060,7 +6132,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 200.66 143.51 0)
+			(at 193.04 143.51 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6071,7 +6143,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 200.66 143.51 0)
+			(at 193.04 143.51 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6082,7 +6154,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 200.66 143.51 0)
+			(at 193.04 143.51 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6105,7 +6177,7 @@
 	)
 	(symbol
 		(lib_id "Motor:Device__LED")
-		(at 191.77 260.35 90)
+		(at 165.1 260.35 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6115,7 +6187,7 @@
 		(dnp no)
 		(uuid "14a766d8-35b9-51a7-be28-2bb192fcd787")
 		(property "Reference" "D4"
-			(at 194.31 259.08 90)
+			(at 167.64 259.08 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6126,7 +6198,7 @@
 			)
 		)
 		(property "Value" "LED_GREEN"
-			(at 194.31 261.62 90)
+			(at 167.64 261.62 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6137,7 +6209,7 @@
 			)
 		)
 		(property "Footprint" "Motor:LED_0603_1608Metric_Gap0.85mm_HandSolder"
-			(at 191.77 260.35 0)
+			(at 165.1 260.35 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6148,7 +6220,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 191.77 260.35 0)
+			(at 165.1 260.35 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6159,7 +6231,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 255.27 149.86 0)
+			(at 228.6 149.86 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6169,7 +6241,7 @@
 			)
 		)
 		(property "MPN" "LTST-C190KGKT"
-			(at 255.27 149.86 0)
+			(at 228.6 149.86 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6196,7 +6268,7 @@
 	)
 	(symbol
 		(lib_id "Motor:Device__C")
-		(at 173.99 119.38 0)
+		(at 162.56 124.46 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6206,7 +6278,7 @@
 		(dnp no)
 		(uuid "15eb334f-40ca-5a99-aedb-6b038a647172")
 		(property "Reference" "C3"
-			(at 176.53 118.11 0)
+			(at 165.1 123.19 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6217,7 +6289,7 @@
 			)
 		)
 		(property "Value" "100nF/50V"
-			(at 176.53 120.65 0)
+			(at 165.1 125.73 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6228,7 +6300,7 @@
 			)
 		)
 		(property "Footprint" "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder"
-			(at 173.99 119.38 0)
+			(at 162.56 124.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6239,7 +6311,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 173.99 119.38 0)
+			(at 162.56 124.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6250,7 +6322,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 180.34 129.54 0)
+			(at 168.91 134.62 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6276,7 +6348,7 @@
 	)
 	(symbol
 		(lib_id "Motor:Device__C")
-		(at 195.58 154.94 0)
+		(at 187.96 154.94 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6286,7 +6358,7 @@
 		(dnp no)
 		(uuid "164e1ba5-99c2-5663-80d4-1c1bf907cf77")
 		(property "Reference" "C5"
-			(at 198.12 153.67 0)
+			(at 188.722 152.654 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6297,7 +6369,7 @@
 			)
 		)
 		(property "Value" "22uF/25V X7R"
-			(at 198.12 156.21 0)
+			(at 188.468 158.75 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6308,7 +6380,7 @@
 			)
 		)
 		(property "Footprint" "Motor:Capacitor_SMD__C_1210_3225Metric"
-			(at 195.58 154.94 0)
+			(at 187.96 154.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6319,7 +6391,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 195.58 154.94 0)
+			(at 187.96 154.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6330,7 +6402,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 173.99 140.97 0)
+			(at 166.37 140.97 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6340,7 +6412,7 @@
 			)
 		)
 		(property "MPN" "GRM32ER71E226KE15L"
-			(at 195.58 154.94 0)
+			(at 187.96 154.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6351,7 +6423,7 @@
 			)
 		)
 		(property "LCSC" "C21397"
-			(at 0 0 0)
+			(at -7.62 0 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6672,6 +6744,66 @@
 				)
 			)
 		)
+		(property "MPN" "GRM21BR61H106KE43L"
+			(at 238.76 133.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "LCSC" "C440198"
+			(at 238.76 133.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Purchase_URL" "https://item.szlcsc.com/439567.html"
+			(at 238.76 133.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Stock_Checked" "2026-11-07"
+			(at 238.76 133.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Procurement_Status" "domestic in-stock snapshot; prototype draft"
+			(at 238.76 133.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
 		(pin "1"
 			(uuid "b3b9da57-49ab-5dc2-b69e-ba6bfa079149")
 		)
@@ -6689,7 +6821,7 @@
 	)
 	(symbol
 		(lib_id "Motor:power__PWR_FLAG")
-		(at 269.24 19.05 0)
+		(at 270.51 25.4 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6699,7 +6831,7 @@
 		(dnp no)
 		(uuid "27c17262-df9c-5365-905d-d03200f52357")
 		(property "Reference" "#FLG003"
-			(at 269.24 19.05 0)
+			(at 270.51 25.4 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6710,7 +6842,7 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 269.24 19.05 0)
+			(at 270.51 25.4 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6721,7 +6853,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 269.24 19.05 0)
+			(at 270.51 25.4 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6732,7 +6864,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 269.24 19.05 0)
+			(at 270.51 25.4 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6743,7 +6875,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 269.24 19.05 0)
+			(at 270.51 25.4 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6766,7 +6898,7 @@
 	)
 	(symbol
 		(lib_id "Motor:Device__C_Polarized")
-		(at 240.03 50.8 0)
+		(at 241.3 57.15 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6776,7 +6908,7 @@
 		(dnp no)
 		(uuid "28467901-7765-502f-8925-40d984cd4ff2")
 		(property "Reference" "C1"
-			(at 242.57 49.53 0)
+			(at 243.84 55.88 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6787,7 +6919,7 @@
 			)
 		)
 		(property "Value" "470u / 25V"
-			(at 242.57 52.07 0)
+			(at 243.84 58.42 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6798,7 +6930,7 @@
 			)
 		)
 		(property "Footprint" "Motor:Capacitor_THT__CP_Radial_D10.0mm_P5.00mm"
-			(at 240.03 50.8 0)
+			(at 241.3 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6809,7 +6941,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 240.03 50.8 0)
+			(at 241.3 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6820,7 +6952,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 240.03 50.8 0)
+			(at 241.3 57.15 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6830,7 +6962,7 @@
 			)
 		)
 		(property "MPN" "EEU-FR1E471"
-			(at 240.03 50.8 0)
+			(at 241.3 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6857,7 +6989,7 @@
 	)
 	(symbol
 		(lib_id "Motor:Device__R")
-		(at 85.09 57.15 0)
+		(at 86.36 63.5 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6867,7 +6999,7 @@
 		(dnp no)
 		(uuid "2e495721-e040-5ae2-a010-fcc0377ae8eb")
 		(property "Reference" "R1"
-			(at 87.63 55.88 0)
+			(at 88.9 62.23 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6878,7 +7010,7 @@
 			)
 		)
 		(property "Value" "100k"
-			(at 87.63 58.42 0)
+			(at 88.9 64.77 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6889,7 +7021,7 @@
 			)
 		)
 		(property "Footprint" "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder"
-			(at 85.09 57.15 0)
+			(at 86.36 63.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6900,7 +7032,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 85.09 57.15 0)
+			(at 86.36 63.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6911,7 +7043,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 85.09 57.15 0)
+			(at 86.36 63.5 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7022,6 +7154,42 @@
 				)
 			)
 		)
+		(property "Purchase_URL" "https://item.szlcsc.com/26554.html"
+			(at 256.54 173.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Stock_Checked" "2026-11-07"
+			(at 256.54 173.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Procurement_Status" "domestic in-stock snapshot; prototype draft"
+			(at 256.54 173.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
 		(pin "1"
 			(uuid "7b3a8bee-68f6-5a11-a082-7f69e2d98ccd")
 		)
@@ -7039,7 +7207,7 @@
 	)
 	(symbol
 		(lib_id "Motor:Device__R")
-		(at 173.99 179.07 0)
+		(at 165.1 179.07 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7049,7 +7217,7 @@
 		(dnp no)
 		(uuid "35cd8025-e506-56e8-9884-6ddbc345f506")
 		(property "Reference" "R60"
-			(at 176.53 177.8 0)
+			(at 167.64 177.8 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7060,7 +7228,7 @@
 			)
 		)
 		(property "Value" "10k / 0.1%"
-			(at 176.53 180.34 0)
+			(at 167.64 180.34 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7071,7 +7239,7 @@
 			)
 		)
 		(property "Footprint" "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder"
-			(at 173.99 179.07 0)
+			(at 165.1 179.07 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7082,7 +7250,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 173.99 179.07 0)
+			(at 165.1 179.07 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7093,7 +7261,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 247.65 57.15 0)
+			(at 238.76 57.15 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7103,7 +7271,7 @@
 			)
 		)
 		(property "Tolerance" "0.1%"
-			(at -11.43 -30.48 0)
+			(at -20.32 -30.48 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7111,6 +7279,66 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "ARG03BTC1002"
+			(at 167.64 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "LCSC" "C309083"
+			(at 167.64 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Purchase_URL" "https://item.szlcsc.com/292745.html"
+			(at 167.64 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Stock_Checked" "2026-11-07"
+			(at 167.64 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Procurement_Status" "domestic in-stock snapshot; prototype draft"
+			(at 167.64 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(pin "1"
@@ -7284,7 +7512,7 @@
 	)
 	(symbol
 		(lib_id "Motor:Device__D_Zener")
-		(at 207.01 50.8 270)
+		(at 208.28 57.15 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7294,7 +7522,7 @@
 		(dnp no)
 		(uuid "3f71b181-3086-5290-8579-18571c410c85")
 		(property "Reference" "D2"
-			(at 209.55 49.53 90)
+			(at 210.82 55.88 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7305,7 +7533,7 @@
 			)
 		)
 		(property "Value" "SMAJ15A"
-			(at 209.55 52.07 90)
+			(at 210.82 58.42 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7316,7 +7544,7 @@
 			)
 		)
 		(property "Footprint" "Motor:Diode_SMD__D_SMA"
-			(at 207.01 50.8 0)
+			(at 208.28 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7327,7 +7555,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 207.01 50.8 0)
+			(at 208.28 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7338,7 +7566,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 207.01 50.8 0)
+			(at 208.28 57.15 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7348,7 +7576,7 @@
 			)
 		)
 		(property "MPN" "SMAJ15A"
-			(at 207.01 50.8 0)
+			(at 208.28 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7460,6 +7688,42 @@
 				)
 			)
 		)
+		(property "Purchase_URL" "https://item.szlcsc.com/26554.html"
+			(at 66.04 173.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Stock_Checked" "2026-11-07"
+			(at 66.04 173.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Procurement_Status" "domestic in-stock snapshot; prototype draft"
+			(at 66.04 173.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
 		(pin "1"
 			(uuid "93bb4e04-eb01-56fa-9a88-a3238b3edf14")
 		)
@@ -7554,7 +7818,7 @@
 	)
 	(symbol
 		(lib_id "Motor:power__GND")
-		(at 207.01 66.04 0)
+		(at 208.28 72.39 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7564,7 +7828,7 @@
 		(dnp no)
 		(uuid "4aaf7b36-c94d-5dc2-9d25-5b3964c6b186")
 		(property "Reference" "#PWR005"
-			(at 207.01 66.04 0)
+			(at 208.28 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7575,7 +7839,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 207.01 69.85 0)
+			(at 208.28 76.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7586,7 +7850,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 207.01 66.04 0)
+			(at 208.28 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7597,7 +7861,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 207.01 66.04 0)
+			(at 208.28 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7608,7 +7872,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 207.01 66.04 0)
+			(at 208.28 72.39 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7716,6 +7980,42 @@
 				)
 			)
 		)
+		(property "Purchase_URL" "https://item.szlcsc.com/22114.html"
+			(at 388.62 156.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Stock_Checked" "2026-11-07"
+			(at 388.62 156.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Procurement_Status" "domestic in-stock snapshot; prototype draft"
+			(at 388.62 156.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
 		(pin "1"
 			(uuid "dd90b6b9-0e32-5317-b6d4-96a7ef2915ed")
 		)
@@ -7810,7 +8110,7 @@
 	)
 	(symbol
 		(lib_id "Motor:power__PWR_FLAG")
-		(at 200.66 240.03 0)
+		(at 176.53 240.03 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7820,7 +8120,7 @@
 		(dnp no)
 		(uuid "5e45c93d-feba-59e1-9613-52cb6aa13239")
 		(property "Reference" "#FLG803"
-			(at 200.66 240.03 0)
+			(at 176.53 240.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7831,7 +8131,7 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 200.66 240.03 0)
+			(at 176.53 240.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7842,7 +8142,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 200.66 240.03 0)
+			(at 176.53 240.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7853,7 +8153,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 200.66 240.03 0)
+			(at 176.53 240.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7864,7 +8164,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 200.66 240.03 0)
+			(at 176.53 240.03 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7987,7 +8287,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nF/16V"
+		(property "Value" "100nF/50V X7R"
 			(at 312.42 127 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8028,6 +8328,66 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "CL10B104KB8NNNC"
+			(at 312.42 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "LCSC" "C1591"
+			(at 312.42 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Purchase_URL" "https://item.szlcsc.com/1943.html"
+			(at 312.42 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Stock_Checked" "2026-11-07"
+			(at 312.42 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Procurement_Status" "domestic in-stock snapshot; prototype draft"
+			(at 312.42 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(pin "1"
@@ -8138,7 +8498,7 @@
 	)
 	(symbol
 		(lib_id "Motor:power__GND")
-		(at 173.99 128.27 0)
+		(at 162.56 133.35 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8148,7 +8508,7 @@
 		(dnp no)
 		(uuid "65c70ad6-1fec-5c07-a7f3-e7897ab2ad4d")
 		(property "Reference" "#PWR803"
-			(at 173.99 128.27 0)
+			(at 162.56 133.35 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8159,7 +8519,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 173.99 132.08 0)
+			(at 162.56 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8170,7 +8530,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 173.99 128.27 0)
+			(at 162.56 133.35 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8181,7 +8541,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 173.99 128.27 0)
+			(at 162.56 133.35 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8192,7 +8552,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 173.99 128.27 0)
+			(at 162.56 133.35 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8215,7 +8575,7 @@
 	)
 	(symbol
 		(lib_id "Motor:Device__Fuse")
-		(at 46.99 31.75 90)
+		(at 48.26 38.1 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8225,7 +8585,7 @@
 		(dnp no)
 		(uuid "666ca98d-29dc-53b2-993a-7473f8d22717")
 		(property "Reference" "F1"
-			(at 46.99 24.13 90)
+			(at 48.26 30.48 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8235,7 +8595,7 @@
 			)
 		)
 		(property "Value" "15A/85V FAST"
-			(at 46.99 26.67 90)
+			(at 48.26 33.02 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8245,7 +8605,7 @@
 			)
 		)
 		(property "Footprint" "Motor:Fuse_Littelfuse_448_6.10x2.69mm_GenericBody"
-			(at 46.99 31.75 0)
+			(at 48.26 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8256,7 +8616,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.littelfuse.com/assetdocs/littelfuse_fuse_448_datasheet.pdf?assetguid=12c1a28d-212b-4f45-9d77-c982b871378a"
-			(at 46.99 31.75 0)
+			(at 48.26 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8267,7 +8627,7 @@
 			)
 		)
 		(property "Description" "448系列15A/85V快断；通用尺寸模型；浪涌和故障分断能力待实测"
-			(at 46.99 31.75 0)
+			(at 48.26 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8278,7 +8638,7 @@
 			)
 		)
 		(property "MPN" "0448015.MR"
-			(at 46.99 31.75 0)
+			(at 48.26 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8315,7 +8675,7 @@
 		(dnp no)
 		(uuid "66d5cea2-cb07-51ad-9e34-61d209d810b6")
 		(property "Reference" "C63"
-			(at 148.59 179.07 0)
+			(at 146.812 178.308 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8325,8 +8685,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "39pF/50V C0G"
-			(at 148.59 181.61 0)
+		(property "Value" "470pF/50V C0G"
+			(at 146.812 183.134 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8368,7 +8728,7 @@
 				)
 			)
 		)
-		(property "MPN" "CC0603JRNPO9BN390"
+		(property "MPN" "CC0603JRNPO9BN471"
 			(at 146.05 180.34 0)
 			(hide yes)
 			(show_name no)
@@ -8379,7 +8739,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C107049"
+		(property "LCSC" "C106211"
 			(at 0 0 0)
 			(hide yes)
 			(show_name no)
@@ -8388,6 +8748,42 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "Purchase_URL" "https://item.szlcsc.com/107426.html"
+			(at 148.59 181.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Stock_Checked" "2026-11-07"
+			(at 148.59 181.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Procurement_Status" "domestic in-stock snapshot; prototype draft"
+			(at 148.59 181.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(pin "1"
@@ -8484,7 +8880,7 @@
 	)
 	(symbol
 		(lib_id "Motor:Device__R")
-		(at 191.77 247.65 0)
+		(at 165.1 247.65 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8494,7 +8890,7 @@
 		(dnp no)
 		(uuid "67eab74a-7b0b-5afc-a1aa-5bd19baa2420")
 		(property "Reference" "R5"
-			(at 194.31 246.38 0)
+			(at 167.64 246.38 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8505,7 +8901,7 @@
 			)
 		)
 		(property "Value" "2.2k"
-			(at 194.31 248.92 0)
+			(at 167.64 248.92 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8516,7 +8912,7 @@
 			)
 		)
 		(property "Footprint" "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder"
-			(at 191.77 247.65 0)
+			(at 165.1 247.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8527,7 +8923,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 191.77 247.65 0)
+			(at 165.1 247.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8538,7 +8934,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 255.27 139.7 0)
+			(at 228.6 139.7 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8660,6 +9056,42 @@
 				)
 			)
 		)
+		(property "Purchase_URL" "https://item.szlcsc.com/2782693.html"
+			(at 367.03 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Stock_Checked" "2026-11-07"
+			(at 367.03 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Procurement_Status" "domestic in-stock snapshot; prototype draft"
+			(at 367.03 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
 		(pin "1"
 			(uuid "6c9ed66b-56b7-587b-83b3-92a89aa782b5")
 		)
@@ -8677,7 +9109,7 @@
 	)
 	(symbol
 		(lib_id "Motor:power__PWR_FLAG")
-		(at 40.64 50.8 0)
+		(at 41.91 57.15 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8687,7 +9119,7 @@
 		(dnp no)
 		(uuid "71e92cb1-f1d5-534a-a4ac-8d75d9affbba")
 		(property "Reference" "#FLG002"
-			(at 40.64 50.8 0)
+			(at 41.91 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8698,7 +9130,7 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 40.64 50.8 0)
+			(at 41.91 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8709,7 +9141,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 40.64 50.8 0)
+			(at 41.91 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8720,7 +9152,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 40.64 50.8 0)
+			(at 41.91 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8731,7 +9163,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 40.64 50.8 0)
+			(at 41.91 57.15 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8914,6 +9346,39 @@
 				)
 			)
 		)
+		(property "Purchase_URL" "https://item.szlcsc.com/2162503.html"
+			(at 95.25 120.65 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Stock_Checked" "2026-11-07"
+			(at 95.25 120.65 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Procurement_Status" "domestic in-stock snapshot; prototype draft"
+			(at 95.25 120.65 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "a8a9e4f5-5505-5457-a81f-cd4321733e72")
 		)
@@ -8952,7 +9417,7 @@
 	)
 	(symbol
 		(lib_id "Motor:Device__R")
-		(at 173.99 153.67 0)
+		(at 165.1 153.67 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8962,7 +9427,7 @@
 		(dnp no)
 		(uuid "7f0be9bd-1bff-53b6-ad96-6a7df1566181")
 		(property "Reference" "R59"
-			(at 176.53 152.4 0)
+			(at 167.64 152.4 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8973,7 +9438,7 @@
 			)
 		)
 		(property "Value" "53.6k / 0.1%"
-			(at 176.53 154.94 0)
+			(at 167.64 154.94 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8984,7 +9449,7 @@
 			)
 		)
 		(property "Footprint" "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder"
-			(at 173.99 153.67 0)
+			(at 165.1 153.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8995,7 +9460,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 173.99 153.67 0)
+			(at 165.1 153.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9006,7 +9471,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 110.49 69.85 0)
+			(at 101.6 69.85 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9016,7 +9481,7 @@
 			)
 		)
 		(property "MPN" "ARG03BTC5362"
-			(at 173.99 153.67 0)
+			(at 165.1 153.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9027,7 +9492,7 @@
 			)
 		)
 		(property "LCSC" "C2684559"
-			(at 0 0 0)
+			(at -8.89 0 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9038,7 +9503,7 @@
 			)
 		)
 		(property "Tolerance" "0.1%"
-			(at -11.43 -17.78 0)
+			(at -20.32 -17.78 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9046,6 +9511,42 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "Purchase_URL" "https://item.szlcsc.com/2782693.html"
+			(at 167.64 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Stock_Checked" "2026-11-07"
+			(at 167.64 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Procurement_Status" "domestic in-stock snapshot; prototype draft"
+			(at 167.64 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(pin "1"
@@ -9230,6 +9731,66 @@
 				)
 			)
 		)
+		(property "MPN" "0603WAF1002T5E"
+			(at 220.98 175.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "LCSC" "C25804"
+			(at 220.98 175.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Purchase_URL" "https://item.szlcsc.com/26547.html"
+			(at 220.98 175.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Stock_Checked" "2026-11-07"
+			(at 220.98 175.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Procurement_Status" "domestic in-stock snapshot; prototype draft"
+			(at 220.98 175.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
 		(pin "1"
 			(uuid "8f62c97a-c89a-5e2e-953f-ec6037ccf52e")
 		)
@@ -9327,7 +9888,7 @@
 	)
 	(symbol
 		(lib_id "Motor:power__GND")
-		(at 195.58 163.83 0)
+		(at 187.96 163.83 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9337,7 +9898,7 @@
 		(dnp no)
 		(uuid "8e99fc15-8360-5aca-b534-64af737f1a75")
 		(property "Reference" "#PWR807"
-			(at 195.58 163.83 0)
+			(at 187.96 163.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9348,7 +9909,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 195.58 167.64 0)
+			(at 187.96 167.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9359,7 +9920,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 195.58 163.83 0)
+			(at 187.96 163.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9370,7 +9931,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 195.58 163.83 0)
+			(at 187.96 163.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9381,7 +9942,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 195.58 163.83 0)
+			(at 187.96 163.83 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9484,7 +10045,7 @@
 	)
 	(symbol
 		(lib_id "Motor:DMP3007LK3_Mirrored")
-		(at 99.06 26.67 90)
+		(at 100.33 33.02 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9494,7 +10055,7 @@
 		(dnp no)
 		(uuid "93963961-26dc-57b1-9c27-fe1dd3d98e4a")
 		(property "Reference" "Q2"
-			(at 99.06 16.51 90)
+			(at 100.33 22.86 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9504,7 +10065,7 @@
 			)
 		)
 		(property "Value" "DMP3007LK3-13"
-			(at 99.06 20.32 90)
+			(at 100.33 26.67 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9514,7 +10075,7 @@
 			)
 		)
 		(property "Footprint" "Motor:Package_TO_SOT_SMD__TO-252-2"
-			(at 99.06 26.67 0)
+			(at 100.33 33.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9525,7 +10086,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.diodes.com/datasheet/download/DMP3007LK3.pdf"
-			(at 99.06 26.67 0)
+			(at 100.33 33.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9536,7 +10097,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 99.06 26.67 0)
+			(at 100.33 33.02 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9546,7 +10107,7 @@
 			)
 		)
 		(property "MPN" "DMP3007LK3-13"
-			(at 99.06 26.67 0)
+			(at 100.33 33.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9557,7 +10118,7 @@
 			)
 		)
 		(property "LCSC" "C3281309"
-			(at 99.06 26.67 0)
+			(at 100.33 33.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9672,6 +10233,42 @@
 				)
 			)
 		)
+		(property "Purchase_URL" "https://item.szlcsc.com/22114.html"
+			(at 260.35 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Stock_Checked" "2026-11-07"
+			(at 260.35 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Procurement_Status" "domestic in-stock snapshot; prototype draft"
+			(at 260.35 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
 		(pin "1"
 			(uuid "54ed25b5-06db-5111-9e99-26e9b2cfe9ff")
 		)
@@ -9689,7 +10286,7 @@
 	)
 	(symbol
 		(lib_id "Motor:XT60PW_M_Power")
-		(at 25.4 34.29 0)
+		(at 26.67 40.64 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9699,7 +10296,7 @@
 		(dnp no)
 		(uuid "9ad6e83c-e568-56d0-85fd-21fcc1de997a")
 		(property "Reference" "J1"
-			(at 25.4 21.59 0)
+			(at 26.67 27.94 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9709,7 +10306,7 @@
 			)
 		)
 		(property "Value" "XT60PW-M"
-			(at 31.75 25.4 0)
+			(at 33.02 31.75 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9719,7 +10316,7 @@
 			)
 		)
 		(property "Footprint" "Motor:AMASS_XT60PW-M_1x02_P7.20mm_Horizontal"
-			(at 25.4 34.29 0)
+			(at 26.67 40.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9730,7 +10327,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.china-amass.com/biao/289.html"
-			(at 25.4 34.29 0)
+			(at 26.67 40.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9741,7 +10338,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 25.4 34.29 0)
+			(at 26.67 40.64 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9751,7 +10348,7 @@
 			)
 		)
 		(property "MPN" "XT60PW-M"
-			(at 25.4 34.29 0)
+			(at 26.67 40.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9778,7 +10375,7 @@
 	)
 	(symbol
 		(lib_id "Motor:power__GND")
-		(at 40.64 50.8 0)
+		(at 41.91 57.15 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9788,7 +10385,7 @@
 		(dnp no)
 		(uuid "9e569b6e-21d3-5823-ace4-469513314ee8")
 		(property "Reference" "#PWR002"
-			(at 40.64 50.8 0)
+			(at 41.91 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9799,7 +10396,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 40.64 54.61 0)
+			(at 41.91 60.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9810,7 +10407,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 40.64 50.8 0)
+			(at 41.91 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9821,7 +10418,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 40.64 50.8 0)
+			(at 41.91 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9832,7 +10429,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 40.64 50.8 0)
+			(at 41.91 57.15 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9855,7 +10452,7 @@
 	)
 	(symbol
 		(lib_id "Motor:power__GND")
-		(at 173.99 187.96 0)
+		(at 165.1 187.96 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9865,7 +10462,7 @@
 		(dnp no)
 		(uuid "a21c6508-0813-5aa0-b5c4-19e8ba6bc3ae")
 		(property "Reference" "#PWR808"
-			(at 173.99 187.96 0)
+			(at 165.1 187.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9876,7 +10473,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 173.99 191.77 0)
+			(at 165.1 191.77 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9887,7 +10484,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 173.99 187.96 0)
+			(at 165.1 187.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9898,7 +10495,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 173.99 187.96 0)
+			(at 165.1 187.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9909,7 +10506,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 173.99 187.96 0)
+			(at 165.1 187.96 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9932,7 +10529,7 @@
 	)
 	(symbol
 		(lib_id "Motor:power__GND")
-		(at 180.34 81.28 0)
+		(at 181.61 87.63 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9942,7 +10539,7 @@
 		(dnp no)
 		(uuid "a6e39692-0a40-5e76-8604-2fd29b00a8bf")
 		(property "Reference" "#PWR004"
-			(at 180.34 81.28 0)
+			(at 181.61 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9953,7 +10550,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 180.34 85.09 0)
+			(at 181.61 91.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9964,7 +10561,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 180.34 81.28 0)
+			(at 181.61 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9975,7 +10572,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 180.34 81.28 0)
+			(at 181.61 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9986,7 +10583,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 180.34 81.28 0)
+			(at 181.61 87.63 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10009,7 +10606,7 @@
 	)
 	(symbol
 		(lib_id "Motor:Device__C")
-		(at 364.49 119.38 0)
+		(at 359.41 120.65 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10019,7 +10616,7 @@
 		(dnp no)
 		(uuid "a9e3388b-cef4-54fc-87b2-64de24f47fcb")
 		(property "Reference" "C85"
-			(at 367.03 118.11 0)
+			(at 361.95 119.38 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10029,8 +10626,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nF/50V"
-			(at 367.03 120.65 0)
+		(property "Value" "100nF/50V X7R"
+			(at 361.95 121.92 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10041,7 +10638,7 @@
 			)
 		)
 		(property "Footprint" "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder"
-			(at 364.49 119.38 0)
+			(at 359.41 120.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10052,7 +10649,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 364.49 119.38 0)
+			(at 359.41 120.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10063,13 +10660,73 @@
 			)
 		)
 		(property "Description" ""
-			(at 364.49 119.38 0)
+			(at 359.41 120.65 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "CL10B104KB8NNNC"
+			(at 361.95 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "LCSC" "C1591"
+			(at 361.95 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Purchase_URL" "https://item.szlcsc.com/1943.html"
+			(at 361.95 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Stock_Checked" "2026-11-07"
+			(at 361.95 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Procurement_Status" "domestic in-stock snapshot; prototype draft"
+			(at 361.95 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(pin "1"
@@ -10174,6 +10831,42 @@
 				)
 			)
 		)
+		(property "Purchase_URL" "https://item.szlcsc.com/23607.html"
+			(at 316.23 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Stock_Checked" "2026-11-07"
+			(at 316.23 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Procurement_Status" "domestic in-stock snapshot; prototype draft"
+			(at 316.23 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
 		(pin "1"
 			(uuid "ae0cde96-e6b0-52ba-8567-87a7ecd7d2ef")
 		)
@@ -10274,6 +10967,39 @@
 				)
 			)
 		)
+		(property "Purchase_URL" "https://item.szlcsc.com/2162503.html"
+			(at 285.75 120.65 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Stock_Checked" "2026-11-07"
+			(at 285.75 120.65 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Procurement_Status" "domestic in-stock snapshot; prototype draft"
+			(at 285.75 120.65 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "4a38a599-708b-58ac-bf06-83e463304e98")
 		)
@@ -10312,7 +11038,7 @@
 	)
 	(symbol
 		(lib_id "Motor:power__GND")
-		(at 240.03 66.04 0)
+		(at 241.3 72.39 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10322,7 +11048,7 @@
 		(dnp no)
 		(uuid "b14f1105-1a51-50f7-8fae-46288b0b0a65")
 		(property "Reference" "#PWR006"
-			(at 240.03 66.04 0)
+			(at 241.3 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10333,7 +11059,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 240.03 69.85 0)
+			(at 241.3 76.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10344,7 +11070,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 240.03 66.04 0)
+			(at 241.3 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10355,7 +11081,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 240.03 66.04 0)
+			(at 241.3 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10366,7 +11092,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 240.03 66.04 0)
+			(at 241.3 72.39 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10529,6 +11255,66 @@
 				)
 			)
 		)
+		(property "MPN" "0603WAF8202T5E"
+			(at 220.98 149.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "LCSC" "C23254"
+			(at 220.98 149.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Purchase_URL" "https://item.szlcsc.com/23981.html"
+			(at 220.98 149.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Stock_Checked" "2026-11-07"
+			(at 220.98 149.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Procurement_Status" "domestic in-stock snapshot; prototype draft"
+			(at 220.98 149.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
 		(pin "1"
 			(uuid "1be9f2bf-004b-54d0-b61e-d1832cf37c96")
 		)
@@ -10623,7 +11409,7 @@
 	)
 	(symbol
 		(lib_id "Motor:SS12D10G5_3P")
-		(at 143.51 57.15 0)
+		(at 144.78 63.5 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10633,7 +11419,7 @@
 		(dnp no)
 		(uuid "ba612015-4035-5e1b-9e6f-0a1091abd1ea")
 		(property "Reference" "SW1"
-			(at 143.51 43.18 0)
+			(at 144.78 49.53 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10643,7 +11429,7 @@
 			)
 		)
 		(property "Value" "SS12D10G5"
-			(at 143.51 46.99 0)
+			(at 144.78 53.34 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10653,7 +11439,7 @@
 			)
 		)
 		(property "Footprint" "Motor:SS12D10G5_SHOUHAN_3P_P4.80mm"
-			(at 143.51 57.15 0)
+			(at 144.78 63.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10664,7 +11450,7 @@
 			)
 		)
 		(property "Datasheet" "https://datasheet.lcsc.com/lcsc/2306211618_SHOU-HAN-SS12D10G5_C7431054.pdf"
-			(at 143.51 57.15 0)
+			(at 144.78 63.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10675,7 +11461,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 143.51 57.15 0)
+			(at 144.78 63.5 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10685,7 +11471,7 @@
 			)
 		)
 		(property "MPN" "SS12D10G5"
-			(at 143.51 57.15 0)
+			(at 144.78 63.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10696,7 +11482,7 @@
 			)
 		)
 		(property "LCSC" "C7431054"
-			(at 143.51 57.15 0)
+			(at 144.78 63.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10726,7 +11512,7 @@
 	)
 	(symbol
 		(lib_id "Motor:power__GND")
-		(at 191.77 269.24 0)
+		(at 165.1 269.24 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10736,7 +11522,7 @@
 		(dnp no)
 		(uuid "ba989fe2-a680-54a2-b0c0-123a83851928")
 		(property "Reference" "#PWR821"
-			(at 191.77 269.24 0)
+			(at 165.1 269.24 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10747,7 +11533,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 191.77 273.05 0)
+			(at 165.1 273.05 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10758,7 +11544,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 191.77 269.24 0)
+			(at 165.1 269.24 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10769,7 +11555,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 191.77 269.24 0)
+			(at 165.1 269.24 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10780,7 +11566,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 191.77 269.24 0)
+			(at 165.1 269.24 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10803,7 +11589,7 @@
 	)
 	(symbol
 		(lib_id "Motor:Device__R")
-		(at 180.34 69.85 0)
+		(at 181.61 76.2 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10813,7 +11599,7 @@
 		(dnp no)
 		(uuid "bff91d5c-3d8d-55fe-b0ab-102c468c34aa")
 		(property "Reference" "R2"
-			(at 182.88 68.58 0)
+			(at 184.15 74.93 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10824,7 +11610,7 @@
 			)
 		)
 		(property "Value" "4.7k"
-			(at 182.88 71.12 0)
+			(at 184.15 77.47 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10835,7 +11621,7 @@
 			)
 		)
 		(property "Footprint" "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder"
-			(at 180.34 69.85 0)
+			(at 181.61 76.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10846,7 +11632,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 180.34 69.85 0)
+			(at 181.61 76.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10857,7 +11643,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 180.34 69.85 0)
+			(at 181.61 76.2 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10968,6 +11754,42 @@
 				)
 			)
 		)
+		(property "Purchase_URL" "https://item.szlcsc.com/101256.html"
+			(at 125.73 201.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Stock_Checked" "2026-11-07"
+			(at 125.73 201.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Procurement_Status" "domestic in-stock snapshot; prototype draft"
+			(at 125.73 201.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
 		(pin "1"
 			(uuid "9a33542e-653e-50cb-acb0-b3c108053189")
 		)
@@ -11068,6 +11890,39 @@
 				)
 			)
 		)
+		(property "Purchase_URL" "https://item.szlcsc.com/5735814.html"
+			(at 327.66 138.43 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Stock_Checked" "2026-11-07"
+			(at 327.66 138.43 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Procurement_Status" "domestic in-stock snapshot; prototype draft"
+			(at 327.66 138.43 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "a7b84984-cfa0-5445-891e-9e55064c5c7c")
 		)
@@ -11085,7 +11940,7 @@
 	)
 	(symbol
 		(lib_id "Motor:DMP3007LK3")
-		(at 71.12 26.67 90)
+		(at 72.39 33.02 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -11095,7 +11950,7 @@
 		(dnp no)
 		(uuid "ddf56888-05ba-5f47-9c6b-7d22ae71b0e5")
 		(property "Reference" "Q1"
-			(at 71.12 16.51 90)
+			(at 72.39 22.86 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11105,7 +11960,7 @@
 			)
 		)
 		(property "Value" "DMP3007LK3-13"
-			(at 71.12 20.32 90)
+			(at 72.39 26.67 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11115,7 +11970,7 @@
 			)
 		)
 		(property "Footprint" "Motor:Package_TO_SOT_SMD__TO-252-2"
-			(at 71.12 26.67 0)
+			(at 72.39 33.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11126,7 +11981,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.diodes.com/datasheet/download/DMP3007LK3.pdf"
-			(at 71.12 26.67 0)
+			(at 72.39 33.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11137,7 +11992,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 71.12 26.67 0)
+			(at 72.39 33.02 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11147,7 +12002,7 @@
 			)
 		)
 		(property "MPN" "DMP3007LK3-13"
-			(at 71.12 26.67 0)
+			(at 72.39 33.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11158,7 +12013,7 @@
 			)
 		)
 		(property "LCSC" "C3281309"
-			(at 71.12 26.67 0)
+			(at 72.39 33.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11271,6 +12126,42 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "Purchase_URL" "https://item.szlcsc.com/101256.html"
+			(at 316.23 201.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Stock_Checked" "2026-11-07"
+			(at 316.23 201.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Procurement_Status" "domestic in-stock snapshot; prototype draft"
+			(at 316.23 201.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(pin "1"
@@ -11387,7 +12278,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "39pF/50V C0G"
+		(property "Value" "470pF/50V C0G"
 			(at 339.09 181.61 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11430,7 +12321,7 @@
 				)
 			)
 		)
-		(property "MPN" "CC0603JRNPO9BN390"
+		(property "MPN" "CC0603JRNPO9BN471"
 			(at 336.55 180.34 0)
 			(hide yes)
 			(show_name no)
@@ -11441,7 +12332,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C107049"
+		(property "LCSC" "C106211"
 			(at 0 0 0)
 			(hide yes)
 			(show_name no)
@@ -11450,6 +12341,42 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "Purchase_URL" "https://item.szlcsc.com/107426.html"
+			(at 339.09 181.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Stock_Checked" "2026-11-07"
+			(at 339.09 181.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Procurement_Status" "domestic in-stock snapshot; prototype draft"
+			(at 339.09 181.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(pin "1"
@@ -11543,6 +12470,39 @@
 		)
 		(property "LCSC" "C5129929"
 			(at 137.16 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Purchase_URL" "https://item.szlcsc.com/5735814.html"
+			(at 137.16 138.43 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Stock_Checked" "2026-11-07"
+			(at 137.16 138.43 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Procurement_Status" "domestic in-stock snapshot; prototype draft"
+			(at 137.16 138.43 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

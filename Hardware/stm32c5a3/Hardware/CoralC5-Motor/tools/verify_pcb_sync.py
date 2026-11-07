@@ -6,6 +6,12 @@ sys.path.insert(0,str(ROOT.parent/'Shared/design_tools'))
 from sexpr import parse,node,nodes,prop
 
 def main():
+    if (DOC/'f8_association_repair.json').exists():
+        from verify_pcb_associations import main as verify_associations
+        return verify_associations()
+    if (DOC/'pcb_sync_m28.json').exists():
+        from verify_pcb_m28 import main as verify_m28
+        return verify_m28()
     sync=json.loads((DOC/'pcb_sync_m27.json').read_text(encoding='utf8'))
     old=parse((ROOT/sync['baseline_file']).read_text(encoding='utf8'))
     current=parse((ROOT/'CoralC5-Motor.kicad_pcb').read_text(encoding='utf8'))

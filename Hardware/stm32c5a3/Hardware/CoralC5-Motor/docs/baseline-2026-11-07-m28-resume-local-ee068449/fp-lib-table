@@ -1,0 +1,1 @@
+(fp_lib_table (lib (name "Motor")(type "KiCad")(uri "${KIPRJMOD}/Motor.pretty")(options "")(descr "CoralC5 Motor portable footprints")))

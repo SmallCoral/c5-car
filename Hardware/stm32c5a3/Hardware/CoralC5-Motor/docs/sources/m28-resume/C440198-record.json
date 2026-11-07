@@ -1,0 +1,103 @@
+{
+  "date": "2026-11-07",
+  "queried_utc": "2026-11-07T15:32:55.8926078Z",
+  "url": "https://item.szlcsc.com/439567.html",
+  "http_status": 200,
+  "product": {
+    "theRatio": 5,
+    "productArrange": "编带",
+    "productModel": "GRM21BR61H106KE43L",
+    "stockNumber": 193410,
+    "encapsulationModel": "0805",
+    "hasStockNow": "yes",
+    "productCycle": "normal",
+    "smtLabel": "SMT基础库",
+    "remark": "",
+    "productUnit": "个",
+    "luceneBreviaryImageUrls": "https://alimg.szlcsc.com/upload/public/product/breviary/20230108/97E4C766FED9721A33817D818AFDFB38.jpg<$>https://alimg.szlcsc.com/upload/public/product/breviary/20230108/326D8430E90D47FE8C965B56D4DA41B1.jpg<$>https://alimg.szlcsc.com/upload/public/product/breviary/20230108/B92BA7236341DA9DBACB643AB39E7A1E.jpg",
+    "productMinEncapsulationUnit": "圆盘",
+    "productName": "10uF ±10% 50V",
+    "returnCouponDesc": [],
+    "productGradePlateId": "79",
+    "isShowQuotedPriceBtn": false,
+    "validStockNumber": 38682,
+    "fileTypeVOList": [
+      {
+        "detailVOList": [
+          {
+            "fileName": "wj423501.pdf",
+            "fileUrl": "/upload/public/pdf/source/20230811/95AAE0C9AF55EDC31B7A4D8B733F534E.pdf"
+          }
+        ],
+        "fileType": "pdf_property"
+      },
+      {
+        "detailVOList": [
+          {
+            "fileName": "原材料适用_ROHS认证(英文版)_muRata(村田).zip",
+            "fileUrl": "/upload/public/pdf/source/20260918/F2559BBCBB3CC0510EE27EBE17B82693.zip"
+          },
+          {
+            "fileName": "原材料适用_ROHS认证(英文版)_muRata(村田).zip",
+            "fileUrl": "/upload/public/pdf/source/20260918/34A1C9055F54B8A86494874FAC98E24C.zip"
+          },
+          {
+            "fileName": "指定系列(陶瓷电容)_ROHS认证_muRata(村田).pdf",
+            "fileUrl": "/upload/public/pdf/source/20250224/8990ED9C273B982CB3ECCB7760EACB92.pdf"
+          },
+          {
+            "fileName": "PTC陶瓷体_ROHS认证(英文版)_muRata(村田).pdf",
+            "fileUrl": "/upload/public/pdf/source/20231211/0F8290E7DF1A282772E05F66BEF5F35B.pdf"
+          },
+          {
+            "fileName": "镀锡_ROHS认证(英文版)_muRata(村田).pdf",
+            "fileUrl": "/upload/public/pdf/source/20231211/E8B2C7CD41D78126A592241404885AA5.pdf"
+          },
+          {
+            "fileName": "TargetZA_230130_ROHS认证(英文版)_muRata(村田).pdf",
+            "fileUrl": "/upload/public/pdf/source/20231211/74966F132EC02AE801FF2B2EB61291DB.pdf"
+          },
+          {
+            "fileName": "TargetZA_230110_ROHS认证(英文版)_muRata(村田).pdf",
+            "fileUrl": "/upload/public/pdf/source/20231211/DB9CCE3D5EC139944BD0B06398CCF574.pdf"
+          },
+          {
+            "fileName": "TargetZB230110_ROHS认证(英文版)_muRata(村田).pdf",
+            "fileUrl": "/upload/public/pdf/source/20231211/56126850675479FC833771E41C354140.pdf"
+          },
+          {
+            "fileName": "环保文件_muRata(村田).zip",
+            "fileUrl": "/upload/public/pdf/source/20240126/12DC40613FDC4E60B0E9C102370807B9.zip"
+          }
+        ],
+        "fileType": "certification_data_property"
+      }
+    ],
+    "isEnvironment": true,
+    "isReturnCoupon": false,
+    "productType": "贴片电容(MLCC)",
+    "encaptionPrice": 1704,
+    "minBuyNumber": 1,
+    "minWholeNumber": 3000,
+    "saleRuleGroupId": 10039,
+    "convesionRatio": 5,
+    "productId": "439567",
+    "productGradePlateName": "muRata(村田)",
+    "eccnCode": "EAR99",
+    "productWeight": 0.000194444,
+    "usableTransitNum": 0,
+    "isDisplay": true,
+    "pdfDESProductId": "B33594214F2F704E296C67311B688FC3",
+    "productCode": "C440198",
+    "breviaryImageUrl": "https://alimg.szlcsc.com/upload/public/product/breviary/20230108/97E4C766FED9721A33817D818AFDFB38.jpg",
+    "isShowPrice": true,
+    "productMinEncapsulationNumber": 3000,
+    "inEdaWhiteList": false,
+    "productStockStatus": "yes",
+    "productUnsealVendition": "yes"
+  },
+  "price": 0.568,
+  "gdWarehouseStockNumber": 193410,
+  "jsWarehouseStockNumber": 0,
+  "pageGeneratedAt": "2026-11-07T15:32:43.893Z"
+}

@@ -1,0 +1,89 @@
+{
+  "date": "2026-11-07",
+  "queried_utc": "2026-11-07T15:33:54.1592664Z",
+  "url": "https://item.szlcsc.com/16532.html",
+  "http_status": 200,
+  "product": {
+    "theRatio": 20,
+    "productArrange": "编带",
+    "productModel": "CL21A106KAYNNNE",
+    "stockNumber": 7431502,
+    "encapsulationModel": "0805",
+    "hasStockNow": "yes",
+    "productCycle": "normal",
+    "smtLabel": "SMT基础库",
+    "isDisplayUsableTransitNum": true,
+    "remark": "材质:X5R 每盘2000个 7''REEL",
+    "productUnit": "个",
+    "luceneBreviaryImageUrls": "https://alimg.szlcsc.com/upload/public/product/breviary/20221228/D3325A0FDAD994CB215E3779F563E840.jpg<$>https://alimg.szlcsc.com/upload/public/product/breviary/20221228/68D5FAB9BF7879C2DC09DF84B95CB37C.jpg<$>https://alimg.szlcsc.com/upload/public/product/breviary/20221228/0BAB7F2D9B8AC10CE38E6F616800B056.jpg",
+    "productMinEncapsulationUnit": "圆盘",
+    "productName": "10uF ±10% 25V",
+    "returnCouponDesc": [],
+    "productGradePlateId": "254",
+    "isShowQuotedPriceBtn": false,
+    "isOldBatchClearance": false,
+    "validStockNumber": 371575,
+    "fileTypeVOList": [
+      {
+        "detailVOList": [
+          {
+            "fileName": "wj310654",
+            "fileUrl": "/upload/public/pdf/source/20160218/1457707763339.pdf"
+          }
+        ],
+        "fileType": "pdf_property"
+      },
+      {
+        "detailVOList": [
+          {
+            "fileName": "指定类目_ IECQ认证_SAMSUNG(三星).pdf",
+            "fileUrl": "/upload/public/pdf/source/20260511/9CA0941EC2E23AB5581A3D14B73213FB.pdf"
+          },
+          {
+            "fileName": " 贴片电容(MLCC)_ROHS认证_SAMSUNG(三星).zip",
+            "fileUrl": "/upload/public/pdf/source/20260430/F38F3F1F985DEFA8AF6A2FC60A3AF453.zip"
+          },
+          {
+            "fileName": "贴片电容C0G/X5R/X7R/Y5V_MSDS认证_SAMSUNG(三星).xlsx",
+            "fileUrl": "/upload/public/pdf/source/20251015/9C24CA0E6EC9CD22F3FEA724D14C068E.xlsx"
+          },
+          {
+            "fileName": "全量通用_ROHS认证_SAMSUNG(三星半导体).pdf",
+            "fileUrl": "/upload/public/pdf/source/20250818/FD60B0CD4D74E47843D1690F94A9EE2B.pdf"
+          },
+          {
+            "fileName": "MLCCCL系列_ROHS认证(英文版)_SAMSUNG(三星).pdf",
+            "fileUrl": "/upload/public/pdf/source/20241126/5F33152DF8286DFE6141A2CF1C5393AB.pdf"
+          }
+        ],
+        "fileType": "certification_data_property"
+      }
+    ],
+    "isEnvironment": true,
+    "isReturnCoupon": false,
+    "productType": "贴片电容(MLCC)",
+    "encaptionPrice": 240.2,
+    "minBuyNumber": 1,
+    "minWholeNumber": 2000,
+    "saleRuleGroupId": 10039,
+    "convesionRatio": 20,
+    "productId": "16532",
+    "productGradePlateName": "SAMSUNG(三星)",
+    "eccnCode": "EAR99",
+    "productWeight": 5.3205E-05,
+    "usableTransitNum": 0,
+    "isDisplay": true,
+    "pdfDESProductId": "65717AC7CB8E8EB2",
+    "productCode": "C15850",
+    "breviaryImageUrl": "https://alimg.szlcsc.com/upload/public/product/breviary/20221228/D3325A0FDAD994CB215E3779F563E840.jpg",
+    "isShowPrice": true,
+    "productMinEncapsulationNumber": 2000,
+    "inEdaWhiteList": false,
+    "productStockStatus": "yes",
+    "productUnsealVendition": "yes"
+  },
+  "price": 0.1201,
+  "gdWarehouseStockNumber": 7431500,
+  "jsWarehouseStockNumber": 0,
+  "pageGeneratedAt": "2026-11-07T15:33:54.085Z"
+}

@@ -1,0 +1,25 @@
+{
+  "started_at": "2026-11-08T00:49:41+08:00",
+  "source_commit": "d79ffc78ad5093452b1b1b852f7de347f0cc084b",
+  "workspace_edits": true,
+  "tool": "KiCad CLI10.0.8 / Python3.11.5",
+  "scope": "CoralC5-Motor schematic and PCB; Core98-contact cross-check",
+  "source_sha256": {
+    "02_Power.kicad_sch": "2130ec334833e2b18da6d480f05f4dcc243600130cda86ba1bcd2ba3d6124033",
+    "03_Core_Interface.kicad_sch": "c4c852addb70060d224bd51e70796c3bc5f9f36911cd1a377623bf20dfe79f3d",
+    "04_Left_Motor.kicad_sch": "b3904b1489bba5d486c1b1baa555fcbc46d4d6ace4c0ece7a8051b85da93aa04",
+    "05_Right_Motor.kicad_sch": "482aa1705f192f23e8993d2810e8c6c182251200c10044da5fc9ac8f9c4e97e5",
+    "06_Module_Power.kicad_sch": "fb62d29cd552b607d060d47357fa92112e20132e34877ba9620d4569d7810887",
+    "07_TFT_Buttons.kicad_sch": "d19bd0d68d3be55b1963d9d4604d87ef8f82e816dd2b8909d2891b1fa9c791e1",
+    "08_Grayscale_Cameras.kicad_sch": "0641ab5016dc1b5fb6a0887756320d0436893586f619b23189d450e39642224a",
+    "09_Bluetooth_Stepper.kicad_sch": "8e08b7e3d031cffc800042d93415d13255fc9aa3cbdb9d49b2738f6ad4b9006a",
+    "10_Lichee_Interface.kicad_sch": "218a6c50e9cb6fe641fa1d87fddd56664e903f046910af7fa79e43daedb89ecf",
+    "CoralC5-Motor.kicad_sch": "35f0af926e58cd402b6624e2c1c4125b9eef4aa7a45a81db4e38ee454b52b714",
+    "CoralC5-Motor.kicad_pcb": "e90e3653baefca012a6a8e8c4b6e853c7d2f1770460ffc8d91d0b7b150d3ee80",
+    "CoralC5-Motor.kicad_pro": "96698ff036be843d523baa7f1f2ee58dedb3f1a560e8d239cd1d733fdef1bbd3",
+    "Motor.kicad_sym": "8623b622bf0f7ba62266f53d93f5fff95e71c2ebf43a6c918f25b7949404b629",
+    "fp-lib-table": "b3b35799c1e5d71b1c03d1bef840ca1a78882587863de0c52c39c0d41482245a",
+    "sym-lib-table": "7dbeffb0749c954ffbdec4208369d15e96bee231224886ea52bad125d83737bb"
+  },
+  "artifact_directory": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/recheck-2026-11-08-004941-e90e3653"
+}

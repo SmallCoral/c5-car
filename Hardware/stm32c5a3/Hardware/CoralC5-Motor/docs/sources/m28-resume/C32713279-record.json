@@ -1,0 +1,96 @@
+{
+  "date": "2026-11-07",
+  "queried_utc": "2026-11-07T15:53:34.3453531Z",
+  "url": "https://item.szlcsc.com/34444559.html",
+  "http_status": 200,
+  "product": {
+    "theRatio": 5,
+    "productArrange": "袋装",
+    "productModel": "HX PZ2.54-2x6P ZZ",
+    "stockNumber": 23349,
+    "encapsulationModel": "插件,P=2.54mm",
+    "hasStockNow": "yes",
+    "productCycle": "normal",
+    "smtLabel": "SMT扩展库",
+    "isDisplayUsableTransitNum": false,
+    "remark": "2.54-2x6P直针公头 总高11.5  配套排母：HX PM2.54-2x6P系列  6T材质环保阻燃U认证",
+    "productUnit": "个",
+    "luceneBreviaryImageUrls": "https://alimg.szlcsc.com/upload/public/product/breviary/20240802/E2ADC3877983FAC1BBF2F5C02063307E.jpg<$>https://alimg.szlcsc.com/upload/public/product/breviary/20240802/60EA8D77407CFD797FA3B805033D6519.jpg<$>https://alimg.szlcsc.com/upload/public/product/breviary/20240802/63B6B8557DC2D2B5F8F027472FDF1FF5.jpg<$>https://alimg.szlcsc.com/upload/public/brand/product/certificate/20221227/3AAB0B48E086C332A77797BDE2EFAFC6.jpg",
+    "productMinEncapsulationUnit": "袋",
+    "productName": "2x6P 间距:2.54mm 方针 直插",
+    "returnCouponDesc": [],
+    "productGradePlateId": "14053",
+    "isShowQuotedPriceBtn": false,
+    "isOldBatchClearance": false,
+    "validStockNumber": 4669,
+    "fileTypeVOList": [
+      {
+        "detailVOList": [
+          {
+            "fileName": "wj1202462.pdf",
+            "fileUrl": "/upload/public/pdf/source/20240723/7CFD6BBE81D942E4FB6053E60626E655.pdf"
+          }
+        ],
+        "fileType": "pdf_property"
+      },
+      {
+        "detailVOList": [
+          {
+            "fileName": "全量通用_ISO认证(中文版)_hanxia(韩下).pdf",
+            "fileUrl": "/upload/public/pdf/source/20260318/78BC100EF8F8E5D95D6CE98DD9B95728.pdf"
+          },
+          {
+            "fileName": "全量通用_ROHS认证_hanxia(韩下).zip",
+            "fileUrl": "/upload/public/pdf/source/20260112/BE22F8C6CF02CFADAD8853EA73C44503.zip"
+          },
+          {
+            "fileName": "黑色塑料_RoHS认证(英文版)_hanxia(韩下).pdf",
+            "fileUrl": "/upload/public/pdf/source/20250530/1C3BA765E0147DADAB29E79194E4C6CD.pdf"
+          },
+          {
+            "fileName": "铜带_RoHS认证(英文版)_hanxia(韩下).pdf",
+            "fileUrl": "/upload/public/pdf/source/20250530/50623B1DFA504A2FCA1DEE487F6A481A.pdf"
+          },
+          {
+            "fileName": "铁_RoHS认证(英文版)_hanxia(韩下).pdf",
+            "fileUrl": "/upload/public/pdf/source/20250530/74B01E2395433E96618A1E9DEB488922.pdf"
+          },
+          {
+            "fileName": "弹片_RoHS认证(英文版)_hanxia(韩下).pdf",
+            "fileUrl": "/upload/public/pdf/source/20250530/64D313DCFD1ADB5A4453DDBA4DF109C7.pdf"
+          },
+          {
+            "fileName": "白色塑料_RoHS认证(英文版)_hanxia(韩下).pdf",
+            "fileUrl": "/upload/public/pdf/source/20250530/EC98420B260329BDDE7D53A3104A0E4B.pdf"
+          }
+        ],
+        "fileType": "certification_data_property"
+      }
+    ],
+    "isEnvironment": true,
+    "isReturnCoupon": false,
+    "productType": "排针",
+    "encaptionPrice": 291.5,
+    "minBuyNumber": 1,
+    "saleRuleGroupId": 1,
+    "convesionRatio": 5,
+    "productId": "34444559",
+    "productGradePlateName": "hanxia(韩下)",
+    "eccnCode": "-",
+    "productWeight": 0.0006926,
+    "usableTransitNum": 0,
+    "isDisplay": true,
+    "pdfDESProductId": "75FC28F2DF8DE8D5A839FCA3106068F3",
+    "productCode": "C32713279",
+    "breviaryImageUrl": "https://alimg.szlcsc.com/upload/public/product/breviary/20240802/E2ADC3877983FAC1BBF2F5C02063307E.jpg",
+    "isShowPrice": true,
+    "productMinEncapsulationNumber": 1000,
+    "inEdaWhiteList": false,
+    "productStockStatus": "yes",
+    "productUnsealVendition": "yes"
+  },
+  "price": 0.2915,
+  "gdWarehouseStockNumber": 23345,
+  "jsWarehouseStockNumber": 0,
+  "pageGeneratedAt": "2026-11-07T15:53:34.266Z"
+}

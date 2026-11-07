@@ -1,0 +1,112 @@
+{
+  "date": "2026-11-07",
+  "queried_utc": "2026-11-07T15:32:55.8984169Z",
+  "url": "https://item.szlcsc.com/101256.html",
+  "http_status": 200,
+  "product": {
+    "theRatio": 100,
+    "productArrange": "编带",
+    "productModel": "CC0603KRX7R9BB103",
+    "stockNumber": 579041,
+    "encapsulationModel": "0603",
+    "hasStockNow": "yes",
+    "productCycle": "normal",
+    "smtLabel": "SMT扩展库",
+    "remark": "特性：以卷带形式供应。镍阻挡层端接。符合RoHS标准。符合无卤标准。MSL等级:一级。应用：个人电脑、硬盘、游戏电脑。 DVD、摄像机",
+    "productUnit": "个",
+    "luceneBreviaryImageUrls": "https://alimg.szlcsc.com/upload/public/product/breviary/20221231/2EAC110ED65FB2554FC968615978D6C7.jpg<$>https://alimg.szlcsc.com/upload/public/product/breviary/20221231/39915902AF17F6571B89078C2EFE0EA6.jpg<$>https://alimg.szlcsc.com/upload/public/product/breviary/20221231/76F804046A6D45BF0533AF6EF38D2AB3.jpg",
+    "productMinEncapsulationUnit": "圆盘",
+    "productName": "10nF ±10% 50V",
+    "returnCouponDesc": [],
+    "productGradePlateId": "396",
+    "isShowQuotedPriceBtn": false,
+    "isOldBatchClearance": false,
+    "validStockNumber": 5790,
+    "fileTypeVOList": [
+      {
+        "detailVOList": [
+          {
+            "fileName": "wj1577808.pdf",
+            "fileUrl": "/upload/public/pdf/source/20250214/096C4C206003071F5D32E5F0D8E7F8DF.pdf"
+          }
+        ],
+        "fileType": "pdf_property"
+      },
+      {
+        "detailVOList": [
+          {
+            "fileName": "贴片电容(MLCC)_MSDS认证_YAGEO(国巨).pdf",
+            "fileUrl": "/upload/public/pdf/source/20261012/EA8D63EDB441DF37B0336319A213E441.pdf"
+          },
+          {
+            "fileName": "贴片电容(MLCC)_ROHS认证@@PAHs@@PFOS/PFOA@@_ YAGEO(国巨).zip",
+            "fileUrl": "/upload/public/pdf/source/20260813/350D71BA59D4CA8C62EC6159B44A5C71.zip"
+          },
+          {
+            "fileName": "全量通用_ROHS认证_YAGEO(国巨)@@Brightking(君耀电子).pdf",
+            "fileUrl": "/upload/public/pdf/source/20260309/E295E3F40B43213956A61B3ECFEB93B9.pdf"
+          },
+          {
+            "fileName": " 贴片电容(MLCC)_REACH认证_YAGEO(国巨).pdf",
+            "fileUrl": "/upload/public/pdf/source/20260407/F509244DC7EAD94CBA1A502D5C618474.pdf"
+          },
+          {
+            "fileName": "贴片电容(MLCC)_MSDS认证_YAGEO(国巨).pdf",
+            "fileUrl": "/upload/public/pdf/source/20260119/B3003E37B91484386E6DAD3FCFB157C1.pdf"
+          },
+          {
+            "fileName": "全量通用_REACH认证_YAGEO(国巨).pdf",
+            "fileUrl": "/upload/public/pdf/source/20250807/89180EE6C622DA07C80C523860BC4252.pdf"
+          },
+          {
+            "fileName": "全量通用_REACH认证_YAGEO(国巨).pdf",
+            "fileUrl": "/upload/public/pdf/source/20260104/44BBCFAA6CBE8D12D09F3A598E5A24B8.pdf"
+          },
+          {
+            "fileName": "全量通用_ROHS认证_YAGEO(国巨).pdf",
+            "fileUrl": "/upload/public/pdf/source/20251230/AC1B97B7FF471EAEFFDA1AE236E1D8C1.pdf"
+          },
+          {
+            "fileName": "全量通用_ROHS认证_YAGEO(国巨).pdf",
+            "fileUrl": "/upload/public/pdf/source/20251104/10CA443E5A7B622C4B69AEBBAC15D971.pdf"
+          },
+          {
+            "fileName": "多层陶瓷电容器_REACH认证(中文版)_YAGEO(国巨).pdf",
+            "fileUrl": "/upload/public/pdf/source/20240926/E46DE1564F05C6BB69964FB03DF1172B.pdf"
+          },
+          {
+            "fileName": "贴片电容(MLCC)_ROHS认证(英文版)_YAGEO(国巨).pdf",
+            "fileUrl": "/upload/public/pdf/source/20241230/A441AD4B121410FF0071D73523E94E90.pdf"
+          }
+        ],
+        "fileType": "certification_data_property"
+      }
+    ],
+    "isEnvironment": true,
+    "isReturnCoupon": false,
+    "productType": "贴片电容(MLCC)",
+    "encaptionPrice": 54,
+    "minBuyNumber": 1,
+    "minWholeNumber": 4000,
+    "saleRuleGroupId": 10039,
+    "convesionRatio": 100,
+    "productId": "101256",
+    "productGradePlateName": "YAGEO(国巨)",
+    "eccnCode": "EAR99",
+    "productWeight": 3.8775E-05,
+    "usableTransitNum": 0,
+    "isDisplay": true,
+    "pdfDESProductId": "84069B77DF8F110E296C67311B688FC3",
+    "productCode": "C100042",
+    "breviaryImageUrl": "https://alimg.szlcsc.com/upload/public/product/breviary/20221231/2EAC110ED65FB2554FC968615978D6C7.jpg",
+    "isShowPrice": true,
+    "productMinEncapsulationNumber": 4000,
+    "inEdaWhiteList": false,
+    "productStockStatus": "yes",
+    "productUnsealVendition": "yes"
+  },
+  "price": 0.0135,
+  "gdWarehouseStockNumber": 579000,
+  "jsWarehouseStockNumber": 0,
+  "pageGeneratedAt": "2026-11-07T15:32:43.818Z"
+}

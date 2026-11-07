@@ -7,7 +7,7 @@
 	(title_block
 		(title "四脚蓝牙与外接步进驱动接口")
 		(date "2026-11-07")
-		(rev "M2.6")
+		(rev "M2.8")
 		(company "SmallCoral / CoralC5-Motor")
 		(comment 1 "原理图设计；实板电流、温升与线束待验证")
 	)
@@ -3395,16 +3395,6 @@
 		)
 		(uuid "079ebcd6-5b16-5dcb-b29f-11a5624dba59")
 	)
-	(label "GND"
-		(at 62.23 50.8 0)
-		(effects
-			(font
-				(size 1.016 1.016)
-			)
-			(justify left bottom)
-		)
-		(uuid "1406b627-1b21-57d6-a557-cd41dfd93660")
-	)
 	(label "V3V3"
 		(at 27.94 207.01 0)
 		(effects
@@ -3474,6 +3464,28 @@
 			(justify left bottom)
 		)
 		(uuid "d4e3d881-d3ec-55cf-b622-eda6233ae5e3")
+	)
+	(global_label "GND"
+		(shape passive)
+		(at 62.23 50.8 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify right)
+		)
+		(uuid "1406b627-1b21-57d6-a557-cd41dfd93660")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 62.23 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 	)
 	(hierarchical_label "BT_TX"
 		(shape bidirectional)

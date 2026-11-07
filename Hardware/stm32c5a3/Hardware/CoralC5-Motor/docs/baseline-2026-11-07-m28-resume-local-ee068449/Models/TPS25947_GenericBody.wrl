@@ -1,0 +1,3 @@
+#VRML V2.0 utf8
+# Generic dimensioned envelope, not manufacturer assembly geometry
+Transform { translation 0 0 0.19685039370078738 children [ Shape { appearance Appearance { material Material { diffuseColor 0.15 0.15 0.17 } } geometry Box { size 0.7874015748031495 0.7874015748031495 0.39370078740157477 } } ] }

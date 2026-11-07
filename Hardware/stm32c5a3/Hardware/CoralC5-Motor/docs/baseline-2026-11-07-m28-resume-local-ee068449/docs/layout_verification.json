@@ -1,0 +1,1222 @@
+{
+  "date": "2026-11-07",
+  "revision": "M2.6",
+  "pass": true,
+  "checks": [
+    {
+      "name": "layout: complete native pin/net partition matches baseline plus explicit revision contract",
+      "pass": true,
+      "detail": {
+        "removed": [],
+        "added": []
+      }
+    },
+    {
+      "name": "layout: 02_Power.kicad_sch symbol UUIDs retained except explicit addition/removal",
+      "pass": true,
+      "detail": {
+        "removed": [
+          "#PWR003"
+        ],
+        "added": []
+      }
+    },
+    {
+      "name": "layout: 02_Power.kicad_sch component identities match explicit change contract",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "layout: 02_Power.kicad_sch cached symbols match explicit change contract",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "layout: 02_Power.kicad_sch explicit extra power ports",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "layout: 02_Power.kicad_sch original ports retained and unique GPIO ports retain existing label UUIDs",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "layout: 02_Power.kicad_sch new GPIO signals use hierarchy, not global bypass",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "layout: 03_Core_Interface.kicad_sch symbol UUIDs retained except explicit addition/removal",
+      "pass": true,
+      "detail": {
+        "removed": [],
+        "added": []
+      }
+    },
+    {
+      "name": "layout: 03_Core_Interface.kicad_sch component identities match explicit change contract",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "layout: 03_Core_Interface.kicad_sch cached symbols match explicit change contract",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "layout: 03_Core_Interface.kicad_sch explicit extra power ports",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "layout: 03_Core_Interface.kicad_sch original ports retained and unique GPIO ports retain existing label UUIDs",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "layout: 03_Core_Interface.kicad_sch new GPIO signals use hierarchy, not global bypass",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "layout: 04_Left_Motor.kicad_sch symbol UUIDs retained except explicit addition/removal",
+      "pass": true,
+      "detail": {
+        "removed": [],
+        "added": []
+      }
+    },
+    {
+      "name": "layout: 04_Left_Motor.kicad_sch component identities match explicit change contract",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "layout: 04_Left_Motor.kicad_sch cached symbols match explicit change contract",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "layout: 04_Left_Motor.kicad_sch explicit extra power ports",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "layout: 04_Left_Motor.kicad_sch original ports retained and unique GPIO ports retain existing label UUIDs",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "layout: 04_Left_Motor.kicad_sch new GPIO signals use hierarchy, not global bypass",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "layout: 05_Right_Motor.kicad_sch symbol UUIDs retained except explicit addition/removal",
+      "pass": true,
+      "detail": {
+        "removed": [],
+        "added": []
+      }
+    },
+    {
+      "name": "layout: 05_Right_Motor.kicad_sch component identities match explicit change contract",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "layout: 05_Right_Motor.kicad_sch cached symbols match explicit change contract",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "layout: 05_Right_Motor.kicad_sch explicit extra power ports",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "layout: 05_Right_Motor.kicad_sch original ports retained and unique GPIO ports retain existing label UUIDs",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "layout: 05_Right_Motor.kicad_sch new GPIO signals use hierarchy, not global bypass",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "layout: 06_Module_Power.kicad_sch symbol UUIDs retained except explicit addition/removal",
+      "pass": true,
+      "detail": {
+        "removed": [],
+        "added": [
+          "#PWR301",
+          "C63",
+          "R59",
+          "R60"
+        ]
+      }
+    },
+    {
+      "name": "layout: 06_Module_Power.kicad_sch component identities match explicit change contract",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "layout: 06_Module_Power.kicad_sch cached symbols match explicit change contract",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "layout: 06_Module_Power.kicad_sch explicit extra power ports",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "layout: 06_Module_Power.kicad_sch original ports retained and unique GPIO ports retain existing label UUIDs",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "layout: 06_Module_Power.kicad_sch new GPIO signals use hierarchy, not global bypass",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "layout: 07_TFT_Buttons.kicad_sch symbol UUIDs retained except explicit addition/removal",
+      "pass": true,
+      "detail": {
+        "removed": [],
+        "added": []
+      }
+    },
+    {
+      "name": "layout: 07_TFT_Buttons.kicad_sch component identities match explicit change contract",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "layout: 07_TFT_Buttons.kicad_sch cached symbols match explicit change contract",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "layout: 07_TFT_Buttons.kicad_sch explicit extra power ports",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "layout: 07_TFT_Buttons.kicad_sch original ports retained and unique GPIO ports retain existing label UUIDs",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "layout: 07_TFT_Buttons.kicad_sch new GPIO signals use hierarchy, not global bypass",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "layout: 08_Grayscale_Cameras.kicad_sch symbol UUIDs retained except explicit addition/removal",
+      "pass": true,
+      "detail": {
+        "removed": [
+          "C61",
+          "J18"
+        ],
+        "added": [
+          "#PWR318",
+          "#PWR319",
+          "#PWR320",
+          "#PWR321",
+          "#PWR322",
+          "#PWR323",
+          "#PWR401",
+          "#PWR402",
+          "#PWR403",
+          "#PWR404",
+          "#PWR405",
+          "#PWR406",
+          "#PWR407",
+          "#PWR408",
+          "#PWR409",
+          "#PWR410",
+          "#PWR411",
+          "#PWR412",
+          "C72",
+          "C73",
+          "C76",
+          "C77",
+          "C78",
+          "C79",
+          "J27",
+          "Q4",
+          "Q5",
+          "R68",
+          "R69",
+          "R70",
+          "R71",
+          "R72",
+          "R76",
+          "R77",
+          "R78",
+          "R80",
+          "U10",
+          "U13",
+          "U14"
+        ]
+      }
+    },
+    {
+      "name": "layout: 08_Grayscale_Cameras.kicad_sch component identities match explicit change contract",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "layout: 08_Grayscale_Cameras.kicad_sch cached symbols match explicit change contract",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "layout: 08_Grayscale_Cameras.kicad_sch explicit extra power ports",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "layout: 08_Grayscale_Cameras.kicad_sch original ports retained and unique GPIO ports retain existing label UUIDs",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "layout: 08_Grayscale_Cameras.kicad_sch new GPIO signals use hierarchy, not global bypass",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "layout: 09_Bluetooth_Stepper.kicad_sch symbol UUIDs retained except explicit addition/removal",
+      "pass": true,
+      "detail": {
+        "removed": [
+          "#PWR210",
+          "J16",
+          "J22",
+          "J24",
+          "R54",
+          "R57",
+          "R58"
+        ],
+        "added": [
+          "#PWR413",
+          "#PWR414",
+          "#PWR416",
+          "#PWR417",
+          "#PWR418",
+          "#PWR419",
+          "#PWR420",
+          "#PWR421",
+          "#PWR431",
+          "C80",
+          "D5",
+          "F2",
+          "Q6",
+          "Q7",
+          "Q8",
+          "Q9",
+          "R81",
+          "R82",
+          "R83",
+          "R84",
+          "R85",
+          "R86",
+          "R87",
+          "R88",
+          "R89",
+          "R90",
+          "U15"
+        ]
+      }
+    },
+    {
+      "name": "layout: 09_Bluetooth_Stepper.kicad_sch component identities match explicit change contract",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "layout: 09_Bluetooth_Stepper.kicad_sch cached symbols match explicit change contract",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "layout: 09_Bluetooth_Stepper.kicad_sch explicit extra power ports",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "layout: 09_Bluetooth_Stepper.kicad_sch original ports retained and unique GPIO ports retain existing label UUIDs",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "layout: 09_Bluetooth_Stepper.kicad_sch new GPIO signals use hierarchy, not global bypass",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "layout: CoralC5-Motor.kicad_sch symbol UUIDs retained except explicit addition/removal",
+      "pass": true,
+      "detail": {
+        "removed": [],
+        "added": []
+      }
+    },
+    {
+      "name": "layout: CoralC5-Motor.kicad_sch component identities match explicit change contract",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "layout: CoralC5-Motor.kicad_sch cached symbols match explicit change contract",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "layout: CoralC5-Motor.kicad_sch explicit extra power ports",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "layout: CoralC5-Motor.kicad_sch original ports retained and unique GPIO ports retain existing label UUIDs",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "layout: CoralC5-Motor.kicad_sch new GPIO signals use hierarchy, not global bypass",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: hierarchy sheet UUIDs retained",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 06_Module_Power.kicad_sch existing pin UUIDs retained",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 06_Module_Power.kicad_sch pins exactly match child hierarchical labels",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 06_Module_Power.kicad_sch:VM has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 06_Module_Power.kicad_sch:V5_EXT has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 06_Module_Power.kicad_sch:V3V3_EXT has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 02_Power.kicad_sch existing pin UUIDs retained",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 02_Power.kicad_sch pins exactly match child hierarchical labels",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 02_Power.kicad_sch:V5_SYS has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 02_Power.kicad_sch:VM has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 07_TFT_Buttons.kicad_sch existing pin UUIDs retained",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 07_TFT_Buttons.kicad_sch pins exactly match child hierarchical labels",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 07_TFT_Buttons.kicad_sch:V3V3_EXT has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 07_TFT_Buttons.kicad_sch:V3V3 has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 07_TFT_Buttons.kicad_sch:TFT_SCK has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 07_TFT_Buttons.kicad_sch:TFT_MOSI has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 07_TFT_Buttons.kicad_sch:TFT_RES has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 07_TFT_Buttons.kicad_sch:TFT_DC has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 07_TFT_Buttons.kicad_sch:TFT_CS has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 07_TFT_Buttons.kicad_sch:TFT_BL has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 07_TFT_Buttons.kicad_sch:KEY_MODE has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 07_TFT_Buttons.kicad_sch:KEY_NEXT has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 07_TFT_Buttons.kicad_sch:KEY_OK has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 07_TFT_Buttons.kicad_sch:KEY_START has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 09_Bluetooth_Stepper.kicad_sch existing pin UUIDs retained",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 09_Bluetooth_Stepper.kicad_sch pins exactly match child hierarchical labels",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 09_Bluetooth_Stepper.kicad_sch:V3V3_EXT has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 09_Bluetooth_Stepper.kicad_sch:V3V3 has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 09_Bluetooth_Stepper.kicad_sch:VM has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 09_Bluetooth_Stepper.kicad_sch:BT_TX has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 09_Bluetooth_Stepper.kicad_sch:BT_RX has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 09_Bluetooth_Stepper.kicad_sch:STEP_UART_TX has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 09_Bluetooth_Stepper.kicad_sch:STEP_UART_RX has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 09_Bluetooth_Stepper.kicad_sch:STEP_PWR_EN has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 03_Core_Interface.kicad_sch existing pin UUIDs retained",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 03_Core_Interface.kicad_sch pins exactly match child hierarchical labels",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 03_Core_Interface.kicad_sch:L_PWM has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 03_Core_Interface.kicad_sch:L_DIR has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 03_Core_Interface.kicad_sch:MOTOR_RUN has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 03_Core_Interface.kicad_sch:L_nFAULT has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 03_Core_Interface.kicad_sch:L_ISENSE has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 03_Core_Interface.kicad_sch:L_ENC_A has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 03_Core_Interface.kicad_sch:L_ENC_B has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 03_Core_Interface.kicad_sch:R_PWM has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 03_Core_Interface.kicad_sch:R_DIR has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 03_Core_Interface.kicad_sch:R_nFAULT has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 03_Core_Interface.kicad_sch:R_ISENSE has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 03_Core_Interface.kicad_sch:R_ENC_A has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 03_Core_Interface.kicad_sch:R_ENC_B has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 03_Core_Interface.kicad_sch:V5_SYS has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 03_Core_Interface.kicad_sch:V3V3 has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 03_Core_Interface.kicad_sch:TFT_SCK has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 03_Core_Interface.kicad_sch:TFT_MOSI has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 03_Core_Interface.kicad_sch:TFT_RES has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 03_Core_Interface.kicad_sch:TFT_DC has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 03_Core_Interface.kicad_sch:TFT_CS has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 03_Core_Interface.kicad_sch:TFT_BL has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 03_Core_Interface.kicad_sch:KEY_MODE has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 03_Core_Interface.kicad_sch:KEY_NEXT has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 03_Core_Interface.kicad_sch:KEY_OK has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 03_Core_Interface.kicad_sch:KEY_START has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 03_Core_Interface.kicad_sch:GRAY_CH1 has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 03_Core_Interface.kicad_sch:GRAY_CH2 has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 03_Core_Interface.kicad_sch:GRAY_CH3 has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 03_Core_Interface.kicad_sch:GRAY_CH4 has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 03_Core_Interface.kicad_sch:GRAY_CH5 has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 03_Core_Interface.kicad_sch:GRAY_CH6 has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 03_Core_Interface.kicad_sch:GRAY_CH7 has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 03_Core_Interface.kicad_sch:GRAY_CH8 has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 03_Core_Interface.kicad_sch:VIDEO_TX has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 03_Core_Interface.kicad_sch:VIDEO_RX has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 03_Core_Interface.kicad_sch:BT_TX has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 03_Core_Interface.kicad_sch:BT_RX has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 03_Core_Interface.kicad_sch:STEP_UART_TX has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 03_Core_Interface.kicad_sch:STEP_UART_RX has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 03_Core_Interface.kicad_sch:STEP_PWR_EN has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 08_Grayscale_Cameras.kicad_sch existing pin UUIDs retained",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 08_Grayscale_Cameras.kicad_sch pins exactly match child hierarchical labels",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 08_Grayscale_Cameras.kicad_sch:V5_EXT has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 08_Grayscale_Cameras.kicad_sch:GRAY_CH1 has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 08_Grayscale_Cameras.kicad_sch:GRAY_CH2 has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 08_Grayscale_Cameras.kicad_sch:GRAY_CH3 has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 08_Grayscale_Cameras.kicad_sch:GRAY_CH4 has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 08_Grayscale_Cameras.kicad_sch:GRAY_CH5 has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 08_Grayscale_Cameras.kicad_sch:GRAY_CH6 has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 08_Grayscale_Cameras.kicad_sch:GRAY_CH7 has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 08_Grayscale_Cameras.kicad_sch:GRAY_CH8 has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 08_Grayscale_Cameras.kicad_sch:VIDEO_TX has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 08_Grayscale_Cameras.kicad_sch:VIDEO_RX has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 08_Grayscale_Cameras.kicad_sch:V3V3 has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 05_Right_Motor.kicad_sch existing pin UUIDs retained",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 05_Right_Motor.kicad_sch pins exactly match child hierarchical labels",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 05_Right_Motor.kicad_sch:R_PWM has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 05_Right_Motor.kicad_sch:R_DIR has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 05_Right_Motor.kicad_sch:MOTOR_RUN has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 05_Right_Motor.kicad_sch:R_nFAULT has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 05_Right_Motor.kicad_sch:R_ISENSE has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 05_Right_Motor.kicad_sch:R_ENC_A has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 05_Right_Motor.kicad_sch:R_ENC_B has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 05_Right_Motor.kicad_sch:VM has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 05_Right_Motor.kicad_sch:V3V3 has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 04_Left_Motor.kicad_sch existing pin UUIDs retained",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 04_Left_Motor.kicad_sch pins exactly match child hierarchical labels",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 04_Left_Motor.kicad_sch:L_PWM has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 04_Left_Motor.kicad_sch:L_DIR has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 04_Left_Motor.kicad_sch:MOTOR_RUN has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 04_Left_Motor.kicad_sch:L_nFAULT has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 04_Left_Motor.kicad_sch:L_ISENSE has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 04_Left_Motor.kicad_sch:L_ENC_A has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 04_Left_Motor.kicad_sch:L_ENC_B has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 04_Left_Motor.kicad_sch:VM has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 04_Left_Motor.kicad_sch:V3V3 has an actual wire",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: BT_TX continuously wired from Core to module",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: BT_RX continuously wired from Core to module",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: VIDEO_TX continuously wired from Core to module",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: VIDEO_RX continuously wired from Core to module",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: STEP_UART_TX continuously wired from Core to module",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: STEP_UART_RX continuously wired from Core to module",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: TFT_SCK continuously wired from Core to module",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: TFT_MOSI continuously wired from Core to module",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: TFT_RES continuously wired from Core to module",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: TFT_DC continuously wired from Core to module",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: TFT_CS continuously wired from Core to module",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: TFT_BL continuously wired from Core to module",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: GRAY_CH1 continuously wired from Core to module",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: GRAY_CH2 continuously wired from Core to module",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: GRAY_CH3 continuously wired from Core to module",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: GRAY_CH4 continuously wired from Core to module",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: GRAY_CH5 continuously wired from Core to module",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: GRAY_CH6 continuously wired from Core to module",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: GRAY_CH7 continuously wired from Core to module",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: GRAY_CH8 continuously wired from Core to module",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: KEY_MODE continuously wired from Core to module",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: KEY_NEXT continuously wired from Core to module",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: KEY_OK continuously wired from Core to module",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: KEY_START continuously wired from Core to module",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: STEP_PWR_EN continuously wired from Core to module",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 04_Left_Motor.kicad_sch:L_PWM continuously wired from Core",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 04_Left_Motor.kicad_sch:L_DIR continuously wired from Core",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 04_Left_Motor.kicad_sch:MOTOR_RUN continuously wired from Core",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 04_Left_Motor.kicad_sch:L_nFAULT continuously wired from Core",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 04_Left_Motor.kicad_sch:L_ISENSE continuously wired from Core",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 04_Left_Motor.kicad_sch:L_ENC_A continuously wired from Core",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 04_Left_Motor.kicad_sch:L_ENC_B continuously wired from Core",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 05_Right_Motor.kicad_sch:R_PWM continuously wired from Core",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 05_Right_Motor.kicad_sch:R_DIR continuously wired from Core",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 05_Right_Motor.kicad_sch:MOTOR_RUN continuously wired from Core",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 05_Right_Motor.kicad_sch:R_nFAULT continuously wired from Core",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 05_Right_Motor.kicad_sch:R_ISENSE continuously wired from Core",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 05_Right_Motor.kicad_sch:R_ENC_A continuously wired from Core",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "overview: 05_Right_Motor.kicad_sch:R_ENC_B continuously wired from Core",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "layout: user saved project settings retained byte-for-byte",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "layout: sym-lib-table unmodified",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "layout: fp-lib-table unmodified",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "layout: local symbol library matches explicit change contract",
+      "pass": true,
+      "detail": null
+    }
+  ],
+  "baseline": "baseline-2026-11-06-layout",
+  "native_nets": 161,
+  "symbol_instances": 236,
+  "physical_symbol_instances": 152,
+  "moved_instances": [
+    "#PWR203",
+    "J17",
+    "#PWR205",
+    "R52",
+    "H2",
+    "C56",
+    "R53",
+    "H1",
+    "R56",
+    "C57",
+    "C60",
+    "#PWR207",
+    "C58",
+    "R51",
+    "R50",
+    "C59",
+    "SW5",
+    "SW3",
+    "#PWR206",
+    "SW2",
+    "R55",
+    "SW4",
+    "#PWR204",
+    "#PWR208",
+    "J20",
+    "#PWR209",
+    "J21",
+    "J19",
+    "C62",
+    "J23",
+    "J15"
+  ],
+  "pcb_accessed": false,
+  "sha256": {
+    "02_Power.kicad_sch": "7c94bda984fa1c3372073fd489af459f5cec8a3f0ef1c10dade486b59541bcfd",
+    "03_Core_Interface.kicad_sch": "aa1a0382fe31f99fc3d492b072772c43d47d12a118fb398a186660e5f0f7d043",
+    "04_Left_Motor.kicad_sch": "b3904b1489bba5d486c1b1baa555fcbc46d4d6ace4c0ece7a8051b85da93aa04",
+    "05_Right_Motor.kicad_sch": "482aa1705f192f23e8993d2810e8c6c182251200c10044da5fc9ac8f9c4e97e5",
+    "06_Module_Power.kicad_sch": "83aad1796329a4d23cad8d95648bcdfe4fa42378ce85e58a3e0b22d35bc07b6d",
+    "07_TFT_Buttons.kicad_sch": "fcb7ebb8dc3898dcfc13bb8bccd6f37d6ced581250d159205a92788a83a6c603",
+    "08_Grayscale_Cameras.kicad_sch": "0a0d7f0ef495d7864a2428b3f21eff96599d9cce33c678eee5bc18e76935515e",
+    "09_Bluetooth_Stepper.kicad_sch": "764db529200bd07ea1daf7e4a5bae457240ffdbf0d7bb87c1e0f32dc2f3088eb",
+    "CoralC5-Motor.kicad_sch": "8f1abd9db288f5aa2f72dc115ac66f77050fb1292d517dcd70fc388762ae8907"
+  }
+}

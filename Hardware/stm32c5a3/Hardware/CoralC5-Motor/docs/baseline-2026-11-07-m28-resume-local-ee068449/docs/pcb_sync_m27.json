@@ -1,0 +1,356 @@
+{
+  "date": "2026-11-07",
+  "baseline_file": "docs\\baseline-2026-11-07-m27\\pre-sync-latest.kicad_pcb",
+  "before_sha256": "6946c45d184e29b503d64dd5618c53086f6e1cc5ce71e6eb7281ac8ba2fbb451",
+  "after_sha256": "a9d3eaf3d6b8b554d5c3fbb33f5be6a6ed42b33bd5c7d880d1c1099d51d96d65",
+  "changes": [
+    {
+      "ref": "R81",
+      "pad": "2",
+      "field": "net",
+      "before": "Net-(R81-Pad2)",
+      "after": "Net-(D5-A)"
+    },
+    {
+      "ref": "R59",
+      "field": "Value",
+      "before": "73.8k / 0.1%",
+      "after": "73.2k / 0.1%"
+    },
+    {
+      "ref": "C2",
+      "field": "Value",
+      "before": "10uF/50V X7R",
+      "after": "10uF/50V X5R"
+    },
+    {
+      "ref": "R82",
+      "pad": "1",
+      "field": "net",
+      "before": "Net-(R81-Pad2)",
+      "after": "Net-(D5-A)"
+    },
+    {
+      "ref": "R36",
+      "field": "schematic UUID path",
+      "before": null,
+      "after": "/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/fdf397f8-760b-52d4-a3f9-083b5227ff8a"
+    },
+    {
+      "ref": "R11",
+      "field": "schematic UUID path",
+      "before": null,
+      "after": "/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/4d5b9b02-73c8-53ce-a502-c6f7428a6e9d"
+    },
+    {
+      "ref": "U3",
+      "field": "schematic UUID path",
+      "before": null,
+      "after": "/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/7d00eb73-22d9-59b7-ab58-4cf6577fda4f"
+    },
+    {
+      "ref": "R30",
+      "field": "schematic UUID path",
+      "before": null,
+      "after": "/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/74ffe331-6e4d-50b6-ad78-bd5ee2f6d348"
+    },
+    {
+      "ref": "R38",
+      "field": "schematic UUID path",
+      "before": null,
+      "after": "/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/84fbefb2-fce4-52ae-94ea-33225d019665"
+    },
+    {
+      "ref": "C30",
+      "field": "schematic UUID path",
+      "before": null,
+      "after": "/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/9a8f53f9-df9d-52cb-b1c2-1fd1990e12d9"
+    },
+    {
+      "ref": "C32",
+      "field": "schematic UUID path",
+      "before": null,
+      "after": "/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/6d44271f-69dc-5c9c-9056-93979b3227d8"
+    },
+    {
+      "ref": "C18",
+      "field": "schematic UUID path",
+      "before": null,
+      "after": "/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/cec6b45a-7e73-59da-b8a6-b6535488f457"
+    },
+    {
+      "ref": "R19",
+      "field": "schematic UUID path",
+      "before": null,
+      "after": "/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/5e8db4eb-3c7e-5674-9814-9b4e861b3f5e"
+    },
+    {
+      "ref": "R32",
+      "field": "schematic UUID path",
+      "before": null,
+      "after": "/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/e3b8d925-0d0d-550e-b236-7a3d94c8729d"
+    },
+    {
+      "ref": "R14",
+      "field": "schematic UUID path",
+      "before": null,
+      "after": "/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/561f7ac6-dac4-5bce-88b5-aa0c0cea1829"
+    },
+    {
+      "ref": "C16",
+      "field": "schematic UUID path",
+      "before": null,
+      "after": "/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/a1fa0d4e-f8fb-5e36-af2c-b9baa65e2d1f"
+    },
+    {
+      "ref": "C15",
+      "field": "schematic UUID path",
+      "before": null,
+      "after": "/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/68e530ce-35db-5b8a-8471-bbc16e57b7c7"
+    },
+    {
+      "ref": "R37",
+      "field": "schematic UUID path",
+      "before": null,
+      "after": "/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/45c3e72d-3d06-59ee-a503-07ff452c7b64"
+    },
+    {
+      "ref": "R13",
+      "field": "schematic UUID path",
+      "before": null,
+      "after": "/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/ad591694-6209-5436-94e4-3aae010386a7"
+    },
+    {
+      "ref": "U2",
+      "field": "schematic UUID path",
+      "before": null,
+      "after": "/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/cf99371c-f8c3-542e-93c7-fd1947fb7378"
+    },
+    {
+      "ref": "R35",
+      "field": "schematic UUID path",
+      "before": null,
+      "after": "/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/5514eda7-fc41-5055-83ee-db6562559f22"
+    },
+    {
+      "ref": "C14",
+      "field": "schematic UUID path",
+      "before": null,
+      "after": "/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/7f9cdff6-d43a-5d38-9e50-e75692d64c69"
+    },
+    {
+      "ref": "C13",
+      "field": "schematic UUID path",
+      "before": null,
+      "after": "/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/ba66066a-a3be-5aaf-852a-7dbd4ddcad32"
+    },
+    {
+      "ref": "C34",
+      "field": "schematic UUID path",
+      "before": null,
+      "after": "/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/0075081c-6386-5b07-ad9d-fb8489905d27"
+    },
+    {
+      "ref": "C20",
+      "field": "schematic UUID path",
+      "before": null,
+      "after": "/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/0d54f58b-d82c-598e-b021-f0122957501f"
+    },
+    {
+      "ref": "R34",
+      "field": "schematic UUID path",
+      "before": null,
+      "after": "/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/dfb37ac0-8cee-5cd5-bbe5-2bb74fbcee1f"
+    },
+    {
+      "ref": "R31",
+      "field": "schematic UUID path",
+      "before": null,
+      "after": "/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/87dd5e49-f26a-5f26-9bac-c14b70edd487"
+    },
+    {
+      "ref": "R33",
+      "field": "schematic UUID path",
+      "before": null,
+      "after": "/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/6fc61e65-f992-5efe-99eb-61712b1fcf53"
+    },
+    {
+      "ref": "C11",
+      "field": "schematic UUID path",
+      "before": null,
+      "after": "/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/8f7217b2-5003-51e3-867a-af6a943f5d7a"
+    },
+    {
+      "ref": "C12",
+      "field": "schematic UUID path",
+      "before": null,
+      "after": "/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/11a8b11d-34d2-5df1-bd90-a7c89486ca38"
+    },
+    {
+      "ref": "R10",
+      "field": "schematic UUID path",
+      "before": null,
+      "after": "/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/d1d17ec3-697e-53fc-84db-ad8f96957050"
+    },
+    {
+      "ref": "J4",
+      "field": "schematic UUID path",
+      "before": null,
+      "after": "/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/5082133d-013f-53b2-8977-a3e56e5274bb"
+    },
+    {
+      "ref": "C39",
+      "field": "schematic UUID path",
+      "before": null,
+      "after": "/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/4e6312df-fe32-5628-a542-6bc8141615a6"
+    },
+    {
+      "ref": "R17",
+      "field": "schematic UUID path",
+      "before": null,
+      "after": "/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/cbe5f3da-facb-5b6f-a650-6afa1daedbe5"
+    },
+    {
+      "ref": "C19",
+      "field": "schematic UUID path",
+      "before": null,
+      "after": "/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/7e68754e-d775-5a11-a177-e054a0cb5f57"
+    },
+    {
+      "ref": "C17",
+      "field": "schematic UUID path",
+      "before": null,
+      "after": "/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/c4be2d74-a87f-5dd9-8923-622a4727fbb6"
+    },
+    {
+      "ref": "C33",
+      "field": "schematic UUID path",
+      "before": null,
+      "after": "/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/c7ba900a-61de-57fb-aa03-a3f62fcf5d5e"
+    },
+    {
+      "ref": "C37",
+      "field": "schematic UUID path",
+      "before": null,
+      "after": "/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/74569979-6b0a-536c-808e-c9a9ec2f2ca0"
+    },
+    {
+      "ref": "J6",
+      "field": "schematic UUID path",
+      "before": null,
+      "after": "/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/07f80107-8ca5-55fe-84ab-4cb77cfcbb6c"
+    },
+    {
+      "ref": "R39",
+      "field": "schematic UUID path",
+      "before": null,
+      "after": "/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/d8b406d0-ec21-52a0-a7c0-76d25c8b1203"
+    },
+    {
+      "ref": "C31",
+      "field": "schematic UUID path",
+      "before": null,
+      "after": "/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/97b2e262-f103-5578-b37b-af8734010614"
+    },
+    {
+      "ref": "C40",
+      "field": "schematic UUID path",
+      "before": null,
+      "after": "/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/7037d517-0f26-5ac5-860b-d03191601f55"
+    },
+    {
+      "ref": "U5",
+      "field": "schematic UUID path",
+      "before": null,
+      "after": "/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/cd830b44-f213-5a60-9243-209443087a7d"
+    },
+    {
+      "ref": "U4",
+      "field": "schematic UUID path",
+      "before": null,
+      "after": "/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/f6db182d-1574-5709-b755-398f2e7ccd20"
+    },
+    {
+      "ref": "R16",
+      "field": "schematic UUID path",
+      "before": null,
+      "after": "/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/5d989995-10d5-5a21-bb69-a98e3d9666ff"
+    },
+    {
+      "ref": "C36",
+      "field": "schematic UUID path",
+      "before": null,
+      "after": "/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/e8bb7895-fb87-5fa3-a259-9ce5b1b625fc"
+    },
+    {
+      "ref": "R15",
+      "field": "schematic UUID path",
+      "before": null,
+      "after": "/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/47931b1f-2f3b-578f-9cc8-5e957ed22934"
+    },
+    {
+      "ref": "C10",
+      "field": "schematic UUID path",
+      "before": null,
+      "after": "/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/54288062-110c-5979-91de-fa208ec547ab"
+    },
+    {
+      "ref": "C35",
+      "field": "schematic UUID path",
+      "before": null,
+      "after": "/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/3f213709-f838-5af9-830a-7199fa046c84"
+    },
+    {
+      "ref": "R18",
+      "field": "schematic UUID path",
+      "before": null,
+      "after": "/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/4d8788a1-9e6f-5a3c-bb23-0b7634ca7583"
+    },
+    {
+      "ref": "R12",
+      "field": "schematic UUID path",
+      "before": null,
+      "after": "/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/9d8a39c6-7d38-55ef-97b6-bc39072ff4ac"
+    },
+    {
+      "ref": "C38",
+      "field": "schematic UUID path",
+      "before": null,
+      "after": "/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/426780d1-f82a-51e5-964c-c5326876a600"
+    },
+    {
+      "ref": "J19",
+      "pad": "MP",
+      "field": "land X per manufacturer",
+      "before": "-5.35",
+      "after": "-5.225"
+    },
+    {
+      "ref": "J19",
+      "pad": "MP",
+      "field": "land X per manufacturer",
+      "before": "5.35",
+      "after": "5.225"
+    },
+    {
+      "ref": "U1",
+      "pad": "8",
+      "field": "land X per manufacturer",
+      "before": "0.93",
+      "after": ".95"
+    }
+  ],
+  "footprints": 147,
+  "added": [],
+  "removed": [],
+  "tracks_before": 154,
+  "tracks_after": 154,
+  "tracks_unchanged": true,
+  "placement_unchanged": true,
+  "note": "Latest live PCB already contained the M2.7 component set. Applied remaining schematic values and pad metadata/net assignments. No layout or routing performed. Restored 48 missing schematic UUID associations on existing wheel-circuit footprints; footprint and pad UUIDs unchanged. Corrected U1 VIN main land X to +0.95mm and J19 MP lands to ±5.225mm against source drawings; no footprint-origin or trace changes.",
+  "native_schematic_parity": 0,
+  "native_drc_violations": 18,
+  "native_unconnected_items": 305,
+  "native_drc_exit_code": 5,
+  "relinked_footprints": 48
+}

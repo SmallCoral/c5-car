@@ -1,0 +1,102 @@
+{
+  "date": "2026-11-07",
+  "queried_utc": "2026-11-07T15:43:33.5392524Z",
+  "url": "https://item.szlcsc.com/480472.html",
+  "http_status": 200,
+  "product": {
+    "theRatio": 1,
+    "productArrange": "编带",
+    "productModel": "TPS25810RVCR",
+    "stockNumber": 6108,
+    "encapsulationModel": "WQFN-20-EP(3x4)",
+    "hasStockNow": "yes",
+    "productCycle": "normal",
+    "smtLabel": "SMT扩展库",
+    "isDisplayUsableTransitNum": true,
+    "remark": "USB Type-C Rev. 1.2 Compliant DFP 控制器，内置3A额定连接/断开检测，支持STD/1.5-A/3-A能力广播，超级速度极性确定，VBus应用和放电，Vconn 应用于电子标记电缆，音频和调试配件识别。",
+    "productUnit": "个",
+    "luceneBreviaryImageUrls": "https://alimg.szlcsc.com/upload/public/product/breviary/20230108/1B82531F4A22FEDA5F5107C287787DE1.jpg<$>https://alimg.szlcsc.com/upload/public/product/breviary/20230108/6AA87E256261608176C11F32D0A0C282.jpg<$>https://alimg.szlcsc.com/upload/public/product/breviary/20230108/DEDDEB0A2CC19CC691BFC6A63347A1FF.jpg",
+    "productMinEncapsulationUnit": "圆盘",
+    "productName": "TPS25810 USB Type-C DFP 控制器和电源开关，带负载检测",
+    "returnCouponDesc": [],
+    "productGradePlateId": "100",
+    "isShowQuotedPriceBtn": false,
+    "isOldBatchClearance": false,
+    "validStockNumber": 6108,
+    "fileTypeVOList": [
+      {
+        "detailVOList": [
+          {
+            "fileName": "wj113059",
+            "linkAddress": "https://www.ti.com/cn/lit/ds/symlink/tps25810.pdf"
+          }
+        ],
+        "fileType": "pdf_property"
+      },
+      {
+        "detailVOList": [
+          {
+            "fileName": "TI(德州仪器)+产品标识与命名变更+2023-12-07.pdf.pdf.pdf",
+            "fileUrl": "/upload/public/pdf/source/20250320/E3BB32F82911CCE086245F74F40B1459.pdf"
+          }
+        ],
+        "fileType": "industry_information"
+      },
+      {
+        "detailVOList": [
+          {
+            "fileName": "全量通用_ROHS认证_TI(德州仪器)",
+            "linkAddress": "https://www.ti.com/lit/cr/szzq088t/szzq088t.pdf?ts=1777249348149"
+          },
+          {
+            "fileName": "全量通用_HF (无卤素)认证_TI(德州仪器).pdf",
+            "linkAddress": "https://www.ti.com/lit/cr/szzq077h/szzq077h.pdf?ts=1765430053461"
+          },
+          {
+            "fileName": "全量通用_REACH认证_TI(德州仪器).pdf",
+            "linkAddress": "https://www.ti.com/lit/cr/szzq087ao/szzq087ao.pdf"
+          },
+          {
+            "fileName": "全量通用_ROHS认证_TI(德州仪器).pdf",
+            "linkAddress": "https://www.ti.com/lit/cr/szzq088s/szzq088s.pdf"
+          },
+          {
+            "fileName": "全量通用_REACH认证(英文版)_TI(德州仪器).pdf",
+            "fileUrl": "/upload/public/pdf/source/20250103/AA09B2CB471DDD2344193BFCDD3BAD52.pdf"
+          },
+          {
+            "fileName": "全量通用_ROHS认证_TI(德州仪器).pdf",
+            "fileUrl": "/upload/public/pdf/source/20250912/CE8B300B165F06F19AF9E8E2EE2DE390.pdf"
+          }
+        ],
+        "fileType": "certification_data_property"
+      }
+    ],
+    "isEnvironment": true,
+    "isReturnCoupon": false,
+    "productType": "其他接口",
+    "encaptionPrice": 5700,
+    "minBuyNumber": 1,
+    "minWholeNumber": 3000,
+    "saleRuleGroupId": 1,
+    "convesionRatio": 1,
+    "productId": "480472",
+    "productGradePlateName": "TI(德州仪器)",
+    "eccnCode": "EAR99",
+    "productWeight": 0.000261,
+    "usableTransitNum": 0,
+    "isDisplay": true,
+    "pdfDESProductId": "CDF03B605C35800B296C67311B688FC3",
+    "productCode": "C473913",
+    "breviaryImageUrl": "https://alimg.szlcsc.com/upload/public/product/breviary/20230108/1B82531F4A22FEDA5F5107C287787DE1.jpg",
+    "isShowPrice": true,
+    "productMinEncapsulationNumber": 3000,
+    "inEdaWhiteList": false,
+    "productStockStatus": "yes",
+    "productUnsealVendition": "yes"
+  },
+  "price": 1.9,
+  "gdWarehouseStockNumber": 6108,
+  "jsWarehouseStockNumber": 0,
+  "pageGeneratedAt": "2026-11-07T15:43:33.416Z"
+}

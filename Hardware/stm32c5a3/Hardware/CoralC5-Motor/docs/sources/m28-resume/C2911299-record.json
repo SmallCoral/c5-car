@@ -1,0 +1,89 @@
+{
+  "date": "2026-11-07",
+  "queried_utc": "2026-11-07T15:45:25.5391257Z",
+  "url": "https://item.szlcsc.com/3190833.html",
+  "http_status": 200,
+  "product": {
+    "theRatio": 10,
+    "productArrange": "袋装",
+    "productModel": "CS-1107-2X6(L14/19)",
+    "stockNumber": 9,
+    "encapsulationModel": "弯插,P=2.54mm",
+    "hasStockNow": "no",
+    "productCycle": "sold_out",
+    "smtLabel": "SMT扩展库",
+    "remark": "特性：外壳材料:PA6T UL94V 0(耐高温材料)。触点材料:黄铜(H65)。触点镀层:金。额定电流:3A。额定电压:250VAC/DC。介电耐压:最小600VAC。接触电阻:最大20mΩ。绝缘电阻:最小1000。温度范围:-40°C至+105°C",
+    "productUnit": "个",
+    "isMarkAutoOffShelves": "yes",
+    "luceneBreviaryImageUrls": "https://alimg.szlcsc.com/upload/public/product/breviary/20230105/AD9A93C1F167BEB3836C6A17FCBB8CCB.jpg<$>https://alimg.szlcsc.com/upload/public/product/breviary/20230105/6DF7EC7CCA2B23997D8A3DBCA0360317.jpg<$>https://alimg.szlcsc.com/upload/public/product/breviary/20230105/B94684596B5F0A3B1E6E5AC8864226F6.jpg",
+    "productMinEncapsulationUnit": "袋",
+    "productName": "2x6P 间距:2.54mm 方针 弯插",
+    "returnCouponDesc": [],
+    "productGradePlateId": "12759",
+    "isShowQuotedPriceBtn": false,
+    "isOldBatchClearance": false,
+    "validStockNumber": 0,
+    "fileTypeVOList": [
+      {
+        "detailVOList": [
+          {
+            "fileName": "wj14424",
+            "fileUrl": "/upload/public/pdf/source/20211110/474D709B92808FAB655074F4DF73F5F5.pdf"
+          }
+        ],
+        "fileType": "pdf_property"
+      },
+      {
+        "detailVOList": [
+          {
+            "fileName": "塑胶制品_REACH认证(英文版)_CST(永丰盈)",
+            "fileUrl": "/upload/public/pdf/source/20250728/104A8617AEEDDB4AF46460E3A03C9C12.pdf"
+          },
+          {
+            "fileName": "环保塑料制品_RoHS认证(英文版)_CST(永丰盈)",
+            "fileUrl": "/upload/public/pdf/source/20250728/00C068B0C3DAFB03A5D18BAAD09729B9.pdf"
+          },
+          {
+            "fileName": "环保镀金针_RoHS认证(英文版)_CST(永丰盈)",
+            "fileUrl": "/upload/public/pdf/source/20250728/7C0F25325DC22F0A31481E15C0EB2264.pdf"
+          },
+          {
+            "fileName": "环保镀锡端子_RoHS认证(中文版)_CST(永丰盈)",
+            "fileUrl": "/upload/public/pdf/source/20250728/0F6EBA1B0E040B7A71697FDE4D3ED313.pdf"
+          },
+          {
+            "fileName": "环保镀锡铜针_RoHS认证(英文版)_CST(永丰盈)",
+            "fileUrl": "/upload/public/pdf/source/20250728/98A4312506929A465F5EE988791D5F4A.pdf"
+          }
+        ],
+        "fileType": "certification_data_property"
+      }
+    ],
+    "isEnvironment": true,
+    "isReturnCoupon": false,
+    "productType": "排针",
+    "encaptionPrice": 82.25,
+    "minBuyNumber": 1,
+    "minWholeNumber": 350,
+    "saleRuleGroupId": 1,
+    "convesionRatio": 10,
+    "productId": "3190833",
+    "productGradePlateName": "CST(永丰盈)",
+    "eccnCode": "EAR99",
+    "productWeight": 0.00102,
+    "usableTransitNum": 0,
+    "isDisplay": true,
+    "pdfDESProductId": "9F7A325BAD64807962C20E132BF121C8",
+    "productCode": "C2911299",
+    "breviaryImageUrl": "https://alimg.szlcsc.com/upload/public/product/breviary/20230105/AD9A93C1F167BEB3836C6A17FCBB8CCB.jpg",
+    "isShowPrice": true,
+    "productMinEncapsulationNumber": 350,
+    "inEdaWhiteList": false,
+    "productStockStatus": "no",
+    "productUnsealVendition": "no"
+  },
+  "price": 0.235,
+  "gdWarehouseStockNumber": 0,
+  "jsWarehouseStockNumber": 0,
+  "pageGeneratedAt": "2026-11-07T15:45:25.438Z"
+}

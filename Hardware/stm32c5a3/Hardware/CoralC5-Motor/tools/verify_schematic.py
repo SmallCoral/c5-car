@@ -10,6 +10,9 @@ sys.path.insert(0,str(ROOT.parent/'Shared/design_tools'))
 from sexpr import parse,node,nodes,prop
 from pin_functions import parse_alternate_functions
 DOC=ROOT/'docs'
+if (DOC/'m28_revision.json').exists():
+    from verify_m28 import main
+    raise SystemExit(main())
 if (DOC/'m27_revision.json').exists():
     from verify_m27 import main
     raise SystemExit(main())

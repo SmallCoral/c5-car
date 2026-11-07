@@ -1,0 +1,8837 @@
+{
+  "date": "2026-11-07",
+  "checks": 1439,
+  "failed": [],
+  "results": [
+    {
+      "name": "exact component reference set",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "latest user PCB reference set preserved",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J21 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J21 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J21 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J21 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J21 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J21 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J21:1 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "J21:2 net matches",
+      "detail": {
+        "expected": "/V5_EXT",
+        "actual": "/V5_EXT"
+      },
+      "pass": true
+    },
+    {
+      "name": "R80 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R80 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R80 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R80 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R80 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R80 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R80:1 net matches",
+      "detail": {
+        "expected": "/V3V3",
+        "actual": "/V3V3"
+      },
+      "pass": true
+    },
+    {
+      "name": "R80:2 net matches",
+      "detail": {
+        "expected": "/核心板接口/VIDEO_TX",
+        "actual": "/核心板接口/VIDEO_TX"
+      },
+      "pass": true
+    },
+    {
+      "name": "C38 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C38 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C38 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C38 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C38 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C38 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C38:1 net matches",
+      "detail": {
+        "expected": "Net-(U5-2A)",
+        "actual": "Net-(U5-2A)"
+      },
+      "pass": true
+    },
+    {
+      "name": "C38:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "R12 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R12 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R12 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R12 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R12 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R12 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R12:1 net matches",
+      "detail": {
+        "expected": "Net-(U2-IPROPI)",
+        "actual": "Net-(U2-IPROPI)"
+      },
+      "pass": true
+    },
+    {
+      "name": "R12:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "R92 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R92 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R92 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R92 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R92 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R92 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R92:1 net matches",
+      "detail": {
+        "expected": "Net-(U1-MODE)",
+        "actual": "Net-(U1-MODE)"
+      },
+      "pass": true
+    },
+    {
+      "name": "R92:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "R71 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R71 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R71 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R71 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R71 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R71 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R71:1 net matches",
+      "detail": {
+        "expected": "Net-(U10-OVP)",
+        "actual": "Net-(U10-OVP)"
+      },
+      "pass": true
+    },
+    {
+      "name": "R71:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "J27 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J27 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J27 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J27 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J27 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J27 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J27:1 net matches",
+      "detail": {
+        "expected": "/V5_EXT",
+        "actual": "/V5_EXT"
+      },
+      "pass": true
+    },
+    {
+      "name": "J27:2 net matches",
+      "detail": {
+        "expected": "Net-(J27-EN_FEED)",
+        "actual": "Net-(J27-EN_FEED)"
+      },
+      "pass": true
+    },
+    {
+      "name": "C83 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C83 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C83 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C83 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C83 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C83 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C83:1 net matches",
+      "detail": {
+        "expected": "Net-(C83-Pad1)",
+        "actual": "Net-(C83-Pad1)"
+      },
+      "pass": true
+    },
+    {
+      "name": "C83:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "U1 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U1 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U1 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U1 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U1 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U1 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U1:1 net matches",
+      "detail": {
+        "expected": "Net-(U1-EN)",
+        "actual": "Net-(U1-EN)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U1:2 net matches",
+      "detail": {
+        "expected": "Net-(U1-FB)",
+        "actual": "Net-(U1-FB)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U1:3 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "U1:4 net matches",
+      "detail": {
+        "expected": "unconnected-(U1-PG-Pad4)",
+        "actual": "unconnected-(U1-PG-Pad4)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U1:5 net matches",
+      "detail": {
+        "expected": "unconnected-(U1-SS-Pad5)",
+        "actual": "unconnected-(U1-SS-Pad5)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U1:6 net matches",
+      "detail": {
+        "expected": "Net-(U1-SW)",
+        "actual": "Net-(U1-SW)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U1:7 net matches",
+      "detail": {
+        "expected": "Net-(U1-BOOT)",
+        "actual": "Net-(U1-BOOT)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U1:8 net matches",
+      "detail": {
+        "expected": "/VM",
+        "actual": "/VM"
+      },
+      "pass": true
+    },
+    {
+      "name": "U1:8 net matches",
+      "detail": {
+        "expected": "/VM",
+        "actual": "/VM"
+      },
+      "pass": true
+    },
+    {
+      "name": "U1:8 net matches",
+      "detail": {
+        "expected": "/VM",
+        "actual": "/VM"
+      },
+      "pass": true
+    },
+    {
+      "name": "U1:8 net matches",
+      "detail": {
+        "expected": "/VM",
+        "actual": "/VM"
+      },
+      "pass": true
+    },
+    {
+      "name": "U1:9 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "U1:10 net matches",
+      "detail": {
+        "expected": "Net-(U1-MODE)",
+        "actual": "Net-(U1-MODE)"
+      },
+      "pass": true
+    },
+    {
+      "name": "R18 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R18 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R18 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R18 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R18 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R18 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R18:1 net matches",
+      "detail": {
+        "expected": "/V3V3",
+        "actual": "/V3V3"
+      },
+      "pass": true
+    },
+    {
+      "name": "R18:2 net matches",
+      "detail": {
+        "expected": "Net-(J4-A)",
+        "actual": "Net-(J4-A)"
+      },
+      "pass": true
+    },
+    {
+      "name": "D4 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "D4 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "D4 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "D4 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "D4 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "D4 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "D4:1 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "D4:2 net matches",
+      "detail": {
+        "expected": "Net-(D4-A)",
+        "actual": "Net-(D4-A)"
+      },
+      "pass": true
+    },
+    {
+      "name": "C35 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C35 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C35 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C35 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C35 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C35 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C35:1 net matches",
+      "detail": {
+        "expected": "Net-(U4-IPROPI)",
+        "actual": "Net-(U4-IPROPI)"
+      },
+      "pass": true
+    },
+    {
+      "name": "C35:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "R56 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R56 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R56 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R56 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R56 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R56 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R56:1 net matches",
+      "detail": {
+        "expected": "/V3V3_EXT",
+        "actual": "/V3V3_EXT"
+      },
+      "pass": true
+    },
+    {
+      "name": "R56:2 net matches",
+      "detail": {
+        "expected": "/中景园屏幕与四个操作按钮/TFT_RES",
+        "actual": "/中景园屏幕与四个操作按钮/TFT_RES"
+      },
+      "pass": true
+    },
+    {
+      "name": "C54 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C54 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C54 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C54 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C54 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C54 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C54:1 net matches",
+      "detail": {
+        "expected": "/V5_EXT",
+        "actual": "/V5_EXT"
+      },
+      "pass": true
+    },
+    {
+      "name": "C54:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "J10 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J10 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J10 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J10 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J10 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J10 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J10:1 net matches",
+      "detail": {
+        "expected": "Net-(J10-Pin_1)",
+        "actual": "Net-(J10-Pin_1)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J10:2 net matches",
+      "detail": {
+        "expected": "/右电机与编码器/MOTOR_RUN",
+        "actual": "/右电机与编码器/MOTOR_RUN"
+      },
+      "pass": true
+    },
+    {
+      "name": "J1 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J1 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J1 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J1 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J1 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J1 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J1:1 net matches",
+      "detail": {
+        "expected": "Net-(J1-BAT+)",
+        "actual": "Net-(J1-BAT+)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J1:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "R60 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R60 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R60 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R60 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R60 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R60 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R60:1 net matches",
+      "detail": {
+        "expected": "Net-(U1-FB)",
+        "actual": "Net-(U1-FB)"
+      },
+      "pass": true
+    },
+    {
+      "name": "R60:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "C10 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C10 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C10 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C10 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C10 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C10 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C10:1 net matches",
+      "detail": {
+        "expected": "Net-(U2-CPH)",
+        "actual": "Net-(U2-CPH)"
+      },
+      "pass": true
+    },
+    {
+      "name": "C10:2 net matches",
+      "detail": {
+        "expected": "Net-(U2-CPL)",
+        "actual": "Net-(U2-CPL)"
+      },
+      "pass": true
+    },
+    {
+      "name": "R6 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R6 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R6 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R6 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R6 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R6 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R6:1 net matches",
+      "detail": {
+        "expected": "/核心板接口/MOTOR_EN_REQ",
+        "actual": "/核心板接口/MOTOR_EN_REQ"
+      },
+      "pass": true
+    },
+    {
+      "name": "R6:2 net matches",
+      "detail": {
+        "expected": "Net-(J10-Pin_1)",
+        "actual": "Net-(J10-Pin_1)"
+      },
+      "pass": true
+    },
+    {
+      "name": "R15 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R15 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R15 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R15 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R15 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R15 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R15:1 net matches",
+      "detail": {
+        "expected": "Net-(U2-IPROPI)",
+        "actual": "Net-(U2-IPROPI)"
+      },
+      "pass": true
+    },
+    {
+      "name": "R15:2 net matches",
+      "detail": {
+        "expected": "/左电机与编码器/L_ISENSE",
+        "actual": "/左电机与编码器/L_ISENSE"
+      },
+      "pass": true
+    },
+    {
+      "name": "R55 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R55 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R55 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R55 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R55 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R55 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R55:1 net matches",
+      "detail": {
+        "expected": "/V3V3_EXT",
+        "actual": "/V3V3_EXT"
+      },
+      "pass": true
+    },
+    {
+      "name": "R55:2 net matches",
+      "detail": {
+        "expected": "/中景园屏幕与四个操作按钮/TFT_CS",
+        "actual": "/中景园屏幕与四个操作按钮/TFT_CS"
+      },
+      "pass": true
+    },
+    {
+      "name": "H1 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "H1 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "H1 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "H1 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "H1 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "H1 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "SW2 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "SW2 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "SW2 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "SW2 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "SW2 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "SW2 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "SW2:1 net matches",
+      "detail": {
+        "expected": "/中景园屏幕与四个操作按钮/KEY_MODE",
+        "actual": "/中景园屏幕与四个操作按钮/KEY_MODE"
+      },
+      "pass": true
+    },
+    {
+      "name": "SW2:1 net matches",
+      "detail": {
+        "expected": "/中景园屏幕与四个操作按钮/KEY_MODE",
+        "actual": "/中景园屏幕与四个操作按钮/KEY_MODE"
+      },
+      "pass": true
+    },
+    {
+      "name": "SW2:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "SW2:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J14 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J14 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J14 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J14 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J14 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J14:50 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:51 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:A1 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:A2 net matches",
+      "detail": {
+        "expected": "/四脚蓝牙与外接步进驱动接口/BT_TX",
+        "actual": "/四脚蓝牙与外接步进驱动接口/BT_TX"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:A3 net matches",
+      "detail": {
+        "expected": "/左电机与编码器/L_ENC_B",
+        "actual": "/左电机与编码器/L_ENC_B"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:A4 net matches",
+      "detail": {
+        "expected": "/左电机与编码器/L_ENC_A",
+        "actual": "/左电机与编码器/L_ENC_A"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:A5 net matches",
+      "detail": {
+        "expected": "/左电机与编码器/L_ISENSE",
+        "actual": "/左电机与编码器/L_ISENSE"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:A6 net matches",
+      "detail": {
+        "expected": "unconnected-(J14A-A6_{slash}_VREF_MCU-PadA6)",
+        "actual": "unconnected-(J14A-A6_{slash}_VREF_MCU-PadA6)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:A7 net matches",
+      "detail": {
+        "expected": "/左电机与编码器/L_nFAULT",
+        "actual": "/左电机与编码器/L_nFAULT"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:A8 net matches",
+      "detail": {
+        "expected": "/左电机与编码器/L_DIR",
+        "actual": "/左电机与编码器/L_DIR"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:A9 net matches",
+      "detail": {
+        "expected": "/左电机与编码器/L_PWM",
+        "actual": "/左电机与编码器/L_PWM"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:A10 net matches",
+      "detail": {
+        "expected": "unconnected-(J14A-A10_{slash}_PC1-PadA10)",
+        "actual": "unconnected-(J14A-A10_{slash}_PC1-PadA10)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:A11 net matches",
+      "detail": {
+        "expected": "/右电机与编码器/R_ISENSE",
+        "actual": "/右电机与编码器/R_ISENSE"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:A12 net matches",
+      "detail": {
+        "expected": "unconnected-(J14A-A12_{slash}_NRST-PadA12)",
+        "actual": "unconnected-(J14A-A12_{slash}_NRST-PadA12)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:A13 net matches",
+      "detail": {
+        "expected": "unconnected-(J14A-A13_{slash}_NC-PadA13)",
+        "actual": "unconnected-(J14A-A13_{slash}_NC-PadA13)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:A14 net matches",
+      "detail": {
+        "expected": "unconnected-(J14A-A14_{slash}_NC-PadA14)",
+        "actual": "unconnected-(J14A-A14_{slash}_NC-PadA14)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:A15 net matches",
+      "detail": {
+        "expected": "unconnected-(J14A-A15_{slash}_PC15-PadA15)",
+        "actual": "unconnected-(J14A-A15_{slash}_PC15-PadA15)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:A16 net matches",
+      "detail": {
+        "expected": "unconnected-(J14A-A16_{slash}_PC14-PadA16)",
+        "actual": "unconnected-(J14A-A16_{slash}_PC14-PadA16)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:A17 net matches",
+      "detail": {
+        "expected": "unconnected-(J14A-A17_{slash}_PC13-PadA17)",
+        "actual": "unconnected-(J14A-A17_{slash}_PC13-PadA17)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:A18 net matches",
+      "detail": {
+        "expected": "unconnected-(J14A-A18_{slash}_PH15-PadA18)",
+        "actual": "unconnected-(J14A-A18_{slash}_PH15-PadA18)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:A19 net matches",
+      "detail": {
+        "expected": "unconnected-(J14A-A19_{slash}_PE6-PadA19)",
+        "actual": "unconnected-(J14A-A19_{slash}_PE6-PadA19)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:A20 net matches",
+      "detail": {
+        "expected": "unconnected-(J14A-A20_{slash}_PE5-PadA20)",
+        "actual": "unconnected-(J14A-A20_{slash}_PE5-PadA20)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:A21 net matches",
+      "detail": {
+        "expected": "unconnected-(J14A-A21_{slash}_PE4-PadA21)",
+        "actual": "unconnected-(J14A-A21_{slash}_PE4-PadA21)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:A22 net matches",
+      "detail": {
+        "expected": "unconnected-(J14A-A22_{slash}_PE3-PadA22)",
+        "actual": "unconnected-(J14A-A22_{slash}_PE3-PadA22)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:A23 net matches",
+      "detail": {
+        "expected": "unconnected-(J14A-A23_{slash}_PE2-PadA23)",
+        "actual": "unconnected-(J14A-A23_{slash}_PE2-PadA23)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:A24 net matches",
+      "detail": {
+        "expected": "unconnected-(J14A-A24_{slash}_PE1-PadA24)",
+        "actual": "unconnected-(J14A-A24_{slash}_PE1-PadA24)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:A25 net matches",
+      "detail": {
+        "expected": "unconnected-(J14A-A25_{slash}_PE0-PadA25)",
+        "actual": "unconnected-(J14A-A25_{slash}_PE0-PadA25)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:A26 net matches",
+      "detail": {
+        "expected": "unconnected-(J14B-A26_{slash}_PB9-PadA26)",
+        "actual": "unconnected-(J14B-A26_{slash}_PB9-PadA26)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:A27 net matches",
+      "detail": {
+        "expected": "/右电机与编码器/R_PWM",
+        "actual": "/右电机与编码器/R_PWM"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:A28 net matches",
+      "detail": {
+        "expected": "unconnected-(J14B-A28_{slash}_PH2-PadA28)",
+        "actual": "unconnected-(J14B-A28_{slash}_PH2-PadA28)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:A29 net matches",
+      "detail": {
+        "expected": "/四脚蓝牙与外接步进驱动接口/STEP_UART_RX",
+        "actual": "/四脚蓝牙与外接步进驱动接口/STEP_UART_RX"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:A30 net matches",
+      "detail": {
+        "expected": "/四脚蓝牙与外接步进驱动接口/STEP_UART_TX",
+        "actual": "/四脚蓝牙与外接步进驱动接口/STEP_UART_TX"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:A31 net matches",
+      "detail": {
+        "expected": "unconnected-(J14B-A31_{slash}_PB5-PadA31)",
+        "actual": "unconnected-(J14B-A31_{slash}_PB5-PadA31)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:A32 net matches",
+      "detail": {
+        "expected": "/中景园屏幕与四个操作按钮/TFT_BL",
+        "actual": "/中景园屏幕与四个操作按钮/TFT_BL"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:A33 net matches",
+      "detail": {
+        "expected": "/右电机与编码器/R_ENC_A",
+        "actual": "/右电机与编码器/R_ENC_A"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:A34 net matches",
+      "detail": {
+        "expected": "/右电机与编码器/R_DIR",
+        "actual": "/右电机与编码器/R_DIR"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:A35 net matches",
+      "detail": {
+        "expected": "/右电机与编码器/R_nFAULT",
+        "actual": "/右电机与编码器/R_nFAULT"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:A36 net matches",
+      "detail": {
+        "expected": "unconnected-(J14B-A36_{slash}_PD5-PadA36)",
+        "actual": "unconnected-(J14B-A36_{slash}_PD5-PadA36)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:A37 net matches",
+      "detail": {
+        "expected": "unconnected-(J14B-A37_{slash}_PD4-PadA37)",
+        "actual": "unconnected-(J14B-A37_{slash}_PD4-PadA37)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:A38 net matches",
+      "detail": {
+        "expected": "unconnected-(J14B-A38_{slash}_PD3-PadA38)",
+        "actual": "unconnected-(J14B-A38_{slash}_PD3-PadA38)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:A39 net matches",
+      "detail": {
+        "expected": "unconnected-(J14B-A39_{slash}_PD2-PadA39)",
+        "actual": "unconnected-(J14B-A39_{slash}_PD2-PadA39)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:A40 net matches",
+      "detail": {
+        "expected": "unconnected-(J14B-A40_{slash}_PD1-PadA40)",
+        "actual": "unconnected-(J14B-A40_{slash}_PD1-PadA40)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:A41 net matches",
+      "detail": {
+        "expected": "unconnected-(J14B-A41_{slash}_PD0-PadA41)",
+        "actual": "unconnected-(J14B-A41_{slash}_PD0-PadA41)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:A42 net matches",
+      "detail": {
+        "expected": "unconnected-(J14B-A42_{slash}_PC12-PadA42)",
+        "actual": "unconnected-(J14B-A42_{slash}_PC12-PadA42)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:A43 net matches",
+      "detail": {
+        "expected": "unconnected-(J14B-A43_{slash}_PC11-PadA43)",
+        "actual": "unconnected-(J14B-A43_{slash}_PC11-PadA43)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:A44 net matches",
+      "detail": {
+        "expected": "unconnected-(J14B-A44_{slash}_PC10-PadA44)",
+        "actual": "unconnected-(J14B-A44_{slash}_PC10-PadA44)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:A45 net matches",
+      "detail": {
+        "expected": "/右电机与编码器/R_ENC_B",
+        "actual": "/右电机与编码器/R_ENC_B"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:A46 net matches",
+      "detail": {
+        "expected": "/核心板接口/SWCLK",
+        "actual": "/核心板接口/SWCLK"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:A47 net matches",
+      "detail": {
+        "expected": "/V3V3",
+        "actual": "/V3V3"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:A48 net matches",
+      "detail": {
+        "expected": "/V5_SYS",
+        "actual": "/V5_SYS"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:A49 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:B1 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:B2 net matches",
+      "detail": {
+        "expected": "/四脚蓝牙与外接步进驱动接口/BT_RX",
+        "actual": "/四脚蓝牙与外接步进驱动接口/BT_RX"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:B3 net matches",
+      "detail": {
+        "expected": "/中景园屏幕与四个操作按钮/TFT_CS",
+        "actual": "/中景园屏幕与四个操作按钮/TFT_CS"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:B4 net matches",
+      "detail": {
+        "expected": "/中景园屏幕与四个操作按钮/TFT_SCK",
+        "actual": "/中景园屏幕与四个操作按钮/TFT_SCK"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:B5 net matches",
+      "detail": {
+        "expected": "unconnected-(J14A-B5_{slash}_PA6-PadB5)",
+        "actual": "unconnected-(J14A-B5_{slash}_PA6-PadB5)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:B6 net matches",
+      "detail": {
+        "expected": "/中景园屏幕与四个操作按钮/TFT_MOSI",
+        "actual": "/中景园屏幕与四个操作按钮/TFT_MOSI"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:B7 net matches",
+      "detail": {
+        "expected": "/中景园屏幕与四个操作按钮/KEY_MODE",
+        "actual": "/中景园屏幕与四个操作按钮/KEY_MODE"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:B8 net matches",
+      "detail": {
+        "expected": "/中景园屏幕与四个操作按钮/KEY_NEXT",
+        "actual": "/中景园屏幕与四个操作按钮/KEY_NEXT"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:B9 net matches",
+      "detail": {
+        "expected": "/中景园屏幕与四个操作按钮/TFT_RES",
+        "actual": "/中景园屏幕与四个操作按钮/TFT_RES"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:B10 net matches",
+      "detail": {
+        "expected": "/中景园屏幕与四个操作按钮/TFT_DC",
+        "actual": "/中景园屏幕与四个操作按钮/TFT_DC"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:B11 net matches",
+      "detail": {
+        "expected": "/中景园屏幕与四个操作按钮/KEY_OK",
+        "actual": "/中景园屏幕与四个操作按钮/KEY_OK"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:B12 net matches",
+      "detail": {
+        "expected": "/中景园屏幕与四个操作按钮/KEY_START",
+        "actual": "/中景园屏幕与四个操作按钮/KEY_START"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:B13 net matches",
+      "detail": {
+        "expected": "/核心板接口/MOTOR_EN_REQ",
+        "actual": "/核心板接口/MOTOR_EN_REQ"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:B14 net matches",
+      "detail": {
+        "expected": "unconnected-(J14A-B14_{slash}_PE9-PadB14)",
+        "actual": "unconnected-(J14A-B14_{slash}_PE9-PadB14)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:B15 net matches",
+      "detail": {
+        "expected": "/核心板接口/GRAY_CH1",
+        "actual": "/核心板接口/GRAY_CH1"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:B16 net matches",
+      "detail": {
+        "expected": "/核心板接口/GRAY_CH2",
+        "actual": "/核心板接口/GRAY_CH2"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:B17 net matches",
+      "detail": {
+        "expected": "/核心板接口/GRAY_CH3",
+        "actual": "/核心板接口/GRAY_CH3"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:B18 net matches",
+      "detail": {
+        "expected": "/核心板接口/GRAY_CH4",
+        "actual": "/核心板接口/GRAY_CH4"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:B19 net matches",
+      "detail": {
+        "expected": "/核心板接口/GRAY_CH5",
+        "actual": "/核心板接口/GRAY_CH5"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:B20 net matches",
+      "detail": {
+        "expected": "/核心板接口/GRAY_CH6",
+        "actual": "/核心板接口/GRAY_CH6"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:B21 net matches",
+      "detail": {
+        "expected": "unconnected-(J14A-B21_{slash}_PB10-PadB21)",
+        "actual": "unconnected-(J14A-B21_{slash}_PB10-PadB21)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:B22 net matches",
+      "detail": {
+        "expected": "unconnected-(J14A-B22_{slash}_PB12-PadB22)",
+        "actual": "unconnected-(J14A-B22_{slash}_PB12-PadB22)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:B23 net matches",
+      "detail": {
+        "expected": "unconnected-(J14A-B23_{slash}_PB13-PadB23)",
+        "actual": "unconnected-(J14A-B23_{slash}_PB13-PadB23)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:B24 net matches",
+      "detail": {
+        "expected": "unconnected-(J14A-B24_{slash}_PB14-PadB24)",
+        "actual": "unconnected-(J14A-B24_{slash}_PB14-PadB24)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:B25 net matches",
+      "detail": {
+        "expected": "unconnected-(J14A-B25_{slash}_PB15-PadB25)",
+        "actual": "unconnected-(J14A-B25_{slash}_PB15-PadB25)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:B26 net matches",
+      "detail": {
+        "expected": "unconnected-(J14B-B26_{slash}_PD8-PadB26)",
+        "actual": "unconnected-(J14B-B26_{slash}_PD8-PadB26)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:B27 net matches",
+      "detail": {
+        "expected": "unconnected-(J14B-B27_{slash}_PD9-PadB27)",
+        "actual": "unconnected-(J14B-B27_{slash}_PD9-PadB27)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:B28 net matches",
+      "detail": {
+        "expected": "/核心板接口/GRAY_CH7",
+        "actual": "/核心板接口/GRAY_CH7"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:B29 net matches",
+      "detail": {
+        "expected": "/核心板接口/GRAY_CH8",
+        "actual": "/核心板接口/GRAY_CH8"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:B30 net matches",
+      "detail": {
+        "expected": "/四脚蓝牙与外接步进驱动接口/STEP_PWR_EN",
+        "actual": "/四脚蓝牙与外接步进驱动接口/STEP_PWR_EN"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:B31 net matches",
+      "detail": {
+        "expected": "unconnected-(J14B-B31_{slash}_PD13-PadB31)",
+        "actual": "unconnected-(J14B-B31_{slash}_PD13-PadB31)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:B32 net matches",
+      "detail": {
+        "expected": "unconnected-(J14B-B32_{slash}_PD14-PadB32)",
+        "actual": "unconnected-(J14B-B32_{slash}_PD14-PadB32)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:B33 net matches",
+      "detail": {
+        "expected": "unconnected-(J14B-B33_{slash}_PD15-PadB33)",
+        "actual": "unconnected-(J14B-B33_{slash}_PD15-PadB33)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:B34 net matches",
+      "detail": {
+        "expected": "/核心板接口/VIDEO_TX",
+        "actual": "/核心板接口/VIDEO_TX"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:B35 net matches",
+      "detail": {
+        "expected": "/核心板接口/VIDEO_RX",
+        "actual": "/核心板接口/VIDEO_RX"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:B36 net matches",
+      "detail": {
+        "expected": "unconnected-(J14B-B36_{slash}_PC8-PadB36)",
+        "actual": "unconnected-(J14B-B36_{slash}_PC8-PadB36)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:B37 net matches",
+      "detail": {
+        "expected": "unconnected-(J14B-B37_{slash}_PC9-PadB37)",
+        "actual": "unconnected-(J14B-B37_{slash}_PC9-PadB37)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:B38 net matches",
+      "detail": {
+        "expected": "unconnected-(J14B-B38_{slash}_PA8-PadB38)",
+        "actual": "unconnected-(J14B-B38_{slash}_PA8-PadB38)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:B39 net matches",
+      "detail": {
+        "expected": "unconnected-(J14B-B39_{slash}_PA9-PadB39)",
+        "actual": "unconnected-(J14B-B39_{slash}_PA9-PadB39)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:B40 net matches",
+      "detail": {
+        "expected": "unconnected-(J14B-B40_{slash}_PA10-PadB40)",
+        "actual": "unconnected-(J14B-B40_{slash}_PA10-PadB40)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:B41 net matches",
+      "detail": {
+        "expected": "unconnected-(J14B-B41_{slash}_PA11-PadB41)",
+        "actual": "unconnected-(J14B-B41_{slash}_PA11-PadB41)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:B42 net matches",
+      "detail": {
+        "expected": "unconnected-(J14B-B42_{slash}_PA12-PadB42)",
+        "actual": "unconnected-(J14B-B42_{slash}_PA12-PadB42)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:B43 net matches",
+      "detail": {
+        "expected": "/核心板接口/SWDIO",
+        "actual": "/核心板接口/SWDIO"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:B44 net matches",
+      "detail": {
+        "expected": "unconnected-(J14B-B44_{slash}_PH3-PadB44)",
+        "actual": "unconnected-(J14B-B44_{slash}_PH3-PadB44)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:B45 net matches",
+      "detail": {
+        "expected": "unconnected-(J14B-B45_{slash}_NC-PadB45)",
+        "actual": "unconnected-(J14B-B45_{slash}_NC-PadB45)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:B46 net matches",
+      "detail": {
+        "expected": "unconnected-(J14B-B46_{slash}_NC-PadB46)",
+        "actual": "unconnected-(J14B-B46_{slash}_NC-PadB46)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:B47 net matches",
+      "detail": {
+        "expected": "/V3V3",
+        "actual": "/V3V3"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:B48 net matches",
+      "detail": {
+        "expected": "/V5_SYS",
+        "actual": "/V5_SYS"
+      },
+      "pass": true
+    },
+    {
+      "name": "J14:B49 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "H2 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "H2 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "H2 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "H2 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "H2 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "H2 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C36 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C36 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C36 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C36 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C36 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C36 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C36:1 net matches",
+      "detail": {
+        "expected": "/右电机与编码器/R_ISENSE",
+        "actual": "/右电机与编码器/R_ISENSE"
+      },
+      "pass": true
+    },
+    {
+      "name": "C36:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "U10 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U10 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U10 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U10 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U10 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U10 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U10:1 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "U10:2 net matches",
+      "detail": {
+        "expected": "Net-(U10-SS)",
+        "actual": "Net-(U10-SS)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U10:3 net matches",
+      "detail": {
+        "expected": "Net-(U10-ENUV)",
+        "actual": "Net-(U10-ENUV)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U10:4 net matches",
+      "detail": {
+        "expected": "/V5_EXT",
+        "actual": "/V5_EXT"
+      },
+      "pass": true
+    },
+    {
+      "name": "U10:5 net matches",
+      "detail": {
+        "expected": "Net-(Q5-D)",
+        "actual": "Net-(Q5-D)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U10:6 net matches",
+      "detail": {
+        "expected": "unconnected-(U10-nFLT-Pad6)",
+        "actual": "unconnected-(U10-nFLT-Pad6)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U10:7 net matches",
+      "detail": {
+        "expected": "Net-(U10-ILIM)",
+        "actual": "Net-(U10-ILIM)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U10:8 net matches",
+      "detail": {
+        "expected": "Net-(U10-OVP)",
+        "actual": "Net-(U10-OVP)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U10:9 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "R16 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R16 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R16 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R16 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R16 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R16 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R16:1 net matches",
+      "detail": {
+        "expected": "Net-(J4-A)",
+        "actual": "Net-(J4-A)"
+      },
+      "pass": true
+    },
+    {
+      "name": "R16:2 net matches",
+      "detail": {
+        "expected": "Net-(U3-1A)",
+        "actual": "Net-(U3-1A)"
+      },
+      "pass": true
+    },
+    {
+      "name": "C3 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C3 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C3 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C3 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C3 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C3 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C3:1 net matches",
+      "detail": {
+        "expected": "/VM",
+        "actual": "/VM"
+      },
+      "pass": true
+    },
+    {
+      "name": "C3:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "U4 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U4 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U4 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U4 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U4 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U4 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U4:1 net matches",
+      "detail": {
+        "expected": "/右电机与编码器/R_PWM",
+        "actual": "/右电机与编码器/R_PWM"
+      },
+      "pass": true
+    },
+    {
+      "name": "U4:2 net matches",
+      "detail": {
+        "expected": "/右电机与编码器/R_DIR",
+        "actual": "/右电机与编码器/R_DIR"
+      },
+      "pass": true
+    },
+    {
+      "name": "U4:3 net matches",
+      "detail": {
+        "expected": "/右电机与编码器/MOTOR_RUN",
+        "actual": "/右电机与编码器/MOTOR_RUN"
+      },
+      "pass": true
+    },
+    {
+      "name": "U4:4 net matches",
+      "detail": {
+        "expected": "/右电机与编码器/R_nFAULT",
+        "actual": "/右电机与编码器/R_nFAULT"
+      },
+      "pass": true
+    },
+    {
+      "name": "U4:5 net matches",
+      "detail": {
+        "expected": "Net-(U4-VREF)",
+        "actual": "Net-(U4-VREF)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U4:6 net matches",
+      "detail": {
+        "expected": "Net-(U4-IPROPI)",
+        "actual": "Net-(U4-IPROPI)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U4:7 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "U4:8 net matches",
+      "detail": {
+        "expected": "/右电机与编码器/R_M_OUT1",
+        "actual": "/右电机与编码器/R_M_OUT1"
+      },
+      "pass": true
+    },
+    {
+      "name": "U4:9 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "U4:10 net matches",
+      "detail": {
+        "expected": "/右电机与编码器/R_M_OUT2",
+        "actual": "/右电机与编码器/R_M_OUT2"
+      },
+      "pass": true
+    },
+    {
+      "name": "U4:11 net matches",
+      "detail": {
+        "expected": "/VM",
+        "actual": "/VM"
+      },
+      "pass": true
+    },
+    {
+      "name": "U4:12 net matches",
+      "detail": {
+        "expected": "Net-(U4-VCP)",
+        "actual": "Net-(U4-VCP)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U4:13 net matches",
+      "detail": {
+        "expected": "Net-(U4-CPH)",
+        "actual": "Net-(U4-CPH)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U4:14 net matches",
+      "detail": {
+        "expected": "Net-(U4-CPL)",
+        "actual": "Net-(U4-CPL)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U4:15 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "U4:16 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "U4:17 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "U5 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U5 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U5 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U5 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U5 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U5 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U5:1 net matches",
+      "detail": {
+        "expected": "Net-(U5-1A)",
+        "actual": "Net-(U5-1A)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U5:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "U5:3 net matches",
+      "detail": {
+        "expected": "Net-(U5-2A)",
+        "actual": "Net-(U5-2A)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U5:4 net matches",
+      "detail": {
+        "expected": "/右电机与编码器/R_ENC_B",
+        "actual": "/右电机与编码器/R_ENC_B"
+      },
+      "pass": true
+    },
+    {
+      "name": "U5:5 net matches",
+      "detail": {
+        "expected": "/V3V3",
+        "actual": "/V3V3"
+      },
+      "pass": true
+    },
+    {
+      "name": "U5:6 net matches",
+      "detail": {
+        "expected": "/右电机与编码器/R_ENC_A",
+        "actual": "/右电机与编码器/R_ENC_A"
+      },
+      "pass": true
+    },
+    {
+      "name": "C40 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C40 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C40 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C40 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C40 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C40 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C40:1 net matches",
+      "detail": {
+        "expected": "/V3V3",
+        "actual": "/V3V3"
+      },
+      "pass": true
+    },
+    {
+      "name": "C40:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "C31 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C31 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C31 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C31 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C31 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C31 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C31:1 net matches",
+      "detail": {
+        "expected": "/VM",
+        "actual": "/VM"
+      },
+      "pass": true
+    },
+    {
+      "name": "C31:2 net matches",
+      "detail": {
+        "expected": "Net-(U4-VCP)",
+        "actual": "Net-(U4-VCP)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J17 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J17 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J17 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J17 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J17 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J17 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J17:1 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "J17:2 net matches",
+      "detail": {
+        "expected": "/V3V3_EXT",
+        "actual": "/V3V3_EXT"
+      },
+      "pass": true
+    },
+    {
+      "name": "J17:3 net matches",
+      "detail": {
+        "expected": "/中景园屏幕与四个操作按钮/TFT_SCK",
+        "actual": "/中景园屏幕与四个操作按钮/TFT_SCK"
+      },
+      "pass": true
+    },
+    {
+      "name": "J17:4 net matches",
+      "detail": {
+        "expected": "/中景园屏幕与四个操作按钮/TFT_MOSI",
+        "actual": "/中景园屏幕与四个操作按钮/TFT_MOSI"
+      },
+      "pass": true
+    },
+    {
+      "name": "J17:5 net matches",
+      "detail": {
+        "expected": "/中景园屏幕与四个操作按钮/TFT_RES",
+        "actual": "/中景园屏幕与四个操作按钮/TFT_RES"
+      },
+      "pass": true
+    },
+    {
+      "name": "J17:6 net matches",
+      "detail": {
+        "expected": "/中景园屏幕与四个操作按钮/TFT_DC",
+        "actual": "/中景园屏幕与四个操作按钮/TFT_DC"
+      },
+      "pass": true
+    },
+    {
+      "name": "J17:7 net matches",
+      "detail": {
+        "expected": "/中景园屏幕与四个操作按钮/TFT_CS",
+        "actual": "/中景园屏幕与四个操作按钮/TFT_CS"
+      },
+      "pass": true
+    },
+    {
+      "name": "J17:8 net matches",
+      "detail": {
+        "expected": "/中景园屏幕与四个操作按钮/TFT_BL",
+        "actual": "/中景园屏幕与四个操作按钮/TFT_BL"
+      },
+      "pass": true
+    },
+    {
+      "name": "U15 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U15 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U15 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U15 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U15 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U15 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U15:1 net matches",
+      "detail": {
+        "expected": "Net-(Q9-D)",
+        "actual": "Net-(Q9-D)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U15:2 net matches",
+      "detail": {
+        "expected": "/四脚蓝牙与外接步进驱动接口/STEP_UART_TX",
+        "actual": "/四脚蓝牙与外接步进驱动接口/STEP_UART_TX"
+      },
+      "pass": true
+    },
+    {
+      "name": "U15:3 net matches",
+      "detail": {
+        "expected": "/四脚蓝牙与外接步进驱动接口/STEP_UART_RX",
+        "actual": "/四脚蓝牙与外接步进驱动接口/STEP_UART_RX"
+      },
+      "pass": true
+    },
+    {
+      "name": "U15:4 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "U15:5 net matches",
+      "detail": {
+        "expected": "Net-(J23-T/B/L_TX)",
+        "actual": "Net-(J23-T{slash}B{slash}L_TX)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U15:6 net matches",
+      "detail": {
+        "expected": "Net-(J23-R/A/H_RX)",
+        "actual": "Net-(J23-R{slash}A{slash}H_RX)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U15:7 net matches",
+      "detail": {
+        "expected": "Net-(Q9-D)",
+        "actual": "Net-(Q9-D)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U15:8 net matches",
+      "detail": {
+        "expected": "/V3V3",
+        "actual": "/V3V3"
+      },
+      "pass": true
+    },
+    {
+      "name": "SW5 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "SW5 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "SW5 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "SW5 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "SW5 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "SW5 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "SW5:1 net matches",
+      "detail": {
+        "expected": "/中景园屏幕与四个操作按钮/KEY_START",
+        "actual": "/中景园屏幕与四个操作按钮/KEY_START"
+      },
+      "pass": true
+    },
+    {
+      "name": "SW5:1 net matches",
+      "detail": {
+        "expected": "/中景园屏幕与四个操作按钮/KEY_START",
+        "actual": "/中景园屏幕与四个操作按钮/KEY_START"
+      },
+      "pass": true
+    },
+    {
+      "name": "SW5:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "SW5:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "R39 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R39 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R39 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R39 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R39 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R39 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R39:1 net matches",
+      "detail": {
+        "expected": "Net-(J6-B)",
+        "actual": "Net-(J6-B)"
+      },
+      "pass": true
+    },
+    {
+      "name": "R39:2 net matches",
+      "detail": {
+        "expected": "/V3V3",
+        "actual": "/V3V3"
+      },
+      "pass": true
+    },
+    {
+      "name": "Q2 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "Q2 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "Q2 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "Q2 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "Q2 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "Q2 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "Q2:1 net matches",
+      "detail": {
+        "expected": "Net-(D1-A)",
+        "actual": "Net-(D1-A)"
+      },
+      "pass": true
+    },
+    {
+      "name": "Q2:2 net matches",
+      "detail": {
+        "expected": "/VM",
+        "actual": "/VM"
+      },
+      "pass": true
+    },
+    {
+      "name": "Q2:3 net matches",
+      "detail": {
+        "expected": "/输入、总开关与降压/SW_SOURCE",
+        "actual": "/输入、总开关与降压/SW_SOURCE"
+      },
+      "pass": true
+    },
+    {
+      "name": "J6 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J6 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J6 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J6 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J6 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J6 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J6:1 net matches",
+      "detail": {
+        "expected": "/右电机与编码器/R_M_OUT2",
+        "actual": "/右电机与编码器/R_M_OUT2"
+      },
+      "pass": true
+    },
+    {
+      "name": "J6:2 net matches",
+      "detail": {
+        "expected": "/V3V3",
+        "actual": "/V3V3"
+      },
+      "pass": true
+    },
+    {
+      "name": "J6:3 net matches",
+      "detail": {
+        "expected": "Net-(J6-A)",
+        "actual": "Net-(J6-A)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J6:4 net matches",
+      "detail": {
+        "expected": "Net-(J6-B)",
+        "actual": "Net-(J6-B)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J6:5 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "J6:6 net matches",
+      "detail": {
+        "expected": "/右电机与编码器/R_M_OUT1",
+        "actual": "/右电机与编码器/R_M_OUT1"
+      },
+      "pass": true
+    },
+    {
+      "name": "R2 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R2 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R2 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R2 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R2 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R2 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R2:1 net matches",
+      "detail": {
+        "expected": "Net-(SW1-C)",
+        "actual": "Net-(SW1-C)"
+      },
+      "pass": true
+    },
+    {
+      "name": "R2:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "SW1 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "SW1 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "SW1 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "SW1 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "SW1 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "SW1 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "SW1:1 net matches",
+      "detail": {
+        "expected": "/输入、总开关与降压/SW_SOURCE",
+        "actual": "/输入、总开关与降压/SW_SOURCE"
+      },
+      "pass": true
+    },
+    {
+      "name": "SW1:2 net matches",
+      "detail": {
+        "expected": "Net-(D1-A)",
+        "actual": "Net-(D1-A)"
+      },
+      "pass": true
+    },
+    {
+      "name": "SW1:3 net matches",
+      "detail": {
+        "expected": "Net-(SW1-C)",
+        "actual": "Net-(SW1-C)"
+      },
+      "pass": true
+    },
+    {
+      "name": "Q9 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "Q9 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "Q9 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "Q9 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "Q9 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "Q9 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "Q9:1 net matches",
+      "detail": {
+        "expected": "Net-(Q9-G)",
+        "actual": "Net-(Q9-G)"
+      },
+      "pass": true
+    },
+    {
+      "name": "Q9:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "Q9:3 net matches",
+      "detail": {
+        "expected": "Net-(Q9-D)",
+        "actual": "Net-(Q9-D)"
+      },
+      "pass": true
+    },
+    {
+      "name": "C37 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C37 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C37 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C37 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C37 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C37 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C37:1 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "C37:2 net matches",
+      "detail": {
+        "expected": "Net-(U5-1A)",
+        "actual": "Net-(U5-1A)"
+      },
+      "pass": true
+    },
+    {
+      "name": "R5 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R5 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R5 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R5 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R5 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R5 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R5:1 net matches",
+      "detail": {
+        "expected": "/V5_SYS",
+        "actual": "/V5_SYS"
+      },
+      "pass": true
+    },
+    {
+      "name": "R5:2 net matches",
+      "detail": {
+        "expected": "Net-(D4-A)",
+        "actual": "Net-(D4-A)"
+      },
+      "pass": true
+    },
+    {
+      "name": "R4 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R4 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R4 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R4 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R4 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R4 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R4:1 net matches",
+      "detail": {
+        "expected": "Net-(U1-EN)",
+        "actual": "Net-(U1-EN)"
+      },
+      "pass": true
+    },
+    {
+      "name": "R4:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "C33 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C33 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C33 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C33 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C33 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C33 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C33:1 net matches",
+      "detail": {
+        "expected": "/VM",
+        "actual": "/VM"
+      },
+      "pass": true
+    },
+    {
+      "name": "C33:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "R85 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R85 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R85 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R85 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R85 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R85 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R85:1 net matches",
+      "detail": {
+        "expected": "/V3V3",
+        "actual": "/V3V3"
+      },
+      "pass": true
+    },
+    {
+      "name": "R85:2 net matches",
+      "detail": {
+        "expected": "Net-(Q9-D)",
+        "actual": "Net-(Q9-D)"
+      },
+      "pass": true
+    },
+    {
+      "name": "R81 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R81 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R81 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R81 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R81 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R81 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R81:1 net matches",
+      "detail": {
+        "expected": "Net-(D5-K)",
+        "actual": "Net-(D5-K)"
+      },
+      "pass": true
+    },
+    {
+      "name": "R81:2 net matches",
+      "detail": {
+        "expected": "Net-(D5-A)",
+        "actual": "Net-(D5-A)"
+      },
+      "pass": true
+    },
+    {
+      "name": "C62 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C62 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C62 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C62 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C62 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C62 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C62:1 net matches",
+      "detail": {
+        "expected": "/灰度与 MaixCAM2 识别/V5_MAIX_PROT",
+        "actual": "/灰度与 MaixCAM2 识别/V5_MAIX_PROT"
+      },
+      "pass": true
+    },
+    {
+      "name": "C62:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "C5 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C5 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C5 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C5 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C5 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C5 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C5:1 net matches",
+      "detail": {
+        "expected": "/V5_EXT",
+        "actual": "/V5_EXT"
+      },
+      "pass": true
+    },
+    {
+      "name": "C5:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "D5 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "D5 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "D5 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "D5 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "D5 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "D5 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "D5:1 net matches",
+      "detail": {
+        "expected": "Net-(D5-K)",
+        "actual": "Net-(D5-K)"
+      },
+      "pass": true
+    },
+    {
+      "name": "D5:2 net matches",
+      "detail": {
+        "expected": "Net-(D5-A)",
+        "actual": "Net-(D5-A)"
+      },
+      "pass": true
+    },
+    {
+      "name": "R86 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R86 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R86 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R86 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R86 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R86 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R86:1 net matches",
+      "detail": {
+        "expected": "/四脚蓝牙与外接步进驱动接口/VM_STEP",
+        "actual": "/四脚蓝牙与外接步进驱动接口/VM_STEP"
+      },
+      "pass": true
+    },
+    {
+      "name": "R86:2 net matches",
+      "detail": {
+        "expected": "Net-(Q9-G)",
+        "actual": "Net-(Q9-G)"
+      },
+      "pass": true
+    },
+    {
+      "name": "C55 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C55 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C55 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C55 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C55 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C55 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C55:1 net matches",
+      "detail": {
+        "expected": "/V3V3_EXT",
+        "actual": "/V3V3_EXT"
+      },
+      "pass": true
+    },
+    {
+      "name": "C55:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "C17 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C17 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C17 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C17 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C17 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C17 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C17:1 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "C17:2 net matches",
+      "detail": {
+        "expected": "Net-(U3-1A)",
+        "actual": "Net-(U3-1A)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J8 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J8 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J8 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J8 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J8 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J8 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J8:1 net matches",
+      "detail": {
+        "expected": "/V3V3",
+        "actual": "/V3V3"
+      },
+      "pass": true
+    },
+    {
+      "name": "J8:2 net matches",
+      "detail": {
+        "expected": "/核心板接口/SWDIO",
+        "actual": "/核心板接口/SWDIO"
+      },
+      "pass": true
+    },
+    {
+      "name": "J8:3 net matches",
+      "detail": {
+        "expected": "/核心板接口/SWCLK",
+        "actual": "/核心板接口/SWCLK"
+      },
+      "pass": true
+    },
+    {
+      "name": "J8:4 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "R87 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R87 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R87 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R87 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R87 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R87 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R87:1 net matches",
+      "detail": {
+        "expected": "Net-(Q9-G)",
+        "actual": "Net-(Q9-G)"
+      },
+      "pass": true
+    },
+    {
+      "name": "R87:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "C4 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C4 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C4 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C4 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C4 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C4 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C4:1 net matches",
+      "detail": {
+        "expected": "Net-(U1-BOOT)",
+        "actual": "Net-(U1-BOOT)"
+      },
+      "pass": true
+    },
+    {
+      "name": "C4:2 net matches",
+      "detail": {
+        "expected": "Net-(U1-SW)",
+        "actual": "Net-(U1-SW)"
+      },
+      "pass": true
+    },
+    {
+      "name": "C19 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C19 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C19 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C19 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C19 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C19 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C19:1 net matches",
+      "detail": {
+        "expected": "/V3V3",
+        "actual": "/V3V3"
+      },
+      "pass": true
+    },
+    {
+      "name": "C19:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "C81 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C81 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C81 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C81 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C81 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C81 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C81:1 net matches",
+      "detail": {
+        "expected": "/V5_EXT",
+        "actual": "/V5_EXT"
+      },
+      "pass": true
+    },
+    {
+      "name": "C81:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "R70 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R70 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R70 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R70 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R70 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R70 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R70:1 net matches",
+      "detail": {
+        "expected": "/V5_EXT",
+        "actual": "/V5_EXT"
+      },
+      "pass": true
+    },
+    {
+      "name": "R70:2 net matches",
+      "detail": {
+        "expected": "Net-(U10-OVP)",
+        "actual": "Net-(U10-OVP)"
+      },
+      "pass": true
+    },
+    {
+      "name": "R17 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R17 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R17 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R17 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R17 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R17 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R17:1 net matches",
+      "detail": {
+        "expected": "Net-(J4-B)",
+        "actual": "Net-(J4-B)"
+      },
+      "pass": true
+    },
+    {
+      "name": "R17:2 net matches",
+      "detail": {
+        "expected": "Net-(U3-2A)",
+        "actual": "Net-(U3-2A)"
+      },
+      "pass": true
+    },
+    {
+      "name": "D2 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "D2 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "D2 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "D2 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "D2 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "D2 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "D2:1 net matches",
+      "detail": {
+        "expected": "/VM",
+        "actual": "/VM"
+      },
+      "pass": true
+    },
+    {
+      "name": "D2:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "C80 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C80 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C80 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C80 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C80 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C80 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C80:1 net matches",
+      "detail": {
+        "expected": "/V3V3",
+        "actual": "/V3V3"
+      },
+      "pass": true
+    },
+    {
+      "name": "C80:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "R1 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R1 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R1 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R1 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R1 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R1 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R1:1 net matches",
+      "detail": {
+        "expected": "Net-(D1-A)",
+        "actual": "Net-(D1-A)"
+      },
+      "pass": true
+    },
+    {
+      "name": "R1:2 net matches",
+      "detail": {
+        "expected": "/输入、总开关与降压/SW_SOURCE",
+        "actual": "/输入、总开关与降压/SW_SOURCE"
+      },
+      "pass": true
+    },
+    {
+      "name": "R72 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R72 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R72 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R72 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R72 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R72 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R72:1 net matches",
+      "detail": {
+        "expected": "Net-(U10-ILIM)",
+        "actual": "Net-(U10-ILIM)"
+      },
+      "pass": true
+    },
+    {
+      "name": "R72:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "C39 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C39 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C39 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C39 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C39 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C39 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C39:1 net matches",
+      "detail": {
+        "expected": "/V3V3",
+        "actual": "/V3V3"
+      },
+      "pass": true
+    },
+    {
+      "name": "C39:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "R7 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R7 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R7 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R7 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R7 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R7 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R7:1 net matches",
+      "detail": {
+        "expected": "/右电机与编码器/MOTOR_RUN",
+        "actual": "/右电机与编码器/MOTOR_RUN"
+      },
+      "pass": true
+    },
+    {
+      "name": "R7:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "J4 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J4 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J4 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J4 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J4 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J4 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J4:1 net matches",
+      "detail": {
+        "expected": "/左电机与编码器/L_M_OUT2",
+        "actual": "/左电机与编码器/L_M_OUT2"
+      },
+      "pass": true
+    },
+    {
+      "name": "J4:2 net matches",
+      "detail": {
+        "expected": "/V3V3",
+        "actual": "/V3V3"
+      },
+      "pass": true
+    },
+    {
+      "name": "J4:3 net matches",
+      "detail": {
+        "expected": "Net-(J4-A)",
+        "actual": "Net-(J4-A)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J4:4 net matches",
+      "detail": {
+        "expected": "Net-(J4-B)",
+        "actual": "Net-(J4-B)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J4:5 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "J4:6 net matches",
+      "detail": {
+        "expected": "/左电机与编码器/L_M_OUT1",
+        "actual": "/左电机与编码器/L_M_OUT1"
+      },
+      "pass": true
+    },
+    {
+      "name": "C73 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C73 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C73 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C73 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C73 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C73 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C73:1 net matches",
+      "detail": {
+        "expected": "Net-(U10-SS)",
+        "actual": "Net-(U10-SS)"
+      },
+      "pass": true
+    },
+    {
+      "name": "C73:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "R10 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R10 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R10 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R10 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R10 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R10 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R10:1 net matches",
+      "detail": {
+        "expected": "/V3V3",
+        "actual": "/V3V3"
+      },
+      "pass": true
+    },
+    {
+      "name": "R10:2 net matches",
+      "detail": {
+        "expected": "Net-(U2-VREF)",
+        "actual": "Net-(U2-VREF)"
+      },
+      "pass": true
+    },
+    {
+      "name": "C1 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C1 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C1 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C1 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C1 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C1 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C1:1 net matches",
+      "detail": {
+        "expected": "/VM",
+        "actual": "/VM"
+      },
+      "pass": true
+    },
+    {
+      "name": "C1:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "SW3 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "SW3 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "SW3 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "SW3 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "SW3 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "SW3 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "SW3:1 net matches",
+      "detail": {
+        "expected": "/中景园屏幕与四个操作按钮/KEY_NEXT",
+        "actual": "/中景园屏幕与四个操作按钮/KEY_NEXT"
+      },
+      "pass": true
+    },
+    {
+      "name": "SW3:1 net matches",
+      "detail": {
+        "expected": "/中景园屏幕与四个操作按钮/KEY_NEXT",
+        "actual": "/中景园屏幕与四个操作按钮/KEY_NEXT"
+      },
+      "pass": true
+    },
+    {
+      "name": "SW3:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "SW3:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "F2 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "F2 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "F2 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "F2 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "F2 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "F2 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "F2:1 net matches",
+      "detail": {
+        "expected": "/VM",
+        "actual": "/VM"
+      },
+      "pass": true
+    },
+    {
+      "name": "F2:2 net matches",
+      "detail": {
+        "expected": "Net-(Q6-D)",
+        "actual": "Net-(Q6-D)"
+      },
+      "pass": true
+    },
+    {
+      "name": "C12 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C12 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C12 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C12 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C12 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C12 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C12:1 net matches",
+      "detail": {
+        "expected": "/VM",
+        "actual": "/VM"
+      },
+      "pass": true
+    },
+    {
+      "name": "C12:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "C11 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C11 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C11 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C11 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C11 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C11 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C11:1 net matches",
+      "detail": {
+        "expected": "/VM",
+        "actual": "/VM"
+      },
+      "pass": true
+    },
+    {
+      "name": "C11:2 net matches",
+      "detail": {
+        "expected": "Net-(U2-VCP)",
+        "actual": "Net-(U2-VCP)"
+      },
+      "pass": true
+    },
+    {
+      "name": "C78 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C78 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C78 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C78 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C78 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C78 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C78:1 net matches",
+      "detail": {
+        "expected": "/V5_EXT",
+        "actual": "/V5_EXT"
+      },
+      "pass": true
+    },
+    {
+      "name": "C78:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "R59 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R59 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R59 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R59 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R59 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R59 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R59:1 net matches",
+      "detail": {
+        "expected": "/V5_EXT",
+        "actual": "/V5_EXT"
+      },
+      "pass": true
+    },
+    {
+      "name": "R59:2 net matches",
+      "detail": {
+        "expected": "Net-(U1-FB)",
+        "actual": "Net-(U1-FB)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J20 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J20 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J20 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J20 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J20 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J20 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J20:1 net matches",
+      "detail": {
+        "expected": "/核心板接口/GRAY_CH1",
+        "actual": "/核心板接口/GRAY_CH1"
+      },
+      "pass": true
+    },
+    {
+      "name": "J20:2 net matches",
+      "detail": {
+        "expected": "/核心板接口/GRAY_CH2",
+        "actual": "/核心板接口/GRAY_CH2"
+      },
+      "pass": true
+    },
+    {
+      "name": "J20:3 net matches",
+      "detail": {
+        "expected": "/核心板接口/GRAY_CH3",
+        "actual": "/核心板接口/GRAY_CH3"
+      },
+      "pass": true
+    },
+    {
+      "name": "J20:4 net matches",
+      "detail": {
+        "expected": "/核心板接口/GRAY_CH4",
+        "actual": "/核心板接口/GRAY_CH4"
+      },
+      "pass": true
+    },
+    {
+      "name": "J20:5 net matches",
+      "detail": {
+        "expected": "/核心板接口/GRAY_CH5",
+        "actual": "/核心板接口/GRAY_CH5"
+      },
+      "pass": true
+    },
+    {
+      "name": "J20:6 net matches",
+      "detail": {
+        "expected": "/核心板接口/GRAY_CH6",
+        "actual": "/核心板接口/GRAY_CH6"
+      },
+      "pass": true
+    },
+    {
+      "name": "J20:7 net matches",
+      "detail": {
+        "expected": "/核心板接口/GRAY_CH7",
+        "actual": "/核心板接口/GRAY_CH7"
+      },
+      "pass": true
+    },
+    {
+      "name": "J20:8 net matches",
+      "detail": {
+        "expected": "/核心板接口/GRAY_CH8",
+        "actual": "/核心板接口/GRAY_CH8"
+      },
+      "pass": true
+    },
+    {
+      "name": "R33 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R33 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R33 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R33 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R33 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R33 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R33:1 net matches",
+      "detail": {
+        "expected": "/右电机与编码器/R_nFAULT",
+        "actual": "/右电机与编码器/R_nFAULT"
+      },
+      "pass": true
+    },
+    {
+      "name": "R33:2 net matches",
+      "detail": {
+        "expected": "/V3V3",
+        "actual": "/V3V3"
+      },
+      "pass": true
+    },
+    {
+      "name": "R53 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R53 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R53 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R53 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R53 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R53 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R53:1 net matches",
+      "detail": {
+        "expected": "/V3V3",
+        "actual": "/V3V3"
+      },
+      "pass": true
+    },
+    {
+      "name": "R53:2 net matches",
+      "detail": {
+        "expected": "/中景园屏幕与四个操作按钮/KEY_START",
+        "actual": "/中景园屏幕与四个操作按钮/KEY_START"
+      },
+      "pass": true
+    },
+    {
+      "name": "U14 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U14 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U14 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U14 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U14 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U14 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U14:1 net matches",
+      "detail": {
+        "expected": "Net-(Q5-D)",
+        "actual": "Net-(Q5-D)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U14:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "U14:3 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "U14:4 net matches",
+      "detail": {
+        "expected": "unconnected-(U14-STAT-Pad4)",
+        "actual": "unconnected-(U14-STAT-Pad4)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U14:5 net matches",
+      "detail": {
+        "expected": "Net-(Q5-G)",
+        "actual": "Net-(Q5-G)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U14:6 net matches",
+      "detail": {
+        "expected": "/灰度与 MaixCAM2 识别/V5_MAIX_PROT",
+        "actual": "/灰度与 MaixCAM2 识别/V5_MAIX_PROT"
+      },
+      "pass": true
+    },
+    {
+      "name": "R31 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R31 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R31 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R31 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R31 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R31 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R31:1 net matches",
+      "detail": {
+        "expected": "Net-(U4-VREF)",
+        "actual": "Net-(U4-VREF)"
+      },
+      "pass": true
+    },
+    {
+      "name": "R31:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "R52 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R52 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R52 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R52 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R52 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R52 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R52:1 net matches",
+      "detail": {
+        "expected": "/V3V3",
+        "actual": "/V3V3"
+      },
+      "pass": true
+    },
+    {
+      "name": "R52:2 net matches",
+      "detail": {
+        "expected": "/中景园屏幕与四个操作按钮/KEY_OK",
+        "actual": "/中景园屏幕与四个操作按钮/KEY_OK"
+      },
+      "pass": true
+    },
+    {
+      "name": "R76 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R76 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R76 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R76 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R76 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R76 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R76:1 net matches",
+      "detail": {
+        "expected": "/V3V3",
+        "actual": "/V3V3"
+      },
+      "pass": true
+    },
+    {
+      "name": "R76:2 net matches",
+      "detail": {
+        "expected": "Net-(Q4-D)",
+        "actual": "Net-(Q4-D)"
+      },
+      "pass": true
+    },
+    {
+      "name": "Q6 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "Q6 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "Q6 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "Q6 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "Q6 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "Q6 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "Q6:1 net matches",
+      "detail": {
+        "expected": "Net-(D5-A)",
+        "actual": "Net-(D5-A)"
+      },
+      "pass": true
+    },
+    {
+      "name": "Q6:2 net matches",
+      "detail": {
+        "expected": "Net-(Q6-D)",
+        "actual": "Net-(Q6-D)"
+      },
+      "pass": true
+    },
+    {
+      "name": "Q6:3 net matches",
+      "detail": {
+        "expected": "Net-(D5-K)",
+        "actual": "Net-(D5-K)"
+      },
+      "pass": true
+    },
+    {
+      "name": "Q8 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "Q8 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "Q8 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "Q8 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "Q8 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "Q8 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "Q8:1 net matches",
+      "detail": {
+        "expected": "Net-(Q8-B)",
+        "actual": "Net-(Q8-B)"
+      },
+      "pass": true
+    },
+    {
+      "name": "Q8:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "Q8:3 net matches",
+      "detail": {
+        "expected": "Net-(Q8-C)",
+        "actual": "Net-(Q8-C)"
+      },
+      "pass": true
+    },
+    {
+      "name": "D1 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "D1 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "D1 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "D1 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "D1 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "D1 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "D1:1 net matches",
+      "detail": {
+        "expected": "/输入、总开关与降压/SW_SOURCE",
+        "actual": "/输入、总开关与降压/SW_SOURCE"
+      },
+      "pass": true
+    },
+    {
+      "name": "D1:2 net matches",
+      "detail": {
+        "expected": "Net-(D1-A)",
+        "actual": "Net-(D1-A)"
+      },
+      "pass": true
+    },
+    {
+      "name": "R34 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R34 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R34 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R34 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R34 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R34 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R34:1 net matches",
+      "detail": {
+        "expected": "/右电机与编码器/MOTOR_RUN",
+        "actual": "/右电机与编码器/MOTOR_RUN"
+      },
+      "pass": true
+    },
+    {
+      "name": "R34:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "R83 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R83 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R83 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R83 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R83 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R83 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R83:1 net matches",
+      "detail": {
+        "expected": "/四脚蓝牙与外接步进驱动接口/STEP_PWR_EN",
+        "actual": "/四脚蓝牙与外接步进驱动接口/STEP_PWR_EN"
+      },
+      "pass": true
+    },
+    {
+      "name": "R83:2 net matches",
+      "detail": {
+        "expected": "Net-(Q8-B)",
+        "actual": "Net-(Q8-B)"
+      },
+      "pass": true
+    },
+    {
+      "name": "D3 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "D3 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "D3 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "D3 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "D3 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "D3 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "D3:1 net matches",
+      "detail": {
+        "expected": "/V5_SYS",
+        "actual": "/V5_SYS"
+      },
+      "pass": true
+    },
+    {
+      "name": "D3:2 net matches",
+      "detail": {
+        "expected": "/V5_EXT",
+        "actual": "/V5_EXT"
+      },
+      "pass": true
+    },
+    {
+      "name": "C20 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C20 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C20 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C20 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C20 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C20 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C20:1 net matches",
+      "detail": {
+        "expected": "/V3V3",
+        "actual": "/V3V3"
+      },
+      "pass": true
+    },
+    {
+      "name": "C20:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "C34 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C34 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C34 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C34 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C34 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C34 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C34:1 net matches",
+      "detail": {
+        "expected": "Net-(U4-VREF)",
+        "actual": "Net-(U4-VREF)"
+      },
+      "pass": true
+    },
+    {
+      "name": "C34:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "L1 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "L1 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "L1 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "L1 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "L1 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "L1 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "L1:1 net matches",
+      "detail": {
+        "expected": "Net-(U1-SW)",
+        "actual": "Net-(U1-SW)"
+      },
+      "pass": true
+    },
+    {
+      "name": "L1:2 net matches",
+      "detail": {
+        "expected": "/V5_EXT",
+        "actual": "/V5_EXT"
+      },
+      "pass": true
+    },
+    {
+      "name": "C13 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C13 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C13 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C13 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C13 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C13 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C13:1 net matches",
+      "detail": {
+        "expected": "/VM",
+        "actual": "/VM"
+      },
+      "pass": true
+    },
+    {
+      "name": "C13:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "C14 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C14 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C14 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C14 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C14 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C14 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C14:1 net matches",
+      "detail": {
+        "expected": "Net-(U2-VREF)",
+        "actual": "Net-(U2-VREF)"
+      },
+      "pass": true
+    },
+    {
+      "name": "C14:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "C50 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C50 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C50 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C50 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C50 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C50 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C50:1 net matches",
+      "detail": {
+        "expected": "/VM",
+        "actual": "/VM"
+      },
+      "pass": true
+    },
+    {
+      "name": "C50:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "R3 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R3 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R3 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R3 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R3 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R3 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R3:1 net matches",
+      "detail": {
+        "expected": "/VM",
+        "actual": "/VM"
+      },
+      "pass": true
+    },
+    {
+      "name": "R3:2 net matches",
+      "detail": {
+        "expected": "Net-(U1-EN)",
+        "actual": "Net-(U1-EN)"
+      },
+      "pass": true
+    },
+    {
+      "name": "R35 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R35 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R35 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R35 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R35 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R35 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R35:1 net matches",
+      "detail": {
+        "expected": "Net-(U4-IPROPI)",
+        "actual": "Net-(U4-IPROPI)"
+      },
+      "pass": true
+    },
+    {
+      "name": "R35:2 net matches",
+      "detail": {
+        "expected": "/右电机与编码器/R_ISENSE",
+        "actual": "/右电机与编码器/R_ISENSE"
+      },
+      "pass": true
+    },
+    {
+      "name": "C56 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C56 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C56 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C56 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C56 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C56 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C56:1 net matches",
+      "detail": {
+        "expected": "/V3V3_EXT",
+        "actual": "/V3V3_EXT"
+      },
+      "pass": true
+    },
+    {
+      "name": "C56:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "R50 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R50 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R50 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R50 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R50 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R50 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R50:1 net matches",
+      "detail": {
+        "expected": "/V3V3",
+        "actual": "/V3V3"
+      },
+      "pass": true
+    },
+    {
+      "name": "R50:2 net matches",
+      "detail": {
+        "expected": "/中景园屏幕与四个操作按钮/KEY_MODE",
+        "actual": "/中景园屏幕与四个操作按钮/KEY_MODE"
+      },
+      "pass": true
+    },
+    {
+      "name": "U2 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U2 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U2 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U2 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U2 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U2 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U2:1 net matches",
+      "detail": {
+        "expected": "/左电机与编码器/L_PWM",
+        "actual": "/左电机与编码器/L_PWM"
+      },
+      "pass": true
+    },
+    {
+      "name": "U2:2 net matches",
+      "detail": {
+        "expected": "/左电机与编码器/L_DIR",
+        "actual": "/左电机与编码器/L_DIR"
+      },
+      "pass": true
+    },
+    {
+      "name": "U2:3 net matches",
+      "detail": {
+        "expected": "/右电机与编码器/MOTOR_RUN",
+        "actual": "/右电机与编码器/MOTOR_RUN"
+      },
+      "pass": true
+    },
+    {
+      "name": "U2:4 net matches",
+      "detail": {
+        "expected": "/左电机与编码器/L_nFAULT",
+        "actual": "/左电机与编码器/L_nFAULT"
+      },
+      "pass": true
+    },
+    {
+      "name": "U2:5 net matches",
+      "detail": {
+        "expected": "Net-(U2-VREF)",
+        "actual": "Net-(U2-VREF)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U2:6 net matches",
+      "detail": {
+        "expected": "Net-(U2-IPROPI)",
+        "actual": "Net-(U2-IPROPI)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U2:7 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "U2:8 net matches",
+      "detail": {
+        "expected": "/左电机与编码器/L_M_OUT1",
+        "actual": "/左电机与编码器/L_M_OUT1"
+      },
+      "pass": true
+    },
+    {
+      "name": "U2:9 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "U2:10 net matches",
+      "detail": {
+        "expected": "/左电机与编码器/L_M_OUT2",
+        "actual": "/左电机与编码器/L_M_OUT2"
+      },
+      "pass": true
+    },
+    {
+      "name": "U2:11 net matches",
+      "detail": {
+        "expected": "/VM",
+        "actual": "/VM"
+      },
+      "pass": true
+    },
+    {
+      "name": "U2:12 net matches",
+      "detail": {
+        "expected": "Net-(U2-VCP)",
+        "actual": "Net-(U2-VCP)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U2:13 net matches",
+      "detail": {
+        "expected": "Net-(U2-CPH)",
+        "actual": "Net-(U2-CPH)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U2:14 net matches",
+      "detail": {
+        "expected": "Net-(U2-CPL)",
+        "actual": "Net-(U2-CPL)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U2:15 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "U2:16 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "U2:17 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "R51 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R51 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R51 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R51 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R51 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R51 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R51:1 net matches",
+      "detail": {
+        "expected": "/V3V3",
+        "actual": "/V3V3"
+      },
+      "pass": true
+    },
+    {
+      "name": "R51:2 net matches",
+      "detail": {
+        "expected": "/中景园屏幕与四个操作按钮/KEY_NEXT",
+        "actual": "/中景园屏幕与四个操作按钮/KEY_NEXT"
+      },
+      "pass": true
+    },
+    {
+      "name": "Q4 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "Q4 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "Q4 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "Q4 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "Q4 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "Q4 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "Q4:1 net matches",
+      "detail": {
+        "expected": "/灰度与 MaixCAM2 识别/V5_MAIX_PROT",
+        "actual": "/灰度与 MaixCAM2 识别/V5_MAIX_PROT"
+      },
+      "pass": true
+    },
+    {
+      "name": "Q4:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "Q4:3 net matches",
+      "detail": {
+        "expected": "Net-(Q4-D)",
+        "actual": "Net-(Q4-D)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U16 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U16 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U16 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U16 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U16 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U16 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U16:1 net matches",
+      "detail": {
+        "expected": "unconnected-(U16-nFAULT-Pad1)",
+        "actual": "unconnected-(U16-nFAULT-Pad1)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U16:2 net matches",
+      "detail": {
+        "expected": "/V5_EXT",
+        "actual": "/V5_EXT"
+      },
+      "pass": true
+    },
+    {
+      "name": "U16:3 net matches",
+      "detail": {
+        "expected": "/V5_EXT",
+        "actual": "/V5_EXT"
+      },
+      "pass": true
+    },
+    {
+      "name": "U16:4 net matches",
+      "detail": {
+        "expected": "/V5_EXT",
+        "actual": "/V5_EXT"
+      },
+      "pass": true
+    },
+    {
+      "name": "U16:5 net matches",
+      "detail": {
+        "expected": "/V5_EXT",
+        "actual": "/V5_EXT"
+      },
+      "pass": true
+    },
+    {
+      "name": "U16:6 net matches",
+      "detail": {
+        "expected": "/V5_EXT",
+        "actual": "/V5_EXT"
+      },
+      "pass": true
+    },
+    {
+      "name": "U16:7 net matches",
+      "detail": {
+        "expected": "/V5_EXT",
+        "actual": "/V5_EXT"
+      },
+      "pass": true
+    },
+    {
+      "name": "U16:8 net matches",
+      "detail": {
+        "expected": "/V5_EXT",
+        "actual": "/V5_EXT"
+      },
+      "pass": true
+    },
+    {
+      "name": "U16:9 net matches",
+      "detail": {
+        "expected": "Net-(U16-REF_RTN)",
+        "actual": "Net-(U16-REF_RTN)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U16:10 net matches",
+      "detail": {
+        "expected": "Net-(U16-REF)",
+        "actual": "Net-(U16-REF)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U16:11 net matches",
+      "detail": {
+        "expected": "Net-(J28-CC1)",
+        "actual": "Net-(J28-CC1)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U16:12 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "U16:13 net matches",
+      "detail": {
+        "expected": "Net-(J28-CC2)",
+        "actual": "Net-(J28-CC2)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U16:14 net matches",
+      "detail": {
+        "expected": "Net-(C83-Pad1)",
+        "actual": "Net-(C83-Pad1)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U16:15 net matches",
+      "detail": {
+        "expected": "Net-(C83-Pad1)",
+        "actual": "Net-(C83-Pad1)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U16:16 net matches",
+      "detail": {
+        "expected": "unconnected-(U16-nDEBUG-Pad16)",
+        "actual": "unconnected-(U16-nDEBUG-Pad16)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U16:17 net matches",
+      "detail": {
+        "expected": "unconnected-(U16-nAUDIO-Pad17)",
+        "actual": "unconnected-(U16-nAUDIO-Pad17)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U16:18 net matches",
+      "detail": {
+        "expected": "unconnected-(U16-nPOL-Pad18)",
+        "actual": "unconnected-(U16-nPOL-Pad18)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U16:19 net matches",
+      "detail": {
+        "expected": "unconnected-(U16-nUFP-Pad19)",
+        "actual": "unconnected-(U16-nUFP-Pad19)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U16:20 net matches",
+      "detail": {
+        "expected": "unconnected-(U16-nLD_DET-Pad20)",
+        "actual": "unconnected-(U16-nLD_DET-Pad20)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U16:21 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "R13 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R13 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R13 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R13 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R13 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R13 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R13:1 net matches",
+      "detail": {
+        "expected": "/左电机与编码器/L_nFAULT",
+        "actual": "/左电机与编码器/L_nFAULT"
+      },
+      "pass": true
+    },
+    {
+      "name": "R13:2 net matches",
+      "detail": {
+        "expected": "/V3V3",
+        "actual": "/V3V3"
+      },
+      "pass": true
+    },
+    {
+      "name": "R37 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R37 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R37 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R37 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R37 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R37 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R37:1 net matches",
+      "detail": {
+        "expected": "Net-(J6-B)",
+        "actual": "Net-(J6-B)"
+      },
+      "pass": true
+    },
+    {
+      "name": "R37:2 net matches",
+      "detail": {
+        "expected": "Net-(U5-2A)",
+        "actual": "Net-(U5-2A)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U13 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U13 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U13 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U13 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U13 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U13 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U13:1 net matches",
+      "detail": {
+        "expected": "Net-(Q4-D)",
+        "actual": "Net-(Q4-D)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U13:2 net matches",
+      "detail": {
+        "expected": "/核心板接口/VIDEO_TX",
+        "actual": "/核心板接口/VIDEO_TX"
+      },
+      "pass": true
+    },
+    {
+      "name": "U13:3 net matches",
+      "detail": {
+        "expected": "/核心板接口/VIDEO_RX",
+        "actual": "/核心板接口/VIDEO_RX"
+      },
+      "pass": true
+    },
+    {
+      "name": "U13:4 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "U13:5 net matches",
+      "detail": {
+        "expected": "Net-(J19-UART4_TX)",
+        "actual": "Net-(J19-UART4_TX)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U13:6 net matches",
+      "detail": {
+        "expected": "Net-(J19-UART4_RX)",
+        "actual": "Net-(J19-UART4_RX)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U13:7 net matches",
+      "detail": {
+        "expected": "Net-(Q4-D)",
+        "actual": "Net-(Q4-D)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U13:8 net matches",
+      "detail": {
+        "expected": "/V3V3",
+        "actual": "/V3V3"
+      },
+      "pass": true
+    },
+    {
+      "name": "C15 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C15 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C15 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C15 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C15 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C15 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C15:1 net matches",
+      "detail": {
+        "expected": "Net-(U2-IPROPI)",
+        "actual": "Net-(U2-IPROPI)"
+      },
+      "pass": true
+    },
+    {
+      "name": "C15:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "R88 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R88 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R88 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R88 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R88 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R88 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R88:1 net matches",
+      "detail": {
+        "expected": "/V3V3",
+        "actual": "/V3V3"
+      },
+      "pass": true
+    },
+    {
+      "name": "R88:2 net matches",
+      "detail": {
+        "expected": "/四脚蓝牙与外接步进驱动接口/STEP_UART_TX",
+        "actual": "/四脚蓝牙与外接步进驱动接口/STEP_UART_TX"
+      },
+      "pass": true
+    },
+    {
+      "name": "C16 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C16 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C16 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C16 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C16 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C16 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C16:1 net matches",
+      "detail": {
+        "expected": "/左电机与编码器/L_ISENSE",
+        "actual": "/左电机与编码器/L_ISENSE"
+      },
+      "pass": true
+    },
+    {
+      "name": "C16:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "C76 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C76 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C76 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C76 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C76 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C76 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C76:1 net matches",
+      "detail": {
+        "expected": "/V3V3",
+        "actual": "/V3V3"
+      },
+      "pass": true
+    },
+    {
+      "name": "C76:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "J28 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J28 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J28 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J28 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J28 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J28 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J28:A5 net matches",
+      "detail": {
+        "expected": "Net-(J28-CC1)",
+        "actual": "Net-(J28-CC1)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J28:A9 net matches",
+      "detail": {
+        "expected": "Net-(C83-Pad1)",
+        "actual": "Net-(C83-Pad1)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J28:A12 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "J28:B5 net matches",
+      "detail": {
+        "expected": "Net-(J28-CC2)",
+        "actual": "Net-(J28-CC2)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J28:B9 net matches",
+      "detail": {
+        "expected": "Net-(C83-Pad1)",
+        "actual": "Net-(C83-Pad1)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J28:B12 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "J28:SH net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "J28:SH net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "J28:SH net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "J28:SH net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "C79 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C79 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C79 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C79 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C79 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C79 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C79:1 net matches",
+      "detail": {
+        "expected": "Net-(Q5-D)",
+        "actual": "Net-(Q5-D)"
+      },
+      "pass": true
+    },
+    {
+      "name": "C79:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "R14 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R14 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R14 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R14 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R14 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R14 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R14:1 net matches",
+      "detail": {
+        "expected": "/右电机与编码器/MOTOR_RUN",
+        "actual": "/右电机与编码器/MOTOR_RUN"
+      },
+      "pass": true
+    },
+    {
+      "name": "R14:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "R77 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R77 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R77 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R77 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R77 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R77 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R77:1 net matches",
+      "detail": {
+        "expected": "/灰度与 MaixCAM2 识别/V5_MAIX_PROT",
+        "actual": "/灰度与 MaixCAM2 识别/V5_MAIX_PROT"
+      },
+      "pass": true
+    },
+    {
+      "name": "R77:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "J23 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J23 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J23 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J23 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J23 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J23 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J23:1 net matches",
+      "detail": {
+        "expected": "/四脚蓝牙与外接步进驱动接口/VM_STEP",
+        "actual": "/四脚蓝牙与外接步进驱动接口/VM_STEP"
+      },
+      "pass": true
+    },
+    {
+      "name": "J23:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "J23:3 net matches",
+      "detail": {
+        "expected": "unconnected-(J23-COM_NC-Pad3)",
+        "actual": "unconnected-(J23-COM_NC-Pad3)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J23:4 net matches",
+      "detail": {
+        "expected": "unconnected-(J23-EN_NC-Pad4)",
+        "actual": "unconnected-(J23-EN_NC-Pad4)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J23:5 net matches",
+      "detail": {
+        "expected": "unconnected-(J23-STEP_NC-Pad5)",
+        "actual": "unconnected-(J23-STEP_NC-Pad5)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J23:6 net matches",
+      "detail": {
+        "expected": "unconnected-(J23-DIR_NC-Pad6)",
+        "actual": "unconnected-(J23-DIR_NC-Pad6)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J23:7 net matches",
+      "detail": {
+        "expected": "Net-(J23-R/A/H_RX)",
+        "actual": "Net-(J23-R{slash}A{slash}H_RX)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J23:8 net matches",
+      "detail": {
+        "expected": "Net-(J23-T/B/L_TX)",
+        "actual": "Net-(J23-T{slash}B{slash}L_TX)"
+      },
+      "pass": true
+    },
+    {
+      "name": "C63 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C63 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C63 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C63 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C63 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C63 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C63:1 net matches",
+      "detail": {
+        "expected": "/V5_EXT",
+        "actual": "/V5_EXT"
+      },
+      "pass": true
+    },
+    {
+      "name": "C63:2 net matches",
+      "detail": {
+        "expected": "Net-(U1-FB)",
+        "actual": "Net-(U1-FB)"
+      },
+      "pass": true
+    },
+    {
+      "name": "R84 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R84 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R84 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R84 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R84 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R84 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R84:1 net matches",
+      "detail": {
+        "expected": "Net-(Q8-B)",
+        "actual": "Net-(Q8-B)"
+      },
+      "pass": true
+    },
+    {
+      "name": "R84:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "R32 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R32 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R32 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R32 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R32 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R32 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R32:1 net matches",
+      "detail": {
+        "expected": "Net-(U4-IPROPI)",
+        "actual": "Net-(U4-IPROPI)"
+      },
+      "pass": true
+    },
+    {
+      "name": "R32:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "Q7 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "Q7 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "Q7 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "Q7 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "Q7 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "Q7 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "Q7:1 net matches",
+      "detail": {
+        "expected": "Net-(D5-A)",
+        "actual": "Net-(D5-A)"
+      },
+      "pass": true
+    },
+    {
+      "name": "Q7:2 net matches",
+      "detail": {
+        "expected": "/四脚蓝牙与外接步进驱动接口/VM_STEP",
+        "actual": "/四脚蓝牙与外接步进驱动接口/VM_STEP"
+      },
+      "pass": true
+    },
+    {
+      "name": "Q7:3 net matches",
+      "detail": {
+        "expected": "Net-(D5-K)",
+        "actual": "Net-(D5-K)"
+      },
+      "pass": true
+    },
+    {
+      "name": "R69 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R69 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R69 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R69 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R69 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R69 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R69:1 net matches",
+      "detail": {
+        "expected": "Net-(U10-ENUV)",
+        "actual": "Net-(U10-ENUV)"
+      },
+      "pass": true
+    },
+    {
+      "name": "R69:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "R19 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R19 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R19 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R19 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R19 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R19 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R19:1 net matches",
+      "detail": {
+        "expected": "Net-(J4-B)",
+        "actual": "Net-(J4-B)"
+      },
+      "pass": true
+    },
+    {
+      "name": "R19:2 net matches",
+      "detail": {
+        "expected": "/V3V3",
+        "actual": "/V3V3"
+      },
+      "pass": true
+    },
+    {
+      "name": "C18 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C18 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C18 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C18 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C18 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C18 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C18:1 net matches",
+      "detail": {
+        "expected": "Net-(U3-2A)",
+        "actual": "Net-(U3-2A)"
+      },
+      "pass": true
+    },
+    {
+      "name": "C18:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "F1 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "F1 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "F1 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "F1 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "F1 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "F1 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "F1:1 net matches",
+      "detail": {
+        "expected": "Net-(J1-BAT+)",
+        "actual": "Net-(J1-BAT+)"
+      },
+      "pass": true
+    },
+    {
+      "name": "F1:2 net matches",
+      "detail": {
+        "expected": "Net-(Q1-D)",
+        "actual": "Net-(Q1-D)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J15 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J15 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J15 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J15 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J15 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J15 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J15:1 net matches",
+      "detail": {
+        "expected": "/V3V3_EXT",
+        "actual": "/V3V3_EXT"
+      },
+      "pass": true
+    },
+    {
+      "name": "J15:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "J15:3 net matches",
+      "detail": {
+        "expected": "/四脚蓝牙与外接步进驱动接口/BT_TX",
+        "actual": "/四脚蓝牙与外接步进驱动接口/BT_TX"
+      },
+      "pass": true
+    },
+    {
+      "name": "J15:4 net matches",
+      "detail": {
+        "expected": "/四脚蓝牙与外接步进驱动接口/BT_RX",
+        "actual": "/四脚蓝牙与外接步进驱动接口/BT_RX"
+      },
+      "pass": true
+    },
+    {
+      "name": "R68 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R68 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R68 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R68 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R68 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R68 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R68:1 net matches",
+      "detail": {
+        "expected": "Net-(J27-EN_FEED)",
+        "actual": "Net-(J27-EN_FEED)"
+      },
+      "pass": true
+    },
+    {
+      "name": "R68:2 net matches",
+      "detail": {
+        "expected": "Net-(U10-ENUV)",
+        "actual": "Net-(U10-ENUV)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U7 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U7 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U7 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U7 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U7 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U7 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U7:1 net matches",
+      "detail": {
+        "expected": "/V5_EXT",
+        "actual": "/V5_EXT"
+      },
+      "pass": true
+    },
+    {
+      "name": "U7:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "U7:3 net matches",
+      "detail": {
+        "expected": "/V5_EXT",
+        "actual": "/V5_EXT"
+      },
+      "pass": true
+    },
+    {
+      "name": "U7:4 net matches",
+      "detail": {
+        "expected": "unconnected-(U7-NC-Pad4)",
+        "actual": "unconnected-(U7-NC-Pad4)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U7:5 net matches",
+      "detail": {
+        "expected": "/V3V3_EXT",
+        "actual": "/V3V3_EXT"
+      },
+      "pass": true
+    },
+    {
+      "name": "J19 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J19 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J19 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J19 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J19 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J19 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J19:1 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "J19:2 net matches",
+      "detail": {
+        "expected": "/灰度与 MaixCAM2 识别/V5_MAIX_PROT",
+        "actual": "/灰度与 MaixCAM2 识别/V5_MAIX_PROT"
+      },
+      "pass": true
+    },
+    {
+      "name": "J19:3 net matches",
+      "detail": {
+        "expected": "unconnected-(J19-SCL_NC-Pad3)",
+        "actual": "unconnected-(J19-SCL_NC-Pad3)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J19:4 net matches",
+      "detail": {
+        "expected": "unconnected-(J19-SDA_NC-Pad4)",
+        "actual": "unconnected-(J19-SDA_NC-Pad4)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J19:5 net matches",
+      "detail": {
+        "expected": "Net-(J19-UART4_TX)",
+        "actual": "Net-(J19-UART4_TX)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J19:6 net matches",
+      "detail": {
+        "expected": "Net-(J19-UART4_RX)",
+        "actual": "Net-(J19-UART4_RX)"
+      },
+      "pass": true
+    },
+    {
+      "name": "J19:MP net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "J19:MP net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "C32 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C32 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C32 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C32 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C32 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C32 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C32:1 net matches",
+      "detail": {
+        "expected": "/VM",
+        "actual": "/VM"
+      },
+      "pass": true
+    },
+    {
+      "name": "C32:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "C82 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C82 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C82 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C82 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C82 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C82 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C82:1 net matches",
+      "detail": {
+        "expected": "/V5_EXT",
+        "actual": "/V5_EXT"
+      },
+      "pass": true
+    },
+    {
+      "name": "C82:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "R89 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R89 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R89 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R89 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R89 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R89 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R89:1 net matches",
+      "detail": {
+        "expected": "Net-(J23-T/B/L_TX)",
+        "actual": "Net-(J23-T{slash}B{slash}L_TX)"
+      },
+      "pass": true
+    },
+    {
+      "name": "R89:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "C2 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C2 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C2 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C2 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C2 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C2 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C2:1 net matches",
+      "detail": {
+        "expected": "/VM",
+        "actual": "/VM"
+      },
+      "pass": true
+    },
+    {
+      "name": "C2:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "R90 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R90 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R90 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R90 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R90 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R90 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R90:1 net matches",
+      "detail": {
+        "expected": "Net-(J23-R/A/H_RX)",
+        "actual": "Net-(J23-R{slash}A{slash}H_RX)"
+      },
+      "pass": true
+    },
+    {
+      "name": "R90:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "C77 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C77 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C77 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C77 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C77 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C77 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C77:1 net matches",
+      "detail": {
+        "expected": "Net-(U10-ENUV)",
+        "actual": "Net-(U10-ENUV)"
+      },
+      "pass": true
+    },
+    {
+      "name": "C77:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "C72 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C72 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C72 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C72 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C72 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C72 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C72:1 net matches",
+      "detail": {
+        "expected": "/V5_EXT",
+        "actual": "/V5_EXT"
+      },
+      "pass": true
+    },
+    {
+      "name": "C72:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "C30 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C30 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C30 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C30 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C30 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C30 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "C30:1 net matches",
+      "detail": {
+        "expected": "Net-(U4-CPH)",
+        "actual": "Net-(U4-CPH)"
+      },
+      "pass": true
+    },
+    {
+      "name": "C30:2 net matches",
+      "detail": {
+        "expected": "Net-(U4-CPL)",
+        "actual": "Net-(U4-CPL)"
+      },
+      "pass": true
+    },
+    {
+      "name": "R78 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R78 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R78 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R78 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R78 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R78 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R78:1 net matches",
+      "detail": {
+        "expected": "Net-(J19-UART4_TX)",
+        "actual": "Net-(J19-UART4_TX)"
+      },
+      "pass": true
+    },
+    {
+      "name": "R78:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "SW4 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "SW4 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "SW4 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "SW4 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "SW4 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "SW4 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "SW4:1 net matches",
+      "detail": {
+        "expected": "/中景园屏幕与四个操作按钮/KEY_OK",
+        "actual": "/中景园屏幕与四个操作按钮/KEY_OK"
+      },
+      "pass": true
+    },
+    {
+      "name": "SW4:1 net matches",
+      "detail": {
+        "expected": "/中景园屏幕与四个操作按钮/KEY_OK",
+        "actual": "/中景园屏幕与四个操作按钮/KEY_OK"
+      },
+      "pass": true
+    },
+    {
+      "name": "SW4:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "SW4:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "R82 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R82 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R82 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R82 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R82 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R82 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R82:1 net matches",
+      "detail": {
+        "expected": "Net-(D5-A)",
+        "actual": "Net-(D5-A)"
+      },
+      "pass": true
+    },
+    {
+      "name": "R82:2 net matches",
+      "detail": {
+        "expected": "Net-(Q8-C)",
+        "actual": "Net-(Q8-C)"
+      },
+      "pass": true
+    },
+    {
+      "name": "R38 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R38 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R38 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R38 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R38 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R38 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R38:1 net matches",
+      "detail": {
+        "expected": "/V3V3",
+        "actual": "/V3V3"
+      },
+      "pass": true
+    },
+    {
+      "name": "R38:2 net matches",
+      "detail": {
+        "expected": "Net-(J6-A)",
+        "actual": "Net-(J6-A)"
+      },
+      "pass": true
+    },
+    {
+      "name": "R30 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R30 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R30 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R30 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R30 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R30 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R30:1 net matches",
+      "detail": {
+        "expected": "/V3V3",
+        "actual": "/V3V3"
+      },
+      "pass": true
+    },
+    {
+      "name": "R30:2 net matches",
+      "detail": {
+        "expected": "Net-(U4-VREF)",
+        "actual": "Net-(U4-VREF)"
+      },
+      "pass": true
+    },
+    {
+      "name": "R91 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R91 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R91 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R91 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R91 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R91 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R91:1 net matches",
+      "detail": {
+        "expected": "Net-(U16-REF)",
+        "actual": "Net-(U16-REF)"
+      },
+      "pass": true
+    },
+    {
+      "name": "R91:2 net matches",
+      "detail": {
+        "expected": "Net-(U16-REF_RTN)",
+        "actual": "Net-(U16-REF_RTN)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U3 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U3 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U3 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U3 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U3 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U3 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U3:1 net matches",
+      "detail": {
+        "expected": "Net-(U3-1A)",
+        "actual": "Net-(U3-1A)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U3:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "U3:3 net matches",
+      "detail": {
+        "expected": "Net-(U3-2A)",
+        "actual": "Net-(U3-2A)"
+      },
+      "pass": true
+    },
+    {
+      "name": "U3:4 net matches",
+      "detail": {
+        "expected": "/左电机与编码器/L_ENC_B",
+        "actual": "/左电机与编码器/L_ENC_B"
+      },
+      "pass": true
+    },
+    {
+      "name": "U3:5 net matches",
+      "detail": {
+        "expected": "/V3V3",
+        "actual": "/V3V3"
+      },
+      "pass": true
+    },
+    {
+      "name": "U3:6 net matches",
+      "detail": {
+        "expected": "/左电机与编码器/L_ENC_A",
+        "actual": "/左电机与编码器/L_ENC_A"
+      },
+      "pass": true
+    },
+    {
+      "name": "Q1 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "Q1 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "Q1 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "Q1 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "Q1 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "Q1 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "Q1:1 net matches",
+      "detail": {
+        "expected": "Net-(D1-A)",
+        "actual": "Net-(D1-A)"
+      },
+      "pass": true
+    },
+    {
+      "name": "Q1:2 net matches",
+      "detail": {
+        "expected": "Net-(Q1-D)",
+        "actual": "Net-(Q1-D)"
+      },
+      "pass": true
+    },
+    {
+      "name": "Q1:3 net matches",
+      "detail": {
+        "expected": "/输入、总开关与降压/SW_SOURCE",
+        "actual": "/输入、总开关与降压/SW_SOURCE"
+      },
+      "pass": true
+    },
+    {
+      "name": "Q5 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "Q5 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "Q5 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "Q5 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "Q5 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "Q5 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "Q5:1 net matches",
+      "detail": {
+        "expected": "Net-(Q5-G)",
+        "actual": "Net-(Q5-G)"
+      },
+      "pass": true
+    },
+    {
+      "name": "Q5:2 net matches",
+      "detail": {
+        "expected": "Net-(Q5-D)",
+        "actual": "Net-(Q5-D)"
+      },
+      "pass": true
+    },
+    {
+      "name": "Q5:3 net matches",
+      "detail": {
+        "expected": "/灰度与 MaixCAM2 识别/V5_MAIX_PROT",
+        "actual": "/灰度与 MaixCAM2 识别/V5_MAIX_PROT"
+      },
+      "pass": true
+    },
+    {
+      "name": "R11 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R11 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R11 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R11 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R11 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R11 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R11:1 net matches",
+      "detail": {
+        "expected": "Net-(U2-VREF)",
+        "actual": "Net-(U2-VREF)"
+      },
+      "pass": true
+    },
+    {
+      "name": "R11:2 net matches",
+      "detail": {
+        "expected": "GND",
+        "actual": "GND"
+      },
+      "pass": true
+    },
+    {
+      "name": "R36 footprint matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R36 value matches schematic",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R36 schematic UUID path correct",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R36 footprint UUID retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R36 user position/rotation retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R36 pad UUIDs retained",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "R36:1 net matches",
+      "detail": {
+        "expected": "Net-(J6-A)",
+        "actual": "Net-(J6-A)"
+      },
+      "pass": true
+    },
+    {
+      "name": "R36:2 net matches",
+      "detail": {
+        "expected": "Net-(U5-1A)",
+        "actual": "Net-(U5-1A)"
+      },
+      "pass": true
+    },
+    {
+      "name": "segment user objects unchanged",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "via user objects unchanged",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "zone user objects unchanged",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "gr_line user objects unchanged",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "gr_arc user objects unchanged",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "gr_rect user objects unchanged",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "setup user objects unchanged",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "layers user objects unchanged",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "property user objects unchanged",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "U1 board lands match corrected local footprint",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "J19 board lands match corrected local footprint",
+      "detail": null,
+      "pass": true
+    },
+    {
+      "name": "native schematic parity is zero",
+      "detail": null,
+      "pass": true
+    }
+  ],
+  "pcb_sha256": "a9d3eaf3d6b8b554d5c3fbb33f5be6a6ed42b33bd5c7d880d1c1099d51d96d65",
+  "schematic_parity": 0,
+  "drc_violations": 18,
+  "unconnected_items": 305,
+  "limitation": "Component/net synchronization is verified. Native DRC remains failing; this report does not assert routing/manufacturing readiness.",
+  "pass": true
+}

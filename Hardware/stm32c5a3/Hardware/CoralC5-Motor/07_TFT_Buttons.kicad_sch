@@ -7,7 +7,7 @@
 	(title_block
 		(title "中景园屏幕与四个操作按钮")
 		(date "2026-11-07")
-		(rev "M2.7")
+		(rev "M2.8")
 		(company "SmallCoral / CoralC5-Motor")
 		(comment 1 "原理图设计；实板电流、温升与线束待验证")
 	)
@@ -1448,15 +1448,27 @@
 		)
 		(uuid "390528fd-1404-5991-a1da-735f3b1d345d")
 	)
-	(label "GND"
-		(at 57.15 52.07 0)
+	(global_label "GND"
+		(shape passive)
+		(at 57.15 52.07 180)
 		(effects
 			(font
 				(size 1.016 1.016)
 			)
-			(justify left bottom)
+			(justify right)
 		)
 		(uuid "9ef967ce-415a-586f-a77a-c907ea6e63bc")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 57.15 52.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 	)
 	(hierarchical_label "TFT_SCK"
 		(shape bidirectional)

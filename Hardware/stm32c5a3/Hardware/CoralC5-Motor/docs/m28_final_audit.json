@@ -1,0 +1,1227 @@
+{
+  "completed_at": "2026-11-08T00:07:55+08:00",
+  "design_revision_date": "2026-11-07",
+  "source_commit": "d79ffc78ad5093452b1b1b852f7de347f0cc084b",
+  "working_tree_edits": true,
+  "tools": {
+    "kicad_cli": "10.0.8",
+    "kicad_python": "3.11.5",
+    "pdf_python": "3.12.14",
+    "pymupdf": "2.1",
+    "uv": "0.12.23"
+  },
+  "checks": 238,
+  "failed": [],
+  "results": [
+    {
+      "name": "protected Hardware/stm32c5a3/Hardware/CoralC5-Core/02_Power_USB.kicad_sch",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "protected Hardware/stm32c5a3/Hardware/CoralC5-Core/03_MCU.kicad_sch",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "protected Hardware/stm32c5a3/Hardware/CoralC5-Core/04_Interface.kicad_sch",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "protected Hardware/stm32c5a3/Hardware/CoralC5-Core/CoralC5-Core.kicad_pcb",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "protected Hardware/stm32c5a3/Hardware/CoralC5-Core/CoralC5-Core.kicad_pro",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "protected Hardware/stm32c5a3/Hardware/CoralC5-Core/CoralC5-Core.kicad_sch",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "protected Hardware/stm32c5a3/Hardware/CoralC5-Core/DevBoard.kicad_sym",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "protected Hardware/stm32c5a3/Hardware/CoralC5-Expansion/02_Interface.kicad_sch",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "protected Hardware/stm32c5a3/Hardware/CoralC5-Expansion/03_Power.kicad_sch",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "protected Hardware/stm32c5a3/Hardware/CoralC5-Expansion/04_Ethernet.kicad_sch",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "protected Hardware/stm32c5a3/Hardware/CoralC5-Expansion/05_WiFi_BLE.kicad_sch",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "protected Hardware/stm32c5a3/Hardware/CoralC5-Expansion/06_microSD.kicad_sch",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "protected Hardware/stm32c5a3/Hardware/CoralC5-Expansion/07_Headers_Debug.kicad_sch",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "protected Hardware/stm32c5a3/Hardware/CoralC5-Expansion/CoralC5-Expansion.kicad_pcb",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "protected Hardware/stm32c5a3/Hardware/CoralC5-Expansion/CoralC5-Expansion.kicad_pro",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "protected Hardware/stm32c5a3/Hardware/CoralC5-Expansion/CoralC5-Expansion.kicad_sch",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "protected Hardware/stm32c5a3/Hardware/CoralC5-Expansion/DevBoard.kicad_sym",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "protected Hardware/stm32c5a3/Hardware/Shared/interface.csv",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "protected Hardware/stm32c5a3/Hardware/Shared/interface.json",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "protected Hardware/stm32c5a3/Hardware/Shared/edge_pin_order.json",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "protected Hardware/stm32c5a3/Hardware/CoralC5-Motor/.history/.gitignore",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "protected Hardware/stm32c5a3/Hardware/CoralC5-Motor/.history/02_Power.kicad_sch",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "protected Hardware/stm32c5a3/Hardware/CoralC5-Motor/.history/03_Core_Interface.kicad_sch",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "protected Hardware/stm32c5a3/Hardware/CoralC5-Motor/.history/04_Left_Motor.kicad_sch",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "protected Hardware/stm32c5a3/Hardware/CoralC5-Motor/.history/05_Right_Motor.kicad_sch",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "protected Hardware/stm32c5a3/Hardware/CoralC5-Motor/.history/CoralC5-Motor.kicad_pcb",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "protected Hardware/stm32c5a3/Hardware/CoralC5-Motor/.history/CoralC5-Motor.kicad_sch",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "protected Hardware/stm32c5a3/Hardware/CoralC5-Motor/.history/README.txt",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline 02_Power.kicad_sch",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline 03_Core_Interface.kicad_sch",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline 04_Left_Motor.kicad_sch",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline 05_Right_Motor.kicad_sch",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline 06_Module_Power.kicad_sch",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline 07_TFT_Buttons.kicad_sch",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline 08_Grayscale_Cameras.kicad_sch",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline 09_Bluetooth_Stepper.kicad_sch",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline 10_Lichee_Interface.kicad_sch",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline CoralC5-Motor.kicad_pcb",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline CoralC5-Motor.kicad_pro",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline CoralC5-Motor.kicad_sch",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline docs/battery_assessment.md",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline docs/bluetooth_pinout_revision.json",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline docs/BOM.csv",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline docs/BOM_M2_SCHEMATIC_DRAFT.csv",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline docs/bom_verification.json",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline docs/connector_revision.json",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline docs/CoralC5-Motor_Schematic.pdf",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline docs/core_motor_98_contact_audit.csv",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline docs/core_netlist.xml",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline docs/core_pin_assignment.csv",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline docs/current_design.json",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline docs/design_manifest.json",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline docs/drc.json",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline docs/erc-m28-first.json",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline docs/erc.json",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline docs/footprint_export.json",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline docs/grayscale_photo_revision.json",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline docs/jumpers_revision.json",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline docs/layout_edit.json",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline docs/layout_verification.json",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline docs/m26_checker_probes.json",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline docs/m26_final_audit.json",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline docs/m26_revision.json",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline docs/m26_verification_history.json",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline docs/m27_revision.json",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline docs/m28_revision.json",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline docs/m2_design.json",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline docs/m2_pin_assignment.csv",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline docs/netlist.xml",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline docs/passive_0603_revision.json",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline docs/pcb-drc-before-sync-m27.json",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline docs/pcb-drc-m27.json",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline docs/pcb_sync_m27.json",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline docs/pcb_sync_verification.json",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline docs/power_revision.json",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline docs/procurement_m27.json",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline docs/smd_buttons_revision.json",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline docs/verification.json",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline docs/vision_power_revision.json",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline docs/visual_check.json",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline docs/zdt_ttl_design.json",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline fp-lib-table",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Models/Button_Switch_THT__SW_PUSH_6mm_H4.3mm__SW_PUSH_6mm_H4.3mm.step",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Models/C5_EDGE_3_Socket__Streamline_Socket.step",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Models/Capacitor_SMD__C_0805_2012Metric__C_0805_2012Metric.step",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Models/Capacitor_SMD__C_1206_3216Metric__C_1206_3216Metric.step",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Models/Capacitor_SMD__C_1210_3225Metric__C_1210_3225Metric.step",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Models/Capacitor_SMD__CP_Elec_10x7.9__CP_Elec_10x7.9.step",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Models/Capacitor_THT__CP_Radial_D10.0mm_P5.00mm__CP_Radial_D10.0mm_P5.00mm.step",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Models/Connector_JST__JST_XH_B10B-XH-A_1x10_P2.50mm_Vertical.step",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Models/Connector_JST__JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical.step",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Models/Connector_JST__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical.step",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Models/Connector_JST__JST_XH_B8B-XH-A_1x08_P2.50mm_Vertical.step",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Models/Connector_PinHeader_2.54mm__PinHeader_1x02_P2.54mm_Vertical__PinHeader_1x02_P2.54mm_Vertical.step",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Models/Connector_PinHeader_2.54mm__PinHeader_1x03_P2.54mm_Vertical__PinHeader_1x03_P2.54mm_Vertical.step",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Models/Connector_PinHeader_2.54mm__PinHeader_1x04_P2.54mm_Vertical__PinHeader_1x04_P2.54mm_Vertical.step",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Models/Connector_PinHeader_2.54mm__PinHeader_1x06_P2.54mm_Vertical__PinHeader_1x06_P2.54mm_Vertical.step",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Models/Connector_PinHeader_2.54mm__PinHeader_1x08_P2.54mm_Vertical__PinHeader_1x08_P2.54mm_Vertical.step",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Models/Connector_PinHeader_2.54mm__PinHeader_1x10_P2.54mm_Vertical__PinHeader_1x10_P2.54mm_Vertical.step",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Models/Connector_PinHeader_2.54mm__PinHeader_2x05_P2.54mm_Vertical__PinHeader_2x05_P2.54mm_Vertical.step",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Models/Connector_PinHeader_2.54mm__PinHeader_2x06_P2.54mm_Vertical__PinHeader_2x06_P2.54mm_Vertical.step",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Models/Connector_PinSocket_2.54mm__PinSocket_1x04_P2.54mm_Vertical.step",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Models/Connector_PinSocket_2.54mm__PinSocket_1x08_P2.54mm_Vertical.step",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Models/Connector_USB__USB_C_Receptacle_GCT_USB4125-xx-x_6P_TopMnt_Horizontal__USB_C_Receptacle_GCT_USB4125-xx-x_6P_TopMnt_Horizontal.step",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Models/DC005_XKB_5A_2mm.wrl",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Models/Diode_SMD__D_SMA__D_SMA.step",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Models/Diode_SMD__D_SOD-123__D_SOD-123.step",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Models/DRV8874_PWP0016__HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.78x3.37mm.step",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Models/Fuse_454_generic.wrl",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Models/Fuse__Fuse_1206_3216Metric__Fuse_1206_3216Metric.step",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Models/Inductor_SMD__L_Bourns_SRN6045TA__L_Bourns_SRN6045TA.step",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Models/Inductor_SMD__L_Wuerth_HCI-1050__L_Wuerth_HCI-1050.step",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Models/JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical.step",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Models/L_Bourns_SRN8040TA_GenericBody.wrl",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Models/LED_SMD__LED_0603_1608Metric__LED_0603_1608Metric.step",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Models/Package_DFN_QFN__Texas_RVC0020A_WQFN-20-1EP_3x4mm_P0.5mm_EP1.6x2.6mm__Texas_RVC0020A_WQFN-20-1EP_3x4mm_P0.5mm_EP1.6x2.6mm.step",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Models/Package_SO__SOIC-8_3.9x4.9mm_P1.27mm__SOIC-8_3.9x4.9mm_P1.27mm.step",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Models/Package_SO__SSOP-8_2.95x2.8mm_P0.65mm__SSOP-8_2.95x2.8mm_P0.65mm.step",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Models/Package_TO_SOT_SMD__SOT-23-5__SOT-23-5.step",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Models/Package_TO_SOT_SMD__SOT-23__SOT-23.step",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Models/Package_TO_SOT_SMD__SOT-363_SC-70-6__SOT-363_SC-70-6.step",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Models/Package_TO_SOT_SMD__TO-252-2.step",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Models/Package_TO_SOT_SMD__TSOT-23-6__TSOT-23-6.step",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Models/SS12D07VG4.wrl",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Models/SS12D10G5_generic.wrl",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Models/SW_Push_6x6x4.3mm_SMD_Generic.step",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Models/TerminalBlock_Phoenix__TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal__TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal.step",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Models/TPS25947_GenericBody.wrl",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Models/TPS56837_GenericExterior.wrl",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Models/ZX_MX125_6PWT_GenericExterior.wrl",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.kicad_sym",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/AMASS_XT60PW-M_1x02_P7.20mm_Horizontal.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/Button_Switch_THT__SW_PUSH_6mm_H4.3mm.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/C5_EDGE_3_Socket.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/C_0603_1608Metric_Gap0.85mm_HandSolder.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/Capacitor_SMD__C_0603_1608Metric.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/Capacitor_SMD__C_0805_2012Metric.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/Capacitor_SMD__C_1206_3216Metric.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/Capacitor_SMD__C_1210_3225Metric.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/Capacitor_SMD__CP_Elec_10x7.9.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/Capacitor_THT__CP_Radial_D10.0mm_P5.00mm.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/Connector_JST__JST_XH_B10B-XH-A_1x10_P2.50mm_Vertical.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/Connector_JST__JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/Connector_JST__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/Connector_JST__JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/Connector_JST__JST_XH_B8B-XH-A_1x08_P2.50mm_Vertical.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/Connector_PinHeader_2.54mm__PinHeader_1x02_P2.54mm_Vertical.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/Connector_PinHeader_2.54mm__PinHeader_1x03_P2.54mm_Vertical.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/Connector_PinHeader_2.54mm__PinHeader_1x04_P2.54mm_Vertical.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/Connector_PinHeader_2.54mm__PinHeader_1x06_P2.54mm_Vertical.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/Connector_PinHeader_2.54mm__PinHeader_1x08_P2.54mm_Vertical.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/Connector_PinHeader_2.54mm__PinHeader_1x10_P2.54mm_Vertical.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/Connector_PinHeader_2.54mm__PinHeader_2x05_P2.54mm_Vertical.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/Connector_PinHeader_2.54mm__PinHeader_2x06_P2.54mm_Vertical.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/Connector_PinSocket_2.54mm__PinSocket_1x04_P2.54mm_Vertical.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/Connector_PinSocket_2.54mm__PinSocket_1x08_P2.54mm_Vertical.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/Connector_USB__USB_C_Receptacle_GCT_USB4125-xx-x_6P_TopMnt_Horizontal.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/DC005_XKB_5A_2mm.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/Diode_SMD__D_SMA.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/Diode_SMD__D_SOD-123.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/Diodes_SO8EP_AP64500.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/DRV8874_PWP0016.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/Fuse__Fuse_1206_3216Metric.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/Fuse_Littelfuse_448_6.10x2.69mm_GenericBody.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/Fuse_NANO2_454_6.10x2.69mm.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/Inductor_SMD__L_Bourns_SRN6045TA.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/Inductor_SMD__L_Wuerth_HCI-1050.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/L_Bourns_SRN8040TA_GenericBody.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/LED_0603_1608Metric_Gap0.85mm_HandSolder.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/LED_SMD__LED_0603_1608Metric.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/MountingHole__MountingHole_2mm.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/Package_DFN_QFN__Texas_RVC0020A_WQFN-20-1EP_3x4mm_P0.5mm_EP1.6x2.6mm.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/Package_SO__SOIC-8_3.9x4.9mm_P1.27mm.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/Package_SO__SSOP-8_2.95x2.8mm_P0.65mm.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/Package_TO_SOT_SMD__SOT-23-5.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/Package_TO_SOT_SMD__SOT-23.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/Package_TO_SOT_SMD__SOT-363_SC-70-6.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/Package_TO_SOT_SMD__TO-252-2.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/Package_TO_SOT_SMD__TSOT-23-6.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/R_0603_1608Metric_Gap0.85mm_HandSolder.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/Resistor_SMD__R_0603_1608Metric.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/SGM_PS8_SOIC8_EP2.33x3.22_HandSolder.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/SS12D07VG4.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/SS12D10G5_SHOUHAN_3P_P4.80mm.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/SW_Push_6x6x4.3mm_SMD_4Pad_Generic.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/TerminalBlock_Phoenix__TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/Texas_RPA0010A_HotRod_3x3.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/TPS25947_RPW0010A_VQFN-HR_2x2mm.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline Motor.pretty/ZX_MX1.25_6PWT.kicad_mod",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline README.md",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline sym-lib-table",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline tools/adapt_connector_types.py",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline tools/adapt_zdt_ttl.py",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline tools/build_schematic.py",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline tools/check_visual.py",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline tools/compact_layout.py",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline tools/extend_m2_schematic.py",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline tools/m26_contract.py",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline tools/revise_jumpers.py",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline tools/revise_power.py",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline tools/revision_contract.py",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline tools/schematic_primitives.py",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline tools/schematic_semantic.py",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline tools/tidy_schematics.py",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline tools/unify_0603.py",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline tools/verify_layout_edit.py",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline tools/verify_m2.py",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline tools/verify_m27.py",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline tools/verify_pcb_sync.py",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline tools/verify_schematic.py",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "saved baseline tools/vision_contract.py",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "verification.json pass",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "pcb_sync_verification.json pass",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "bom_verification.json pass",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "fresh verified source 02_Power.kicad_sch",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "fresh verified source 03_Core_Interface.kicad_sch",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "fresh verified source 04_Left_Motor.kicad_sch",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "fresh verified source 05_Right_Motor.kicad_sch",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "fresh verified source 06_Module_Power.kicad_sch",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "fresh verified source 07_TFT_Buttons.kicad_sch",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "fresh verified source 08_Grayscale_Cameras.kicad_sch",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "fresh verified source 09_Bluetooth_Stepper.kicad_sch",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "fresh verified source 10_Lichee_Interface.kicad_sch",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "fresh verified source CoralC5-Motor.kicad_sch",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "fresh PCB hash",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "fresh PDF hash",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "fresh BOM/native export",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "draft BOM aliases equal",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "BOM excludes only two mechanical holes",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "all33 new references have verified purchase selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PDF10pages and zero automated overlaps",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "current document local links",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "git diff --check",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "firmware and mechanical untouched",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "historical handoff original content preserved (working-tree CRLF / Git LF)",
+      "pass": true,
+      "detail": {
+        "archive_raw_sha256": "9af59830dd8729c32e78080f802161afc9bb14e0e678c915c6a5b6ce560b2858",
+        "git_blob_sha256": "67197b744b181d35dae406e08e7200473449961dd997008ee2a377354b55f83e",
+        "archive_LF_sha256": "67197b744b181d35dae406e08e7200473449961dd997008ee2a377354b55f83e"
+      }
+    },
+    {
+      "name": "historical resume-prompt original content preserved (working-tree CRLF / Git LF)",
+      "pass": true,
+      "detail": {
+        "archive_raw_sha256": "4360dbf642639d516da0ad612f712ea98c0e5471e6df73a6ab48e4d472c16552",
+        "git_blob_sha256": "89f359197d2bc4bec21609203b3656dcd152413b4309ff654c2244c71e4cf18c",
+        "archive_LF_sha256": "89f359197d2bc4bec21609203b3656dcd152413b4309ff654c2244c71e4cf18c"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "CoralC5-Motor.kicad_pcb": "00a8f4df9f2de84503631e53f272d768f1cbecb6c0b6373d4bcd2ee2f693e43f",
+    "docs/CoralC5-Motor_Schematic.pdf": "e7720dffdaeed9955d7cc0c660e87419f90519f7957f0d2cca5351c3067e723d",
+    "docs/netlist.xml": "13dba5282aabd167fb976dbc2fb3a4876d57c435213e54ca5aa1d346e31e9642",
+    "docs/BOM_M2_SCHEMATIC_DRAFT.csv": "2fbcaa4330af4c27089b7be81331572f215c7a38c2220d7d404c68ec7f3581c8",
+    "tools/m28_contract.py": "7f07c45186202b3548662c63154bf062956c090e1f5c462ef31b4167116941ac",
+    "tools/verify_m28.py": "6dcfdd29cdd556305bcf9f3853da80fb03ba9c1ee5d4e28baadca16fc6fdaa9e",
+    "tools/verify_pcb_m28.py": "5ddffcffdc9fe43668a820bada6328c9347158054ce09cc566c18be2986f8db5"
+  },
+  "routing_pass": false,
+  "physical_validation": false,
+  "pass": true
+}

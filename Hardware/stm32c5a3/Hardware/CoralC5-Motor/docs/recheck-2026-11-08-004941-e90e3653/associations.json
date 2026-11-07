@@ -1,0 +1,1644 @@
+{
+  "checked_at": "2026-11-08T00:50:23+08:00",
+  "method": "KiCad10 UUID path lookup: component sheetpath + each component UUID; no reference fallback",
+  "source": "https://github.com/KiCad/kicad-source-mirror/blob/10.0/pcbnew/netlist_reader/board_netlist_updater.cpp",
+  "schematic_components": 180,
+  "pcb_footprints": 180,
+  "duplicate_pcb_references": {},
+  "missing_pcb_paths": [],
+  "predicted_additions_by_uuid": [],
+  "ambiguous_symbol_matches": [],
+  "unmatched_pcb_footprints": [],
+  "reference_mismatches": [],
+  "predicted_footprint_type_replacements": [],
+  "value_mismatches": [],
+  "pad_net_mismatches": [],
+  "pcb_sha256": "e90e3653baefca012a6a8e8c4b6e853c7d2f1770460ffc8d91d0b7b150d3ee80",
+  "native_netlist_sha256": "58c463cf02088559cc78c3bd637898084cbca7d9181e2b0d9f3acedf932b68cd",
+  "matches": [
+    {
+      "reference": "C1",
+      "valid_paths": [
+        "/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/28467901-7765-502f-8925-40d984cd4ff2"
+      ],
+      "matched_footprint_uuids": [
+        "894d16b7-29ac-4e65-aa57-bab846fd5783"
+      ]
+    },
+    {
+      "reference": "C2",
+      "valid_paths": [
+        "/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/64cb930f-4544-5ee1-b1b0-2df262df5e0c"
+      ],
+      "matched_footprint_uuids": [
+        "07104517-f032-44ad-b358-79f1e5d93601"
+      ]
+    },
+    {
+      "reference": "C3",
+      "valid_paths": [
+        "/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/15eb334f-40ca-5a99-aedb-6b038a647172"
+      ],
+      "matched_footprint_uuids": [
+        "4de32b19-25cd-4aad-8c6c-2f7f46986e65"
+      ]
+    },
+    {
+      "reference": "C4",
+      "valid_paths": [
+        "/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/8f37288a-447f-591f-943b-a696d47ed71f"
+      ],
+      "matched_footprint_uuids": [
+        "4c8beadb-9482-4c6c-af71-fcce4b5081ce"
+      ]
+    },
+    {
+      "reference": "C5",
+      "valid_paths": [
+        "/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/164e1ba5-99c2-5663-80d4-1c1bf907cf77"
+      ],
+      "matched_footprint_uuids": [
+        "487d7191-7a42-4961-a753-c2e03da34124"
+      ]
+    },
+    {
+      "reference": "C50",
+      "valid_paths": [
+        "/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/7f80004c-2488-54a6-823c-e5fd75593734"
+      ],
+      "matched_footprint_uuids": [
+        "fa331c83-6045-4c55-b4e6-684bd936f4be"
+      ]
+    },
+    {
+      "reference": "C63",
+      "valid_paths": [
+        "/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/66d5cea2-cb07-51ad-9e34-61d209d810b6"
+      ],
+      "matched_footprint_uuids": [
+        "d9f64576-6eb4-4122-8a92-a3119793ceb7"
+      ]
+    },
+    {
+      "reference": "C84",
+      "valid_paths": [
+        "/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/2660ce36-bcff-5ca4-8247-5b8e77a83cee"
+      ],
+      "matched_footprint_uuids": [
+        "5c7056ab-71ab-4f37-a3f0-3ec4e6c5a3e1"
+      ]
+    },
+    {
+      "reference": "C85",
+      "valid_paths": [
+        "/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/a9e3388b-cef4-54fc-87b2-64de24f47fcb"
+      ],
+      "matched_footprint_uuids": [
+        "5270c498-9d7f-4b20-91a3-11b1375b75fb"
+      ]
+    },
+    {
+      "reference": "C86",
+      "valid_paths": [
+        "/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/96c2fda2-7fff-5d08-b127-fa3f3d273892"
+      ],
+      "matched_footprint_uuids": [
+        "128b7ad1-0adc-4171-9622-6ab03e7c4eab"
+      ]
+    },
+    {
+      "reference": "C87",
+      "valid_paths": [
+        "/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/6345b609-86e6-5a32-95b5-32518e54c465"
+      ],
+      "matched_footprint_uuids": [
+        "9d2edafd-a5cf-4ba2-b677-44124615d4e7"
+      ]
+    },
+    {
+      "reference": "C88",
+      "valid_paths": [
+        "/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/4ba3e065-987b-5080-8c05-081c154ba451"
+      ],
+      "matched_footprint_uuids": [
+        "775a1495-9e97-4e61-b4bb-d2b5140fa44c"
+      ]
+    },
+    {
+      "reference": "C89",
+      "valid_paths": [
+        "/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/f5105c92-281d-5ef8-b202-bfab5b3934ee"
+      ],
+      "matched_footprint_uuids": [
+        "fcfbcdbd-86ba-44be-b845-79831985d5eb"
+      ]
+    },
+    {
+      "reference": "C90",
+      "valid_paths": [
+        "/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/dfa7ca4d-ef56-5204-a9f7-35fba112f070"
+      ],
+      "matched_footprint_uuids": [
+        "2839e55b-b563-46f9-8abe-6d416349b5dc"
+      ]
+    },
+    {
+      "reference": "C91",
+      "valid_paths": [
+        "/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/c8fc5992-d77a-5859-9e94-1683d0b8b9c0"
+      ],
+      "matched_footprint_uuids": [
+        "13b0faf7-a5b4-4667-9a38-467afb7d107c"
+      ]
+    },
+    {
+      "reference": "D1",
+      "valid_paths": [
+        "/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/0d44296b-4734-59b0-b1f5-160008121361"
+      ],
+      "matched_footprint_uuids": [
+        "ae30eb22-462f-4294-8db2-29b85baa7342"
+      ]
+    },
+    {
+      "reference": "D2",
+      "valid_paths": [
+        "/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/3f71b181-3086-5290-8579-18571c410c85"
+      ],
+      "matched_footprint_uuids": [
+        "8f74fccc-db5f-4c0b-aac6-303c4599b1fc"
+      ]
+    },
+    {
+      "reference": "D3",
+      "valid_paths": [
+        "/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/02080cb2-b2d2-5762-b28f-6ddb11e73bfc"
+      ],
+      "matched_footprint_uuids": [
+        "709c2ede-d4de-4eb1-9afe-6bd9fcd36b09"
+      ]
+    },
+    {
+      "reference": "D4",
+      "valid_paths": [
+        "/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/14a766d8-35b9-51a7-be28-2bb192fcd787"
+      ],
+      "matched_footprint_uuids": [
+        "e200514d-c6c4-4946-a59d-728a270edbda"
+      ]
+    },
+    {
+      "reference": "F1",
+      "valid_paths": [
+        "/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/666ca98d-29dc-53b2-993a-7473f8d22717"
+      ],
+      "matched_footprint_uuids": [
+        "53bc91e0-26ea-41af-af6b-9f1951628423"
+      ]
+    },
+    {
+      "reference": "J1",
+      "valid_paths": [
+        "/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/9ad6e83c-e568-56d0-85fd-21fcc1de997a"
+      ],
+      "matched_footprint_uuids": [
+        "fbdfd334-9c8e-48d3-a28f-206a3d8d8fb3"
+      ]
+    },
+    {
+      "reference": "L1",
+      "valid_paths": [
+        "/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/f57e20bc-8297-5453-8677-cd4d7e3bd5e4"
+      ],
+      "matched_footprint_uuids": [
+        "da4635a2-56aa-4954-8a48-a848336b6ede"
+      ]
+    },
+    {
+      "reference": "L2",
+      "valid_paths": [
+        "/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/dd9b24d7-36dc-517b-afa7-8f24708f98a2"
+      ],
+      "matched_footprint_uuids": [
+        "4d8b4bac-834b-43aa-b171-c3d3ad03eb93"
+      ]
+    },
+    {
+      "reference": "Q1",
+      "valid_paths": [
+        "/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/ddf56888-05ba-5f47-9c6b-7d22ae71b0e5"
+      ],
+      "matched_footprint_uuids": [
+        "6035876c-d3a4-4e8b-a821-f085e1eeacce"
+      ]
+    },
+    {
+      "reference": "Q2",
+      "valid_paths": [
+        "/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/93963961-26dc-57b1-9c27-fe1dd3d98e4a"
+      ],
+      "matched_footprint_uuids": [
+        "38d2a806-d059-42df-aca9-52594c204604"
+      ]
+    },
+    {
+      "reference": "R1",
+      "valid_paths": [
+        "/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/2e495721-e040-5ae2-a010-fcc0377ae8eb"
+      ],
+      "matched_footprint_uuids": [
+        "b62e14b8-579c-464d-ae42-16bf471b361b"
+      ]
+    },
+    {
+      "reference": "R2",
+      "valid_paths": [
+        "/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/bff91d5c-3d8d-55fe-b0ab-102c468c34aa"
+      ],
+      "matched_footprint_uuids": [
+        "2fa660d9-421f-428d-9742-a2bf2fcaca4e"
+      ]
+    },
+    {
+      "reference": "R3",
+      "valid_paths": [
+        "/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/89563f64-6018-5dd0-9052-fa2927e40c35"
+      ],
+      "matched_footprint_uuids": [
+        "0dd01bee-e748-4046-9d11-ef81dfa390ff"
+      ]
+    },
+    {
+      "reference": "R4",
+      "valid_paths": [
+        "/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/5e81910f-c218-5cfc-b13d-8bc7aa8dffad"
+      ],
+      "matched_footprint_uuids": [
+        "4e3fe43b-113e-4cec-b08c-3a7e3cee7194"
+      ]
+    },
+    {
+      "reference": "R5",
+      "valid_paths": [
+        "/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/67eab74a-7b0b-5afc-a1aa-5bd19baa2420"
+      ],
+      "matched_footprint_uuids": [
+        "34276c08-f042-474e-a236-2dd9fa1fcfdd"
+      ]
+    },
+    {
+      "reference": "R59",
+      "valid_paths": [
+        "/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/7f0be9bd-1bff-53b6-ad96-6a7df1566181"
+      ],
+      "matched_footprint_uuids": [
+        "57b32252-d761-43f6-b30d-b26a9ef0c010"
+      ]
+    },
+    {
+      "reference": "R60",
+      "valid_paths": [
+        "/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/35cd8025-e506-56e8-9884-6ddbc345f506"
+      ],
+      "matched_footprint_uuids": [
+        "1191f53b-1ed4-463f-b8ec-a5641c5235bf"
+      ]
+    },
+    {
+      "reference": "R61",
+      "valid_paths": [
+        "/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/b8fd1b08-7f01-5d1d-b60c-d92993978d44"
+      ],
+      "matched_footprint_uuids": [
+        "489d5a8a-5b2e-4c17-bb43-63981b6a2ae8"
+      ]
+    },
+    {
+      "reference": "R62",
+      "valid_paths": [
+        "/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/83695d55-00fc-5f01-aa2d-d6a3655fd680"
+      ],
+      "matched_footprint_uuids": [
+        "a6b9e8da-0c9a-4811-89fe-3585e4052957"
+      ]
+    },
+    {
+      "reference": "R63",
+      "valid_paths": [
+        "/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/345c45fc-1afd-567c-ab2c-f71eac123aed"
+      ],
+      "matched_footprint_uuids": [
+        "6621c64a-0c4e-40b5-a208-ed162ee4e87b"
+      ]
+    },
+    {
+      "reference": "R64",
+      "valid_paths": [
+        "/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/715bcc9b-d245-5d0d-8f30-37e68a46a357"
+      ],
+      "matched_footprint_uuids": [
+        "5f0f5801-1c38-4700-b59f-b121bc464836"
+      ]
+    },
+    {
+      "reference": "R65",
+      "valid_paths": [
+        "/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/106e9130-a379-5eef-b0ff-b20a9567746d"
+      ],
+      "matched_footprint_uuids": [
+        "6acf826b-ccdf-4976-bbc0-5c23a9ef80a1"
+      ]
+    },
+    {
+      "reference": "R66",
+      "valid_paths": [
+        "/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/ae08fa32-3617-5c3f-8c90-0e130e0e1e84"
+      ],
+      "matched_footprint_uuids": [
+        "79e34cf8-3fb4-4a3b-af7d-f93f162b8a2d"
+      ]
+    },
+    {
+      "reference": "R67",
+      "valid_paths": [
+        "/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/02a4ac5b-a6a2-50ac-86ac-9e08adae936d"
+      ],
+      "matched_footprint_uuids": [
+        "49fd8090-bb49-41e0-b533-f37a70a7af22"
+      ]
+    },
+    {
+      "reference": "R92",
+      "valid_paths": [
+        "/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/40b43734-ba8e-5d3a-bd1c-49430dc9b48f"
+      ],
+      "matched_footprint_uuids": [
+        "8eaeddaa-1b0c-4759-bfe3-e167a9e79011"
+      ]
+    },
+    {
+      "reference": "SW1",
+      "valid_paths": [
+        "/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/ba612015-4035-5e1b-9e6f-0a1091abd1ea"
+      ],
+      "matched_footprint_uuids": [
+        "9ba7157a-f048-4649-a84e-348a18f54008"
+      ]
+    },
+    {
+      "reference": "U1",
+      "valid_paths": [
+        "/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/77b68585-8fa4-50e3-8e91-c710f896a3b4"
+      ],
+      "matched_footprint_uuids": [
+        "df00b384-5a63-4dea-87d1-ac121f0a3c5b"
+      ]
+    },
+    {
+      "reference": "U6",
+      "valid_paths": [
+        "/3e4d7eec-bf94-5ef7-a88d-e072db9975b7/af94d78e-8a26-52c0-bfe4-3082e7d9b2e9"
+      ],
+      "matched_footprint_uuids": [
+        "f7dd9e46-3cb0-49cc-86df-0f1dd6ca0720"
+      ]
+    },
+    {
+      "reference": "J8",
+      "valid_paths": [
+        "/c813fdd4-725f-5df7-aa4a-68cd15d401cf/6f4b2b4b-c536-52a1-8a19-1d784e9568a1"
+      ],
+      "matched_footprint_uuids": [
+        "6bb6e495-a56b-485d-849b-9a4baf95c329"
+      ]
+    },
+    {
+      "reference": "J10",
+      "valid_paths": [
+        "/c813fdd4-725f-5df7-aa4a-68cd15d401cf/48ad319f-f102-53d1-9834-e252929c329c"
+      ],
+      "matched_footprint_uuids": [
+        "6760e358-1b4a-4677-8ab9-287b4a305a33"
+      ]
+    },
+    {
+      "reference": "J14",
+      "valid_paths": [
+        "/c813fdd4-725f-5df7-aa4a-68cd15d401cf/8c9c7b19-b75d-593c-a829-0649560b29f7",
+        "/c813fdd4-725f-5df7-aa4a-68cd15d401cf/b37c04c5-9b5f-511b-9c74-f377aa32d4bc",
+        "/c813fdd4-725f-5df7-aa4a-68cd15d401cf/30a59f44-06c2-5f5a-bb1c-18c06bfa40da"
+      ],
+      "matched_footprint_uuids": [
+        "a53c977e-3a27-4824-8887-afaa7b593fb4"
+      ]
+    },
+    {
+      "reference": "R6",
+      "valid_paths": [
+        "/c813fdd4-725f-5df7-aa4a-68cd15d401cf/eae3443a-b80e-5d60-a872-fcc73b5a8045"
+      ],
+      "matched_footprint_uuids": [
+        "d9a948e1-6a65-4a8a-8ce1-5ab96daa2002"
+      ]
+    },
+    {
+      "reference": "R7",
+      "valid_paths": [
+        "/c813fdd4-725f-5df7-aa4a-68cd15d401cf/1f638f28-e443-5fa1-864f-31e2ac19e58a"
+      ],
+      "matched_footprint_uuids": [
+        "e4c082df-fc2f-4662-875f-1caa7b27f98a"
+      ]
+    },
+    {
+      "reference": "C10",
+      "valid_paths": [
+        "/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/54288062-110c-5979-91de-fa208ec547ab"
+      ],
+      "matched_footprint_uuids": [
+        "629a8a7f-2c36-4332-b331-3b4e248945a5"
+      ]
+    },
+    {
+      "reference": "C11",
+      "valid_paths": [
+        "/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/8f7217b2-5003-51e3-867a-af6a943f5d7a"
+      ],
+      "matched_footprint_uuids": [
+        "3f84f2ef-2eef-45cd-9e21-88a62eb14083"
+      ]
+    },
+    {
+      "reference": "C12",
+      "valid_paths": [
+        "/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/11a8b11d-34d2-5df1-bd90-a7c89486ca38"
+      ],
+      "matched_footprint_uuids": [
+        "355fd5bc-0c55-4de8-95f6-266a24f26737"
+      ]
+    },
+    {
+      "reference": "C13",
+      "valid_paths": [
+        "/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/ba66066a-a3be-5aaf-852a-7dbd4ddcad32"
+      ],
+      "matched_footprint_uuids": [
+        "ead67aa7-d046-4cf2-b981-6e7c1e6d9f3a"
+      ]
+    },
+    {
+      "reference": "C14",
+      "valid_paths": [
+        "/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/7f9cdff6-d43a-5d38-9e50-e75692d64c69"
+      ],
+      "matched_footprint_uuids": [
+        "ad2f315d-951c-43e8-8d30-3a107309ca2c"
+      ]
+    },
+    {
+      "reference": "C15",
+      "valid_paths": [
+        "/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/68e530ce-35db-5b8a-8471-bbc16e57b7c7"
+      ],
+      "matched_footprint_uuids": [
+        "dd4478d5-dcfd-4502-bce0-982a7e61aa48"
+      ]
+    },
+    {
+      "reference": "C16",
+      "valid_paths": [
+        "/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/a1fa0d4e-f8fb-5e36-af2c-b9baa65e2d1f"
+      ],
+      "matched_footprint_uuids": [
+        "287c3a8a-5f67-476c-ba0c-dfc2ba15462e"
+      ]
+    },
+    {
+      "reference": "C17",
+      "valid_paths": [
+        "/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/c4be2d74-a87f-5dd9-8923-622a4727fbb6"
+      ],
+      "matched_footprint_uuids": [
+        "a0390c85-a2b1-4e74-aa96-be8a80288086"
+      ]
+    },
+    {
+      "reference": "C18",
+      "valid_paths": [
+        "/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/cec6b45a-7e73-59da-b8a6-b6535488f457"
+      ],
+      "matched_footprint_uuids": [
+        "b4ae8fc7-83ab-452e-a255-3e474caa930c"
+      ]
+    },
+    {
+      "reference": "C19",
+      "valid_paths": [
+        "/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/7e68754e-d775-5a11-a177-e054a0cb5f57"
+      ],
+      "matched_footprint_uuids": [
+        "a5989b5c-4a87-4430-94cf-95e30a8ef876"
+      ]
+    },
+    {
+      "reference": "C20",
+      "valid_paths": [
+        "/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/0d54f58b-d82c-598e-b021-f0122957501f"
+      ],
+      "matched_footprint_uuids": [
+        "de8f998f-aecc-41a0-91cf-1dccb745a443"
+      ]
+    },
+    {
+      "reference": "J4",
+      "valid_paths": [
+        "/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/5082133d-013f-53b2-8977-a3e56e5274bb"
+      ],
+      "matched_footprint_uuids": [
+        "f4081668-1868-4fb4-baee-565ef904880d"
+      ]
+    },
+    {
+      "reference": "R10",
+      "valid_paths": [
+        "/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/d1d17ec3-697e-53fc-84db-ad8f96957050"
+      ],
+      "matched_footprint_uuids": [
+        "79be9268-4d75-4c11-ba7e-00ed364e0986"
+      ]
+    },
+    {
+      "reference": "R11",
+      "valid_paths": [
+        "/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/4d5b9b02-73c8-53ce-a502-c6f7428a6e9d"
+      ],
+      "matched_footprint_uuids": [
+        "7315c7fa-e1f9-4aea-bcb3-7926d1636b00"
+      ]
+    },
+    {
+      "reference": "R12",
+      "valid_paths": [
+        "/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/9d8a39c6-7d38-55ef-97b6-bc39072ff4ac"
+      ],
+      "matched_footprint_uuids": [
+        "e3f97c7e-aa20-4b46-83da-0684f7505523"
+      ]
+    },
+    {
+      "reference": "R13",
+      "valid_paths": [
+        "/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/ad591694-6209-5436-94e4-3aae010386a7"
+      ],
+      "matched_footprint_uuids": [
+        "520a5acd-3968-43d4-b3ff-c217a3f77951"
+      ]
+    },
+    {
+      "reference": "R14",
+      "valid_paths": [
+        "/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/561f7ac6-dac4-5bce-88b5-aa0c0cea1829"
+      ],
+      "matched_footprint_uuids": [
+        "5e94f836-b426-4c3f-ac66-7986b19e9e62"
+      ]
+    },
+    {
+      "reference": "R15",
+      "valid_paths": [
+        "/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/47931b1f-2f3b-578f-9cc8-5e957ed22934"
+      ],
+      "matched_footprint_uuids": [
+        "5b424bac-990a-4abf-b061-4bc92541b652"
+      ]
+    },
+    {
+      "reference": "R16",
+      "valid_paths": [
+        "/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/5d989995-10d5-5a21-bb69-a98e3d9666ff"
+      ],
+      "matched_footprint_uuids": [
+        "0739806c-3098-44c5-b671-ef3f09c159fb"
+      ]
+    },
+    {
+      "reference": "R17",
+      "valid_paths": [
+        "/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/cbe5f3da-facb-5b6f-a650-6afa1daedbe5"
+      ],
+      "matched_footprint_uuids": [
+        "9bb7c087-aa00-490f-9223-1c8578ca8249"
+      ]
+    },
+    {
+      "reference": "R18",
+      "valid_paths": [
+        "/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/4d8788a1-9e6f-5a3c-bb23-0b7634ca7583"
+      ],
+      "matched_footprint_uuids": [
+        "f1307591-3df0-43de-802b-95add5f7f71e"
+      ]
+    },
+    {
+      "reference": "R19",
+      "valid_paths": [
+        "/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/5e8db4eb-3c7e-5674-9814-9b4e861b3f5e"
+      ],
+      "matched_footprint_uuids": [
+        "189f4b0d-ed0c-48ad-92b6-db0a9ec22b8f"
+      ]
+    },
+    {
+      "reference": "U2",
+      "valid_paths": [
+        "/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/cf99371c-f8c3-542e-93c7-fd1947fb7378"
+      ],
+      "matched_footprint_uuids": [
+        "61455547-d041-4d1d-bf34-ef46ca658fc5"
+      ]
+    },
+    {
+      "reference": "U3",
+      "valid_paths": [
+        "/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9/7d00eb73-22d9-59b7-ab58-4cf6577fda4f"
+      ],
+      "matched_footprint_uuids": [
+        "5d806107-e062-4bb8-9109-3c78d8dce280"
+      ]
+    },
+    {
+      "reference": "C30",
+      "valid_paths": [
+        "/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/9a8f53f9-df9d-52cb-b1c2-1fd1990e12d9"
+      ],
+      "matched_footprint_uuids": [
+        "cd962a16-e1cc-4179-ad91-c30ecddc5a5f"
+      ]
+    },
+    {
+      "reference": "C31",
+      "valid_paths": [
+        "/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/97b2e262-f103-5578-b37b-af8734010614"
+      ],
+      "matched_footprint_uuids": [
+        "3a3b9c95-3e6c-4730-915c-1145fed584f1"
+      ]
+    },
+    {
+      "reference": "C32",
+      "valid_paths": [
+        "/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/6d44271f-69dc-5c9c-9056-93979b3227d8"
+      ],
+      "matched_footprint_uuids": [
+        "40cf7886-1c04-424a-a7e1-6b6b50ec73a6"
+      ]
+    },
+    {
+      "reference": "C33",
+      "valid_paths": [
+        "/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/c7ba900a-61de-57fb-aa03-a3f62fcf5d5e"
+      ],
+      "matched_footprint_uuids": [
+        "af1f5ac8-b246-413e-8e59-6ef068b42e80"
+      ]
+    },
+    {
+      "reference": "C34",
+      "valid_paths": [
+        "/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/0075081c-6386-5b07-ad9d-fb8489905d27"
+      ],
+      "matched_footprint_uuids": [
+        "69af85c8-cc50-4295-9b3c-9c95d2b8c908"
+      ]
+    },
+    {
+      "reference": "C35",
+      "valid_paths": [
+        "/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/3f213709-f838-5af9-830a-7199fa046c84"
+      ],
+      "matched_footprint_uuids": [
+        "1238a931-d715-41cc-b4e5-e6167002cad6"
+      ]
+    },
+    {
+      "reference": "C36",
+      "valid_paths": [
+        "/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/e8bb7895-fb87-5fa3-a259-9ce5b1b625fc"
+      ],
+      "matched_footprint_uuids": [
+        "6da06de9-3d41-4fe3-85da-1bf27370b633"
+      ]
+    },
+    {
+      "reference": "C37",
+      "valid_paths": [
+        "/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/74569979-6b0a-536c-808e-c9a9ec2f2ca0"
+      ],
+      "matched_footprint_uuids": [
+        "096d685c-cb05-43c9-81d8-ee70cc0a747f"
+      ]
+    },
+    {
+      "reference": "C38",
+      "valid_paths": [
+        "/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/426780d1-f82a-51e5-964c-c5326876a600"
+      ],
+      "matched_footprint_uuids": [
+        "716e0802-c96d-4c02-b553-31974c6da793"
+      ]
+    },
+    {
+      "reference": "C39",
+      "valid_paths": [
+        "/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/4e6312df-fe32-5628-a542-6bc8141615a6"
+      ],
+      "matched_footprint_uuids": [
+        "78f3ad72-9b41-41a9-ae43-135130e04237"
+      ]
+    },
+    {
+      "reference": "C40",
+      "valid_paths": [
+        "/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/7037d517-0f26-5ac5-860b-d03191601f55"
+      ],
+      "matched_footprint_uuids": [
+        "5b6b4d0c-2182-4972-a91d-8e6b3231cdba"
+      ]
+    },
+    {
+      "reference": "J6",
+      "valid_paths": [
+        "/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/07f80107-8ca5-55fe-84ab-4cb77cfcbb6c"
+      ],
+      "matched_footprint_uuids": [
+        "82fa8582-1d34-4caf-8801-15c7cc3e178d"
+      ]
+    },
+    {
+      "reference": "R30",
+      "valid_paths": [
+        "/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/74ffe331-6e4d-50b6-ad78-bd5ee2f6d348"
+      ],
+      "matched_footprint_uuids": [
+        "9da8eabc-2fe2-4045-a545-0e1441137b74"
+      ]
+    },
+    {
+      "reference": "R31",
+      "valid_paths": [
+        "/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/87dd5e49-f26a-5f26-9bac-c14b70edd487"
+      ],
+      "matched_footprint_uuids": [
+        "cb1ed551-28b8-4300-8dfb-e28e06cef381"
+      ]
+    },
+    {
+      "reference": "R32",
+      "valid_paths": [
+        "/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/e3b8d925-0d0d-550e-b236-7a3d94c8729d"
+      ],
+      "matched_footprint_uuids": [
+        "500bf49b-415b-4b5f-915d-95e3b1613f89"
+      ]
+    },
+    {
+      "reference": "R33",
+      "valid_paths": [
+        "/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/6fc61e65-f992-5efe-99eb-61712b1fcf53"
+      ],
+      "matched_footprint_uuids": [
+        "334be194-32d5-429a-98d6-606faad08082"
+      ]
+    },
+    {
+      "reference": "R34",
+      "valid_paths": [
+        "/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/dfb37ac0-8cee-5cd5-bbe5-2bb74fbcee1f"
+      ],
+      "matched_footprint_uuids": [
+        "6602d40b-4ecb-4cb5-9883-affec6f7c1d1"
+      ]
+    },
+    {
+      "reference": "R35",
+      "valid_paths": [
+        "/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/5514eda7-fc41-5055-83ee-db6562559f22"
+      ],
+      "matched_footprint_uuids": [
+        "7fb13829-0d9a-4b2d-b84f-ee5a23dee205"
+      ]
+    },
+    {
+      "reference": "R36",
+      "valid_paths": [
+        "/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/fdf397f8-760b-52d4-a3f9-083b5227ff8a"
+      ],
+      "matched_footprint_uuids": [
+        "9d57b2c2-53b1-462f-a7ed-91462c8893e6"
+      ]
+    },
+    {
+      "reference": "R37",
+      "valid_paths": [
+        "/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/45c3e72d-3d06-59ee-a503-07ff452c7b64"
+      ],
+      "matched_footprint_uuids": [
+        "ac656682-94a9-425d-a7bf-f9379c8181f5"
+      ]
+    },
+    {
+      "reference": "R38",
+      "valid_paths": [
+        "/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/84fbefb2-fce4-52ae-94ea-33225d019665"
+      ],
+      "matched_footprint_uuids": [
+        "a4c036a5-aace-480c-9217-026a121e6b7f"
+      ]
+    },
+    {
+      "reference": "R39",
+      "valid_paths": [
+        "/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/d8b406d0-ec21-52a0-a7c0-76d25c8b1203"
+      ],
+      "matched_footprint_uuids": [
+        "27a02a13-9777-4aea-8516-08a935d6f272"
+      ]
+    },
+    {
+      "reference": "U4",
+      "valid_paths": [
+        "/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/f6db182d-1574-5709-b755-398f2e7ccd20"
+      ],
+      "matched_footprint_uuids": [
+        "492ac1ff-e108-45a3-a705-fdfc8f92bd95"
+      ]
+    },
+    {
+      "reference": "U5",
+      "valid_paths": [
+        "/ddf41ba8-06a1-59de-bdac-eecd21fc55cb/cd830b44-f213-5a60-9243-209443087a7d"
+      ],
+      "matched_footprint_uuids": [
+        "200451b2-a782-47af-9c6a-ee229139d645"
+      ]
+    },
+    {
+      "reference": "C56",
+      "valid_paths": [
+        "/433415cc-03a8-5189-8d36-253244603d4b/452f5539-3f9e-5f9a-8190-26b1f59f8502"
+      ],
+      "matched_footprint_uuids": [
+        "dcdc1157-5000-47ef-b9c3-97033020b3c3"
+      ]
+    },
+    {
+      "reference": "H1",
+      "valid_paths": [
+        "/433415cc-03a8-5189-8d36-253244603d4b/5b5c36cc-dfe6-557c-8de1-774a4acff67e"
+      ],
+      "matched_footprint_uuids": [
+        "7d53c0c3-af37-48f3-b247-fb8f460e38f8"
+      ]
+    },
+    {
+      "reference": "H2",
+      "valid_paths": [
+        "/433415cc-03a8-5189-8d36-253244603d4b/2ed80d46-8d88-5598-8984-13dacbd572e1"
+      ],
+      "matched_footprint_uuids": [
+        "4a8cfdf8-f4bf-4c72-9db8-82ca58fc4e75"
+      ]
+    },
+    {
+      "reference": "J17",
+      "valid_paths": [
+        "/433415cc-03a8-5189-8d36-253244603d4b/05a1ce2f-0b1d-5e03-8e95-01a554ef6e54"
+      ],
+      "matched_footprint_uuids": [
+        "e2ade599-b9ad-4e31-9106-94fe54d5e077"
+      ]
+    },
+    {
+      "reference": "R50",
+      "valid_paths": [
+        "/433415cc-03a8-5189-8d36-253244603d4b/af7563a7-ecd8-5377-9dfe-6ec9682adff7"
+      ],
+      "matched_footprint_uuids": [
+        "2424d040-e81a-45e6-ba29-fcd22bd019a6"
+      ]
+    },
+    {
+      "reference": "R51",
+      "valid_paths": [
+        "/433415cc-03a8-5189-8d36-253244603d4b/a41469c6-09e7-5a22-adb4-16fd19c38d1b"
+      ],
+      "matched_footprint_uuids": [
+        "5483224f-d90b-482f-9efc-2983f4ae764e"
+      ]
+    },
+    {
+      "reference": "R52",
+      "valid_paths": [
+        "/433415cc-03a8-5189-8d36-253244603d4b/2398b687-70bd-5621-a910-a764a77ab62f"
+      ],
+      "matched_footprint_uuids": [
+        "54226c16-312b-4fa1-ba7c-2387cdbddc77"
+      ]
+    },
+    {
+      "reference": "R53",
+      "valid_paths": [
+        "/433415cc-03a8-5189-8d36-253244603d4b/55303e53-a0bf-5cc4-bd66-589d61e97fcb"
+      ],
+      "matched_footprint_uuids": [
+        "edee8513-d821-40e3-8c8f-a0ecdd6f83d5"
+      ]
+    },
+    {
+      "reference": "R55",
+      "valid_paths": [
+        "/433415cc-03a8-5189-8d36-253244603d4b/d85703a0-0f81-5d27-8f30-e448605158ec"
+      ],
+      "matched_footprint_uuids": [
+        "bb498994-3eac-4d4d-a1be-44df11bdcc80"
+      ]
+    },
+    {
+      "reference": "R56",
+      "valid_paths": [
+        "/433415cc-03a8-5189-8d36-253244603d4b/6a051781-e45e-5919-a9db-5209c1751042"
+      ],
+      "matched_footprint_uuids": [
+        "6f536fa9-70dd-4ab5-9d9a-a0283ca93294"
+      ]
+    },
+    {
+      "reference": "SW2",
+      "valid_paths": [
+        "/433415cc-03a8-5189-8d36-253244603d4b/d26ba1eb-63fd-54e7-acc7-ea0f9d027747"
+      ],
+      "matched_footprint_uuids": [
+        "868573ed-2576-4a19-af3e-0442489d00d2"
+      ]
+    },
+    {
+      "reference": "SW3",
+      "valid_paths": [
+        "/433415cc-03a8-5189-8d36-253244603d4b/c8c3557d-78ae-5a67-a7ee-a654dac61479"
+      ],
+      "matched_footprint_uuids": [
+        "cbcddb67-3d4f-41d0-80cd-4b1cd6b873fe"
+      ]
+    },
+    {
+      "reference": "SW4",
+      "valid_paths": [
+        "/433415cc-03a8-5189-8d36-253244603d4b/e737fb66-a700-5651-8791-24184504ad9d"
+      ],
+      "matched_footprint_uuids": [
+        "ad5917f1-9af3-4966-9cc5-0ca4397ffa49"
+      ]
+    },
+    {
+      "reference": "SW5",
+      "valid_paths": [
+        "/433415cc-03a8-5189-8d36-253244603d4b/c73459e1-4371-5933-9b70-7f409f1f54d3"
+      ],
+      "matched_footprint_uuids": [
+        "28f93aed-c0d7-41e8-9645-9124d1075f27"
+      ]
+    },
+    {
+      "reference": "C62",
+      "valid_paths": [
+        "/d6318ee1-12d4-5089-84c2-bb1addcd6fe6/ecc1ba8e-1525-5f3f-9259-63c4f5fb74c9"
+      ],
+      "matched_footprint_uuids": [
+        "cd4f15a6-6d72-469d-a8d1-a5a90a588992"
+      ]
+    },
+    {
+      "reference": "C72",
+      "valid_paths": [
+        "/d6318ee1-12d4-5089-84c2-bb1addcd6fe6/b6a437b7-8503-5f84-a11e-3e8afbca7fe3"
+      ],
+      "matched_footprint_uuids": [
+        "08f6ef5b-cd0e-4d3c-a0c7-ba7cb74c1236"
+      ]
+    },
+    {
+      "reference": "C73",
+      "valid_paths": [
+        "/d6318ee1-12d4-5089-84c2-bb1addcd6fe6/fb7e7db3-c0c6-5f25-a43e-e9578d202329"
+      ],
+      "matched_footprint_uuids": [
+        "e351ed97-c1e9-4f48-9cd7-66d7d1b5f3c7"
+      ]
+    },
+    {
+      "reference": "C76",
+      "valid_paths": [
+        "/d6318ee1-12d4-5089-84c2-bb1addcd6fe6/611b1b8f-b29d-5352-bc01-fefe953bf25d"
+      ],
+      "matched_footprint_uuids": [
+        "64bcfec8-f75f-4255-bbbf-a19ff1885a42"
+      ]
+    },
+    {
+      "reference": "C77",
+      "valid_paths": [
+        "/d6318ee1-12d4-5089-84c2-bb1addcd6fe6/a27d8ca7-3f91-5c3c-a2e3-f2ebc52eb7cd"
+      ],
+      "matched_footprint_uuids": [
+        "08a0e60e-48e0-4cd3-91fd-261f5935b18f"
+      ]
+    },
+    {
+      "reference": "C78",
+      "valid_paths": [
+        "/d6318ee1-12d4-5089-84c2-bb1addcd6fe6/66bb6c90-dc04-5610-a2d3-2a3cf5359aa2"
+      ],
+      "matched_footprint_uuids": [
+        "651ad7e9-6549-453f-add9-44e3bec6d441"
+      ]
+    },
+    {
+      "reference": "C79",
+      "valid_paths": [
+        "/d6318ee1-12d4-5089-84c2-bb1addcd6fe6/4158f13e-4f66-5b3c-8eaf-8b1867bdd52f"
+      ],
+      "matched_footprint_uuids": [
+        "28484389-80cb-4962-8da7-0bdc205e16f3"
+      ]
+    },
+    {
+      "reference": "J19",
+      "valid_paths": [
+        "/d6318ee1-12d4-5089-84c2-bb1addcd6fe6/be2fbbe8-0e37-5cc4-aad1-dfdd6d9451ef"
+      ],
+      "matched_footprint_uuids": [
+        "5e016216-7070-466d-ac41-b3da818f52e4"
+      ]
+    },
+    {
+      "reference": "J20",
+      "valid_paths": [
+        "/d6318ee1-12d4-5089-84c2-bb1addcd6fe6/118b5d92-717b-53c8-a3fc-6fe2692857f8"
+      ],
+      "matched_footprint_uuids": [
+        "0d17a011-4ffa-405d-b207-cd0a68b107ce"
+      ]
+    },
+    {
+      "reference": "J21",
+      "valid_paths": [
+        "/d6318ee1-12d4-5089-84c2-bb1addcd6fe6/847600a7-35d5-59b1-ab60-aba2a2a70b96"
+      ],
+      "matched_footprint_uuids": [
+        "2cecf5ac-ba8a-4b79-bd60-0ce7e3d5976d"
+      ]
+    },
+    {
+      "reference": "J27",
+      "valid_paths": [
+        "/d6318ee1-12d4-5089-84c2-bb1addcd6fe6/8308de91-ed65-5ca0-8820-60e8ae98ef48"
+      ],
+      "matched_footprint_uuids": [
+        "11c54c2d-b49a-44b4-91f3-320509a0ce3e"
+      ]
+    },
+    {
+      "reference": "Q4",
+      "valid_paths": [
+        "/d6318ee1-12d4-5089-84c2-bb1addcd6fe6/742c578b-0179-5311-a265-a83d5e40606e"
+      ],
+      "matched_footprint_uuids": [
+        "3ff690b9-055d-4d0d-b45a-717182a6f501"
+      ]
+    },
+    {
+      "reference": "Q5",
+      "valid_paths": [
+        "/d6318ee1-12d4-5089-84c2-bb1addcd6fe6/47721a97-5e7c-5dd7-b7eb-966e0588b1cd"
+      ],
+      "matched_footprint_uuids": [
+        "c926740d-4611-4f9b-98d0-42bcad172203"
+      ]
+    },
+    {
+      "reference": "R68",
+      "valid_paths": [
+        "/d6318ee1-12d4-5089-84c2-bb1addcd6fe6/46118d7e-0457-5064-9d3a-7f363cb158c1"
+      ],
+      "matched_footprint_uuids": [
+        "919d59d5-4a10-45d8-8685-f8950149dd6b"
+      ]
+    },
+    {
+      "reference": "R69",
+      "valid_paths": [
+        "/d6318ee1-12d4-5089-84c2-bb1addcd6fe6/2d78f6cf-9df1-59a7-801f-5ca03c2470da"
+      ],
+      "matched_footprint_uuids": [
+        "e88ea04e-4404-4496-856a-cb78eb6c86bb"
+      ]
+    },
+    {
+      "reference": "R70",
+      "valid_paths": [
+        "/d6318ee1-12d4-5089-84c2-bb1addcd6fe6/0ad72d43-0ccd-52a4-aa19-5a52c8ef8f5f"
+      ],
+      "matched_footprint_uuids": [
+        "2a474743-1da5-4aff-a8f2-d786b8501e3a"
+      ]
+    },
+    {
+      "reference": "R71",
+      "valid_paths": [
+        "/d6318ee1-12d4-5089-84c2-bb1addcd6fe6/ffbc5f90-68db-5307-9ae7-4ee35bdcbdec"
+      ],
+      "matched_footprint_uuids": [
+        "c0894ecb-6835-4cc7-ac64-12cf680c7832"
+      ]
+    },
+    {
+      "reference": "R72",
+      "valid_paths": [
+        "/d6318ee1-12d4-5089-84c2-bb1addcd6fe6/ab4dbf1c-23a0-5f6f-b6a2-99e26861828a"
+      ],
+      "matched_footprint_uuids": [
+        "b63c4e49-df74-4485-9e54-304b54cc9d5a"
+      ]
+    },
+    {
+      "reference": "R76",
+      "valid_paths": [
+        "/d6318ee1-12d4-5089-84c2-bb1addcd6fe6/32304293-40c9-5ea9-9f04-a175c3e46ac8"
+      ],
+      "matched_footprint_uuids": [
+        "1b75ff06-7880-4b4d-9685-51ce09a17230"
+      ]
+    },
+    {
+      "reference": "R77",
+      "valid_paths": [
+        "/d6318ee1-12d4-5089-84c2-bb1addcd6fe6/ed16eff2-20c3-5a5f-8b6f-50fa9e1fb5fe"
+      ],
+      "matched_footprint_uuids": [
+        "eded0de2-ea55-4927-bc3f-baee62c3f8bd"
+      ]
+    },
+    {
+      "reference": "R78",
+      "valid_paths": [
+        "/d6318ee1-12d4-5089-84c2-bb1addcd6fe6/bb94c350-a474-51e9-a5a6-d52a7834f229"
+      ],
+      "matched_footprint_uuids": [
+        "5e08d711-3861-4f05-add2-ccd8fdf754e0"
+      ]
+    },
+    {
+      "reference": "R80",
+      "valid_paths": [
+        "/d6318ee1-12d4-5089-84c2-bb1addcd6fe6/3761fa13-34b6-5853-9dab-9818c646c135"
+      ],
+      "matched_footprint_uuids": [
+        "9ae81f03-a44c-4141-9289-fa81534e9384"
+      ]
+    },
+    {
+      "reference": "U10",
+      "valid_paths": [
+        "/d6318ee1-12d4-5089-84c2-bb1addcd6fe6/371ac57a-fa63-5267-a2b1-5d65ff20b923"
+      ],
+      "matched_footprint_uuids": [
+        "4ac76d0c-9c6d-4bdc-8a1c-8ad4be8a2ffb"
+      ]
+    },
+    {
+      "reference": "U13",
+      "valid_paths": [
+        "/d6318ee1-12d4-5089-84c2-bb1addcd6fe6/2a4bc707-d0ba-544c-bab5-79952e0eefb2"
+      ],
+      "matched_footprint_uuids": [
+        "1cb7ee45-6e7d-4d4f-9661-58bbe5e21e94"
+      ]
+    },
+    {
+      "reference": "U14",
+      "valid_paths": [
+        "/d6318ee1-12d4-5089-84c2-bb1addcd6fe6/119a2da0-6fbb-5c21-a720-100bc2166f9a"
+      ],
+      "matched_footprint_uuids": [
+        "82326a7f-07c9-44a2-8036-ca302f3afb47"
+      ]
+    },
+    {
+      "reference": "C54",
+      "valid_paths": [
+        "/259119ae-63bb-582f-a484-b0d1b9da613b/4e7370fc-fa18-527c-800b-75be2b3d08a0"
+      ],
+      "matched_footprint_uuids": [
+        "143c185a-70e5-436f-bb4d-34bb770fc76b"
+      ]
+    },
+    {
+      "reference": "C55",
+      "valid_paths": [
+        "/259119ae-63bb-582f-a484-b0d1b9da613b/216dfea8-262e-5b31-9978-cec2b0367e3d"
+      ],
+      "matched_footprint_uuids": [
+        "9c0f0af7-f97f-4b18-89b3-121b1750ff3f"
+      ]
+    },
+    {
+      "reference": "C81",
+      "valid_paths": [
+        "/259119ae-63bb-582f-a484-b0d1b9da613b/f7711ea5-7379-5b4a-a48c-1aa26a7845bd"
+      ],
+      "matched_footprint_uuids": [
+        "f47bc187-9d1d-4503-8672-49240457fd73"
+      ]
+    },
+    {
+      "reference": "C82",
+      "valid_paths": [
+        "/259119ae-63bb-582f-a484-b0d1b9da613b/1ceb5b3c-de61-528c-b329-c506e3bef4cc"
+      ],
+      "matched_footprint_uuids": [
+        "0640dea9-93d3-4fcf-9c60-6c0845ad4d72"
+      ]
+    },
+    {
+      "reference": "C83",
+      "valid_paths": [
+        "/259119ae-63bb-582f-a484-b0d1b9da613b/6661fa70-3b2a-511e-b790-b85bae4935a9"
+      ],
+      "matched_footprint_uuids": [
+        "59109de5-6c59-4287-aa41-6fcc52427088"
+      ]
+    },
+    {
+      "reference": "J28",
+      "valid_paths": [
+        "/259119ae-63bb-582f-a484-b0d1b9da613b/0687e903-fdfe-597e-a3b9-da1b193655b0"
+      ],
+      "matched_footprint_uuids": [
+        "66fd020c-7976-488d-b39b-46426af2912f"
+      ]
+    },
+    {
+      "reference": "R91",
+      "valid_paths": [
+        "/259119ae-63bb-582f-a484-b0d1b9da613b/2a8c3750-cbe9-5d3d-a273-950479053ea9"
+      ],
+      "matched_footprint_uuids": [
+        "d25a424c-3473-43c0-b5b3-57109af63e7e"
+      ]
+    },
+    {
+      "reference": "U7",
+      "valid_paths": [
+        "/259119ae-63bb-582f-a484-b0d1b9da613b/cd655322-6f93-5166-9689-32bf1868a953"
+      ],
+      "matched_footprint_uuids": [
+        "3e363898-665b-42e6-af09-02e435861120"
+      ]
+    },
+    {
+      "reference": "U16",
+      "valid_paths": [
+        "/259119ae-63bb-582f-a484-b0d1b9da613b/728d868e-5b52-55a1-96ba-e3df4d5dedd3"
+      ],
+      "matched_footprint_uuids": [
+        "b5bc0def-dde4-4b24-9798-bdfeb554e645"
+      ]
+    },
+    {
+      "reference": "C80",
+      "valid_paths": [
+        "/6805c229-363d-5720-8872-3a09dea05270/1bfde133-9b68-5a86-b939-bdee0aeaf8d1"
+      ],
+      "matched_footprint_uuids": [
+        "fa1a6d38-f399-4e65-bd37-06715aec170f"
+      ]
+    },
+    {
+      "reference": "D5",
+      "valid_paths": [
+        "/6805c229-363d-5720-8872-3a09dea05270/c39e96c6-f6e5-572a-a06b-e3b2a70c3217"
+      ],
+      "matched_footprint_uuids": [
+        "cf30a0ea-e559-4adb-bba9-5f82676e8bf1"
+      ]
+    },
+    {
+      "reference": "F2",
+      "valid_paths": [
+        "/6805c229-363d-5720-8872-3a09dea05270/66e47898-1bbd-5de4-9354-8c18d0f0530d"
+      ],
+      "matched_footprint_uuids": [
+        "840732dc-c376-49e4-83a9-121d4905da4d"
+      ]
+    },
+    {
+      "reference": "J15",
+      "valid_paths": [
+        "/6805c229-363d-5720-8872-3a09dea05270/9892de13-76a2-5c5a-8165-ce6e72a72be3"
+      ],
+      "matched_footprint_uuids": [
+        "f7c203a3-008d-41b8-8e6c-7a09b5e4bf1c"
+      ]
+    },
+    {
+      "reference": "J23",
+      "valid_paths": [
+        "/6805c229-363d-5720-8872-3a09dea05270/230c5bc2-7169-5c41-a8f1-bf4de2dc0586"
+      ],
+      "matched_footprint_uuids": [
+        "ad41eec4-2605-4b46-999c-7ceb81aa8f2e"
+      ]
+    },
+    {
+      "reference": "Q6",
+      "valid_paths": [
+        "/6805c229-363d-5720-8872-3a09dea05270/d084044a-b702-59a5-bb4e-171cfc121afe"
+      ],
+      "matched_footprint_uuids": [
+        "9f2cb785-2581-4c0e-8c30-98fbdd1a8365"
+      ]
+    },
+    {
+      "reference": "Q7",
+      "valid_paths": [
+        "/6805c229-363d-5720-8872-3a09dea05270/d17bedf7-c654-5e7b-8364-b05dcdbe5048"
+      ],
+      "matched_footprint_uuids": [
+        "1b9e8b64-059c-4830-90a1-25b9a2275176"
+      ]
+    },
+    {
+      "reference": "Q8",
+      "valid_paths": [
+        "/6805c229-363d-5720-8872-3a09dea05270/3a58f50c-f48f-55ac-a501-379410dd4682"
+      ],
+      "matched_footprint_uuids": [
+        "ded978e6-6c8f-46a7-8d94-60bbfd43cc52"
+      ]
+    },
+    {
+      "reference": "Q9",
+      "valid_paths": [
+        "/6805c229-363d-5720-8872-3a09dea05270/215a0885-0b6a-5401-b07c-0ea6dc3e29a8"
+      ],
+      "matched_footprint_uuids": [
+        "fa6df67f-029c-49f3-97d1-a6a3f04dfaf8"
+      ]
+    },
+    {
+      "reference": "R81",
+      "valid_paths": [
+        "/6805c229-363d-5720-8872-3a09dea05270/469eae1a-f17c-5691-b626-b9f9e286ce3d"
+      ],
+      "matched_footprint_uuids": [
+        "92f20198-68fb-4fc3-bee2-8b1906cf4c48"
+      ]
+    },
+    {
+      "reference": "R82",
+      "valid_paths": [
+        "/6805c229-363d-5720-8872-3a09dea05270/7da36d78-7224-5447-8150-2e3ac31e8e4c"
+      ],
+      "matched_footprint_uuids": [
+        "bf2eedfe-f58d-42c0-b1f3-a9a4cfd44cf9"
+      ]
+    },
+    {
+      "reference": "R83",
+      "valid_paths": [
+        "/6805c229-363d-5720-8872-3a09dea05270/b9ca9804-a562-5dca-907b-d18c7b290352"
+      ],
+      "matched_footprint_uuids": [
+        "a6adfb85-35ab-4ab2-84fc-d83cb8661f49"
+      ]
+    },
+    {
+      "reference": "R84",
+      "valid_paths": [
+        "/6805c229-363d-5720-8872-3a09dea05270/dafc1267-4e5f-5a86-aa22-d0d63962f29a"
+      ],
+      "matched_footprint_uuids": [
+        "bf4be323-1fa4-4504-a1b5-f2d20c328670"
+      ]
+    },
+    {
+      "reference": "R85",
+      "valid_paths": [
+        "/6805c229-363d-5720-8872-3a09dea05270/17d67472-6004-5324-9c3a-5bc18fc6e12a"
+      ],
+      "matched_footprint_uuids": [
+        "561e0161-38aa-481b-92e2-705a2d61cb21"
+      ]
+    },
+    {
+      "reference": "R86",
+      "valid_paths": [
+        "/6805c229-363d-5720-8872-3a09dea05270/02779fa8-ae6c-5d42-baf9-3352ff94b4ac"
+      ],
+      "matched_footprint_uuids": [
+        "e911266b-760a-4eac-ba0e-9cfd21d291ac"
+      ]
+    },
+    {
+      "reference": "R87",
+      "valid_paths": [
+        "/6805c229-363d-5720-8872-3a09dea05270/7539fa4e-af84-52ce-8b7b-06e72f50132f"
+      ],
+      "matched_footprint_uuids": [
+        "e2bd588a-0418-4d02-9199-bd0ad55e332b"
+      ]
+    },
+    {
+      "reference": "R88",
+      "valid_paths": [
+        "/6805c229-363d-5720-8872-3a09dea05270/1275c5b2-db54-5854-8ce4-3c003c50bdb0"
+      ],
+      "matched_footprint_uuids": [
+        "229de86c-5b8f-475a-a1d0-475bf834f194"
+      ]
+    },
+    {
+      "reference": "R89",
+      "valid_paths": [
+        "/6805c229-363d-5720-8872-3a09dea05270/0ad91ddb-b2dd-579c-b11e-e8ed02bede4f"
+      ],
+      "matched_footprint_uuids": [
+        "a8b869ad-45ec-4b0c-bf75-3a08a80c0a8a"
+      ]
+    },
+    {
+      "reference": "R90",
+      "valid_paths": [
+        "/6805c229-363d-5720-8872-3a09dea05270/615a9f02-9df6-50dc-80cb-2604c009b138"
+      ],
+      "matched_footprint_uuids": [
+        "0b8fd310-b710-4800-880d-051e700da887"
+      ]
+    },
+    {
+      "reference": "U15",
+      "valid_paths": [
+        "/6805c229-363d-5720-8872-3a09dea05270/e67b0943-cbb5-5007-9e04-530ee9cb6214"
+      ],
+      "matched_footprint_uuids": [
+        "65de0837-7d33-484d-9e57-6f630fb5fb27"
+      ]
+    },
+    {
+      "reference": "C74",
+      "valid_paths": [
+        "/185fc758-680e-5cca-9205-ee46946e4fad/603a3f00-f11d-5990-86c6-6f2b093d550c"
+      ],
+      "matched_footprint_uuids": [
+        "04e3ca2f-4a7e-48c2-883c-be7b7f8991d5"
+      ]
+    },
+    {
+      "reference": "C75",
+      "valid_paths": [
+        "/185fc758-680e-5cca-9205-ee46946e4fad/1c1a7411-f31d-5aca-95f6-12b6270b7acf"
+      ],
+      "matched_footprint_uuids": [
+        "30b801ec-806a-4767-bd4a-bd76367f0850"
+      ]
+    },
+    {
+      "reference": "C92",
+      "valid_paths": [
+        "/185fc758-680e-5cca-9205-ee46946e4fad/b0f0c400-77e6-5ab1-a947-fa95f179d76f"
+      ],
+      "matched_footprint_uuids": [
+        "3c00c3e5-0ea5-4a40-852b-d4af5fe287ed"
+      ]
+    },
+    {
+      "reference": "C93",
+      "valid_paths": [
+        "/185fc758-680e-5cca-9205-ee46946e4fad/c15e1dde-c398-5f16-93b0-b00458751c21"
+      ],
+      "matched_footprint_uuids": [
+        "85c9e00f-5a6b-430f-a5db-70ef6a07bb68"
+      ]
+    },
+    {
+      "reference": "C94",
+      "valid_paths": [
+        "/185fc758-680e-5cca-9205-ee46946e4fad/b0d7bc75-e1c9-5d00-b018-f53dfcbc1e74"
+      ],
+      "matched_footprint_uuids": [
+        "d5e9db1f-1dec-43de-8066-c0eca12b221f"
+      ]
+    },
+    {
+      "reference": "J18",
+      "valid_paths": [
+        "/185fc758-680e-5cca-9205-ee46946e4fad/f9cbf222-f9ba-5b53-8900-e4aef407b9b6"
+      ],
+      "matched_footprint_uuids": [
+        "4aaa196d-1d5e-45b9-9c9d-2b1adfcf6322"
+      ]
+    },
+    {
+      "reference": "J25",
+      "valid_paths": [
+        "/185fc758-680e-5cca-9205-ee46946e4fad/bacd0ef6-cd1d-5ef6-8fd3-4b1287ad7108"
+      ],
+      "matched_footprint_uuids": [
+        "e608c882-6cda-4b7b-90c7-6b0204d57541"
+      ]
+    },
+    {
+      "reference": "Q3",
+      "valid_paths": [
+        "/185fc758-680e-5cca-9205-ee46946e4fad/d8ef3938-10a3-582e-874a-9fa00f2c7654"
+      ],
+      "matched_footprint_uuids": [
+        "e7f70e65-8e89-453c-ae60-84083c441c0b"
+      ]
+    },
+    {
+      "reference": "R73",
+      "valid_paths": [
+        "/185fc758-680e-5cca-9205-ee46946e4fad/0a853182-6526-5825-aa11-ad7d3544b1a4"
+      ],
+      "matched_footprint_uuids": [
+        "1fba3a93-055c-4c6c-994d-ace8db0ff812"
+      ]
+    },
+    {
+      "reference": "R74",
+      "valid_paths": [
+        "/185fc758-680e-5cca-9205-ee46946e4fad/d8e5c267-5eb3-501b-b560-1281c668f1cc"
+      ],
+      "matched_footprint_uuids": [
+        "ad7270a9-426e-4b58-9de7-4711bc816d27"
+      ]
+    },
+    {
+      "reference": "R75",
+      "valid_paths": [
+        "/185fc758-680e-5cca-9205-ee46946e4fad/92500a91-4875-51c9-a8ad-890e01a185d9"
+      ],
+      "matched_footprint_uuids": [
+        "d2a0e8ce-a0c0-475e-95f4-70fc61c6eb10"
+      ]
+    },
+    {
+      "reference": "R79",
+      "valid_paths": [
+        "/185fc758-680e-5cca-9205-ee46946e4fad/8ff212cf-22ea-5a2d-aa9c-2651ed30e77e"
+      ],
+      "matched_footprint_uuids": [
+        "1fdb0fa1-5fe0-435a-a1e7-6349c6e2fee7"
+      ]
+    },
+    {
+      "reference": "R93",
+      "valid_paths": [
+        "/185fc758-680e-5cca-9205-ee46946e4fad/cc7d7558-ce06-5b53-96f8-d786c0873281"
+      ],
+      "matched_footprint_uuids": [
+        "9acdc970-b6c1-46a0-9a8e-266325b19de5"
+      ]
+    },
+    {
+      "reference": "U8",
+      "valid_paths": [
+        "/185fc758-680e-5cca-9205-ee46946e4fad/251fbaae-d5ed-5ee3-8b36-2e43043d01b4"
+      ],
+      "matched_footprint_uuids": [
+        "8c4e7310-71c7-4e6b-bd62-25bd3c3286ea"
+      ]
+    },
+    {
+      "reference": "U11",
+      "valid_paths": [
+        "/185fc758-680e-5cca-9205-ee46946e4fad/44bd0b30-3fd4-57cb-8cb8-3e04b565f5e4"
+      ],
+      "matched_footprint_uuids": [
+        "207886cf-be3c-4a83-a05d-0e7a0b6d9774"
+      ]
+    },
+    {
+      "reference": "U12",
+      "valid_paths": [
+        "/185fc758-680e-5cca-9205-ee46946e4fad/72d6c094-5acc-5dd2-b603-2dd54eac1feb"
+      ],
+      "matched_footprint_uuids": [
+        "c7272f16-8aff-40be-b4a9-4ec21c53fa5c"
+      ]
+    }
+  ],
+  "limitation": "Exact UUID matching preflight only; GUI memory, update options, library/field refresh, copper DRC and physical hardware are separate.",
+  "pass": true
+}

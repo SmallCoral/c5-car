@@ -22,9 +22,8 @@
 ## 当前进度
 
 Motor的原理图和PCB均使用J4、J6六针电机口，J3、J5两针端子已删除。
-2026-11-07 当前为 M2.7：MaixCAM2 负责识别，J19 改为同序六针；Action 4 负责图传，J28 只提供 Type-C 电源。扩展板合并为一路 8A 等级的 5V 总降压，另保留 TFT、蓝牙共用的 3.3V LDO。核心板经 A48/B48 输入 5V，并用本板 AP63203 产生 3.3V；USB 隔离保留。
-原生 ERC 为 0 错误、0 警告，2821 项原理图检查通过。PCB 已核对并补齐同步，一致性问题为 0；154 段走线及过孔、现有摆放保留。PCB 仍有 18 条 DRC 违规和 305 项未连接，尚未完成布线。固件未修改。
-详细接线见 [M2 接口](Documentation/reference/m2-interfaces.md)，电流、MaixCAM2 六针座 1A 限制及检查边界见 [M2.7 验证](Documentation/validation/2026-11-07-m27-unified-power.md)。
+2026-11-08 当前实际电路仍为 M2.8：180个原理图元件和180个PCB封装唯一对应，205网络与设计合同一致，F8预计新增0。当前保存176段走线、3过孔；原生一致性0，ERC为0错误3警告，DRC有18条违规、379项未连接，尚不能制板。
+用户已确认下一轮精简MaixCAM2为单芯片简单保护，并删除步进MCU通断控制、改直接接口；这些改动尚未实施。当前停在交接上传阶段。见 [最新复查](Documentation/validation/2026-11-08-motor-recheck.md)、[待实施需求](Documentation/reference/module-power-simplification.md)、[交接与续接](.agent/main/handoff.md)。
 
 上述模块的电源与控制接口已画入 Motor；实际模块功能、外置步进驱动、相机程序与闭环控制尚未完成。
 固件仍为系统初始化后进入空循环的生成工程。
