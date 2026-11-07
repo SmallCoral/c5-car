@@ -1,0 +1,24 @@
+{
+  "date": "2026-11-07",
+  "revision": "M2.6",
+  "checks": 2165,
+  "native_erc_errors": 0,
+  "native_erc_warnings": 0,
+  "pages": 9,
+  "visual_overlap_count": 0,
+  "BOM_rows": 148,
+  "models": 147,
+  "physical_references": 150,
+  "user_unchanged_pages": [
+    "04_Left_Motor",
+    "05_Right_Motor",
+    "06_Module_Power",
+    "07_TFT_Buttons"
+  ],
+  "project_settings_byte_preserved": true,
+  "checked_document_links": 5,
+  "pcb_accessed": false,
+  "pcb_updated": false,
+  "github_push": false,
+  "pass": true
+}

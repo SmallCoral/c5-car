@@ -1,0 +1,59 @@
+{
+  "xh2": {
+    "status": "project STEP model; illustrative material colors",
+    "source": "Hardware\\stm32c5a3\\Hardware\\CoralC5-Motor\\Models\\Connector_JST__JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical.step",
+    "sha256": "7287616fdad677e9b54cf5494f17efc4b3fb77be002659d73e215772393f20c6"
+  },
+  "xh4": {
+    "status": "project STEP model; illustrative material colors",
+    "source": "Hardware\\stm32c5a3\\Hardware\\CoralC5-Motor\\Models\\Connector_JST__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical.step",
+    "sha256": "7eb17ded8ec4a3216753a234254e22a2d8e07826f0816045bfb803a19cac75ea"
+  },
+  "xh6": {
+    "status": "project STEP model; illustrative material colors",
+    "source": "Hardware\\stm32c5a3\\Hardware\\CoralC5-Motor\\Models\\JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical.step",
+    "sha256": "5a74ac21b099c174928a7afd6783a9e1d26e23a1f2418d4cb4856ad6430e9c2a"
+  },
+  "xh8": {
+    "status": "project STEP model; illustrative material colors",
+    "source": "Hardware\\stm32c5a3\\Hardware\\CoralC5-Motor\\Models\\Connector_JST__JST_XH_B8B-XH-A_1x08_P2.50mm_Vertical.step",
+    "sha256": "abecfd781e2123f0b9bd010da0489fd711b739f92b2bdfb146f354cdbc1e5300"
+  },
+  "female4": {
+    "status": "project STEP model; illustrative material colors",
+    "source": "Hardware\\stm32c5a3\\Hardware\\CoralC5-Motor\\Models\\Connector_PinSocket_2.54mm__PinSocket_1x04_P2.54mm_Vertical.step",
+    "sha256": "0b6cc232aa72f09f14de4bc492e3ba9a06f711bfb0bc8197cb28fb6bea9b7be3"
+  },
+  "female8": {
+    "status": "project STEP model; illustrative material colors",
+    "source": "Hardware\\stm32c5a3\\Hardware\\CoralC5-Motor\\Models\\Connector_PinSocket_2.54mm__PinSocket_1x08_P2.54mm_Vertical.step",
+    "sha256": "ea08834e672b1f96115f4d51e8db44b9d653dd2798afb956a0277425663d5832"
+  },
+  "header2": {
+    "status": "project STEP model; illustrative material colors",
+    "source": "Hardware\\stm32c5a3\\Hardware\\CoralC5-Motor\\Models\\Connector_PinHeader_2.54mm__PinHeader_1x02_P2.54mm_Vertical__PinHeader_1x02_P2.54mm_Vertical.step",
+    "sha256": "ea4d0799007ebdd3945072bf255d673d2fe87eb05fda85fd8d7993ad9397da41"
+  },
+  "usb_c": {
+    "status": "project STEP model; illustrative material colors",
+    "source": "Hardware\\stm32c5a3\\Hardware\\CoralC5-Motor\\Models\\Connector_USB__USB_C_Receptacle_GCT_USB4125-xx-x_6P_TopMnt_Horizontal__USB_C_Receptacle_GCT_USB4125-xx-x_6P_TopMnt_Horizontal.step",
+    "sha256": "090b9119a6ff678f028cbd5aa52c28373fae6a76823c5b8bf7fcd1a8db2f99d5"
+  },
+  "core98": {
+    "status": "project STEP model; illustrative material colors",
+    "source": "Hardware\\stm32c5a3\\Hardware\\CoralC5-Motor\\Models\\C5_EDGE_3_Socket__Streamline_Socket.step",
+    "sha256": "32d43c7803e76c89d8f19ae974a4d9962257ac55d3e23d6dffbfdff7d8693866"
+  },
+  "mx6": {
+    "status": "illustrative geometry, not exact manufacturer model",
+    "note": "MX1.25 six-contact low-profile side-entry appearance only; source dimensions from ZX-MX1.25-6PWT drawing Rev2.0."
+  },
+  "xt60": {
+    "status": "illustrative geometry, not exact manufacturer model",
+    "note": "Generic yellow two-pole right-angle connector appearance, not an exact XT60PW-M model or polarity drawing."
+  },
+  "button": {
+    "status": "illustrative geometry, not exact manufacturer model",
+    "note": "Generic 6x6x4.3mm four-leg SMD tactile switch; actual unbranded lead span is unverified."
+  }
+}

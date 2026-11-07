@@ -1,6 +1,7 @@
 """Bounded M2.5 vision changes; intended connectivity is independent of exports."""
 import copy,json
 from sexpr import node,nodes,prop
+from schematic_semantic import canonical
 
 def partitions(parts, record):
     """Apply only the pin removals, rail additions and new nets in the design brief."""
@@ -26,13 +27,13 @@ def library(old,new,record,cache=False):
             key=prefix+name
             if key not in old and key in new:
                 expected=copy.deepcopy(definition);expected[1]=key
-                if new[key]!=expected:raise ValueError('Existing library copied into new cache differs: '+key)
+                if canonical(new[key])!=canonical(expected):raise ValueError('Existing library copied into new cache differs: '+key)
                 new.pop(key)
     for name,definition in record['new_library_definitions'].items():
         key=prefix+name
         if key in new:
             expected=copy.deepcopy(definition);expected[1]=key
-            if new[key]!=expected:raise ValueError('New library definition differs: '+key)
+            if canonical(new[key])!=canonical(expected):raise ValueError('New library definition differs: '+key)
             new.pop(key)
     for name,definition in record['updated_library_definitions'].items():
         key=prefix+name
@@ -42,22 +43,41 @@ def library(old,new,record,cache=False):
         desired={z[1]:z for z in nodes(definition,'symbol')}
         for sub in nodes(old[key],'symbol'):sub[:]=copy.deepcopy(desired[sub[1]])
 
-def checks(root, actual, schemas, record):
+def checks(root, actual, schemas, record, m26=None):
     if not record:return []
     result=[]
     def ck(name,ok,detail=None):result.append({'name':'vision: '+name,'pass':bool(ok),'detail':detail})
     def group(pin):return actual.get(pin,frozenset())
     byref={prop(z,'Reference')[2]:z for d in schemas.values() for z in nodes(d,'symbol')}
+    removed=set((m26 or {}).get('removed_references',[]))
     for ref,fields in record['new_component_values'].items():
+        if ref in removed:continue
+        fields={**fields,**{k:v for k,v in (m26 or {}).get('changes',{}).get(ref,{}).items() if k!='lib_id'}}
         ck(ref+' authorized values and package',all(prop(byref[ref],k)[2]==v for k,v in fields.items()))
     for ref,mpn in [('U6','AP63300WU-7'),('U8','AP63300WU-7'),('U9','TPS259470LRPWR'),('U10','TPS259470LRPWR'),('U11','SN74LV1T125DBVR'),('U12','SN74LV1T125DBVR'),('U13','SN74LVC2G125DCTR'),('F1','0448015.MR')]:
+        if ref in removed:continue
+        mpn=(m26 or {}).get('changes',{}).get(ref,{}).get('MPN',mpn)
         ck(ref+' exact selected MPN',prop(byref[ref],'MPN')[2]==mpn)
     for ref in ['U9','U10']:
+        if ref in removed:continue
+        if m26 and ref=='U10':
+            ck(ref+' unused fault output is open',group('U10:6')=={'U10:6'})
+            ck(ref+' ground and EP connected','J1:2' in group('U10:1') and 'J1:2' in group('U10:9'))
+            continue
         ck(ref+' open AUXOFF/nFLT/ITIMER only',all(group(ref+':'+p)=={ref+':'+p} for p in ['3','4','10']))
         ck(ref+' ground pin 8','J1:2' in group(ref+':8'))
     for ref,expected in [('R65','49.9k / 0.1%'),('R66','15k / 0.1%'),('R70','49.9k / 0.1%'),('R71','15k / 0.1%'),('R67','953 / 1%'),('R72','1.5k / 1%')]:
+        if ref in removed:continue
+        expected=(m26 or {}).get('changes',{}).get(ref,{}).get('Value',expected)
         ck(ref+' protection setting',prop(byref[ref],'Value')[2]==expected)
-    for ref in ['Q3','Q4']:ck(ref+' low gate voltage rated FET',prop(byref[ref],'MPN')[2]=='BSS138BK,215')
+    for ref in ['Q3','Q4']:
+        if ref not in removed:ck(ref+' low gate voltage rated FET',prop(byref[ref],'MPN')[2]=='BSS138BK,215')
+    if m26:
+        ck('Maix protected supply separate from Core and raw external rail',group('J19:1')!=group('U7:1') and group('J19:1')!=group('J14:A48'))
+        ck('Maix power comes through ideal-diode FET and UART OE follows it','Q5:3' in group('J19:1') and 'Q4:1' in group('J19:1'))
+        ck('remaining UART buffer powered from Core','J14:A47' in group('U13:8'))
+        ck('new UVLO and OVLO settings match SGM reference',abs(m26['SGM']['uvlo_typ_v']-4.5036)<1e-6 and 5.20<m26['SGM']['ovp_typ_v']<5.22)
+        return result
     ck('separate 5V rails',group('J25:1')!=group('J19:1')!=group('U7:1') and group('J25:1')!=group('U7:1'))
     ck('Lichee power connector after protection',group('J25:1')=={'J25:1','U9:6','C70:1'})
     ck('Lichee header sense is input only',group('J18:1')=={'J18:1','Q3:1','R74:1'})

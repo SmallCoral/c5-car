@@ -1,0 +1,26 @@
+{
+  "date": "2026-11-07",
+  "source": "live files at task resumption",
+  "pcb_sha256": "d2b2c448cc9de39c734538639e64e3276378b2782743a73f583cd638f4b7897d",
+  "files": {
+    "08_Grayscale_Cameras.kicad_sch": "adbae372e15f0b3fcf966edc58c5846d74409d9abe281580f59f48df6dd102ae",
+    "06_Module_Power.kicad_sch": "689a6f2af19e6f6b99fdf625b06c727959fd9d484a5fa18e0f6a426ed8c2903c",
+    "docs/netlist.xml": "92b2550435c24d1f42781d13da0f16c180efb1a577416c5be469cf7aaa6d0340",
+    "05_Right_Motor.kicad_sch": "482aa1705f192f23e8993d2810e8c6c182251200c10044da5fc9ac8f9c4e97e5",
+    "sym-lib-table": "7dbeffb0749c954ffbdec4208369d15e96bee231224886ea52bad125d83737bb",
+    "fp-lib-table": "b3b35799c1e5d71b1c03d1bef840ca1a78882587863de0c52c39c0d41482245a",
+    "04_Left_Motor.kicad_sch": "b3904b1489bba5d486c1b1baa555fcbc46d4d6ace4c0ece7a8051b85da93aa04",
+    "02_Power.kicad_sch": "3a90395dcee75ae469b916c87eb708a6981762d3c764de5d55b1195c5d42581c",
+    "docs/core_netlist.xml": "113cd2d629f42531553a366984cc68642b4dd77f456fc90993160f365bef5572",
+    "docs/visual_check.json": "da896137c8b6e7890ecf1098b048a87a596d693b29733e6639a86f8d4ea9450e",
+    "09_Bluetooth_Stepper.kicad_sch": "40facb95c07a8b4b47dccead5b07498ea58fd10c3121d7a4e095258f264dee7c",
+    "CoralC5-Motor.kicad_pcb": "d2b2c448cc9de39c734538639e64e3276378b2782743a73f583cd638f4b7897d",
+    "07_TFT_Buttons.kicad_sch": "dcf32ef1fa7ee17fec16739aaceece4d1dd65d065ea72c0e531829ad98469532",
+    "10_Lichee_Interface.kicad_sch": "dffa24062248341091473a3e05883b7b514bd041f297db820e9d3f5fbcb0f721",
+    "docs/erc.json": "551d922cbc2d2c6f2c801f8b1bfad7b0340bd9231454dabbf69ccb918353fe4e",
+    "CoralC5-Motor.kicad_pro": "140a9035a81ffb1147fdb43ccc49d8d4fd0754f4a125ee1b5fe805c2b567f243",
+    "03_Core_Interface.kicad_sch": "1b0a91846392f076517c55aa12e9c89d14553a29a51da94d7fbc3da477474b96",
+    "Motor.kicad_sym": "e6d31c81cffc5460e9068bea58a94b5c19035e92c41ef3c0d2f81bb6f6f9781d",
+    "CoralC5-Motor.kicad_sch": "a2f342fd7f3ab68093cae9009d43a9ebd722de578d27541cdbaf798c90ae13e5"
+  }
+}

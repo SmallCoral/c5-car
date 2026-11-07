@@ -1,0 +1,119 @@
+{
+  "date": "2026-11-07",
+  "revision": "M2.7",
+  "size": [
+    4240,
+    2520
+  ],
+  "connector_count": 14,
+  "covered_connectors": [
+    "J1",
+    "J10",
+    "J14",
+    "J15",
+    "J17",
+    "J19",
+    "J20",
+    "J21",
+    "J23",
+    "J27",
+    "J28",
+    "J4",
+    "J6",
+    "J8"
+  ],
+  "missing_connectors": [],
+  "connector_appearances": {
+    "J1": [
+      [
+        "xt60",
+        "J1 · XT60 卧式示意"
+      ]
+    ],
+    "J14": [
+      [
+        "core98",
+        "J14 · 98P 核心板插座"
+      ]
+    ],
+    "J4": [
+      [
+        "xh6",
+        "J4/J6 · XH 6P"
+      ]
+    ],
+    "J23": [
+      [
+        "xh8",
+        "J23 · XH 8P"
+      ]
+    ],
+    "J8": [
+      [
+        "xh4",
+        "J8 · XH 4P"
+      ]
+    ],
+    "J10": [
+      [
+        "header2",
+        "J10 · 2.54mm 排针"
+      ]
+    ],
+    "J19": [
+      [
+        "mx6",
+        "J19 · MX1.25 示意"
+      ],
+      [
+        "header2",
+        "J27 · 2.54mm 排针"
+      ]
+    ],
+    "J28": [
+      [
+        "usb_c",
+        "J28 · Type-C 母座"
+      ]
+    ],
+    "J20": [
+      [
+        "xh8",
+        "J20 · XH 8P"
+      ],
+      [
+        "xh2",
+        "J21 · XH 2P"
+      ]
+    ],
+    "J17": [
+      [
+        "female8",
+        "J17 · 2.54mm 8P 排母"
+      ]
+    ],
+    "J15": [
+      [
+        "female4",
+        "J15 · 2.54mm 4P 排母"
+      ]
+    ],
+    "buttons": [
+      [
+        "button",
+        "按键 · 贴片四脚示意"
+      ]
+    ]
+  },
+  "appearance_sources": "connector-appearance/sources.json",
+  "netlist_sha256": "831987d8fce0603bd87e93ec26dc94364a6e2315dad2fd8e2328c52cd89c0e01",
+  "sources": [
+    "Documentation/reference/m2-interfaces.md",
+    "Documentation/reference/motor-interface.md",
+    "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/netlist.xml"
+  ],
+  "outputs": [
+    "Documentation\\diagrams\\CoralC5-Motor-M2.7-interface-tree-with-connectors.png",
+    "Documentation\\diagrams\\CoralC5-Motor-M2.7-interface-tree-with-connectors.svg"
+  ]
+}

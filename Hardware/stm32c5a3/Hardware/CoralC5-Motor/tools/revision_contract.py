@@ -1,6 +1,7 @@
 """Explicit, bounded changes authorized after the M2.1 presentation baseline."""
 import copy,csv,json,hashlib,xml.etree.ElementTree as ET
 from sexpr import node,nodes,prop,parse
+from schematic_semantic import canonical
 
 class Revisions:
  def __init__(self,root):
@@ -11,6 +12,7 @@ class Revisions:
   self.buttons=read('smd_buttons_revision.json')
   self.gray=read('grayscale_photo_revision.json')
   self.vision=read('vision_power_revision.json')
+  self.m26=read('m26_revision.json')
   self.active=bool(self.zdt or self.connectors or self.power or self.passives or self.jumpers or self.bt_pinout or self.buttons or self.gray)
   self.pinmap={}
   self.pinmap.update(self.zdt.get('intentional_pin_map',{}));self.pinmap.update(self.power.get('pin_map_from_m2',{}))
@@ -27,8 +29,9 @@ class Revisions:
   values.update(self.buttons.get('changes',{}).get(ref,{}))
   values.update(self.gray.get('changes',{}).get(ref,{}))
   values.update({k:v for k,v in self.vision.get('changes',{}).get(ref,{}).items() if k!='lib_id'})
+  values.update({k:v for k,v in self.m26.get('changes',{}).get(ref,{}).items() if k!='lib_id'})
   return values
- def expected_libid(self,z):return self.vision.get('changes',{}).get(prop(z,'Reference')[2],{}).get('lib_id',self.power.get('changes',{}).get(prop(z,'Reference')[2],{}).get('lib_id',node(z,'lib_id')[1]))
+ def expected_libid(self,z):return self.m26.get('changes',{}).get(prop(z,'Reference')[2],{}).get('lib_id',self.vision.get('changes',{}).get(prop(z,'Reference')[2],{}).get('lib_id',self.power.get('changes',{}).get(prop(z,'Reference')[2],{}).get('lib_id',node(z,'lib_id')[1])))
  def pin_identity(self,old,new):
   ref=prop(old,'Reference')[2];oo={p[1]:node(p,'uuid')[1] for p in nodes(old,'pin')};nn={p[1]:node(p,'uuid')[1] for p in nodes(new,'pin')}
   if self.zdt and ref=='J23':return set(nn)==set(map(str,range(1,9))) and all(nn[b]==oo[a] for a,b in [('2','2'),('3','7'),('4','8')])
@@ -36,7 +39,7 @@ class Revisions:
   if self.power and ref=='SW1':return nn=={p:u for p,u in oo.items() if p in ['1','2','3']}
   if self.gray and ref=='J20':return nn=={str(int(p)-2):u for p,u in oo.items() if int(p)>2}
   if self.gray and ref=='J21':return nn=={'1':oo['2'],'2':oo['1']}
-  return oo==nn
+  return canonical(oo)==canonical(nn)
  def expected_partitions(self,parts):
   result=set()
   for part in parts:
@@ -56,13 +59,19 @@ class Revisions:
   if self.vision:
    from vision_contract import partitions
    result=partitions(result,self.vision)
+  if self.m26:
+   from vision_contract import partitions
+   result=partitions(result,self.m26)
   return result
- def library_compatible(self,old,new,cache=False,extra_fuse=None):
+ def library_compatible(self,old,new,cache=False,extra_fuse=None,file=None):
   def symbols(d):return {z[1]:copy.deepcopy(z) for z in nodes(d,'symbol')}
   oo,nn=symbols(old),symbols(new);prefix='Motor:' if cache else ''
   if self.vision:
    from vision_contract import library
    library(oo,nn,self.vision,cache)
+  if self.m26:
+   from m26_contract import normalize_library
+   normalize_library(oo,nn,self.m26,cache,file)
   if self.jumpers and prefix+'M2_J15' in oo:
    for sub in nodes(oo[prefix+'M2_J15'],'symbol'):
     for p in nodes(sub,'pin'):
@@ -96,9 +105,10 @@ def checks(root,actual,schemas):
   ck('J23 8P only four active wires',r.zdt['J23']['pins']=={'1':'VM','2':'GND','3':'NC','4':'NC','5':'NC','6':'NC','7':'STEP_UART_TX','8':'STEP_UART_RX'})
   for k in range(3,7):ck(f'J23:{k} electrically isolated',group(f'J23:{k}')=={f'J23:{k}'})
   ck('J23:2 common ground','J1:2' in group('J23:2'))
-  ck('UART TX to driver RX','J14:A30' in group('J23:7'))
-  ck('UART RX from driver TX','J14:A29' in group('J23:8'))
+  ck('UART TX to driver RX','J14:A30' in group('U15:2' if r.m26 else 'J23:7'))
+  ck('UART RX from driver TX','J14:A29' in group('U15:3' if r.m26 else 'J23:8'))
  for ref,c in r.connectors.get('changes',{}).items():
+  if ref in r.m26.get('removed_references',[]):continue
   z=next(z for d in schemas.values() for z in nodes(d,'symbol') if prop(z,'Reference')[2]==ref)
   expected=r.gray.get('changes',{}).get(ref,{}).get('Footprint',c['footprint'])
   ck(ref+' selected connector footprint',prop(z,'Footprint')[2]==expected,expected)
@@ -127,16 +137,20 @@ def checks(root,actual,schemas):
   if r.vision:
    from vision_contract import partitions
    before={frozenset(':'.join(p) for p in part) for part in partitions(before,r.vision)}
+  if r.m26:
+   from vision_contract import partitions
+   before={frozenset(':'.join(p) for p in part) for part in partitions(before,r.m26)}
   ck('button replacement preserves native connectivity with explicit subsequent revisions',before==set(actual.values()))
  if r.gray:
   for i in range(1,9):ck(f'gray CH{i} exactly reaches its Core input',group(f'J20:{i}')=={f'J20:{i}','J14:'+(['B15','B16','B17','B18','B19','B20','B28','B29'][i-1])})
   ck('gray 2P supply is GND then 5V','J1:2' in group('J21:1') and 'U7:1' in group('J21:2'))
-  for p in ['B30','B31']:ck(p+' serial-only GPIO released as isolated contact',group('J14:'+p)=={'J14:'+p})
+  for p in (['B31'] if r.m26 else ['B30','B31']):ck(p+' serial-only GPIO released as isolated contact',group('J14:'+p)=={'J14:'+p})
   for name,d in schemas.items():ck(name+' removed gray serial ports absent',not {z[1] for typ in ['global_label','hierarchical_label'] for z in nodes(d,typ)}&{'GRAY_CLK','GRAY_DAT'})
  if r.passives:
   current={prop(z,'Reference')[2]:z for d in schemas.values() for z in nodes(d,'symbol')}
   ck('all 67 original 0603 parts included',len(r.passives['changes'])==67)
-  for ref,c in r.passives['changes'].items():ck(ref+' unified 0603 footprint',prop(current[ref],'Footprint')[2]==c['footprint'])
+  for ref,c in r.passives['changes'].items():
+   if ref not in r.m26.get('removed_references',[]):ck(ref+' unified 0603 footprint',prop(current[ref],'Footprint')[2]==c['footprint'])
   for fp in r.passives['footprint_sha256']:
    d=parse((root/'Motor.pretty'/(fp.split(':')[1]+'.kicad_mod')).read_text(encoding='utf-8'));pads={p[1]:p for p in nodes(d,'pad') if p[1] in ['1','2']}
    x={k:float(node(p,'at')[1]) for k,p in pads.items()};size={k:list(map(float,node(p,'size')[1:3])) for k,p in pads.items()}
@@ -153,7 +167,7 @@ def checks(root,actual,schemas):
   ck('switch pull-down returns to ground','J1:2' in group('R2:2'))
   ck('F1 between XT60 and input MOS',group('J1:1')=={'J1:1','F1:1'} and group('F1:2')=={'F1:2','Q1:2'})
   ck('protected main VM reaches branch fuse',all(p in group('Q2:2') for p in ['F2:1','U6:3']))
-  ck('step branch isolated by F2',group('F2:2')=={'F2:2','J23:1','J24:1'} and group('F2:1')!=group('F2:2'))
+  ck('step branch isolated by F2',group('F2:2')==({'F2:2','Q6:2'} if r.m26 else {'F2:2','J23:1','J24:1'}) and group('F2:1')!=group('F2:2'))
   ck('10V full-system minimum',r.power['budget']['battery_voltage_range_v'][0]==10)
   b=r.power['budget'];ck('budget calculation uses power conversion not sum of unlike currents',all(abs(b['input_current_a'][str(v)]-(4+3+5*(.75+1.5)/(v*.85)))<.0001 for v in [10,12,12.6]))
   if not r.vision:ck('12A fuse after 25 percent continuous derating covers declared budget',12*.75>b['input_current_a']['10'])
@@ -164,5 +178,8 @@ def checks(root,actual,schemas):
    ck(ref+' manufacturer pin identity',pn==expected,pn)
  if r.vision:
   from vision_contract import checks as vision_checks
-  out.extend(vision_checks(root,actual,schemas,r.vision))
+  out.extend(vision_checks(root,actual,schemas,r.vision,r.m26))
+ if r.m26:
+  from m26_contract import checks as m26_checks
+  out.extend(m26_checks(root,actual,schemas,r.m26))
  return out

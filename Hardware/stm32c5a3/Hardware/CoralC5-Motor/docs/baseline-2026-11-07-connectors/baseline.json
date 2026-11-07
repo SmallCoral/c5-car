@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-07",
+  "source": "user current saved working tree; includes manual edits after cc8dcdb",
+  "pcb_accessed": false,
+  "files": {
+    "02_Power.kicad_sch": "20c66d3bf3bafebc374e7b3be6a9292a27ee6fb835051cce5a6e5bb04a6365a0",
+    "03_Core_Interface.kicad_sch": "a1acc2272b9006d46bcbf96fb319ec504df2f837bc89661a8ceb517a37fa0a70",
+    "04_Left_Motor.kicad_sch": "b3904b1489bba5d486c1b1baa555fcbc46d4d6ace4c0ece7a8051b85da93aa04",
+    "05_Right_Motor.kicad_sch": "482aa1705f192f23e8993d2810e8c6c182251200c10044da5fc9ac8f9c4e97e5",
+    "06_Module_Power.kicad_sch": "83aad1796329a4d23cad8d95648bcdfe4fa42378ce85e58a3e0b22d35bc07b6d",
+    "07_TFT_Buttons.kicad_sch": "fcb7ebb8dc3898dcfc13bb8bccd6f37d6ced581250d159205a92788a83a6c603",
+    "08_Grayscale_Cameras.kicad_sch": "3e76e9d789e0568b9857162c0eadada0a548221820a4d4de158bd4391738e1d7",
+    "09_Bluetooth_Stepper.kicad_sch": "6a6bc8f8708c29968616875bac7f935f723ae4d04304595cbd98ca1476ba05ee",
+    "10_Lichee_Power.kicad_sch": "21fa5272b183c344f29ae230f8c757ecd5541018d6f86f44e41f683ea7520226",
+    "CoralC5-Motor.kicad_sch": "ae2613677743242f8aff11c25a740b1c0d010cf170ac842b8a11b8ac32b1e958",
+    "Motor.kicad_sym": "251180c2f54d25ac48bf578b1b33743811bdb2b24a8cee0dac6e5c2001a3a1d1",
+    "CoralC5-Motor.kicad_pro": "ecb4b5eec7454b67795b52adb5abd22a6c1bc33f569a0ad1f123e9f40e650829",
+    "verify_layout_edit.py": "3cf4a43d327c62b7dfae767be44b13f21ed97790c60f613ddc0f9d868fb7b832",
+    "verify_m2.py": "f8a81eabcf264f29cabff69b6f06f6134a0b81334c24e90fe1899432bc7320d5",
+    "verify_schematic.py": "8f326974934c92ef174e6269930a0446cfd8b16c88432486876f2fbbbeaa98b1",
+    "revision_contract.py": "ee587d9d3647769d47abfaf26b8a08d7ab8d26be4df11ad01fe49eb37f1cd448",
+    "vision_contract.py": "736edf7fd2e028abb31a4db5a2f78cba0a040e317c150a63326acfb6d78e8e76",
+    "netlist.xml": "876379a402b1a13a3f5b86298d7670a9ade4a384da8c86e576113fb2e4df3e9b",
+    "erc.json": "3ddf3f38fbca5367e665d49c3f7b9ea6ac9eb6831a98ce71f2789e2e755ceb51",
+    "verification.json": "656030712160193b6f0bf3c1d2d165966ed50ef7169ce736195bf4cd57bb50ff",
+    "visual_check.json": "d77c3c9ae01caf730d18d085ca90e6776dcbbf6db892ed508b616f8c418723f7",
+    "current_design.json": "ca3facff3f2c7971a892808307b77dd583ec6da89a3981e21f5ec6e6724db2f1",
+    "BOM_M2_SCHEMATIC_DRAFT.csv": "861b8cc321a7569b0b0f87ae7c9fa437c05862fa36074a2d052a4ed4410a1512",
+    "vision_power_revision.json": "0c004daff96b0bf71c8ee4ce908903e22ecbeefae60459e63eaee9fda823f734",
+    "m2_pin_assignment.csv": "ab1e2b12ea30836c00a7f5214df658a1a851443c6a6283818e7c08f270bc0ca3"
+  }
+}

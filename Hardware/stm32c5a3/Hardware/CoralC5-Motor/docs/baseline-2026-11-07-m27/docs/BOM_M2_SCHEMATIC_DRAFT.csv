@@ -1,0 +1,149 @@
+﻿reference,value,mpn,tolerance,footprint,datasheet,sheet,status
+C1,470u / 25V,EEU-FR1E471,,Motor:Capacitor_THT__CP_Radial_D10.0mm_P5.00mm,,/输入、总开关与降压/,M2.6 schematic draft; PCB not updated; not production release
+C2,10u / 50V,GRM21BR61H106KE43L,,Motor:Capacitor_SMD__C_0805_2012Metric,,/输入、总开关与降压/,M2.6 schematic draft; PCB not updated; not production release
+C3,100n / 50V,,,Motor:C_0603_1608Metric_Gap0.85mm_HandSolder,,/输入、总开关与降压/,M2.6 schematic draft; PCB not updated; not production release
+C4,100n / 16V,,,Motor:C_0603_1608Metric_Gap0.85mm_HandSolder,,/输入、总开关与降压/,M2.6 schematic draft; PCB not updated; not production release
+C5,22u / 10V,GRM31CR71A226KE15L,,Motor:Capacitor_SMD__C_1206_3216Metric,,/输入、总开关与降压/,M2.6 schematic draft; PCB not updated; not production release
+C6,22u / 10V,GRM31CR71A226KE15L,,Motor:Capacitor_SMD__C_1206_3216Metric,,/输入、总开关与降压/,M2.6 schematic draft; PCB not updated; not production release
+C10,22n / 50V,,,Motor:C_0603_1608Metric_Gap0.85mm_HandSolder,,/左电机与编码器/,M2.6 schematic draft; PCB not updated; not production release
+C11,100n / 16V,,,Motor:C_0603_1608Metric_Gap0.85mm_HandSolder,,/左电机与编码器/,M2.6 schematic draft; PCB not updated; not production release
+C12,100n / 50V,,,Motor:C_0603_1608Metric_Gap0.85mm_HandSolder,,/左电机与编码器/,M2.6 schematic draft; PCB not updated; not production release
+C13,470u / 25V,EEU-FR1E471,,Motor:Capacitor_THT__CP_Radial_D10.0mm_P5.00mm,,/左电机与编码器/,M2.6 schematic draft; PCB not updated; not production release
+C14,100n / 16V,,,Motor:C_0603_1608Metric_Gap0.85mm_HandSolder,,/左电机与编码器/,M2.6 schematic draft; PCB not updated; not production release
+C15,10n / 16V,,,Motor:C_0603_1608Metric_Gap0.85mm_HandSolder,,/左电机与编码器/,M2.6 schematic draft; PCB not updated; not production release
+C16,100n / 16V,,,Motor:C_0603_1608Metric_Gap0.85mm_HandSolder,,/左电机与编码器/,M2.6 schematic draft; PCB not updated; not production release
+C17,1n / 16V,,,Motor:C_0603_1608Metric_Gap0.85mm_HandSolder,,/左电机与编码器/,M2.6 schematic draft; PCB not updated; not production release
+C18,1n / 16V,,,Motor:C_0603_1608Metric_Gap0.85mm_HandSolder,,/左电机与编码器/,M2.6 schematic draft; PCB not updated; not production release
+C19,100n / 16V,,,Motor:C_0603_1608Metric_Gap0.85mm_HandSolder,,/左电机与编码器/,M2.6 schematic draft; PCB not updated; not production release
+C20,1u / 10V,,,Motor:C_0603_1608Metric_Gap0.85mm_HandSolder,,/左电机与编码器/,M2.6 schematic draft; PCB not updated; not production release
+C30,22n / 50V,,,Motor:C_0603_1608Metric_Gap0.85mm_HandSolder,,/右电机与编码器/,M2.6 schematic draft; PCB not updated; not production release
+C31,100n / 16V,,,Motor:C_0603_1608Metric_Gap0.85mm_HandSolder,,/右电机与编码器/,M2.6 schematic draft; PCB not updated; not production release
+C32,100n / 50V,,,Motor:C_0603_1608Metric_Gap0.85mm_HandSolder,,/右电机与编码器/,M2.6 schematic draft; PCB not updated; not production release
+C33,470u / 25V,EEU-FR1E471,,Motor:Capacitor_THT__CP_Radial_D10.0mm_P5.00mm,,/右电机与编码器/,M2.6 schematic draft; PCB not updated; not production release
+C34,100n / 16V,,,Motor:C_0603_1608Metric_Gap0.85mm_HandSolder,,/右电机与编码器/,M2.6 schematic draft; PCB not updated; not production release
+C35,10n / 16V,,,Motor:C_0603_1608Metric_Gap0.85mm_HandSolder,,/右电机与编码器/,M2.6 schematic draft; PCB not updated; not production release
+C36,100n / 16V,,,Motor:C_0603_1608Metric_Gap0.85mm_HandSolder,,/右电机与编码器/,M2.6 schematic draft; PCB not updated; not production release
+C37,1n / 16V,,,Motor:C_0603_1608Metric_Gap0.85mm_HandSolder,,/右电机与编码器/,M2.6 schematic draft; PCB not updated; not production release
+C38,1n / 16V,,,Motor:C_0603_1608Metric_Gap0.85mm_HandSolder,,/右电机与编码器/,M2.6 schematic draft; PCB not updated; not production release
+C39,100n / 16V,,,Motor:C_0603_1608Metric_Gap0.85mm_HandSolder,,/右电机与编码器/,M2.6 schematic draft; PCB not updated; not production release
+C40,1u / 10V,,,Motor:C_0603_1608Metric_Gap0.85mm_HandSolder,,/右电机与编码器/,M2.6 schematic draft; PCB not updated; not production release
+C50,10uF/25V X7R,,,Motor:Capacitor_SMD__C_1206_3216Metric,,/外设独立五伏与三伏三供电/,M2.6 schematic draft; PCB not updated; not production release
+C51,100nF/50V,,,Motor:C_0603_1608Metric_Gap0.85mm_HandSolder,,/外设独立五伏与三伏三供电/,M2.6 schematic draft; PCB not updated; not production release
+C52,22uF/10V X7R,,,Motor:Capacitor_SMD__C_1206_3216Metric,,/外设独立五伏与三伏三供电/,M2.6 schematic draft; PCB not updated; not production release
+C53,22uF/10V X7R,,,Motor:Capacitor_SMD__C_1206_3216Metric,,/外设独立五伏与三伏三供电/,M2.6 schematic draft; PCB not updated; not production release
+C54,1uF/10V X7R,,,Motor:C_0603_1608Metric_Gap0.85mm_HandSolder,,/外设独立五伏与三伏三供电/,M2.6 schematic draft; PCB not updated; not production release
+C55,1uF/10V X7R,,,Motor:C_0603_1608Metric_Gap0.85mm_HandSolder,,/外设独立五伏与三伏三供电/,M2.6 schematic draft; PCB not updated; not production release
+C56,100nF/10V,,,Motor:C_0603_1608Metric_Gap0.85mm_HandSolder,,/中景园屏幕与四个操作按钮/,M2.6 schematic draft; PCB not updated; not production release
+C57,100nF,,,Motor:C_0603_1608Metric_Gap0.85mm_HandSolder,,/中景园屏幕与四个操作按钮/,M2.6 schematic draft; PCB not updated; not production release
+C58,100nF,,,Motor:C_0603_1608Metric_Gap0.85mm_HandSolder,,/中景园屏幕与四个操作按钮/,M2.6 schematic draft; PCB not updated; not production release
+C59,100nF,,,Motor:C_0603_1608Metric_Gap0.85mm_HandSolder,,/中景园屏幕与四个操作按钮/,M2.6 schematic draft; PCB not updated; not production release
+C60,100nF,,,Motor:C_0603_1608Metric_Gap0.85mm_HandSolder,,/中景园屏幕与四个操作按钮/,M2.6 schematic draft; PCB not updated; not production release
+C62,10uF/10V,,,Motor:Capacitor_SMD__C_0805_2012Metric,,/八路灰度与图传像头模块接口/,M2.6 schematic draft; PCB not updated; not production release
+C63,47pF/50V C0G,,,Motor:C_0603_1608Metric_Gap0.85mm_HandSolder,,/外设独立五伏与三伏三供电/,M2.6 schematic draft; PCB not updated; not production release
+C72,100nF/50V,,,Motor:C_0603_1608Metric_Gap0.85mm_HandSolder,,/八路灰度与图传像头模块接口/,M2.6 schematic draft; PCB not updated; not production release
+C73,12nF/50V,,,Motor:C_0603_1608Metric_Gap0.85mm_HandSolder,,/八路灰度与图传像头模块接口/,M2.6 schematic draft; PCB not updated; not production release
+C76,100nF/50V,,,Motor:C_0603_1608Metric_Gap0.85mm_HandSolder,,/八路灰度与图传像头模块接口/,M2.6 schematic draft; PCB not updated; not production release
+C77,1nF/50V,,,Motor:C_0603_1608Metric_Gap0.85mm_HandSolder,,/八路灰度与图传像头模块接口/,M2.6 schematic draft; PCB not updated; not production release
+C78,10uF/10V,,,Motor:Capacitor_SMD__C_0805_2012Metric,,/八路灰度与图传像头模块接口/,M2.6 schematic draft; PCB not updated; not production release
+C79,100nF/50V,,,Motor:C_0603_1608Metric_Gap0.85mm_HandSolder,,/八路灰度与图传像头模块接口/,M2.6 schematic draft; PCB not updated; not production release
+C80,100nF/50V,,,Motor:C_0603_1608Metric_Gap0.85mm_HandSolder,,/四脚蓝牙与外接步进驱动接口/,M2.6 schematic draft; PCB not updated; not production release
+D1,BZT52C12,BZT52C12,,Motor:Diode_SMD__D_SOD-123,,/输入、总开关与降压/,M2.6 schematic draft; PCB not updated; not production release
+D2,SMAJ15A,SMAJ15A,,Motor:Diode_SMD__D_SMA,,/输入、总开关与降压/,M2.6 schematic draft; PCB not updated; not production release
+D3,SS34,SS34,,Motor:Diode_SMD__D_SMA,,/输入、总开关与降压/,M2.6 schematic draft; PCB not updated; not production release
+D4,LED_GREEN,LTST-C190KGKT,,Motor:LED_0603_1608Metric_Gap0.85mm_HandSolder,,/输入、总开关与降压/,M2.6 schematic draft; PCB not updated; not production release
+D5,12V,"BZT52-C12,115",,Motor:Diode_SMD__D_SOD-123,https://assets.nexperia.com/documents/data-sheet/BZT52_SER.pdf,/四脚蓝牙与外接步进驱动接口/,M2.6 schematic draft; PCB not updated; not production release
+F1,15A/85V FAST,0448015.MR,,Motor:Fuse_Littelfuse_448_6.10x2.69mm_GenericBody,https://www.littelfuse.com/assetdocs/littelfuse_fuse_448_datasheet.pdf?assetguid=12c1a28d-212b-4f45-9d77-c982b871378a,/输入、总开关与降压/,M2.6 schematic draft; PCB not updated; not production release
+F2,4A / 125V 延时,0454004.MR,,Motor:Fuse_NANO2_454_6.10x2.69mm,https://www.littelfuse.com/assetdocs/fuse-452-and-454-datasheet?assetguid=8c87aa93-80a7-4ea8-8749-a19ba03901c2,/四脚蓝牙与外接步进驱动接口/,M2.6 schematic draft; PCB not updated; not production release
+J1,XT60PW-M,XT60PW-M,,Motor:AMASS_XT60PW-M_1x02_P7.20mm_Horizontal,https://www.china-amass.com/biao/289.html,/输入、总开关与降压/,M2.6 schematic draft; PCB not updated; not production release
+J4,MG513 / XH2.50 / 6P,B6B-XH-A(LF)(SN),,Motor:Connector_JST__JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical,,/左电机与编码器/,M2.6 schematic draft; PCB not updated; not production release
+J6,MG513 / XH2.50 / 6P,B6B-XH-A(LF)(SN),,Motor:Connector_JST__JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical,,/右电机与编码器/,M2.6 schematic draft; PCB not updated; not production release
+J8,SWD / XH2.50,B4B-XH-A,,Motor:Connector_JST__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical,,/核心板接口/,M2.6 schematic draft; PCB not updated; not production release
+J10,RUN / STOP_NC,,,Motor:Connector_PinHeader_2.54mm__PinHeader_1x02_P2.54mm_Vertical,,/核心板接口/,M2.6 schematic draft; PCB not updated; not production release
+J14,C5-EDGE-3 / 98P,X1611WVS-98-9TV01,,Motor:C5_EDGE_3_Socket,,/核心板接口/,M2.6 schematic draft; PCB not updated; not production release
+J15,HC-08_四脚接口,,,Motor:Connector_PinSocket_2.54mm__PinSocket_1x04_P2.54mm_Vertical,,/四脚蓝牙与外接步进驱动接口/,M2.6 schematic draft; PCB not updated; not production release
+J17,TFT_ZJY180S0800TG01,,,Motor:Connector_PinSocket_2.54mm__PinSocket_1x08_P2.54mm_Vertical,,/中景园屏幕与四个操作按钮/,M2.6 schematic draft; PCB not updated; not production release
+J19,MaixCAM2_图传,,,Motor:Connector_JST__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical,,/八路灰度与图传像头模块接口/,M2.6 schematic draft; PCB not updated; not production release
+J20,灰度并行_CH1-CH8,,,Motor:Connector_JST__JST_XH_B8B-XH-A_1x08_P2.50mm_Vertical,,/八路灰度与图传像头模块接口/,M2.6 schematic draft; PCB not updated; not production release
+J21,灰度电源_GND+5V,,,Motor:Connector_JST__JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical,,/八路灰度与图传像头模块接口/,M2.6 schematic draft; PCB not updated; not production release
+J23,ZDT_XS_TTL_8P,,,Motor:Connector_JST__JST_XH_B8B-XH-A_1x08_P2.50mm_Vertical,${KIPRJMOD}/../../../../Documentation/ZDT_XS系列第二代闭环步进电机资料/3. 说明书/ZDT_X42S第二代闭环步进电机用户手册V1.0.5_260527.pdf,/四脚蓝牙与外接步进驱动接口/,M2.6 schematic draft; PCB not updated; not production release
+J27,供电使能跳线,,,Motor:Connector_PinHeader_2.54mm__PinHeader_1x02_P2.54mm_Vertical,,/八路灰度与图传像头模块接口/,M2.6 schematic draft; PCB not updated; not production release
+L1,4.7u / 4.5A,SRN6045TA-4R7M,,Motor:Inductor_SMD__L_Bourns_SRN6045TA,,/输入、总开关与降压/,M2.6 schematic draft; PCB not updated; not production release
+L2,6.8uH / 5.1A,SRN8040TA-6R8M,,Motor:L_Bourns_SRN8040TA_GenericBody,https://www.bourns.com/docs/product-datasheets/srn8040ta.pdf,/外设独立五伏与三伏三供电/,M2.6 schematic draft; PCB not updated; not production release
+Q1,DMP3007LK3-13,DMP3007LK3-13,,Motor:Package_TO_SOT_SMD__TO-252-2,https://www.diodes.com/datasheet/download/DMP3007LK3.pdf,/输入、总开关与降压/,M2.6 schematic draft; PCB not updated; not production release
+Q2,DMP3007LK3-13,DMP3007LK3-13,,Motor:Package_TO_SOT_SMD__TO-252-2,https://www.diodes.com/datasheet/download/DMP3007LK3.pdf,/输入、总开关与降压/,M2.6 schematic draft; PCB not updated; not production release
+Q4,BSS138BK,"BSS138BK,215",,Motor:Package_TO_SOT_SMD__SOT-23,https://assets.nexperia.com/documents/data-sheet/BSS138BK.pdf,/八路灰度与图传像头模块接口/,M2.6 schematic draft; PCB not updated; not production release
+Q5,DMP3007LK3-13,DMP3007LK3-13,,Motor:Package_TO_SOT_SMD__TO-252-2,https://www.diodes.com/datasheet/download/DMP3007LK3.pdf,/八路灰度与图传像头模块接口/,M2.6 schematic draft; PCB not updated; not production release
+Q6,DMP3007LK3-13,DMP3007LK3-13,,Motor:Package_TO_SOT_SMD__TO-252-2,https://www.diodes.com/datasheet/download/DMP3007LK3.pdf,/四脚蓝牙与外接步进驱动接口/,M2.6 schematic draft; PCB not updated; not production release
+Q7,DMP3007LK3-13,DMP3007LK3-13,,Motor:Package_TO_SOT_SMD__TO-252-2,https://www.diodes.com/datasheet/download/DMP3007LK3.pdf,/四脚蓝牙与外接步进驱动接口/,M2.6 schematic draft; PCB not updated; not production release
+Q8,MMBT3904,MMBT3904-7-F,,Motor:Package_TO_SOT_SMD__SOT-23,https://www.diodes.com/datasheet/download/MMBT3904.pdf,/四脚蓝牙与外接步进驱动接口/,M2.6 schematic draft; PCB not updated; not production release
+Q9,BSS138BK,"BSS138BK,215",,Motor:Package_TO_SOT_SMD__SOT-23,https://assets.nexperia.com/documents/data-sheet/BSS138BK.pdf,/四脚蓝牙与外接步进驱动接口/,M2.6 schematic draft; PCB not updated; not production release
+R1,100k,,,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/输入、总开关与降压/,M2.6 schematic draft; PCB not updated; not production release
+R2,4.7k,,,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/输入、总开关与降压/,M2.6 schematic draft; PCB not updated; not production release
+R3,698k / 1%,,,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/输入、总开关与降压/,M2.6 schematic draft; PCB not updated; not production release
+R4,100k / 1%,,,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/输入、总开关与降压/,M2.6 schematic draft; PCB not updated; not production release
+R5,2.2k,,,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/输入、总开关与降压/,M2.6 schematic draft; PCB not updated; not production release
+R6,100R,,,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/核心板接口/,M2.6 schematic draft; PCB not updated; not production release
+R7,10k,,,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/核心板接口/,M2.6 schematic draft; PCB not updated; not production release
+R10,10k / 1%,,,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/左电机与编码器/,M2.6 schematic draft; PCB not updated; not production release
+R11,10k / 1%,,,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/左电机与编码器/,M2.6 schematic draft; PCB not updated; not production release
+R12,1.82k / 1%,,,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/左电机与编码器/,M2.6 schematic draft; PCB not updated; not production release
+R13,10k,,,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/左电机与编码器/,M2.6 schematic draft; PCB not updated; not production release
+R14,100k,,,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/左电机与编码器/,M2.6 schematic draft; PCB not updated; not production release
+R15,1k,,,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/左电机与编码器/,M2.6 schematic draft; PCB not updated; not production release
+R16,1k,,,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/左电机与编码器/,M2.6 schematic draft; PCB not updated; not production release
+R17,1k,,,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/左电机与编码器/,M2.6 schematic draft; PCB not updated; not production release
+R18,10k,,,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/左电机与编码器/,M2.6 schematic draft; PCB not updated; not production release
+R19,10k,,,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/左电机与编码器/,M2.6 schematic draft; PCB not updated; not production release
+R30,10k / 1%,,,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/右电机与编码器/,M2.6 schematic draft; PCB not updated; not production release
+R31,10k / 1%,,,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/右电机与编码器/,M2.6 schematic draft; PCB not updated; not production release
+R32,1.82k / 1%,,,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/右电机与编码器/,M2.6 schematic draft; PCB not updated; not production release
+R33,10k,,,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/右电机与编码器/,M2.6 schematic draft; PCB not updated; not production release
+R34,100k,,,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/右电机与编码器/,M2.6 schematic draft; PCB not updated; not production release
+R35,1k,,,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/右电机与编码器/,M2.6 schematic draft; PCB not updated; not production release
+R36,1k,,,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/右电机与编码器/,M2.6 schematic draft; PCB not updated; not production release
+R37,1k,,,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/右电机与编码器/,M2.6 schematic draft; PCB not updated; not production release
+R38,10k,,,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/右电机与编码器/,M2.6 schematic draft; PCB not updated; not production release
+R39,10k,,,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/右电机与编码器/,M2.6 schematic draft; PCB not updated; not production release
+R50,10k,,,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/中景园屏幕与四个操作按钮/,M2.6 schematic draft; PCB not updated; not production release
+R51,10k,,,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/中景园屏幕与四个操作按钮/,M2.6 schematic draft; PCB not updated; not production release
+R52,10k,,,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/中景园屏幕与四个操作按钮/,M2.6 schematic draft; PCB not updated; not production release
+R53,10k,,,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/中景园屏幕与四个操作按钮/,M2.6 schematic draft; PCB not updated; not production release
+R55,10k,,,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/中景园屏幕与四个操作按钮/,M2.6 schematic draft; PCB not updated; not production release
+R56,10k,,,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/中景园屏幕与四个操作按钮/,M2.6 schematic draft; PCB not updated; not production release
+R59,158k / 0.1%,,,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/外设独立五伏与三伏三供电/,M2.6 schematic draft; PCB not updated; not production release
+R60,30.1k / 0.1%,,,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/外设独立五伏与三伏三供电/,M2.6 schematic draft; PCB not updated; not production release
+R68,33.6k / 0.1%,,0.1%,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/八路灰度与图传像头模块接口/,M2.6 schematic draft; PCB not updated; not production release
+R69,15k / 0.1%,,0.1%,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/八路灰度与图传像头模块接口/,M2.6 schematic draft; PCB not updated; not production release
+R70,41.2k / 0.1%,,0.1%,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/八路灰度与图传像头模块接口/,M2.6 schematic draft; PCB not updated; not production release
+R71,15k / 0.1%,,0.1%,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/八路灰度与图传像头模块接口/,M2.6 schematic draft; PCB not updated; not production release
+R72,215k / 1%,,,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/八路灰度与图传像头模块接口/,M2.6 schematic draft; PCB not updated; not production release
+R76,10k,,,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/八路灰度与图传像头模块接口/,M2.6 schematic draft; PCB not updated; not production release
+R77,100k,,,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/八路灰度与图传像头模块接口/,M2.6 schematic draft; PCB not updated; not production release
+R78,100k,,,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/八路灰度与图传像头模块接口/,M2.6 schematic draft; PCB not updated; not production release
+R80,100k,,,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/八路灰度与图传像头模块接口/,M2.6 schematic draft; PCB not updated; not production release
+R81,100k,,,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/四脚蓝牙与外接步进驱动接口/,M2.6 schematic draft; PCB not updated; not production release
+R82,4.7k,,,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/四脚蓝牙与外接步进驱动接口/,M2.6 schematic draft; PCB not updated; not production release
+R83,10k,,,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/四脚蓝牙与外接步进驱动接口/,M2.6 schematic draft; PCB not updated; not production release
+R84,100k,,,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/四脚蓝牙与外接步进驱动接口/,M2.6 schematic draft; PCB not updated; not production release
+R85,10k,,,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/四脚蓝牙与外接步进驱动接口/,M2.6 schematic draft; PCB not updated; not production release
+R86,100k,,,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/四脚蓝牙与外接步进驱动接口/,M2.6 schematic draft; PCB not updated; not production release
+R87,100k,,,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/四脚蓝牙与外接步进驱动接口/,M2.6 schematic draft; PCB not updated; not production release
+R88,100k,,,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/四脚蓝牙与外接步进驱动接口/,M2.6 schematic draft; PCB not updated; not production release
+R89,100k,,,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/四脚蓝牙与外接步进驱动接口/,M2.6 schematic draft; PCB not updated; not production release
+R90,100k,,,Motor:R_0603_1608Metric_Gap0.85mm_HandSolder,,/四脚蓝牙与外接步进驱动接口/,M2.6 schematic draft; PCB not updated; not production release
+SW1,SS12D10G5,SS12D10G5,,Motor:SS12D10G5_SHOUHAN_3P_P4.80mm,https://datasheet.lcsc.com/lcsc/2306211618_SHOU-HAN-SS12D10G5_C7431054.pdf,/输入、总开关与降压/,M2.6 schematic draft; PCB not updated; not production release
+SW2,模式,,,Motor:SW_Push_6x6x4.3mm_SMD_4Pad_Generic,,/中景园屏幕与四个操作按钮/,M2.6 schematic draft; PCB not updated; not production release
+SW3,下一项,,,Motor:SW_Push_6x6x4.3mm_SMD_4Pad_Generic,,/中景园屏幕与四个操作按钮/,M2.6 schematic draft; PCB not updated; not production release
+SW4,确认,,,Motor:SW_Push_6x6x4.3mm_SMD_4Pad_Generic,,/中景园屏幕与四个操作按钮/,M2.6 schematic draft; PCB not updated; not production release
+SW5,启动,,,Motor:SW_Push_6x6x4.3mm_SMD_4Pad_Generic,,/中景园屏幕与四个操作按钮/,M2.6 schematic draft; PCB not updated; not production release
+U1,AP63205WU-7,AP63205WU-7,,Motor:Package_TO_SOT_SMD__TSOT-23-6,https://www.diodes.com/assets/Datasheets/AP63200-AP63201-AP63203-AP63205.pdf,/输入、总开关与降压/,M2.6 schematic draft; PCB not updated; not production release
+U2,DRV8874PWPR,DRV8874PWPR,,Motor:DRV8874_PWP0016,https://www.ti.com/lit/ds/symlink/drv8874.pdf,/左电机与编码器/,M2.6 schematic draft; PCB not updated; not production release
+U3,SN74LVC2G17DCKR,SN74LVC2G17DCKR,,Motor:Package_TO_SOT_SMD__SOT-363_SC-70-6,https://www.ti.com/lit/ds/symlink/sn74lvc2g17.pdf,/左电机与编码器/,M2.6 schematic draft; PCB not updated; not production release
+U4,DRV8874PWPR,DRV8874PWPR,,Motor:DRV8874_PWP0016,https://www.ti.com/lit/ds/symlink/drv8874.pdf,/右电机与编码器/,M2.6 schematic draft; PCB not updated; not production release
+U5,SN74LVC2G17DCKR,SN74LVC2G17DCKR,,Motor:Package_TO_SOT_SMD__SOT-363_SC-70-6,https://www.ti.com/lit/ds/symlink/sn74lvc2g17.pdf,/右电机与编码器/,M2.6 schematic draft; PCB not updated; not production release
+U6,AP63300WU-7,AP63300WU-7,,Motor:Package_TO_SOT_SMD__TSOT-23-6,https://www.diodes.com/datasheet/download/AP63300_AP63301.pdf,/外设独立五伏与三伏三供电/,M2.6 schematic draft; PCB not updated; not production release
+U7,AP2112K-3.3TRG1,,,Motor:Package_TO_SOT_SMD__SOT-23-5,https://www.diodes.com/assets/Datasheets/AP2112.pdf,/外设独立五伏与三伏三供电/,M2.6 schematic draft; PCB not updated; not production release
+U10,SGM2531CXPS8G/TR,SGM2531CXPS8G/TR,,Motor:SGM_PS8_SOIC8_EP2.33x3.22_HandSolder,https://www.sg-micro.com/rect/assets/300dbe1c-22ce-4aa8-9a2a-98b968b29eb2/SGM2531C.pdf,/八路灰度与图传像头模块接口/,M2.6 schematic draft; PCB not updated; not production release
+U13,SN74LVC2G125DCTR,SN74LVC2G125DCTR,,Motor:Package_SO__SSOP-8_2.95x2.8mm_P0.65mm,https://www.ti.com/lit/ds/symlink/sn74lvc2g125.pdf,/八路灰度与图传像头模块接口/,M2.6 schematic draft; PCB not updated; not production release
+U14,LTC4412ES6#TRMPBF,LTC4412ES6#TRMPBF,,Motor:Package_TO_SOT_SMD__TSOT-23-6,https://www.analog.com/media/en/technical-documentation/data-sheets/4412fb.pdf,/八路灰度与图传像头模块接口/,M2.6 schematic draft; PCB not updated; not production release
+U15,SN74LVC2G125DCTR,SN74LVC2G125DCTR,,Motor:Package_SO__SSOP-8_2.95x2.8mm_P0.65mm,https://www.ti.com/lit/ds/symlink/sn74lvc2g125.pdf,/四脚蓝牙与外接步进驱动接口/,M2.6 schematic draft; PCB not updated; not production release

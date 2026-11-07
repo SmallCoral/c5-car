@@ -6,8 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "中景园屏幕与四个操作按钮")
-		(date "2026-11-06")
-		(rev "M2.5")
+		(date "2026-11-07")
+		(rev "M2.7")
 		(company "SmallCoral / CoralC5-Motor")
 		(comment 1 "原理图设计；实板电流、温升与线束待验证")
 	)
@@ -104,8 +104,7 @@
 			(symbol "Device__C_0_1"
 				(polyline
 					(pts
-						(xy -2.032 0.762)
-						(xy 2.032 0.762)
+						(xy -2.032 0.762) (xy 2.032 0.762)
 					)
 					(stroke
 						(width 0.508)
@@ -117,8 +116,7 @@
 				)
 				(polyline
 					(pts
-						(xy -2.032 -0.762)
-						(xy 2.032 -0.762)
+						(xy -2.032 -0.762) (xy 2.032 -0.762)
 					)
 					(stroke
 						(width 0.508)
@@ -723,8 +721,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 1.27)
-						(xy 0 3.048)
+						(xy 0 1.27) (xy 0 3.048)
 					)
 					(stroke
 						(width 0)
@@ -747,8 +744,7 @@
 				)
 				(polyline
 					(pts
-						(xy 2.54 1.27)
-						(xy -2.54 1.27)
+						(xy 2.54 1.27) (xy -2.54 1.27)
 					)
 					(stroke
 						(width 0)
@@ -879,12 +875,7 @@
 			(symbol "power__GND_0_1"
 				(polyline
 					(pts
-						(xy 0 0)
-						(xy 0 -1.27)
-						(xy 1.27 -1.27)
-						(xy 0 -2.54)
-						(xy -1.27 -1.27)
-						(xy 0 -1.27)
+						(xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27)
 					)
 					(stroke
 						(width 0)
@@ -975,7 +966,7 @@
 		)
 		(uuid "47974833-4d7e-50cc-8b2a-6d1b08dde9c7")
 	)
-	(text "十千欧上拉与约一毫秒滤波，软件仍须消抖。\n按键为六毫米方形贴片、高四点三毫米，焊脚尺寸待实测。\n安装孔在原理图中仅作约束，实际孔位由用户定位。"
+	(text "四键保留十千欧上拉；固件需约二十毫秒消抖。\n按键为六毫米方形贴片、高四点三毫米，焊脚尺寸待实测。\n安装孔在原理图中仅作约束，实际孔位由用户定位。"
 		(exclude_from_sim no)
 		(at 17.78 173.99 0)
 		(effects
@@ -1010,40 +1001,16 @@
 		(uuid "48bbdb26-122c-5971-8b69-7168a0d2f220")
 	)
 	(junction
-		(at 27.94 139.7)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "4da17963-4940-5c78-a0b0-7b1ae1b32c99")
-	)
-	(junction
-		(at 152.4 139.7)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "529f98be-f704-5666-8859-cc1011659264")
-	)
-	(junction
 		(at 152.4 118.11)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "56855ed2-4d99-5928-9caa-d591d658d924")
 	)
 	(junction
-		(at 90.17 139.7)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "70681e5e-e3e4-59af-8c20-43eb05119090")
-	)
-	(junction
 		(at 31.75 35.56)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "870a30af-c102-587f-ac09-64c695613cc6")
-	)
-	(junction
-		(at 214.63 139.7)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "8b5170ef-07e2-53ec-b04d-5348659a3de6")
 	)
 	(junction
 		(at 43.18 35.56)
@@ -1053,8 +1020,7 @@
 	)
 	(wire
 		(pts
-			(xy 152.4 118.11)
-			(xy 214.63 118.11)
+			(xy 152.4 118.11) (xy 214.63 118.11)
 		)
 		(stroke
 			(width 0)
@@ -1064,8 +1030,7 @@
 	)
 	(wire
 		(pts
-			(xy 214.63 128.27)
-			(xy 214.63 139.7)
+			(xy 214.63 128.27) (xy 214.63 139.7)
 		)
 		(stroke
 			(width 0)
@@ -1075,8 +1040,7 @@
 	)
 	(wire
 		(pts
-			(xy 27.94 62.23)
-			(xy 74.93 62.23)
+			(xy 27.94 62.23) (xy 74.93 62.23)
 		)
 		(stroke
 			(width 0)
@@ -1086,19 +1050,7 @@
 	)
 	(wire
 		(pts
-			(xy 243.84 151.13)
-			(xy 243.84 156.21)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "094831dc-9390-5047-9936-8408f6091004")
-	)
-	(wire
-		(pts
-			(xy 27.94 35.56)
-			(xy 27.94 40.64)
+			(xy 27.94 35.56) (xy 27.94 40.64)
 		)
 		(stroke
 			(width 0)
@@ -1108,8 +1060,7 @@
 	)
 	(wire
 		(pts
-			(xy 57.15 54.61)
-			(xy 74.93 54.61)
+			(xy 57.15 54.61) (xy 74.93 54.61)
 		)
 		(stroke
 			(width 0)
@@ -1119,30 +1070,7 @@
 	)
 	(wire
 		(pts
-			(xy 119.38 151.13)
-			(xy 119.38 156.21)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0f590225-b0df-58cb-b080-416f50c69198")
-	)
-	(wire
-		(pts
-			(xy 90.17 143.51)
-			(xy 119.38 143.51)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1195d5c5-56a5-5091-97ec-006a3b8cb8ec")
-	)
-	(wire
-		(pts
-			(xy 45.72 139.7)
-			(xy 66.04 139.7)
+			(xy 45.72 139.7) (xy 66.04 139.7)
 		)
 		(stroke
 			(width 0)
@@ -1152,8 +1080,7 @@
 	)
 	(wire
 		(pts
-			(xy 27.94 128.27)
-			(xy 27.94 139.7)
+			(xy 27.94 128.27) (xy 27.94 139.7)
 		)
 		(stroke
 			(width 0)
@@ -1163,8 +1090,7 @@
 	)
 	(wire
 		(pts
-			(xy 20.32 118.11)
-			(xy 27.94 118.11)
+			(xy 20.32 118.11) (xy 27.94 118.11)
 		)
 		(stroke
 			(width 0)
@@ -1174,8 +1100,7 @@
 	)
 	(wire
 		(pts
-			(xy 214.63 118.11)
-			(xy 214.63 120.65)
+			(xy 214.63 118.11) (xy 214.63 120.65)
 		)
 		(stroke
 			(width 0)
@@ -1185,8 +1110,7 @@
 	)
 	(wire
 		(pts
-			(xy 27.94 118.11)
-			(xy 90.17 118.11)
+			(xy 27.94 118.11) (xy 90.17 118.11)
 		)
 		(stroke
 			(width 0)
@@ -1196,8 +1120,7 @@
 	)
 	(wire
 		(pts
-			(xy 214.63 139.7)
-			(xy 222.25 139.7)
+			(xy 214.63 139.7) (xy 222.25 139.7)
 		)
 		(stroke
 			(width 0)
@@ -1207,8 +1130,7 @@
 	)
 	(wire
 		(pts
-			(xy 27.94 35.56)
-			(xy 31.75 35.56)
+			(xy 27.94 35.56) (xy 31.75 35.56)
 		)
 		(stroke
 			(width 0)
@@ -1218,8 +1140,7 @@
 	)
 	(wire
 		(pts
-			(xy 152.4 128.27)
-			(xy 152.4 139.7)
+			(xy 152.4 128.27) (xy 152.4 139.7)
 		)
 		(stroke
 			(width 0)
@@ -1229,8 +1150,7 @@
 	)
 	(wire
 		(pts
-			(xy 57.15 64.77)
-			(xy 74.93 64.77)
+			(xy 57.15 64.77) (xy 74.93 64.77)
 		)
 		(stroke
 			(width 0)
@@ -1240,8 +1160,7 @@
 	)
 	(wire
 		(pts
-			(xy 27.94 118.11)
-			(xy 27.94 120.65)
+			(xy 27.94 118.11) (xy 27.94 120.65)
 		)
 		(stroke
 			(width 0)
@@ -1251,8 +1170,7 @@
 	)
 	(wire
 		(pts
-			(xy 31.75 30.48)
-			(xy 31.75 35.56)
+			(xy 31.75 30.48) (xy 31.75 35.56)
 		)
 		(stroke
 			(width 0)
@@ -1262,19 +1180,7 @@
 	)
 	(wire
 		(pts
-			(xy 214.63 139.7)
-			(xy 214.63 143.51)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "47d2c4f4-5570-585d-a98e-8dc87db16111")
-	)
-	(wire
-		(pts
-			(xy 57.15 57.15)
-			(xy 74.93 57.15)
+			(xy 57.15 57.15) (xy 74.93 57.15)
 		)
 		(stroke
 			(width 0)
@@ -1284,8 +1190,7 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 118.11)
-			(xy 152.4 118.11)
+			(xy 90.17 118.11) (xy 152.4 118.11)
 		)
 		(stroke
 			(width 0)
@@ -1295,8 +1200,7 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 128.27)
-			(xy 90.17 139.7)
+			(xy 90.17 128.27) (xy 90.17 139.7)
 		)
 		(stroke
 			(width 0)
@@ -1306,8 +1210,7 @@
 	)
 	(wire
 		(pts
-			(xy 43.18 48.26)
-			(xy 43.18 67.31)
+			(xy 43.18 48.26) (xy 43.18 67.31)
 		)
 		(stroke
 			(width 0)
@@ -1317,8 +1220,7 @@
 	)
 	(wire
 		(pts
-			(xy 152.4 118.11)
-			(xy 152.4 120.65)
+			(xy 152.4 118.11) (xy 152.4 120.65)
 		)
 		(stroke
 			(width 0)
@@ -1328,8 +1230,7 @@
 	)
 	(wire
 		(pts
-			(xy 152.4 139.7)
-			(xy 160.02 139.7)
+			(xy 152.4 139.7) (xy 160.02 139.7)
 		)
 		(stroke
 			(width 0)
@@ -1339,8 +1240,7 @@
 	)
 	(wire
 		(pts
-			(xy 43.18 67.31)
-			(xy 74.93 67.31)
+			(xy 43.18 67.31) (xy 74.93 67.31)
 		)
 		(stroke
 			(width 0)
@@ -1350,41 +1250,7 @@
 	)
 	(wire
 		(pts
-			(xy 181.61 151.13)
-			(xy 181.61 156.21)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "710cd199-7a7a-57a4-9409-89ccb72f4d0f")
-	)
-	(wire
-		(pts
-			(xy 152.4 139.7)
-			(xy 152.4 143.51)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "768983ff-f6c9-5f33-af36-d1bad466e6ed")
-	)
-	(wire
-		(pts
-			(xy 181.61 156.21)
-			(xy 190.5 156.21)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "84221e8f-49c6-5582-99d5-aa954c3c3ae6")
-	)
-	(wire
-		(pts
-			(xy 190.5 139.7)
-			(xy 190.5 156.21)
+			(xy 190.5 139.7) (xy 190.5 156.21)
 		)
 		(stroke
 			(width 0)
@@ -1394,8 +1260,7 @@
 	)
 	(wire
 		(pts
-			(xy 57.15 69.85)
-			(xy 74.93 69.85)
+			(xy 57.15 69.85) (xy 74.93 69.85)
 		)
 		(stroke
 			(width 0)
@@ -1405,8 +1270,7 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 118.11)
-			(xy 90.17 120.65)
+			(xy 90.17 118.11) (xy 90.17 120.65)
 		)
 		(stroke
 			(width 0)
@@ -1416,8 +1280,7 @@
 	)
 	(wire
 		(pts
-			(xy 57.15 52.07)
-			(xy 74.93 52.07)
+			(xy 57.15 52.07) (xy 74.93 52.07)
 		)
 		(stroke
 			(width 0)
@@ -1427,8 +1290,7 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 139.7)
-			(xy 128.27 156.21)
+			(xy 128.27 139.7) (xy 128.27 156.21)
 		)
 		(stroke
 			(width 0)
@@ -1438,8 +1300,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 55.88)
-			(xy 125.73 66.04)
+			(xy 125.73 55.88) (xy 125.73 66.04)
 		)
 		(stroke
 			(width 0)
@@ -1449,8 +1310,7 @@
 	)
 	(wire
 		(pts
-			(xy 57.15 59.69)
-			(xy 74.93 59.69)
+			(xy 57.15 59.69) (xy 74.93 59.69)
 		)
 		(stroke
 			(width 0)
@@ -1460,30 +1320,7 @@
 	)
 	(wire
 		(pts
-			(xy 243.84 156.21)
-			(xy 252.73 156.21)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ac6d129d-3580-5cb6-b021-f60d98b63512")
-	)
-	(wire
-		(pts
-			(xy 57.15 156.21)
-			(xy 66.04 156.21)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ad63bf59-8a66-5704-afcf-4886bc533459")
-	)
-	(wire
-		(pts
-			(xy 31.75 35.56)
-			(xy 43.18 35.56)
+			(xy 31.75 35.56) (xy 43.18 35.56)
 		)
 		(stroke
 			(width 0)
@@ -1493,19 +1330,7 @@
 	)
 	(wire
 		(pts
-			(xy 27.94 143.51)
-			(xy 57.15 143.51)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bd0d7a96-3cf8-56ed-8bcf-9cc2932b0dc8")
-	)
-	(wire
-		(pts
-			(xy 107.95 139.7)
-			(xy 128.27 139.7)
+			(xy 107.95 139.7) (xy 128.27 139.7)
 		)
 		(stroke
 			(width 0)
@@ -1515,8 +1340,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 35.56)
-			(xy 125.73 48.26)
+			(xy 125.73 35.56) (xy 125.73 48.26)
 		)
 		(stroke
 			(width 0)
@@ -1526,30 +1350,7 @@
 	)
 	(wire
 		(pts
-			(xy 57.15 151.13)
-			(xy 57.15 156.21)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cd905153-3631-5c44-b134-4316ce8c51b2")
-	)
-	(wire
-		(pts
-			(xy 152.4 143.51)
-			(xy 181.61 143.51)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d008ff49-f01d-5279-abee-f8e96bb481f7")
-	)
-	(wire
-		(pts
-			(xy 43.18 35.56)
-			(xy 43.18 40.64)
+			(xy 43.18 35.56) (xy 43.18 40.64)
 		)
 		(stroke
 			(width 0)
@@ -1559,8 +1360,7 @@
 	)
 	(wire
 		(pts
-			(xy 232.41 139.7)
-			(xy 252.73 139.7)
+			(xy 232.41 139.7) (xy 252.73 139.7)
 		)
 		(stroke
 			(width 0)
@@ -1570,8 +1370,7 @@
 	)
 	(wire
 		(pts
-			(xy 27.94 139.7)
-			(xy 35.56 139.7)
+			(xy 27.94 139.7) (xy 35.56 139.7)
 		)
 		(stroke
 			(width 0)
@@ -1581,8 +1380,7 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 139.7)
-			(xy 97.79 139.7)
+			(xy 90.17 139.7) (xy 97.79 139.7)
 		)
 		(stroke
 			(width 0)
@@ -1592,8 +1390,7 @@
 	)
 	(wire
 		(pts
-			(xy 43.18 35.56)
-			(xy 125.73 35.56)
+			(xy 43.18 35.56) (xy 125.73 35.56)
 		)
 		(stroke
 			(width 0)
@@ -1603,30 +1400,7 @@
 	)
 	(wire
 		(pts
-			(xy 214.63 143.51)
-			(xy 243.84 143.51)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e1959ef9-24b8-5922-ab48-0534d2fb121c")
-	)
-	(wire
-		(pts
-			(xy 119.38 156.21)
-			(xy 128.27 156.21)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e3742189-5573-5e42-9599-006ea2dc61e2")
-	)
-	(wire
-		(pts
-			(xy 66.04 139.7)
-			(xy 66.04 156.21)
+			(xy 66.04 139.7) (xy 66.04 156.21)
 		)
 		(stroke
 			(width 0)
@@ -1636,19 +1410,7 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 139.7)
-			(xy 90.17 143.51)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ed588203-7ae3-5188-80fc-243210302404")
-	)
-	(wire
-		(pts
-			(xy 252.73 139.7)
-			(xy 252.73 156.21)
+			(xy 252.73 139.7) (xy 252.73 156.21)
 		)
 		(stroke
 			(width 0)
@@ -1658,8 +1420,7 @@
 	)
 	(wire
 		(pts
-			(xy 27.94 48.26)
-			(xy 27.94 62.23)
+			(xy 27.94 48.26) (xy 27.94 62.23)
 		)
 		(stroke
 			(width 0)
@@ -1669,25 +1430,13 @@
 	)
 	(wire
 		(pts
-			(xy 170.18 139.7)
-			(xy 190.5 139.7)
+			(xy 170.18 139.7) (xy 190.5 139.7)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "f91629ed-3c59-5d6c-b68d-dc35b765d77f")
-	)
-	(wire
-		(pts
-			(xy 27.94 139.7)
-			(xy 27.94 143.51)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ff85f6ae-5b55-5d93-a054-c057f7b3a3eb")
 	)
 	(label "V3V3_EXT"
 		(at 57.15 54.61 0)
@@ -2479,166 +2228,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Motor:Device__C")
-		(at 57.15 147.32 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "71f2cbed-52f5-5c44-bffe-abf9d3e4599a")
-		(property "Reference" "C57"
-			(at 59.69 146.05 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "100nF"
-			(at 59.69 148.59 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder"
-			(at 57.15 147.32 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 57.15 147.32 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 57.15 147.32 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "79f94558-4ef1-51ee-91ed-d5337e5fd1b3")
-		)
-		(pin "2"
-			(uuid "ae723ab5-3ef6-5294-8b16-26e9cc68b808")
-		)
-		(instances
-			(project "CoralC5-Motor"
-				(path "/b6138eaf-d20b-5b43-a04a-d71eca329709/433415cc-03a8-5189-8d36-253244603d4b"
-					(reference "C57")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Motor:Device__C")
-		(at 243.84 147.32 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "93643c9d-a51b-5ff7-8f90-7b0b175e6ccd")
-		(property "Reference" "C60"
-			(at 246.38 146.05 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "100nF"
-			(at 246.38 148.59 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder"
-			(at 243.84 147.32 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 243.84 147.32 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 243.84 147.32 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "22ec79f2-728d-54fd-a6aa-d4c6e7e3688c")
-		)
-		(pin "2"
-			(uuid "c2e35146-ec7c-55ca-90c9-0b3c206bebf9")
-		)
-		(instances
-			(project "CoralC5-Motor"
-				(path "/b6138eaf-d20b-5b43-a04a-d71eca329709/433415cc-03a8-5189-8d36-253244603d4b"
-					(reference "C60")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Motor:power__GND")
 		(at 252.73 156.21 0)
 		(unit 1)
@@ -2710,86 +2299,6 @@
 			(project "CoralC5-Motor"
 				(path "/b6138eaf-d20b-5b43-a04a-d71eca329709/433415cc-03a8-5189-8d36-253244603d4b"
 					(reference "#PWR207")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Motor:Device__C")
-		(at 119.38 147.32 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "9c4f9cc7-3d27-57b8-95bf-ed6744075f18")
-		(property "Reference" "C58"
-			(at 121.92 146.05 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "100nF"
-			(at 121.92 148.59 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder"
-			(at 119.38 147.32 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 119.38 147.32 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 119.38 147.32 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "953b35f1-9de5-59df-a075-2bcdd69a4fc4")
-		)
-		(pin "2"
-			(uuid "17d91cb6-8165-5d7b-bf83-274fb7a2ef49")
-		)
-		(instances
-			(project "CoralC5-Motor"
-				(path "/b6138eaf-d20b-5b43-a04a-d71eca329709/433415cc-03a8-5189-8d36-253244603d4b"
-					(reference "C58")
 					(unit 1)
 				)
 			)
@@ -2956,86 +2465,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Motor:Device__C")
-		(at 181.61 147.32 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "b140f196-19e8-544a-80ca-abe02fba297e")
-		(property "Reference" "C59"
-			(at 184.15 146.05 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "100nF"
-			(at 184.15 148.59 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder"
-			(at 181.61 147.32 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 181.61 147.32 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 181.61 147.32 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "d1fd7690-da84-5020-958f-c8a3797e9cde")
-		)
-		(pin "2"
-			(uuid "683c155c-8119-557a-80ed-0268b6647616")
-		)
-		(instances
-			(project "CoralC5-Motor"
-				(path "/b6138eaf-d20b-5b43-a04a-d71eca329709/433415cc-03a8-5189-8d36-253244603d4b"
-					(reference "C59")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Motor:Switch__SW_Push")
 		(at 227.33 139.7 0)
 		(unit 1)
@@ -3090,13 +2519,13 @@
 		)
 		(property "Description" "四脚贴片轻触开关 6×6×4.3mm；通用封装；焊脚尺寸与触点分组待实测"
 			(at 227.33 139.7 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "1"
@@ -3169,13 +2598,13 @@
 		)
 		(property "Description" "四脚贴片轻触开关 6×6×4.3mm；通用封装；焊脚尺寸与触点分组待实测"
 			(at 102.87 139.7 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "1"
@@ -3325,13 +2754,13 @@
 		)
 		(property "Description" "四脚贴片轻触开关 6×6×4.3mm；通用封装；焊脚尺寸与触点分组待实测"
 			(at 40.64 139.7 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "1"
@@ -3484,13 +2913,13 @@
 		)
 		(property "Description" "四脚贴片轻触开关 6×6×4.3mm；通用封装；焊脚尺寸与触点分组待实测"
 			(at 165.1 139.7 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "1"

@@ -45,10 +45,10 @@ def main():
    check(file+' circuit objects preserved across presentation edit',all(nodes(old,t)==nodes(new,t) for t in ['symbol','wire','junction','no_connect','label','global_label','hierarchical_label']))
   else:check(file+' byte preserved',(ROOT/file).read_bytes()==(BASE/file).read_bytes())
  schemas={p.name:parse(p.read_text(encoding='utf-8')) for p in ROOT.glob('*.kicad_sch')}
- check('authorized sheet count',len(schemas)==9+len(rev.vision.get('new_sheets',{})))
+ check('authorized sheet count',len(schemas)==9+len(rev.vision.get('new_sheets',{}))-len(rev.m26.get('removed_sheets',[])))
  components={};allpins=set();nc=[]
  for file,d in schemas.items():
-  expected_paper=rev.vision.get('paper',{}).get(file,'A3' if file=='CoralC5-Motor.kicad_sch' and (DOC/'layout_edit.json').exists() else 'A4')
+  expected_paper=rev.m26.get('paper',{}).get(file,rev.vision.get('paper',{}).get(file,'A3' if file=='CoralC5-Motor.kicad_sch' and (DOC/'layout_edit.json').exists() else 'A4'))
   check(file+' paper',node(d,'paper')[1]==expected_paper)
   for z in nodes(d,'text'):check(file+' 100mil Chinese note',list(map(float,node(node(node(z,'effects'),'font'),'size')[1:]))==[2.54,2.54])
   nc.extend((file,tuple(map(float,node(z,'at')[1:3]))) for z in nodes(d,'no_connect'))
@@ -74,7 +74,7 @@ def main():
  oldroles=json.loads((BASE/'design_manifest.json').read_text(encoding='utf-8-sig'))['motor_pin_assignment']['entries']
  assignments=oldroles+m2
  reserved={'PA9','PA11','PA12','PA13','PA14','PH2','PE3','PD2'}
- expected_roles=42 if rev.gray else 44
+ expected_roles=rev.m26.get('gpio_total',42 if rev.gray else 44)
  check(str(expected_roles)+' unique GPIO roles',len(assignments)==expected_roles and len({r['gpio'] for r in assignments})==expected_roles)
  check('reserved Core/USB/SWD pins not assigned',not reserved&{r['gpio'] for r in assignments})
  functions=parse_alternate_functions((ROOT.parent/'Shared/sources/DS15137_STM32C5Axxx_Datasheet_Rev3.pdf.txt').read_text(encoding='utf-8-sig'))
@@ -100,6 +100,7 @@ def main():
   for pin,net in enumerate([power,'GND',tx,rx],1):check(ref+':'+str(pin)+' expected net',ref+':'+str(pin) in next((p for name,p in names.items() if name.split('/')[-1]==net),frozenset()),net)
  extra={'TFT_CS':['R55:2'],'TFT_RES':['R56:2'],'STEP_PUL':['R57:1'],'STEP_DIR':['R58:1'],'STEP_nEN':['R54:2']}
  if rev.vision:extra.update(LPI_TX=['R79:2'],VIDEO_TX=['R80:2'])
+ if rev.m26:extra.update(STEP_UART_TX=['R88:2'])
  for r in m2:
   expected=['J14:'+r['contact'],r['endpoint']]+extra.get(r['signal'],[])
   if r['signal'].startswith('KEY_'):
@@ -110,14 +111,16 @@ def main():
  check('XT60 procurement metadata',prop(j1,'MPN')[2]=='XT60PW-M' and prop(j1,'LCSC') is None)
  group('auxiliary bootstrap','U6:6 C51:1');group('auxiliary switch','U6:5 C51:2 L2:1')
  group('independent peripheral 3V3','U7:5 C55:1 C56:1 J17:2 R55:1 R56:1 '+('J15:1' if rev.jumpers else 'J16:1'))
- if rev.vision:group('independent peripheral 5V','L2:2 C52:1 C53:1 U7:1 U7:3 C54:1 J21:2 R59:2 C63:2 U10:5 C72:1 J27:1 R70:1')
+ if rev.m26:group('independent peripheral 5V','L2:2 C52:1 C53:1 U7:1 U7:3 C54:1 J21:2 R59:2 C63:2 U10:4 C72:1 C78:1 J27:1 R70:1')
+ elif rev.vision:group('independent peripheral 5V','L2:2 C52:1 C53:1 U7:1 U7:3 C54:1 J21:2 R59:2 C63:2 U10:5 C72:1 J27:1 R70:1')
  else:group('independent peripheral 5V','U6:1 L2:2 C52:1 C53:1 U7:1 U7:3 C54:1 C61:1 C62:1 J18:1 J19:1 '+('J21:2' if rev.gray else 'J20:1 J21:1')+('' if rev.jumpers else ' J16:3'))
  if rev.jumpers:joined('BT fixed 3V3 supply','J15:1','U7:5')
  else:group('BT selected supply','J16:2 J15:1')
  if rev.power:
-  group('ZDT protected step supply','F2:2 J23:1 J24:1');joined('step fuse from protected VM','F2:1','Q2:2','U6:3')
+  group('ZDT protected step supply','F2:2 Q6:2' if rev.m26 else 'F2:2 J23:1 J24:1');joined('step fuse from protected VM','F2:1','Q2:2','U6:3')
  else:joined('external driver protected VM','J24:1','Q2:5','U6:3')
- for pin in ['J17:1',*(['J21:1'] if rev.gray else ['J20:2','J21:2']),'J22:2','J22:6','J23:2','J24:2','R57:2','R58:2']:joined(pin+' ground',pin,'J1:2')
+ for pin in ['J17:1',*(['J21:1'] if rev.gray else ['J20:2','J21:2']),'J22:2','J22:6','J23:2','J24:2','R57:2','R58:2']:
+  if pin.split(':')[0] not in rev.m26.get('removed_references',[]):joined(pin+' ground',pin,'J1:2')
  check('peripheral 3V3 not joined to Core',actual['U7:5']!=actual['J14:A47'])
  check('peripheral 5V not joined to Core USB rail',actual['U7:1']!=actual['J14:A48'])
  for contact in set(bycontact)-{z['contact'] for z in assignments}-{'A1','A49','B1','B49','A47','B47','A48','B48','A46','B43'}:
@@ -170,6 +173,12 @@ def main():
   result['missing_exact_models']=sorted(set(missing_models+result['generic_model_references']))
   result['limitations'][4]='Current budget is 10.6765A at 10V, not a measurement; F1 is 15A/85V very-fast and F2 remains 4A/125V time-delay. Inrush, battery fault interruption, MOS SOA/temperature and harness loading require physical validation'
   result['limitations'].extend(['Lichee separate 5V/3A output and Maix 2A charging-inclusive budget require real startup, load and cable-drop tests','Maix six-pin 5V and USB VBUS are common inside the module: remove J27 before ordinary powered USB debug; the battery may keep the module alive','J25 is a two-wire supply terminal, not a USB-C source controller: use a correctly wired 3A power lead with appropriate CC handling','Lichee UART1 header RX has onboard 1/2 divider and TX is 1.8V; LV1T buffer inputs have no positive clamp, but the part is not advertised as output Ioff isolated. Keep UART pins in the specified direction'])
+ if rev.m26:
+  result['date']='2026-11-07';result['revision']='M2.6'
+  result['generic_model_references']=sorted((set(result['generic_model_references'])-set(rev.m26['removed_references']))|{'U10'})
+  result['missing_exact_models']=sorted(set(missing_models+result['generic_model_references']))
+  result['limitations']=[x for x in result['limitations'] if 'Lichee' not in x and 'J25' not in x and '10.6765A' not in x]
+  result['limitations'].extend(['No PCB file was opened or modified in this schematic-only revision; user will update and route PCB before its separate review','Current budget is 8.9118A at 10V and is not a measurement; 15A F1 and 4A F2 remain. Startup, MOS SOA, temperature and motor regeneration during shutoff require validation','U10 uses SOIC-8 with exposed ground pad; its attached stock SOIC body is a generic package substitute, not manufacturer EP geometry','SGM2531C 215k current-limit formula gives 2.2315A nominal. The 5 percent headline is only specified at 1A/25C; this is not a guaranteed 2A minimum threshold','Maix 5.2079V nominal OVP threshold includes reference/resistor/leakage spread; it is a cutoff, not a precision output clamp. Verify loaded voltage and charging startup','STEP_PWR_EN is PD12/B30, active high with hardware default off. Stop motion before cutting power; wait for driver startup before UART commands. Turn-off is not an instantaneous discharge or a safety-rated emergency stop'])
  try:
   current_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,stderr=subprocess.DEVNULL).decode().strip()
  except (OSError,subprocess.CalledProcessError):current_commit='unavailable'

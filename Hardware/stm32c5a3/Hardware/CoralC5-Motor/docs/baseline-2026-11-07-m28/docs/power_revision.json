@@ -1,0 +1,116 @@
+{
+  "date": "2026-11-06",
+  "revision": "M2.3",
+  "baseline": "docs\\baseline-2026-11-06-power-revision",
+  "changes": {
+    "Q1": {
+      "Value": "DMP3007LK3-13",
+      "Footprint": "Motor:Package_TO_SOT_SMD__TO-252-2",
+      "Datasheet": "https://www.diodes.com/datasheet/download/DMP3007LK3.pdf",
+      "MPN": "DMP3007LK3-13",
+      "LCSC": "C3281309",
+      "lib_id": "Motor:DMP3007LK3"
+    },
+    "Q2": {
+      "Value": "DMP3007LK3-13",
+      "Footprint": "Motor:Package_TO_SOT_SMD__TO-252-2",
+      "Datasheet": "https://www.diodes.com/datasheet/download/DMP3007LK3.pdf",
+      "MPN": "DMP3007LK3-13",
+      "LCSC": "C3281309",
+      "lib_id": "Motor:DMP3007LK3_Mirrored"
+    },
+    "SW1": {
+      "Value": "SS12D10G5",
+      "Footprint": "Motor:SS12D10G5_SHOUHAN_3P_P4.80mm",
+      "Datasheet": "https://datasheet.lcsc.com/lcsc/2306211618_SHOU-HAN-SS12D10G5_C7431054.pdf",
+      "MPN": "SS12D10G5",
+      "LCSC": "C7431054",
+      "lib_id": "Motor:SS12D10G5_3P"
+    },
+    "R1": {
+      "Value": "100k"
+    },
+    "R2": {
+      "Value": "4.7k"
+    },
+    "F1": {
+      "Value": "12A / 75V 延时",
+      "Footprint": "Motor:Fuse_NANO2_454_6.10x2.69mm",
+      "Datasheet": "https://www.littelfuse.com/assetdocs/fuse-452-and-454-datasheet?assetguid=8c87aa93-80a7-4ea8-8749-a19ba03901c2",
+      "MPN": "0454012.MR"
+    }
+  },
+  "pin_map_from_m2": {
+    "Q1:1": "Q1:3",
+    "Q1:2": "Q1:3",
+    "Q1:3": "Q1:3",
+    "Q1:4": "Q1:1",
+    "Q1:5": "Q1:2",
+    "Q1:6": "Q1:2",
+    "Q1:7": "Q1:2",
+    "Q1:8": "Q1:2",
+    "Q2:1": "Q2:3",
+    "Q2:2": "Q2:3",
+    "Q2:3": "Q2:3",
+    "Q2:4": "Q2:1",
+    "Q2:5": "Q2:2",
+    "Q2:6": "Q2:2",
+    "Q2:7": "Q2:2",
+    "Q2:8": "Q2:2",
+    "SW1:4": null,
+    "SW1:5": null
+  },
+  "removed_virtual_symbols": [
+    "#PWR003"
+  ],
+  "new_references": [
+    "F2"
+  ],
+  "F2": {
+    "Value": "4A / 125V 延时",
+    "Footprint": "Motor:Fuse_NANO2_454_6.10x2.69mm",
+    "Datasheet": "https://www.littelfuse.com/assetdocs/fuse-452-and-454-datasheet?assetguid=8c87aa93-80a7-4ea8-8749-a19ba03901c2",
+    "MPN": "0454004.MR"
+  },
+  "stepper_supply_net": "VM_STEP",
+  "budget": {
+    "battery_voltage_range_v": [
+      10,
+      12.6
+    ],
+    "wheel_input_budget_a_each": 2,
+    "wheel_count": 2,
+    "stepper_input_budget_a": 3,
+    "stepper_budget_is_measurement": false,
+    "core_5v_output_budget_a": 0.75,
+    "peripheral_5v_output_budget_a": 1.5,
+    "assumed_buck_efficiency": 0.85,
+    "threev3_is_included_in_5v_not_added_again": true,
+    "max_low_voltage_output_power_w": 11.25,
+    "input_current_a": {
+      "10": 8.3235,
+      "12": 8.1029,
+      "12.6": 8.0504
+    },
+    "normal_operation_current_a": "unknown; measure actual motors and modules",
+    "fuse_standard_continuous_derating": 0.75,
+    "F1_continuous_design_budget_a_at_25c": 9,
+    "MOS_cold_pair_loss_w_at_10v_input_budget_using_10mohm_each": 1.3856,
+    "J23_XH_continuous_rating_a": 3,
+    "F2_is_not_an_exact_3a_current_limiter": true
+  },
+  "switch_model": "generic envelope from manufacturer drawing; not exact assembly",
+  "fuse_model": "generic 454 envelope 6.10x2.69x2.69mm; exact installed library model unavailable",
+  "source_sha256": {
+    "02_Power.kicad_sch": "5ef73daa762b47d52226d6f5d9436be6dc798fe12a369a331b5bb7be031dd2bd",
+    "03_Core_Interface.kicad_sch": "b123b28caec106af64ea6ce701be900f94606d033cc59cce9f92436ff699cf98",
+    "04_Left_Motor.kicad_sch": "8bf3fc1dfc864c1e4636ab9428488beb578c593db61f57aa72b95896e678a5b0",
+    "05_Right_Motor.kicad_sch": "6afc8c6f75440e975a6fd335f7a04166a9ce5e6d30e96eb0f8eda927ebb2c67f",
+    "06_Module_Power.kicad_sch": "1fe0394ac2ac09bbe517995cde112d678f51c4fe8c976810c21b3d4e03207622",
+    "07_TFT_Buttons.kicad_sch": "a2fce37117ae22f782c63b6c5ce565724e6a2e1b338b4505d4f019269cf01583",
+    "08_Grayscale_Cameras.kicad_sch": "08dbcddd267b8b6ae346d67ab09eb36a0928e69a0d2f15cbb7a6010ea42a1b4f",
+    "09_Bluetooth_Stepper.kicad_sch": "76ecb7ea829bc69bfb5a184f57cc13c3b7f764e0b8f70a39e0b0dae47d30da51",
+    "CoralC5-Motor.kicad_sch": "486ee0a416791c68b71241c783db274aaeb405ad83cf588036928bb2e5312023"
+  },
+  "pcb_accessed": false
+}

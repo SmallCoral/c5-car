@@ -1,0 +1,36 @@
+{
+  "date": "2026-11-07",
+  "revision": "M2.7",
+  "size": [
+    3640,
+    2400
+  ],
+  "connector_count": 14,
+  "covered_connectors": [
+    "J1",
+    "J10",
+    "J14",
+    "J15",
+    "J17",
+    "J19",
+    "J20",
+    "J21",
+    "J23",
+    "J27",
+    "J28",
+    "J4",
+    "J6",
+    "J8"
+  ],
+  "missing_connectors": [],
+  "netlist_sha256": "831987d8fce0603bd87e93ec26dc94364a6e2315dad2fd8e2328c52cd89c0e01",
+  "sources": [
+    "Documentation/reference/m2-interfaces.md",
+    "Documentation/reference/motor-interface.md",
+    "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/netlist.xml"
+  ],
+  "outputs": [
+    "Documentation\\diagrams\\CoralC5-Motor-M2.7-interface-tree.png",
+    "Documentation\\diagrams\\CoralC5-Motor-M2.7-interface-tree.svg"
+  ]
+}

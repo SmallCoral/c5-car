@@ -31,6 +31,9 @@ def run(root):
   removed={prop(oo[k],'Reference')[2] for k in oo.keys()-nn.keys()};added={prop(nn[k],'Reference')[2] for k in nn.keys()-oo.keys()}
   er={'#PWR003'} if rev.power and path.name=='02_Power.kicad_sch' else {'J16'} if rev.jumpers and path.name=='09_Bluetooth_Stepper.kicad_sch' else set();ea={'F2'} if rev.power and path.name=='09_Bluetooth_Stepper.kicad_sch' else set()
   if rev.vision:ea=ea|set(rev.vision['added_references'].get(path.name,[]))
+  if rev.m26:
+   er|=set(rev.m26['removed_references_by_sheet'].get(path.name,[]))&{prop(z,'Reference')[2] for z in oo.values()}
+   ea=(ea-set(rev.m26['removed_references']))|set(rev.m26['added_references_by_sheet'].get(path.name,[]))
   check('layout: '+path.name+' symbol UUIDs retained except explicit addition/removal',removed==er and added==ea,{'removed':sorted(removed),'added':sorted(added)})
   symbol_count+=len(nn);physical+=sum(not prop(z,'Reference')[2].startswith('#') for z in nn.values())
   changed=[]
@@ -47,10 +50,11 @@ def run(root):
   check('layout: '+path.name+' component identities match explicit change contract',not changed,changed)
   extra=None
   if rev.power and path.name=='09_Bluetooth_Stepper.kicad_sch':extra=next(z for z in nodes(node(oldschemas['02_Power.kicad_sch'],'lib_symbols'),'symbol') if z[1]=='Motor:Device__Fuse')
-  check('layout: '+path.name+' cached symbols match explicit change contract',rev.library_compatible(node(old,'lib_symbols'),node(new,'lib_symbols'),True,extra))
+  check('layout: '+path.name+' cached symbols match explicit change contract',rev.library_compatible(node(old,'lib_symbols'),node(new,'lib_symbols'),True,extra,path.name))
   a={(z[1],node(z,'shape')[1],node(z,'uuid')[1]) for z in nodes(old,'hierarchical_label')};b={(z[1],node(z,'shape')[1],node(z,'uuid')[1]) for z in nodes(new,'hierarchical_label')}
   if rev.gray and path.name in ['03_Core_Interface.kicad_sch','08_Grayscale_Cameras.kicad_sch']:a={x for x in a if x[0] not in rev.gray['removed_signals']}
   if rev.jumpers and path.name=='09_Bluetooth_Stepper.kicad_sch':a={x for x in a if x[0]!='V5_EXT'}
+  if rev.m26:a={x for x in a if x[0] not in rev.m26['removed_signals']}
   rename=rev.vision.get('renamed_signals',{})
   a={(rename.get(name,name),shape,identity) for name,shape,identity in a}
   converted={}
@@ -59,6 +63,7 @@ def run(root):
    if name in signals:converted.setdefault(name,set()).add((name,node(z,'shape')[1],node(z,'uuid')[1]))
   extra=b-a
   authorized=set(rev.vision.get('extra_ports',{}).get(path.name,[]))
+  if rev.m26 and path.name in ['03_Core_Interface.kicad_sch','09_Bluetooth_Stepper.kicad_sch']:authorized.add('STEP_PWR_EN')
   check('layout: '+path.name+' explicit extra power ports',len([z for z in extra if z[0] in authorized])==len(authorized))
   extra={z for z in extra if z[0] not in authorized}
   # Redundant bias-resistor global aliases were replaced by actual wires in
@@ -71,7 +76,8 @@ def run(root):
  overview=schemas['CoralC5-Motor.kicad_sch'];oldview=oldschemas['CoralC5-Motor.kicad_sch']
  sheets={prop(z,'Sheetfile')[2]:z for z in nodes(overview,'sheet')}
  old_sheets={prop(z,'Sheetfile')[2]:z for z in nodes(oldview,'sheet')}
- check('overview: hierarchy sheet UUIDs retained',all(node(sheets[f],'uuid')==node(s,'uuid') for f,s in old_sheets.items()) and set(sheets)==set(old_sheets)|set(rev.vision.get('new_sheets',{})))
+ expected_sheets=(set(old_sheets)|set(rev.vision.get('new_sheets',{})))-set(rev.m26.get('removed_sheets',[]))
+ check('overview: hierarchy sheet UUIDs retained',all(node(sheets[f],'uuid')==node(s,'uuid') for f,s in old_sheets.items() if f in expected_sheets) and set(sheets)==expected_sheets)
  at=lambda z:tuple(map(float,node(z,'at')[1:3]))
  pins={(f,p[1]):at(p) for f,s in sheets.items() for p in nodes(s,'pin')}
  wirepts=[tuple(tuple(map(float,p[1:3])) for p in node(w,'pts')[1:]) for w in nodes(overview,'wire')]
@@ -91,6 +97,7 @@ def run(root):
   rename=rev.vision.get('renamed_signals',{})
   op={(rename.get(p[1],p[1]),p[2],node(p,'uuid')[1]) for p in nodes(old_sheets.get(f,[]),'pin')};np={(p[1],p[2],node(p,'uuid')[1]) for p in nodes(s,'pin')}
   if rev.jumpers and f=='09_Bluetooth_Stepper.kicad_sch':op={p for p in op if p[0]!='V5_EXT'}
+  if rev.m26:op={p for p in op if p[0] not in rev.m26['removed_signals']}
   check('overview: '+f+' existing pin UUIDs retained',op<=np)
   check('overview: '+f+' pins exactly match child hierarchical labels',{p[1] for p in nodes(s,'pin')}=={p[1] for p in nodes(schemas[f],'hierarchical_label')})
   for p in nodes(s,'pin'):check('overview: '+f+':'+p[1]+' has an actual wire',bool(graph[at(p)]))
@@ -103,11 +110,14 @@ def run(root):
    check('overview: '+f+':'+sig+' continuously wired from Core',reachable(pins[('03_Core_Interface.kicad_sch',sig)],pins[(f,sig)]))
  for name in ['CoralC5-Motor.kicad_pro','sym-lib-table','fp-lib-table']:
   if name=='CoralC5-Motor.kicad_pro' and rev.jumpers:
+   if rev.m26:
+    check('layout: user saved project settings retained byte-for-byte',(root/name).read_bytes()==(doc/rev.m26['baseline']/name).read_bytes())
+    continue
    original=json.loads((base/name).read_text(encoding='utf-8'));current=json.loads((root/name).read_text(encoding='utf-8'))
    original['board']['ipc2581']['sch_revision']=rev.jumpers['preserved_project_metadata']['preexisting_followup_value']
    check('layout: project settings retained including preexisting export revision metadata',original==current and hashlib.sha256((root/name).read_bytes()).hexdigest()==rev.jumpers['project_sha256'])
   else:check('layout: '+name+' unmodified',(root/name).read_bytes()==(base/name).read_bytes())
  check('layout: local symbol library matches explicit change contract',rev.library_compatible(parse((base/'Motor.kicad_sym').read_text(encoding='utf-8')),parse((root/'Motor.kicad_sym').read_text(encoding='utf-8'))))
- result={'date':'2026-11-06','revision':'M2.5' if rev.vision else 'M2.4' if rev.jumpers else 'M2.3' if rev.power else 'M2.2' if rev.active else 'M2.1','pass':all(c['pass'] for c in checks),'checks':checks,'baseline':'baseline-2026-11-06-layout','native_nets':len(after),'symbol_instances':symbol_count,'physical_symbol_instances':physical,'moved_instances':moved,'pcb_accessed':False,'sha256':{p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in root.glob('*.kicad_sch')}}
+ result={'date':'2026-11-07' if rev.m26 else '2026-11-06','revision':'M2.6' if rev.m26 else 'M2.5' if rev.vision else 'M2.4' if rev.jumpers else 'M2.3' if rev.power else 'M2.2' if rev.active else 'M2.1','pass':all(c['pass'] for c in checks),'checks':checks,'baseline':'baseline-2026-11-06-layout','native_nets':len(after),'symbol_instances':symbol_count,'physical_symbol_instances':physical,'moved_instances':moved,'pcb_accessed':False,'sha256':{p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in root.glob('*.kicad_sch')}}
  (doc/'layout_verification.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
  return checks

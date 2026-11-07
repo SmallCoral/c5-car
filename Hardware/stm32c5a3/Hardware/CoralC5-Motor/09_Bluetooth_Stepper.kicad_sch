@@ -3,15 +3,901 @@
 	(generator "eeschema")
 	(generator_version "10.0")
 	(uuid "f694cfb5-a547-51be-b6de-5437cfea78ec")
-	(paper "A4")
+	(paper "A3")
 	(title_block
 		(title "四脚蓝牙与外接步进驱动接口")
-		(date "2026-11-06")
-		(rev "M2.5")
+		(date "2026-11-07")
+		(rev "M2.6")
 		(company "SmallCoral / CoralC5-Motor")
 		(comment 1 "原理图设计；实板电流、温升与线束待验证")
 	)
 	(lib_symbols
+		(symbol "Motor:BSS138BK_SOT23"
+			(pin_names
+				(offset 0.5)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "Q"
+				(at 0 25.4 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "BSS138BK"
+				(at 0 22.86 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Motor:Package_TO_SOT_SMD__SOT-23"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/BSS138BK.pdf"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "BSS138BK_SOT23_0_1"
+				(rectangle
+					(start -5.08 5.08)
+					(end 5.08 -5.08)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "BSS138BK_SOT23_1_1"
+				(pin input line
+					(at -10.16 0 0)
+					(length 5.08)
+					(name "G"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -10.16 90)
+					(length 5.08)
+					(name "S"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 10.16 270)
+					(length 5.08)
+					(name "D"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Motor:BZT52_C12_SOD123"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "BZT52-C12"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Motor:Diode_SMD__D_SOD-123"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/BZT52_SER.pdf"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Zener diode"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "diode"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "BZT52_C12_SOD123_0_1"
+				(polyline
+					(pts
+						(xy -1.27 -1.27) (xy -1.27 1.27) (xy -0.762 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -1.27) (xy 1.27 1.27) (xy -1.27 0) (xy 1.27 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "BZT52_C12_SOD123_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Motor:DMP3007_Horizontal_DS"
+			(pin_names
+				(offset 0.5)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "Q"
+				(at 0 25.4 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "DMP3007LK3-13"
+				(at 0 22.86 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Motor:Package_TO_SOT_SMD__TO-252-2"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://www.diodes.com/datasheet/download/DMP3007LK3.pdf"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "DMP3007_Horizontal_DS_0_1"
+				(rectangle
+					(start -5.08 2.54)
+					(end 5.08 -5.08)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "DMP3007_Horizontal_DS_1_1"
+				(pin input line
+					(at 0 -10.16 90)
+					(length 5.08)
+					(name "G"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -10.16 0 0)
+					(length 5.08)
+					(name "D"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 10.16 0 180)
+					(length 5.08)
+					(name "S"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Motor:DMP3007_Horizontal_SD"
+			(pin_names
+				(offset 0.5)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "Q"
+				(at 0 25.4 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "DMP3007LK3-13"
+				(at 0 22.86 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Motor:Package_TO_SOT_SMD__TO-252-2"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://www.diodes.com/datasheet/download/DMP3007LK3.pdf"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "DMP3007_Horizontal_SD_0_1"
+				(rectangle
+					(start -5.08 2.54)
+					(end 5.08 -5.08)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "DMP3007_Horizontal_SD_1_1"
+				(pin input line
+					(at 0 -10.16 90)
+					(length 5.08)
+					(name "G"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 10.16 0 180)
+					(length 5.08)
+					(name "D"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -10.16 0 0)
+					(length 5.08)
+					(name "S"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Motor:Device__C"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "C"
+				(at 0.635 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "C"
+				(at 0.635 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0.9652 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Unpolarized capacitor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "cap capacitor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "C_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Device__C_0_1"
+				(polyline
+					(pts
+						(xy -2.032 0.762) (xy 2.032 0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.032 -0.762) (xy 2.032 -0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Device__C_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 2.794)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 2.794)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Motor:Device__D_Zener"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "D_Zener"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Zener diode"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "diode"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Device__D_Zener_0_1"
+				(polyline
+					(pts
+						(xy -1.27 -1.27) (xy -1.27 1.27) (xy -0.762 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -1.27) (xy 1.27 1.27) (xy -1.27 0) (xy 1.27 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Device__D_Zener_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Motor:Device__Fuse"
 			(pin_numbers
 				(hide yes)
@@ -113,8 +999,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 2.54)
-						(xy 0 -2.54)
+						(xy 0 2.54) (xy 0 -2.54)
 					)
 					(stroke
 						(width 0)
@@ -1114,6 +1999,472 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Motor:SN74LVC2G125_DCT"
+			(pin_names
+				(offset 0.5)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "U"
+				(at 0 25.4 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "SN74LVC2G125DCTR"
+				(at 0 22.86 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Motor:Package_SO__SSOP-8_2.95x2.8mm_P0.65mm"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://www.ti.com/lit/ds/symlink/sn74lvc2g125.pdf"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "SN74LVC2G125_DCT_0_1"
+				(rectangle
+					(start -12.7 12.7)
+					(end 12.7 -15.24)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "SN74LVC2G125_DCT_1_1"
+				(pin input line
+					(at -17.78 -7.62 0)
+					(length 5.08)
+					(name "nOE1"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -17.78 7.62 0)
+					(length 5.08)
+					(name "1A"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin tri_state line
+					(at -17.78 0 0)
+					(length 5.08)
+					(name "2Y"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 -20.32 90)
+					(length 5.08)
+					(name "GND"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 17.78 0 180)
+					(length 5.08)
+					(name "2A"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin tri_state line
+					(at 17.78 7.62 180)
+					(length 5.08)
+					(name "1Y"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -17.78 -12.7 0)
+					(length 5.08)
+					(name "nOE2"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 20.32 270)
+					(length 5.08)
+					(name "VCC"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Motor:Transistor_BJT__MMBT3904"
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "Q"
+				(at 5.08 1.905 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "MMBT3904"
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Motor:Package_TO_SOT_SMD__SOT-23"
+				(at 5.08 -1.905 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(justify left)
+				)
+			)
+			(property "Datasheet" "https://www.onsemi.com/pdf/datasheet/pzt3904-d.pdf"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Description" "0.2A Ic, 40V Vce, Small Signal NPN Transistor, SOT-23"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Sim.Device" "NPN"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Sim.Pins" "1=B 2=E 3=C"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "NPN Transistor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "SOT?23*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Transistor_BJT__MMBT3904_0_1"
+				(polyline
+					(pts
+						(xy -2.54 0) (xy 0.635 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.635 1.905) (xy 0.635 -1.905)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 1.27 0)
+					(radius 2.8194)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Transistor_BJT__MMBT3904_1_1"
+				(polyline
+					(pts
+						(xy 0.635 0.635) (xy 2.54 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.635 -0.635) (xy 2.54 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -1.778) (xy 1.778 -1.27) (xy 2.286 -2.286) (xy 1.27 -1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(pin input line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "B"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -5.08 90)
+					(length 2.54)
+					(name "E"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(name "C"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Motor:power__GND"
 			(power global)
 			(pin_numbers
@@ -1196,12 +2547,7 @@
 			(symbol "power__GND_0_1"
 				(polyline
 					(pts
-						(xy 0 0)
-						(xy 0 -1.27)
-						(xy 1.27 -1.27)
-						(xy 0 -2.54)
-						(xy -1.27 -1.27)
-						(xy 0 -1.27)
+						(xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27)
 					)
 					(stroke
 						(width 0)
@@ -1236,8 +2582,8 @@
 		)
 	)
 	(rectangle
-		(start 13.97 95.25)
-		(end 281.94 161.29)
+		(start 12.7 96.52)
+		(end 198.12 279.4)
 		(stroke
 			(width 0.254)
 			(type dash)
@@ -1245,11 +2591,25 @@
 		(fill
 			(type none)
 		)
-		(uuid "cf0c7e5c-60d1-56bd-8825-ab3b0c8550f0")
+		(uuid "6700ac5b-6239-5c70-a8f7-2b25533bfeae")
+	)
+	(polyline
+		(pts
+			(xy 205.74 19.05) (xy 403.86 19.05) (xy 403.86 250.19) (xy 298.45 250.825) (xy 298.45 280.035) (xy 205.74 279.4)
+			(xy 205.74 19.05)
+		)
+		(stroke
+			(width 0.254)
+			(type dash)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "986a5e14-1efa-55c6-9193-072dbc27bcfd")
 	)
 	(rectangle
 		(start 13.97 19.05)
-		(end 281.94 87.63)
+		(end 198.12 87.63)
 		(stroke
 			(width 0.254)
 			(type dash)
@@ -1258,6 +2618,17 @@
 			(type none)
 		)
 		(uuid "d14af5b3-bafb-5874-8714-cfca1a983546")
+	)
+	(text "步进供电：PD12 高有效；硬件默认关闭"
+		(exclude_from_sim no)
+		(at 208.28 21.59 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+			(justify left top)
+		)
+		(uuid "0f42d794-4452-54eb-a11d-b3007b561806")
 	)
 	(text "HC-08 蓝牙：固定三伏三供电"
 		(exclude_from_sim no)
@@ -1270,9 +2641,9 @@
 		)
 		(uuid "1d2961f4-e7e6-5ee4-b30e-d0532e2c4c40")
 	)
-	(text "按模块照片，3V3 端为 1 脚：\n3V3、GND、RXD、TXD。\n模块 RXD 接主控 TX，TXD 接主控 RX。"
+	(text "按模块照片，3V3 端为 1 脚。\n3V3、GND、RXD、TXD。\n模块 RXD 接主控 TX，TXD 接主控 RX。"
 		(exclude_from_sim no)
-		(at 142.24 43.18 0)
+		(at 17.78 71.12 0)
 		(effects
 			(font
 				(size 2.54 2.54)
@@ -1281,70 +2652,212 @@
 		)
 		(uuid "4e50a8a4-b4ef-569b-9bff-21bc66697dd6")
 	)
-	(text "ZDT_XS 一体套件：TTL 主用，脉冲备用"
+	(text "ZDT 串口；断电时隔离 TX/RX"
 		(exclude_from_sim no)
-		(at 16.51 99.06 0)
+		(at 15.24 99.06 0)
 		(effects
 			(font
 				(size 2.54 2.54)
 			)
 			(justify left top)
 		)
-		(uuid "705eb557-1ce6-553b-8cbb-9e63a0788c0f")
+		(uuid "74034d97-db29-550d-9d43-6ac9a5856e64")
 	)
-	(text "J22 脉冲备用；PLC 版 COM 不接，\n光耦版 COM 接三伏三，按共阳配置。\nEn=L 时上拉失能，默认 Hold 不受引脚控制。"
+	(text "B30 / PD12 → STEP_PWR_EN。\n低电平或悬空：断电；高电平：供电。\nQ6/Q7 共源背靠背，Q8 电平驱动。\nR84 基极下拉，R81 保证栅源关断。\nD5 限制栅源电压；F2 保留 4A 延时。\nU15 随实际步进供电隔离串口。\n电流预算 3A；禁止带电插拔电机线。\n启动浪涌、关断延时与温升须实测。"
 		(exclude_from_sim no)
-		(at 17.78 171.45 0)
+		(at 224.79 196.85 0)
 		(effects
 			(font
 				(size 2.54 2.54)
 			)
 			(justify left top)
 		)
-		(uuid "7b6c176b-a8ae-53df-8b62-539ed8d26fff")
+		(uuid "b6587700-6ad2-56ff-bf4d-c6c9f5c90592")
 	)
-	(text "J23 八针仅接 1、2、7、8 脚。\nTX 接 R/A/H，RX 接 T/B/L。\n步进输入预算三安，最低十伏。\n主保险十二安，支路四安延时。"
+	(text "J23：1 电源、2 地、7 模块 RX、8 模块 TX。\n3—6 不接；不再保留 J22/J24。\n上电稳定后再发串口；断电前停止运动。"
 		(exclude_from_sim no)
-		(at 121.158 143.256 0)
+		(at 17.78 106.68 0)
 		(effects
 			(font
 				(size 2.54 2.54)
 			)
 			(justify left top)
 		)
-		(uuid "88624539-ec7a-50a3-8bc2-2e35d1583165")
+		(uuid "ca25ab70-aced-5849-8dad-740167d87c2d")
+	)
+	(junction
+		(at 139.7 199.39)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0b4a98c3-3380-5458-83f4-de754feccf19")
+	)
+	(junction
+		(at 320.04 53.34)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "271dab11-c0fa-5097-a5a8-3dfd159cfc8c")
+	)
+	(junction
+		(at 292.1 53.34)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3c7ea894-8252-52e0-9358-dee709e86a8b")
+	)
+	(junction
+		(at 63.5 228.6)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7ab5c4cd-1b27-574d-bf88-4877f4b108c1")
+	)
+	(junction
+		(at 55.88 214.63)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "94246b99-643a-55b8-b084-d4d2049116d5")
+	)
+	(junction
+		(at 55.88 193.04)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "973c4cd3-cf83-527d-8608-ea869e652a98")
+	)
+	(junction
+		(at 320.04 88.9)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b8a2289e-4bc9-5876-b337-c146acfe1b88")
+	)
+	(junction
+		(at 274.32 142.24)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "bc715220-ac8e-5f21-840f-c1dd9a543a75")
+	)
+	(junction
+		(at 129.54 196.85)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "fc1ace80-34f0-5dc6-99ea-bc969ee9bb49")
 	)
 	(no_connect
-		(at 173.99 125.73)
-		(uuid "23a620f1-33e5-5cc5-aa6e-d969f4b256d7")
+		(at 167.64 189.23)
+		(uuid "512f6b96-3039-57b8-a468-7bb364e8c643")
 	)
 	(no_connect
-		(at 173.99 123.19)
-		(uuid "7bc29dae-f79f-50de-ab97-7caab00a4fc8")
+		(at 167.64 186.69)
+		(uuid "854c8c25-a8da-58f3-949f-50b347464c91")
 	)
 	(no_connect
-		(at 173.99 120.65)
-		(uuid "91795dd8-2064-558a-84fe-d910c9621be9")
+		(at 167.64 191.77)
+		(uuid "ad82d1d8-e7c3-53cf-a3c0-d9d10b9ec0fb")
 	)
 	(no_connect
-		(at 173.99 128.27)
-		(uuid "ec974a8d-337a-55a8-8a52-6d5df00dc304")
+		(at 167.64 194.31)
+		(uuid "ff57291b-7029-5b10-9c9e-cdbe04b8b337")
 	)
 	(wire
 		(pts
-			(xy 213.36 109.22)
-			(xy 220.98 109.22)
+			(xy 320.04 53.34) (xy 340.36 53.34)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "03db36e6-f2e3-5c2d-8a5e-6b0f1bbcd4cf")
+		(uuid "016898cb-63e5-52b3-bd2d-d2b9dd202a97")
 	)
 	(wire
 		(pts
-			(xy 62.23 50.8)
-			(xy 80.01 50.8)
+			(xy 264.16 88.9) (xy 320.04 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "035564ab-f7ee-5b17-9b6c-e9acb7474bb0")
+	)
+	(wire
+		(pts
+			(xy 114.3 147.32) (xy 121.92 147.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "06b37d71-9681-582d-82dd-56048a926bac")
+	)
+	(wire
+		(pts
+			(xy 55.88 193.04) (xy 55.88 214.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "08d6e7e9-ac90-5264-8d3d-b7496434131d")
+	)
+	(wire
+		(pts
+			(xy 35.56 214.63) (xy 55.88 214.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "09929897-0370-5eca-8b54-1c4f09189fbb")
+	)
+	(wire
+		(pts
+			(xy 264.16 63.5) (xy 264.16 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0c4a2534-140b-5a2c-a7cc-3e9936d5f78e")
+	)
+	(wire
+		(pts
+			(xy 55.88 187.96) (xy 63.5 187.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1058d6f2-e25a-5f36-90ee-099829099378")
+	)
+	(wire
+		(pts
+			(xy 55.88 218.44) (xy 86.36 218.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "155e5445-2bd9-5674-abb6-d0f22d3e6191")
+	)
+	(wire
+		(pts
+			(xy 160.02 181.61) (xy 167.64 181.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "16fab33d-2e62-5b55-b25b-0aeccf725b00")
+	)
+	(wire
+		(pts
+			(xy 292.1 147.32) (xy 292.1 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1b13bc99-9806-5667-8bf9-9d999e40122f")
+	)
+	(wire
+		(pts
+			(xy 62.23 50.8) (xy 80.01 50.8)
 		)
 		(stroke
 			(width 0)
@@ -1354,63 +2867,247 @@
 	)
 	(wire
 		(pts
-			(xy 156.21 115.57)
-			(xy 173.99 115.57)
+			(xy 274.32 53.34) (xy 292.1 53.34)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "3021721a-f70f-535d-b864-63ce84c39b82")
+		(uuid "2297b69e-4b5d-5a4a-a735-7d01f73970a6")
 	)
 	(wire
 		(pts
-			(xy 55.88 125.73)
-			(xy 73.66 125.73)
+			(xy 27.94 207.01) (xy 35.56 207.01)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "36683409-6f09-5c47-aa43-702a238cfc70")
+		(uuid "2353f08e-a738-5b0c-9b0c-2e0a42554cb0")
 	)
 	(wire
 		(pts
-			(xy 73.66 135.89)
-			(xy 73.66 139.7)
+			(xy 129.54 172.72) (xy 129.54 196.85)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "3f348ea3-5b2b-5fa0-806b-bfdf6553ecdb")
+		(uuid "24311473-65fb-5975-a39d-3cd3a517ad47")
 	)
 	(wire
 		(pts
-			(xy 55.88 123.19)
-			(xy 73.66 123.19)
+			(xy 139.7 199.39) (xy 167.64 199.39)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "42e9063c-465c-5c1f-97ed-aeeb49a4b7f0")
+		(uuid "2488481b-f1ba-5af6-a4b2-84ded453da49")
 	)
 	(wire
 		(pts
-			(xy 33.02 128.27)
-			(xy 73.66 128.27)
+			(xy 55.88 214.63) (xy 55.88 218.44)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "4a60c9f0-99a7-51f3-b16c-8d323dcd220b")
+		(uuid "249701cd-c1f9-53d3-bec3-d9d01581d347")
 	)
 	(wire
 		(pts
-			(xy 62.23 53.34)
-			(xy 80.01 53.34)
+			(xy 292.1 53.34) (xy 292.1 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "25f39497-e431-5b21-8fb7-073984c7fc28")
+	)
+	(wire
+		(pts
+			(xy 139.7 224.79) (xy 139.7 229.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "290cb8b2-bc72-5f44-b232-c965dc703f94")
+	)
+	(wire
+		(pts
+			(xy 63.5 228.6) (xy 63.5 236.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "31f1cfce-f166-56c3-9d5a-4c81ca2a5b12")
+	)
+	(wire
+		(pts
+			(xy 45.72 154.94) (xy 45.72 172.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "33b0d233-1234-5dca-b823-5eb0bbfbcc07")
+	)
+	(wire
+		(pts
+			(xy 241.3 142.24) (xy 247.65 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "35743c43-86dd-589f-8424-62e4c62239e4")
+	)
+	(wire
+		(pts
+			(xy 121.92 154.94) (xy 121.92 160.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3a3ceca3-39be-5bdf-b603-80fb4d2b5bb7")
+	)
+	(wire
+		(pts
+			(xy 129.54 196.85) (xy 167.64 196.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3a9f0056-aa66-542c-a054-6bb0e362fc8d")
+	)
+	(wire
+		(pts
+			(xy 45.72 180.34) (xy 63.5 180.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3d4fa17d-47e2-57fe-b829-a7b21d27c019")
+	)
+	(wire
+		(pts
+			(xy 154.94 184.15) (xy 167.64 184.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3d4fa17d-47e2-57fe-b829-a7b21d27c01a")
+	)
+	(wire
+		(pts
+			(xy 121.92 247.65) (xy 129.54 247.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "40e4f4c3-3900-5816-bc04-a134fcc04954")
+	)
+	(wire
+		(pts
+			(xy 139.7 180.34) (xy 139.7 199.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "42e83a2d-28cd-52c6-8342-26a397482b1a")
+	)
+	(wire
+		(pts
+			(xy 73.66 160.02) (xy 81.28 160.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4460485f-8b8e-54b0-94e9-44a1beda7a8c")
+	)
+	(wire
+		(pts
+			(xy 350.52 63.5) (xy 350.52 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4ee29243-ec86-5ed3-89ff-997686769301")
+	)
+	(wire
+		(pts
+			(xy 255.27 142.24) (xy 274.32 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "504afccf-29ca-5196-bcde-cfd0ffd80c9a")
+	)
+	(wire
+		(pts
+			(xy 360.68 53.34) (xy 386.08 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "55ee34d4-a1eb-580c-a13c-6ce6923c2155")
+	)
+	(wire
+		(pts
+			(xy 45.72 172.72) (xy 63.5 172.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5622d831-8ae3-5edb-b931-071c82cc327d")
+	)
+	(wire
+		(pts
+			(xy 320.04 76.2) (xy 320.04 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5622d831-8ae3-5edb-b931-071c82cc327e")
+	)
+	(wire
+		(pts
+			(xy 218.44 53.34) (xy 232.41 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5c53ea36-c5be-5290-968a-d928ccb86195")
+	)
+	(wire
+		(pts
+			(xy 81.28 200.66) (xy 81.28 205.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5da0d347-1f92-52b7-96de-45434ba8be1e")
+	)
+	(wire
+		(pts
+			(xy 62.23 53.34) (xy 80.01 53.34)
 		)
 		(stroke
 			(width 0)
@@ -1420,19 +3117,107 @@
 	)
 	(wire
 		(pts
-			(xy 50.8 149.86)
-			(xy 50.8 153.67)
+			(xy 274.32 142.24) (xy 284.48 142.24)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "79027de7-f682-5436-b7a3-369ca69e0b6d")
+		(uuid "630f1d65-fac7-5695-9239-7eaacfac2900")
 	)
 	(wire
 		(pts
-			(xy 62.23 55.88)
-			(xy 80.01 55.88)
+			(xy 63.5 228.6) (xy 76.2 228.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "730198d6-88f4-5216-8e69-c7019d5218e7")
+	)
+	(wire
+		(pts
+			(xy 121.92 255.27) (xy 121.92 260.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "73593f48-d7b8-5c10-b1eb-88966183a3ae")
+	)
+	(wire
+		(pts
+			(xy 34.29 228.6) (xy 41.91 228.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7be257d1-296d-5e8c-a522-66c3fcc50827")
+	)
+	(wire
+		(pts
+			(xy 22.86 130.81) (xy 35.56 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7c4222bd-feec-527b-9a09-26641edb7bde")
+	)
+	(wire
+		(pts
+			(xy 320.04 53.34) (xy 320.04 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7c8297f7-3c7b-5df5-93ca-89ff5bfd00d8")
+	)
+	(wire
+		(pts
+			(xy 292.1 76.2) (xy 292.1 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7da2762a-0e4c-5de0-8c4c-7f2df1b9cbb7")
+	)
+	(wire
+		(pts
+			(xy 292.1 113.03) (xy 292.1 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "886818e7-1acd-5670-a522-509b1f3d401f")
+	)
+	(wire
+		(pts
+			(xy 99.06 180.34) (xy 139.7 180.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8db08589-f617-5572-b703-582acd2f214e")
+	)
+	(wire
+		(pts
+			(xy 320.04 88.9) (xy 350.52 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8e9a2030-5987-5e98-ba15-560396771390")
+	)
+	(wire
+		(pts
+			(xy 62.23 55.88) (xy 80.01 55.88)
 		)
 		(stroke
 			(width 0)
@@ -1442,129 +3227,107 @@
 	)
 	(wire
 		(pts
-			(xy 156.21 118.11)
-			(xy 173.99 118.11)
+			(xy 139.7 199.39) (xy 139.7 217.17)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "9829a3ad-69aa-58ff-b8e2-79030447b899")
+		(uuid "97bdd717-e4c5-5f04-9ec0-05ed00475d58")
 	)
 	(wire
 		(pts
-			(xy 50.8 130.81)
-			(xy 73.66 130.81)
+			(xy 274.32 157.48) (xy 274.32 162.56)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "9913d78f-3429-596a-afd0-984b7de1902a")
+		(uuid "a8d1b576-87e4-5882-8074-7ddb4db52def")
 	)
 	(wire
 		(pts
-			(xy 33.02 153.67)
-			(xy 50.8 153.67)
+			(xy 55.88 187.96) (xy 55.88 193.04)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "99cad2d2-46fb-5634-a9b8-78a230c10ea1")
+		(uuid "adae92d0-2773-5422-a4af-dc43fe0996c7")
 	)
 	(wire
 		(pts
-			(xy 156.21 130.81)
-			(xy 173.99 130.81)
+			(xy 38.1 147.32) (xy 45.72 147.32)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "a2e09579-323a-5806-9eac-10b559e8359a")
+		(uuid "aeb03487-5e82-5af5-bf8e-cbd0aecef262")
 	)
 	(wire
 		(pts
-			(xy 233.68 125.73)
-			(xy 243.84 125.73)
+			(xy 154.94 184.15) (xy 154.94 189.23)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "a6eb0a0e-c249-51e2-bb15-a42844b49bcd")
+		(uuid "aeb03487-5e82-5af5-bf8e-cbd0aecef263")
 	)
 	(wire
 		(pts
-			(xy 233.68 109.22)
-			(xy 233.68 125.73)
+			(xy 86.36 238.76) (xy 86.36 243.84)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "a95aa96e-0c17-547c-9a57-22532a6054c1")
+		(uuid "b0097536-4094-5569-800a-533ae52b2680")
 	)
 	(wire
 		(pts
-			(xy 68.58 133.35)
-			(xy 68.58 142.24)
+			(xy 292.1 53.34) (xy 320.04 53.34)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "c386da44-9e53-52c4-b396-551128a1cd55")
+		(uuid "b8b1cd67-d4db-5d79-8ccb-7f5fb60b694e")
 	)
 	(wire
 		(pts
-			(xy 68.58 133.35)
-			(xy 73.66 133.35)
+			(xy 129.54 196.85) (xy 129.54 247.65)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "cb3479eb-bca5-539b-9add-1c49ccbfa7bc")
+		(uuid "ba5468f7-421d-5faa-bd1c-82d78ed12776")
 	)
 	(wire
 		(pts
-			(xy 50.8 130.81)
-			(xy 50.8 142.24)
+			(xy 240.03 53.34) (xy 254 53.34)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "ce9e1e89-655d-5c7f-8614-8b1553d82597")
+		(uuid "bd46c583-51e4-586a-8ec0-f9ec34320f3c")
 	)
 	(wire
 		(pts
-			(xy 68.58 149.86)
-			(xy 81.28 149.86)
+			(xy 63.5 243.84) (xy 63.5 248.92)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d41993ce-654c-55c9-9439-012ea47de9c7")
+		(uuid "c3786075-c659-5151-a855-75f4800c5be4")
 	)
 	(wire
 		(pts
-			(xy 55.88 109.22)
-			(xy 55.88 123.19)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d4fb761a-aabd-5a23-a470-24031ea07c57")
-	)
-	(wire
-		(pts
-			(xy 66.04 34.29)
-			(xy 66.04 48.26)
+			(xy 66.04 34.29) (xy 66.04 48.26)
 		)
 		(stroke
 			(width 0)
@@ -1574,63 +3337,47 @@
 	)
 	(wire
 		(pts
-			(xy 228.6 109.22)
-			(xy 233.68 109.22)
+			(xy 55.88 193.04) (xy 63.5 193.04)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d77bd357-db8f-5305-8052-55d207bc0f06")
+		(uuid "d6611949-2b0b-5679-bfed-0a0d150d632d")
 	)
 	(wire
 		(pts
-			(xy 156.21 133.35)
-			(xy 173.99 133.35)
+			(xy 99.06 172.72) (xy 129.54 172.72)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d964b53d-4384-5623-a946-ab8b21ab826f")
+		(uuid "dd1b42d6-0f82-577d-b140-bbed74a483ca")
 	)
 	(wire
 		(pts
-			(xy 33.02 128.27)
-			(xy 33.02 142.24)
+			(xy 274.32 142.24) (xy 274.32 149.86)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "ddd64170-0dd9-53ac-aa09-50b460820fbf")
+		(uuid "e2b71bc9-4c18-5822-addf-153df8cf8867")
 	)
 	(wire
 		(pts
-			(xy 226.06 128.27)
-			(xy 243.84 128.27)
+			(xy 49.53 228.6) (xy 63.5 228.6)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "e0808b7a-56ba-5d51-96a4-0d0564920d1b")
+		(uuid "ea8fecc1-55b2-51b0-abdf-b98b1c97e173")
 	)
 	(wire
 		(pts
-			(xy 30.48 109.22)
-			(xy 55.88 109.22)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e6205325-909b-578f-8995-b9b69167de1e")
-	)
-	(wire
-		(pts
-			(xy 66.04 48.26)
-			(xy 80.01 48.26)
+			(xy 66.04 48.26) (xy 80.01 48.26)
 		)
 		(stroke
 			(width 0)
@@ -1638,16 +3385,15 @@
 		)
 		(uuid "fab502c2-7e3c-57c1-bb6f-da45b428c862")
 	)
-	(wire
-		(pts
-			(xy 33.02 149.86)
-			(xy 33.02 153.67)
+	(label "VM_STEP"
+		(at 34.29 228.6 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
 		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ff275b67-957d-5e5f-8a38-6412cd8a2ff4")
+		(uuid "079ebcd6-5b16-5dcb-b29f-11a5624dba59")
 	)
 	(label "GND"
 		(at 62.23 50.8 0)
@@ -1660,94 +3406,74 @@
 		(uuid "1406b627-1b21-57d6-a557-cd41dfd93660")
 	)
 	(label "V3V3"
-		(at 81.28 149.86 0)
+		(at 27.94 207.01 0)
 		(effects
 			(font
-				(size 1.016 1.016)
+				(size 1.27 1.27)
 			)
 			(justify left bottom)
 		)
-		(uuid "2e670bce-af99-5158-8a60-28cecd5e9575")
-	)
-	(label "GND"
-		(at 55.88 125.73 0)
-		(effects
-			(font
-				(size 1.016 1.016)
-			)
-			(justify left bottom)
-		)
-		(uuid "5654b9ff-730a-5091-afd4-e1179e0eb670")
-	)
-	(label "VM_STEP"
-		(at 156.21 115.57 0)
-		(effects
-			(font
-				(size 1.016 1.016)
-			)
-			(justify left bottom)
-		)
-		(uuid "6b770713-e17f-5c87-831e-adcf7300c434")
-	)
-	(label "VM_STEP"
-		(at 233.68 109.22 0)
-		(effects
-			(font
-				(size 1.016 1.016)
-			)
-			(justify left bottom)
-		)
-		(uuid "721c2368-7f67-59dd-a974-1a9dd4d72268")
-	)
-	(label "GND"
-		(at 73.66 139.7 0)
-		(effects
-			(font
-				(size 1.016 1.016)
-			)
-			(justify left bottom)
-		)
-		(uuid "9ea8b00a-c439-54c3-97cf-abb11ce885d5")
-	)
-	(label "GND"
-		(at 33.02 153.67 0)
-		(effects
-			(font
-				(size 1.016 1.016)
-			)
-			(justify left bottom)
-		)
-		(uuid "c3365936-eceb-5c76-a30e-7240488c7ba5")
-	)
-	(label "GND"
-		(at 156.21 118.11 0)
-		(effects
-			(font
-				(size 1.016 1.016)
-			)
-			(justify left bottom)
-		)
-		(uuid "c8631606-e1a9-5a0b-a4d5-ebff2d3649a8")
-	)
-	(label "GND"
-		(at 226.06 128.27 0)
-		(effects
-			(font
-				(size 1.016 1.016)
-			)
-			(justify left bottom)
-		)
-		(uuid "ca3e5ca5-fefa-599b-839f-89eb04797331")
+		(uuid "14c92d3c-56fb-5a34-873e-476d4e2c8d0b")
 	)
 	(label "V3V3"
-		(at 55.88 109.22 0)
+		(at 73.66 160.02 0)
 		(effects
 			(font
-				(size 1.016 1.016)
+				(size 1.27 1.27)
 			)
 			(justify left bottom)
 		)
-		(uuid "e324414d-e823-5d2a-b1d7-15d09274820a")
+		(uuid "25aa4c56-e3b0-561d-a514-b8883b49bd06")
+	)
+	(label "VM_STEP"
+		(at 160.02 181.61 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "470a8f6d-4927-5b17-81ab-84590f3958bd")
+	)
+	(label "V3V3"
+		(at 114.3 147.32 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "4cc9da0f-6d37-5ca1-b1db-cb21188c45c1")
+	)
+	(label "V3V3"
+		(at 38.1 147.32 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "7c363ff7-67f6-5a01-afaa-60c07b2af6ab")
+	)
+	(label "VM_STEP"
+		(at 386.08 53.34 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "809e4094-d590-52fe-a6a9-1eeb4db10590")
+	)
+	(label "V3V3"
+		(at 35.56 130.81 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d4e3d881-d3ec-55cf-b622-eda6233ae5e3")
 	)
 	(hierarchical_label "BT_TX"
 		(shape bidirectional)
@@ -1773,7 +3499,7 @@
 	)
 	(hierarchical_label "V3V3"
 		(shape bidirectional)
-		(at 30.48 109.22 180)
+		(at 22.86 130.81 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1784,7 +3510,7 @@
 	)
 	(hierarchical_label "VM"
 		(shape bidirectional)
-		(at 213.36 109.22 180)
+		(at 218.44 53.34 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1792,17 +3518,6 @@
 			(justify right)
 		)
 		(uuid "4c2489ad-8ac5-5362-974b-cae7a2897721")
-	)
-	(hierarchical_label "STEP_DIR"
-		(shape bidirectional)
-		(at 50.8 130.81 180)
-		(effects
-			(font
-				(size 1.016 1.016)
-			)
-			(justify right)
-		)
-		(uuid "50aaf363-d35f-5ccf-987f-fdd25eb9e9eb")
 	)
 	(hierarchical_label "BT_RX"
 		(shape bidirectional)
@@ -1815,53 +3530,609 @@
 		)
 		(uuid "5a599048-86b1-5abf-bbee-a8929fe444f3")
 	)
-	(hierarchical_label "STEP_PUL"
-		(shape bidirectional)
-		(at 33.02 128.27 180)
-		(effects
-			(font
-				(size 1.016 1.016)
-			)
-			(justify right)
-		)
-		(uuid "5e1508ae-5e57-559a-9a82-6794ac0e8c61")
-	)
 	(hierarchical_label "STEP_UART_RX"
 		(shape bidirectional)
-		(at 156.21 133.35 180)
+		(at 45.72 180.34 180)
 		(effects
 			(font
-				(size 1.016 1.016)
+				(size 1.27 1.27)
 			)
 			(justify right)
 		)
 		(uuid "7950e7c8-1955-57c6-b38c-9e219b333214")
 	)
-	(hierarchical_label "STEP_nEN"
-		(shape bidirectional)
-		(at 68.58 133.35 180)
+	(hierarchical_label "STEP_PWR_EN"
+		(shape input)
+		(at 241.3 142.24 180)
 		(effects
 			(font
-				(size 1.016 1.016)
+				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "9cfa811f-592f-5b39-b76d-846c7374b978")
+		(uuid "8fdb5f40-0c73-5517-8ef3-18802cea2679")
 	)
 	(hierarchical_label "STEP_UART_TX"
 		(shape bidirectional)
-		(at 156.21 130.81 180)
+		(at 45.72 172.72 180)
 		(effects
 			(font
-				(size 1.016 1.016)
+				(size 1.27 1.27)
 			)
 			(justify right)
 		)
 		(uuid "ef9aedec-b2ed-5079-8e73-434f49ead2de")
 	)
 	(symbol
+		(lib_id "Motor:Device__R")
+		(at 45.72 228.6 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "02779fa8-ae6c-5d42-baf9-3352ff94b4ac")
+		(property "Reference" "R86"
+			(at 45.72 220.98 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100k"
+			(at 45.72 223.52 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder"
+			(at 45.72 228.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 45.72 228.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 45.72 228.6 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f33776d9-4d19-578b-86c4-dfae1880c712")
+		)
+		(pin "2"
+			(uuid "84783ec9-394c-5589-bb34-a874ae37334f")
+		)
+		(instances
+			(project "CoralC5-Motor"
+				(path "/b6138eaf-d20b-5b43-a04a-d71eca329709/6805c229-363d-5720-8872-3a09dea05270"
+					(reference "R86")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Motor:Device__R")
+		(at 139.7 220.98 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "0ad91ddb-b2dd-579c-b11e-e8ed02bede4f")
+		(property "Reference" "R89"
+			(at 142.24 219.71 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100k"
+			(at 142.24 222.25 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder"
+			(at 139.7 220.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 139.7 220.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 139.7 220.98 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1be838d1-bc33-5f56-a94f-4f54d77d6ee4")
+		)
+		(pin "2"
+			(uuid "66ec0682-11ed-5872-abfe-d7fc3c382786")
+		)
+		(instances
+			(project "CoralC5-Motor"
+				(path "/b6138eaf-d20b-5b43-a04a-d71eca329709/6805c229-363d-5720-8872-3a09dea05270"
+					(reference "R89")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Motor:power__GND")
+		(at 121.92 260.35 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "105f80a6-f9a4-58e5-b6fe-e67c4f13f025")
+		(property "Reference" "#PWR417"
+			(at 121.92 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 121.92 264.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 121.92 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 121.92 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 121.92 260.35 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c472ebd7-d8ca-580c-b5d8-3989b02e567d")
+		)
+		(instances
+			(project "CoralC5-Motor"
+				(path "/b6138eaf-d20b-5b43-a04a-d71eca329709/6805c229-363d-5720-8872-3a09dea05270"
+					(reference "#PWR417")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Motor:Device__R")
+		(at 45.72 151.13 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "1275c5b2-db54-5854-8ce4-3c003c50bdb0")
+		(property "Reference" "R88"
+			(at 48.26 149.86 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100k"
+			(at 48.26 152.4 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder"
+			(at 45.72 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 45.72 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 45.72 151.13 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "29999e24-95c3-5a7d-b6a5-4240e36140c2")
+		)
+		(pin "2"
+			(uuid "a03788b0-bb09-5a4e-907d-e91be0f9f8f0")
+		)
+		(instances
+			(project "CoralC5-Motor"
+				(path "/b6138eaf-d20b-5b43-a04a-d71eca329709/6805c229-363d-5720-8872-3a09dea05270"
+					(reference "R88")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Motor:Device__R")
+		(at 35.56 210.82 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "17d67472-6004-5324-9c3a-5bc18fc6e12a")
+		(property "Reference" "R85"
+			(at 38.1 209.55 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10k"
+			(at 38.1 212.09 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder"
+			(at 35.56 210.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 35.56 210.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 35.56 210.82 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "70d21960-67c0-58f3-bef3-3250893cb942")
+		)
+		(pin "2"
+			(uuid "df7d6eb4-bf09-5245-9274-0ca79f2bf94c")
+		)
+		(instances
+			(project "CoralC5-Motor"
+				(path "/b6138eaf-d20b-5b43-a04a-d71eca329709/6805c229-363d-5720-8872-3a09dea05270"
+					(reference "R85")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Motor:Device__C")
+		(at 121.92 151.13 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "1bfde133-9b68-5a86-b939-bdee0aeaf8d1")
+		(property "Reference" "C80"
+			(at 124.46 149.86 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF/50V"
+			(at 124.46 152.4 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder"
+			(at 121.92 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 121.92 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 121.92 151.13 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "661da2ad-4999-59f9-8d2c-a7e3d74f0c63")
+		)
+		(pin "2"
+			(uuid "ef9e2523-57bc-5dc5-b1ce-44decf06c9ea")
+		)
+		(instances
+			(project "CoralC5-Motor"
+				(path "/b6138eaf-d20b-5b43-a04a-d71eca329709/6805c229-363d-5720-8872-3a09dea05270"
+					(reference "C80")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Motor:BSS138BK_SOT23")
+		(at 86.36 228.6 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "215a0885-0b6a-5401-b07c-0ea6dc3e29a8")
+		(property "Reference" "Q9"
+			(at 102.87 217.17 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "BSS138BK"
+			(at 102.87 219.71 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Motor:Package_TO_SOT_SMD__SOT-23"
+			(at 86.36 228.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/BSS138BK.pdf"
+			(at 86.36 228.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 86.36 228.6 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "BSS138BK,215"
+			(at 86.36 228.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "50cdfc9a-8a29-5dd6-abe0-a7d1dcc9e7e1")
+		)
+		(pin "2"
+			(uuid "ea42505a-3f45-5ddd-bb39-7e7381c2845a")
+		)
+		(pin "3"
+			(uuid "5da87c93-c9c4-526e-bf07-afd4ef8e32b8")
+		)
+		(instances
+			(project "CoralC5-Motor"
+				(path "/b6138eaf-d20b-5b43-a04a-d71eca329709/6805c229-363d-5720-8872-3a09dea05270"
+					(reference "Q9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Motor:M2_J23")
-		(at 184.15 124.46 0)
+		(at 177.8 190.5 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1871,7 +4142,7 @@
 		(dnp no)
 		(uuid "230c5bc2-7169-5c41-a8f1-bf4de2dc0586")
 		(property "Reference" "J23"
-			(at 184.15 110.236 0)
+			(at 177.8 170.18 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1881,7 +4152,7 @@
 			)
 		)
 		(property "Value" "ZDT_XS_TTL_8P"
-			(at 184.15 112.776 0)
+			(at 177.8 172.72 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1891,7 +4162,7 @@
 			)
 		)
 		(property "Footprint" "Motor:Connector_JST__JST_XH_B8B-XH-A_1x08_P2.50mm_Vertical"
-			(at 184.15 124.46 0)
+			(at 177.8 190.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1902,7 +4173,7 @@
 			)
 		)
 		(property "Datasheet" "${KIPRJMOD}/../../../../Documentation/ZDT_XS系列第二代闭环步进电机资料/3. 说明书/ZDT_X42S第二代闭环步进电机用户手册V1.0.5_260527.pdf"
-			(at 184.15 124.46 0)
+			(at 177.8 190.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1956,86 +4227,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Motor:M2_J24")
-		(at 254 127 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "28180198-85ef-5f9f-aefd-c57082e39bd6")
-		(property "Reference" "J24"
-			(at 254 118.11 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "步进驱动电源"
-			(at 254 120.65 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Motor:TerminalBlock_Phoenix__TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal"
-			(at 254 127 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 254 127 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 254 127 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "2f75b67b-a006-532e-9cfe-f63d7cbcfe85")
-		)
-		(pin "2"
-			(uuid "29ca56a1-f6cd-548c-9ee3-4284179466d0")
-		)
-		(instances
-			(project "CoralC5-Motor"
-				(path "/b6138eaf-d20b-5b43-a04a-d71eca329709/6805c229-363d-5720-8872-3a09dea05270"
-					(reference "J24")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Motor:power__GND")
-		(at 50.8 153.67 0)
+		(at 274.32 162.56 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2043,9 +4236,9 @@
 		(on_board no)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "297f3a78-6453-5f65-95b4-b990f76aa931")
-		(property "Reference" "#PWR210"
-			(at 50.8 153.67 0)
+		(uuid "2a36f29e-6d75-59fa-aed9-814eae50d0a3")
+		(property "Reference" "#PWR421"
+			(at 274.32 162.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2056,7 +4249,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 50.8 157.48 0)
+			(at 274.32 166.37 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2067,7 +4260,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 50.8 153.67 0)
+			(at 274.32 162.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2078,7 +4271,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 50.8 153.67 0)
+			(at 274.32 162.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2089,7 +4282,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 50.8 153.67 0)
+			(at 274.32 162.56 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2099,20 +4292,20 @@
 			)
 		)
 		(pin "1"
-			(uuid "9f122411-214a-5e78-bf00-030ddacdfbcc")
+			(uuid "c75de66e-b25d-5412-8087-e245106e72d7")
 		)
 		(instances
 			(project "CoralC5-Motor"
 				(path "/b6138eaf-d20b-5b43-a04a-d71eca329709/6805c229-363d-5720-8872-3a09dea05270"
-					(reference "#PWR210")
+					(reference "#PWR421")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Motor:Device__R")
-		(at 50.8 146.05 0)
+		(lib_id "Motor:Transistor_BJT__MMBT3904")
+		(at 289.56 142.24 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2120,9 +4313,101 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "639c33a1-cded-5a96-a818-835b26966b80")
-		(property "Reference" "R58"
-			(at 53.34 144.78 0)
+		(uuid "3a58f50c-f48f-55ac-a501-379410dd4682")
+		(property "Reference" "Q8"
+			(at 304.8 138.43 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "MMBT3904"
+			(at 304.8 140.97 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Motor:Package_TO_SOT_SMD__SOT-23"
+			(at 289.56 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com/datasheet/download/MMBT3904.pdf"
+			(at 289.56 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 289.56 142.24 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "MMBT3904-7-F"
+			(at 289.56 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "2c845734-edc3-5089-b054-96f07428e58d")
+		)
+		(pin "2"
+			(uuid "35f3297c-092a-5ed6-bf35-1d4c84532788")
+		)
+		(pin "3"
+			(uuid "aea07a0a-e305-5455-bef5-fbf193cb7910")
+		)
+		(instances
+			(project "CoralC5-Motor"
+				(path "/b6138eaf-d20b-5b43-a04a-d71eca329709/6805c229-363d-5720-8872-3a09dea05270"
+					(reference "Q8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Motor:Device__R")
+		(at 292.1 72.39 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "469eae1a-f17c-5691-b626-b9f9e286ce3d")
+		(property "Reference" "R81"
+			(at 294.64 71.12 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2132,8 +4417,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10k"
-			(at 53.34 147.32 0)
+		(property "Value" "100k"
+			(at 294.64 73.66 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2144,7 +4429,7 @@
 			)
 		)
 		(property "Footprint" "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder"
-			(at 50.8 146.05 0)
+			(at 292.1 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2155,7 +4440,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 50.8 146.05 0)
+			(at 292.1 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2166,7 +4451,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 50.8 146.05 0)
+			(at 292.1 72.39 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2176,15 +4461,95 @@
 			)
 		)
 		(pin "1"
-			(uuid "eb02b0ad-36cf-5783-9730-9bdf2b5c1d4b")
+			(uuid "6cbba979-c969-5ac2-9945-40e2b1a32b67")
 		)
 		(pin "2"
-			(uuid "533c6756-4de4-5d26-86ee-3ced6307655f")
+			(uuid "1cbeb82d-9279-5297-b106-01f008f03e47")
 		)
 		(instances
 			(project "CoralC5-Motor"
 				(path "/b6138eaf-d20b-5b43-a04a-d71eca329709/6805c229-363d-5720-8872-3a09dea05270"
-					(reference "R58")
+					(reference "R81")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Motor:Device__R")
+		(at 121.92 251.46 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "615a9f02-9df6-50dc-80cb-2604c009b138")
+		(property "Reference" "R90"
+			(at 124.46 250.19 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100k"
+			(at 124.46 252.73 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder"
+			(at 121.92 251.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 121.92 251.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 121.92 251.46 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "15269dba-76ed-5ff2-96f9-2cbf3b0efdf4")
+		)
+		(pin "2"
+			(uuid "17ebc606-9cc9-52d6-b216-cfea5e7d2389")
+		)
+		(instances
+			(project "CoralC5-Motor"
+				(path "/b6138eaf-d20b-5b43-a04a-d71eca329709/6805c229-363d-5720-8872-3a09dea05270"
+					(reference "R90")
 					(unit 1)
 				)
 			)
@@ -2192,7 +4557,7 @@
 	)
 	(symbol
 		(lib_id "Motor:Device__Fuse")
-		(at 224.79 109.22 90)
+		(at 236.22 53.34 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2202,7 +4567,7 @@
 		(dnp no)
 		(uuid "66e47898-1bbd-5de4-9354-8c18d0f0530d")
 		(property "Reference" "F2"
-			(at 224.79 103.886 90)
+			(at 236.22 45.72 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2212,7 +4577,7 @@
 			)
 		)
 		(property "Value" "4A / 125V 延时"
-			(at 224.79 106.426 90)
+			(at 236.22 48.26 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2222,7 +4587,7 @@
 			)
 		)
 		(property "Footprint" "Motor:Fuse_NANO2_454_6.10x2.69mm"
-			(at 224.79 109.22 0)
+			(at 236.22 53.34 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2233,7 +4598,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.littelfuse.com/assetdocs/fuse-452-and-454-datasheet?assetguid=8c87aa93-80a7-4ea8-8749-a19ba03901c2"
-			(at 224.79 109.22 0)
+			(at 236.22 53.34 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2254,7 +4619,7 @@
 			)
 		)
 		(property "MPN" "0454004.MR"
-			(at 224.79 109.22 0)
+			(at 236.22 53.34 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2280,8 +4645,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Motor:M2_J22")
-		(at 83.82 129.54 0)
+		(lib_id "Motor:Device__R")
+		(at 63.5 240.03 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2289,29 +4654,31 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "9798aed5-1ba0-5a7f-8046-b806c007fbf9")
-		(property "Reference" "J22"
-			(at 83.82 114.3 0)
+		(uuid "7539fa4e-af84-52ce-8b7b-06e72f50132f")
+		(property "Reference" "R87"
+			(at 66.04 238.76 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "步进_脉冲控制"
-			(at 83.82 116.84 0)
+		(property "Value" "100k"
+			(at 66.04 241.3 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Footprint" "Motor:Connector_JST__JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical"
-			(at 83.82 129.54 0)
+		(property "Footprint" "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder"
+			(at 63.5 240.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2322,7 +4689,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 83.82 129.54 0)
+			(at 63.5 240.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2333,7 +4700,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 83.82 129.54 0)
+			(at 63.5 240.03 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2343,27 +4710,326 @@
 			)
 		)
 		(pin "1"
-			(uuid "84914907-ee88-5ba1-91de-83ae7ea8c3a8")
+			(uuid "0a0b0019-6671-5410-abaa-d11a0637677f")
 		)
 		(pin "2"
-			(uuid "53e71000-a3bf-5de0-bbdc-39c0def9e7f5")
-		)
-		(pin "3"
-			(uuid "4e659b9d-3c8b-5ce8-96e6-9aaca9d6fbe2")
-		)
-		(pin "4"
-			(uuid "86f7bb28-8e1e-5731-9c96-12b9244c0051")
-		)
-		(pin "5"
-			(uuid "07a69188-2f4e-5afc-a878-c950bc19178e")
-		)
-		(pin "6"
-			(uuid "f0aa6d71-b576-5eac-8c2d-c0695c26dfaa")
+			(uuid "bd0ed4cb-d515-55cf-abd7-95aad3751f3b")
 		)
 		(instances
 			(project "CoralC5-Motor"
 				(path "/b6138eaf-d20b-5b43-a04a-d71eca329709/6805c229-363d-5720-8872-3a09dea05270"
-					(reference "J22")
+					(reference "R87")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Motor:Device__R")
+		(at 292.1 109.22 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "7da36d78-7224-5447-8150-2e3ac31e8e4c")
+		(property "Reference" "R82"
+			(at 294.64 107.95 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "4.7k"
+			(at 294.64 110.49 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder"
+			(at 292.1 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 292.1 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 292.1 109.22 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "8c362fe5-a009-54e9-aa18-9b770d6f418e")
+		)
+		(pin "2"
+			(uuid "79771286-f140-515f-aca7-cf101e44477c")
+		)
+		(instances
+			(project "CoralC5-Motor"
+				(path "/b6138eaf-d20b-5b43-a04a-d71eca329709/6805c229-363d-5720-8872-3a09dea05270"
+					(reference "R82")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Motor:power__GND")
+		(at 63.5 248.92 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "8df5d2e0-e263-5f2f-8b7d-bc800d499c7e")
+		(property "Reference" "#PWR418"
+			(at 63.5 248.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 63.5 252.73 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 63.5 248.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 63.5 248.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 63.5 248.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "18dd87af-e4c2-5c29-bd4b-a16fe25d5c62")
+		)
+		(instances
+			(project "CoralC5-Motor"
+				(path "/b6138eaf-d20b-5b43-a04a-d71eca329709/6805c229-363d-5720-8872-3a09dea05270"
+					(reference "#PWR418")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Motor:power__GND")
+		(at 121.92 160.02 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "90e9d851-1d9b-5a8e-971d-19780d677c3f")
+		(property "Reference" "#PWR414"
+			(at 121.92 160.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 121.92 163.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 121.92 160.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 121.92 160.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 121.92 160.02 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "31a9c6d4-49cb-57c0-b746-53fbf74138a9")
+		)
+		(instances
+			(project "CoralC5-Motor"
+				(path "/b6138eaf-d20b-5b43-a04a-d71eca329709/6805c229-363d-5720-8872-3a09dea05270"
+					(reference "#PWR414")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Motor:power__GND")
+		(at 139.7 229.87 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "97659b91-fd3e-5063-8a46-61b5aef97c14")
+		(property "Reference" "#PWR416"
+			(at 139.7 229.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 139.7 233.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 139.7 229.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 139.7 229.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 139.7 229.87 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ac8a5869-7cfd-5ed0-af5e-4c0e892ad6bd")
+		)
+		(instances
+			(project "CoralC5-Motor"
+				(path "/b6138eaf-d20b-5b43-a04a-d71eca329709/6805c229-363d-5720-8872-3a09dea05270"
+					(reference "#PWR416")
 					(unit 1)
 				)
 			)
@@ -2454,40 +5120,40 @@
 		)
 	)
 	(symbol
-		(lib_id "Motor:Device__R")
-		(at 33.02 146.05 0)
+		(lib_id "Motor:power__GND")
+		(at 86.36 243.84 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
+		(in_bom no)
+		(on_board no)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "b0d49af9-13d1-5d86-bd91-0e7001485704")
-		(property "Reference" "R57"
-			(at 35.56 144.78 0)
+		(uuid "9c6f1b26-9c1e-5425-885d-bae6d505cd32")
+		(property "Reference" "#PWR419"
+			(at 86.36 243.84 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
-		(property "Value" "10k"
-			(at 35.56 147.32 0)
+		(property "Value" "GND"
+			(at 86.36 247.65 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
-		(property "Footprint" "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder"
-			(at 33.02 146.05 0)
+		(property "Footprint" ""
+			(at 86.36 243.84 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2498,7 +5164,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 33.02 146.05 0)
+			(at 86.36 243.84 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2509,7 +5175,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 33.02 146.05 0)
+			(at 86.36 243.84 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2519,15 +5185,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "f646cdb0-90e9-586d-bd18-d49fa4ac1948")
-		)
-		(pin "2"
-			(uuid "118d44a0-3052-5456-af32-a2d91a851f31")
+			(uuid "82ae6af2-7a82-53f0-8d05-3f10d9ce2e34")
 		)
 		(instances
 			(project "CoralC5-Motor"
 				(path "/b6138eaf-d20b-5b43-a04a-d71eca329709/6805c229-363d-5720-8872-3a09dea05270"
-					(reference "R57")
+					(reference "#PWR419")
 					(unit 1)
 				)
 			)
@@ -2535,7 +5198,7 @@
 	)
 	(symbol
 		(lib_id "Motor:Device__R")
-		(at 68.58 146.05 180)
+		(at 251.46 142.24 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2543,31 +5206,29 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "ed0e170d-e740-5e06-934c-c020d616f57b")
-		(property "Reference" "R54"
-			(at 74.93 144.78 0)
+		(uuid "b9ca9804-a562-5dca-907b-d18c7b290352")
+		(property "Reference" "R83"
+			(at 251.46 134.62 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Value" "10k"
-			(at 74.93 147.32 0)
+			(at 251.46 137.16 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Footprint" "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder"
-			(at 68.58 146.05 0)
+			(at 251.46 142.24 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2578,7 +5239,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 68.58 146.05 0)
+			(at 251.46 142.24 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2589,7 +5250,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 68.58 146.05 0)
+			(at 251.46 142.24 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2599,15 +5260,708 @@
 			)
 		)
 		(pin "1"
-			(uuid "6f62cc6f-d222-52d2-933d-94e3ae3cf5bf")
+			(uuid "40e624e5-f93f-5e32-9c5e-f7a03a195e09")
 		)
 		(pin "2"
-			(uuid "a5c1190c-11d7-5bb4-8c83-b4db1fb2c5cd")
+			(uuid "40fd9b35-21c7-55dc-ba62-ad708104dcc8")
 		)
 		(instances
 			(project "CoralC5-Motor"
 				(path "/b6138eaf-d20b-5b43-a04a-d71eca329709/6805c229-363d-5720-8872-3a09dea05270"
-					(reference "R54")
+					(reference "R83")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Motor:power__GND")
+		(at 292.1 152.4 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "bb495558-69b0-5895-ad56-4279cd3da2f5")
+		(property "Reference" "#PWR420"
+			(at 292.1 152.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 292.1 156.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 292.1 152.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 292.1 152.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 292.1 152.4 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7c440de6-0bf7-5549-be0b-ae674cf1419a")
+		)
+		(instances
+			(project "CoralC5-Motor"
+				(path "/b6138eaf-d20b-5b43-a04a-d71eca329709/6805c229-363d-5720-8872-3a09dea05270"
+					(reference "#PWR420")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Motor:BZT52_C12_SOD123")
+		(at 320.04 72.39 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c39e96c6-f6e5-572a-a06b-e3b2a70c3217")
+		(property "Reference" "D5"
+			(at 322.58 71.12 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "12V"
+			(at 322.58 73.66 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Motor:Diode_SMD__D_SOD-123"
+			(at 320.04 72.39 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/BZT52_SER.pdf"
+			(at 320.04 72.39 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 320.04 72.39 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "BZT52-C12,115"
+			(at 320.04 72.39 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "bbd5fd5e-c991-5b09-a54d-663a9ba28da3")
+		)
+		(pin "2"
+			(uuid "cc7f9d0c-c71e-5e1c-ad4c-856e0a77cc50")
+		)
+		(instances
+			(project "CoralC5-Motor"
+				(path "/b6138eaf-d20b-5b43-a04a-d71eca329709/6805c229-363d-5720-8872-3a09dea05270"
+					(reference "D5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Motor:power__GND")
+		(at 81.28 205.74 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c57f03eb-ae44-58e2-93c8-0eadeec00dde")
+		(property "Reference" "#PWR413"
+			(at 81.28 205.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 81.28 209.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 81.28 205.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 81.28 205.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 81.28 205.74 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1e609269-17b7-5e2f-9990-d3cc796097a4")
+		)
+		(instances
+			(project "CoralC5-Motor"
+				(path "/b6138eaf-d20b-5b43-a04a-d71eca329709/6805c229-363d-5720-8872-3a09dea05270"
+					(reference "#PWR413")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Motor:DMP3007_Horizontal_DS")
+		(at 264.16 53.34 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "d084044a-b702-59a5-bb4e-171cfc121afe")
+		(property "Reference" "Q6"
+			(at 264.16 40.64 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "DMP3007LK3-13"
+			(at 264.16 43.18 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Motor:Package_TO_SOT_SMD__TO-252-2"
+			(at 264.16 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com/datasheet/download/DMP3007LK3.pdf"
+			(at 264.16 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 264.16 53.34 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "DMP3007LK3-13"
+			(at 264.16 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "ce3879ad-eb1d-56ef-93b4-301f508cc218")
+		)
+		(pin "3"
+			(uuid "382d117b-7cc3-5711-bc36-2319a5fd570b")
+		)
+		(pin "1"
+			(uuid "a5f8d59a-5b8c-50df-bf91-5c43ebb36e04")
+		)
+		(instances
+			(project "CoralC5-Motor"
+				(path "/b6138eaf-d20b-5b43-a04a-d71eca329709/6805c229-363d-5720-8872-3a09dea05270"
+					(reference "Q6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Motor:power__GND")
+		(at 154.94 189.23 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "d1319b88-91b2-5a7b-ade0-0c69ab115144")
+		(property "Reference" "#PWR431"
+			(at 154.94 189.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 154.94 193.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 154.94 189.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 154.94 189.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 154.94 189.23 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "eb939ff3-cd7a-5844-b03e-db16ab625908")
+		)
+		(instances
+			(project "CoralC5-Motor"
+				(path "/b6138eaf-d20b-5b43-a04a-d71eca329709/6805c229-363d-5720-8872-3a09dea05270"
+					(reference "#PWR431")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Motor:DMP3007_Horizontal_SD")
+		(at 350.52 53.34 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "d17bedf7-c654-5e7b-8364-b05dcdbe5048")
+		(property "Reference" "Q7"
+			(at 350.52 40.64 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "DMP3007LK3-13"
+			(at 350.52 43.18 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Motor:Package_TO_SOT_SMD__TO-252-2"
+			(at 350.52 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com/datasheet/download/DMP3007LK3.pdf"
+			(at 350.52 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 350.52 53.34 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "DMP3007LK3-13"
+			(at 350.52 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "3"
+			(uuid "ece1620b-ad7e-5052-a608-a1dc919bdaba")
+		)
+		(pin "2"
+			(uuid "118b973e-5f59-5342-8d42-adee26b024d3")
+		)
+		(pin "1"
+			(uuid "eb0b5fdc-b19e-544a-be12-ad1705807292")
+		)
+		(instances
+			(project "CoralC5-Motor"
+				(path "/b6138eaf-d20b-5b43-a04a-d71eca329709/6805c229-363d-5720-8872-3a09dea05270"
+					(reference "Q7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Motor:Device__R")
+		(at 274.32 153.67 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "dafc1267-4e5f-5a86-aa22-d0d63962f29a")
+		(property "Reference" "R84"
+			(at 276.86 152.4 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100k"
+			(at 276.86 154.94 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder"
+			(at 274.32 153.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 274.32 153.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 274.32 153.67 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "43e39223-5275-547d-8bf1-1e6bdebfa68f")
+		)
+		(pin "2"
+			(uuid "49c99c13-8fad-58a1-a143-58cf452e37a1")
+		)
+		(instances
+			(project "CoralC5-Motor"
+				(path "/b6138eaf-d20b-5b43-a04a-d71eca329709/6805c229-363d-5720-8872-3a09dea05270"
+					(reference "R84")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Motor:SN74LVC2G125_DCT")
+		(at 81.28 180.34 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "e67b0943-cbb5-5007-9e04-530ee9cb6214")
+		(property "Reference" "U15"
+			(at 81.28 151.13 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SN74LVC2G125DCTR"
+			(at 81.28 153.67 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Motor:Package_SO__SSOP-8_2.95x2.8mm_P0.65mm"
+			(at 81.28 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/sn74lvc2g125.pdf"
+			(at 81.28 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 81.28 180.34 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "SN74LVC2G125DCTR"
+			(at 81.28 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9d8878da-6ff3-531c-9b83-c038dd988527")
+		)
+		(pin "2"
+			(uuid "fcfeca7e-a823-577b-b93e-6c33bf277cb6")
+		)
+		(pin "3"
+			(uuid "2e9ca760-8e17-527e-a0e3-db87bb5407f5")
+		)
+		(pin "4"
+			(uuid "5d560b1a-0ca5-54f9-a8b1-6d60d00abdea")
+		)
+		(pin "5"
+			(uuid "6fe15e00-f264-5e73-abd8-22d0812d8da4")
+		)
+		(pin "6"
+			(uuid "1e97af00-c691-5ff2-920c-c4bf15e28ce0")
+		)
+		(pin "7"
+			(uuid "4f182c9f-e575-5fd9-85ff-fadc48ad9b94")
+		)
+		(pin "8"
+			(uuid "e50aa4d1-cc43-526a-9917-82ace9889f09")
+		)
+		(instances
+			(project "CoralC5-Motor"
+				(path "/b6138eaf-d20b-5b43-a04a-d71eca329709/6805c229-363d-5720-8872-3a09dea05270"
+					(reference "U15")
 					(unit 1)
 				)
 			)

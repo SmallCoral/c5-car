@@ -1,0 +1,101 @@
+{
+  "date": "2026-11-06",
+  "revision": "M2.2",
+  "baseline": "docs\\baseline-2026-11-06-connector-types",
+  "requested": "TFT and HC-08 female headers; other harness ports ordinary XH, not XHB latch; latest: J10 jumper header, Bluetooth fixed 3V3 and J16 removed",
+  "changes": {
+    "J10": {
+      "old_footprint": "Motor:Connector_JST__JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical",
+      "footprint": "Motor:Connector_PinHeader_2.54mm__PinHeader_1x02_P2.54mm_Vertical",
+      "type": "2P 2.54mm male jumper header, not XH",
+      "lib_id": "Motor:Connector_Generic__Conn_01x02",
+      "source": "03_Core_Interface.kicad_sch"
+    },
+    "J17": {
+      "old_footprint": "Motor:Connector_PinHeader_2.54mm__PinHeader_1x08_P2.54mm_Vertical",
+      "footprint": "Motor:Connector_PinSocket_2.54mm__PinSocket_1x08_P2.54mm_Vertical",
+      "type": "female header",
+      "lib_id": "Motor:M2_J17",
+      "source": "07_TFT_Buttons.kicad_sch"
+    },
+    "J20": {
+      "old_footprint": "Motor:Connector_PinHeader_2.54mm__PinHeader_1x10_P2.54mm_Vertical",
+      "footprint": "Motor:Connector_JST__JST_XH_B10B-XH-A_1x10_P2.50mm_Vertical",
+      "type": "ordinary XH; not XHB positive latch",
+      "lib_id": "Motor:M2_J20",
+      "source": "08_Grayscale_Cameras.kicad_sch"
+    },
+    "J18": {
+      "old_footprint": "Motor:Connector_PinHeader_2.54mm__PinHeader_1x04_P2.54mm_Vertical",
+      "footprint": "Motor:Connector_JST__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical",
+      "type": "ordinary XH; not XHB positive latch",
+      "lib_id": "Motor:M2_J18",
+      "source": "08_Grayscale_Cameras.kicad_sch"
+    },
+    "J21": {
+      "old_footprint": "Motor:Connector_PinHeader_2.54mm__PinHeader_1x04_P2.54mm_Vertical",
+      "footprint": "Motor:Connector_JST__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical",
+      "type": "ordinary XH; not XHB positive latch",
+      "lib_id": "Motor:M2_J21",
+      "source": "08_Grayscale_Cameras.kicad_sch"
+    },
+    "J19": {
+      "old_footprint": "Motor:Connector_PinHeader_2.54mm__PinHeader_1x04_P2.54mm_Vertical",
+      "footprint": "Motor:Connector_JST__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical",
+      "type": "ordinary XH; not XHB positive latch",
+      "lib_id": "Motor:M2_J19",
+      "source": "08_Grayscale_Cameras.kicad_sch"
+    },
+    "J23": {
+      "old_footprint": "Motor:Connector_PinHeader_2.54mm__PinHeader_1x08_P2.54mm_Vertical",
+      "footprint": "Motor:Connector_JST__JST_XH_B8B-XH-A_1x08_P2.50mm_Vertical",
+      "type": "ordinary XH; not XHB positive latch",
+      "lib_id": "Motor:M2_J23",
+      "source": "09_Bluetooth_Stepper.kicad_sch"
+    },
+    "J22": {
+      "old_footprint": "Motor:Connector_PinHeader_2.54mm__PinHeader_1x06_P2.54mm_Vertical",
+      "footprint": "Motor:Connector_JST__JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical",
+      "type": "ordinary XH; not XHB positive latch",
+      "lib_id": "Motor:M2_J22",
+      "source": "09_Bluetooth_Stepper.kicad_sch"
+    },
+    "J15": {
+      "old_footprint": "Motor:Connector_PinHeader_2.54mm__PinHeader_1x04_P2.54mm_Vertical",
+      "footprint": "Motor:Connector_PinSocket_2.54mm__PinSocket_1x04_P2.54mm_Vertical",
+      "type": "female header",
+      "lib_id": "Motor:M2_J15",
+      "source": "09_Bluetooth_Stepper.kicad_sch"
+    }
+  },
+  "unchanged_exceptions": {
+    "J1": "XT60 power inlet",
+    "J14": "Core edge socket",
+    "J24": "5.08mm screw power terminal retained for separate power wiring"
+  },
+  "XH_pitch_mm": 2.5,
+  "XH_rating": "3A with AWG22 per JST; not an arbitrary-current power connector",
+  "resources_sha256": {
+    "Connector_JST__JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical": "46b31840f04282b8105402c7047773dae1ff8078b56e340eca43a30e6fc5992a",
+    "Connector_JST__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical": "94ea11ddd72b8a7bd9bcad483be371cfdd2e46e1f2f75f547c29e4663397e8f2",
+    "Connector_JST__JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical": "64ef2442f302051a816b00daac6c20db5c56a4a4a4d7c57b7fcb5c9364af52f4",
+    "Connector_JST__JST_XH_B8B-XH-A_1x08_P2.50mm_Vertical": "455cf01f7011eadb3e0b366a3de33edf24cb7cb83bb03ef2aee9ba71dd8d751f",
+    "Connector_JST__JST_XH_B10B-XH-A_1x10_P2.50mm_Vertical": "003d986b62cb006b0ec50cf4ddb81f168bb0f49ff6aa0da768469866db35b5e6",
+    "Connector_PinSocket_2.54mm__PinSocket_1x08_P2.54mm_Vertical": "85b1591f8c0f923538160c6c6a904e41a52deda6a7854d7d1dccb4b33f597600",
+    "Connector_PinSocket_2.54mm__PinSocket_1x04_P2.54mm_Vertical": "3e742a6f1f4dbca810d4d80d2719bee942098fc248a3ed3050b35d5cdfd1c33b"
+  },
+  "source_sha256": {
+    "02_Power.kicad_sch": "51d3a5e20575118fb848bfd3a10f9a670fba928993b0a0106f340c18416ffe24",
+    "03_Core_Interface.kicad_sch": "2aa8ea0bcf1ef3a772524e8b64c61cec55c60b0f1cecad76614b2f849c72c491",
+    "04_Left_Motor.kicad_sch": "5660bce252fb346294279776a237a091e905a2ab4aeb33520172912a2f05b0d9",
+    "05_Right_Motor.kicad_sch": "e71ad8ce351047b27eb5e8c92322665daa199e170b3c3fba96430746ab9ea183",
+    "06_Module_Power.kicad_sch": "569fc087417a0d3684b785b0a50398d0d928718976dc85aede94b6382cf12195",
+    "07_TFT_Buttons.kicad_sch": "7a45a97e4af5b9c877cbd878af4bd1eb1b275289ea813953c70b5231c2c8a0ee",
+    "08_Grayscale_Cameras.kicad_sch": "fc8ba285b8cb88ca3d4fc71fc5401c6eecd523d608db50c5a1355e99eab1c901",
+    "09_Bluetooth_Stepper.kicad_sch": "095ef6ea244b174ed20dfab6606babfa8abcd62d2ad2543a5aea5b91867fccb0",
+    "CoralC5-Motor.kicad_sch": "db9ec83076dfc9c591b480a11d1a265d2d9ed817ae47bd1c67393ab01fdd8b8f"
+  },
+  "removed_references": [
+    "J16"
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "date": "2026-11-07",
+  "revision": "M2.6",
+  "source_commit": "cc8dcdb9731c375813c00e5a12133c461657d29e",
+  "working_tree_edits": true,
+  "schematic_pages": 9,
+  "paper": {
+    "02_Power.kicad_sch": "A4",
+    "03_Core_Interface.kicad_sch": "A4",
+    "04_Left_Motor.kicad_sch": "A4",
+    "05_Right_Motor.kicad_sch": "A4",
+    "06_Module_Power.kicad_sch": "A4",
+    "07_TFT_Buttons.kicad_sch": "A4",
+    "08_Grayscale_Cameras.kicad_sch": "A3",
+    "09_Bluetooth_Stepper.kicad_sch": "A3",
+    "CoralC5-Motor.kicad_sch": "A3"
+  },
+  "native_nets": 161,
+  "checks": 2165,
+  "native_ERC_errors": 0,
+  "native_ERC_warnings": 0,
+  "physical_references": 150,
+  "model_bound_references": 147,
+  "unbound_models": [
+    "J1"
+  ],
+  "generic_model_references": [
+    "F1",
+    "F2",
+    "L2",
+    "SW1",
+    "SW2",
+    "SW3",
+    "SW4",
+    "SW5",
+    "U10"
+  ],
+  "passive_0603_count": 92,
+  "passive_gap_mm": 0.85,
+  "power_budget": {
+    "wheel_input_a": 4,
+    "step_input_a": 3,
+    "core_5v_a": 0.75,
+    "peripheral_5v_a": 2.5,
+    "buck_efficiency_assumed": 0.85,
+    "input_current_a": {
+      "10": 8.9118,
+      "12": 8.5931,
+      "12.6": 8.5173
+    },
+    "measurement": false
+  },
+  "authoritative_interfaces": "m2_pin_assignment.csv and native schematic",
+  "current_record_overlays": [
+    "zdt_ttl_design.json",
+    "connector_revision.json",
+    "power_revision.json",
+    "passive_0603_revision.json",
+    "jumpers_revision.json",
+    "bluetooth_pinout_revision.json",
+    "smd_buttons_revision.json",
+    "grayscale_photo_revision.json",
+    "vision_power_revision.json",
+    "m26_revision.json"
+  ],
+  "source_sha256": {
+    "02_Power.kicad_sch": "7c94bda984fa1c3372073fd489af459f5cec8a3f0ef1c10dade486b59541bcfd",
+    "03_Core_Interface.kicad_sch": "aa1a0382fe31f99fc3d492b072772c43d47d12a118fb398a186660e5f0f7d043",
+    "04_Left_Motor.kicad_sch": "b3904b1489bba5d486c1b1baa555fcbc46d4d6ace4c0ece7a8051b85da93aa04",
+    "05_Right_Motor.kicad_sch": "482aa1705f192f23e8993d2810e8c6c182251200c10044da5fc9ac8f9c4e97e5",
+    "06_Module_Power.kicad_sch": "83aad1796329a4d23cad8d95648bcdfe4fa42378ce85e58a3e0b22d35bc07b6d",
+    "07_TFT_Buttons.kicad_sch": "fcb7ebb8dc3898dcfc13bb8bccd6f37d6ced581250d159205a92788a83a6c603",
+    "08_Grayscale_Cameras.kicad_sch": "0a0d7f0ef495d7864a2428b3f21eff96599d9cce33c678eee5bc18e76935515e",
+    "09_Bluetooth_Stepper.kicad_sch": "764db529200bd07ea1daf7e4a5bae457240ffdbf0d7bb87c1e0f32dc2f3088eb",
+    "CoralC5-Motor.kicad_sch": "8f1abd9db288f5aa2f72dc115ac66f77050fb1292d517dcd70fc388762ae8907"
+  },
+  "symbol_library_sha256": "47238a46fe1172b48b176ee0d1b38335c2a2064dd2211e63ef2fe438ebaf384f",
+  "pdf_sha256": "6d807785e513b3be3e807f67a88f4298601a9df34fac0ea127dc78654160aed5",
+  "pcb_accessed": false,
+  "pcb_updated": false,
+  "recognition": "Lichee removed at user request; replacement recognition chain not selected in this revision",
+  "streaming": "MaixCAM2 / UART4",
+  "gpio_roles": 38,
+  "stepper": "J23 ordinary XH 8P TTL, pins 1/2/7/8 active",
+  "stepper_power": "PD12 / J14:B30, active high, hardware default off; Q6/Q7 back-to-back PMOS and Q8",
+  "bluetooth_supply": "V3V3_EXT fixed, J15 3V3/GND/RXD/TXD",
+  "gray": "J20 CH1-CH8, J21 GND/5V",
+  "removed_interfaces": [
+    "J18",
+    "J22",
+    "J24",
+    "J25",
+    "J26"
+  ],
+  "model_note": "U10 stock SOIC exterior body is generic; exposed pad land pattern follows manufacturer drawing",
+  "BOM_rows": 148,
+  "validation": "Documentation/validation/2026-11-07-m26-stepper-power.md"
+}

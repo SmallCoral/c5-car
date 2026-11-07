@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-07",
+  "pre_edit_legacy_checker": {
+    "status": "exception before results were regenerated",
+    "error": "ValueError: New library definition differs: Motor:AP63300WU",
+    "note": "The old verification.json was a cached M2.5 report, not a successful run on the manually saved baseline."
+  },
+  "initial_native_erc": {
+    "errors": 1,
+    "warnings": 1,
+    "findings": [
+      "Dangling VM label at (157.48,269.24) after Lichee sheet removal",
+      "D5 generic cached symbol footprint differed from source library"
+    ],
+    "resolved": "Removed label and used a dedicated source-matching zener symbol"
+  },
+  "initial_connectivity_findings": {
+    "findings": [
+      "Zener routing shorted gate to source",
+      "R81/R82 crossed the gate bus without a junction",
+      "Header ground wire touched NC pin 4"
+    ],
+    "resolved": "Corrected zener orientation, explicit gate junction and sideways ground routing; complete native net partitions subsequently matched intent"
+  },
+  "legacy_checker_adjustments": {
+    "native_save": "Normalize only ordering and explicit default metadata; pin numbers, names, positions, types and geometry remain compared",
+    "project_settings": "Compare against user live saved 2026-11-07 project baseline rather than older M2.4 metadata hash",
+    "removed_circuits": "Explicitly remove declared Lichee/J22/J24 circuitry from historical expectations, retain full old+new intended net partition audit"
+  },
+  "local_source_download": {
+    "BZT52_SER": "Primary manufacturer PDF read through web tool, but local download returned HTTP403. URL cited; no successful local copy claimed."
+  },
+  "final_checks": 2165,
+  "final_erc": {
+    "errors": 0,
+    "warnings": 0
+  }
+}

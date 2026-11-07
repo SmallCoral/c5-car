@@ -240,7 +240,7 @@
       "internal_id": "",
       "mfg": "",
       "mpn": "",
-      "sch_revision": "M2.3"
+      "sch_revision": "M2.8"
     },
     "layer_pairs": [],
     "layer_presets": [],
@@ -692,15 +692,19 @@
     ],
     [
       "d6318ee1-12d4-5089-84c2-bb1addcd6fe6",
-      "八路灰度与双摄像头模块接口"
+      "灰度与 MaixCAM2 识别"
     ],
     [
       "259119ae-63bb-582f-a484-b0d1b9da613b",
-      "外设独立五伏与三伏三供电"
+      "共享五伏的 USB-C 与三伏三"
     ],
     [
       "6805c229-363d-5720-8872-3a09dea05270",
       "四脚蓝牙与外接步进驱动接口"
+    ],
+    [
+      "185fc758-680e-5cca-9205-ee46946e4fad",
+      "荔枝派 4A：Type-C 与 UART1"
     ]
   ],
   "text_variables": {

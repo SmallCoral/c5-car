@@ -1,5 +1,7 @@
 # 原厂依据和资源记录
 
+2026-11-07 M2.6 当前增量：荔枝派供电与接线已删除。U10 改为 [SGM2531C RevA.2](SGM2531C_RevA2.pdf)，第 3～5 页针序/电气参数、第 11～14 页保护/限流、第 15 页 SOIC EP 焊盘；U14 采用 [LTC4412](LTC4412_4412fb.pdf)，第 6～8 页针序、P-MOS 方向和工作原理。Q8 依据 [MMBT3904 DS30036 Rev27](MMBT3904_DS30036.pdf) 第 1～3 页。D5 依据 [Nexperia BZT52 原厂 PDF](https://assets.nexperia.com/documents/data-sheet/BZT52_SER.pdf) Rev2 的 1K/2A 及 C12 参数，在线已读，本地下载 HTTP403。Q5/Q6/Q7 复用 DMP3007；U15 复用 SN74LVC2G125DCTR。完整计算与限制见 [M2.6 验证](../../../../../../Documentation/validation/2026-11-07-m26-stepper-power.md)。以下旧轮次记录留作追溯，不是当前 BOM。
+
 日期2026-10-27，资料版权归原权利人。库存和价格未作为本次交付结论。
 
 | 资料 | 核对内容 |
@@ -46,3 +48,8 @@
 | [Littelfuse 452/454](https://www.littelfuse.com/assetdocs/fuse-452-and-454-datasheet?assetguid=8c87aa93-80a7-4ea8-8749-a19ba03901c2)，2025-10-16 | F1 12A 延时、F2 4A 延时，连续降额与 6.10×2.69mm 推荐焊盘；原厂在线 PDF 已读取，本地精确模型缺失，使用标识的包络模型 |
 | [JST XH 原厂](https://www.jst-mfg.com/product/index.php?lang=2&series=277) | 普通 XH，非 XHB 卡扣款，2.50mm、3A/AWG22；TFT/蓝牙改为 2.54mm 排母 |
 | KiCad 10 本地 0603 普通/手焊库 | 实算 R/C/LED 间隙 0.85/0.65/0.70mm，67 个实例统一为 0.85mm 内侧间隙与 0.975×0.95mm 焊盘 |
+
+
+## M2.7 统一电源
+
+2026-11-07 新增 `m27/TPS56837.pdf`（SLVSGM3B）、`m27/TPS25810.pdf`（SLVSCR1C）、`m27/MX1256.pdf`（Rev2.0）和 `m27/GCT_USB4125.pdf`（A2）。用于核对芯片脚位、固定五伏 Type-C 源端、六针座 1A 额定及推荐焊盘；来源 URL 和 SHA 分别见本目录 JSON。原厂版权及许可保留。解释与未验证项见项目 M2.7 验证记录。

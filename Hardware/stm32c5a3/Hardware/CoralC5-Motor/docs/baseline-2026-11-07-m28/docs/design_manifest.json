@@ -1,0 +1,2072 @@
+{
+  "revision": "M2.1-schematic-layout",
+  "date": "2026-11-06",
+  "pages": [
+    {
+      "file": "02_Power.kicad_sch",
+      "title": "十二伏入口、拨动总开关与五伏降压"
+    },
+    {
+      "file": "03_Core_Interface.kicad_sch",
+      "title": "C5-EDGE-3 核心板接口与调试"
+    },
+    {
+      "file": "04_Left_Motor.kicad_sch",
+      "title": "左电机驱动与霍尔编码器"
+    },
+    {
+      "file": "05_Right_Motor.kicad_sch",
+      "title": "右电机驱动与霍尔编码器"
+    },
+    {
+      "file": "06_Module_Power.kicad_sch",
+      "title": "外设独立五伏与三伏三供电"
+    },
+    {
+      "file": "07_TFT_Buttons.kicad_sch",
+      "title": "中景园屏幕与四个操作按钮"
+    },
+    {
+      "file": "08_Grayscale_Cameras.kicad_sch",
+      "title": "八路灰度与双摄像头模块接口"
+    },
+    {
+      "file": "09_Bluetooth_Stepper.kicad_sch",
+      "title": "四脚蓝牙与外接步进驱动接口"
+    },
+    {
+      "file": "CoralC5-Motor.kicad_sch",
+      "title": "Coral-C5 小车扩展板 M2 总览"
+    }
+  ],
+  "parts": [
+    {
+      "reference": "C1",
+      "value": "470u / 25V",
+      "mpn": "EEU-FR1E471",
+      "footprint": "Motor:Capacitor_THT__CP_Radial_D10.0mm_P5.00mm",
+      "datasheet": "",
+      "sheet": "/输入、总开关与降压/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "C2",
+      "value": "10u / 50V",
+      "mpn": "GRM21BR61H106KE43L",
+      "footprint": "Motor:Capacitor_SMD__C_0805_2012Metric",
+      "datasheet": "",
+      "sheet": "/输入、总开关与降压/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "C3",
+      "value": "100n / 50V",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/输入、总开关与降压/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "C4",
+      "value": "100n / 16V",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/输入、总开关与降压/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "C5",
+      "value": "22u / 10V",
+      "mpn": "GRM31CR71A226KE15L",
+      "footprint": "Motor:Capacitor_SMD__C_1206_3216Metric",
+      "datasheet": "",
+      "sheet": "/输入、总开关与降压/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "C6",
+      "value": "22u / 10V",
+      "mpn": "GRM31CR71A226KE15L",
+      "footprint": "Motor:Capacitor_SMD__C_1206_3216Metric",
+      "datasheet": "",
+      "sheet": "/输入、总开关与降压/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "D1",
+      "value": "BZT52C12",
+      "mpn": "BZT52C12",
+      "footprint": "Motor:Diode_SMD__D_SOD-123",
+      "datasheet": "",
+      "sheet": "/输入、总开关与降压/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "D2",
+      "value": "SMAJ15A",
+      "mpn": "SMAJ15A",
+      "footprint": "Motor:Diode_SMD__D_SMA",
+      "datasheet": "",
+      "sheet": "/输入、总开关与降压/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "D3",
+      "value": "SS34",
+      "mpn": "SS34",
+      "footprint": "Motor:Diode_SMD__D_SMA",
+      "datasheet": "",
+      "sheet": "/输入、总开关与降压/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "D4",
+      "value": "LED_GREEN",
+      "mpn": "LTST-C190KGKT",
+      "footprint": "Motor:LED_SMD__LED_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/输入、总开关与降压/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "F1",
+      "value": "4A / 32V",
+      "mpn": "0466004.NR",
+      "footprint": "Motor:Fuse__Fuse_1206_3216Metric",
+      "datasheet": "",
+      "sheet": "/输入、总开关与降压/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "J1",
+      "value": "XT60PW-M",
+      "mpn": "XT60PW-M",
+      "footprint": "Motor:AMASS_XT60PW-M_1x02_P7.20mm_Horizontal",
+      "datasheet": "https://www.china-amass.com/biao/289.html",
+      "sheet": "/输入、总开关与降压/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "L1",
+      "value": "4.7u / 4.5A",
+      "mpn": "SRN6045TA-4R7M",
+      "footprint": "Motor:Inductor_SMD__L_Bourns_SRN6045TA",
+      "datasheet": "",
+      "sheet": "/输入、总开关与降压/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "Q1",
+      "value": "AO4407A",
+      "mpn": "AO4407A",
+      "footprint": "Motor:Package_SO__SOIC-8_3.9x4.9mm_P1.27mm",
+      "datasheet": "https://aosmd.com/sites/default/files/res/datasheets/AO4407A.pdf",
+      "sheet": "/输入、总开关与降压/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "Q2",
+      "value": "AO4407A",
+      "mpn": "AO4407A",
+      "footprint": "Motor:Package_SO__SOIC-8_3.9x4.9mm_P1.27mm",
+      "datasheet": "https://aosmd.com/sites/default/files/res/datasheets/AO4407A.pdf",
+      "sheet": "/输入、总开关与降压/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "R1",
+      "value": "1M",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/输入、总开关与降压/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "R2",
+      "value": "100k",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/输入、总开关与降压/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "R3",
+      "value": "698k / 1%",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/输入、总开关与降压/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "R4",
+      "value": "100k / 1%",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/输入、总开关与降压/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "R5",
+      "value": "2.2k",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/输入、总开关与降压/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "SW1",
+      "value": "SS12D07VG4",
+      "mpn": "SS12D07VG4",
+      "footprint": "Motor:SS12D07VG4",
+      "datasheet": "",
+      "sheet": "/输入、总开关与降压/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "U1",
+      "value": "AP63205WU-7",
+      "mpn": "AP63205WU-7",
+      "footprint": "Motor:Package_TO_SOT_SMD__TSOT-23-6",
+      "datasheet": "https://www.diodes.com/assets/Datasheets/AP63200-AP63201-AP63203-AP63205.pdf",
+      "sheet": "/输入、总开关与降压/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "J8",
+      "value": "SWD / XH2.50",
+      "mpn": "B4B-XH-A",
+      "footprint": "Motor:Connector_JST__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical",
+      "datasheet": "",
+      "sheet": "/核心板接口/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "J10",
+      "value": "RUN / STOP_NC",
+      "mpn": "",
+      "footprint": "Motor:Connector_PinHeader_2.54mm__PinHeader_1x02_P2.54mm_Vertical",
+      "datasheet": "",
+      "sheet": "/核心板接口/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "J14",
+      "value": "C5-EDGE-3 / 98P",
+      "mpn": "X1611WVS-98-9TV01",
+      "footprint": "Motor:C5_EDGE_3_Socket",
+      "datasheet": "",
+      "sheet": "/核心板接口/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "R6",
+      "value": "100R",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/核心板接口/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "R7",
+      "value": "10k",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/核心板接口/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "C10",
+      "value": "22n / 50V",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/左电机与编码器/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "C11",
+      "value": "100n / 16V",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/左电机与编码器/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "C12",
+      "value": "100n / 50V",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/左电机与编码器/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "C13",
+      "value": "470u / 25V",
+      "mpn": "EEU-FR1E471",
+      "footprint": "Motor:Capacitor_THT__CP_Radial_D10.0mm_P5.00mm",
+      "datasheet": "",
+      "sheet": "/左电机与编码器/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "C14",
+      "value": "100n / 16V",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/左电机与编码器/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "C15",
+      "value": "10n / 16V",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/左电机与编码器/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "C16",
+      "value": "100n / 16V",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/左电机与编码器/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "C17",
+      "value": "1n / 16V",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/左电机与编码器/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "C18",
+      "value": "1n / 16V",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/左电机与编码器/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "C19",
+      "value": "100n / 16V",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/左电机与编码器/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "C20",
+      "value": "1u / 10V",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/左电机与编码器/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "J4",
+      "value": "MG513 / XH2.50 / 6P",
+      "mpn": "B6B-XH-A(LF)(SN)",
+      "footprint": "Motor:Connector_JST__JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical",
+      "datasheet": "",
+      "sheet": "/左电机与编码器/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "R10",
+      "value": "10k / 1%",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/左电机与编码器/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "R11",
+      "value": "10k / 1%",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/左电机与编码器/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "R12",
+      "value": "1.82k / 1%",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/左电机与编码器/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "R13",
+      "value": "10k",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/左电机与编码器/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "R14",
+      "value": "100k",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/左电机与编码器/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "R15",
+      "value": "1k",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/左电机与编码器/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "R16",
+      "value": "1k",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/左电机与编码器/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "R17",
+      "value": "1k",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/左电机与编码器/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "R18",
+      "value": "10k",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/左电机与编码器/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "R19",
+      "value": "10k",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/左电机与编码器/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "U2",
+      "value": "DRV8874PWPR",
+      "mpn": "DRV8874PWPR",
+      "footprint": "Motor:DRV8874_PWP0016",
+      "datasheet": "https://www.ti.com/lit/ds/symlink/drv8874.pdf",
+      "sheet": "/左电机与编码器/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "U3",
+      "value": "SN74LVC2G17DCKR",
+      "mpn": "SN74LVC2G17DCKR",
+      "footprint": "Motor:Package_TO_SOT_SMD__SOT-363_SC-70-6",
+      "datasheet": "https://www.ti.com/lit/ds/symlink/sn74lvc2g17.pdf",
+      "sheet": "/左电机与编码器/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "C30",
+      "value": "22n / 50V",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/右电机与编码器/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "C31",
+      "value": "100n / 16V",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/右电机与编码器/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "C32",
+      "value": "100n / 50V",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/右电机与编码器/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "C33",
+      "value": "470u / 25V",
+      "mpn": "EEU-FR1E471",
+      "footprint": "Motor:Capacitor_THT__CP_Radial_D10.0mm_P5.00mm",
+      "datasheet": "",
+      "sheet": "/右电机与编码器/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "C34",
+      "value": "100n / 16V",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/右电机与编码器/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "C35",
+      "value": "10n / 16V",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/右电机与编码器/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "C36",
+      "value": "100n / 16V",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/右电机与编码器/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "C37",
+      "value": "1n / 16V",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/右电机与编码器/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "C38",
+      "value": "1n / 16V",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/右电机与编码器/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "C39",
+      "value": "100n / 16V",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/右电机与编码器/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "C40",
+      "value": "1u / 10V",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/右电机与编码器/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "J6",
+      "value": "MG513 / XH2.50 / 6P",
+      "mpn": "B6B-XH-A(LF)(SN)",
+      "footprint": "Motor:Connector_JST__JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical",
+      "datasheet": "",
+      "sheet": "/右电机与编码器/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "R30",
+      "value": "10k / 1%",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/右电机与编码器/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "R31",
+      "value": "10k / 1%",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/右电机与编码器/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "R32",
+      "value": "1.82k / 1%",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/右电机与编码器/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "R33",
+      "value": "10k",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/右电机与编码器/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "R34",
+      "value": "100k",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/右电机与编码器/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "R35",
+      "value": "1k",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/右电机与编码器/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "R36",
+      "value": "1k",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/右电机与编码器/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "R37",
+      "value": "1k",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/右电机与编码器/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "R38",
+      "value": "10k",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/右电机与编码器/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "R39",
+      "value": "10k",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/右电机与编码器/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "U4",
+      "value": "DRV8874PWPR",
+      "mpn": "DRV8874PWPR",
+      "footprint": "Motor:DRV8874_PWP0016",
+      "datasheet": "https://www.ti.com/lit/ds/symlink/drv8874.pdf",
+      "sheet": "/右电机与编码器/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "U5",
+      "value": "SN74LVC2G17DCKR",
+      "mpn": "SN74LVC2G17DCKR",
+      "footprint": "Motor:Package_TO_SOT_SMD__SOT-363_SC-70-6",
+      "datasheet": "https://www.ti.com/lit/ds/symlink/sn74lvc2g17.pdf",
+      "sheet": "/右电机与编码器/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "C56",
+      "value": "100nF/10V",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/中景园屏幕与四个操作按钮/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "C57",
+      "value": "100nF",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/中景园屏幕与四个操作按钮/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "C58",
+      "value": "100nF",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/中景园屏幕与四个操作按钮/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "C59",
+      "value": "100nF",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/中景园屏幕与四个操作按钮/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "C60",
+      "value": "100nF",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/中景园屏幕与四个操作按钮/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "J17",
+      "value": "TFT_ZJY180S0800TG01",
+      "mpn": "",
+      "footprint": "Motor:Connector_PinHeader_2.54mm__PinHeader_1x08_P2.54mm_Vertical",
+      "datasheet": "",
+      "sheet": "/中景园屏幕与四个操作按钮/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "R50",
+      "value": "10k",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/中景园屏幕与四个操作按钮/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "R51",
+      "value": "10k",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/中景园屏幕与四个操作按钮/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "R52",
+      "value": "10k",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/中景园屏幕与四个操作按钮/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "R53",
+      "value": "10k",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/中景园屏幕与四个操作按钮/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "R55",
+      "value": "10k",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/中景园屏幕与四个操作按钮/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "R56",
+      "value": "10k",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/中景园屏幕与四个操作按钮/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "SW2",
+      "value": "模式",
+      "mpn": "",
+      "footprint": "Motor:Button_Switch_THT__SW_PUSH_6mm_H4.3mm",
+      "datasheet": "",
+      "sheet": "/中景园屏幕与四个操作按钮/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "SW3",
+      "value": "下一项",
+      "mpn": "",
+      "footprint": "Motor:Button_Switch_THT__SW_PUSH_6mm_H4.3mm",
+      "datasheet": "",
+      "sheet": "/中景园屏幕与四个操作按钮/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "SW4",
+      "value": "确认",
+      "mpn": "",
+      "footprint": "Motor:Button_Switch_THT__SW_PUSH_6mm_H4.3mm",
+      "datasheet": "",
+      "sheet": "/中景园屏幕与四个操作按钮/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "SW5",
+      "value": "启动",
+      "mpn": "",
+      "footprint": "Motor:Button_Switch_THT__SW_PUSH_6mm_H4.3mm",
+      "datasheet": "",
+      "sheet": "/中景园屏幕与四个操作按钮/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "C61",
+      "value": "10uF/10V",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0805_2012Metric",
+      "datasheet": "",
+      "sheet": "/八路灰度与双摄像头模块接口/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "C62",
+      "value": "10uF/10V",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0805_2012Metric",
+      "datasheet": "",
+      "sheet": "/八路灰度与双摄像头模块接口/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "J18",
+      "value": "MaixCAM_检测",
+      "mpn": "",
+      "footprint": "Motor:Connector_PinHeader_2.54mm__PinHeader_1x04_P2.54mm_Vertical",
+      "datasheet": "",
+      "sheet": "/八路灰度与双摄像头模块接口/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "J19",
+      "value": "图传处理板",
+      "mpn": "",
+      "footprint": "Motor:Connector_PinHeader_2.54mm__PinHeader_1x04_P2.54mm_Vertical",
+      "datasheet": "",
+      "sheet": "/八路灰度与双摄像头模块接口/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "J20",
+      "value": "灰度并行_辅助板",
+      "mpn": "",
+      "footprint": "Motor:Connector_PinHeader_2.54mm__PinHeader_1x10_P2.54mm_Vertical",
+      "datasheet": "",
+      "sheet": "/八路灰度与双摄像头模块接口/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "J21",
+      "value": "灰度同步串行_选用",
+      "mpn": "",
+      "footprint": "Motor:Connector_PinHeader_2.54mm__PinHeader_1x04_P2.54mm_Vertical",
+      "datasheet": "",
+      "sheet": "/八路灰度与双摄像头模块接口/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "C50",
+      "value": "10uF/25V X7R",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_1206_3216Metric",
+      "datasheet": "",
+      "sheet": "/外设独立五伏与三伏三供电/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "C51",
+      "value": "100nF/50V",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/外设独立五伏与三伏三供电/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "C52",
+      "value": "22uF/10V X7R",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_1206_3216Metric",
+      "datasheet": "",
+      "sheet": "/外设独立五伏与三伏三供电/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "C53",
+      "value": "22uF/10V X7R",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_1206_3216Metric",
+      "datasheet": "",
+      "sheet": "/外设独立五伏与三伏三供电/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "C54",
+      "value": "1uF/10V X7R",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/外设独立五伏与三伏三供电/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "C55",
+      "value": "1uF/10V X7R",
+      "mpn": "",
+      "footprint": "Motor:Capacitor_SMD__C_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/外设独立五伏与三伏三供电/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "L2",
+      "value": "4.7uH Isat>=3.5A",
+      "mpn": "",
+      "footprint": "Motor:Inductor_SMD__L_Bourns_SRN6045TA",
+      "datasheet": "",
+      "sheet": "/外设独立五伏与三伏三供电/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "U6",
+      "value": "AP63205WU-7",
+      "mpn": "",
+      "footprint": "Motor:Package_TO_SOT_SMD__TSOT-23-6",
+      "datasheet": "https://www.diodes.com/assets/Datasheets/AP63200-AP63201-AP63203-AP63205.pdf",
+      "sheet": "/外设独立五伏与三伏三供电/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "U7",
+      "value": "AP2112K-3.3TRG1",
+      "mpn": "",
+      "footprint": "Motor:Package_TO_SOT_SMD__SOT-23-5",
+      "datasheet": "https://www.diodes.com/assets/Datasheets/AP2112.pdf",
+      "sheet": "/外设独立五伏与三伏三供电/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "J15",
+      "value": "HC-08_四脚接口",
+      "mpn": "",
+      "footprint": "Motor:Connector_PinHeader_2.54mm__PinHeader_1x04_P2.54mm_Vertical",
+      "datasheet": "",
+      "sheet": "/四脚蓝牙与外接步进驱动接口/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "J16",
+      "value": "蓝牙电源选择",
+      "mpn": "",
+      "footprint": "Motor:Connector_PinHeader_2.54mm__PinHeader_1x03_P2.54mm_Vertical",
+      "datasheet": "",
+      "sheet": "/四脚蓝牙与外接步进驱动接口/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "J22",
+      "value": "步进_脉冲控制",
+      "mpn": "",
+      "footprint": "Motor:Connector_PinHeader_2.54mm__PinHeader_1x06_P2.54mm_Vertical",
+      "datasheet": "",
+      "sheet": "/四脚蓝牙与外接步进驱动接口/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "J23",
+      "value": "步进_UART控制",
+      "mpn": "",
+      "footprint": "Motor:Connector_PinHeader_2.54mm__PinHeader_1x04_P2.54mm_Vertical",
+      "datasheet": "",
+      "sheet": "/四脚蓝牙与外接步进驱动接口/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "J24",
+      "value": "步进驱动电源",
+      "mpn": "",
+      "footprint": "Motor:TerminalBlock_Phoenix__TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal",
+      "datasheet": "",
+      "sheet": "/四脚蓝牙与外接步进驱动接口/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "R54",
+      "value": "10k",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/四脚蓝牙与外接步进驱动接口/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "R57",
+      "value": "10k",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/四脚蓝牙与外接步进驱动接口/",
+      "status": "M2 schematic draft; not production release"
+    },
+    {
+      "reference": "R58",
+      "value": "10k",
+      "mpn": "",
+      "footprint": "Motor:Resistor_SMD__R_0603_1608Metric",
+      "datasheet": "",
+      "sheet": "/四脚蓝牙与外接步进驱动接口/",
+      "status": "M2 schematic draft; not production release"
+    }
+  ],
+  "footprints": {
+    "Motor:Capacitor_THT__CP_Radial_D10.0mm_P5.00mm": {
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_THT__CP_Radial_D10.0mm_P5.00mm__CP_Radial_D10.0mm_P5.00mm.step"
+      ],
+      "source": "Project-local schematic resource; KiCad 10 library geometry or preserved project footprint",
+      "status": "bound"
+    },
+    "Motor:Capacitor_SMD__C_0603_1608Metric": {
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+      ],
+      "source": "Project-local schematic resource; KiCad 10 library geometry or preserved project footprint",
+      "status": "bound"
+    },
+    "Motor:Capacitor_SMD__C_0805_2012Metric": {
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0805_2012Metric__C_0805_2012Metric.step"
+      ],
+      "source": "Project-local schematic resource; KiCad 10 library geometry or preserved project footprint",
+      "status": "bound"
+    },
+    "Motor:Capacitor_SMD__C_1206_3216Metric": {
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_1206_3216Metric__C_1206_3216Metric.step"
+      ],
+      "source": "Project-local schematic resource; KiCad 10 library geometry or preserved project footprint",
+      "status": "bound"
+    },
+    "Motor:Diode_SMD__D_SOD-123": {
+      "models": [
+        "${KIPRJMOD}/Models/Diode_SMD__D_SOD-123__D_SOD-123.step"
+      ],
+      "source": "Project-local schematic resource; KiCad 10 library geometry or preserved project footprint",
+      "status": "bound"
+    },
+    "Motor:Diode_SMD__D_SMA": {
+      "models": [
+        "${KIPRJMOD}/Models/Diode_SMD__D_SMA__D_SMA.step"
+      ],
+      "source": "Project-local schematic resource; KiCad 10 library geometry or preserved project footprint",
+      "status": "bound"
+    },
+    "Motor:LED_SMD__LED_0603_1608Metric": {
+      "models": [
+        "${KIPRJMOD}/Models/LED_SMD__LED_0603_1608Metric__LED_0603_1608Metric.step"
+      ],
+      "source": "Project-local schematic resource; KiCad 10 library geometry or preserved project footprint",
+      "status": "bound"
+    },
+    "Motor:Fuse__Fuse_1206_3216Metric": {
+      "models": [
+        "${KIPRJMOD}/Models/Fuse__Fuse_1206_3216Metric__Fuse_1206_3216Metric.step"
+      ],
+      "source": "Project-local schematic resource; KiCad 10 library geometry or preserved project footprint",
+      "status": "bound"
+    },
+    "Motor:MountingHole__MountingHole_2mm": {
+      "models": [],
+      "source": "Project-local schematic resource; KiCad 10 library geometry or preserved project footprint",
+      "status": "mechanical drill; no solid model"
+    },
+    "Motor:AMASS_XT60PW-M_1x02_P7.20mm_Horizontal": {
+      "models": [],
+      "source": "Project-local schematic resource; KiCad 10 library geometry or preserved project footprint",
+      "status": "accurate model missing"
+    },
+    "Motor:Connector_PinHeader_2.54mm__PinHeader_1x02_P2.54mm_Vertical": {
+      "models": [
+        "${KIPRJMOD}/Models/Connector_PinHeader_2.54mm__PinHeader_1x02_P2.54mm_Vertical__PinHeader_1x02_P2.54mm_Vertical.step"
+      ],
+      "source": "Project-local schematic resource; KiCad 10 library geometry or preserved project footprint",
+      "status": "bound"
+    },
+    "Motor:C5_EDGE_3_Socket": {
+      "models": [
+        "${KIPRJMOD}/Models/C5_EDGE_3_Socket__Streamline_Socket.step"
+      ],
+      "source": "Project-local schematic resource; KiCad 10 library geometry or preserved project footprint",
+      "status": "bound"
+    },
+    "Motor:Connector_PinHeader_2.54mm__PinHeader_1x04_P2.54mm_Vertical": {
+      "models": [
+        "${KIPRJMOD}/Models/Connector_PinHeader_2.54mm__PinHeader_1x04_P2.54mm_Vertical__PinHeader_1x04_P2.54mm_Vertical.step"
+      ],
+      "source": "Project-local schematic resource; KiCad 10 library geometry or preserved project footprint",
+      "status": "bound"
+    },
+    "Motor:Connector_PinHeader_2.54mm__PinHeader_1x03_P2.54mm_Vertical": {
+      "models": [
+        "${KIPRJMOD}/Models/Connector_PinHeader_2.54mm__PinHeader_1x03_P2.54mm_Vertical__PinHeader_1x03_P2.54mm_Vertical.step"
+      ],
+      "source": "Project-local schematic resource; KiCad 10 library geometry or preserved project footprint",
+      "status": "bound"
+    },
+    "Motor:Connector_PinHeader_2.54mm__PinHeader_1x08_P2.54mm_Vertical": {
+      "models": [
+        "${KIPRJMOD}/Models/Connector_PinHeader_2.54mm__PinHeader_1x08_P2.54mm_Vertical__PinHeader_1x08_P2.54mm_Vertical.step"
+      ],
+      "source": "Project-local schematic resource; KiCad 10 library geometry or preserved project footprint",
+      "status": "bound"
+    },
+    "Motor:Connector_PinHeader_2.54mm__PinHeader_1x10_P2.54mm_Vertical": {
+      "models": [
+        "${KIPRJMOD}/Models/Connector_PinHeader_2.54mm__PinHeader_1x10_P2.54mm_Vertical__PinHeader_1x10_P2.54mm_Vertical.step"
+      ],
+      "source": "Project-local schematic resource; KiCad 10 library geometry or preserved project footprint",
+      "status": "bound"
+    },
+    "Motor:Connector_PinHeader_2.54mm__PinHeader_1x06_P2.54mm_Vertical": {
+      "models": [
+        "${KIPRJMOD}/Models/Connector_PinHeader_2.54mm__PinHeader_1x06_P2.54mm_Vertical__PinHeader_1x06_P2.54mm_Vertical.step"
+      ],
+      "source": "Project-local schematic resource; KiCad 10 library geometry or preserved project footprint",
+      "status": "bound"
+    },
+    "Motor:TerminalBlock_Phoenix__TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal": {
+      "models": [
+        "${KIPRJMOD}/Models/TerminalBlock_Phoenix__TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal__TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal.step"
+      ],
+      "source": "Project-local schematic resource; KiCad 10 library geometry or preserved project footprint",
+      "status": "bound"
+    },
+    "Motor:Connector_JST__JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical": {
+      "models": [
+        "${KIPRJMOD}/Models/JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical.step"
+      ],
+      "source": "Project-local schematic resource; KiCad 10 library geometry or preserved project footprint",
+      "status": "bound"
+    },
+    "Motor:Connector_JST__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical": {
+      "models": [
+        "${KIPRJMOD}/Models/Connector_JST__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical.step"
+      ],
+      "source": "Project-local schematic resource; KiCad 10 library geometry or preserved project footprint",
+      "status": "bound"
+    },
+    "Motor:Inductor_SMD__L_Bourns_SRN6045TA": {
+      "models": [
+        "${KIPRJMOD}/Models/Inductor_SMD__L_Bourns_SRN6045TA__L_Bourns_SRN6045TA.step"
+      ],
+      "source": "Project-local schematic resource; KiCad 10 library geometry or preserved project footprint",
+      "status": "bound"
+    },
+    "Motor:Package_SO__SOIC-8_3.9x4.9mm_P1.27mm": {
+      "models": [
+        "${KIPRJMOD}/Models/Package_SO__SOIC-8_3.9x4.9mm_P1.27mm__SOIC-8_3.9x4.9mm_P1.27mm.step"
+      ],
+      "source": "Project-local schematic resource; KiCad 10 library geometry or preserved project footprint",
+      "status": "bound"
+    },
+    "Motor:Resistor_SMD__R_0603_1608Metric": {
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ],
+      "source": "Project-local schematic resource; KiCad 10 library geometry or preserved project footprint",
+      "status": "bound"
+    },
+    "Motor:SS12D07VG4": {
+      "models": [
+        "${KIPRJMOD}/Models/SS12D07VG4.wrl"
+      ],
+      "source": "Project-local schematic resource; KiCad 10 library geometry or preserved project footprint",
+      "status": "bound"
+    },
+    "Motor:Button_Switch_THT__SW_PUSH_6mm_H4.3mm": {
+      "models": [
+        "${KIPRJMOD}/Models/Button_Switch_THT__SW_PUSH_6mm_H4.3mm__SW_PUSH_6mm_H4.3mm.step"
+      ],
+      "source": "Project-local schematic resource; KiCad 10 library geometry or preserved project footprint",
+      "status": "bound"
+    },
+    "Motor:Package_TO_SOT_SMD__TSOT-23-6": {
+      "models": [
+        "${KIPRJMOD}/Models/Package_TO_SOT_SMD__TSOT-23-6__TSOT-23-6.step"
+      ],
+      "source": "Project-local schematic resource; KiCad 10 library geometry or preserved project footprint",
+      "status": "bound"
+    },
+    "Motor:DRV8874_PWP0016": {
+      "models": [
+        "${KIPRJMOD}/Models/DRV8874_PWP0016__HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.78x3.37mm.step"
+      ],
+      "source": "Project-local schematic resource; KiCad 10 library geometry or preserved project footprint",
+      "status": "bound"
+    },
+    "Motor:Package_TO_SOT_SMD__SOT-363_SC-70-6": {
+      "models": [
+        "${KIPRJMOD}/Models/Package_TO_SOT_SMD__SOT-363_SC-70-6__SOT-363_SC-70-6.step"
+      ],
+      "source": "Project-local schematic resource; KiCad 10 library geometry or preserved project footprint",
+      "status": "bound"
+    },
+    "Motor:Package_TO_SOT_SMD__SOT-23-5": {
+      "models": [
+        "${KIPRJMOD}/Models/Package_TO_SOT_SMD__SOT-23-5__SOT-23-5.step"
+      ],
+      "source": "Project-local schematic resource; KiCad 10 library geometry or preserved project footprint",
+      "status": "bound"
+    }
+  },
+  "finger_map": {
+    "A1": "GND",
+    "A2": "PA2",
+    "A3": "PA1",
+    "A4": "PA0",
+    "A5": "PH5",
+    "A6": "VREF_MCU",
+    "A7": "PH4",
+    "A8": "PC3",
+    "A9": "PC2",
+    "A10": "PC1",
+    "A11": "PC0",
+    "A12": "NRST",
+    "A13": "",
+    "A14": "",
+    "A15": "PC15",
+    "A16": "PC14",
+    "A17": "PC13",
+    "A18": "PH15",
+    "A19": "PE6",
+    "A20": "PE5",
+    "A21": "PE4",
+    "A22": "PE3",
+    "A23": "PE2",
+    "A24": "PE1",
+    "A25": "PE0",
+    "A26": "PB9",
+    "A27": "PB8",
+    "A28": "PH2",
+    "A29": "PB7",
+    "A30": "PB6",
+    "A31": "PB5",
+    "A32": "PB4",
+    "A33": "PB3",
+    "A34": "PD7",
+    "A35": "PD6",
+    "A36": "PD5",
+    "A37": "PD4",
+    "A38": "PD3",
+    "A39": "PD2",
+    "A40": "PD1",
+    "A41": "PD0",
+    "A42": "PC12",
+    "A43": "PC11",
+    "A44": "PC10",
+    "A45": "PA15",
+    "A46": "PA14",
+    "A47": "+3V3",
+    "A48": "+5V_SYS",
+    "A49": "GND",
+    "B1": "GND",
+    "B2": "PA3",
+    "B3": "PA4",
+    "B4": "PA5",
+    "B5": "PA6",
+    "B6": "PA7",
+    "B7": "PC4",
+    "B8": "PC5",
+    "B9": "PB0",
+    "B10": "PB1",
+    "B11": "PB2",
+    "B12": "PE7",
+    "B13": "PE8",
+    "B14": "PE9",
+    "B15": "PE10",
+    "B16": "PE11",
+    "B17": "PE12",
+    "B18": "PE13",
+    "B19": "PE14",
+    "B20": "PE15",
+    "B21": "PB10",
+    "B22": "PB12",
+    "B23": "PB13",
+    "B24": "PB14",
+    "B25": "PB15",
+    "B26": "PD8",
+    "B27": "PD9",
+    "B28": "PD10",
+    "B29": "PD11",
+    "B30": "PD12",
+    "B31": "PD13",
+    "B32": "PD14",
+    "B33": "PD15",
+    "B34": "PC6",
+    "B35": "PC7",
+    "B36": "PC8",
+    "B37": "PC9",
+    "B38": "PA8",
+    "B39": "PA9",
+    "B40": "PA10",
+    "B41": "PA11",
+    "B42": "PA12",
+    "B43": "PA13",
+    "B44": "PH3",
+    "B45": "",
+    "B46": "",
+    "B47": "+3V3",
+    "B48": "+5V_SYS",
+    "B49": "GND"
+  },
+  "gpio_functions": {
+    "PA0": "L_ENC_A",
+    "PA1": "L_ENC_B",
+    "PB3": "R_ENC_A",
+    "PA15": "R_ENC_B",
+    "PC2": "L_PWM",
+    "PB8": "R_PWM",
+    "PC3": "L_DIR",
+    "PD7": "R_DIR",
+    "PH4": "L_nFAULT",
+    "PD6": "R_nFAULT",
+    "PH5": "L_ISENSE",
+    "PC0": "R_ISENSE",
+    "PE8": "MOTOR_EN_REQ",
+    "PA2": "BT_TX",
+    "PA3": "BT_RX",
+    "PD8": "MAIX_TX",
+    "PD9": "MAIX_RX",
+    "PC6": "VIDEO_TX",
+    "PC7": "VIDEO_RX",
+    "PB6": "STEP_UART_TX",
+    "PB7": "STEP_UART_RX",
+    "PA5": "TFT_SCK",
+    "PA7": "TFT_MOSI",
+    "PB0": "TFT_RES",
+    "PB1": "TFT_DC",
+    "PA4": "TFT_CS",
+    "PB4": "TFT_BL",
+    "PE10": "GRAY_CH1",
+    "PE11": "GRAY_CH2",
+    "PE12": "GRAY_CH3",
+    "PE13": "GRAY_CH4",
+    "PE14": "GRAY_CH5",
+    "PE15": "GRAY_CH6",
+    "PD10": "GRAY_CH7",
+    "PD11": "GRAY_CH8",
+    "PD12": "GRAY_CLK",
+    "PD13": "GRAY_DAT",
+    "PE9": "STEP_PUL",
+    "PD14": "STEP_DIR",
+    "PD15": "STEP_nEN",
+    "PC4": "KEY_MODE",
+    "PC5": "KEY_NEXT",
+    "PB2": "KEY_OK",
+    "PE7": "KEY_START",
+    "PA13": "SWDIO",
+    "PA14": "SWCLK",
+    "+3V3": "V3V3",
+    "+5V_SYS": "V5_SYS",
+    "GND": "GND"
+  },
+  "connector_revision": {
+    "date": "2026-11-03",
+    "pins": {
+      "1": "OUT2 / motor -",
+      "2": "VENC = Core 3V3",
+      "3": "encoder A",
+      "4": "encoder B",
+      "5": "GND",
+      "6": "OUT1 / motor +"
+    },
+    "evidence": "Documentation/reference/motor-interface.md",
+    "pcb_updated": true,
+    "power_connectors": "J4/J6 only; J3/J5 removed"
+  },
+  "preexisting_absent_components": [
+    {
+      "reference": "J9",
+      "reason": "Absent before M2; not restored. M2 allocates its old auxiliary nets to explicit new headers; the old failing contract is archived."
+    }
+  ],
+  "removed_board_features": {
+    "J3": "2026-11-03 user-requested removal from schematic and PCB; motor outputs remain at J4/J6 six-pin connectors.",
+    "J5": "2026-11-03 user-requested removal from schematic and PCB; motor outputs remain at J4/J6 six-pin connectors."
+  },
+  "motor_pin_assignment": {
+    "date": "2026-11-03",
+    "scope": "Motor GPIO selection only; C5-EDGE-3 physical contract unchanged",
+    "source": "DS15137 Rev3 Tables 13/14",
+    "entries": [
+      {
+        "signal": "L_ENC_A",
+        "gpio": "PA0",
+        "contact": "A4",
+        "function": "TIM5_CH1",
+        "af": 2,
+        "direction": "input",
+        "endpoint": "U3:6",
+        "old_gpio": "PA15",
+        "old_contact": "A45"
+      },
+      {
+        "signal": "L_ENC_B",
+        "gpio": "PA1",
+        "contact": "A3",
+        "function": "TIM5_CH2",
+        "af": 2,
+        "direction": "input",
+        "endpoint": "U3:4",
+        "old_gpio": "PB3",
+        "old_contact": "A33"
+      },
+      {
+        "signal": "R_ENC_A",
+        "gpio": "PB3",
+        "contact": "A33",
+        "function": "TIM2_CH2",
+        "af": 1,
+        "direction": "input",
+        "endpoint": "U5:6",
+        "old_gpio": "PC6",
+        "old_contact": "B34"
+      },
+      {
+        "signal": "R_ENC_B",
+        "gpio": "PA15",
+        "contact": "A45",
+        "function": "TIM2_CH1",
+        "af": 1,
+        "direction": "input",
+        "endpoint": "U5:4",
+        "old_gpio": "PC7",
+        "old_contact": "B35"
+      },
+      {
+        "signal": "L_PWM",
+        "gpio": "PC2",
+        "contact": "A9",
+        "function": "TIM4_CH4",
+        "af": 2,
+        "direction": "output",
+        "endpoint": "U2:1",
+        "old_gpio": "PD12",
+        "old_contact": "B30"
+      },
+      {
+        "signal": "R_PWM",
+        "gpio": "PB8",
+        "contact": "A27",
+        "function": "TIM4_CH3",
+        "af": 2,
+        "direction": "output",
+        "endpoint": "U4:1",
+        "old_gpio": "PD13",
+        "old_contact": "B31"
+      },
+      {
+        "signal": "L_DIR",
+        "gpio": "PC3",
+        "contact": "A8",
+        "function": "GPIO",
+        "af": null,
+        "direction": "output",
+        "endpoint": "U2:2",
+        "old_gpio": "PD10",
+        "old_contact": "B28"
+      },
+      {
+        "signal": "R_DIR",
+        "gpio": "PD7",
+        "contact": "A34",
+        "function": "GPIO",
+        "af": null,
+        "direction": "output",
+        "endpoint": "U4:2",
+        "old_gpio": "PD11",
+        "old_contact": "B29"
+      },
+      {
+        "signal": "L_nFAULT",
+        "gpio": "PH4",
+        "contact": "A7",
+        "function": "EXTI4",
+        "af": null,
+        "direction": "input",
+        "endpoint": "U2:4",
+        "old_gpio": "PE4",
+        "old_contact": "A21"
+      },
+      {
+        "signal": "R_nFAULT",
+        "gpio": "PD6",
+        "contact": "A35",
+        "function": "EXTI6",
+        "af": null,
+        "direction": "input",
+        "endpoint": "U4:4",
+        "old_gpio": "PE5",
+        "old_contact": "A20"
+      },
+      {
+        "signal": "L_ISENSE",
+        "gpio": "PH5",
+        "contact": "A5",
+        "function": "ADC2_IN13",
+        "af": null,
+        "direction": "input",
+        "endpoint": "R15:2",
+        "old_gpio": "PA0",
+        "old_contact": "A4"
+      },
+      {
+        "signal": "R_ISENSE",
+        "gpio": "PC0",
+        "contact": "A11",
+        "function": "ADC1_IN8",
+        "af": null,
+        "direction": "input",
+        "endpoint": "R35:2",
+        "old_gpio": "PA1",
+        "old_contact": "A3"
+      },
+      {
+        "signal": "MOTOR_EN_REQ",
+        "gpio": "PE8",
+        "contact": "B13",
+        "function": "GPIO",
+        "af": null,
+        "direction": "output",
+        "endpoint": "R6:1",
+        "old_gpio": "PE2",
+        "old_contact": "A23"
+      }
+    ],
+    "right_encoder_phase_order": "A=TIM2_CH2, B=TIM2_CH1; calibrate wheel direction in firmware",
+    "firmware_implemented": false
+  },
+  "m2_interfaces": [
+    {
+      "signal": "BT_TX",
+      "gpio": "PA2",
+      "contact": "A2",
+      "mcu_pin": "25",
+      "function": "USART2_TX",
+      "af": 7,
+      "direction": "output",
+      "endpoint": "J15:3"
+    },
+    {
+      "signal": "BT_RX",
+      "gpio": "PA3",
+      "contact": "B2",
+      "mcu_pin": "26",
+      "function": "USART2_RX",
+      "af": 7,
+      "direction": "input",
+      "endpoint": "J15:4"
+    },
+    {
+      "signal": "MAIX_TX",
+      "gpio": "PD8",
+      "contact": "B26",
+      "mcu_pin": "55",
+      "function": "USART3_TX",
+      "af": 7,
+      "direction": "output",
+      "endpoint": "J18:3"
+    },
+    {
+      "signal": "MAIX_RX",
+      "gpio": "PD9",
+      "contact": "B27",
+      "mcu_pin": "56",
+      "function": "USART3_RX",
+      "af": 7,
+      "direction": "input",
+      "endpoint": "J18:4"
+    },
+    {
+      "signal": "VIDEO_TX",
+      "gpio": "PC6",
+      "contact": "B34",
+      "mcu_pin": "63",
+      "function": "USART6_TX",
+      "af": 7,
+      "direction": "output",
+      "endpoint": "J19:3"
+    },
+    {
+      "signal": "VIDEO_RX",
+      "gpio": "PC7",
+      "contact": "B35",
+      "mcu_pin": "64",
+      "function": "USART6_RX",
+      "af": 7,
+      "direction": "input",
+      "endpoint": "J19:4"
+    },
+    {
+      "signal": "STEP_UART_TX",
+      "gpio": "PB6",
+      "contact": "A30",
+      "mcu_pin": "92",
+      "function": "USART1_TX",
+      "af": 7,
+      "direction": "output",
+      "endpoint": "J23:3"
+    },
+    {
+      "signal": "STEP_UART_RX",
+      "gpio": "PB7",
+      "contact": "A29",
+      "mcu_pin": "93",
+      "function": "USART1_RX",
+      "af": 7,
+      "direction": "input",
+      "endpoint": "J23:4"
+    },
+    {
+      "signal": "TFT_SCK",
+      "gpio": "PA5",
+      "contact": "B4",
+      "mcu_pin": "30",
+      "function": "SPI1_SCK",
+      "af": 5,
+      "direction": "output",
+      "endpoint": "J17:3"
+    },
+    {
+      "signal": "TFT_MOSI",
+      "gpio": "PA7",
+      "contact": "B6",
+      "mcu_pin": "32",
+      "function": "SPI1_MOSI",
+      "af": 5,
+      "direction": "output",
+      "endpoint": "J17:4"
+    },
+    {
+      "signal": "TFT_RES",
+      "gpio": "PB0",
+      "contact": "B9",
+      "mcu_pin": "35",
+      "function": "GPIO",
+      "af": null,
+      "direction": "output",
+      "endpoint": "J17:5"
+    },
+    {
+      "signal": "TFT_DC",
+      "gpio": "PB1",
+      "contact": "B10",
+      "mcu_pin": "36",
+      "function": "GPIO",
+      "af": null,
+      "direction": "output",
+      "endpoint": "J17:6"
+    },
+    {
+      "signal": "TFT_CS",
+      "gpio": "PA4",
+      "contact": "B3",
+      "mcu_pin": "29",
+      "function": "GPIO",
+      "af": null,
+      "direction": "output",
+      "endpoint": "J17:7"
+    },
+    {
+      "signal": "TFT_BL",
+      "gpio": "PB4",
+      "contact": "A32",
+      "mcu_pin": "90",
+      "function": "TIM3_CH1",
+      "af": 2,
+      "direction": "output",
+      "endpoint": "J17:8"
+    },
+    {
+      "signal": "GRAY_CH1",
+      "gpio": "PE10",
+      "contact": "B15",
+      "mcu_pin": "41",
+      "function": "GPIO",
+      "af": null,
+      "direction": "input",
+      "endpoint": "J20:3"
+    },
+    {
+      "signal": "GRAY_CH2",
+      "gpio": "PE11",
+      "contact": "B16",
+      "mcu_pin": "42",
+      "function": "GPIO",
+      "af": null,
+      "direction": "input",
+      "endpoint": "J20:4"
+    },
+    {
+      "signal": "GRAY_CH3",
+      "gpio": "PE12",
+      "contact": "B17",
+      "mcu_pin": "43",
+      "function": "GPIO",
+      "af": null,
+      "direction": "input",
+      "endpoint": "J20:5"
+    },
+    {
+      "signal": "GRAY_CH4",
+      "gpio": "PE13",
+      "contact": "B18",
+      "mcu_pin": "44",
+      "function": "GPIO",
+      "af": null,
+      "direction": "input",
+      "endpoint": "J20:6"
+    },
+    {
+      "signal": "GRAY_CH5",
+      "gpio": "PE14",
+      "contact": "B19",
+      "mcu_pin": "45",
+      "function": "GPIO",
+      "af": null,
+      "direction": "input",
+      "endpoint": "J20:7"
+    },
+    {
+      "signal": "GRAY_CH6",
+      "gpio": "PE15",
+      "contact": "B20",
+      "mcu_pin": "46",
+      "function": "GPIO",
+      "af": null,
+      "direction": "input",
+      "endpoint": "J20:8"
+    },
+    {
+      "signal": "GRAY_CH7",
+      "gpio": "PD10",
+      "contact": "B28",
+      "mcu_pin": "57",
+      "function": "GPIO",
+      "af": null,
+      "direction": "input",
+      "endpoint": "J20:9"
+    },
+    {
+      "signal": "GRAY_CH8",
+      "gpio": "PD11",
+      "contact": "B29",
+      "mcu_pin": "58",
+      "function": "GPIO",
+      "af": null,
+      "direction": "input",
+      "endpoint": "J20:10"
+    },
+    {
+      "signal": "GRAY_CLK",
+      "gpio": "PD12",
+      "contact": "B30",
+      "mcu_pin": "59",
+      "function": "GPIO",
+      "af": null,
+      "direction": "output",
+      "endpoint": "J21:3"
+    },
+    {
+      "signal": "GRAY_DAT",
+      "gpio": "PD13",
+      "contact": "B31",
+      "mcu_pin": "60",
+      "function": "GPIO",
+      "af": null,
+      "direction": "input",
+      "endpoint": "J21:4"
+    },
+    {
+      "signal": "STEP_PUL",
+      "gpio": "PE9",
+      "contact": "B14",
+      "mcu_pin": "40",
+      "function": "TIM1_CH1",
+      "af": 1,
+      "direction": "output",
+      "endpoint": "J22:3"
+    },
+    {
+      "signal": "STEP_DIR",
+      "gpio": "PD14",
+      "contact": "B32",
+      "mcu_pin": "61",
+      "function": "GPIO",
+      "af": null,
+      "direction": "output",
+      "endpoint": "J22:4"
+    },
+    {
+      "signal": "STEP_nEN",
+      "gpio": "PD15",
+      "contact": "B33",
+      "mcu_pin": "62",
+      "function": "GPIO",
+      "af": null,
+      "direction": "output",
+      "endpoint": "J22:5"
+    },
+    {
+      "signal": "KEY_MODE",
+      "gpio": "PC4",
+      "contact": "B7",
+      "mcu_pin": "33",
+      "function": "GPIO",
+      "af": null,
+      "direction": "input",
+      "endpoint": "SW2:1"
+    },
+    {
+      "signal": "KEY_NEXT",
+      "gpio": "PC5",
+      "contact": "B8",
+      "mcu_pin": "34",
+      "function": "GPIO",
+      "af": null,
+      "direction": "input",
+      "endpoint": "SW3:1"
+    },
+    {
+      "signal": "KEY_OK",
+      "gpio": "PB2",
+      "contact": "B11",
+      "mcu_pin": "37",
+      "function": "GPIO",
+      "af": null,
+      "direction": "input",
+      "endpoint": "SW4:1"
+    },
+    {
+      "signal": "KEY_START",
+      "gpio": "PE7",
+      "contact": "B12",
+      "mcu_pin": "38",
+      "function": "GPIO",
+      "af": null,
+      "direction": "input",
+      "endpoint": "SW5:1"
+    }
+  ],
+  "production_release": false,
+  "schematic_status": "Layout tidied; native netlist equal to saved M2 baseline; ERC and schematic verification passed",
+  "m2_pcb_modified_by_task": false,
+  "legacy_footprint_resources": {
+    "Motor:Resistor_SMD__R_0603_1608Metric": {
+      "source": "D:\\KiCad\\10.0\\share\\kicad\\footprints\\Resistor_SMD.pretty\\R_0603_1608Metric.kicad_mod",
+      "models": [
+        "Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ],
+      "model_status": "KiCad package geometry"
+    },
+    "Motor:Capacitor_SMD__C_0603_1608Metric": {
+      "source": "D:\\KiCad\\10.0\\share\\kicad\\footprints\\Capacitor_SMD.pretty\\C_0603_1608Metric.kicad_mod",
+      "models": [
+        "Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+      ],
+      "model_status": "KiCad package geometry"
+    },
+    "Motor:Capacitor_SMD__C_0805_2012Metric": {
+      "source": "D:\\KiCad\\10.0\\share\\kicad\\footprints\\Capacitor_SMD.pretty\\C_0805_2012Metric.kicad_mod",
+      "models": [
+        "Capacitor_SMD__C_0805_2012Metric__C_0805_2012Metric.step"
+      ],
+      "model_status": "KiCad package geometry"
+    },
+    "Motor:Capacitor_SMD__C_1206_3216Metric": {
+      "source": "D:\\KiCad\\10.0\\share\\kicad\\footprints\\Capacitor_SMD.pretty\\C_1206_3216Metric.kicad_mod",
+      "models": [
+        "Capacitor_SMD__C_1206_3216Metric__C_1206_3216Metric.step"
+      ],
+      "model_status": "KiCad package geometry"
+    },
+    "Motor:Capacitor_THT__CP_Radial_D10.0mm_P5.00mm": {
+      "source": "D:\\KiCad\\10.0\\share\\kicad\\footprints\\Capacitor_THT.pretty\\CP_Radial_D10.0mm_P5.00mm.kicad_mod",
+      "models": [
+        "Capacitor_THT__CP_Radial_D10.0mm_P5.00mm__CP_Radial_D10.0mm_P5.00mm.step"
+      ],
+      "model_status": "KiCad package geometry"
+    },
+    "Motor:Fuse__Fuse_1206_3216Metric": {
+      "source": "D:\\KiCad\\10.0\\share\\kicad\\footprints\\Fuse.pretty\\Fuse_1206_3216Metric.kicad_mod",
+      "models": [
+        "Fuse__Fuse_1206_3216Metric__Fuse_1206_3216Metric.step"
+      ],
+      "model_status": "KiCad package geometry"
+    },
+    "Motor:Package_SO__SOIC-8_3.9x4.9mm_P1.27mm": {
+      "source": "D:\\KiCad\\10.0\\share\\kicad\\footprints\\Package_SO.pretty\\SOIC-8_3.9x4.9mm_P1.27mm.kicad_mod",
+      "models": [
+        "Package_SO__SOIC-8_3.9x4.9mm_P1.27mm__SOIC-8_3.9x4.9mm_P1.27mm.step"
+      ],
+      "model_status": "KiCad package geometry"
+    },
+    "Motor:Package_TO_SOT_SMD__SOT-363_SC-70-6": {
+      "source": "D:\\KiCad\\10.0\\share\\kicad\\footprints\\Package_TO_SOT_SMD.pretty\\SOT-363_SC-70-6.kicad_mod",
+      "models": [
+        "Package_TO_SOT_SMD__SOT-363_SC-70-6__SOT-363_SC-70-6.step"
+      ],
+      "model_status": "KiCad package geometry"
+    },
+    "Motor:Package_TO_SOT_SMD__TSOT-23-6": {
+      "source": "D:\\KiCad\\10.0\\share\\kicad\\footprints\\Package_TO_SOT_SMD.pretty\\TSOT-23-6.kicad_mod",
+      "models": [
+        "Package_TO_SOT_SMD__TSOT-23-6__TSOT-23-6.step"
+      ],
+      "model_status": "KiCad package geometry"
+    },
+    "Motor:Diode_SMD__D_SOD-123": {
+      "source": "D:\\KiCad\\10.0\\share\\kicad\\footprints\\Diode_SMD.pretty\\D_SOD-123.kicad_mod",
+      "models": [
+        "Diode_SMD__D_SOD-123__D_SOD-123.step"
+      ],
+      "model_status": "KiCad package geometry"
+    },
+    "Motor:Diode_SMD__D_SMA": {
+      "source": "D:\\KiCad\\10.0\\share\\kicad\\footprints\\Diode_SMD.pretty\\D_SMA.kicad_mod",
+      "models": [
+        "Diode_SMD__D_SMA__D_SMA.step"
+      ],
+      "model_status": "KiCad package geometry"
+    },
+    "Motor:LED_SMD__LED_0603_1608Metric": {
+      "source": "D:\\KiCad\\10.0\\share\\kicad\\footprints\\LED_SMD.pretty\\LED_0603_1608Metric.kicad_mod",
+      "models": [
+        "LED_SMD__LED_0603_1608Metric__LED_0603_1608Metric.step"
+      ],
+      "model_status": "KiCad package geometry"
+    },
+    "Motor:Inductor_SMD__L_Bourns_SRN6045TA": {
+      "source": "D:\\KiCad\\10.0\\share\\kicad\\footprints\\Inductor_SMD.pretty\\L_Bourns_SRN6045TA.kicad_mod",
+      "models": [
+        "Inductor_SMD__L_Bourns_SRN6045TA__L_Bourns_SRN6045TA.step"
+      ],
+      "model_status": "KiCad package geometry"
+    },
+    "Motor:Connector_JST__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical": {
+      "source": "D:\\KiCad\\10.0\\share\\kicad\\footprints\\Connector_JST.pretty\\JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical.kicad_mod",
+      "models": [
+        "Connector_JST__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical.step"
+      ],
+      "model_status": "KiCad package geometry"
+    },
+    "Motor:Connector_PinHeader_2.54mm__PinHeader_1x02_P2.54mm_Vertical": {
+      "source": "D:\\KiCad\\10.0\\share\\kicad\\footprints\\Connector_PinHeader_2.54mm.pretty\\PinHeader_1x02_P2.54mm_Vertical.kicad_mod",
+      "models": [
+        "Connector_PinHeader_2.54mm__PinHeader_1x02_P2.54mm_Vertical__PinHeader_1x02_P2.54mm_Vertical.step"
+      ],
+      "model_status": "KiCad package geometry"
+    },
+    "Motor:Connector_PinHeader_2.54mm__PinHeader_2x05_P2.54mm_Vertical": {
+      "source": "D:\\KiCad\\10.0\\share\\kicad\\footprints\\Connector_PinHeader_2.54mm.pretty\\PinHeader_2x05_P2.54mm_Vertical.kicad_mod",
+      "models": [
+        "Connector_PinHeader_2.54mm__PinHeader_2x05_P2.54mm_Vertical__PinHeader_2x05_P2.54mm_Vertical.step"
+      ],
+      "model_status": "KiCad package geometry"
+    },
+    "Motor:TerminalBlock_Phoenix__TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal": {
+      "source": "D:\\KiCad\\10.0\\share\\kicad\\footprints\\TerminalBlock_Phoenix.pretty\\TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal.kicad_mod",
+      "models": [
+        "TerminalBlock_Phoenix__TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal__TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal.step"
+      ],
+      "model_status": "KiCad package geometry"
+    },
+    "Motor:C5_EDGE_3_Socket": {
+      "source": "D:\\dev\\qrs\\stm32\\Coral-C5\\Hardware\\CoralC5-Expansion\\DevBoard.pretty\\Streamline_Socket.kicad_mod",
+      "models": [
+        "C5_EDGE_3_Socket__Streamline_Socket.step"
+      ],
+      "model_status": "existing project vendor model"
+    },
+    "Motor:DRV8874_PWP0016": {
+      "source": "D:\\KiCad\\10.0\\share\\kicad\\footprints\\Package_SO.pretty\\HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.78x3.37mm.kicad_mod",
+      "models": [
+        "DRV8874_PWP0016__HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.78x3.37mm.step"
+      ],
+      "model_status": "generic HTSSOP body; manufacturer pad geometry in footprint"
+    },
+    "Motor:DC005_XKB_5A_2mm": {
+      "source": "XKB DC-005-5A-2.0 manufacturer top-view drilling: 1=center, 3=sleeve, 2=switched sleeve. Verify mating plug 5.5/2.1mm.",
+      "models": [
+        "DC005_XKB_5A_2mm.wrl"
+      ],
+      "model_status": "generic external envelope derived from manufacturer drawing"
+    },
+    "Motor:SS12D07VG4": {
+      "source": "SHOU HAN SS12D07VG4: 2=common, 1/3=throws; 4/5=shell mounting. Local generic model; see source drawing.",
+      "models": [
+        "SS12D07VG4.wrl"
+      ],
+      "model_status": "generic external envelope derived from manufacturer drawing"
+    }
+  },
+  "layout_verification": "docs/layout_verification.json",
+  "record_scope": "Historical initial M2 generation data; current native schematics and verification.json are authoritative. User changes are recorded as explicit overlays.",
+  "current_revision": "M2.5",
+  "current_revision_records": [
+    "smd_buttons_revision.json",
+    "grayscale_photo_revision.json",
+    "vision_power_revision.json",
+    "current_design.json"
+  ],
+  "historical_authoring_manifest": true
+}
