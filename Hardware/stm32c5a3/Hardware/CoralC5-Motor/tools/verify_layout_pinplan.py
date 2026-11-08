@@ -119,4 +119,3 @@ def main():
     print(json.dumps({k:v for k,v in report.items() if k not in ['results','resources','artifacts_sha256']},ensure_ascii=False,indent=2))
     return 0 if report['pass'] else 1
 if __name__=='__main__':raise SystemExit(main())
-
