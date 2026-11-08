@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <export version="E">
   <design>
-    <source>D:\dev\qrs\stm32\c5-car\Hardware\stm32c5a3\Hardware\CoralC5-Motor\CoralC5-Motor.kicad_sch</source>
-    <date>2026-11-07T23:56:32</date>
-    <tool>Eeschema 10.0.8</tool>
+    <source>C:\Users\sc\Documents\Dev\Hardware\c5-car\Hardware\stm32c5a3\Hardware\CoralC5-Motor\CoralC5-Motor.kicad_sch</source>
+    <date>2026-11-08T22:45:14</date>
+    <tool>Eeschema 10.0.6</tool>
     <textvar name="AUTHOR">SmallCoral</textvar>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
         <title>Coral-C5 小车扩展板 M2 总览</title>
         <company>SmallCoral / CoralC5-Motor</company>
-        <rev>M2.8</rev>
-        <date>2026-11-07</date>
+        <rev>M2.8S</rev>
+        <date>2026-11-08</date>
         <source>CoralC5-Motor.kicad_sch</source>
         <comment number="1" value="原理图设计；实板电流、温升与线束待验证"/>
         <comment number="2" value=""/>
@@ -117,8 +117,8 @@
       <title_block>
         <title>八路灰度与 MaixCAM2 识别接口</title>
         <company>SmallCoral / CoralC5-Motor</company>
-        <rev>M2.8</rev>
-        <date>2026-11-07</date>
+        <rev>M2.8S</rev>
+        <date>2026-11-08</date>
         <source>08_Grayscale_Cameras.kicad_sch</source>
         <comment number="1" value="原理图设计；实板电流、温升与线束待验证"/>
         <comment number="2" value=""/>
@@ -153,8 +153,8 @@
       <title_block>
         <title>四脚蓝牙与外接步进驱动接口</title>
         <company>SmallCoral / CoralC5-Motor</company>
-        <rev>M2.8</rev>
-        <date>2026-11-07</date>
+        <rev>M2.8S</rev>
+        <date>2026-11-08</date>
         <source>09_Bluetooth_Stepper.kicad_sch</source>
         <comment number="1" value="原理图设计；实板电流、温升与线束待验证"/>
         <comment number="2" value=""/>
@@ -1575,7 +1575,7 @@
       <property name="Sheetname" value="核心板接口"/>
       <property name="Sheetfile" value="03_Core_Interface.kicad_sch"/>
       <sheetpath names="/核心板接口/" tstamps="/c813fdd4-725f-5df7-aa4a-68cd15d401cf/"/>
-      <tstamps>b37c04c5-9b5f-511b-9c74-f377aa32d4bc 8c9c7b19-b75d-593c-a829-0649560b29f7 30a59f44-06c2-5f5a-bb1c-18c06bfa40da</tstamps>
+      <tstamps>8c9c7b19-b75d-593c-a829-0649560b29f7 b37c04c5-9b5f-511b-9c74-f377aa32d4bc 30a59f44-06c2-5f5a-bb1c-18c06bfa40da</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -3331,78 +3331,6 @@
         </unit>
       </units>
     </comp>
-    <comp ref="C73">
-      <value>12nF/50V</value>
-      <footprint>Motor:C_0603_1608Metric_Gap0.85mm_HandSolder</footprint>
-      <fields>
-        <field name="Footprint">Motor:C_0603_1608Metric_Gap0.85mm_HandSolder</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
-      <property name="Sheetname" value="灰度与 MaixCAM2 识别"/>
-      <property name="Sheetfile" value="08_Grayscale_Cameras.kicad_sch"/>
-      <property name="ki_keywords" value="cap capacitor"/>
-      <property name="ki_fp_filters" value="C_*"/>
-      <sheetpath names="/灰度与 MaixCAM2 识别/" tstamps="/d6318ee1-12d4-5089-84c2-bb1addcd6fe6/"/>
-      <tstamps>fb7e7db3-c0c6-5f25-a43e-e9578d202329</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="C76">
-      <value>100nF/50V</value>
-      <footprint>Motor:C_0603_1608Metric_Gap0.85mm_HandSolder</footprint>
-      <fields>
-        <field name="Footprint">Motor:C_0603_1608Metric_Gap0.85mm_HandSolder</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
-      <property name="Sheetname" value="灰度与 MaixCAM2 识别"/>
-      <property name="Sheetfile" value="08_Grayscale_Cameras.kicad_sch"/>
-      <property name="ki_keywords" value="cap capacitor"/>
-      <property name="ki_fp_filters" value="C_*"/>
-      <sheetpath names="/灰度与 MaixCAM2 识别/" tstamps="/d6318ee1-12d4-5089-84c2-bb1addcd6fe6/"/>
-      <tstamps>611b1b8f-b29d-5352-bc01-fefe953bf25d</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="C77">
-      <value>1nF/50V</value>
-      <footprint>Motor:C_0603_1608Metric_Gap0.85mm_HandSolder</footprint>
-      <fields>
-        <field name="Footprint">Motor:C_0603_1608Metric_Gap0.85mm_HandSolder</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
-      <property name="Sheetname" value="灰度与 MaixCAM2 识别"/>
-      <property name="Sheetfile" value="08_Grayscale_Cameras.kicad_sch"/>
-      <property name="ki_keywords" value="cap capacitor"/>
-      <property name="ki_fp_filters" value="C_*"/>
-      <sheetpath names="/灰度与 MaixCAM2 识别/" tstamps="/d6318ee1-12d4-5089-84c2-bb1addcd6fe6/"/>
-      <tstamps>a27d8ca7-3f91-5c3c-a2e3-f2ebc52eb7cd</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
     <comp ref="C78">
       <value>10uF/10V</value>
       <footprint>Motor:Capacitor_SMD__C_0805_2012Metric</footprint>
@@ -3418,30 +3346,6 @@
       <property name="ki_fp_filters" value="C_*"/>
       <sheetpath names="/灰度与 MaixCAM2 识别/" tstamps="/d6318ee1-12d4-5089-84c2-bb1addcd6fe6/"/>
       <tstamps>66bb6c90-dc04-5610-a2d3-2a3cf5359aa2</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="C79">
-      <value>100nF/50V</value>
-      <footprint>Motor:C_0603_1608Metric_Gap0.85mm_HandSolder</footprint>
-      <fields>
-        <field name="Footprint">Motor:C_0603_1608Metric_Gap0.85mm_HandSolder</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
-      <property name="Sheetname" value="灰度与 MaixCAM2 识别"/>
-      <property name="Sheetfile" value="08_Grayscale_Cameras.kicad_sch"/>
-      <property name="ki_keywords" value="cap capacitor"/>
-      <property name="ki_fp_filters" value="C_*"/>
-      <sheetpath names="/灰度与 MaixCAM2 识别/" tstamps="/d6318ee1-12d4-5089-84c2-bb1addcd6fe6/"/>
-      <tstamps>4158f13e-4f66-5b3c-8eaf-8b1867bdd52f</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -3533,184 +3437,6 @@
         </unit>
       </units>
     </comp>
-    <comp ref="J27">
-      <value>供电使能跳线</value>
-      <footprint>Motor:Connector_PinHeader_2.54mm__PinHeader_1x02_P2.54mm_Vertical</footprint>
-      <fields>
-        <field name="Footprint">Motor:Connector_PinHeader_2.54mm__PinHeader_1x02_P2.54mm_Vertical</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Motor" part="Vision_Enable_2P" description=""/>
-      <property name="Sheetname" value="灰度与 MaixCAM2 识别"/>
-      <property name="Sheetfile" value="08_Grayscale_Cameras.kicad_sch"/>
-      <sheetpath names="/灰度与 MaixCAM2 识别/" tstamps="/d6318ee1-12d4-5089-84c2-bb1addcd6fe6/"/>
-      <tstamps>8308de91-ed65-5ca0-8820-60e8ae98ef48</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="Q4">
-      <value>BSS138BK</value>
-      <footprint>Motor:Package_TO_SOT_SMD__SOT-23</footprint>
-      <datasheet>https://assets.nexperia.com/documents/data-sheet/BSS138BK.pdf</datasheet>
-      <fields>
-        <field name="MPN">BSS138BK,215</field>
-        <field name="Footprint">Motor:Package_TO_SOT_SMD__SOT-23</field>
-        <field name="Datasheet">https://assets.nexperia.com/documents/data-sheet/BSS138BK.pdf</field>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Motor" part="BSS138BK_SOT23" description=""/>
-      <property name="MPN" value="BSS138BK,215"/>
-      <property name="Sheetname" value="灰度与 MaixCAM2 识别"/>
-      <property name="Sheetfile" value="08_Grayscale_Cameras.kicad_sch"/>
-      <sheetpath names="/灰度与 MaixCAM2 识别/" tstamps="/d6318ee1-12d4-5089-84c2-bb1addcd6fe6/"/>
-      <tstamps>742c578b-0179-5311-a265-a83d5e40606e</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="3"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="Q5">
-      <value>DMP3007LK3-13</value>
-      <footprint>Motor:Package_TO_SOT_SMD__TO-252-2</footprint>
-      <datasheet>https://www.diodes.com/datasheet/download/DMP3007LK3.pdf</datasheet>
-      <fields>
-        <field name="MPN">DMP3007LK3-13</field>
-        <field name="Footprint">Motor:Package_TO_SOT_SMD__TO-252-2</field>
-        <field name="Datasheet">https://www.diodes.com/datasheet/download/DMP3007LK3.pdf</field>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Motor" part="DMP3007_Horizontal_DS" description=""/>
-      <property name="MPN" value="DMP3007LK3-13"/>
-      <property name="Sheetname" value="灰度与 MaixCAM2 识别"/>
-      <property name="Sheetfile" value="08_Grayscale_Cameras.kicad_sch"/>
-      <sheetpath names="/灰度与 MaixCAM2 识别/" tstamps="/d6318ee1-12d4-5089-84c2-bb1addcd6fe6/"/>
-      <tstamps>47721a97-5e7c-5dd7-b7eb-966e0588b1cd</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="2"/>
-            <pin num="1"/>
-            <pin num="3"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="R68">
-      <value>33.6k / 0.1%</value>
-      <footprint>Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</footprint>
-      <fields>
-        <field name="Tolerance">0.1%</field>
-        <field name="Footprint">Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Motor" part="Device__R" description="Resistor"/>
-      <property name="Tolerance" value="0.1%"/>
-      <property name="Sheetname" value="灰度与 MaixCAM2 识别"/>
-      <property name="Sheetfile" value="08_Grayscale_Cameras.kicad_sch"/>
-      <property name="ki_keywords" value="R res resistor"/>
-      <property name="ki_fp_filters" value="R_*"/>
-      <sheetpath names="/灰度与 MaixCAM2 识别/" tstamps="/d6318ee1-12d4-5089-84c2-bb1addcd6fe6/"/>
-      <tstamps>46118d7e-0457-5064-9d3a-7f363cb158c1</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="R69">
-      <value>15k / 0.1%</value>
-      <footprint>Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</footprint>
-      <fields>
-        <field name="Tolerance">0.1%</field>
-        <field name="Footprint">Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Motor" part="Device__R" description="Resistor"/>
-      <property name="Tolerance" value="0.1%"/>
-      <property name="Sheetname" value="灰度与 MaixCAM2 识别"/>
-      <property name="Sheetfile" value="08_Grayscale_Cameras.kicad_sch"/>
-      <property name="ki_keywords" value="R res resistor"/>
-      <property name="ki_fp_filters" value="R_*"/>
-      <sheetpath names="/灰度与 MaixCAM2 识别/" tstamps="/d6318ee1-12d4-5089-84c2-bb1addcd6fe6/"/>
-      <tstamps>2d78f6cf-9df1-59a7-801f-5ca03c2470da</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="R70">
-      <value>42.2k / 0.1%</value>
-      <footprint>Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</footprint>
-      <fields>
-        <field name="Tolerance">0.1%</field>
-        <field name="Footprint">Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Motor" part="Device__R" description="Resistor"/>
-      <property name="Tolerance" value="0.1%"/>
-      <property name="Sheetname" value="灰度与 MaixCAM2 识别"/>
-      <property name="Sheetfile" value="08_Grayscale_Cameras.kicad_sch"/>
-      <property name="ki_keywords" value="R res resistor"/>
-      <property name="ki_fp_filters" value="R_*"/>
-      <sheetpath names="/灰度与 MaixCAM2 识别/" tstamps="/d6318ee1-12d4-5089-84c2-bb1addcd6fe6/"/>
-      <tstamps>0ad72d43-0ccd-52a4-aa19-5a52c8ef8f5f</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="R71">
-      <value>15k / 0.1%</value>
-      <footprint>Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</footprint>
-      <fields>
-        <field name="Tolerance">0.1%</field>
-        <field name="Footprint">Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Motor" part="Device__R" description="Resistor"/>
-      <property name="Tolerance" value="0.1%"/>
-      <property name="Sheetname" value="灰度与 MaixCAM2 识别"/>
-      <property name="Sheetfile" value="08_Grayscale_Cameras.kicad_sch"/>
-      <property name="ki_keywords" value="R res resistor"/>
-      <property name="ki_fp_filters" value="R_*"/>
-      <sheetpath names="/灰度与 MaixCAM2 识别/" tstamps="/d6318ee1-12d4-5089-84c2-bb1addcd6fe6/"/>
-      <tstamps>ffbc5f90-68db-5307-9ae7-4ee35bdcbdec</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
     <comp ref="R72">
       <value>95.3k / 1%</value>
       <footprint>Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</footprint>
@@ -3735,114 +3461,18 @@
         </unit>
       </units>
     </comp>
-    <comp ref="R76">
-      <value>10k</value>
-      <footprint>Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</footprint>
-      <fields>
-        <field name="Footprint">Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Motor" part="Device__R" description="Resistor"/>
-      <property name="Sheetname" value="灰度与 MaixCAM2 识别"/>
-      <property name="Sheetfile" value="08_Grayscale_Cameras.kicad_sch"/>
-      <property name="ki_keywords" value="R res resistor"/>
-      <property name="ki_fp_filters" value="R_*"/>
-      <sheetpath names="/灰度与 MaixCAM2 识别/" tstamps="/d6318ee1-12d4-5089-84c2-bb1addcd6fe6/"/>
-      <tstamps>32304293-40c9-5ea9-9f04-a175c3e46ac8</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="R77">
-      <value>100k</value>
-      <footprint>Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</footprint>
-      <fields>
-        <field name="Footprint">Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Motor" part="Device__R" description="Resistor"/>
-      <property name="Sheetname" value="灰度与 MaixCAM2 识别"/>
-      <property name="Sheetfile" value="08_Grayscale_Cameras.kicad_sch"/>
-      <property name="ki_keywords" value="R res resistor"/>
-      <property name="ki_fp_filters" value="R_*"/>
-      <sheetpath names="/灰度与 MaixCAM2 识别/" tstamps="/d6318ee1-12d4-5089-84c2-bb1addcd6fe6/"/>
-      <tstamps>ed16eff2-20c3-5a5f-8b6f-50fa9e1fb5fe</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="R78">
-      <value>100k</value>
-      <footprint>Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</footprint>
-      <fields>
-        <field name="Footprint">Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Motor" part="Device__R" description="Resistor"/>
-      <property name="Sheetname" value="灰度与 MaixCAM2 识别"/>
-      <property name="Sheetfile" value="08_Grayscale_Cameras.kicad_sch"/>
-      <property name="ki_keywords" value="R res resistor"/>
-      <property name="ki_fp_filters" value="R_*"/>
-      <sheetpath names="/灰度与 MaixCAM2 识别/" tstamps="/d6318ee1-12d4-5089-84c2-bb1addcd6fe6/"/>
-      <tstamps>bb94c350-a474-51e9-a5a6-d52a7834f229</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="R80">
-      <value>100k</value>
-      <footprint>Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</footprint>
-      <fields>
-        <field name="Footprint">Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Motor" part="Device__R" description="Resistor"/>
-      <property name="Sheetname" value="灰度与 MaixCAM2 识别"/>
-      <property name="Sheetfile" value="08_Grayscale_Cameras.kicad_sch"/>
-      <property name="ki_keywords" value="R res resistor"/>
-      <property name="ki_fp_filters" value="R_*"/>
-      <sheetpath names="/灰度与 MaixCAM2 识别/" tstamps="/d6318ee1-12d4-5089-84c2-bb1addcd6fe6/"/>
-      <tstamps>3761fa13-34b6-5853-9dab-9818c646c135</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
     <comp ref="U10">
       <value>SGM2531CXPS8G/TR</value>
       <footprint>Motor:SGM_PS8_SOIC8_EP2.33x3.22_HandSolder</footprint>
       <datasheet>https://www.sg-micro.com/rect/assets/300dbe1c-22ce-4aa8-9a2a-98b968b29eb2/SGM2531C.pdf</datasheet>
-      <description>SOIC-8 EP过压、欠压、限流和软启动；U14/Q5提供低压降防反灌；2.23A仅为限流公式典型值</description>
+      <description>SOIC-8 EP单芯片限流/短路保护；ENUV接VIN，OVP接GND，SS浮空；R72典型约1A；不含独立防反灌</description>
       <fields>
         <field name="MPN">SGM2531CXPS8G/TR</field>
         <field name="Footprint">Motor:SGM_PS8_SOIC8_EP2.33x3.22_HandSolder</field>
         <field name="Datasheet">https://www.sg-micro.com/rect/assets/300dbe1c-22ce-4aa8-9a2a-98b968b29eb2/SGM2531C.pdf</field>
-        <field name="Description">SOIC-8 EP过压、欠压、限流和软启动；U14/Q5提供低压降防反灌；2.23A仅为限流公式典型值</field>
+        <field name="Description">SOIC-8 EP单芯片限流/短路保护；ENUV接VIN，OVP接GND，SS浮空；R72典型约1A；不含独立防反灌</field>
       </fields>
-      <libsource lib="Motor" part="SGM2531C_PS8" description=""/>
+      <libsource lib="Motor" part="SGM2531C_PS8" description="SOIC-8 EP过压、欠压、限流和软启动；U14/Q5提供低压降防反灌；2.23A仅为限流公式典型值"/>
       <property name="MPN" value="SGM2531CXPS8G/TR"/>
       <property name="Sheetname" value="灰度与 MaixCAM2 识别"/>
       <property name="Sheetfile" value="08_Grayscale_Cameras.kicad_sch"/>
@@ -3856,70 +3486,10 @@
             <pin num="8"/>
             <pin num="6"/>
             <pin num="2"/>
-            <pin num="5"/>
-            <pin num="7"/>
             <pin num="1"/>
             <pin num="9"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="U13">
-      <value>SN74LVC2G125DCTR</value>
-      <footprint>Motor:Package_SO__SSOP-8_2.95x2.8mm_P0.65mm</footprint>
-      <datasheet>https://www.ti.com/lit/ds/symlink/sn74lvc2g125.pdf</datasheet>
-      <fields>
-        <field name="MPN">SN74LVC2G125DCTR</field>
-        <field name="Footprint">Motor:Package_SO__SSOP-8_2.95x2.8mm_P0.65mm</field>
-        <field name="Datasheet">https://www.ti.com/lit/ds/symlink/sn74lvc2g125.pdf</field>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Motor" part="SN74LVC2G125_DCT" description=""/>
-      <property name="MPN" value="SN74LVC2G125DCTR"/>
-      <property name="Sheetname" value="灰度与 MaixCAM2 识别"/>
-      <property name="Sheetfile" value="08_Grayscale_Cameras.kicad_sch"/>
-      <sheetpath names="/灰度与 MaixCAM2 识别/" tstamps="/d6318ee1-12d4-5089-84c2-bb1addcd6fe6/"/>
-      <tstamps>2a4bc707-d0ba-544c-bab5-79952e0eefb2</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="2"/>
-            <pin num="3"/>
-            <pin num="1"/>
+            <pin num="5"/>
             <pin num="7"/>
-            <pin num="8"/>
-            <pin num="4"/>
-            <pin num="6"/>
-            <pin num="5"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="U14">
-      <value>LTC4412ES6#TRMPBF</value>
-      <footprint>Motor:Package_TO_SOT_SMD__TSOT-23-6</footprint>
-      <datasheet>https://www.analog.com/media/en/technical-documentation/data-sheets/4412fb.pdf</datasheet>
-      <fields>
-        <field name="MPN">LTC4412ES6#TRMPBF</field>
-        <field name="Footprint">Motor:Package_TO_SOT_SMD__TSOT-23-6</field>
-        <field name="Datasheet">https://www.analog.com/media/en/technical-documentation/data-sheets/4412fb.pdf</field>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Motor" part="LTC4412_TSOT6" description=""/>
-      <property name="MPN" value="LTC4412ES6#TRMPBF"/>
-      <property name="Sheetname" value="灰度与 MaixCAM2 识别"/>
-      <property name="Sheetfile" value="08_Grayscale_Cameras.kicad_sch"/>
-      <sheetpath names="/灰度与 MaixCAM2 识别/" tstamps="/d6318ee1-12d4-5089-84c2-bb1addcd6fe6/"/>
-      <tstamps>119a2da0-6fbb-5c21-a720-100bc2166f9a</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="3"/>
-            <pin num="5"/>
-            <pin num="2"/>
-            <pin num="6"/>
-            <pin num="4"/>
           </pins>
         </unit>
       </units>
@@ -4178,84 +3748,6 @@
         </unit>
       </units>
     </comp>
-    <comp ref="C80">
-      <value>100nF/50V</value>
-      <footprint>Motor:C_0603_1608Metric_Gap0.85mm_HandSolder</footprint>
-      <fields>
-        <field name="Footprint">Motor:C_0603_1608Metric_Gap0.85mm_HandSolder</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Motor" part="Device__C" description="Unpolarized capacitor"/>
-      <property name="Sheetname" value="四脚蓝牙与外接步进驱动接口"/>
-      <property name="Sheetfile" value="09_Bluetooth_Stepper.kicad_sch"/>
-      <property name="ki_keywords" value="cap capacitor"/>
-      <property name="ki_fp_filters" value="C_*"/>
-      <sheetpath names="/四脚蓝牙与外接步进驱动接口/" tstamps="/6805c229-363d-5720-8872-3a09dea05270/"/>
-      <tstamps>1bfde133-9b68-5a86-b939-bdee0aeaf8d1</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="D5">
-      <value>12V</value>
-      <footprint>Motor:Diode_SMD__D_SOD-123</footprint>
-      <datasheet>https://assets.nexperia.com/documents/data-sheet/BZT52_SER.pdf</datasheet>
-      <fields>
-        <field name="MPN">BZT52-C12,115</field>
-        <field name="Footprint">Motor:Diode_SMD__D_SOD-123</field>
-        <field name="Datasheet">https://assets.nexperia.com/documents/data-sheet/BZT52_SER.pdf</field>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Motor" part="BZT52_C12_SOD123" description="Zener diode"/>
-      <property name="MPN" value="BZT52-C12,115"/>
-      <property name="Sheetname" value="四脚蓝牙与外接步进驱动接口"/>
-      <property name="Sheetfile" value="09_Bluetooth_Stepper.kicad_sch"/>
-      <property name="ki_keywords" value="diode"/>
-      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
-      <sheetpath names="/四脚蓝牙与外接步进驱动接口/" tstamps="/6805c229-363d-5720-8872-3a09dea05270/"/>
-      <tstamps>c39e96c6-f6e5-572a-a06b-e3b2a70c3217</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="F2">
-      <value>4A / 125V 延时</value>
-      <footprint>Motor:Fuse_NANO2_454_6.10x2.69mm</footprint>
-      <datasheet>https://www.littelfuse.com/assetdocs/fuse-452-and-454-datasheet?assetguid=8c87aa93-80a7-4ea8-8749-a19ba03901c2</datasheet>
-      <fields>
-        <field name="MPN">0454004.MR</field>
-        <field name="Footprint">Motor:Fuse_NANO2_454_6.10x2.69mm</field>
-        <field name="Datasheet">https://www.littelfuse.com/assetdocs/fuse-452-and-454-datasheet?assetguid=8c87aa93-80a7-4ea8-8749-a19ba03901c2</field>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Motor" part="Device__Fuse" description="Fuse"/>
-      <property name="MPN" value="0454004.MR"/>
-      <property name="Sheetname" value="四脚蓝牙与外接步进驱动接口"/>
-      <property name="Sheetfile" value="09_Bluetooth_Stepper.kicad_sch"/>
-      <property name="ki_keywords" value="fuse"/>
-      <property name="ki_fp_filters" value="*Fuse*"/>
-      <sheetpath names="/四脚蓝牙与外接步进驱动接口/" tstamps="/6805c229-363d-5720-8872-3a09dea05270/"/>
-      <tstamps>66e47898-1bbd-5de4-9354-8c18d0f0530d</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
     <comp ref="J15">
       <value>HC-08_四脚接口</value>
       <footprint>Motor:Connector_PinSocket_2.54mm__PinSocket_1x04_P2.54mm_Vertical</footprint>
@@ -4305,383 +3797,6 @@
             <pin num="6"/>
             <pin num="7"/>
             <pin num="8"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="Q6">
-      <value>DMP3007LK3-13</value>
-      <footprint>Motor:Package_TO_SOT_SMD__TO-252-2</footprint>
-      <datasheet>https://www.diodes.com/datasheet/download/DMP3007LK3.pdf</datasheet>
-      <fields>
-        <field name="MPN">DMP3007LK3-13</field>
-        <field name="Footprint">Motor:Package_TO_SOT_SMD__TO-252-2</field>
-        <field name="Datasheet">https://www.diodes.com/datasheet/download/DMP3007LK3.pdf</field>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Motor" part="DMP3007_Horizontal_DS" description=""/>
-      <property name="MPN" value="DMP3007LK3-13"/>
-      <property name="Sheetname" value="四脚蓝牙与外接步进驱动接口"/>
-      <property name="Sheetfile" value="09_Bluetooth_Stepper.kicad_sch"/>
-      <sheetpath names="/四脚蓝牙与外接步进驱动接口/" tstamps="/6805c229-363d-5720-8872-3a09dea05270/"/>
-      <tstamps>d084044a-b702-59a5-bb4e-171cfc121afe</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="2"/>
-            <pin num="1"/>
-            <pin num="3"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="Q7">
-      <value>DMP3007LK3-13</value>
-      <footprint>Motor:Package_TO_SOT_SMD__TO-252-2</footprint>
-      <datasheet>https://www.diodes.com/datasheet/download/DMP3007LK3.pdf</datasheet>
-      <fields>
-        <field name="MPN">DMP3007LK3-13</field>
-        <field name="Footprint">Motor:Package_TO_SOT_SMD__TO-252-2</field>
-        <field name="Datasheet">https://www.diodes.com/datasheet/download/DMP3007LK3.pdf</field>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Motor" part="DMP3007_Horizontal_SD" description=""/>
-      <property name="MPN" value="DMP3007LK3-13"/>
-      <property name="Sheetname" value="四脚蓝牙与外接步进驱动接口"/>
-      <property name="Sheetfile" value="09_Bluetooth_Stepper.kicad_sch"/>
-      <sheetpath names="/四脚蓝牙与外接步进驱动接口/" tstamps="/6805c229-363d-5720-8872-3a09dea05270/"/>
-      <tstamps>d17bedf7-c654-5e7b-8364-b05dcdbe5048</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="3"/>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="Q8">
-      <value>MMBT3904</value>
-      <footprint>Motor:Package_TO_SOT_SMD__SOT-23</footprint>
-      <datasheet>https://www.diodes.com/datasheet/download/MMBT3904.pdf</datasheet>
-      <fields>
-        <field name="MPN">MMBT3904-7-F</field>
-        <field name="Footprint">Motor:Package_TO_SOT_SMD__SOT-23</field>
-        <field name="Datasheet">https://www.diodes.com/datasheet/download/MMBT3904.pdf</field>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Motor" part="Transistor_BJT__MMBT3904" description="0.2A Ic, 40V Vce, Small Signal NPN Transistor, SOT-23"/>
-      <property name="MPN" value="MMBT3904-7-F"/>
-      <property name="Sheetname" value="四脚蓝牙与外接步进驱动接口"/>
-      <property name="Sheetfile" value="09_Bluetooth_Stepper.kicad_sch"/>
-      <property name="ki_keywords" value="NPN Transistor"/>
-      <property name="ki_fp_filters" value="SOT?23*"/>
-      <sheetpath names="/四脚蓝牙与外接步进驱动接口/" tstamps="/6805c229-363d-5720-8872-3a09dea05270/"/>
-      <tstamps>3a58f50c-f48f-55ac-a501-379410dd4682</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="3"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="Q9">
-      <value>BSS138BK</value>
-      <footprint>Motor:Package_TO_SOT_SMD__SOT-23</footprint>
-      <datasheet>https://assets.nexperia.com/documents/data-sheet/BSS138BK.pdf</datasheet>
-      <fields>
-        <field name="MPN">BSS138BK,215</field>
-        <field name="Footprint">Motor:Package_TO_SOT_SMD__SOT-23</field>
-        <field name="Datasheet">https://assets.nexperia.com/documents/data-sheet/BSS138BK.pdf</field>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Motor" part="BSS138BK_SOT23" description=""/>
-      <property name="MPN" value="BSS138BK,215"/>
-      <property name="Sheetname" value="四脚蓝牙与外接步进驱动接口"/>
-      <property name="Sheetfile" value="09_Bluetooth_Stepper.kicad_sch"/>
-      <sheetpath names="/四脚蓝牙与外接步进驱动接口/" tstamps="/6805c229-363d-5720-8872-3a09dea05270/"/>
-      <tstamps>215a0885-0b6a-5401-b07c-0ea6dc3e29a8</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="3"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="R81">
-      <value>100k</value>
-      <footprint>Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</footprint>
-      <fields>
-        <field name="Footprint">Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Motor" part="Device__R" description="Resistor"/>
-      <property name="Sheetname" value="四脚蓝牙与外接步进驱动接口"/>
-      <property name="Sheetfile" value="09_Bluetooth_Stepper.kicad_sch"/>
-      <property name="ki_keywords" value="R res resistor"/>
-      <property name="ki_fp_filters" value="R_*"/>
-      <sheetpath names="/四脚蓝牙与外接步进驱动接口/" tstamps="/6805c229-363d-5720-8872-3a09dea05270/"/>
-      <tstamps>469eae1a-f17c-5691-b626-b9f9e286ce3d</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="R82">
-      <value>4.7k</value>
-      <footprint>Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</footprint>
-      <fields>
-        <field name="Footprint">Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Motor" part="Device__R" description="Resistor"/>
-      <property name="Sheetname" value="四脚蓝牙与外接步进驱动接口"/>
-      <property name="Sheetfile" value="09_Bluetooth_Stepper.kicad_sch"/>
-      <property name="ki_keywords" value="R res resistor"/>
-      <property name="ki_fp_filters" value="R_*"/>
-      <sheetpath names="/四脚蓝牙与外接步进驱动接口/" tstamps="/6805c229-363d-5720-8872-3a09dea05270/"/>
-      <tstamps>7da36d78-7224-5447-8150-2e3ac31e8e4c</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="R83">
-      <value>10k</value>
-      <footprint>Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</footprint>
-      <fields>
-        <field name="Footprint">Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Motor" part="Device__R" description="Resistor"/>
-      <property name="Sheetname" value="四脚蓝牙与外接步进驱动接口"/>
-      <property name="Sheetfile" value="09_Bluetooth_Stepper.kicad_sch"/>
-      <property name="ki_keywords" value="R res resistor"/>
-      <property name="ki_fp_filters" value="R_*"/>
-      <sheetpath names="/四脚蓝牙与外接步进驱动接口/" tstamps="/6805c229-363d-5720-8872-3a09dea05270/"/>
-      <tstamps>b9ca9804-a562-5dca-907b-d18c7b290352</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="R84">
-      <value>100k</value>
-      <footprint>Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</footprint>
-      <fields>
-        <field name="Footprint">Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Motor" part="Device__R" description="Resistor"/>
-      <property name="Sheetname" value="四脚蓝牙与外接步进驱动接口"/>
-      <property name="Sheetfile" value="09_Bluetooth_Stepper.kicad_sch"/>
-      <property name="ki_keywords" value="R res resistor"/>
-      <property name="ki_fp_filters" value="R_*"/>
-      <sheetpath names="/四脚蓝牙与外接步进驱动接口/" tstamps="/6805c229-363d-5720-8872-3a09dea05270/"/>
-      <tstamps>dafc1267-4e5f-5a86-aa22-d0d63962f29a</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="R85">
-      <value>10k</value>
-      <footprint>Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</footprint>
-      <fields>
-        <field name="Footprint">Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Motor" part="Device__R" description="Resistor"/>
-      <property name="Sheetname" value="四脚蓝牙与外接步进驱动接口"/>
-      <property name="Sheetfile" value="09_Bluetooth_Stepper.kicad_sch"/>
-      <property name="ki_keywords" value="R res resistor"/>
-      <property name="ki_fp_filters" value="R_*"/>
-      <sheetpath names="/四脚蓝牙与外接步进驱动接口/" tstamps="/6805c229-363d-5720-8872-3a09dea05270/"/>
-      <tstamps>17d67472-6004-5324-9c3a-5bc18fc6e12a</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="R86">
-      <value>100k</value>
-      <footprint>Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</footprint>
-      <fields>
-        <field name="Footprint">Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Motor" part="Device__R" description="Resistor"/>
-      <property name="Sheetname" value="四脚蓝牙与外接步进驱动接口"/>
-      <property name="Sheetfile" value="09_Bluetooth_Stepper.kicad_sch"/>
-      <property name="ki_keywords" value="R res resistor"/>
-      <property name="ki_fp_filters" value="R_*"/>
-      <sheetpath names="/四脚蓝牙与外接步进驱动接口/" tstamps="/6805c229-363d-5720-8872-3a09dea05270/"/>
-      <tstamps>02779fa8-ae6c-5d42-baf9-3352ff94b4ac</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="R87">
-      <value>100k</value>
-      <footprint>Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</footprint>
-      <fields>
-        <field name="Footprint">Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Motor" part="Device__R" description="Resistor"/>
-      <property name="Sheetname" value="四脚蓝牙与外接步进驱动接口"/>
-      <property name="Sheetfile" value="09_Bluetooth_Stepper.kicad_sch"/>
-      <property name="ki_keywords" value="R res resistor"/>
-      <property name="ki_fp_filters" value="R_*"/>
-      <sheetpath names="/四脚蓝牙与外接步进驱动接口/" tstamps="/6805c229-363d-5720-8872-3a09dea05270/"/>
-      <tstamps>7539fa4e-af84-52ce-8b7b-06e72f50132f</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="R88">
-      <value>100k</value>
-      <footprint>Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</footprint>
-      <fields>
-        <field name="Footprint">Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Motor" part="Device__R" description="Resistor"/>
-      <property name="Sheetname" value="四脚蓝牙与外接步进驱动接口"/>
-      <property name="Sheetfile" value="09_Bluetooth_Stepper.kicad_sch"/>
-      <property name="ki_keywords" value="R res resistor"/>
-      <property name="ki_fp_filters" value="R_*"/>
-      <sheetpath names="/四脚蓝牙与外接步进驱动接口/" tstamps="/6805c229-363d-5720-8872-3a09dea05270/"/>
-      <tstamps>1275c5b2-db54-5854-8ce4-3c003c50bdb0</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="R89">
-      <value>100k</value>
-      <footprint>Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</footprint>
-      <fields>
-        <field name="Footprint">Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Motor" part="Device__R" description="Resistor"/>
-      <property name="Sheetname" value="四脚蓝牙与外接步进驱动接口"/>
-      <property name="Sheetfile" value="09_Bluetooth_Stepper.kicad_sch"/>
-      <property name="ki_keywords" value="R res resistor"/>
-      <property name="ki_fp_filters" value="R_*"/>
-      <sheetpath names="/四脚蓝牙与外接步进驱动接口/" tstamps="/6805c229-363d-5720-8872-3a09dea05270/"/>
-      <tstamps>0ad91ddb-b2dd-579c-b11e-e8ed02bede4f</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="R90">
-      <value>100k</value>
-      <footprint>Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</footprint>
-      <fields>
-        <field name="Footprint">Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Motor" part="Device__R" description="Resistor"/>
-      <property name="Sheetname" value="四脚蓝牙与外接步进驱动接口"/>
-      <property name="Sheetfile" value="09_Bluetooth_Stepper.kicad_sch"/>
-      <property name="ki_keywords" value="R res resistor"/>
-      <property name="ki_fp_filters" value="R_*"/>
-      <sheetpath names="/四脚蓝牙与外接步进驱动接口/" tstamps="/6805c229-363d-5720-8872-3a09dea05270/"/>
-      <tstamps>615a9f02-9df6-50dc-80cb-2604c009b138</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="U15">
-      <value>SN74LVC2G125DCTR</value>
-      <footprint>Motor:Package_SO__SSOP-8_2.95x2.8mm_P0.65mm</footprint>
-      <datasheet>https://www.ti.com/lit/ds/symlink/sn74lvc2g125.pdf</datasheet>
-      <fields>
-        <field name="MPN">SN74LVC2G125DCTR</field>
-        <field name="Footprint">Motor:Package_SO__SSOP-8_2.95x2.8mm_P0.65mm</field>
-        <field name="Datasheet">https://www.ti.com/lit/ds/symlink/sn74lvc2g125.pdf</field>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Motor" part="SN74LVC2G125_DCT" description=""/>
-      <property name="MPN" value="SN74LVC2G125DCTR"/>
-      <property name="Sheetname" value="四脚蓝牙与外接步进驱动接口"/>
-      <property name="Sheetfile" value="09_Bluetooth_Stepper.kicad_sch"/>
-      <sheetpath names="/四脚蓝牙与外接步进驱动接口/" tstamps="/6805c229-363d-5720-8872-3a09dea05270/"/>
-      <tstamps>e67b0943-cbb5-5007-9e04-530ee9cb6214</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="2"/>
-            <pin num="3"/>
-            <pin num="1"/>
-            <pin num="7"/>
-            <pin num="8"/>
-            <pin num="4"/>
-            <pin num="6"/>
-            <pin num="5"/>
           </pins>
         </unit>
       </units>
@@ -4937,40 +4052,6 @@
         </unit>
       </units>
     </comp>
-    <comp ref="Q3">
-      <value>BSS138BK</value>
-      <footprint>Motor:Package_TO_SOT_SMD__SOT-23</footprint>
-      <datasheet>https://assets.nexperia.com/documents/data-sheet/BSS138BK.pdf</datasheet>
-      <fields>
-        <field name="MPN">BSS138BK,215</field>
-        <field name="LCSC">C282529</field>
-        <field name="Purchase_URL">https://item.szlcsc.com/268469.html</field>
-        <field name="Stock_Checked">2026-11-07</field>
-        <field name="Procurement_Status">domestic in-stock snapshot; prototype draft</field>
-        <field name="Footprint">Motor:Package_TO_SOT_SMD__SOT-23</field>
-        <field name="Datasheet">https://assets.nexperia.com/documents/data-sheet/BSS138BK.pdf</field>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Motor" part="BSS138BK_SOT23" description=""/>
-      <property name="MPN" value="BSS138BK,215"/>
-      <property name="LCSC" value="C282529"/>
-      <property name="Purchase_URL" value="https://item.szlcsc.com/268469.html"/>
-      <property name="Stock_Checked" value="2026-11-07"/>
-      <property name="Procurement_Status" value="domestic in-stock snapshot; prototype draft"/>
-      <property name="Sheetname" value="荔枝派 4A：Type-C 与 UART1"/>
-      <property name="Sheetfile" value="10_Lichee_Interface.kicad_sch"/>
-      <sheetpath names="/荔枝派 4A：Type-C 与 UART1/" tstamps="/185fc758-680e-5cca-9205-ee46946e4fad/"/>
-      <tstamps>d8ef3938-10a3-582e-874a-9fa00f2c7654</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="3"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
     <comp ref="R73">
       <value>100k</value>
       <footprint>Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</footprint>
@@ -4996,74 +4077,6 @@
       <property name="ki_fp_filters" value="R_*"/>
       <sheetpath names="/荔枝派 4A：Type-C 与 UART1/" tstamps="/185fc758-680e-5cca-9205-ee46946e4fad/"/>
       <tstamps>0a853182-6526-5825-aa11-ad7d3544b1a4</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="R74">
-      <value>10k</value>
-      <footprint>Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</footprint>
-      <fields>
-        <field name="MPN">0603WAF1002T5E</field>
-        <field name="LCSC">C25804</field>
-        <field name="Purchase_URL">https://item.szlcsc.com/26547.html</field>
-        <field name="Stock_Checked">2026-11-07</field>
-        <field name="Procurement_Status">domestic in-stock snapshot; prototype draft</field>
-        <field name="Footprint">Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Motor" part="Device__R" description="Resistor"/>
-      <property name="MPN" value="0603WAF1002T5E"/>
-      <property name="LCSC" value="C25804"/>
-      <property name="Purchase_URL" value="https://item.szlcsc.com/26547.html"/>
-      <property name="Stock_Checked" value="2026-11-07"/>
-      <property name="Procurement_Status" value="domestic in-stock snapshot; prototype draft"/>
-      <property name="Sheetname" value="荔枝派 4A：Type-C 与 UART1"/>
-      <property name="Sheetfile" value="10_Lichee_Interface.kicad_sch"/>
-      <property name="ki_keywords" value="R res resistor"/>
-      <property name="ki_fp_filters" value="R_*"/>
-      <sheetpath names="/荔枝派 4A：Type-C 与 UART1/" tstamps="/185fc758-680e-5cca-9205-ee46946e4fad/"/>
-      <tstamps>d8e5c267-5eb3-501b-b560-1281c668f1cc</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="R75">
-      <value>100k</value>
-      <footprint>Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</footprint>
-      <fields>
-        <field name="MPN">0603WAF1003T5E</field>
-        <field name="LCSC">C25803</field>
-        <field name="Purchase_URL">https://item.szlcsc.com/26546.html</field>
-        <field name="Stock_Checked">2026-11-07</field>
-        <field name="Procurement_Status">domestic in-stock snapshot; prototype draft</field>
-        <field name="Footprint">Motor:R_0603_1608Metric_Gap0.85mm_HandSolder</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Motor" part="Device__R" description="Resistor"/>
-      <property name="MPN" value="0603WAF1003T5E"/>
-      <property name="LCSC" value="C25803"/>
-      <property name="Purchase_URL" value="https://item.szlcsc.com/26546.html"/>
-      <property name="Stock_Checked" value="2026-11-07"/>
-      <property name="Procurement_Status" value="domestic in-stock snapshot; prototype draft"/>
-      <property name="Sheetname" value="荔枝派 4A：Type-C 与 UART1"/>
-      <property name="Sheetfile" value="10_Lichee_Interface.kicad_sch"/>
-      <property name="ki_keywords" value="R res resistor"/>
-      <property name="ki_fp_filters" value="R_*"/>
-      <sheetpath names="/荔枝派 4A：Type-C 与 UART1/" tstamps="/185fc758-680e-5cca-9205-ee46946e4fad/"/>
-      <tstamps>92500a91-4875-51c9-a8ad-890e01a185d9</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -5288,42 +4301,6 @@
         <pin num="9" name="EP_GND" type="power_in"/>
       </pins>
     </libpart>
-    <libpart lib="Motor" part="BSS138BK_SOT23">
-      <docs>https://assets.nexperia.com/documents/data-sheet/BSS138BK.pdf</docs>
-      <fields>
-        <field name="Reference">Q</field>
-        <field name="Value">BSS138BK</field>
-        <field name="Footprint">Motor:Package_TO_SOT_SMD__SOT-23</field>
-        <field name="Datasheet">https://assets.nexperia.com/documents/data-sheet/BSS138BK.pdf</field>
-        <field name="Description"/>
-      </fields>
-      <pins>
-        <pin num="1" name="G" type="input"/>
-        <pin num="2" name="S" type="passive"/>
-        <pin num="3" name="D" type="passive"/>
-      </pins>
-    </libpart>
-    <libpart lib="Motor" part="BZT52_C12_SOD123">
-      <description>Zener diode</description>
-      <docs>https://assets.nexperia.com/documents/data-sheet/BZT52_SER.pdf</docs>
-      <footprints>
-        <fp>TO-???*</fp>
-        <fp>*_Diode_*</fp>
-        <fp>*SingleDiode*</fp>
-        <fp>D_*</fp>
-      </footprints>
-      <fields>
-        <field name="Reference">D</field>
-        <field name="Value">BZT52-C12</field>
-        <field name="Footprint">Motor:Diode_SMD__D_SOD-123</field>
-        <field name="Datasheet">https://assets.nexperia.com/documents/data-sheet/BZT52_SER.pdf</field>
-        <field name="Description">Zener diode</field>
-      </fields>
-      <pins>
-        <pin num="1" name="K" type="passive"/>
-        <pin num="2" name="A" type="passive"/>
-      </pins>
-    </libpart>
     <libpart lib="Motor" part="Connector_Generic__Conn_01x02">
       <description>Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
       <footprints>
@@ -5496,36 +4473,6 @@
         <field name="Footprint">Motor:Package_TO_SOT_SMD__TO-252-2</field>
         <field name="Datasheet">https://www.diodes.com/datasheet/download/DMP3007LK3.pdf</field>
         <field name="Description">P-MOSFET transistor, gate/source/drain</field>
-      </fields>
-      <pins>
-        <pin num="1" name="G" type="input"/>
-        <pin num="2" name="D" type="passive"/>
-        <pin num="3" name="S" type="passive"/>
-      </pins>
-    </libpart>
-    <libpart lib="Motor" part="DMP3007_Horizontal_DS">
-      <docs>https://www.diodes.com/datasheet/download/DMP3007LK3.pdf</docs>
-      <fields>
-        <field name="Reference">Q</field>
-        <field name="Value">DMP3007LK3-13</field>
-        <field name="Footprint">Motor:Package_TO_SOT_SMD__TO-252-2</field>
-        <field name="Datasheet">https://www.diodes.com/datasheet/download/DMP3007LK3.pdf</field>
-        <field name="Description"/>
-      </fields>
-      <pins>
-        <pin num="1" name="G" type="input"/>
-        <pin num="2" name="D" type="passive"/>
-        <pin num="3" name="S" type="passive"/>
-      </pins>
-    </libpart>
-    <libpart lib="Motor" part="DMP3007_Horizontal_SD">
-      <docs>https://www.diodes.com/datasheet/download/DMP3007LK3.pdf</docs>
-      <fields>
-        <field name="Reference">Q</field>
-        <field name="Value">DMP3007LK3-13</field>
-        <field name="Footprint">Motor:Package_TO_SOT_SMD__TO-252-2</field>
-        <field name="Datasheet">https://www.diodes.com/datasheet/download/DMP3007LK3.pdf</field>
-        <field name="Description"/>
       </fields>
       <pins>
         <pin num="1" name="G" type="input"/>
@@ -5729,24 +4676,6 @@
         <pin num="SH" name="SHIELD" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="Motor" part="LTC4412_TSOT6">
-      <docs>https://www.analog.com/media/en/technical-documentation/data-sheets/4412fb.pdf</docs>
-      <fields>
-        <field name="Reference">U</field>
-        <field name="Value">LTC4412ES6#TRMPBF</field>
-        <field name="Footprint">Motor:Package_TO_SOT_SMD__TSOT-23-6</field>
-        <field name="Datasheet">https://www.analog.com/media/en/technical-documentation/data-sheets/4412fb.pdf</field>
-        <field name="Description"/>
-      </fields>
-      <pins>
-        <pin num="1" name="VIN" type="power_in"/>
-        <pin num="2" name="GND" type="power_in"/>
-        <pin num="3" name="CTL" type="input"/>
-        <pin num="4" name="STAT" type="open_collector"/>
-        <pin num="5" name="GATE" type="output"/>
-        <pin num="6" name="SENSE" type="input"/>
-      </pins>
-    </libpart>
     <libpart lib="Motor" part="LicheePi4A_2x06_UART1">
       <docs>https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/6_peripheral.html</docs>
       <fields>
@@ -5928,13 +4857,15 @@
       </pins>
     </libpart>
     <libpart lib="Motor" part="SGM2531C_PS8">
+      <description>SOIC-8 EP过压、欠压、限流和软启动；U14/Q5提供低压降防反灌；2.23A仅为限流公式典型值</description>
       <docs>https://www.sg-micro.com/rect/assets/300dbe1c-22ce-4aa8-9a2a-98b968b29eb2/SGM2531C.pdf</docs>
       <fields>
-        <field name="Reference">U</field>
+        <field name="Reference">U10</field>
         <field name="Value">SGM2531CXPS8G/TR</field>
         <field name="Footprint">Motor:SGM_PS8_SOIC8_EP2.33x3.22_HandSolder</field>
         <field name="Datasheet">https://www.sg-micro.com/rect/assets/300dbe1c-22ce-4aa8-9a2a-98b968b29eb2/SGM2531C.pdf</field>
-        <field name="Description"/>
+        <field name="Description">SOIC-8 EP过压、欠压、限流和软启动；U14/Q5提供低压降防反灌；2.23A仅为限流公式典型值</field>
+        <field name="MPN">SGM2531CXPS8G/TR</field>
       </fields>
       <pins>
         <pin num="1" name="GND" type="power_in"/>
@@ -5951,11 +4882,16 @@
     <libpart lib="Motor" part="SN74LV1T125_DBV_M28_RX">
       <docs>https://www.ti.com/lit/ds/symlink/sn74lv1t125.pdf</docs>
       <fields>
-        <field name="Reference">U</field>
+        <field name="Reference">U11</field>
         <field name="Value">SN74LV1T125DBVR</field>
         <field name="Footprint">Motor:Package_TO_SOT_SMD__SOT-23-5</field>
         <field name="Datasheet">https://www.ti.com/lit/ds/symlink/sn74lv1t125.pdf</field>
         <field name="Description"/>
+        <field name="MPN">SN74LV1T125DBVR</field>
+        <field name="LCSC">C473338</field>
+        <field name="Purchase_URL">https://item.szlcsc.com/480066.html</field>
+        <field name="Stock_Checked">2026-11-07</field>
+        <field name="Procurement_Status">domestic in-stock snapshot; prototype draft</field>
       </fields>
       <pins>
         <pin num="1" name="nOE" type="input"/>
@@ -5968,11 +4904,16 @@
     <libpart lib="Motor" part="SN74LVC1G125_DBV_M28">
       <docs>https://www.ti.com/lit/ds/symlink/sn74lvc1g125.pdf</docs>
       <fields>
-        <field name="Reference">U</field>
+        <field name="Reference">U12</field>
         <field name="Value">SN74LVC1G125DBVR</field>
         <field name="Footprint">Motor:Package_TO_SOT_SMD__SOT-23-5</field>
         <field name="Datasheet">https://www.ti.com/lit/ds/symlink/sn74lvc1g125.pdf</field>
         <field name="Description"/>
+        <field name="MPN">SN74LVC1G125DBVR</field>
+        <field name="LCSC">C23654</field>
+        <field name="Purchase_URL">https://item.szlcsc.com/24390.html</field>
+        <field name="Stock_Checked">2026-11-07</field>
+        <field name="Procurement_Status">domestic in-stock snapshot; prototype draft</field>
       </fields>
       <pins>
         <pin num="1" name="nOE" type="input"/>
@@ -5980,26 +4921,6 @@
         <pin num="3" name="GND" type="power_in"/>
         <pin num="4" name="Y" type="tri_state"/>
         <pin num="5" name="VCC" type="power_in"/>
-      </pins>
-    </libpart>
-    <libpart lib="Motor" part="SN74LVC2G125_DCT">
-      <docs>https://www.ti.com/lit/ds/symlink/sn74lvc2g125.pdf</docs>
-      <fields>
-        <field name="Reference">U</field>
-        <field name="Value">SN74LVC2G125DCTR</field>
-        <field name="Footprint">Motor:Package_SO__SSOP-8_2.95x2.8mm_P0.65mm</field>
-        <field name="Datasheet">https://www.ti.com/lit/ds/symlink/sn74lvc2g125.pdf</field>
-        <field name="Description"/>
-      </fields>
-      <pins>
-        <pin num="1" name="nOE1" type="input"/>
-        <pin num="2" name="1A" type="input"/>
-        <pin num="3" name="2Y" type="tri_state"/>
-        <pin num="4" name="GND" type="power_in"/>
-        <pin num="5" name="2A" type="input"/>
-        <pin num="6" name="1Y" type="tri_state"/>
-        <pin num="7" name="nOE2" type="input"/>
-        <pin num="8" name="VCC" type="power_in"/>
       </pins>
     </libpart>
     <libpart lib="Motor" part="SN74LVC2G17DCKR">
@@ -6083,40 +5004,6 @@
         <pin num="21" name="EP_GND" type="power_in"/>
       </pins>
     </libpart>
-    <libpart lib="Motor" part="Transistor_BJT__MMBT3904">
-      <description>0.2A Ic, 40V Vce, Small Signal NPN Transistor, SOT-23</description>
-      <docs>https://www.onsemi.com/pdf/datasheet/pzt3904-d.pdf</docs>
-      <footprints>
-        <fp>SOT?23*</fp>
-      </footprints>
-      <fields>
-        <field name="Reference">Q</field>
-        <field name="Value">MMBT3904</field>
-        <field name="Footprint">Motor:Package_TO_SOT_SMD__SOT-23</field>
-        <field name="Datasheet">https://www.onsemi.com/pdf/datasheet/pzt3904-d.pdf</field>
-        <field name="Description">0.2A Ic, 40V Vce, Small Signal NPN Transistor, SOT-23</field>
-        <field name="Sim.Device">NPN</field>
-        <field name="Sim.Pins">1=B 2=E 3=C</field>
-      </fields>
-      <pins>
-        <pin num="1" name="B" type="input"/>
-        <pin num="2" name="E" type="passive"/>
-        <pin num="3" name="C" type="passive"/>
-      </pins>
-    </libpart>
-    <libpart lib="Motor" part="Vision_Enable_2P">
-      <fields>
-        <field name="Reference">J</field>
-        <field name="Value">供电使能跳线</field>
-        <field name="Footprint">Motor:Connector_PinHeader_2.54mm__PinHeader_1x02_P2.54mm_Vertical</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <pins>
-        <pin num="1" name="5V" type="passive"/>
-        <pin num="2" name="EN_FEED" type="passive"/>
-      </pins>
-    </libpart>
     <libpart lib="Motor" part="XT60PW_M_Power">
       <docs>https://www.china-amass.com/biao/289.html</docs>
       <fields>
@@ -6145,8 +5032,6 @@
       <node ref="C40" pin="1" pintype="passive"/>
       <node ref="C74" pin="1" pintype="passive"/>
       <node ref="C75" pin="1" pintype="passive"/>
-      <node ref="C76" pin="1" pintype="passive"/>
-      <node ref="C80" pin="1" pintype="passive"/>
       <node ref="J14" pin="A47" pinfunction="A47_/_+3V3_A47" pintype="power_in"/>
       <node ref="J14" pin="B47" pinfunction="B47_/_+3V3_B47" pintype="power_in"/>
       <node ref="J4" pin="2" pinfunction="VENC_2" pintype="passive"/>
@@ -6165,16 +5050,9 @@
       <node ref="R52" pin="1" pintype="passive"/>
       <node ref="R53" pin="1" pintype="passive"/>
       <node ref="R73" pin="1" pintype="passive"/>
-      <node ref="R74" pin="1" pintype="passive"/>
-      <node ref="R76" pin="1" pintype="passive"/>
       <node ref="R79" pin="1" pintype="passive"/>
-      <node ref="R80" pin="1" pintype="passive"/>
-      <node ref="R85" pin="1" pintype="passive"/>
-      <node ref="R88" pin="1" pintype="passive"/>
       <node ref="U11" pin="5" pinfunction="VCC_5" pintype="power_in"/>
       <node ref="U12" pin="5" pinfunction="VCC_5" pintype="power_in"/>
-      <node ref="U13" pin="8" pinfunction="VCC_8" pintype="power_in"/>
-      <node ref="U15" pin="8" pinfunction="VCC_8" pintype="power_in"/>
       <node ref="U3" pin="5" pinfunction="VCC_5" pintype="power_in"/>
       <node ref="U5" pin="5" pinfunction="VCC_5" pintype="power_in"/>
     </net>
@@ -6193,10 +5071,9 @@
       <node ref="C81" pin="1" pintype="passive"/>
       <node ref="C82" pin="1" pintype="passive"/>
       <node ref="C88" pin="1" pintype="passive"/>
-      <node ref="J27" pin="1" pinfunction="5V_1" pintype="passive"/>
       <node ref="L2" pin="2" pinfunction="2_2" pintype="passive"/>
       <node ref="R64" pin="1" pintype="passive"/>
-      <node ref="R70" pin="1" pintype="passive"/>
+      <node ref="U10" pin="3" pinfunction="ENUV_3" pintype="input"/>
       <node ref="U10" pin="4" pinfunction="IN_4" pintype="power_in"/>
       <node ref="U16" pin="2" pinfunction="IN1_2" pintype="power_in"/>
       <node ref="U16" pin="3" pinfunction="IN1_3" pintype="power_in"/>
@@ -6246,7 +5123,7 @@
       <node ref="C85" pin="1" pintype="passive"/>
       <node ref="C86" pin="1" pintype="passive"/>
       <node ref="D2" pin="1" pinfunction="K_1" pintype="passive"/>
-      <node ref="F2" pin="1" pintype="passive"/>
+      <node ref="J23" pin="1" pinfunction="VM_V+_1" pintype="passive"/>
       <node ref="Q2" pin="2" pinfunction="D_2" pintype="passive"/>
       <node ref="R3" pin="1" pintype="passive"/>
       <node ref="R61" pin="1" pintype="passive"/>
@@ -6256,27 +5133,27 @@
       <node ref="U6" pin="2" pinfunction="VIN_2" pintype="power_in"/>
     </net>
     <net code="7" name="/中景园屏幕与四个操作按钮/KEY_MODE" class="Default">
-      <node ref="J14" pin="B7" pinfunction="B7_/_PC4_B7" pintype="bidirectional"/>
+      <node ref="J14" pin="B44" pinfunction="B44_/_PH3_B44" pintype="bidirectional"/>
       <node ref="R50" pin="2" pintype="passive"/>
       <node ref="SW2" pin="1" pinfunction="1_1" pintype="passive"/>
     </net>
     <net code="8" name="/中景园屏幕与四个操作按钮/KEY_NEXT" class="Default">
-      <node ref="J14" pin="B8" pinfunction="B8_/_PC5_B8" pintype="bidirectional"/>
+      <node ref="J14" pin="B40" pinfunction="B40_/_PA10_B40" pintype="bidirectional"/>
       <node ref="R51" pin="2" pintype="passive"/>
       <node ref="SW3" pin="1" pinfunction="1_1" pintype="passive"/>
     </net>
     <net code="9" name="/中景园屏幕与四个操作按钮/KEY_OK" class="Default">
-      <node ref="J14" pin="B11" pinfunction="B11_/_PB2_B11" pintype="bidirectional"/>
+      <node ref="J14" pin="B38" pinfunction="B38_/_PA8_B38" pintype="bidirectional"/>
       <node ref="R52" pin="2" pintype="passive"/>
       <node ref="SW4" pin="1" pinfunction="1_1" pintype="passive"/>
     </net>
     <net code="10" name="/中景园屏幕与四个操作按钮/KEY_START" class="Default">
-      <node ref="J14" pin="B12" pinfunction="B12_/_PE7_B12" pintype="bidirectional"/>
+      <node ref="J14" pin="B37" pinfunction="B37_/_PC9_B37" pintype="bidirectional"/>
       <node ref="R53" pin="2" pintype="passive"/>
       <node ref="SW5" pin="1" pinfunction="1_1" pintype="passive"/>
     </net>
     <net code="11" name="/中景园屏幕与四个操作按钮/TFT_BL" class="Default">
-      <node ref="J14" pin="A32" pinfunction="A32_/_PB4_A32" pintype="bidirectional"/>
+      <node ref="J14" pin="B5" pinfunction="B5_/_PA6_B5" pintype="bidirectional"/>
       <node ref="J17" pin="8" pinfunction="BL_8" pintype="passive"/>
     </net>
     <net code="12" name="/中景园屏幕与四个操作按钮/TFT_CS" class="Default">
@@ -6285,7 +5162,7 @@
       <node ref="R55" pin="2" pintype="passive"/>
     </net>
     <net code="13" name="/中景园屏幕与四个操作按钮/TFT_DC" class="Default">
-      <node ref="J14" pin="B10" pinfunction="B10_/_PB1_B10" pintype="bidirectional"/>
+      <node ref="J14" pin="B11" pinfunction="B11_/_PB2_B11" pintype="bidirectional"/>
       <node ref="J17" pin="6" pinfunction="DC_6" pintype="passive"/>
     </net>
     <net code="14" name="/中景园屏幕与四个操作按钮/TFT_MOSI" class="Default">
@@ -6293,7 +5170,7 @@
       <node ref="J17" pin="4" pinfunction="SDA_4" pintype="passive"/>
     </net>
     <net code="15" name="/中景园屏幕与四个操作按钮/TFT_RES" class="Default">
-      <node ref="J14" pin="B9" pinfunction="B9_/_PB0_B9" pintype="bidirectional"/>
+      <node ref="J14" pin="B10" pinfunction="B10_/_PB1_B10" pintype="bidirectional"/>
       <node ref="J17" pin="5" pinfunction="RES_5" pintype="passive"/>
       <node ref="R56" pin="2" pintype="passive"/>
     </net>
@@ -6310,7 +5187,7 @@
       <node ref="U4" pin="3" pinfunction="nSLEEP_3" pintype="input"/>
     </net>
     <net code="18" name="/右电机与编码器/R_DIR" class="Default">
-      <node ref="J14" pin="A34" pinfunction="A34_/_PD7_A34" pintype="bidirectional"/>
+      <node ref="J14" pin="A44" pinfunction="A44_/_PC10_A44" pintype="bidirectional"/>
       <node ref="U4" pin="2" pinfunction="PH/IN2_2" pintype="input"/>
     </net>
     <net code="19" name="/右电机与编码器/R_ENC_A" class="Default">
@@ -6339,7 +5216,7 @@
       <node ref="U4" pin="1" pinfunction="EN/IN1_1" pintype="input"/>
     </net>
     <net code="25" name="/右电机与编码器/R_nFAULT" class="Default">
-      <node ref="J14" pin="A35" pinfunction="A35_/_PD6_A35" pintype="bidirectional"/>
+      <node ref="J14" pin="A43" pinfunction="A43_/_PC11_A43" pintype="bidirectional"/>
       <node ref="R33" pin="1" pintype="passive"/>
       <node ref="U4" pin="4" pinfunction="nFAULT_4" pintype="open_collector"/>
     </net>
@@ -6348,146 +5225,126 @@
       <node ref="J15" pin="4" pinfunction="TXD_4" pintype="passive"/>
     </net>
     <net code="27" name="/四脚蓝牙与外接步进驱动接口/BT_TX" class="Default">
-      <node ref="J14" pin="A2" pinfunction="A2_/_PA2_A2" pintype="bidirectional"/>
+      <node ref="J14" pin="B9" pinfunction="B9_/_PB0_B9" pintype="bidirectional"/>
       <node ref="J15" pin="3" pinfunction="RXD_3" pintype="passive"/>
     </net>
-    <net code="28" name="/四脚蓝牙与外接步进驱动接口/STEP_PWR_EN" class="Default">
-      <node ref="J14" pin="B30" pinfunction="B30_/_PD12_B30" pintype="bidirectional"/>
-      <node ref="R83" pin="1" pintype="passive"/>
+    <net code="28" name="/四脚蓝牙与外接步进驱动接口/STEP_UART_RX" class="Default">
+      <node ref="J14" pin="B35" pinfunction="B35_/_PC7_B35" pintype="bidirectional"/>
+      <node ref="J23" pin="8" pinfunction="T/B/L_TX_8" pintype="passive"/>
     </net>
-    <net code="29" name="/四脚蓝牙与外接步进驱动接口/STEP_UART_RX" class="Default">
-      <node ref="J14" pin="A29" pinfunction="A29_/_PB7_A29" pintype="bidirectional"/>
-      <node ref="U15" pin="3" pinfunction="2Y_3" pintype="tri_state"/>
+    <net code="29" name="/四脚蓝牙与外接步进驱动接口/STEP_UART_TX" class="Default">
+      <node ref="J14" pin="B34" pinfunction="B34_/_PC6_B34" pintype="bidirectional"/>
+      <node ref="J23" pin="7" pinfunction="R/A/H_RX_7" pintype="passive"/>
     </net>
-    <net code="30" name="/四脚蓝牙与外接步进驱动接口/STEP_UART_TX" class="Default">
-      <node ref="J14" pin="A30" pinfunction="A30_/_PB6_A30" pintype="bidirectional"/>
-      <node ref="R88" pin="2" pintype="passive"/>
-      <node ref="U15" pin="2" pinfunction="1A_2" pintype="input"/>
-    </net>
-    <net code="31" name="/四脚蓝牙与外接步进驱动接口/VM_STEP" class="Default">
-      <node ref="J23" pin="1" pinfunction="VM_V+_1" pintype="passive"/>
-      <node ref="Q7" pin="2" pinfunction="D_2" pintype="passive"/>
-      <node ref="R86" pin="1" pintype="passive"/>
-    </net>
-    <net code="32" name="/左电机与编码器/L_DIR" class="Default">
+    <net code="30" name="/左电机与编码器/L_DIR" class="Default">
       <node ref="J14" pin="A8" pinfunction="A8_/_PC3_A8" pintype="bidirectional"/>
       <node ref="U2" pin="2" pinfunction="PH/IN2_2" pintype="input"/>
     </net>
-    <net code="33" name="/左电机与编码器/L_ENC_A" class="Default">
+    <net code="31" name="/左电机与编码器/L_ENC_A" class="Default">
       <node ref="J14" pin="A4" pinfunction="A4_/_PA0_A4" pintype="bidirectional"/>
       <node ref="U3" pin="6" pinfunction="1Y_6" pintype="output"/>
     </net>
-    <net code="34" name="/左电机与编码器/L_ENC_B" class="Default">
+    <net code="32" name="/左电机与编码器/L_ENC_B" class="Default">
       <node ref="J14" pin="A3" pinfunction="A3_/_PA1_A3" pintype="bidirectional"/>
       <node ref="U3" pin="4" pinfunction="2Y_4" pintype="output"/>
     </net>
-    <net code="35" name="/左电机与编码器/L_ISENSE" class="Default">
+    <net code="33" name="/左电机与编码器/L_ISENSE" class="Default">
       <node ref="C16" pin="1" pintype="passive"/>
       <node ref="J14" pin="A5" pinfunction="A5_/_PH5_A5" pintype="bidirectional"/>
       <node ref="R15" pin="2" pintype="passive"/>
     </net>
-    <net code="36" name="/左电机与编码器/L_M_OUT1" class="Default">
+    <net code="34" name="/左电机与编码器/L_M_OUT1" class="Default">
       <node ref="J4" pin="6" pinfunction="M+_6" pintype="passive"/>
       <node ref="U2" pin="8" pinfunction="OUT1_8" pintype="power_out"/>
     </net>
-    <net code="37" name="/左电机与编码器/L_M_OUT2" class="Default">
+    <net code="35" name="/左电机与编码器/L_M_OUT2" class="Default">
       <node ref="J4" pin="1" pinfunction="M-_1" pintype="passive"/>
       <node ref="U2" pin="10" pinfunction="OUT2_10" pintype="power_out"/>
     </net>
-    <net code="38" name="/左电机与编码器/L_PWM" class="Default">
+    <net code="36" name="/左电机与编码器/L_PWM" class="Default">
       <node ref="J14" pin="A9" pinfunction="A9_/_PC2_A9" pintype="bidirectional"/>
       <node ref="U2" pin="1" pinfunction="EN/IN1_1" pintype="input"/>
     </net>
-    <net code="39" name="/左电机与编码器/L_nFAULT" class="Default">
+    <net code="37" name="/左电机与编码器/L_nFAULT" class="Default">
       <node ref="J14" pin="A7" pinfunction="A7_/_PH4_A7" pintype="bidirectional"/>
       <node ref="R13" pin="1" pintype="passive"/>
       <node ref="U2" pin="4" pinfunction="nFAULT_4" pintype="open_collector"/>
     </net>
-    <net code="40" name="/核心板接口/GRAY_CH1" class="Default">
-      <node ref="J14" pin="B15" pinfunction="B15_/_PE10_B15" pintype="bidirectional"/>
+    <net code="38" name="/核心板接口/GRAY_CH1" class="Default">
+      <node ref="J14" pin="B12" pinfunction="B12_/_PE7_B12" pintype="bidirectional"/>
       <node ref="J20" pin="1" pinfunction="CH1_1" pintype="passive"/>
     </net>
-    <net code="41" name="/核心板接口/GRAY_CH2" class="Default">
-      <node ref="J14" pin="B16" pinfunction="B16_/_PE11_B16" pintype="bidirectional"/>
+    <net code="39" name="/核心板接口/GRAY_CH2" class="Default">
+      <node ref="J14" pin="B13" pinfunction="B13_/_PE8_B13" pintype="bidirectional"/>
       <node ref="J20" pin="2" pinfunction="CH2_2" pintype="passive"/>
     </net>
-    <net code="42" name="/核心板接口/GRAY_CH3" class="Default">
-      <node ref="J14" pin="B17" pinfunction="B17_/_PE12_B17" pintype="bidirectional"/>
+    <net code="40" name="/核心板接口/GRAY_CH3" class="Default">
+      <node ref="J14" pin="B14" pinfunction="B14_/_PE9_B14" pintype="bidirectional"/>
       <node ref="J20" pin="3" pinfunction="CH3_3" pintype="passive"/>
     </net>
-    <net code="43" name="/核心板接口/GRAY_CH4" class="Default">
-      <node ref="J14" pin="B18" pinfunction="B18_/_PE13_B18" pintype="bidirectional"/>
+    <net code="41" name="/核心板接口/GRAY_CH4" class="Default">
+      <node ref="J14" pin="B15" pinfunction="B15_/_PE10_B15" pintype="bidirectional"/>
       <node ref="J20" pin="4" pinfunction="CH4_4" pintype="passive"/>
     </net>
-    <net code="44" name="/核心板接口/GRAY_CH5" class="Default">
-      <node ref="J14" pin="B19" pinfunction="B19_/_PE14_B19" pintype="bidirectional"/>
+    <net code="42" name="/核心板接口/GRAY_CH5" class="Default">
+      <node ref="J14" pin="B16" pinfunction="B16_/_PE11_B16" pintype="bidirectional"/>
       <node ref="J20" pin="5" pinfunction="CH5_5" pintype="passive"/>
     </net>
-    <net code="45" name="/核心板接口/GRAY_CH6" class="Default">
-      <node ref="J14" pin="B20" pinfunction="B20_/_PE15_B20" pintype="bidirectional"/>
+    <net code="43" name="/核心板接口/GRAY_CH6" class="Default">
+      <node ref="J14" pin="B17" pinfunction="B17_/_PE12_B17" pintype="bidirectional"/>
       <node ref="J20" pin="6" pinfunction="CH6_6" pintype="passive"/>
     </net>
-    <net code="46" name="/核心板接口/GRAY_CH7" class="Default">
-      <node ref="J14" pin="B28" pinfunction="B28_/_PD10_B28" pintype="bidirectional"/>
+    <net code="44" name="/核心板接口/GRAY_CH7" class="Default">
+      <node ref="J14" pin="B18" pinfunction="B18_/_PE13_B18" pintype="bidirectional"/>
       <node ref="J20" pin="7" pinfunction="CH7_7" pintype="passive"/>
     </net>
-    <net code="47" name="/核心板接口/GRAY_CH8" class="Default">
-      <node ref="J14" pin="B29" pinfunction="B29_/_PD11_B29" pintype="bidirectional"/>
+    <net code="45" name="/核心板接口/GRAY_CH8" class="Default">
+      <node ref="J14" pin="B19" pinfunction="B19_/_PE14_B19" pintype="bidirectional"/>
       <node ref="J20" pin="8" pinfunction="CH8_8" pintype="passive"/>
     </net>
-    <net code="48" name="/核心板接口/LICHEE_RX" class="Default">
-      <node ref="J14" pin="B27" pinfunction="B27_/_PD9_B27" pintype="bidirectional"/>
+    <net code="46" name="/核心板接口/LICHEE_RX" class="Default">
+      <node ref="J14" pin="A29" pinfunction="A29_/_PB7_A29" pintype="bidirectional"/>
       <node ref="R79" pin="2" pintype="passive"/>
       <node ref="U11" pin="4" pinfunction="Y_4" pintype="tri_state"/>
     </net>
-    <net code="49" name="/核心板接口/LICHEE_TX" class="Default">
-      <node ref="J14" pin="B26" pinfunction="B26_/_PD8_B26" pintype="bidirectional"/>
+    <net code="47" name="/核心板接口/LICHEE_TX" class="Default">
+      <node ref="J14" pin="A30" pinfunction="A30_/_PB6_A30" pintype="bidirectional"/>
       <node ref="R73" pin="2" pintype="passive"/>
       <node ref="U12" pin="2" pinfunction="A_2" pintype="input"/>
     </net>
-    <net code="50" name="/核心板接口/MOTOR_EN_REQ" class="Default">
-      <node ref="J14" pin="B13" pinfunction="B13_/_PE8_B13" pintype="bidirectional"/>
+    <net code="48" name="/核心板接口/MOTOR_EN_REQ" class="Default">
+      <node ref="J14" pin="B8" pinfunction="B8_/_PC5_B8" pintype="bidirectional"/>
       <node ref="R6" pin="1" pintype="passive"/>
     </net>
-    <net code="51" name="/核心板接口/SWCLK" class="Default">
+    <net code="49" name="/核心板接口/SWCLK" class="Default">
       <node ref="J14" pin="A46" pinfunction="A46_/_PA14_A46" pintype="bidirectional"/>
       <node ref="J8" pin="3" pinfunction="Pin_3_3" pintype="passive"/>
     </net>
-    <net code="52" name="/核心板接口/SWDIO" class="Default">
+    <net code="50" name="/核心板接口/SWDIO" class="Default">
       <node ref="J14" pin="B43" pinfunction="B43_/_PA13_B43" pintype="bidirectional"/>
       <node ref="J8" pin="2" pinfunction="Pin_2_2" pintype="passive"/>
     </net>
-    <net code="53" name="/核心板接口/VIDEO_RX" class="Default">
-      <node ref="J14" pin="B35" pinfunction="B35_/_PC7_B35" pintype="bidirectional"/>
-      <node ref="U13" pin="3" pinfunction="2Y_3" pintype="tri_state"/>
+    <net code="51" name="/核心板接口/VIDEO_RX" class="Default">
+      <node ref="J14" pin="B7" pinfunction="B7_/_PC4_B7" pintype="bidirectional"/>
+      <node ref="J19" pin="5" pinfunction="UART4_TX_5" pintype="passive"/>
     </net>
-    <net code="54" name="/核心板接口/VIDEO_TX" class="Default">
-      <node ref="J14" pin="B34" pinfunction="B34_/_PC6_B34" pintype="bidirectional"/>
-      <node ref="R80" pin="2" pintype="passive"/>
-      <node ref="U13" pin="2" pinfunction="1A_2" pintype="input"/>
+    <net code="52" name="/核心板接口/VIDEO_TX" class="Default">
+      <node ref="J14" pin="B21" pinfunction="B21_/_PB10_B21" pintype="bidirectional"/>
+      <node ref="J19" pin="6" pinfunction="UART4_RX_6" pintype="passive"/>
     </net>
-    <net code="55" name="/灰度与 MaixCAM2 识别/V5_MAIX_PROT" class="Default">
+    <net code="53" name="/灰度与 MaixCAM2 识别/V5_MAIX_PROT" class="Default">
       <node ref="C62" pin="1" pintype="passive"/>
       <node ref="J19" pin="2" pinfunction="5V_IN_2" pintype="passive"/>
-      <node ref="Q4" pin="1" pinfunction="G_1" pintype="input"/>
-      <node ref="Q5" pin="3" pinfunction="S_3" pintype="passive"/>
-      <node ref="R77" pin="1" pintype="passive"/>
-      <node ref="U14" pin="6" pinfunction="SENSE_6" pintype="input"/>
+      <node ref="U10" pin="5" pinfunction="OUT_5" pintype="power_out"/>
     </net>
-    <net code="56" name="/荔枝派 4A：Type-C 与 UART1/LP_UART_nOE" class="Default">
-      <node ref="Q3" pin="3" pinfunction="D_3" pintype="passive"/>
-      <node ref="R74" pin="2" pintype="passive"/>
-      <node ref="U11" pin="1" pinfunction="nOE_1" pintype="input"/>
-      <node ref="U12" pin="1" pinfunction="nOE_1" pintype="input"/>
-    </net>
-    <net code="57" name="/输入、总开关与降压/SW_SOURCE" class="Default">
+    <net code="54" name="/输入、总开关与降压/SW_SOURCE" class="Default">
       <node ref="D1" pin="1" pinfunction="K_1" pintype="passive"/>
       <node ref="Q1" pin="3" pinfunction="S_3" pintype="passive"/>
       <node ref="Q2" pin="3" pinfunction="S_3" pintype="passive"/>
       <node ref="R1" pin="2" pintype="passive"/>
       <node ref="SW1" pin="1" pinfunction="A_1" pintype="passive"/>
     </net>
-    <net code="58" name="GND" class="Default">
+    <net code="55" name="GND" class="Default">
       <node ref="C1" pin="2" pintype="passive"/>
       <node ref="C12" pin="2" pintype="passive"/>
       <node ref="C13" pin="2" pintype="passive"/>
@@ -6517,14 +5374,9 @@
       <node ref="C62" pin="2" pintype="passive"/>
       <node ref="C63" pin="2" pintype="passive"/>
       <node ref="C72" pin="2" pintype="passive"/>
-      <node ref="C73" pin="2" pintype="passive"/>
       <node ref="C74" pin="2" pintype="passive"/>
       <node ref="C75" pin="2" pintype="passive"/>
-      <node ref="C76" pin="2" pintype="passive"/>
-      <node ref="C77" pin="2" pintype="passive"/>
       <node ref="C78" pin="2" pintype="passive"/>
-      <node ref="C79" pin="2" pintype="passive"/>
-      <node ref="C80" pin="2" pintype="passive"/>
       <node ref="C81" pin="2" pintype="passive"/>
       <node ref="C82" pin="2" pintype="passive"/>
       <node ref="C83" pin="2" pintype="passive"/>
@@ -6564,10 +5416,6 @@
       <node ref="J4" pin="5" pinfunction="GND_5" pintype="passive"/>
       <node ref="J6" pin="5" pinfunction="GND_5" pintype="passive"/>
       <node ref="J8" pin="4" pinfunction="Pin_4_4" pintype="passive"/>
-      <node ref="Q3" pin="2" pinfunction="S_2" pintype="passive"/>
-      <node ref="Q4" pin="2" pinfunction="S_2" pintype="passive"/>
-      <node ref="Q8" pin="2" pinfunction="E_2" pintype="passive"/>
-      <node ref="Q9" pin="2" pinfunction="S_2" pintype="passive"/>
       <node ref="R11" pin="2" pintype="passive"/>
       <node ref="R12" pin="2" pintype="passive"/>
       <node ref="R14" pin="2" pintype="passive"/>
@@ -6580,17 +5428,8 @@
       <node ref="R62" pin="2" pintype="passive"/>
       <node ref="R63" pin="2" pintype="passive"/>
       <node ref="R65" pin="2" pintype="passive"/>
-      <node ref="R69" pin="2" pintype="passive"/>
       <node ref="R7" pin="2" pintype="passive"/>
-      <node ref="R71" pin="2" pintype="passive"/>
       <node ref="R72" pin="2" pintype="passive"/>
-      <node ref="R75" pin="2" pintype="passive"/>
-      <node ref="R77" pin="2" pintype="passive"/>
-      <node ref="R78" pin="2" pintype="passive"/>
-      <node ref="R84" pin="2" pintype="passive"/>
-      <node ref="R87" pin="2" pintype="passive"/>
-      <node ref="R89" pin="2" pintype="passive"/>
-      <node ref="R90" pin="2" pintype="passive"/>
       <node ref="R92" pin="2" pintype="passive"/>
       <node ref="SW2" pin="2" pinfunction="2_2" pintype="passive"/>
       <node ref="SW3" pin="2" pinfunction="2_2" pintype="passive"/>
@@ -6599,13 +5438,12 @@
       <node ref="U1" pin="7" pinfunction="GND_7" pintype="power_in"/>
       <node ref="U1" pin="9" pinfunction="EP_GND_9" pintype="power_in"/>
       <node ref="U10" pin="1" pinfunction="GND_1" pintype="power_in"/>
+      <node ref="U10" pin="8" pinfunction="OVP_8" pintype="input"/>
       <node ref="U10" pin="9" pinfunction="EP_GND_9" pintype="power_in"/>
+      <node ref="U11" pin="1" pinfunction="nOE_1" pintype="input"/>
       <node ref="U11" pin="3" pinfunction="GND_3" pintype="power_in"/>
+      <node ref="U12" pin="1" pinfunction="nOE_1" pintype="input"/>
       <node ref="U12" pin="3" pinfunction="GND_3" pintype="power_in"/>
-      <node ref="U13" pin="4" pinfunction="GND_4" pintype="power_in"/>
-      <node ref="U14" pin="2" pinfunction="GND_2" pintype="power_in"/>
-      <node ref="U14" pin="3" pinfunction="CTL_3" pintype="input"/>
-      <node ref="U15" pin="4" pinfunction="GND_4" pintype="power_in"/>
       <node ref="U16" pin="12" pinfunction="GND_12" pintype="power_in"/>
       <node ref="U16" pin="21" pinfunction="EP_GND_21" pintype="power_in"/>
       <node ref="U2" pin="15" pinfunction="GND_15" pintype="power_in"/>
@@ -6626,567 +5464,475 @@
       <node ref="U8" pin="12" pinfunction="GND_12" pintype="power_in"/>
       <node ref="U8" pin="21" pinfunction="EP_GND_21" pintype="power_in"/>
     </net>
-    <net code="59" name="Net-(C83-Pad1)" class="Default">
+    <net code="56" name="Net-(C83-Pad1)" class="Default">
       <node ref="C83" pin="1" pintype="passive"/>
       <node ref="J28" pin="A9" pinfunction="VBUS_A9" pintype="passive"/>
       <node ref="J28" pin="B9" pinfunction="VBUS_B9" pintype="passive"/>
       <node ref="U16" pin="14" pinfunction="OUT_14" pintype="power_out"/>
       <node ref="U16" pin="15" pinfunction="OUT_15" pintype="passive"/>
     </net>
-    <net code="60" name="Net-(C90-Pad1)" class="Default">
+    <net code="57" name="Net-(C90-Pad1)" class="Default">
       <node ref="C90" pin="1" pintype="passive"/>
       <node ref="R66" pin="2" pintype="passive"/>
     </net>
-    <net code="61" name="Net-(C91-Pad1)" class="Default">
+    <net code="58" name="Net-(C91-Pad1)" class="Default">
       <node ref="C91" pin="1" pintype="passive"/>
       <node ref="R67" pin="2" pintype="passive"/>
     </net>
-    <net code="62" name="Net-(C94-Pad1)" class="Default">
+    <net code="59" name="Net-(C94-Pad1)" class="Default">
       <node ref="C94" pin="1" pintype="passive"/>
       <node ref="J25" pin="A9" pinfunction="VBUS_A9" pintype="passive"/>
       <node ref="J25" pin="B9" pinfunction="VBUS_B9" pintype="passive"/>
       <node ref="U8" pin="14" pinfunction="OUT_14" pintype="power_out"/>
       <node ref="U8" pin="15" pinfunction="OUT_15" pintype="passive"/>
     </net>
-    <net code="63" name="Net-(D1-A)" class="Default">
+    <net code="60" name="Net-(D1-A)" class="Default">
       <node ref="D1" pin="2" pinfunction="A_2" pintype="passive"/>
       <node ref="Q1" pin="1" pinfunction="G_1" pintype="input"/>
       <node ref="Q2" pin="1" pinfunction="G_1" pintype="input"/>
       <node ref="R1" pin="1" pintype="passive"/>
       <node ref="SW1" pin="2" pinfunction="B_2" pintype="passive"/>
     </net>
-    <net code="64" name="Net-(D4-A)" class="Default">
+    <net code="61" name="Net-(D4-A)" class="Default">
       <node ref="D4" pin="2" pinfunction="A_2" pintype="passive"/>
       <node ref="R5" pin="2" pintype="passive"/>
     </net>
-    <net code="65" name="Net-(D5-A)" class="Default">
-      <node ref="D5" pin="2" pinfunction="A_2" pintype="passive"/>
-      <node ref="Q6" pin="1" pinfunction="G_1" pintype="input"/>
-      <node ref="Q7" pin="1" pinfunction="G_1" pintype="input"/>
-    </net>
-    <net code="66" name="Net-(D5-K)" class="Default">
-      <node ref="D5" pin="1" pinfunction="K_1" pintype="passive"/>
-      <node ref="Q6" pin="3" pinfunction="S_3" pintype="passive"/>
-      <node ref="Q7" pin="3" pinfunction="S_3" pintype="passive"/>
-      <node ref="R81" pin="1" pintype="passive"/>
-    </net>
-    <net code="67" name="Net-(J1-BAT+)" class="Default">
+    <net code="62" name="Net-(J1-BAT+)" class="Default">
       <node ref="F1" pin="1" pintype="passive"/>
       <node ref="J1" pin="1" pinfunction="BAT+_1" pintype="passive"/>
     </net>
-    <net code="68" name="Net-(J4-A)" class="Default">
+    <net code="63" name="Net-(J4-A)" class="Default">
       <node ref="J4" pin="3" pinfunction="A_3" pintype="passive"/>
       <node ref="R16" pin="1" pintype="passive"/>
       <node ref="R18" pin="2" pintype="passive"/>
     </net>
-    <net code="69" name="Net-(J4-B)" class="Default">
+    <net code="64" name="Net-(J4-B)" class="Default">
       <node ref="J4" pin="4" pinfunction="B_4" pintype="passive"/>
       <node ref="R17" pin="1" pintype="passive"/>
       <node ref="R19" pin="1" pintype="passive"/>
     </net>
-    <net code="70" name="Net-(J6-A)" class="Default">
+    <net code="65" name="Net-(J6-A)" class="Default">
       <node ref="J6" pin="3" pinfunction="A_3" pintype="passive"/>
       <node ref="R36" pin="1" pintype="passive"/>
       <node ref="R38" pin="2" pintype="passive"/>
     </net>
-    <net code="71" name="Net-(J6-B)" class="Default">
+    <net code="66" name="Net-(J6-B)" class="Default">
       <node ref="J6" pin="4" pinfunction="B_4" pintype="passive"/>
       <node ref="R37" pin="1" pintype="passive"/>
       <node ref="R39" pin="1" pintype="passive"/>
     </net>
-    <net code="72" name="Net-(J10-Pin_1)" class="Default">
+    <net code="67" name="Net-(J10-Pin_1)" class="Default">
       <node ref="J10" pin="1" pinfunction="Pin_1_1" pintype="passive"/>
       <node ref="R6" pin="2" pintype="passive"/>
     </net>
-    <net code="73" name="Net-(J18-3V3_SENSE)" class="Default">
-      <node ref="J18" pin="2" pinfunction="3V3_SENSE_2" pintype="passive"/>
-      <node ref="Q3" pin="1" pinfunction="G_1" pintype="input"/>
-      <node ref="R75" pin="1" pintype="passive"/>
-    </net>
-    <net code="74" name="Net-(J18-UART1_RX_3V3)" class="Default">
+    <net code="68" name="Net-(J18-UART1_RX_3V3)" class="Default">
       <node ref="J18" pin="11" pinfunction="UART1_RX_3V3_11" pintype="passive"/>
       <node ref="U12" pin="4" pinfunction="Y_4" pintype="tri_state"/>
     </net>
-    <net code="75" name="Net-(J18-UART1_TX_1V8)" class="Default">
+    <net code="69" name="Net-(J18-UART1_TX_1V8)" class="Default">
       <node ref="J18" pin="12" pinfunction="UART1_TX_1V8_12" pintype="passive"/>
       <node ref="U11" pin="2" pinfunction="A_2" pintype="input"/>
     </net>
-    <net code="76" name="Net-(J19-UART4_RX)" class="Default">
-      <node ref="J19" pin="6" pinfunction="UART4_RX_6" pintype="passive"/>
-      <node ref="U13" pin="6" pinfunction="1Y_6" pintype="tri_state"/>
-    </net>
-    <net code="77" name="Net-(J19-UART4_TX)" class="Default">
-      <node ref="J19" pin="5" pinfunction="UART4_TX_5" pintype="passive"/>
-      <node ref="R78" pin="1" pintype="passive"/>
-      <node ref="U13" pin="5" pinfunction="2A_5" pintype="input"/>
-    </net>
-    <net code="78" name="Net-(J23-R/A/H_RX)" class="Default">
-      <node ref="J23" pin="7" pinfunction="R/A/H_RX_7" pintype="passive"/>
-      <node ref="R90" pin="1" pintype="passive"/>
-      <node ref="U15" pin="6" pinfunction="1Y_6" pintype="tri_state"/>
-    </net>
-    <net code="79" name="Net-(J23-T/B/L_TX)" class="Default">
-      <node ref="J23" pin="8" pinfunction="T/B/L_TX_8" pintype="passive"/>
-      <node ref="R89" pin="1" pintype="passive"/>
-      <node ref="U15" pin="5" pinfunction="2A_5" pintype="input"/>
-    </net>
-    <net code="80" name="Net-(J25-CC1)" class="Default">
+    <net code="70" name="Net-(J25-CC1)" class="Default">
       <node ref="J25" pin="A5" pinfunction="CC1_A5" pintype="passive"/>
       <node ref="U8" pin="11" pinfunction="CC1_11" pintype="bidirectional"/>
     </net>
-    <net code="81" name="Net-(J25-CC2)" class="Default">
+    <net code="71" name="Net-(J25-CC2)" class="Default">
       <node ref="J25" pin="B5" pinfunction="CC2_B5" pintype="passive"/>
       <node ref="U8" pin="13" pinfunction="CC2_13" pintype="bidirectional"/>
     </net>
-    <net code="82" name="Net-(J27-EN_FEED)" class="Default">
-      <node ref="J27" pin="2" pinfunction="EN_FEED_2" pintype="passive"/>
-      <node ref="R68" pin="1" pintype="passive"/>
-    </net>
-    <net code="83" name="Net-(J28-CC1)" class="Default">
+    <net code="72" name="Net-(J28-CC1)" class="Default">
       <node ref="J28" pin="A5" pinfunction="CC1_A5" pintype="passive"/>
       <node ref="U16" pin="11" pinfunction="CC1_11" pintype="bidirectional"/>
     </net>
-    <net code="84" name="Net-(J28-CC2)" class="Default">
+    <net code="73" name="Net-(J28-CC2)" class="Default">
       <node ref="J28" pin="B5" pinfunction="CC2_B5" pintype="passive"/>
       <node ref="U16" pin="13" pinfunction="CC2_13" pintype="bidirectional"/>
     </net>
-    <net code="85" name="Net-(Q1-D)" class="Default">
+    <net code="74" name="Net-(Q1-D)" class="Default">
       <node ref="F1" pin="2" pintype="passive"/>
       <node ref="Q1" pin="2" pinfunction="D_2" pintype="passive"/>
     </net>
-    <net code="86" name="Net-(Q4-D)" class="Default">
-      <node ref="Q4" pin="3" pinfunction="D_3" pintype="passive"/>
-      <node ref="R76" pin="2" pintype="passive"/>
-      <node ref="U13" pin="1" pinfunction="nOE1_1" pintype="input"/>
-      <node ref="U13" pin="7" pinfunction="nOE2_7" pintype="input"/>
-    </net>
-    <net code="87" name="Net-(Q5-D)" class="Default">
-      <node ref="C79" pin="1" pintype="passive"/>
-      <node ref="Q5" pin="2" pinfunction="D_2" pintype="passive"/>
-      <node ref="U10" pin="5" pinfunction="OUT_5" pintype="power_out"/>
-      <node ref="U14" pin="1" pinfunction="VIN_1" pintype="power_in"/>
-    </net>
-    <net code="88" name="Net-(Q5-G)" class="Default">
-      <node ref="Q5" pin="1" pinfunction="G_1" pintype="input"/>
-      <node ref="U14" pin="5" pinfunction="GATE_5" pintype="output"/>
-    </net>
-    <net code="89" name="Net-(Q6-D)" class="Default">
-      <node ref="F2" pin="2" pintype="passive"/>
-      <node ref="Q6" pin="2" pinfunction="D_2" pintype="passive"/>
-    </net>
-    <net code="90" name="Net-(Q8-B)" class="Default">
-      <node ref="Q8" pin="1" pinfunction="B_1" pintype="input"/>
-      <node ref="R83" pin="2" pintype="passive"/>
-      <node ref="R84" pin="1" pintype="passive"/>
-    </net>
-    <net code="91" name="Net-(Q8-C)" class="Default">
-      <node ref="Q8" pin="3" pinfunction="C_3" pintype="passive"/>
-      <node ref="R82" pin="2" pintype="passive"/>
-    </net>
-    <net code="92" name="Net-(Q9-D)" class="Default">
-      <node ref="Q9" pin="3" pinfunction="D_3" pintype="passive"/>
-      <node ref="R85" pin="2" pintype="passive"/>
-      <node ref="U15" pin="1" pinfunction="nOE1_1" pintype="input"/>
-      <node ref="U15" pin="7" pinfunction="nOE2_7" pintype="input"/>
-    </net>
-    <net code="93" name="Net-(Q9-G)" class="Default">
-      <node ref="Q9" pin="1" pinfunction="G_1" pintype="input"/>
-      <node ref="R86" pin="2" pintype="passive"/>
-      <node ref="R87" pin="1" pintype="passive"/>
-    </net>
-    <net code="94" name="Net-(R81-Pad2)" class="Default">
-      <node ref="R81" pin="2" pintype="passive"/>
-      <node ref="R82" pin="1" pintype="passive"/>
-    </net>
-    <net code="95" name="Net-(SW1-C)" class="Default">
+    <net code="75" name="Net-(SW1-C)" class="Default">
       <node ref="R2" pin="1" pintype="passive"/>
       <node ref="SW1" pin="3" pinfunction="C_3" pintype="passive"/>
     </net>
-    <net code="96" name="Net-(U1-BST)" class="Default">
+    <net code="76" name="Net-(U1-BST)" class="Default">
       <node ref="C4" pin="1" pintype="passive"/>
       <node ref="U1" pin="1" pinfunction="BST_1" pintype="passive"/>
     </net>
-    <net code="97" name="Net-(U1-COMP)" class="Default">
+    <net code="77" name="Net-(U1-COMP)" class="Default">
       <node ref="C63" pin="1" pintype="passive"/>
       <node ref="R67" pin="1" pintype="passive"/>
       <node ref="U1" pin="6" pinfunction="COMP_6" pintype="passive"/>
     </net>
-    <net code="98" name="Net-(U1-EN)" class="Default">
+    <net code="78" name="Net-(U1-EN)" class="Default">
       <node ref="R3" pin="2" pintype="passive"/>
       <node ref="R4" pin="1" pintype="passive"/>
       <node ref="U1" pin="3" pinfunction="EN_3" pintype="input"/>
     </net>
-    <net code="99" name="Net-(U1-FB)" class="Default">
+    <net code="79" name="Net-(U1-FB)" class="Default">
       <node ref="R59" pin="2" pintype="passive"/>
       <node ref="R60" pin="1" pintype="passive"/>
       <node ref="U1" pin="5" pinfunction="FB_5" pintype="input"/>
     </net>
-    <net code="100" name="Net-(U1-RT_CLK)" class="Default">
+    <net code="80" name="Net-(U1-RT_CLK)" class="Default">
       <node ref="R92" pin="1" pintype="passive"/>
       <node ref="U1" pin="4" pinfunction="RT_CLK_4" pintype="passive"/>
     </net>
-    <net code="101" name="Net-(U1-SW)" class="Default">
+    <net code="81" name="Net-(U1-SW)" class="Default">
       <node ref="C4" pin="2" pintype="passive"/>
       <node ref="L1" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="U1" pin="8" pinfunction="SW_8" pintype="power_out"/>
     </net>
-    <net code="102" name="Net-(U2-CPH)" class="Default">
+    <net code="82" name="Net-(U2-CPH)" class="Default">
       <node ref="C10" pin="1" pintype="passive"/>
       <node ref="U2" pin="13" pinfunction="CPH_13" pintype="passive"/>
     </net>
-    <net code="103" name="Net-(U2-CPL)" class="Default">
+    <net code="83" name="Net-(U2-CPL)" class="Default">
       <node ref="C10" pin="2" pintype="passive"/>
       <node ref="U2" pin="14" pinfunction="CPL_14" pintype="passive"/>
     </net>
-    <net code="104" name="Net-(U2-IPROPI)" class="Default">
+    <net code="84" name="Net-(U2-IPROPI)" class="Default">
       <node ref="C15" pin="1" pintype="passive"/>
       <node ref="R12" pin="1" pintype="passive"/>
       <node ref="R15" pin="1" pintype="passive"/>
       <node ref="U2" pin="6" pinfunction="IPROPI_6" pintype="output"/>
     </net>
-    <net code="105" name="Net-(U2-VCP)" class="Default">
+    <net code="85" name="Net-(U2-VCP)" class="Default">
       <node ref="C11" pin="2" pintype="passive"/>
       <node ref="U2" pin="12" pinfunction="VCP_12" pintype="passive"/>
     </net>
-    <net code="106" name="Net-(U2-VREF)" class="Default">
+    <net code="86" name="Net-(U2-VREF)" class="Default">
       <node ref="C14" pin="1" pintype="passive"/>
       <node ref="R10" pin="2" pintype="passive"/>
       <node ref="R11" pin="1" pintype="passive"/>
       <node ref="U2" pin="5" pinfunction="VREF_5" pintype="input"/>
     </net>
-    <net code="107" name="Net-(U3-1A)" class="Default">
+    <net code="87" name="Net-(U3-1A)" class="Default">
       <node ref="C17" pin="2" pintype="passive"/>
       <node ref="R16" pin="2" pintype="passive"/>
       <node ref="U3" pin="1" pinfunction="1A_1" pintype="input"/>
     </net>
-    <net code="108" name="Net-(U3-2A)" class="Default">
+    <net code="88" name="Net-(U3-2A)" class="Default">
       <node ref="C18" pin="1" pintype="passive"/>
       <node ref="R17" pin="2" pintype="passive"/>
       <node ref="U3" pin="3" pinfunction="2A_3" pintype="input"/>
     </net>
-    <net code="109" name="Net-(U4-CPH)" class="Default">
+    <net code="89" name="Net-(U4-CPH)" class="Default">
       <node ref="C30" pin="1" pintype="passive"/>
       <node ref="U4" pin="13" pinfunction="CPH_13" pintype="passive"/>
     </net>
-    <net code="110" name="Net-(U4-CPL)" class="Default">
+    <net code="90" name="Net-(U4-CPL)" class="Default">
       <node ref="C30" pin="2" pintype="passive"/>
       <node ref="U4" pin="14" pinfunction="CPL_14" pintype="passive"/>
     </net>
-    <net code="111" name="Net-(U4-IPROPI)" class="Default">
+    <net code="91" name="Net-(U4-IPROPI)" class="Default">
       <node ref="C35" pin="1" pintype="passive"/>
       <node ref="R32" pin="1" pintype="passive"/>
       <node ref="R35" pin="1" pintype="passive"/>
       <node ref="U4" pin="6" pinfunction="IPROPI_6" pintype="output"/>
     </net>
-    <net code="112" name="Net-(U4-VCP)" class="Default">
+    <net code="92" name="Net-(U4-VCP)" class="Default">
       <node ref="C31" pin="2" pintype="passive"/>
       <node ref="U4" pin="12" pinfunction="VCP_12" pintype="passive"/>
     </net>
-    <net code="113" name="Net-(U4-VREF)" class="Default">
+    <net code="93" name="Net-(U4-VREF)" class="Default">
       <node ref="C34" pin="1" pintype="passive"/>
       <node ref="R30" pin="2" pintype="passive"/>
       <node ref="R31" pin="1" pintype="passive"/>
       <node ref="U4" pin="5" pinfunction="VREF_5" pintype="input"/>
     </net>
-    <net code="114" name="Net-(U5-1A)" class="Default">
+    <net code="94" name="Net-(U5-1A)" class="Default">
       <node ref="C37" pin="2" pintype="passive"/>
       <node ref="R36" pin="2" pintype="passive"/>
       <node ref="U5" pin="1" pinfunction="1A_1" pintype="input"/>
     </net>
-    <net code="115" name="Net-(U5-2A)" class="Default">
+    <net code="95" name="Net-(U5-2A)" class="Default">
       <node ref="C38" pin="1" pintype="passive"/>
       <node ref="R37" pin="2" pintype="passive"/>
       <node ref="U5" pin="3" pinfunction="2A_3" pintype="input"/>
     </net>
-    <net code="116" name="Net-(U6-BST)" class="Default">
+    <net code="96" name="Net-(U6-BST)" class="Default">
       <node ref="C87" pin="1" pintype="passive"/>
       <node ref="U6" pin="1" pinfunction="BST_1" pintype="passive"/>
     </net>
-    <net code="117" name="Net-(U6-COMP)" class="Default">
+    <net code="97" name="Net-(U6-COMP)" class="Default">
       <node ref="C89" pin="1" pintype="passive"/>
       <node ref="R66" pin="1" pintype="passive"/>
       <node ref="U6" pin="6" pinfunction="COMP_6" pintype="passive"/>
     </net>
-    <net code="118" name="Net-(U6-EN)" class="Default">
+    <net code="98" name="Net-(U6-EN)" class="Default">
       <node ref="R61" pin="2" pintype="passive"/>
       <node ref="R62" pin="1" pintype="passive"/>
       <node ref="U6" pin="3" pinfunction="EN_3" pintype="input"/>
     </net>
-    <net code="119" name="Net-(U6-FB)" class="Default">
+    <net code="99" name="Net-(U6-FB)" class="Default">
       <node ref="R64" pin="2" pintype="passive"/>
       <node ref="R65" pin="1" pintype="passive"/>
       <node ref="U6" pin="5" pinfunction="FB_5" pintype="input"/>
     </net>
-    <net code="120" name="Net-(U6-RT_CLK)" class="Default">
+    <net code="100" name="Net-(U6-RT_CLK)" class="Default">
       <node ref="R63" pin="1" pintype="passive"/>
       <node ref="U6" pin="4" pinfunction="RT_CLK_4" pintype="passive"/>
     </net>
-    <net code="121" name="Net-(U6-SW)" class="Default">
+    <net code="101" name="Net-(U6-SW)" class="Default">
       <node ref="C87" pin="2" pintype="passive"/>
       <node ref="L2" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="U6" pin="8" pinfunction="SW_8" pintype="power_out"/>
     </net>
-    <net code="122" name="Net-(U8-REF)" class="Default">
+    <net code="102" name="Net-(U8-REF)" class="Default">
       <node ref="R93" pin="1" pintype="passive"/>
       <node ref="U8" pin="10" pinfunction="REF_10" pintype="passive"/>
     </net>
-    <net code="123" name="Net-(U8-REF_RTN)" class="Default">
+    <net code="103" name="Net-(U8-REF_RTN)" class="Default">
       <node ref="R93" pin="2" pintype="passive"/>
       <node ref="U8" pin="9" pinfunction="REF_RTN_9" pintype="passive"/>
     </net>
-    <net code="124" name="Net-(U10-ENUV)" class="Default">
-      <node ref="C77" pin="1" pintype="passive"/>
-      <node ref="R68" pin="2" pintype="passive"/>
-      <node ref="R69" pin="1" pintype="passive"/>
-      <node ref="U10" pin="3" pinfunction="ENUV_3" pintype="input"/>
-    </net>
-    <net code="125" name="Net-(U10-ILIM)" class="Default">
+    <net code="104" name="Net-(U10-ILIM)" class="Default">
       <node ref="R72" pin="1" pintype="passive"/>
       <node ref="U10" pin="7" pinfunction="ILIM_7" pintype="passive"/>
     </net>
-    <net code="126" name="Net-(U10-OVP)" class="Default">
-      <node ref="R70" pin="2" pintype="passive"/>
-      <node ref="R71" pin="1" pintype="passive"/>
-      <node ref="U10" pin="8" pinfunction="OVP_8" pintype="input"/>
-    </net>
-    <net code="127" name="Net-(U10-SS)" class="Default">
-      <node ref="C73" pin="1" pintype="passive"/>
-      <node ref="U10" pin="2" pinfunction="SS_2" pintype="passive"/>
-    </net>
-    <net code="128" name="Net-(U16-REF)" class="Default">
+    <net code="105" name="Net-(U16-REF)" class="Default">
       <node ref="R91" pin="1" pintype="passive"/>
       <node ref="U16" pin="10" pinfunction="REF_10" pintype="passive"/>
     </net>
-    <net code="129" name="Net-(U16-REF_RTN)" class="Default">
+    <net code="106" name="Net-(U16-REF_RTN)" class="Default">
       <node ref="R91" pin="2" pintype="passive"/>
       <node ref="U16" pin="9" pinfunction="REF_RTN_9" pintype="passive"/>
     </net>
-    <net code="130" name="unconnected-(J14A-A6_{slash}_VREF_MCU-PadA6)" class="Default">
+    <net code="107" name="unconnected-(J14A-A2_{slash}_PA2-PadA2)" class="Default">
+      <node ref="J14" pin="A2" pinfunction="A2_/_PA2_A2" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="108" name="unconnected-(J14A-A6_{slash}_VREF_MCU-PadA6)" class="Default">
       <node ref="J14" pin="A6" pinfunction="A6_/_VREF_MCU_A6" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="131" name="unconnected-(J14A-A10_{slash}_PC1-PadA10)" class="Default">
+    <net code="109" name="unconnected-(J14A-A10_{slash}_PC1-PadA10)" class="Default">
       <node ref="J14" pin="A10" pinfunction="A10_/_PC1_A10" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="132" name="unconnected-(J14A-A12_{slash}_NRST-PadA12)" class="Default">
+    <net code="110" name="unconnected-(J14A-A12_{slash}_NRST-PadA12)" class="Default">
       <node ref="J14" pin="A12" pinfunction="A12_/_NRST_A12" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="133" name="unconnected-(J14A-A13_{slash}_NC-PadA13)" class="Default">
+    <net code="111" name="unconnected-(J14A-A13_{slash}_NC-PadA13)" class="Default">
       <node ref="J14" pin="A13" pinfunction="A13_/_NC_A13" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="134" name="unconnected-(J14A-A14_{slash}_NC-PadA14)" class="Default">
+    <net code="112" name="unconnected-(J14A-A14_{slash}_NC-PadA14)" class="Default">
       <node ref="J14" pin="A14" pinfunction="A14_/_NC_A14" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="135" name="unconnected-(J14A-A15_{slash}_PC15-PadA15)" class="Default">
+    <net code="113" name="unconnected-(J14A-A15_{slash}_PC15-PadA15)" class="Default">
       <node ref="J14" pin="A15" pinfunction="A15_/_PC15_A15" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="136" name="unconnected-(J14A-A16_{slash}_PC14-PadA16)" class="Default">
+    <net code="114" name="unconnected-(J14A-A16_{slash}_PC14-PadA16)" class="Default">
       <node ref="J14" pin="A16" pinfunction="A16_/_PC14_A16" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="137" name="unconnected-(J14A-A17_{slash}_PC13-PadA17)" class="Default">
+    <net code="115" name="unconnected-(J14A-A17_{slash}_PC13-PadA17)" class="Default">
       <node ref="J14" pin="A17" pinfunction="A17_/_PC13_A17" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="138" name="unconnected-(J14A-A18_{slash}_PH15-PadA18)" class="Default">
+    <net code="116" name="unconnected-(J14A-A18_{slash}_PH15-PadA18)" class="Default">
       <node ref="J14" pin="A18" pinfunction="A18_/_PH15_A18" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="139" name="unconnected-(J14A-A19_{slash}_PE6-PadA19)" class="Default">
+    <net code="117" name="unconnected-(J14A-A19_{slash}_PE6-PadA19)" class="Default">
       <node ref="J14" pin="A19" pinfunction="A19_/_PE6_A19" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="140" name="unconnected-(J14A-A20_{slash}_PE5-PadA20)" class="Default">
+    <net code="118" name="unconnected-(J14A-A20_{slash}_PE5-PadA20)" class="Default">
       <node ref="J14" pin="A20" pinfunction="A20_/_PE5_A20" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="141" name="unconnected-(J14A-A21_{slash}_PE4-PadA21)" class="Default">
+    <net code="119" name="unconnected-(J14A-A21_{slash}_PE4-PadA21)" class="Default">
       <node ref="J14" pin="A21" pinfunction="A21_/_PE4_A21" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="142" name="unconnected-(J14A-A22_{slash}_PE3-PadA22)" class="Default">
+    <net code="120" name="unconnected-(J14A-A22_{slash}_PE3-PadA22)" class="Default">
       <node ref="J14" pin="A22" pinfunction="A22_/_PE3_A22" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="143" name="unconnected-(J14A-A23_{slash}_PE2-PadA23)" class="Default">
+    <net code="121" name="unconnected-(J14A-A23_{slash}_PE2-PadA23)" class="Default">
       <node ref="J14" pin="A23" pinfunction="A23_/_PE2_A23" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="144" name="unconnected-(J14A-A24_{slash}_PE1-PadA24)" class="Default">
+    <net code="122" name="unconnected-(J14A-A24_{slash}_PE1-PadA24)" class="Default">
       <node ref="J14" pin="A24" pinfunction="A24_/_PE1_A24" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="145" name="unconnected-(J14A-A25_{slash}_PE0-PadA25)" class="Default">
+    <net code="123" name="unconnected-(J14A-A25_{slash}_PE0-PadA25)" class="Default">
       <node ref="J14" pin="A25" pinfunction="A25_/_PE0_A25" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="146" name="unconnected-(J14A-B5_{slash}_PA6-PadB5)" class="Default">
-      <node ref="J14" pin="B5" pinfunction="B5_/_PA6_B5" pintype="bidirectional+no_connect"/>
+    <net code="124" name="unconnected-(J14A-B20_{slash}_PE15-PadB20)" class="Default">
+      <node ref="J14" pin="B20" pinfunction="B20_/_PE15_B20" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="147" name="unconnected-(J14A-B14_{slash}_PE9-PadB14)" class="Default">
-      <node ref="J14" pin="B14" pinfunction="B14_/_PE9_B14" pintype="bidirectional+no_connect"/>
-    </net>
-    <net code="148" name="unconnected-(J14A-B21_{slash}_PB10-PadB21)" class="Default">
-      <node ref="J14" pin="B21" pinfunction="B21_/_PB10_B21" pintype="bidirectional+no_connect"/>
-    </net>
-    <net code="149" name="unconnected-(J14A-B22_{slash}_PB12-PadB22)" class="Default">
+    <net code="125" name="unconnected-(J14A-B22_{slash}_PB12-PadB22)" class="Default">
       <node ref="J14" pin="B22" pinfunction="B22_/_PB12_B22" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="150" name="unconnected-(J14A-B23_{slash}_PB13-PadB23)" class="Default">
+    <net code="126" name="unconnected-(J14A-B23_{slash}_PB13-PadB23)" class="Default">
       <node ref="J14" pin="B23" pinfunction="B23_/_PB13_B23" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="151" name="unconnected-(J14A-B24_{slash}_PB14-PadB24)" class="Default">
+    <net code="127" name="unconnected-(J14A-B24_{slash}_PB14-PadB24)" class="Default">
       <node ref="J14" pin="B24" pinfunction="B24_/_PB14_B24" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="152" name="unconnected-(J14A-B25_{slash}_PB15-PadB25)" class="Default">
+    <net code="128" name="unconnected-(J14A-B25_{slash}_PB15-PadB25)" class="Default">
       <node ref="J14" pin="B25" pinfunction="B25_/_PB15_B25" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="153" name="unconnected-(J14B-A26_{slash}_PB9-PadA26)" class="Default">
+    <net code="129" name="unconnected-(J14B-A26_{slash}_PB9-PadA26)" class="Default">
       <node ref="J14" pin="A26" pinfunction="A26_/_PB9_A26" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="154" name="unconnected-(J14B-A28_{slash}_PH2-PadA28)" class="Default">
+    <net code="130" name="unconnected-(J14B-A28_{slash}_PH2-PadA28)" class="Default">
       <node ref="J14" pin="A28" pinfunction="A28_/_PH2_A28" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="155" name="unconnected-(J14B-A31_{slash}_PB5-PadA31)" class="Default">
+    <net code="131" name="unconnected-(J14B-A31_{slash}_PB5-PadA31)" class="Default">
       <node ref="J14" pin="A31" pinfunction="A31_/_PB5_A31" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="156" name="unconnected-(J14B-A36_{slash}_PD5-PadA36)" class="Default">
+    <net code="132" name="unconnected-(J14B-A32_{slash}_PB4-PadA32)" class="Default">
+      <node ref="J14" pin="A32" pinfunction="A32_/_PB4_A32" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="133" name="unconnected-(J14B-A34_{slash}_PD7-PadA34)" class="Default">
+      <node ref="J14" pin="A34" pinfunction="A34_/_PD7_A34" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="134" name="unconnected-(J14B-A35_{slash}_PD6-PadA35)" class="Default">
+      <node ref="J14" pin="A35" pinfunction="A35_/_PD6_A35" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="135" name="unconnected-(J14B-A36_{slash}_PD5-PadA36)" class="Default">
       <node ref="J14" pin="A36" pinfunction="A36_/_PD5_A36" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="157" name="unconnected-(J14B-A37_{slash}_PD4-PadA37)" class="Default">
+    <net code="136" name="unconnected-(J14B-A37_{slash}_PD4-PadA37)" class="Default">
       <node ref="J14" pin="A37" pinfunction="A37_/_PD4_A37" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="158" name="unconnected-(J14B-A38_{slash}_PD3-PadA38)" class="Default">
+    <net code="137" name="unconnected-(J14B-A38_{slash}_PD3-PadA38)" class="Default">
       <node ref="J14" pin="A38" pinfunction="A38_/_PD3_A38" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="159" name="unconnected-(J14B-A39_{slash}_PD2-PadA39)" class="Default">
+    <net code="138" name="unconnected-(J14B-A39_{slash}_PD2-PadA39)" class="Default">
       <node ref="J14" pin="A39" pinfunction="A39_/_PD2_A39" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="160" name="unconnected-(J14B-A40_{slash}_PD1-PadA40)" class="Default">
+    <net code="139" name="unconnected-(J14B-A40_{slash}_PD1-PadA40)" class="Default">
       <node ref="J14" pin="A40" pinfunction="A40_/_PD1_A40" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="161" name="unconnected-(J14B-A41_{slash}_PD0-PadA41)" class="Default">
+    <net code="140" name="unconnected-(J14B-A41_{slash}_PD0-PadA41)" class="Default">
       <node ref="J14" pin="A41" pinfunction="A41_/_PD0_A41" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="162" name="unconnected-(J14B-A42_{slash}_PC12-PadA42)" class="Default">
+    <net code="141" name="unconnected-(J14B-A42_{slash}_PC12-PadA42)" class="Default">
       <node ref="J14" pin="A42" pinfunction="A42_/_PC12_A42" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="163" name="unconnected-(J14B-A43_{slash}_PC11-PadA43)" class="Default">
-      <node ref="J14" pin="A43" pinfunction="A43_/_PC11_A43" pintype="bidirectional+no_connect"/>
+    <net code="142" name="unconnected-(J14B-B26_{slash}_PD8-PadB26)" class="Default">
+      <node ref="J14" pin="B26" pinfunction="B26_/_PD8_B26" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="164" name="unconnected-(J14B-A44_{slash}_PC10-PadA44)" class="Default">
-      <node ref="J14" pin="A44" pinfunction="A44_/_PC10_A44" pintype="bidirectional+no_connect"/>
+    <net code="143" name="unconnected-(J14B-B27_{slash}_PD9-PadB27)" class="Default">
+      <node ref="J14" pin="B27" pinfunction="B27_/_PD9_B27" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="165" name="unconnected-(J14B-B31_{slash}_PD13-PadB31)" class="Default">
+    <net code="144" name="unconnected-(J14B-B28_{slash}_PD10-PadB28)" class="Default">
+      <node ref="J14" pin="B28" pinfunction="B28_/_PD10_B28" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="145" name="unconnected-(J14B-B29_{slash}_PD11-PadB29)" class="Default">
+      <node ref="J14" pin="B29" pinfunction="B29_/_PD11_B29" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="146" name="unconnected-(J14B-B30_{slash}_PD12-PadB30)" class="Default">
+      <node ref="J14" pin="B30" pinfunction="B30_/_PD12_B30" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="147" name="unconnected-(J14B-B31_{slash}_PD13-PadB31)" class="Default">
       <node ref="J14" pin="B31" pinfunction="B31_/_PD13_B31" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="166" name="unconnected-(J14B-B32_{slash}_PD14-PadB32)" class="Default">
+    <net code="148" name="unconnected-(J14B-B32_{slash}_PD14-PadB32)" class="Default">
       <node ref="J14" pin="B32" pinfunction="B32_/_PD14_B32" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="167" name="unconnected-(J14B-B33_{slash}_PD15-PadB33)" class="Default">
+    <net code="149" name="unconnected-(J14B-B33_{slash}_PD15-PadB33)" class="Default">
       <node ref="J14" pin="B33" pinfunction="B33_/_PD15_B33" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="168" name="unconnected-(J14B-B36_{slash}_PC8-PadB36)" class="Default">
+    <net code="150" name="unconnected-(J14B-B36_{slash}_PC8-PadB36)" class="Default">
       <node ref="J14" pin="B36" pinfunction="B36_/_PC8_B36" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="169" name="unconnected-(J14B-B37_{slash}_PC9-PadB37)" class="Default">
-      <node ref="J14" pin="B37" pinfunction="B37_/_PC9_B37" pintype="bidirectional+no_connect"/>
-    </net>
-    <net code="170" name="unconnected-(J14B-B38_{slash}_PA8-PadB38)" class="Default">
-      <node ref="J14" pin="B38" pinfunction="B38_/_PA8_B38" pintype="bidirectional+no_connect"/>
-    </net>
-    <net code="171" name="unconnected-(J14B-B39_{slash}_PA9-PadB39)" class="Default">
+    <net code="151" name="unconnected-(J14B-B39_{slash}_PA9-PadB39)" class="Default">
       <node ref="J14" pin="B39" pinfunction="B39_/_PA9_B39" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="172" name="unconnected-(J14B-B40_{slash}_PA10-PadB40)" class="Default">
-      <node ref="J14" pin="B40" pinfunction="B40_/_PA10_B40" pintype="bidirectional+no_connect"/>
-    </net>
-    <net code="173" name="unconnected-(J14B-B41_{slash}_PA11-PadB41)" class="Default">
+    <net code="152" name="unconnected-(J14B-B41_{slash}_PA11-PadB41)" class="Default">
       <node ref="J14" pin="B41" pinfunction="B41_/_PA11_B41" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="174" name="unconnected-(J14B-B42_{slash}_PA12-PadB42)" class="Default">
+    <net code="153" name="unconnected-(J14B-B42_{slash}_PA12-PadB42)" class="Default">
       <node ref="J14" pin="B42" pinfunction="B42_/_PA12_B42" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="175" name="unconnected-(J14B-B44_{slash}_PH3-PadB44)" class="Default">
-      <node ref="J14" pin="B44" pinfunction="B44_/_PH3_B44" pintype="bidirectional+no_connect"/>
-    </net>
-    <net code="176" name="unconnected-(J14B-B45_{slash}_NC-PadB45)" class="Default">
+    <net code="154" name="unconnected-(J14B-B45_{slash}_NC-PadB45)" class="Default">
       <node ref="J14" pin="B45" pinfunction="B45_/_NC_B45" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="177" name="unconnected-(J14B-B46_{slash}_NC-PadB46)" class="Default">
+    <net code="155" name="unconnected-(J14B-B46_{slash}_NC-PadB46)" class="Default">
       <node ref="J14" pin="B46" pinfunction="B46_/_NC_B46" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="178" name="unconnected-(J18-5V_NC-Pad1)" class="Default">
+    <net code="156" name="unconnected-(J18-3V3_SENSE-Pad2)" class="Default">
+      <node ref="J18" pin="2" pinfunction="3V3_SENSE_2" pintype="passive+no_connect"/>
+    </net>
+    <net code="157" name="unconnected-(J18-5V_NC-Pad1)" class="Default">
       <node ref="J18" pin="1" pinfunction="5V_NC_1" pintype="passive+no_connect"/>
     </net>
-    <net code="179" name="unconnected-(J18-SPI_CLK_NC-Pad5)" class="Default">
+    <net code="158" name="unconnected-(J18-SPI_CLK_NC-Pad5)" class="Default">
       <node ref="J18" pin="5" pinfunction="SPI_CLK_NC_5" pintype="passive+no_connect"/>
     </net>
-    <net code="180" name="unconnected-(J18-SPI_CS_NC-Pad7)" class="Default">
+    <net code="159" name="unconnected-(J18-SPI_CS_NC-Pad7)" class="Default">
       <node ref="J18" pin="7" pinfunction="SPI_CS_NC_7" pintype="passive+no_connect"/>
     </net>
-    <net code="181" name="unconnected-(J18-SPI_SI_NC-Pad6)" class="Default">
+    <net code="160" name="unconnected-(J18-SPI_SI_NC-Pad6)" class="Default">
       <node ref="J18" pin="6" pinfunction="SPI_SI_NC_6" pintype="passive+no_connect"/>
     </net>
-    <net code="182" name="unconnected-(J18-SPI_SO_NC-Pad8)" class="Default">
+    <net code="161" name="unconnected-(J18-SPI_SO_NC-Pad8)" class="Default">
       <node ref="J18" pin="8" pinfunction="SPI_SO_NC_8" pintype="passive+no_connect"/>
     </net>
-    <net code="183" name="unconnected-(J18-UART0_RX_NC-Pad9)" class="Default">
+    <net code="162" name="unconnected-(J18-UART0_RX_NC-Pad9)" class="Default">
       <node ref="J18" pin="9" pinfunction="UART0_RX_NC_9" pintype="passive+no_connect"/>
     </net>
-    <net code="184" name="unconnected-(J18-UART0_TX_NC-Pad10)" class="Default">
+    <net code="163" name="unconnected-(J18-UART0_TX_NC-Pad10)" class="Default">
       <node ref="J18" pin="10" pinfunction="UART0_TX_NC_10" pintype="passive+no_connect"/>
     </net>
-    <net code="185" name="unconnected-(J19-SCL_NC-Pad3)" class="Default">
+    <net code="164" name="unconnected-(J19-SCL_NC-Pad3)" class="Default">
       <node ref="J19" pin="3" pinfunction="SCL_NC_3" pintype="passive+no_connect"/>
     </net>
-    <net code="186" name="unconnected-(J19-SDA_NC-Pad4)" class="Default">
+    <net code="165" name="unconnected-(J19-SDA_NC-Pad4)" class="Default">
       <node ref="J19" pin="4" pinfunction="SDA_NC_4" pintype="passive+no_connect"/>
     </net>
-    <net code="187" name="unconnected-(J23-COM_NC-Pad3)" class="Default">
+    <net code="166" name="unconnected-(J23-COM_NC-Pad3)" class="Default">
       <node ref="J23" pin="3" pinfunction="COM_NC_3" pintype="passive+no_connect"/>
     </net>
-    <net code="188" name="unconnected-(J23-DIR_NC-Pad6)" class="Default">
+    <net code="167" name="unconnected-(J23-DIR_NC-Pad6)" class="Default">
       <node ref="J23" pin="6" pinfunction="DIR_NC_6" pintype="passive+no_connect"/>
     </net>
-    <net code="189" name="unconnected-(J23-EN_NC-Pad4)" class="Default">
+    <net code="168" name="unconnected-(J23-EN_NC-Pad4)" class="Default">
       <node ref="J23" pin="4" pinfunction="EN_NC_4" pintype="passive+no_connect"/>
     </net>
-    <net code="190" name="unconnected-(J23-STEP_NC-Pad5)" class="Default">
+    <net code="169" name="unconnected-(J23-STEP_NC-Pad5)" class="Default">
       <node ref="J23" pin="5" pinfunction="STEP_NC_5" pintype="passive+no_connect"/>
     </net>
-    <net code="191" name="unconnected-(U7-NC-Pad4)" class="Default">
+    <net code="170" name="unconnected-(U7-NC-Pad4)" class="Default">
       <node ref="U7" pin="4" pinfunction="NC_4" pintype="no_connect"/>
     </net>
-    <net code="192" name="unconnected-(U8-nAUDIO-Pad17)" class="Default">
+    <net code="171" name="unconnected-(U8-nAUDIO-Pad17)" class="Default">
       <node ref="U8" pin="17" pinfunction="nAUDIO_17" pintype="open_collector+no_connect"/>
     </net>
-    <net code="193" name="unconnected-(U8-nDEBUG-Pad16)" class="Default">
+    <net code="172" name="unconnected-(U8-nDEBUG-Pad16)" class="Default">
       <node ref="U8" pin="16" pinfunction="nDEBUG_16" pintype="open_collector+no_connect"/>
     </net>
-    <net code="194" name="unconnected-(U8-nFAULT-Pad1)" class="Default">
+    <net code="173" name="unconnected-(U8-nFAULT-Pad1)" class="Default">
       <node ref="U8" pin="1" pinfunction="nFAULT_1" pintype="open_collector+no_connect"/>
     </net>
-    <net code="195" name="unconnected-(U8-nLD_DET-Pad20)" class="Default">
+    <net code="174" name="unconnected-(U8-nLD_DET-Pad20)" class="Default">
       <node ref="U8" pin="20" pinfunction="nLD_DET_20" pintype="open_collector+no_connect"/>
     </net>
-    <net code="196" name="unconnected-(U8-nPOL-Pad18)" class="Default">
+    <net code="175" name="unconnected-(U8-nPOL-Pad18)" class="Default">
       <node ref="U8" pin="18" pinfunction="nPOL_18" pintype="open_collector+no_connect"/>
     </net>
-    <net code="197" name="unconnected-(U8-nUFP-Pad19)" class="Default">
+    <net code="176" name="unconnected-(U8-nUFP-Pad19)" class="Default">
       <node ref="U8" pin="19" pinfunction="nUFP_19" pintype="open_collector+no_connect"/>
     </net>
-    <net code="198" name="unconnected-(U10-nFLT-Pad6)" class="Default">
+    <net code="177" name="unconnected-(U10-SS-Pad2)" class="Default">
+      <node ref="U10" pin="2" pinfunction="SS_2" pintype="passive+no_connect"/>
+    </net>
+    <net code="178" name="unconnected-(U10-nFLT-Pad6)" class="Default">
       <node ref="U10" pin="6" pinfunction="nFLT_6" pintype="open_collector+no_connect"/>
     </net>
-    <net code="199" name="unconnected-(U14-STAT-Pad4)" class="Default">
-      <node ref="U14" pin="4" pinfunction="STAT_4" pintype="open_collector+no_connect"/>
-    </net>
-    <net code="200" name="unconnected-(U16-nAUDIO-Pad17)" class="Default">
+    <net code="179" name="unconnected-(U16-nAUDIO-Pad17)" class="Default">
       <node ref="U16" pin="17" pinfunction="nAUDIO_17" pintype="open_collector+no_connect"/>
     </net>
-    <net code="201" name="unconnected-(U16-nDEBUG-Pad16)" class="Default">
+    <net code="180" name="unconnected-(U16-nDEBUG-Pad16)" class="Default">
       <node ref="U16" pin="16" pinfunction="nDEBUG_16" pintype="open_collector+no_connect"/>
     </net>
-    <net code="202" name="unconnected-(U16-nFAULT-Pad1)" class="Default">
+    <net code="181" name="unconnected-(U16-nFAULT-Pad1)" class="Default">
       <node ref="U16" pin="1" pinfunction="nFAULT_1" pintype="open_collector+no_connect"/>
     </net>
-    <net code="203" name="unconnected-(U16-nLD_DET-Pad20)" class="Default">
+    <net code="182" name="unconnected-(U16-nLD_DET-Pad20)" class="Default">
       <node ref="U16" pin="20" pinfunction="nLD_DET_20" pintype="open_collector+no_connect"/>
     </net>
-    <net code="204" name="unconnected-(U16-nPOL-Pad18)" class="Default">
+    <net code="183" name="unconnected-(U16-nPOL-Pad18)" class="Default">
       <node ref="U16" pin="18" pinfunction="nPOL_18" pintype="open_collector+no_connect"/>
     </net>
-    <net code="205" name="unconnected-(U16-nUFP-Pad19)" class="Default">
+    <net code="184" name="unconnected-(U16-nUFP-Pad19)" class="Default">
       <node ref="U16" pin="19" pinfunction="nUFP_19" pintype="open_collector+no_connect"/>
     </net>
   </nets>

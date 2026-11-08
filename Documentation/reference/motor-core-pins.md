@@ -1,71 +1,68 @@
-# Motor核心板信号分配
+# Motor 核心板信号分配
 
-轮控制分配日期：2026-11-03；M2.8 状态更新：2026-11-07。轮控制 13 路保留，完整资源已增至 40 路 GPIO。
-本次只修改Motor使用哪些GPIO，不改Core的98触点针序，也不改Core或网络Expansion的PCB。
-完整机器表为[core_pin_assignment.csv](../../Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/core_pin_assignment.csv)。
-GPIO与触点关系仍由[公共接口表](../../Hardware/stm32c5a3/Hardware/Shared/interface.csv)维护。
+更新日期：2026-11-08，M2.8P。当前为 39 路 GPIO，按本轮实际 PCB 焊盘位置重新分配其中 25 路。Core 的 98 触点针序和原理图保持原样；Motor PCB 未同步本次变化。
+
+当前机器表为 [13 路轮控制](../../Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/core_pin_assignment.csv)和 [26 路外设](../../Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/m2_pin_assignment.csv)；触点到 MCU 的固定关系来自[共享接口表](../../Hardware/stm32c5a3/Hardware/Shared/interface.csv)。[本轮检查记录](../validation/2026-11-08-layout-pinplan.md)列出验证命令和限制。
 
 ## 当前分配
 
-| 信号 | MCU引脚 | J14触点 | 外设配置 | 原引脚 |
+TX、RX 均从 Core 方向命名。MCU TX 接模块 RX，MCU RX 接模块 TX。
+
+| 信号 | GPIO | J14 触点 | 配置 | 电气端点 |
 | --- | --- | --- | --- | --- |
-| L_ENC_A | PA0 | A4 | TIM5_CH1，AF2 | PA15/A45 |
-| L_ENC_B | PA1 | A3 | TIM5_CH2，AF2 | PB3/A33 |
-| R_ENC_A | PB3 | A33 | TIM2_CH2，AF1 | PC6/B34 |
-| R_ENC_B | PA15 | A45 | TIM2_CH1，AF1 | PC7/B35 |
-| L_PWM | PC2 | A9 | TIM4_CH4，AF2 | PD12/B30 |
-| R_PWM | PB8 | A27 | TIM4_CH3，AF2 | PD13/B31 |
-| L_DIR | PC3 | A8 | 推挽GPIO | PD10/B28 |
-| R_DIR | PD7 | A34 | 推挽GPIO | PD11/B29 |
-| L_nFAULT | PH4 | A7 | 低有效输入，可用EXTI4 | PE4/A21 |
-| R_nFAULT | PD6 | A35 | 低有效输入，可用EXTI6 | PE5/A20 |
-| L_ISENSE | PH5 | A5 | ADC2_IN13，模拟输入 | PA0/A4 |
-| R_ISENSE | PC0 | A11 | ADC1_IN8，模拟输入 | PA1/A3 |
-| MOTOR_EN_REQ | PE8 | B13 | 默认低的推挽GPIO，经R6/J10使能 | PE2/A23 |
+| L_ENC_A | PA0 | A4 | TIM5_CH1 / AF2 | U3:6 |
+| L_ENC_B | PA1 | A3 | TIM5_CH2 / AF2 | U3:4 |
+| R_ENC_A | PB3 | A33 | TIM2_CH2 / AF1 | U5:6 |
+| R_ENC_B | PA15 | A45 | TIM2_CH1 / AF1 | U5:4 |
+| L_PWM | PC2 | A9 | TIM4_CH4 / AF2 | U2:1 |
+| R_PWM | PB8 | A27 | TIM4_CH3 / AF2 | U4:1 |
+| L_DIR | PC3 | A8 | GPIO | U2:2 |
+| R_DIR | PC10 | A44 | GPIO | U4:2 |
+| L_nFAULT | PH4 | A7 | EXTI4 | U2:4 |
+| R_nFAULT | PC11 | A43 | EXTI11 | U4:4 |
+| L_ISENSE | PH5 | A5 | ADC2_IN13 | R15:2 |
+| R_ISENSE | PC0 | A11 | ADC1_IN8 | R35:2 |
+| MOTOR_EN_REQ | PC5 | B8 | GPIO | R6:1 |
+| BT_TX | PB0 | B9 | USART2_TX / AF7 | J15:3 |
+| BT_RX | PA3 | B2 | USART2_RX / AF7 | J15:4 |
+| VIDEO_TX | PB10 | B21 | USART3_TX / AF7 | J19:6 |
+| VIDEO_RX | PC4 | B7 | USART3_RX / AF7 | J19:5 |
+| STEP_UART_TX | PC6 | B34 | USART6_TX / AF7 | J23:7 |
+| STEP_UART_RX | PC7 | B35 | USART6_RX / AF7 | J23:8 |
+| LICHEE_TX | PB6 | A30 | USART1_TX / AF7 | U12:2 |
+| LICHEE_RX | PB7 | A29 | USART1_RX / AF7 | U11:4 |
+| TFT_SCK | PA5 | B4 | SPI1_SCK / AF5 | J17:3 |
+| TFT_MOSI | PA7 | B6 | SPI1_MOSI / AF5 | J17:4 |
+| TFT_CS | PA4 | B3 | GPIO | J17:7 |
+| TFT_RES | PB1 | B10 | GPIO | J17:5 |
+| TFT_DC | PB2 | B11 | GPIO | J17:6 |
+| TFT_BL | PA6 | B5 | TIM3_CH1 / AF2 | J17:8 |
+| KEY_MODE | PH3 | B44 | GPIO | SW2:1 |
+| KEY_NEXT | PA10 | B40 | GPIO | SW3:1 |
+| KEY_OK | PA8 | B38 | GPIO | SW4:1 |
+| KEY_START | PC9 | B37 | GPIO | SW5:1 |
+| GRAY_CH1 | PE7 | B12 | GPIO | J20:1 |
+| GRAY_CH2 | PE8 | B13 | GPIO | J20:2 |
+| GRAY_CH3 | PE9 | B14 | GPIO | J20:3 |
+| GRAY_CH4 | PE10 | B15 | GPIO | J20:4 |
+| GRAY_CH5 | PE11 | B16 | GPIO | J20:5 |
+| GRAY_CH6 | PE12 | B17 | GPIO | J20:6 |
+| GRAY_CH7 | PE13 | B18 | GPIO | J20:7 |
+| GRAY_CH8 | PE14 | B19 | GPIO | J20:8 |
 
-SWDIO仍为PA13/B43，SWCLK仍为PA14/A46。
-2026-11-06 的 M2 新接口已分配：PA2/PA3 为 HC-08 的 USART2，PB6/PB7 为步进的 USART1，不再保留 I²C1。完整新增引脚与接线见 [M2 接口](m2-interfaces.md)。USB 的 PA11/PA12 保留。
-Core的PE3用户灯、PD2用户键、PH2启动脚不参与分配。
-左右六针电机插座的线序、编码器滤波和电机功率电路均不变。
+## 与当前摆放的关系
 
-## 按当前布局布线
+PCB 正面 A 排在右、B 排在左。左右轮驱动和编码器在右侧，使用 A 排；蓝牙、TFT、灰度、MaixCAM2 和下侧按键使用 B 排。荔枝派位于右上，其 MCU 串口改到 A29/A30；步进位于左下，改到 B34/B35。右轮方向和故障信号移到靠下的 A44/A43。
 
-当前PCB正面视图中，J14的A排位于右侧，B排位于左侧。
-上方模块是L（J4、U2、U3），下方模块是R（J6、U4、U5）。
+六路跨侧信号已移到对应一侧。按 39 个 J14 焊盘到各信号端点的水平加竖直距离求和，估算由 2280.8mm 降至 1980.6mm，减少约 13.2%。这是方位比较，未计算障碍、换层或铜线长度。右轮采样仍在 A11，因为该脚具有所需 ADC 功能，不能为接近模块改到普通 GPIO。
 
-1. 先将U3.6的L_ENC_A接A4，将U3.4的L_ENC_B接A3；两根线都落在插槽上端附近。
-2. 将L_ISENSE接A5，L_nFAULT接A7，L_DIR接A8，L_PWM接A9，按上方模块成组引入。
-3. 下方模块的R_PWM接A27，R_DIR接A34，R_nFAULT接A35。
-4. U5.6的R_ENC_A接A33，U5.4的R_ENC_B接A45；必要时用底层绕开驱动及功率线。
-5. R_ISENSE仍需引向具备ADC功能的上端A11，沿安静区域布线，避开OUT1/OUT2和开关电源SW节点。
-6. PE8/B13位于R6、J10附近，MOTOR_EN_REQ从插槽左排引出。
+## 固件约束
 
-编码器A/B是普通数字信号，不要求按高速差分线配对或等长。
-重点是连续参考地、避免和电机PWM功率线长距离贴近平行，以及保留现有RC和施密特整形。
-本次没有代替手工布出这13路信号，也没有移动任何器件或改变已完成的铜线。
+- 左编码器 TIM5，右编码器 TIM2；右 A 相接 CH2、B 相接 CH1，计数方向须按实车标定。PB3 不同时启用 SWO，双线 SWD 保留。
+- 左右轮 PWM 使用 TIM4 的 CH4/CH3，共享频率；背光为 PA6/TIM3_CH1。四类计数器独立。
+- 蓝牙 USART2、MaixCAM2 USART3、步进 USART6、荔枝派 USART1，均为 AF7。TFT 为 SPI1，AF5。
+- 灰度 CH1～CH8 为 PE7～PE14，输入无内部上下拉，按安装方向校准左右与黑白。
+- 四个按钮依次为 PH3、PA10、PA8、PC9，低有效；固件消抖。MOTOR_EN_REQ 为 PC5，上电、复位和故障时保持低。
+- PA9 的 USB VBUS 检测、PA11/PA12 的 USB、PA13/PA14 的 SWD，以及 PH2、PE3、PD2 的 Core 原用途不占用。
 
-## 外设与固件注意事项
-
-左编码器改用TIM5，右编码器改用TIM2，两个计数器独立。
-TIM4仅负责左右PWM，CH4与CH3共享频率，不能与编码器复用同一个计数器。
-M2.8 将 TIM3_CH1/PB4 用于 TFT 背光；步进采用 USART1 TTL，不再占 TIM1_CH1/PE9。PD8/PD9 为荔枝派 USART3，PD12 是步进高有效控电。
-
-右编码器的物理A相接TIM2的CH2，物理B相接CH1。
-这是为方便布线选择的相位顺序，编码器接口仍使用TI1/TI2配对；固件需按车轮前进方向标定计数符号。
-PB3用于编码器时不同时启用SWO，双线SWD调试保持可用。
-
-左电流采样现在使用ADC2，右电流采样使用ADC1，需要分别初始化和标定。
-旧PA0/PA1的ADC配置不能继续用于电流采样。
-MOTOR_EN_REQ上电、复位及故障时保持低；nFAULT输入采用板上的外部上拉。
-现有固件仍为空循环，本次未生成或实现这些外设代码。
-
-## 依据与长度估计
-
-复用依据为本地[DS15137 Rev3](../../Hardware/stm32c5a3/Hardware/Shared/sources/DS15137_STM32C5Axxx_Datasheet_Rev3.pdf)的Table13、Table14及§3.26。
-TIM5的PA0/PA1为AF2，TIM2的PB3/PA15为AF1，TIM4的PC2/PB8为AF2。
-PH5支持ADC2_IN13，PC0支持ADC1_IN8。
-验证脚本直接从原厂文本和公共触点表交叉检查，包含定时器占用冲突检查。
-
-按当前焊盘位置估算，四根编码器线的水平加竖直距离合计由约212.8mm降至114.4mm，减少约46%。
-该数字未计器件绕障、换层和实际走线，不是成品线长或信号质量测量。
-实际检查与剩余问题见[本次记录](../validation/2026-11-03-motor-pin-remap.md)。
+复用和模拟通道依据本地原厂 [DS15137 Rev3](../../Hardware/stm32c5a3/Hardware/Shared/sources/DS15137_STM32C5Axxx_Datasheet_Rev3.pdf) Table13、Table14。当前固件仍未实现这些外设配置；原理图通过不代表固件可运行。外接连接器针序见 [M2 接口](m2-interfaces.md)。

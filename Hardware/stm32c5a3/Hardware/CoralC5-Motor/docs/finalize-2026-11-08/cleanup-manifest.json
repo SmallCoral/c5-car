@@ -1,0 +1,50 @@
+[
+  {
+    "Source": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\c5-car\\Hardware\\stm32c5a3\\Hardware\\CoralC5-Motor\\.scratch_step_test.kicad_sch",
+    "Archive": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\c5-car\\.scratch\\archive\\2026-11-08-motor-cleanup\\.scratch_step_test.kicad_sch",
+    "Sha256": "26B23553FC1AF17FE7A95BD0ED97AFEE1EF5C43619CF5D59E05EE072C35EDF40",
+    "Bytes": 78646
+  },
+  {
+    "Source": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\c5-car\\Hardware\\stm32c5a3\\Hardware\\CoralC5-Motor\\.scratch_step_test.xml",
+    "Archive": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\c5-car\\.scratch\\archive\\2026-11-08-motor-cleanup\\.scratch_step_test.xml",
+    "Sha256": "CAA4598E922BD20AA977338A1B145197BAD51D241E4E7AF1A62CE8728EA779B7",
+    "Bytes": 6910
+  },
+  {
+    "Source": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\c5-car\\Hardware\\stm32c5a3\\Hardware\\CoralC5-Motor\\.scratch_test_08_local.kicad_sch",
+    "Archive": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\c5-car\\.scratch\\archive\\2026-11-08-motor-cleanup\\.scratch_test_08_local.kicad_sch",
+    "Sha256": "D4CB191790DF1528D88AAD82E2492EE9937F55EDCD6EAA8318945729A0F37AC8",
+    "Bytes": 122627
+  },
+  {
+    "Source": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\c5-car\\Hardware\\stm32c5a3\\Hardware\\CoralC5-Motor\\.scratch_test_08_local.xml",
+    "Archive": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\c5-car\\.scratch\\archive\\2026-11-08-motor-cleanup\\.scratch_test_08_local.xml",
+    "Sha256": "D0EF2200090B7CE4C62C98DA38232321B0F85F0E0127D453BD425DD9AB50EC7E",
+    "Bytes": 21405
+  },
+  {
+    "Source": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\c5-car\\Hardware\\stm32c5a3\\Hardware\\CoralC5-Motor\\.scratch_test_08.kicad_sch",
+    "Archive": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\c5-car\\.scratch\\archive\\2026-11-08-motor-cleanup\\.scratch_test_08.kicad_sch",
+    "Sha256": "2C71F7581621F3E2E075CE43930A39800C06CF57CBAC22921E9E16202E61384D",
+    "Bytes": 122699
+  },
+  {
+    "Source": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\c5-car\\Hardware\\stm32c5a3\\Hardware\\CoralC5-Motor\\.scratch_test_08.xml",
+    "Archive": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\c5-car\\.scratch\\archive\\2026-11-08-motor-cleanup\\.scratch_test_08.xml",
+    "Sha256": "C8BA7CC73CD7179EBF073792FA0486D8899A7F00CE57AE4B618EBA0A8E0C49FC",
+    "Bytes": 21371
+  },
+  {
+    "Source": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\c5-car\\.scratch_erc_items.csv",
+    "Archive": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\c5-car\\.scratch\\archive\\2026-11-08-motor-cleanup\\.scratch_erc_items.csv",
+    "Sha256": "1B73DF45AB6756AA5BF7FCDCC0027E0CDD2566FB6652039B44B38741B65FB338",
+    "Bytes": 16946
+  },
+  {
+    "Source": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\c5-car\\.scratch_erc2_errors.csv",
+    "Archive": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\c5-car\\.scratch\\archive\\2026-11-08-motor-cleanup\\.scratch_erc2_errors.csv",
+    "Sha256": "FAEBAD3D8B97E953EE92BE01C391C6224B053E460B9815C3EE36F1E4C75D9282",
+    "Bytes": 1257
+  }
+]

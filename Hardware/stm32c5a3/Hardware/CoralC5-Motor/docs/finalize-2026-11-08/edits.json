@@ -1,0 +1,119 @@
+{
+  "symbol_library_edits": [
+    {
+      "reference": "U10",
+      "symbol": "Motor:SGM2531C_PS8",
+      "action": "Align local source to existing cached geometry, preserve current schematic"
+    },
+    {
+      "reference": "U11",
+      "symbol": "Motor:SN74LV1T125_DBV_M28_RX",
+      "action": "Align local source to existing cached geometry, preserve current schematic"
+    },
+    {
+      "reference": "U12",
+      "symbol": "Motor:SN74LVC1G125_DBV_M28",
+      "action": "Align local source to existing cached geometry, preserve current schematic"
+    }
+  ],
+  "schematic_text_edits": [
+    "J18 pin2 NC description"
+  ],
+  "no_electrical_changes_intended": false,
+  "physical_removed": [
+    "C76"
+  ],
+  "moved_symbols": {
+    "U10": {
+      "from": [
+        307.34,
+        88.9
+      ],
+      "to": [
+        99.06,
+        132.08
+      ]
+    },
+    "J19": {
+      "from": [
+        181.61,
+        193.04
+      ],
+      "to": [
+        241.3,
+        132.08
+      ]
+    },
+    "C72": {
+      "from": [
+        233.68,
+        81.28
+      ],
+      "to": [
+        48.26,
+        130.81
+      ]
+    },
+    "C78": {
+      "from": [
+        220.98,
+        104.14
+      ],
+      "to": [
+        25.4,
+        130.81
+      ]
+    },
+    "C62": {
+      "from": [
+        389.89,
+        163.83
+      ],
+      "to": [
+        177.8,
+        130.81
+      ]
+    },
+    "R72": {
+      "from": [
+        347.98,
+        99.06
+      ],
+      "to": [
+        147.32,
+        146.05
+      ]
+    },
+    "J15": {
+      "from": [
+        90.17,
+        52.07
+      ],
+      "to": [
+        88.9,
+        55.88
+      ]
+    },
+    "J23": {
+      "from": [
+        177.8,
+        190.5
+      ],
+      "to": [
+        238.76,
+        63.5
+      ]
+    }
+  },
+  "root_transform": {
+    "x_scale": 0.7,
+    "y_offset_mm": -50.8,
+    "x_snap_mm": 1.27
+  },
+  "new_papers": {
+    "CoralC5-Motor.kicad_sch": "A3",
+    "08_Grayscale_Cameras.kicad_sch": "A4",
+    "09_Bluetooth_Stepper.kicad_sch": "A4"
+  },
+  "net_intent": "Only remove unused C76 decoupler from Core3V3 and GND; all other net partitions unchanged"
+}

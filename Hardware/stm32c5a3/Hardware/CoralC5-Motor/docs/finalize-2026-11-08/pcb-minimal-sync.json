@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-08",
+  "operation": "Remove only unused C76 footprint",
+  "connected_tracks": {
+    "1": 0,
+    "2": 0
+  },
+  "baseline_file": "docs/finalize-2026-11-08/baseline-pcb-latest/CoralC5-Motor.kicad_pcb",
+  "before_sha256": "9e6dd4d5023ad186dcebea63b99ff2274f575bb601a6d39035e0da6cf22645c3",
+  "after_sha256": "6ff53139e686ce2077160384e390fbd0707e5745a89b3dc097cf17ddfb28332a",
+  "footprints_before": 143,
+  "footprints_after": 142,
+  "segments_retained": 176,
+  "vias_retained": 3,
+  "all_other_board_objects_unchanged": true
+}

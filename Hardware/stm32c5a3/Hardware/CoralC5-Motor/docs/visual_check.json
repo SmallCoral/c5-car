@@ -1,10 +1,10 @@
 {
-  "date": "2026-11-07",
-  "pdf_sha256": "e7720dffdaeed9955d7cc0c660e87419f90519f7957f0d2cca5351c3067e723d",
+  "date": "2026-11-08",
+  "pdf_sha256": "9af3155349e36445cc94ff58139177cc73bb4c04a6fdf50405196d5e7618f084",
   "pages": 10,
   "wire_text_intersections": 0,
   "text_text_overlaps": 0,
-  "ignored_identical_pdf_search_spans": 154,
+  "ignored_identical_pdf_search_spans": 96,
   "findings": [],
   "text_overlaps": []
 }

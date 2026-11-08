@@ -1,0 +1,387 @@
+{
+  "plan": [
+    {
+      "signal": "L_ENC_A",
+      "gpio": "PA0",
+      "function": "TIM5_CH1",
+      "af": 2,
+      "endpoint": "U3:6",
+      "contact": "A4",
+      "old_contact": "A4"
+    },
+    {
+      "signal": "L_ENC_B",
+      "gpio": "PA1",
+      "function": "TIM5_CH2",
+      "af": 2,
+      "endpoint": "U3:4",
+      "contact": "A3",
+      "old_contact": "A3"
+    },
+    {
+      "signal": "R_ENC_A",
+      "gpio": "PB3",
+      "function": "TIM2_CH2",
+      "af": 1,
+      "endpoint": "U5:6",
+      "contact": "A33",
+      "old_contact": "A33"
+    },
+    {
+      "signal": "R_ENC_B",
+      "gpio": "PA15",
+      "function": "TIM2_CH1",
+      "af": 1,
+      "endpoint": "U5:4",
+      "contact": "A45",
+      "old_contact": "A45"
+    },
+    {
+      "signal": "L_PWM",
+      "gpio": "PC2",
+      "function": "TIM4_CH4",
+      "af": 2,
+      "endpoint": "U2:1",
+      "contact": "A9",
+      "old_contact": "A9"
+    },
+    {
+      "signal": "R_PWM",
+      "gpio": "PB8",
+      "function": "TIM4_CH3",
+      "af": 2,
+      "endpoint": "U4:1",
+      "contact": "A27",
+      "old_contact": "A27"
+    },
+    {
+      "signal": "L_DIR",
+      "gpio": "PC3",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "U2:2",
+      "contact": "A8",
+      "old_contact": "A8"
+    },
+    {
+      "signal": "R_DIR",
+      "gpio": "PC10",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "U4:2",
+      "contact": "A44",
+      "old_contact": "A34"
+    },
+    {
+      "signal": "L_nFAULT",
+      "gpio": "PH4",
+      "function": "EXTI4",
+      "af": null,
+      "endpoint": "U2:4",
+      "contact": "A7",
+      "old_contact": "A7"
+    },
+    {
+      "signal": "R_nFAULT",
+      "gpio": "PC11",
+      "function": "EXTI11",
+      "af": null,
+      "endpoint": "U4:4",
+      "contact": "A43",
+      "old_contact": "A35"
+    },
+    {
+      "signal": "L_ISENSE",
+      "gpio": "PH5",
+      "function": "ADC2_IN13",
+      "af": null,
+      "endpoint": "R15:2",
+      "contact": "A5",
+      "old_contact": "A5"
+    },
+    {
+      "signal": "R_ISENSE",
+      "gpio": "PC0",
+      "function": "ADC1_IN8",
+      "af": null,
+      "endpoint": "R35:2",
+      "contact": "A11",
+      "old_contact": "A11"
+    },
+    {
+      "signal": "MOTOR_EN_REQ",
+      "gpio": "PC5",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "R6:1",
+      "contact": "B8",
+      "old_contact": "B13"
+    },
+    {
+      "signal": "BT_TX",
+      "gpio": "PB0",
+      "function": "USART2_TX",
+      "af": 7,
+      "endpoint": "J15:3",
+      "contact": "B9",
+      "old_contact": "A2"
+    },
+    {
+      "signal": "BT_RX",
+      "gpio": "PA3",
+      "function": "USART2_RX",
+      "af": 7,
+      "endpoint": "J15:4",
+      "contact": "B2",
+      "old_contact": "B2"
+    },
+    {
+      "signal": "VIDEO_TX",
+      "gpio": "PB10",
+      "function": "USART3_TX",
+      "af": 7,
+      "endpoint": "J19:6",
+      "contact": "B21",
+      "old_contact": "B34"
+    },
+    {
+      "signal": "VIDEO_RX",
+      "gpio": "PC4",
+      "function": "USART3_RX",
+      "af": 7,
+      "endpoint": "J19:5",
+      "contact": "B7",
+      "old_contact": "B35"
+    },
+    {
+      "signal": "STEP_UART_TX",
+      "gpio": "PC6",
+      "function": "USART6_TX",
+      "af": 7,
+      "endpoint": "J23:7",
+      "contact": "B34",
+      "old_contact": "A30"
+    },
+    {
+      "signal": "STEP_UART_RX",
+      "gpio": "PC7",
+      "function": "USART6_RX",
+      "af": 7,
+      "endpoint": "J23:8",
+      "contact": "B35",
+      "old_contact": "A29"
+    },
+    {
+      "signal": "LICHEE_TX",
+      "gpio": "PB6",
+      "function": "USART1_TX",
+      "af": 7,
+      "endpoint": "U12:2",
+      "contact": "A30",
+      "old_contact": "B26"
+    },
+    {
+      "signal": "LICHEE_RX",
+      "gpio": "PB7",
+      "function": "USART1_RX",
+      "af": 7,
+      "endpoint": "U11:4",
+      "contact": "A29",
+      "old_contact": "B27"
+    },
+    {
+      "signal": "TFT_SCK",
+      "gpio": "PA5",
+      "function": "SPI1_SCK",
+      "af": 5,
+      "endpoint": "J17:3",
+      "contact": "B4",
+      "old_contact": "B4"
+    },
+    {
+      "signal": "TFT_MOSI",
+      "gpio": "PA7",
+      "function": "SPI1_MOSI",
+      "af": 5,
+      "endpoint": "J17:4",
+      "contact": "B6",
+      "old_contact": "B6"
+    },
+    {
+      "signal": "TFT_CS",
+      "gpio": "PA4",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "J17:7",
+      "contact": "B3",
+      "old_contact": "B3"
+    },
+    {
+      "signal": "TFT_RES",
+      "gpio": "PB1",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "J17:5",
+      "contact": "B10",
+      "old_contact": "B9"
+    },
+    {
+      "signal": "TFT_DC",
+      "gpio": "PB2",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "J17:6",
+      "contact": "B11",
+      "old_contact": "B10"
+    },
+    {
+      "signal": "TFT_BL",
+      "gpio": "PA6",
+      "function": "TIM3_CH1",
+      "af": 2,
+      "endpoint": "J17:8",
+      "contact": "B5",
+      "old_contact": "A32"
+    },
+    {
+      "signal": "KEY_MODE",
+      "gpio": "PH3",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "SW2:1",
+      "contact": "B44",
+      "old_contact": "B7"
+    },
+    {
+      "signal": "KEY_NEXT",
+      "gpio": "PA10",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "SW3:1",
+      "contact": "B40",
+      "old_contact": "B8"
+    },
+    {
+      "signal": "KEY_OK",
+      "gpio": "PA8",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "SW4:1",
+      "contact": "B38",
+      "old_contact": "B11"
+    },
+    {
+      "signal": "KEY_START",
+      "gpio": "PC9",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "SW5:1",
+      "contact": "B37",
+      "old_contact": "B12"
+    },
+    {
+      "signal": "GRAY_CH1",
+      "gpio": "PE7",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "J20:1",
+      "contact": "B12",
+      "old_contact": "B15"
+    },
+    {
+      "signal": "GRAY_CH2",
+      "gpio": "PE8",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "J20:2",
+      "contact": "B13",
+      "old_contact": "B16"
+    },
+    {
+      "signal": "GRAY_CH3",
+      "gpio": "PE9",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "J20:3",
+      "contact": "B14",
+      "old_contact": "B17"
+    },
+    {
+      "signal": "GRAY_CH4",
+      "gpio": "PE10",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "J20:4",
+      "contact": "B15",
+      "old_contact": "B18"
+    },
+    {
+      "signal": "GRAY_CH5",
+      "gpio": "PE11",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "J20:5",
+      "contact": "B16",
+      "old_contact": "B19"
+    },
+    {
+      "signal": "GRAY_CH6",
+      "gpio": "PE12",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "J20:6",
+      "contact": "B17",
+      "old_contact": "B20"
+    },
+    {
+      "signal": "GRAY_CH7",
+      "gpio": "PE13",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "J20:7",
+      "contact": "B18",
+      "old_contact": "B28"
+    },
+    {
+      "signal": "GRAY_CH8",
+      "gpio": "PE14",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "J20:8",
+      "contact": "B19",
+      "old_contact": "B29"
+    }
+  ],
+  "metrics": {
+    "oldTot": 2280.8024000000005,
+    "newTot": 1980.6024000000007,
+    "oldCross": [
+      "BT_TX",
+      "STEP_UART_TX",
+      "STEP_UART_RX",
+      "LICHEE_TX",
+      "LICHEE_RX",
+      "TFT_BL"
+    ],
+    "newCross": []
+  },
+  "pcb_sha256": "2487ae3f6aadba3788bba3936bd0086dbe67d9bf60a262462eea4423fb9c0636",
+  "core_pcb_sha256": "e63fadf87b410330031f2aeaf74f3fc9fc07dd3ff3f8d41798139486e7b1cf4b",
+  "date": "2026-11-08",
+  "revision": "M2.8P",
+  "core_schematic_hashes": {
+    "02_Power_USB.kicad_sch": "aa0680ea3030634c77f194650583659558c84b7650c1c2526428167c6dab94a9",
+    "03_MCU.kicad_sch": "beb7bd1584cb1eb6f64bda20b870ae0482f6356b3e52781526f579e225b1d752",
+    "04_Interface.kicad_sch": "0e7829cee3c4c2b2f0929dd47b0a38ecfee75a60b4d58bbad6cc571589de3ff4",
+    "CoralC5-Core.kicad_sch": "fd0c69b501ebba8d38292d40d285f869d0c951c52321b79d7911eecde637be66"
+  },
+  "scope": "Motor schematic GPIO reassignment only; Motor PCB unchanged. Core PCB association metadata repaired in a separate authorized step; no Core circuit or copper changes.",
+  "pcb_normalized_sha256": "051382c1bf59bc5791dfba83d0daed9ec3688190404f14fe47cf0064463826af",
+  "core_schematic_normalized_sha256": {
+    "02_Power_USB.kicad_sch": "63e9f032ec340619dfc3732ddfa20cb35525218af4db6bb0be64f5ce16fc86c8",
+    "03_MCU.kicad_sch": "da510db9157876d7ec85fd28d3a31769778655effc06d8c324ed876fbb01b871",
+    "04_Interface.kicad_sch": "645067c778d212c28b2762bd452cab30cc56a27a78c8792954d7ec036f6e5319",
+    "CoralC5-Core.kicad_sch": "9b586fd64227fdb690eba5b5c5f372b48956ad44f51f45add1348a17b0d5360a"
+  },
+  "line_ending_policy": "Original raw hashes document this local preservation check; repeatable content checks also accept repository-mandated CRLF-to-LF normalization."
+}

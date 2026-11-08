@@ -1,0 +1,1007 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-11-08T14:52:09",
+    "ignored_checks": [
+        {
+            "description": "Global label only appears once in the schematic",
+            "key": "single_global_label"
+        },
+        {
+            "description": "Four connection points are joined together",
+            "key": "four_way_junction"
+        },
+        {
+            "description": "SPICE model issue",
+            "key": "simulation_model_issue"
+        },
+        {
+            "description": "Assigned footprint doesn't match footprint filters",
+            "key": "footprint_filter"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.6",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709",
+            "violations": [
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.0762 mm",
+                            "pos": {
+                                "x": 0.2159,
+                                "y": 1.9812
+                            },
+                            "uuid": "ed88b509-3d96-5aff-a13f-ca894e8fccc6"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.0762 mm",
+                            "pos": {
+                                "x": 0.3175,
+                                "y": 1.4605
+                            },
+                            "uuid": "97516de4-6fa9-55d7-a09c-5ef2301229a3"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "垂直线, 长度 0.0635 mm",
+                            "pos": {
+                                "x": 0.3937,
+                                "y": 1.5367
+                            },
+                            "uuid": "22bb8fee-1f65-5368-9e44-18eb97689e36"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.2032 mm",
+                            "pos": {
+                                "x": 0.3937,
+                                "y": 1.6002
+                            },
+                            "uuid": "b4f8e06a-ff4b-5d75-aec5-a5098f28fb87"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.2032 mm",
+                            "pos": {
+                                "x": 0.3937,
+                                "y": 1.6764
+                            },
+                            "uuid": "438ba1bc-6fcf-52de-b2c0-2716dd2d296f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.0762 mm",
+                            "pos": {
+                                "x": 0.6985,
+                                "y": 1.4732
+                            },
+                            "uuid": "2779aec0-fd3f-5697-9229-bb075068bd1c"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "垂直线, 长度 0.0508 mm",
+                            "pos": {
+                                "x": 0.7747,
+                                "y": 1.8796
+                            },
+                            "uuid": "7193c364-c493-5df6-b6aa-58db13adbc3d"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "垂直线, 长度 0.0889 mm",
+                            "pos": {
+                                "x": 0.8763,
+                                "y": 2.2606
+                            },
+                            "uuid": "b9a52252-15ec-441f-ab24-b6339e6f1f2e"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.4572 mm",
+                            "pos": {
+                                "x": 0.9525,
+                                "y": 1.6002
+                            },
+                            "uuid": "d06457ee-dd8c-532e-b03a-22bc410a7c9b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.3302 mm",
+                            "pos": {
+                                "x": 0.9525,
+                                "y": 1.6764
+                            },
+                            "uuid": "35ee8bf9-becd-5d91-9dc9-1a8457e52931"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "垂直线, 长度 0.0508 mm",
+                            "pos": {
+                                "x": 1.1557,
+                                "y": 2.2225
+                            },
+                            "uuid": "b8fc0fd0-9dd3-5c68-9806-3acda4243e26"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "垂直线, 长度 0.1397 mm",
+                            "pos": {
+                                "x": 1.5113,
+                                "y": 1.9685
+                            },
+                            "uuid": "ffe64633-e0e6-54c7-b831-526155b91b61"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "垂直线, 长度 0.0508 mm",
+                            "pos": {
+                                "x": 1.5113,
+                                "y": 2.1844
+                            },
+                            "uuid": "6c3029fe-4665-5c57-a7b3-82da9a44fd95"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.2286 mm",
+                            "pos": {
+                                "x": 2.2098,
+                                "y": 0.4826
+                            },
+                            "uuid": "0b127529-5fb5-587f-b51e-554168992cef"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "垂直线, 长度 0.3048 mm",
+                            "pos": {
+                                "x": 2.4638,
+                                "y": 0.9525
+                            },
+                            "uuid": "96569fcc-1bd0-5bd0-a4cc-c3beefcc3734"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "垂直线, 长度 0.0508 mm",
+                            "pos": {
+                                "x": 2.4638,
+                                "y": 1.3335
+                            },
+                            "uuid": "c1e5df8c-ea0a-5dfa-9b87-078bda302e4e"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "垂直线, 长度 0.0508 mm",
+                            "pos": {
+                                "x": 2.54,
+                                "y": 0.9017
+                            },
+                            "uuid": "51f6eeea-800c-5c1b-8874-d68ce005c7f8"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "垂直线, 长度 0.0508 mm",
+                            "pos": {
+                                "x": 2.54,
+                                "y": 0.9525
+                            },
+                            "uuid": "e058365d-f936-5b24-8d34-375762883211"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "垂直线, 长度 0.0508 mm",
+                            "pos": {
+                                "x": 2.54,
+                                "y": 1.0795
+                            },
+                            "uuid": "eb5768cf-6c04-592b-832a-410ec241c333"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "垂直线, 长度 0.1397 mm",
+                            "pos": {
+                                "x": 2.7686,
+                                "y": 0.6858
+                            },
+                            "uuid": "d7204d74-6709-5ba8-a43e-d1d352b619bc"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "垂直线, 长度 0.0508 mm",
+                            "pos": {
+                                "x": 2.7686,
+                                "y": 0.9017
+                            },
+                            "uuid": "2d700d58-28c9-5ce1-9cc8-ab04a373be0e"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "垂直线, 长度 0.0508 mm",
+                            "pos": {
+                                "x": 2.7686,
+                                "y": 0.9525
+                            },
+                            "uuid": "0f459804-997e-5a38-b009-491a15a723b4"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "垂直线, 长度 0.0508 mm",
+                            "pos": {
+                                "x": 2.7686,
+                                "y": 1.0795
+                            },
+                            "uuid": "7e63678c-6705-536c-9fe3-c5b502df6367"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "垂直线, 长度 0.0508 mm",
+                            "pos": {
+                                "x": 3.0226,
+                                "y": 1.7526
+                            },
+                            "uuid": "e04c216b-8b9b-5f46-9fc4-96300c473124"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "垂直线, 长度 0.0508 mm",
+                            "pos": {
+                                "x": 3.0226,
+                                "y": 1.8796
+                            },
+                            "uuid": "55e8af9e-939d-5dfd-9ac5-9bfc82df83ff"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "垂直线, 长度 0.0889 mm",
+                            "pos": {
+                                "x": 3.048,
+                                "y": 1.0414
+                            },
+                            "uuid": "8054568a-af87-519c-9a55-e9c242612f85"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "垂直线, 长度 0.0508 mm",
+                            "pos": {
+                                "x": 3.048,
+                                "y": 1.2065
+                            },
+                            "uuid": "f741bc69-62f6-53db-a08b-fbe20e387ecd"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "符号 'SGM2531C_PS8' 与来源库 'Motor' 中的符号存在差异",
+                    "items": [
+                        {
+                            "description": "符号 U10 [SGM2531C_PS8]",
+                            "pos": {
+                                "x": 3.0734,
+                                "y": 0.889
+                            },
+                            "uuid": "371ac57a-fa63-5267-a2b1-5d65ff20b923"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_mismatch"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.1651 mm",
+                            "pos": {
+                                "x": 3.1242,
+                                "y": 1.9812
+                            },
+                            "uuid": "43f2ed11-78bf-5132-8da8-5ae2ca354d13"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "垂直线, 长度 0.0508 mm",
+                            "pos": {
+                                "x": 3.2893,
+                                "y": 2.1082
+                            },
+                            "uuid": "ad992613-ecc4-5ca4-a7ab-b2b331f89395"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.0635 mm",
+                            "pos": {
+                                "x": 3.3274,
+                                "y": 1.5748
+                            },
+                            "uuid": "39511922-92ae-4764-99ba-58fd992e4acf"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "垂直线, 长度 0.0508 mm",
+                            "pos": {
+                                "x": 3.4925,
+                                "y": 2.2606
+                            },
+                            "uuid": "02286a6f-a958-5ccb-8ec5-e003fffc387c"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.2413 mm",
+                            "pos": {
+                                "x": 3.5941,
+                                "y": 1.5748
+                            },
+                            "uuid": "f966d3e1-d4be-517c-806b-64d655572b75"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.1397 mm",
+                            "pos": {
+                                "x": 3.6957,
+                                "y": 1.9812
+                            },
+                            "uuid": "b5fc417b-a0ca-5a78-97c6-b258eca901bf"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.1270 mm",
+                            "pos": {
+                                "x": 0.2286,
+                                "y": 1.3081
+                            },
+                            "uuid": "7c4222bd-feec-527b-9a09-26641edb7bde"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "垂直线, 长度 0.1778 mm",
+                            "pos": {
+                                "x": 0.4572,
+                                "y": 1.5494
+                            },
+                            "uuid": "33b0d233-1234-5dca-b823-5eb0bbfbcc07"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.1778 mm",
+                            "pos": {
+                                "x": 0.4572,
+                                "y": 1.7272
+                            },
+                            "uuid": "5622d831-8ae3-5edb-b931-071c82cc327d"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.1778 mm",
+                            "pos": {
+                                "x": 0.4572,
+                                "y": 1.8034
+                            },
+                            "uuid": "3d4fa17d-47e2-57fe-b829-a7b21d27c019"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "垂直线, 长度 0.0508 mm",
+                            "pos": {
+                                "x": 0.635,
+                                "y": 2.4384
+                            },
+                            "uuid": "c3786075-c659-5151-a855-75f4800c5be4"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "垂直线, 长度 0.0508 mm",
+                            "pos": {
+                                "x": 0.8128,
+                                "y": 2.0066
+                            },
+                            "uuid": "5da0d347-1f92-52b7-96de-45434ba8be1e"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "垂直线, 长度 0.0508 mm",
+                            "pos": {
+                                "x": 0.8636,
+                                "y": 2.3876
+                            },
+                            "uuid": "b0097536-4094-5569-800a-533ae52b2680"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.3048 mm",
+                            "pos": {
+                                "x": 0.9906,
+                                "y": 1.7272
+                            },
+                            "uuid": "dd1b42d6-0f82-577d-b140-bbed74a483ca"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.4064 mm",
+                            "pos": {
+                                "x": 0.9906,
+                                "y": 1.8034
+                            },
+                            "uuid": "8db08589-f617-5572-b703-582acd2f214e"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "垂直线, 长度 0.0508 mm",
+                            "pos": {
+                                "x": 1.2192,
+                                "y": 1.5494
+                            },
+                            "uuid": "3a3ceca3-39be-5bdf-b603-80fb4d2b5bb7"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.0762 mm",
+                            "pos": {
+                                "x": 1.2192,
+                                "y": 2.4765
+                            },
+                            "uuid": "40e4f4c3-3900-5816-bc04-a134fcc04954"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "垂直线, 长度 0.0508 mm",
+                            "pos": {
+                                "x": 1.2192,
+                                "y": 2.5527
+                            },
+                            "uuid": "73593f48-d7b8-5c10-b1eb-88966183a3ae"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "垂直线, 长度 0.1778 mm",
+                            "pos": {
+                                "x": 1.397,
+                                "y": 1.9939
+                            },
+                            "uuid": "97bdd717-e4c5-5f04-9ec0-05ed00475d58"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "垂直线, 长度 0.0508 mm",
+                            "pos": {
+                                "x": 1.397,
+                                "y": 2.2479
+                            },
+                            "uuid": "290cb8b2-bc72-5f44-b232-c965dc703f94"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "垂直线, 长度 0.0508 mm",
+                            "pos": {
+                                "x": 2.7432,
+                                "y": 1.5748
+                            },
+                            "uuid": "a8d1b576-87e4-5882-8074-7ddb4db52def"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "垂直线, 长度 0.0508 mm",
+                            "pos": {
+                                "x": 2.921,
+                                "y": 1.4732
+                            },
+                            "uuid": "1b13bc99-9806-5667-8bf9-9d999e40122f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.0254 mm",
+                            "pos": {
+                                "x": 1.9304,
+                                "y": 0.4572
+                            },
+                            "uuid": "b37b73a5-3e5d-5915-b837-1fc016212276"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "符号 'SN74LVC1G125_DBV_M28' 与来源库 'Motor' 中的符号存在差异",
+                    "items": [
+                        {
+                            "description": "符号 U12 [SN74LVC1G125_DBV_M28]",
+                            "pos": {
+                                "x": 1.2573,
+                                "y": 1.6002
+                            },
+                            "uuid": "72d6c094-5acc-5dd2-b603-2dd54eac1feb"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_mismatch"
+                },
+                {
+                    "description": "符号 'SN74LV1T125_DBV_M28_RX' 与来源库 'Motor' 中的符号存在差异",
+                    "items": [
+                        {
+                            "description": "符号 U11 [SN74LV1T125_DBV_M28_RX]",
+                            "pos": {
+                                "x": 2.286,
+                                "y": 2.3622
+                            },
+                            "uuid": "44bd0b30-3fd4-57cb-8cb8-3e04b565f5e4"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_mismatch"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "垂直线, 长度 0.1143 mm",
+                            "pos": {
+                                "x": 3.2766,
+                                "y": 1.5621
+                            },
+                            "uuid": "25e4641a-b2e6-5cf6-be48-9ef0211075e0"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "垂直线, 长度 0.0508 mm",
+                            "pos": {
+                                "x": 3.2766,
+                                "y": 1.7526
+                            },
+                            "uuid": "c1cffccb-254e-5b2d-9415-93c86f3b5206"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.1270 mm",
+                            "pos": {
+                                "x": 3.2766,
+                                "y": 1.5621
+                            },
+                            "uuid": "dbe6d3b1-4554-55f7-99c3-90c7f362109f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "垂直线, 长度 0.0508 mm",
+                            "pos": {
+                                "x": 3.5052,
+                                "y": 1.2827
+                            },
+                            "uuid": "054f96d7-072f-52cb-b481-53b31b9f03a1"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "垂直线, 长度 0.0508 mm",
+                            "pos": {
+                                "x": 3.5052,
+                                "y": 1.4097
+                            },
+                            "uuid": "38c74750-0463-4e0d-a45a-70b5bcb9d6f1"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "垂直线, 长度 0.0508 mm",
+                            "pos": {
+                                "x": 3.5052,
+                                "y": 1.4097
+                            },
+                            "uuid": "38c74750-0463-4e0d-a45a-70b5bcb9d6f1"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "垂直线, 长度 0.0508 mm",
+                            "pos": {
+                                "x": 3.5052,
+                                "y": 1.6637
+                            },
+                            "uuid": "657958c4-697f-57fd-ac06-6bd674445b4c"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                }
+            ]
+        },
+        {
+            "path": "/输入、总开关与降压/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709/3e4d7eec-bf94-5ef7-a88d-e072db9975b7",
+            "violations": []
+        },
+        {
+            "path": "/核心板接口/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709/c813fdd4-725f-5df7-aa4a-68cd15d401cf",
+            "violations": [
+                {
+                    "description": "Local and global labels have same name",
+                    "items": [
+                        {
+                            "description": "全局标签 'GND'",
+                            "pos": {
+                                "x": 2.5019,
+                                "y": 0.8255
+                            },
+                            "uuid": "55cfc17b-f0b4-5a0b-b7d0-79f4411a7f52"
+                        },
+                        {
+                            "description": "标签 'GND'",
+                            "pos": {
+                                "x": 2.8702,
+                                "y": 0.9144
+                            },
+                            "uuid": "6952fe5d-de37-455d-a949-97e808e51272"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "same_local_global_label"
+                }
+            ]
+        },
+        {
+            "path": "/左电机与编码器/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9",
+            "violations": []
+        },
+        {
+            "path": "/右电机与编码器/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709/ddf41ba8-06a1-59de-bdac-eecd21fc55cb",
+            "violations": []
+        },
+        {
+            "path": "/中景园屏幕与四个操作按钮/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709/433415cc-03a8-5189-8d36-253244603d4b",
+            "violations": []
+        },
+        {
+            "path": "/灰度与 MaixCAM2 识别/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709/d6318ee1-12d4-5089-84c2-bb1addcd6fe6",
+            "violations": []
+        },
+        {
+            "path": "/共享五伏的 USB-C 与三伏三/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709/259119ae-63bb-582f-a484-b0d1b9da613b",
+            "violations": []
+        },
+        {
+            "path": "/四脚蓝牙与外接步进驱动接口/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709/6805c229-363d-5720-8872-3a09dea05270",
+            "violations": []
+        },
+        {
+            "path": "/荔枝派 4A：Type-C 与 UART1/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709/185fc758-680e-5cca-9205-ee46946e4fad",
+            "violations": []
+        }
+    ],
+    "source": "CoralC5-Motor.kicad_sch"
+}

@@ -1,0 +1,24 @@
+{
+  "date": "2026-11-08",
+  "source_commit": "4ef36efcc087ad488966964c933727f7c5b372cc",
+  "files": {
+    ".scratch_step_test.kicad_sch": "26b23553fc1af17fe7a95bd0ed97afee1ef5c43619cf5d59e05ee072c35edf40",
+    ".scratch_test_08.kicad_sch": "2c71f7581621f3e2e075ce43930a39800c06cf57cbac22921e9e16202e61384d",
+    ".scratch_test_08_local.kicad_sch": "d4cb191790df1528d88aad82e2492ee9937f55edcd6eaa8318945729a0f37ac8",
+    "02_Power.kicad_sch": "96674dd4e4a308d565abec452173c96abb9cd6ad4793f14955dd22bc0eb014de",
+    "03_Core_Interface.kicad_sch": "f807f29a64197fd2be187279e8e66ad33f849cedf359b6990942f051ad1665f3",
+    "04_Left_Motor.kicad_sch": "b3904b1489bba5d486c1b1baa555fcbc46d4d6ace4c0ece7a8051b85da93aa04",
+    "05_Right_Motor.kicad_sch": "482aa1705f192f23e8993d2810e8c6c182251200c10044da5fc9ac8f9c4e97e5",
+    "06_Module_Power.kicad_sch": "fb62d29cd552b607d060d47357fa92112e20132e34877ba9620d4569d7810887",
+    "07_TFT_Buttons.kicad_sch": "adc1b45a1eb94210fb1321ccfbe8d84253aa1abb87f479c627282579864c4c33",
+    "08_Grayscale_Cameras.kicad_sch": "bee451258187feccc3b76196cebf16c32653a611041dfa24d558ff3d7457e5c1",
+    "09_Bluetooth_Stepper.kicad_sch": "a11e2d0c3fc13612edb468354f57758d69e36dd9763b86a48a49d7be3d50d18d",
+    "10_Lichee_Interface.kicad_sch": "019b64282f9a48837668694b03eadea93bcb57f244767156aeb7f38142a1a98c",
+    "CoralC5-Motor.kicad_sch": "7d95264d02b4cbb705ca4397efb82c571ee5a9a4d0b3c5bad579eb237d2f0094",
+    "Motor.kicad_sym": "e6d31c81cffc5460e9068bea58a94b5c19035e92c41ef3c0d2f81bb6f6f9781d",
+    "CoralC5-Motor.kicad_pro": "8fc75d06f5020102b87d30cf684c24b6bffb7ee9b77c5f466ffc07f0b0dcebee",
+    "CoralC5-Motor.kicad_pcb": "df5973fcd30c7fb345cfbbd7835ef7844ea39c42dc21267c428e345dc704bc03",
+    "fp-lib-table": "b3b35799c1e5d71b1c03d1bef840ca1a78882587863de0c52c39c0d41482245a",
+    "sym-lib-table": "7dbeffb0749c954ffbdec4208369d15e96bee231224886ea52bad125d83737bb"
+  }
+}

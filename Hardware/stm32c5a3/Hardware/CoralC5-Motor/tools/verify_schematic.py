@@ -10,6 +10,12 @@ sys.path.insert(0,str(ROOT.parent/'Shared/design_tools'))
 from sexpr import parse,node,nodes,prop
 from pin_functions import parse_alternate_functions
 DOC=ROOT/'docs'
+if (DOC/'layout-pinplan.json').exists():
+    from verify_layout_pinplan import main
+    raise SystemExit(main())
+if (DOC/'finalize-2026-11-08/current-revision.json').exists():
+    from verify_simplified import main
+    raise SystemExit(main())
 if (DOC/'m28_revision.json').exists():
     from verify_m28 import main
     raise SystemExit(main())

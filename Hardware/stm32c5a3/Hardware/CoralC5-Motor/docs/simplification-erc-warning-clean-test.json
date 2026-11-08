@@ -1,0 +1,740 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-11-08T14:51:06",
+    "ignored_checks": [
+        {
+            "description": "Global label only appears once in the schematic",
+            "key": "single_global_label"
+        },
+        {
+            "description": "Four connection points are joined together",
+            "key": "four_way_junction"
+        },
+        {
+            "description": "SPICE model issue",
+            "key": "simulation_model_issue"
+        },
+        {
+            "description": "Assigned footprint doesn't match footprint filters",
+            "key": "footprint_filter"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.6",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709",
+            "violations": [
+                {
+                    "description": "Label not connected",
+                    "items": [
+                        {
+                            "description": "标签 'V3V3'",
+                            "pos": {
+                                "x": 0.3175,
+                                "y": 1.4605
+                            },
+                            "uuid": "79b30774-3f89-5d23-a4b6-8ec765e4f196"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "label_dangling"
+                },
+                {
+                    "description": "Label not connected",
+                    "items": [
+                        {
+                            "description": "层次标签 'VIDEO_TX'",
+                            "pos": {
+                                "x": 0.3937,
+                                "y": 1.6002
+                            },
+                            "uuid": "d29c3710-2aa2-5dc1-95cf-80648b7fdae6"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "label_dangling"
+                },
+                {
+                    "description": "Label not connected",
+                    "items": [
+                        {
+                            "description": "层次标签 'VIDEO_RX'",
+                            "pos": {
+                                "x": 0.3937,
+                                "y": 1.6764
+                            },
+                            "uuid": "d5f08bba-c693-5813-ac8f-8840bd2b1141"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "label_dangling"
+                },
+                {
+                    "description": "Label not connected",
+                    "items": [
+                        {
+                            "description": "层次标签 'V3V3'",
+                            "pos": {
+                                "x": 0.2286,
+                                "y": 1.3081
+                            },
+                            "uuid": "2911c810-973f-5e03-8d94-ba0ec511c3eb"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "label_dangling"
+                },
+                {
+                    "description": "Label not connected",
+                    "items": [
+                        {
+                            "description": "层次标签 'STEP_UART_TX'",
+                            "pos": {
+                                "x": 0.4572,
+                                "y": 1.7272
+                            },
+                            "uuid": "ef9aedec-b2ed-5079-8e73-434f49ead2de"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "label_dangling"
+                },
+                {
+                    "description": "Label not connected",
+                    "items": [
+                        {
+                            "description": "层次标签 'STEP_UART_RX'",
+                            "pos": {
+                                "x": 0.4572,
+                                "y": 1.8034
+                            },
+                            "uuid": "7950e7c8-1955-57c6-b38c-9e219b333214"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "label_dangling"
+                },
+                {
+                    "description": "Label not connected",
+                    "items": [
+                        {
+                            "description": "标签 'V3V3'",
+                            "pos": {
+                                "x": 3.5052,
+                                "y": 1.2827
+                            },
+                            "uuid": "95de3198-909f-52b4-ad54-f55137416df8"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "label_dangling"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "垂直线, 长度 0.2921 mm",
+                            "pos": {
+                                "x": 1.2827,
+                                "y": 1.6764
+                            },
+                            "uuid": "2f4cf725-22b5-562b-ab24-68e5a9c70184"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "垂直线, 长度 0.3937 mm",
+                            "pos": {
+                                "x": 1.4097,
+                                "y": 1.6002
+                            },
+                            "uuid": "c37b1bf0-7378-52f5-b0d3-852996b68ae5"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "垂直线, 长度 0.2032 mm",
+                            "pos": {
+                                "x": 2.2098,
+                                "y": 0.4826
+                            },
+                            "uuid": "1314ac69-c14c-5d3a-ac21-f3b63696964f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.0762 mm",
+                            "pos": {
+                                "x": 2.4638,
+                                "y": 0.9525
+                            },
+                            "uuid": "3dc265a5-ac69-57d2-8857-85d7350916f5"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.1016 mm",
+                            "pos": {
+                                "x": 3.0226,
+                                "y": 1.7526
+                            },
+                            "uuid": "f2c9f83a-f3d8-5c98-b405-b5ee5ebb294b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "符号 'SGM2531C_PS8' 与来源库 'Motor' 中的符号存在差异",
+                    "items": [
+                        {
+                            "description": "符号 U10 [SGM2531C_PS8]",
+                            "pos": {
+                                "x": 3.0734,
+                                "y": 0.889
+                            },
+                            "uuid": "371ac57a-fa63-5267-a2b1-5d65ff20b923"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_mismatch"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "垂直线, 长度 0.2286 mm",
+                            "pos": {
+                                "x": 3.1242,
+                                "y": 1.7526
+                            },
+                            "uuid": "37d43eb4-f000-59c1-b656-7ed1b1b267f7"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "垂直线, 长度 0.4064 mm",
+                            "pos": {
+                                "x": 3.8354,
+                                "y": 1.5748
+                            },
+                            "uuid": "d3a6dc29-50f8-5173-b357-820e8f9625df"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "垂直线, 长度 0.2413 mm",
+                            "pos": {
+                                "x": 1.2954,
+                                "y": 1.7272
+                            },
+                            "uuid": "24311473-65fb-5975-a39d-3cd3a517ad47"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "垂直线, 长度 0.5080 mm",
+                            "pos": {
+                                "x": 1.2954,
+                                "y": 1.9685
+                            },
+                            "uuid": "ba5468f7-421d-5faa-bd1c-82d78ed12776"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "垂直线, 长度 0.1905 mm",
+                            "pos": {
+                                "x": 1.397,
+                                "y": 1.8034
+                            },
+                            "uuid": "42e83a2d-28cd-52c6-8342-26a397482b1a"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "符号 'SN74LVC1G125_DBV_M28' 与来源库 'Motor' 中的符号存在差异",
+                    "items": [
+                        {
+                            "description": "符号 U12 [SN74LVC1G125_DBV_M28]",
+                            "pos": {
+                                "x": 1.2573,
+                                "y": 1.6002
+                            },
+                            "uuid": "72d6c094-5acc-5dd2-b603-2dd54eac1feb"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_mismatch"
+                },
+                {
+                    "description": "符号 'SN74LV1T125_DBV_M28_RX' 与来源库 'Motor' 中的符号存在差异",
+                    "items": [
+                        {
+                            "description": "符号 U11 [SN74LV1T125_DBV_M28_RX]",
+                            "pos": {
+                                "x": 2.286,
+                                "y": 2.3622
+                            },
+                            "uuid": "44bd0b30-3fd4-57cb-8cb8-3e04b565f5e4"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_mismatch"
+                }
+            ]
+        },
+        {
+            "path": "/输入、总开关与降压/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709/3e4d7eec-bf94-5ef7-a88d-e072db9975b7",
+            "violations": []
+        },
+        {
+            "path": "/核心板接口/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709/c813fdd4-725f-5df7-aa4a-68cd15d401cf",
+            "violations": [
+                {
+                    "description": "Local and global labels have same name",
+                    "items": [
+                        {
+                            "description": "全局标签 'GND'",
+                            "pos": {
+                                "x": 1.1684,
+                                "y": 0.9398
+                            },
+                            "uuid": "82137c97-7020-52a1-9e56-adaa410e4d6e"
+                        },
+                        {
+                            "description": "标签 'GND'",
+                            "pos": {
+                                "x": 2.8702,
+                                "y": 0.9144
+                            },
+                            "uuid": "6952fe5d-de37-455d-a949-97e808e51272"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "same_local_global_label"
+                }
+            ]
+        },
+        {
+            "path": "/左电机与编码器/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709/ee1f9292-ed01-58aa-8c5d-14c4c3d4c6e9",
+            "violations": []
+        },
+        {
+            "path": "/右电机与编码器/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709/ddf41ba8-06a1-59de-bdac-eecd21fc55cb",
+            "violations": []
+        },
+        {
+            "path": "/中景园屏幕与四个操作按钮/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709/433415cc-03a8-5189-8d36-253244603d4b",
+            "violations": []
+        },
+        {
+            "path": "/灰度与 MaixCAM2 识别/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709/d6318ee1-12d4-5089-84c2-bb1addcd6fe6",
+            "violations": [
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR321 引脚 1 [Power input, Line]",
+                            "pos": {
+                                "x": 0.7747,
+                                "y": 1.9304
+                            },
+                            "uuid": "9ee8a63e-ca60-5869-897e-9b869beadb95"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR319 引脚 1 [Power input, Line]",
+                            "pos": {
+                                "x": 0.8763,
+                                "y": 2.3495
+                            },
+                            "uuid": "d09907df-897a-50f5-b982-1b2c03c1dbea"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR318 引脚 1 [Power input, Line]",
+                            "pos": {
+                                "x": 1.1557,
+                                "y": 2.2733
+                            },
+                            "uuid": "78b29575-6f95-5cd6-b461-8926a8916154"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR323 引脚 1 [Power input, Line]",
+                            "pos": {
+                                "x": 1.5113,
+                                "y": 2.2352
+                            },
+                            "uuid": "5e252930-1559-512e-a81d-baa58732e02d"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR404 引脚 1 [Power input, Line]",
+                            "pos": {
+                                "x": 2.4638,
+                                "y": 1.3843
+                            },
+                            "uuid": "821fe0c5-2fe8-5791-8fd9-f2aeffab63ba"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR403 引脚 1 [Power input, Line]",
+                            "pos": {
+                                "x": 2.54,
+                                "y": 1.1303
+                            },
+                            "uuid": "1b4a124c-28d0-51e5-b06e-08116803df17"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR405 引脚 1 [Power input, Line]",
+                            "pos": {
+                                "x": 2.7686,
+                                "y": 1.1303
+                            },
+                            "uuid": "6aa8bcb2-9b0e-5bd6-9c7e-30a86add608e"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR409 引脚 1 [Power input, Line]",
+                            "pos": {
+                                "x": 3.0226,
+                                "y": 1.9304
+                            },
+                            "uuid": "3e0addb6-2d93-5053-ad55-03543630dddf"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR407 引脚 1 [Power input, Line]",
+                            "pos": {
+                                "x": 3.048,
+                                "y": 1.2573
+                            },
+                            "uuid": "b68ecd65-acdd-5765-9b66-551c606a1d43"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR412 引脚 1 [Power input, Line]",
+                            "pos": {
+                                "x": 3.2893,
+                                "y": 2.159
+                            },
+                            "uuid": "105be4d7-ae55-539a-b854-4845dfd1b968"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR411 引脚 1 [Power input, Line]",
+                            "pos": {
+                                "x": 3.4925,
+                                "y": 2.3114
+                            },
+                            "uuid": "c02ca716-82f2-5bf9-b055-c65cca379bac"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Unconnected \"no connection\" flag",
+                    "items": [
+                        {
+                            "description": "没有连接",
+                            "pos": {
+                                "x": 3.6957,
+                                "y": 2.1082
+                            },
+                            "uuid": "1db6b79d-82bc-5727-af32-0f0f6f86e4d5"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "no_connect_dangling"
+                }
+            ]
+        },
+        {
+            "path": "/共享五伏的 USB-C 与三伏三/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709/259119ae-63bb-582f-a484-b0d1b9da613b",
+            "violations": []
+        },
+        {
+            "path": "/四脚蓝牙与外接步进驱动接口/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709/6805c229-363d-5720-8872-3a09dea05270",
+            "violations": [
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR418 引脚 1 [Power input, Line]",
+                            "pos": {
+                                "x": 0.635,
+                                "y": 2.4892
+                            },
+                            "uuid": "18dd87af-e4c2-5c29-bd4b-a16fe25d5c62"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR413 引脚 1 [Power input, Line]",
+                            "pos": {
+                                "x": 0.8128,
+                                "y": 2.0574
+                            },
+                            "uuid": "1e609269-17b7-5e2f-9990-d3cc796097a4"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR419 引脚 1 [Power input, Line]",
+                            "pos": {
+                                "x": 0.8636,
+                                "y": 2.4384
+                            },
+                            "uuid": "82ae6af2-7a82-53f0-8d05-3f10d9ce2e34"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR414 引脚 1 [Power input, Line]",
+                            "pos": {
+                                "x": 1.2192,
+                                "y": 1.6002
+                            },
+                            "uuid": "31a9c6d4-49cb-57c0-b746-53fbf74138a9"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR417 引脚 1 [Power input, Line]",
+                            "pos": {
+                                "x": 1.2192,
+                                "y": 2.6035
+                            },
+                            "uuid": "c472ebd7-d8ca-580c-b5d8-3989b02e567d"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR416 引脚 1 [Power input, Line]",
+                            "pos": {
+                                "x": 1.397,
+                                "y": 2.2987
+                            },
+                            "uuid": "ac8a5869-7cfd-5ed0-af5e-4c0e892ad6bd"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR421 引脚 1 [Power input, Line]",
+                            "pos": {
+                                "x": 2.7432,
+                                "y": 1.6256
+                            },
+                            "uuid": "c75de66e-b25d-5412-8087-e245106e72d7"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR420 引脚 1 [Power input, Line]",
+                            "pos": {
+                                "x": 2.921,
+                                "y": 1.524
+                            },
+                            "uuid": "7c440de6-0bf7-5549-be0b-ae674cf1419a"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                }
+            ]
+        },
+        {
+            "path": "/荔枝派 4A：Type-C 与 UART1/",
+            "uuid_path": "/b6138eaf-d20b-5b43-a04a-d71eca329709/185fc758-680e-5cca-9205-ee46946e4fad",
+            "violations": [
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR829 引脚 1 [Power input, Line]",
+                            "pos": {
+                                "x": 3.2766,
+                                "y": 1.8034
+                            },
+                            "uuid": "642575e3-0ca9-5406-80d1-e32096db427e"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR828 引脚 1 [Power input, Line]",
+                            "pos": {
+                                "x": 3.5052,
+                                "y": 1.7145
+                            },
+                            "uuid": "b051e08a-ede5-51a6-ad74-88f4df673d69"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                }
+            ]
+        }
+    ],
+    "source": "CoralC5-Motor.kicad_sch"
+}

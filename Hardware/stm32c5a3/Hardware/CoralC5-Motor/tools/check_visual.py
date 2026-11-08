@@ -38,8 +38,10 @@ for index,page in enumerate(doc):
                 text_overlaps.append({'page':index+1,'first':a['text'],'second':b['text']})
     out=ROOT/'docs/previews';out.mkdir(exist_ok=True)
     page.get_pixmap(matrix=fitz.Matrix(1.7,1.7)).save(str(out/f'page-{index+1}.png'))
-revision_path=ROOT/'docs/m28_revision.json'
-report_date=json.loads(revision_path.read_text(encoding='utf-8'))['date'] if revision_path.exists() else '2026-11-06'
+revision_path=ROOT/'docs/finalize-2026-11-08/current-revision.json'
+if not revision_path.exists():revision_path=ROOT/'docs/m28_revision.json'
+plan_path=ROOT/'docs/layout-pinplan.json'
+report_date=json.loads(plan_path.read_text(encoding='utf-8'))['date'] if plan_path.exists() else (json.loads(revision_path.read_text(encoding='utf-8'))['date'] if revision_path.exists() else '2026-11-06')
 report={'date':report_date,'pdf_sha256':hashlib.sha256((ROOT/'docs/CoralC5-Motor_Schematic.pdf').read_bytes()).hexdigest(),'pages':len(doc),'wire_text_intersections':len(findings),'text_text_overlaps':len(text_overlaps),'ignored_identical_pdf_search_spans':duplicate_search_spans,'findings':findings,'text_overlaps':text_overlaps}
 (ROOT/'docs/visual_check.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 print(json.dumps(report,ensure_ascii=False,indent=2))

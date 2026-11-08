@@ -1,0 +1,83 @@
+{
+  "date": "2026-11-08",
+  "source_netlist_sha256": "64479d7489ba6b8a898a951e8ff78041218e94ae68ae972445977e12b801e765",
+  "pcb_sha256": "082e1684afc962443f22c9c8033ed88bec1da71a601a17d3e1ee27632f0896de",
+  "checks": [
+    {
+      "name": "removed module protection references absent",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Maix input and ENUV on V5_CAM",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Maix direct protected output",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Maix OVP tied to ground",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Maix SS intentionally NC",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Maix UART direct",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Stepper direct VM",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Stepper direct UART",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Stepper unused pins NC",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Lichee level translation retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Lichee sense unused",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "F8 UUID association",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "mismatch": []
+      }
+    }
+  ],
+  "pass": true,
+  "association": {
+    "schematic_components": 143,
+    "pcb_footprints": 143,
+    "predicted_additions_by_uuid": [],
+    "ambiguous_symbol_matches": [],
+    "unmatched_pcb_footprints": [],
+    "reference_mismatches": [],
+    "predicted_footprint_type_replacements": [],
+    "value_mismatches": [],
+    "pad_net_mismatches": [],
+    "pass": true
+  }
+}

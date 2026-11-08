@@ -1,0 +1,1 @@
+(sym_lib_table (lib (name "Motor")(type "KiCad")(uri "${KIPRJMOD}/Motor.kicad_sym")(options "")(descr "CoralC5 Motor local symbols")))

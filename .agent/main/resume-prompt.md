@@ -1,6 +1,6 @@
 # Coral-C5续接提示词
 
-以下内容可粘贴到新对话。当前简化尚未实施；收到用户明确“继续”后执行。
+2026-11-08 本地续接状态：模块精简已经实施，当前143实体/184网络；原理图残线与废弃接口已清理，ERC为0错误3个库差异警告。PCB143/143元件和焊盘网络匹配，本次未改写PCB；保留176段走线/3过孔，仍有303项未布连接。最新连接报告为 `Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/schematic-only-resume/connectivity-result.json`。当前授权仅原理图优化与必要元件/网络同步，不授权PCB布局布线、其他板级优化或全套验证；使用 `SmallCoral/schematic-design-skill` 修改原理图，PCB仅在原理图阶段结束后独立核对。不要重复下面历史提示词中的已完成删除；接手先核对本机实时文件，再询问新目标。以下原提示词仅作历史需求依据，不可原样重复执行。
 
 ```text
 请继续 D:/dev/qrs/stm32/c5-car 的校赛A题Motor底板工作。
