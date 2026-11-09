@@ -7,7 +7,18 @@
       "af": 2,
       "endpoint": "U3:6",
       "contact": "A4",
-      "old_contact": "A4"
+      "socket_xy": [
+        190.0,
+        72.0
+      ],
+      "endpoint_xy": [
+        203.1625,
+        54.05
+      ],
+      "old_contact": "A4",
+      "previous_contact": "A4",
+      "previous_gpio": "PA0",
+      "previous_function": "TIM5_CH1"
     },
     {
       "signal": "L_ENC_B",
@@ -16,7 +27,18 @@
       "af": 2,
       "endpoint": "U3:4",
       "contact": "A3",
-      "old_contact": "A3"
+      "socket_xy": [
+        190.0,
+        71.0
+      ],
+      "endpoint_xy": [
+        203.1625,
+        52.75
+      ],
+      "old_contact": "A3",
+      "previous_contact": "A3",
+      "previous_gpio": "PA1",
+      "previous_function": "TIM5_CH2"
     },
     {
       "signal": "R_ENC_A",
@@ -25,7 +47,18 @@
       "af": 1,
       "endpoint": "U5:6",
       "contact": "A33",
-      "old_contact": "A33"
+      "socket_xy": [
+        190.0,
+        103.0
+      ],
+      "endpoint_xy": [
+        205.0125,
+        132.3375
+      ],
+      "old_contact": "A33",
+      "previous_contact": "A33",
+      "previous_gpio": "PB3",
+      "previous_function": "TIM2_CH2"
     },
     {
       "signal": "R_ENC_B",
@@ -34,7 +67,18 @@
       "af": 1,
       "endpoint": "U5:4",
       "contact": "A45",
-      "old_contact": "A45"
+      "socket_xy": [
+        190.0,
+        115.0
+      ],
+      "endpoint_xy": [
+        205.0125,
+        133.6375
+      ],
+      "old_contact": "A45",
+      "previous_contact": "A45",
+      "previous_gpio": "PA15",
+      "previous_function": "TIM2_CH1"
     },
     {
       "signal": "L_PWM",
@@ -43,16 +87,38 @@
       "af": 2,
       "endpoint": "U2:1",
       "contact": "A9",
-      "old_contact": "A9"
+      "socket_xy": [
+        190.0,
+        77.0
+      ],
+      "endpoint_xy": [
+        209.8,
+        63.7146
+      ],
+      "old_contact": "A9",
+      "previous_contact": "A9",
+      "previous_gpio": "PC2",
+      "previous_function": "TIM4_CH4"
     },
     {
       "signal": "R_PWM",
-      "gpio": "PB8",
-      "function": "TIM4_CH3",
+      "gpio": "PB6",
+      "function": "TIM4_CH1",
       "af": 2,
       "endpoint": "U4:1",
-      "contact": "A27",
-      "old_contact": "A27"
+      "contact": "A30",
+      "socket_xy": [
+        190.0,
+        100.0
+      ],
+      "endpoint_xy": [
+        197.4625,
+        121.9875
+      ],
+      "old_contact": "A27",
+      "previous_contact": "A27",
+      "previous_gpio": "PB8",
+      "previous_function": "TIM4_CH3"
     },
     {
       "signal": "L_DIR",
@@ -61,16 +127,38 @@
       "af": null,
       "endpoint": "U2:2",
       "contact": "A8",
-      "old_contact": "A8"
+      "socket_xy": [
+        190.0,
+        76.0
+      ],
+      "endpoint_xy": [
+        209.8,
+        63.0646
+      ],
+      "old_contact": "A8",
+      "previous_contact": "A8",
+      "previous_gpio": "PC3",
+      "previous_function": "GPIO"
     },
     {
       "signal": "R_DIR",
-      "gpio": "PC10",
+      "gpio": "PC11",
       "function": "GPIO",
       "af": null,
       "endpoint": "U4:2",
-      "contact": "A44",
-      "old_contact": "A34"
+      "contact": "A43",
+      "socket_xy": [
+        190.0,
+        113.0
+      ],
+      "endpoint_xy": [
+        197.4625,
+        122.6375
+      ],
+      "old_contact": "A34",
+      "previous_contact": "A44",
+      "previous_gpio": "PC10",
+      "previous_function": "GPIO"
     },
     {
       "signal": "L_nFAULT",
@@ -79,16 +167,38 @@
       "af": null,
       "endpoint": "U2:4",
       "contact": "A7",
-      "old_contact": "A7"
+      "socket_xy": [
+        190.0,
+        75.0
+      ],
+      "endpoint_xy": [
+        209.8,
+        61.7646
+      ],
+      "old_contact": "A7",
+      "previous_contact": "A7",
+      "previous_gpio": "PH4",
+      "previous_function": "EXTI4"
     },
     {
       "signal": "R_nFAULT",
-      "gpio": "PC11",
-      "function": "EXTI11",
+      "gpio": "PC10",
+      "function": "EXTI10",
       "af": null,
       "endpoint": "U4:4",
-      "contact": "A43",
-      "old_contact": "A35"
+      "contact": "A44",
+      "socket_xy": [
+        190.0,
+        114.0
+      ],
+      "endpoint_xy": [
+        197.4625,
+        123.9375
+      ],
+      "old_contact": "A35",
+      "previous_contact": "A43",
+      "previous_gpio": "PC11",
+      "previous_function": "EXTI11"
     },
     {
       "signal": "L_ISENSE",
@@ -97,7 +207,18 @@
       "af": null,
       "endpoint": "R15:2",
       "contact": "A5",
-      "old_contact": "A5"
+      "socket_xy": [
+        190.0,
+        73.0
+      ],
+      "endpoint_xy": [
+        207.25,
+        55.5021
+      ],
+      "old_contact": "A5",
+      "previous_contact": "A5",
+      "previous_gpio": "PH5",
+      "previous_function": "ADC2_IN13"
     },
     {
       "signal": "R_ISENSE",
@@ -106,52 +227,118 @@
       "af": null,
       "endpoint": "R35:2",
       "contact": "A11",
-      "old_contact": "A11"
+      "socket_xy": [
+        190.0,
+        79.0
+      ],
+      "endpoint_xy": [
+        200.2625,
+        130.65
+      ],
+      "old_contact": "A11",
+      "previous_contact": "A11",
+      "previous_gpio": "PC0",
+      "previous_function": "ADC1_IN8"
     },
     {
       "signal": "MOTOR_EN_REQ",
-      "gpio": "PC5",
+      "gpio": "PA3",
       "function": "GPIO",
       "af": null,
       "endpoint": "R6:1",
-      "contact": "B8",
-      "old_contact": "B13"
+      "contact": "B2",
+      "socket_xy": [
+        182.8,
+        70.0
+      ],
+      "endpoint_xy": [
+        173.4,
+        63.5375
+      ],
+      "old_contact": "B13",
+      "previous_contact": "B8",
+      "previous_gpio": "PC5",
+      "previous_function": "GPIO"
     },
     {
       "signal": "BT_TX",
-      "gpio": "PB0",
-      "function": "USART2_TX",
+      "gpio": "PA6",
+      "function": "USART1_TX",
       "af": 7,
       "endpoint": "J15:3",
-      "contact": "B9",
-      "old_contact": "A2"
+      "contact": "B5",
+      "socket_xy": [
+        182.8,
+        73.0
+      ],
+      "endpoint_xy": [
+        162.88,
+        45.65
+      ],
+      "old_contact": "A2",
+      "previous_contact": "B9",
+      "previous_gpio": "PB0",
+      "previous_function": "USART2_TX"
     },
     {
       "signal": "BT_RX",
-      "gpio": "PA3",
-      "function": "USART2_RX",
+      "gpio": "PA7",
+      "function": "USART1_RX",
       "af": 7,
       "endpoint": "J15:4",
-      "contact": "B2",
-      "old_contact": "B2"
+      "contact": "B6",
+      "socket_xy": [
+        182.8,
+        74.0
+      ],
+      "endpoint_xy": [
+        160.34,
+        45.65
+      ],
+      "old_contact": "B2",
+      "previous_contact": "B2",
+      "previous_gpio": "PA3",
+      "previous_function": "USART2_RX"
     },
     {
       "signal": "VIDEO_TX",
-      "gpio": "PB10",
-      "function": "USART3_TX",
-      "af": 7,
+      "gpio": "PB13",
+      "function": "UART5_TX",
+      "af": 14,
       "endpoint": "J19:6",
-      "contact": "B21",
-      "old_contact": "B34"
+      "contact": "B23",
+      "socket_xy": [
+        182.8,
+        93.0
+      ],
+      "endpoint_xy": [
+        184.25,
+        48.0
+      ],
+      "old_contact": "B34",
+      "previous_contact": "B21",
+      "previous_gpio": "PB10",
+      "previous_function": "USART3_TX"
     },
     {
       "signal": "VIDEO_RX",
-      "gpio": "PC4",
-      "function": "USART3_RX",
-      "af": 7,
+      "gpio": "PB12",
+      "function": "UART5_RX",
+      "af": 14,
       "endpoint": "J19:5",
-      "contact": "B7",
-      "old_contact": "B35"
+      "contact": "B22",
+      "socket_xy": [
+        182.8,
+        92.0
+      ],
+      "endpoint_xy": [
+        183.0,
+        48.0
+      ],
+      "old_contact": "B35",
+      "previous_contact": "B7",
+      "previous_gpio": "PC4",
+      "previous_function": "USART3_RX"
     },
     {
       "signal": "STEP_UART_TX",
@@ -160,7 +347,18 @@
       "af": 7,
       "endpoint": "J23:7",
       "contact": "B34",
-      "old_contact": "A30"
+      "socket_xy": [
+        182.8,
+        104.0
+      ],
+      "endpoint_xy": [
+        127.75,
+        137.25
+      ],
+      "old_contact": "A30",
+      "previous_contact": "B34",
+      "previous_gpio": "PC6",
+      "previous_function": "USART6_TX"
     },
     {
       "signal": "STEP_UART_RX",
@@ -169,115 +367,258 @@
       "af": 7,
       "endpoint": "J23:8",
       "contact": "B35",
-      "old_contact": "A29"
+      "socket_xy": [
+        182.8,
+        105.0
+      ],
+      "endpoint_xy": [
+        127.75,
+        139.75
+      ],
+      "old_contact": "A29",
+      "previous_contact": "B35",
+      "previous_gpio": "PC7",
+      "previous_function": "USART6_RX"
     },
     {
       "signal": "LICHEE_TX",
-      "gpio": "PB6",
-      "function": "USART1_TX",
-      "af": 7,
+      "gpio": "PB9",
+      "function": "UART4_TX",
+      "af": 8,
       "endpoint": "U12:2",
-      "contact": "A30",
-      "old_contact": "B26"
+      "contact": "A26",
+      "socket_xy": [
+        190.0,
+        96.0
+      ],
+      "endpoint_xy": [
+        214.0875,
+        72.31
+      ],
+      "old_contact": "B26",
+      "previous_contact": "A30",
+      "previous_gpio": "PB6",
+      "previous_function": "USART1_TX"
     },
     {
       "signal": "LICHEE_RX",
-      "gpio": "PB7",
-      "function": "USART1_RX",
-      "af": 7,
+      "gpio": "PB8",
+      "function": "UART4_RX",
+      "af": 8,
       "endpoint": "U11:4",
-      "contact": "A29",
-      "old_contact": "B27"
+      "contact": "A27",
+      "socket_xy": [
+        190.0,
+        97.0
+      ],
+      "endpoint_xy": [
+        216.3375,
+        76.61
+      ],
+      "old_contact": "B27",
+      "previous_contact": "A29",
+      "previous_gpio": "PB7",
+      "previous_function": "USART1_RX"
     },
     {
       "signal": "TFT_SCK",
-      "gpio": "PA5",
-      "function": "SPI1_SCK",
-      "af": 5,
+      "gpio": "PB1",
+      "function": "SPI3_SCK",
+      "af": 4,
       "endpoint": "J17:3",
-      "contact": "B4",
-      "old_contact": "B4"
+      "contact": "B10",
+      "socket_xy": [
+        182.8,
+        78.0
+      ],
+      "endpoint_xy": [
+        153.92,
+        59.0
+      ],
+      "old_contact": "B4",
+      "previous_contact": "B4",
+      "previous_gpio": "PA5",
+      "previous_function": "SPI1_SCK"
     },
     {
       "signal": "TFT_MOSI",
-      "gpio": "PA7",
-      "function": "SPI1_MOSI",
-      "af": 5,
+      "gpio": "PB2",
+      "function": "SPI3_MOSI",
+      "af": 7,
       "endpoint": "J17:4",
-      "contact": "B6",
-      "old_contact": "B6"
+      "contact": "B11",
+      "socket_xy": [
+        182.8,
+        79.0
+      ],
+      "endpoint_xy": [
+        156.46,
+        59.0
+      ],
+      "old_contact": "B6",
+      "previous_contact": "B6",
+      "previous_gpio": "PA7",
+      "previous_function": "SPI1_MOSI"
     },
     {
       "signal": "TFT_CS",
-      "gpio": "PA4",
+      "gpio": "PC4",
       "function": "GPIO",
       "af": null,
       "endpoint": "J17:7",
-      "contact": "B3",
-      "old_contact": "B3"
+      "contact": "B7",
+      "socket_xy": [
+        182.8,
+        75.0
+      ],
+      "endpoint_xy": [
+        164.08,
+        59.0
+      ],
+      "old_contact": "B3",
+      "previous_contact": "B3",
+      "previous_gpio": "PA4",
+      "previous_function": "GPIO"
     },
     {
       "signal": "TFT_RES",
-      "gpio": "PB1",
+      "gpio": "PB0",
       "function": "GPIO",
       "af": null,
       "endpoint": "J17:5",
-      "contact": "B10",
-      "old_contact": "B9"
+      "contact": "B9",
+      "socket_xy": [
+        182.8,
+        77.0
+      ],
+      "endpoint_xy": [
+        159.0,
+        59.0
+      ],
+      "old_contact": "B9",
+      "previous_contact": "B10",
+      "previous_gpio": "PB1",
+      "previous_function": "GPIO"
     },
     {
       "signal": "TFT_DC",
-      "gpio": "PB2",
+      "gpio": "PC5",
       "function": "GPIO",
       "af": null,
       "endpoint": "J17:6",
-      "contact": "B11",
-      "old_contact": "B10"
+      "contact": "B8",
+      "socket_xy": [
+        182.8,
+        76.0
+      ],
+      "endpoint_xy": [
+        161.54,
+        59.0
+      ],
+      "old_contact": "B10",
+      "previous_contact": "B11",
+      "previous_gpio": "PB2",
+      "previous_function": "GPIO"
     },
     {
       "signal": "TFT_BL",
-      "gpio": "PA6",
-      "function": "TIM3_CH1",
+      "gpio": "PA4",
+      "function": "TIM3_CH4",
       "af": 2,
       "endpoint": "J17:8",
-      "contact": "B5",
-      "old_contact": "A32"
+      "contact": "B3",
+      "socket_xy": [
+        182.8,
+        71.0
+      ],
+      "endpoint_xy": [
+        166.62,
+        59.0
+      ],
+      "old_contact": "A32",
+      "previous_contact": "B5",
+      "previous_gpio": "PA6",
+      "previous_function": "TIM3_CH1"
     },
     {
       "signal": "KEY_MODE",
-      "gpio": "PH3",
+      "gpio": "PD15",
       "function": "GPIO",
       "af": null,
       "endpoint": "SW2:1",
-      "contact": "B44",
-      "old_contact": "B7"
+      "contact": "B33",
+      "socket_xy": [
+        182.8,
+        103.0
+      ],
+      "endpoint_xy": [
+        138.6667,
+        125.45
+      ],
+      "old_contact": "B7",
+      "previous_contact": "B44",
+      "previous_gpio": "PH3",
+      "previous_function": "GPIO"
     },
     {
       "signal": "KEY_NEXT",
-      "gpio": "PA10",
-      "function": "GPIO",
-      "af": null,
-      "endpoint": "SW3:1",
-      "contact": "B40",
-      "old_contact": "B8"
-    },
-    {
-      "signal": "KEY_OK",
       "gpio": "PA8",
       "function": "GPIO",
       "af": null,
-      "endpoint": "SW4:1",
+      "endpoint": "SW3:1",
       "contact": "B38",
-      "old_contact": "B11"
+      "socket_xy": [
+        182.8,
+        108.0
+      ],
+      "endpoint_xy": [
+        149.0833,
+        125.45
+      ],
+      "old_contact": "B8",
+      "previous_contact": "B40",
+      "previous_gpio": "PA10",
+      "previous_function": "GPIO"
+    },
+    {
+      "signal": "KEY_OK",
+      "gpio": "PA10",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "SW4:1",
+      "contact": "B40",
+      "socket_xy": [
+        182.8,
+        110.0
+      ],
+      "endpoint_xy": [
+        159.5,
+        125.45
+      ],
+      "old_contact": "B11",
+      "previous_contact": "B38",
+      "previous_gpio": "PA8",
+      "previous_function": "GPIO"
     },
     {
       "signal": "KEY_START",
-      "gpio": "PC9",
+      "gpio": "PH3",
       "function": "GPIO",
       "af": null,
       "endpoint": "SW5:1",
-      "contact": "B37",
-      "old_contact": "B12"
+      "contact": "B44",
+      "socket_xy": [
+        182.8,
+        114.0
+      ],
+      "endpoint_xy": [
+        169.9167,
+        125.45
+      ],
+      "old_contact": "B12",
+      "previous_contact": "B37",
+      "previous_gpio": "PC9",
+      "previous_function": "GPIO"
     },
     {
       "signal": "GRAY_CH1",
@@ -286,7 +627,18 @@
       "af": null,
       "endpoint": "J20:1",
       "contact": "B12",
-      "old_contact": "B15"
+      "socket_xy": [
+        182.8,
+        82.0
+      ],
+      "endpoint_xy": [
+        145.65,
+        48.15
+      ],
+      "old_contact": "B15",
+      "previous_contact": "B12",
+      "previous_gpio": "PE7",
+      "previous_function": "GPIO"
     },
     {
       "signal": "GRAY_CH2",
@@ -295,7 +647,18 @@
       "af": null,
       "endpoint": "J20:2",
       "contact": "B13",
-      "old_contact": "B16"
+      "socket_xy": [
+        182.8,
+        83.0
+      ],
+      "endpoint_xy": [
+        143.15,
+        48.15
+      ],
+      "old_contact": "B16",
+      "previous_contact": "B13",
+      "previous_gpio": "PE8",
+      "previous_function": "GPIO"
     },
     {
       "signal": "GRAY_CH3",
@@ -304,7 +667,18 @@
       "af": null,
       "endpoint": "J20:3",
       "contact": "B14",
-      "old_contact": "B17"
+      "socket_xy": [
+        182.8,
+        84.0
+      ],
+      "endpoint_xy": [
+        140.65,
+        48.15
+      ],
+      "old_contact": "B17",
+      "previous_contact": "B14",
+      "previous_gpio": "PE9",
+      "previous_function": "GPIO"
     },
     {
       "signal": "GRAY_CH4",
@@ -313,7 +687,18 @@
       "af": null,
       "endpoint": "J20:4",
       "contact": "B15",
-      "old_contact": "B18"
+      "socket_xy": [
+        182.8,
+        85.0
+      ],
+      "endpoint_xy": [
+        138.15,
+        48.15
+      ],
+      "old_contact": "B18",
+      "previous_contact": "B15",
+      "previous_gpio": "PE10",
+      "previous_function": "GPIO"
     },
     {
       "signal": "GRAY_CH5",
@@ -322,7 +707,18 @@
       "af": null,
       "endpoint": "J20:5",
       "contact": "B16",
-      "old_contact": "B19"
+      "socket_xy": [
+        182.8,
+        86.0
+      ],
+      "endpoint_xy": [
+        135.65,
+        48.15
+      ],
+      "old_contact": "B19",
+      "previous_contact": "B16",
+      "previous_gpio": "PE11",
+      "previous_function": "GPIO"
     },
     {
       "signal": "GRAY_CH6",
@@ -331,7 +727,18 @@
       "af": null,
       "endpoint": "J20:6",
       "contact": "B17",
-      "old_contact": "B20"
+      "socket_xy": [
+        182.8,
+        87.0
+      ],
+      "endpoint_xy": [
+        133.15,
+        48.15
+      ],
+      "old_contact": "B20",
+      "previous_contact": "B17",
+      "previous_gpio": "PE12",
+      "previous_function": "GPIO"
     },
     {
       "signal": "GRAY_CH7",
@@ -340,7 +747,18 @@
       "af": null,
       "endpoint": "J20:7",
       "contact": "B18",
-      "old_contact": "B28"
+      "socket_xy": [
+        182.8,
+        88.0
+      ],
+      "endpoint_xy": [
+        130.65,
+        48.15
+      ],
+      "old_contact": "B28",
+      "previous_contact": "B18",
+      "previous_gpio": "PE13",
+      "previous_function": "GPIO"
     },
     {
       "signal": "GRAY_CH8",
@@ -349,39 +767,275 @@
       "af": null,
       "endpoint": "J20:8",
       "contact": "B19",
-      "old_contact": "B29"
+      "socket_xy": [
+        182.8,
+        89.0
+      ],
+      "endpoint_xy": [
+        128.15,
+        48.15
+      ],
+      "old_contact": "B29",
+      "previous_contact": "B19",
+      "previous_gpio": "PE14",
+      "previous_function": "GPIO"
     }
   ],
   "metrics": {
-    "oldTot": 2280.8024000000005,
-    "newTot": 1980.6024000000007,
-    "oldCross": [
-      "BT_TX",
-      "STEP_UART_TX",
-      "STEP_UART_RX",
-      "LICHEE_TX",
-      "LICHEE_RX",
-      "TFT_BL"
-    ],
+    "oldTot": 1944.202,
+    "newTot": 1961.202,
+    "oldCross": [],
     "newCross": []
   },
-  "pcb_sha256": "2487ae3f6aadba3788bba3936bd0086dbe67d9bf60a262462eea4423fb9c0636",
+  "pcb_sha256": "3280619e6cc5cd909af25863542f973a79291f6c69f65460b5e1045f2fa51c53",
   "core_pcb_sha256": "e63fadf87b410330031f2aeaf74f3fc9fc07dd3ff3f8d41798139486e7b1cf4b",
   "date": "2026-11-08",
-  "revision": "M2.8P",
+  "revision": "M2.8P2",
   "core_schematic_hashes": {
     "02_Power_USB.kicad_sch": "aa0680ea3030634c77f194650583659558c84b7650c1c2526428167c6dab94a9",
     "03_MCU.kicad_sch": "beb7bd1584cb1eb6f64bda20b870ae0482f6356b3e52781526f579e225b1d752",
     "04_Interface.kicad_sch": "0e7829cee3c4c2b2f0929dd47b0a38ecfee75a60b4d58bbad6cc571589de3ff4",
     "CoralC5-Core.kicad_sch": "fd0c69b501ebba8d38292d40d285f869d0c951c52321b79d7911eecde637be66"
   },
-  "scope": "Motor schematic GPIO reassignment only; Motor PCB unchanged. Core PCB association metadata repaired in a separate authorized step; no Core circuit or copper changes.",
-  "pcb_normalized_sha256": "051382c1bf59bc5791dfba83d0daed9ec3688190404f14fe47cf0064463826af",
+  "scope": "User-confirmed Motor schematic pin replan only; current 142-footprint PCB and all 329 copper/via objects preserved; no Core edits.",
+  "pcb_normalized_sha256": "e38eaf89e2357bbbb3df6403d027ae2d084e85e0b57b0c5046e8392c8f954d18",
   "core_schematic_normalized_sha256": {
     "02_Power_USB.kicad_sch": "63e9f032ec340619dfc3732ddfa20cb35525218af4db6bb0be64f5ce16fc86c8",
     "03_MCU.kicad_sch": "da510db9157876d7ec85fd28d3a31769778655effc06d8c324ed876fbb01b871",
     "04_Interface.kicad_sch": "645067c778d212c28b2762bd452cab30cc56a27a78c8792954d7ec036f6e5319",
     "CoralC5-Core.kicad_sch": "9b586fd64227fdb690eba5b5c5f372b48956ad44f51f45add1348a17b0d5360a"
   },
-  "line_ending_policy": "Original raw hashes document this local preservation check; repeatable content checks also accept repository-mandated CRLF-to-LF normalization."
+  "line_ending_policy": "Original raw hashes document this local preservation check; repeatable content checks also accept repository-mandated CRLF-to-LF normalization.",
+  "source_commit": "8725275ab4f3aace2bfe87971e3c5ed062f33165",
+  "geometry_comparison": {
+    "method": "reviewed legal candidate search plus grouped UART/SPI constraints and local GPIO refinements; straight-line crossings are a proxy, not routed copper",
+    "before": {
+      "straight_line_crossings": 39,
+      "manhattan_mm": 1944.202,
+      "crossing_pairs": [
+        [
+          "R_ENC_A",
+          "R_PWM"
+        ],
+        [
+          "R_ENC_A",
+          "R_ISENSE"
+        ],
+        [
+          "R_ENC_B",
+          "R_ISENSE"
+        ],
+        [
+          "R_PWM",
+          "LICHEE_TX"
+        ],
+        [
+          "R_PWM",
+          "LICHEE_RX"
+        ],
+        [
+          "R_DIR",
+          "R_nFAULT"
+        ],
+        [
+          "R_ISENSE",
+          "LICHEE_TX"
+        ],
+        [
+          "R_ISENSE",
+          "LICHEE_RX"
+        ],
+        [
+          "MOTOR_EN_REQ",
+          "BT_TX"
+        ],
+        [
+          "MOTOR_EN_REQ",
+          "TFT_SCK"
+        ],
+        [
+          "MOTOR_EN_REQ",
+          "TFT_MOSI"
+        ],
+        [
+          "MOTOR_EN_REQ",
+          "TFT_CS"
+        ],
+        [
+          "MOTOR_EN_REQ",
+          "TFT_BL"
+        ],
+        [
+          "BT_TX",
+          "BT_RX"
+        ],
+        [
+          "BT_TX",
+          "TFT_SCK"
+        ],
+        [
+          "BT_TX",
+          "TFT_MOSI"
+        ],
+        [
+          "BT_TX",
+          "TFT_CS"
+        ],
+        [
+          "BT_TX",
+          "TFT_BL"
+        ],
+        [
+          "STEP_UART_TX",
+          "KEY_MODE"
+        ],
+        [
+          "STEP_UART_RX",
+          "KEY_MODE"
+        ],
+        [
+          "STEP_UART_RX",
+          "KEY_NEXT"
+        ],
+        [
+          "LICHEE_TX",
+          "LICHEE_RX"
+        ],
+        [
+          "TFT_SCK",
+          "TFT_MOSI"
+        ],
+        [
+          "TFT_SCK",
+          "TFT_RES"
+        ],
+        [
+          "TFT_SCK",
+          "TFT_DC"
+        ],
+        [
+          "TFT_SCK",
+          "TFT_BL"
+        ],
+        [
+          "TFT_SCK",
+          "GRAY_CH1"
+        ],
+        [
+          "TFT_SCK",
+          "GRAY_CH2"
+        ],
+        [
+          "TFT_MOSI",
+          "TFT_RES"
+        ],
+        [
+          "TFT_MOSI",
+          "TFT_DC"
+        ],
+        [
+          "TFT_MOSI",
+          "GRAY_CH1"
+        ],
+        [
+          "TFT_CS",
+          "TFT_BL"
+        ],
+        [
+          "TFT_RES",
+          "TFT_DC"
+        ],
+        [
+          "KEY_MODE",
+          "KEY_NEXT"
+        ],
+        [
+          "KEY_MODE",
+          "KEY_OK"
+        ],
+        [
+          "KEY_MODE",
+          "KEY_START"
+        ],
+        [
+          "KEY_NEXT",
+          "KEY_OK"
+        ],
+        [
+          "KEY_NEXT",
+          "KEY_START"
+        ],
+        [
+          "KEY_OK",
+          "KEY_START"
+        ]
+      ],
+      "changed_roles": 0
+    },
+    "after": {
+      "straight_line_crossings": 14,
+      "manhattan_mm": 1961.202,
+      "crossing_pairs": [
+        [
+          "R_ENC_A",
+          "R_PWM"
+        ],
+        [
+          "R_ENC_A",
+          "R_ISENSE"
+        ],
+        [
+          "R_ENC_B",
+          "R_ISENSE"
+        ],
+        [
+          "R_ISENSE",
+          "LICHEE_TX"
+        ],
+        [
+          "R_ISENSE",
+          "LICHEE_RX"
+        ],
+        [
+          "MOTOR_EN_REQ",
+          "BT_TX"
+        ],
+        [
+          "MOTOR_EN_REQ",
+          "BT_RX"
+        ],
+        [
+          "BT_TX",
+          "TFT_BL"
+        ],
+        [
+          "BT_RX",
+          "TFT_BL"
+        ],
+        [
+          "STEP_UART_RX",
+          "KEY_NEXT"
+        ],
+        [
+          "TFT_SCK",
+          "TFT_MOSI"
+        ],
+        [
+          "TFT_SCK",
+          "GRAY_CH1"
+        ],
+        [
+          "TFT_SCK",
+          "GRAY_CH2"
+        ],
+        [
+          "TFT_MOSI",
+          "GRAY_CH1"
+        ]
+      ],
+      "changed_roles": 20
+    }
+  },
+  "baseline_path": ".scratch/pinplan-rework-20261108",
+  "baseline_manifest_sha256": "10e181b13ddc20c26eed1587d21d6e675816b7ec2b7a2d49bed3bbedacc5c22d"
 }

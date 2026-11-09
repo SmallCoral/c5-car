@@ -1,30 +1,44 @@
 {
   "date": "2026-11-08",
-  "revision": "M2.8P",
-  "source_commit": "4ef36efcc087ad488966964c933727f7c5b372cc",
-  "kicad_version": "10.0.6",
-  "pass": true,
-  "checks": 955,
-  "failed": [],
+  "revision": "M2.8P2",
+  "source_commit": "8725275ab4f3aace2bfe87971e3c5ed062f33165",
+  "kicad_version": "10.0.8",
+  "pass": false,
+  "checks": 957,
+  "failed": [
+    {
+      "name": "Motor PCB unchanged except permitted Git EOL",
+      "pass": false,
+      "detail": null
+    },
+    {
+      "name": "only existing XT60 exact model missing",
+      "pass": false,
+      "detail": []
+    },
+    {
+      "name": "all Motor UUID associations retained",
+      "pass": false,
+      "detail": null
+    }
+  ],
   "physical_references": 142,
   "native_nets": 184,
   "gpio_roles": 39,
-  "changed_gpio_roles": 25,
+  "changed_gpio_roles": 20,
   "native_erc_errors": 0,
   "native_erc_warnings": 0,
-  "model_bound_references": 139,
-  "model_missing_references": [
-    "J1"
-  ],
+  "model_bound_references": 140,
+  "model_missing_references": [],
   "artifacts_sha256": {
-    "CoralC5-Motor.kicad_sch": "3d39ecd1203d464f62ae07e73cea4ddee0b355c1ad39a492a1941d5eb88b6113",
-    "10_Lichee_Interface.kicad_sch": "5a901a12c5937d8a7a0433c371697922edb6637a36c64428c286b169645edc55",
+    "CoralC5-Motor.kicad_sch": "53613ff23585f6b51eb830f6d281d405fab82505d1c052b6e4d823b8bab5c796",
+    "10_Lichee_Interface.kicad_sch": "6ad059a6462b1d7302c36e0b1dc33d82fde1487e29eea47a7e455ba3325c3403",
     "06_Module_Power.kicad_sch": "fb62d29cd552b607d060d47357fa92112e20132e34877ba9620d4569d7810887",
     "02_Power.kicad_sch": "2130ec334833e2b18da6d480f05f4dcc243600130cda86ba1bcd2ba3d6124033",
     "07_TFT_Buttons.kicad_sch": "d19bd0d68d3be55b1963d9d4604d87ef8f82e816dd2b8909d2891b1fa9c791e1",
-    "09_Bluetooth_Stepper.kicad_sch": "445df9ddd0cd4c1dae95b0f081a452d9088548a750c159d733181eba16a44a90",
-    "03_Core_Interface.kicad_sch": "60aa58dec5e311e5ffcbbdc05c10f64f2970068aa3e98432e91b3e148f9f031f",
-    "08_Grayscale_Cameras.kicad_sch": "b961b874c76bc7b1fbc038c474057bd3d8ad8a6659e6c8de9a52a98fe6d7289e",
+    "09_Bluetooth_Stepper.kicad_sch": "93ef5a450ae54e191ad5b25dfb69984e1266509c837ff4e0debf8e7088f68160",
+    "03_Core_Interface.kicad_sch": "eb0d83a780bcc37620f9f9375c071a7941548a2dde88584c202f226d029db0e7",
+    "08_Grayscale_Cameras.kicad_sch": "3034a8fb69bc5d50c447fb002c893473bf39c5082f703881187d707d9f8d844e",
     "05_Right_Motor.kicad_sch": "482aa1705f192f23e8993d2810e8c6c182251200c10044da5fc9ac8f9c4e97e5",
     "04_Left_Motor.kicad_sch": "b3904b1489bba5d486c1b1baa555fcbc46d4d6ace4c0ece7a8051b85da93aa04"
   },
@@ -79,7 +93,7 @@
     },
     {
       "name": "Motor PCB unchanged except permitted Git EOL",
-      "pass": true,
+      "pass": false,
       "detail": null
     },
     {
@@ -563,7 +577,7 @@
       "detail": null
     },
     {
-      "name": "A26 unused GPIO NC",
+      "name": "A26 correct module endpoint",
       "pass": true,
       "detail": null
     },
@@ -623,7 +637,7 @@
       "detail": null
     },
     {
-      "name": "A29 correct module endpoint",
+      "name": "A29 unused GPIO NC",
       "pass": true,
       "detail": null
     },
@@ -1058,7 +1072,7 @@
       "detail": null
     },
     {
-      "name": "B4 correct module endpoint",
+      "name": "B4 unused GPIO NC",
       "pass": true,
       "detail": null
     },
@@ -1398,7 +1412,7 @@
       "detail": null
     },
     {
-      "name": "B21 correct module endpoint",
+      "name": "B21 unused GPIO NC",
       "pass": true,
       "detail": null
     },
@@ -1418,7 +1432,7 @@
       "detail": null
     },
     {
-      "name": "B22 unused GPIO NC",
+      "name": "B22 correct module endpoint",
       "pass": true,
       "detail": null
     },
@@ -1438,7 +1452,7 @@
       "detail": null
     },
     {
-      "name": "B23 unused GPIO NC",
+      "name": "B23 correct module endpoint",
       "pass": true,
       "detail": null
     },
@@ -1638,7 +1652,7 @@
       "detail": null
     },
     {
-      "name": "B33 unused GPIO NC",
+      "name": "B33 correct module endpoint",
       "pass": true,
       "detail": null
     },
@@ -1718,7 +1732,7 @@
       "detail": null
     },
     {
-      "name": "B37 correct module endpoint",
+      "name": "B37 unused GPIO NC",
       "pass": true,
       "detail": null
     },
@@ -2231,6 +2245,11 @@
       "name": "four independent UART instances",
       "pass": true,
       "detail": null
+    },
+    {
+      "name": "independent ST HTML AF and LQFP100 functional audit",
+      "pass": true,
+      "detail": []
     },
     {
       "name": "gray single-port PE7 through PE14",
@@ -3419,6 +3438,11 @@
     },
     {
       "name": "J1 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "J1 portable existing model",
       "pass": true,
       "detail": null
     },
@@ -4749,10 +4773,8 @@
     },
     {
       "name": "only existing XT60 exact model missing",
-      "pass": true,
-      "detail": [
-        "J1"
-      ]
+      "pass": false,
+      "detail": []
     },
     {
       "name": "U1 manufacturer package pin identities",
@@ -4791,7 +4813,7 @@
     },
     {
       "name": "all Motor UUID associations retained",
-      "pass": true,
+      "pass": false,
       "detail": null
     },
     {
@@ -5025,7 +5047,7 @@
       "reference": "C1",
       "footprint": "Motor:Capacitor_THT__CP_Radial_D10.0mm_P5.00mm",
       "models": [
-        "${KIPRJMOD}/Models/Capacitor_THT__CP_Radial_D10.0mm_P5.00mm__CP_Radial_D10.0mm_P5.00mm.step"
+        "${KIPRJMOD}/Models/Nichicon_D10x12.5_P5_Lead_PackageReference.step"
       ]
     },
     {
@@ -5095,7 +5117,7 @@
       "reference": "F1",
       "footprint": "Motor:Fuse_Littelfuse_448_6.10x2.69mm_GenericBody",
       "models": [
-        "${KIPRJMOD}/Models/Fuse_454_generic.wrl"
+        "${KIPRJMOD}/Models/Littelfuse_0448015-MR_EasyEDA_C187551.step"
       ]
     },
     {
@@ -5178,7 +5200,9 @@
     {
       "reference": "J1",
       "footprint": "Motor:AMASS_XT60PW-M_1x02_P7.20mm_Horizontal",
-      "models": []
+      "models": [
+        "${KIPRJMOD}/Models/AMASS_XT60PW-M_EasyEDA_C98732.step"
+      ]
     },
     {
       "reference": "C85",
@@ -5212,7 +5236,7 @@
       "reference": "SW1",
       "footprint": "Motor:SS12D10G5_SHOUHAN_3P_P4.80mm",
       "models": [
-        "${KIPRJMOD}/Models/SS12D10G5_generic.wrl"
+        "${KIPRJMOD}/Models/DEALON_SS-12D10-G5_PackageReference_C2998777.step"
       ]
     },
     {
@@ -5453,7 +5477,7 @@
       "reference": "J19",
       "footprint": "Motor:ZX_MX1.25_6PWT",
       "models": [
-        "${KIPRJMOD}/Models/ZX_MX125_6PWT_GenericExterior.wrl"
+        "${KIPRJMOD}/Models/Megastar_ZX-MX1.25-6PWT_EasyEDA_C7430472.step"
       ]
     },
     {
@@ -5579,7 +5603,7 @@
       "reference": "C33",
       "footprint": "Motor:Capacitor_THT__CP_Radial_D10.0mm_P5.00mm",
       "models": [
-        "${KIPRJMOD}/Models/Capacitor_THT__CP_Radial_D10.0mm_P5.00mm__CP_Radial_D10.0mm_P5.00mm.step"
+        "${KIPRJMOD}/Models/Nichicon_D10x12.5_P5_Lead_PackageReference.step"
       ]
     },
     {
@@ -5761,7 +5785,7 @@
       "reference": "C13",
       "footprint": "Motor:Capacitor_THT__CP_Radial_D10.0mm_P5.00mm",
       "models": [
-        "${KIPRJMOD}/Models/Capacitor_THT__CP_Radial_D10.0mm_P5.00mm__CP_Radial_D10.0mm_P5.00mm.step"
+        "${KIPRJMOD}/Models/Nichicon_D10x12.5_P5_Lead_PackageReference.step"
       ]
     },
     {
@@ -5804,7 +5828,7 @@
   "pcb_drc_run": false,
   "limitations": [
     "Motor PCB is byte-identical; remapped GPIO pad nets intentionally await a separate update.",
-    "MaixCAM2 ~1A typical limit versus inference/charging peaks is unmeasured; independent reverse blocking and UART isolation absent after approved simplification.",
+    "MaixCAM2 no-charge startup/inference current has not been measured against the ~1A limit; independent reverse blocking and UART isolation are absent.",
     "12V 12.5A source estimate ~11.09A at85% efficiency, with assumed4A wheels and3A stepper, leaves limited margin; load/startup/thermal tests required.",
     "Stepper VM and UART are direct; current simplified circuit has no independent MCU power-off.",
     "Core external3.3V load budget<=100mA and encoder3.3V operation need hardware confirmation.",

@@ -1,0 +1,105 @@
+{
+  "date": "2026-11-09",
+  "source_commit": "8725275ab4f3aace2bfe87971e3c5ed062f33165",
+  "tool": "KiCad pcbnew 10.0.8",
+  "passed": true,
+  "scope": "Four board-only holes; all other PCB fields and saved schematic/project files unchanged",
+  "before_pcb_sha256": "ebf9593409df1450adedcb3f712c7182457a805a13dcb4a63acdb5dbbaf6d6d7",
+  "after_pcb_sha256": "f6c2e4311a9a5c6bae09e2e77ec79879d3374dd65dfe04133949b040225ce06c",
+  "changed": [
+    {
+      "uuid": "01a1c957-0223-4652-a81d-8ccc9bbfdee1",
+      "reference": "H1",
+      "value": "安装孔 M3 D3.2",
+      "position_mm": [
+        126.25,
+        115.5
+      ],
+      "footprint": "Motor:MountingHole__MountingHole_3.2mm_M3",
+      "drill_mm": 3.2,
+      "pad_uuid": "d779f1dd-36a8-4486-aa45-6a64a8258e54"
+    },
+    {
+      "uuid": "078d1b6b-c603-40a3-a4a7-2b4b39cee0aa",
+      "reference": "H1",
+      "value": "安装孔 M3 D3.2",
+      "position_mm": [
+        126.25,
+        62.25
+      ],
+      "footprint": "Motor:MountingHole__MountingHole_3.2mm_M3",
+      "drill_mm": 3.2,
+      "pad_uuid": "3158ca66-3929-4064-8ef1-c08d22a7b40c"
+    },
+    {
+      "uuid": "53318ad9-5a32-4e96-9f4d-684505ffd4d3",
+      "reference": "H1",
+      "value": "安装孔 M3 D3.2",
+      "position_mm": [
+        221.25,
+        45.25
+      ],
+      "footprint": "Motor:MountingHole__MountingHole_3.2mm_M3",
+      "drill_mm": 3.2,
+      "pad_uuid": "d1ce0163-3719-4904-aa77-9473cd2ec741"
+    },
+    {
+      "uuid": "cf03d95f-2a76-4592-acf3-2d0b35b52248",
+      "reference": "H1",
+      "value": "安装孔 M3 D3.2",
+      "position_mm": [
+        221.25,
+        140.5
+      ],
+      "footprint": "Motor:MountingHole__MountingHole_3.2mm_M3",
+      "drill_mm": 3.2,
+      "pad_uuid": "da4a2689-a1ff-4097-b035-4b5a2879ff09"
+    }
+  ],
+  "lcd_preserved": [
+    {
+      "uuid": "4a8cfdf8-f4bf-4c72-9db8-82ca58fc4e75",
+      "reference": "H2",
+      "value": "TFT孔 D2.0",
+      "position_mm": [
+        172.73,
+        111.0
+      ],
+      "footprint": "Motor:MountingHole__MountingHole_2mm",
+      "drill_mm": 2.0,
+      "pad_uuid": "59ad96fc-76ae-403e-b8d3-39f2277cc7fb"
+    },
+    {
+      "uuid": "7d53c0c3-af37-48f3-b247-fb8f460e38f8",
+      "reference": "H1",
+      "value": "TFT孔 D2.0",
+      "position_mm": [
+        142.73,
+        111.0
+      ],
+      "footprint": "Motor:MountingHole__MountingHole_2mm",
+      "drill_mm": 2.0,
+      "pad_uuid": "d6f4d407-ec00-4561-ae64-3aac5f6af94d"
+    }
+  ],
+  "segments": 545,
+  "vias": 32,
+  "native_drills_mm": [
+    2.0,
+    2.0,
+    3.2,
+    3.2,
+    3.2,
+    3.2
+  ],
+  "physical_verified": false,
+  "excellon_verified": true,
+  "drc_before_after": {
+    "violations_before": 24,
+    "violations_after": 24,
+    "unconnected_before": 156,
+    "unconnected_after": 156,
+    "violations_identical": true,
+    "ignored_checks_identical": true
+  }
+}

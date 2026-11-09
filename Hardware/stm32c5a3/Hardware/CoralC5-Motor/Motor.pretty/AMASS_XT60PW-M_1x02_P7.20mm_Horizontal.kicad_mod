@@ -286,4 +286,9 @@
 		(uuid "386faf3f-2adf-472a-84bf-bd511edf2429")
 	)
 	(embedded_fonts no)
+	(model "${KIPRJMOD}/Models/AMASS_XT60PW-M_EasyEDA_C98732.step"
+		(offset (xyz 3.6 7.1 0))
+		(scale (xyz 1 1 1))
+		(rotate (xyz 0 0 90))
+	)
 )

@@ -102,15 +102,9 @@
 		(fill solid)
 		(layer "F.SilkS")
 	)
-	(model "${KIPRJMOD}/Models/ZX_MX125_6PWT_GenericExterior.wrl"
-		(offset
-			(xyz 0 0 0)
-		)
-		(scale
-			(xyz 1 1 1)
-		)
-		(rotate
-			(xyz 0 0 0)
-		)
+	(model "${KIPRJMOD}/Models/Megastar_ZX-MX1.25-6PWT_EasyEDA_C7430472.step"
+		(offset (xyz 0 2.55 0.02))
+		(scale (xyz 1 1 1))
+		(rotate (xyz 0 0 0))
 	)
 )

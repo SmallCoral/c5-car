@@ -1,0 +1,671 @@
+{
+  "date": "2026-11-08",
+  "source_commit": "8725275ab4f3aace2bfe87971e3c5ed062f33165",
+  "kicad_version": "10.0.8",
+  "pcbnew_python": "3.11.5",
+  "pass": true,
+  "checks": 66,
+  "failed": [],
+  "protected_files": [
+    "Hardware/stm32c5a3/Hardware/CoralC5-Motor/CoralC5-Motor.kicad_pcb",
+    "Hardware/stm32c5a3/Hardware/CoralC5-Motor/CoralC5-Motor.kicad_pro",
+    "Hardware/stm32c5a3/Hardware/CoralC5-Motor/Motor.kicad_sym",
+    "Hardware/stm32c5a3/Hardware/CoralC5-Core/02_Power_USB.kicad_sch",
+    "Hardware/stm32c5a3/Hardware/CoralC5-Core/03_MCU.kicad_sch",
+    "Hardware/stm32c5a3/Hardware/CoralC5-Core/04_Interface.kicad_sch",
+    "Hardware/stm32c5a3/Hardware/CoralC5-Core/CoralC5-Core.kicad_sch",
+    "Hardware/stm32c5a3/Hardware/Shared/interface.csv"
+  ],
+  "local_ui_state_observations": [
+    {
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/CoralC5-Motor.kicad_prl",
+      "raw_bytes_match": false,
+      "changed_field": "board.active_layer",
+      "before": 25,
+      "after": 0,
+      "baseline_sha256": "6bacd7c4b0aaafd172a76fbb01cd8992bc26b80e0257515323c11496c5c0a8e5",
+      "current_sha256": "b97de989d2171f844831002076e2d07282e090163987af2cfb548282a9430edc",
+      "note": "Only the local selected PCB layer changed while the project was open; no UI state was restored."
+    }
+  ],
+  "physical_symbol_instances": 144,
+  "pcb_footprints": 142,
+  "pcb_track_via_objects": 329,
+  "gpio_changes_this_round": 20,
+  "geometry_before": {
+    "straight_line_crossings": 39,
+    "manhattan_mm": 1944.202,
+    "crossing_pairs": [
+      [
+        "R_ENC_A",
+        "R_PWM"
+      ],
+      [
+        "R_ENC_A",
+        "R_ISENSE"
+      ],
+      [
+        "R_ENC_B",
+        "R_ISENSE"
+      ],
+      [
+        "R_PWM",
+        "LICHEE_TX"
+      ],
+      [
+        "R_PWM",
+        "LICHEE_RX"
+      ],
+      [
+        "R_DIR",
+        "R_nFAULT"
+      ],
+      [
+        "R_ISENSE",
+        "LICHEE_TX"
+      ],
+      [
+        "R_ISENSE",
+        "LICHEE_RX"
+      ],
+      [
+        "MOTOR_EN_REQ",
+        "BT_TX"
+      ],
+      [
+        "MOTOR_EN_REQ",
+        "TFT_SCK"
+      ],
+      [
+        "MOTOR_EN_REQ",
+        "TFT_MOSI"
+      ],
+      [
+        "MOTOR_EN_REQ",
+        "TFT_CS"
+      ],
+      [
+        "MOTOR_EN_REQ",
+        "TFT_BL"
+      ],
+      [
+        "BT_TX",
+        "BT_RX"
+      ],
+      [
+        "BT_TX",
+        "TFT_SCK"
+      ],
+      [
+        "BT_TX",
+        "TFT_MOSI"
+      ],
+      [
+        "BT_TX",
+        "TFT_CS"
+      ],
+      [
+        "BT_TX",
+        "TFT_BL"
+      ],
+      [
+        "STEP_UART_TX",
+        "KEY_MODE"
+      ],
+      [
+        "STEP_UART_RX",
+        "KEY_MODE"
+      ],
+      [
+        "STEP_UART_RX",
+        "KEY_NEXT"
+      ],
+      [
+        "LICHEE_TX",
+        "LICHEE_RX"
+      ],
+      [
+        "TFT_SCK",
+        "TFT_MOSI"
+      ],
+      [
+        "TFT_SCK",
+        "TFT_RES"
+      ],
+      [
+        "TFT_SCK",
+        "TFT_DC"
+      ],
+      [
+        "TFT_SCK",
+        "TFT_BL"
+      ],
+      [
+        "TFT_SCK",
+        "GRAY_CH1"
+      ],
+      [
+        "TFT_SCK",
+        "GRAY_CH2"
+      ],
+      [
+        "TFT_MOSI",
+        "TFT_RES"
+      ],
+      [
+        "TFT_MOSI",
+        "TFT_DC"
+      ],
+      [
+        "TFT_MOSI",
+        "GRAY_CH1"
+      ],
+      [
+        "TFT_CS",
+        "TFT_BL"
+      ],
+      [
+        "TFT_RES",
+        "TFT_DC"
+      ],
+      [
+        "KEY_MODE",
+        "KEY_NEXT"
+      ],
+      [
+        "KEY_MODE",
+        "KEY_OK"
+      ],
+      [
+        "KEY_MODE",
+        "KEY_START"
+      ],
+      [
+        "KEY_NEXT",
+        "KEY_OK"
+      ],
+      [
+        "KEY_NEXT",
+        "KEY_START"
+      ],
+      [
+        "KEY_OK",
+        "KEY_START"
+      ]
+    ]
+  },
+  "geometry_after": {
+    "straight_line_crossings": 14,
+    "manhattan_mm": 1961.202,
+    "crossing_pairs": [
+      [
+        "R_ENC_A",
+        "R_PWM"
+      ],
+      [
+        "R_ENC_A",
+        "R_ISENSE"
+      ],
+      [
+        "R_ENC_B",
+        "R_ISENSE"
+      ],
+      [
+        "R_ISENSE",
+        "LICHEE_TX"
+      ],
+      [
+        "R_ISENSE",
+        "LICHEE_RX"
+      ],
+      [
+        "MOTOR_EN_REQ",
+        "BT_TX"
+      ],
+      [
+        "MOTOR_EN_REQ",
+        "BT_RX"
+      ],
+      [
+        "BT_TX",
+        "TFT_BL"
+      ],
+      [
+        "BT_RX",
+        "TFT_BL"
+      ],
+      [
+        "STEP_UART_RX",
+        "KEY_NEXT"
+      ],
+      [
+        "TFT_SCK",
+        "TFT_MOSI"
+      ],
+      [
+        "TFT_SCK",
+        "GRAY_CH1"
+      ],
+      [
+        "TFT_SCK",
+        "GRAY_CH2"
+      ],
+      [
+        "TFT_MOSI",
+        "GRAY_CH1"
+      ]
+    ]
+  },
+  "negative_cases": [
+    {
+      "case": "UART AF",
+      "signal": "BT_TX",
+      "injected": {
+        "function": "USART2_TX"
+      },
+      "rejected": true,
+      "failed_checks": [
+        "BT_TX: function occurs in independent ST HTML AF cell",
+        "Bluetooth has matching hardware TX/RX on one peripheral"
+      ]
+    },
+    {
+      "case": "SPI instance",
+      "signal": "TFT_MOSI",
+      "injected": {
+        "function": "SPI2_MOSI"
+      },
+      "rejected": true,
+      "failed_checks": [
+        "TFT_MOSI: function occurs in independent ST HTML AF cell",
+        "TFT clock and MOSI use the same SPI peripheral"
+      ]
+    },
+    {
+      "case": "ADC channel",
+      "signal": "L_ISENSE",
+      "injected": {
+        "function": "ADC1_IN13"
+      },
+      "rejected": true,
+      "failed_checks": [
+        "L_ISENSE: ADC instance and channel occur in Table13"
+      ]
+    },
+    {
+      "case": "encoder channel",
+      "signal": "R_ENC_B",
+      "injected": {
+        "function": "TIM2_CH2"
+      },
+      "rejected": true,
+      "failed_checks": [
+        "R_ENC_B: function occurs in independent ST HTML AF cell",
+        "R encoder uses CH1/CH2 of an encoder-capable timer",
+        "both encoders, wheel PWM and backlight have independent counters"
+      ]
+    },
+    {
+      "case": "wheel PWM channel",
+      "signal": "R_PWM",
+      "injected": {
+        "function": "TIM4_CH4"
+      },
+      "rejected": true,
+      "failed_checks": [
+        "R_PWM: function occurs in independent ST HTML AF cell",
+        "wheel PWM uses separate channels of one timer"
+      ]
+    },
+    {
+      "case": "fault EXTI",
+      "signal": "R_nFAULT",
+      "injected": {
+        "function": "EXTI4"
+      },
+      "rejected": true,
+      "failed_checks": [
+        "R_nFAULT: EXTI line equals GPIO pin index",
+        "motor fault EXTI lines do not conflict"
+      ]
+    }
+  ],
+  "pcb_sha256": "3280619e6cc5cd909af25863542f973a79291f6c69f65460b5e1045f2fa51c53",
+  "firmware_changed": false,
+  "pcb_updated": false,
+  "drc_run": false,
+  "results": [
+    {
+      "name": "protected bytes Hardware/stm32c5a3/Hardware/CoralC5-Motor/CoralC5-Motor.kicad_pcb",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "PRL differs only in local active-layer selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "protected bytes Hardware/stm32c5a3/Hardware/CoralC5-Motor/CoralC5-Motor.kicad_pro",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "protected bytes Hardware/stm32c5a3/Hardware/CoralC5-Motor/Motor.kicad_sym",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "protected bytes Hardware/stm32c5a3/Hardware/CoralC5-Core/02_Power_USB.kicad_sch",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "protected bytes Hardware/stm32c5a3/Hardware/CoralC5-Core/03_MCU.kicad_sch",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "protected bytes Hardware/stm32c5a3/Hardware/CoralC5-Core/04_Interface.kicad_sch",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "protected bytes Hardware/stm32c5a3/Hardware/CoralC5-Core/CoralC5-Core.kicad_sch",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "protected bytes Hardware/stm32c5a3/Hardware/Shared/interface.csv",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "all physical symbol UUIDs and full instance properties preserved",
+      "pass": true,
+      "detail": {
+        "instances": 144
+      }
+    },
+    {
+      "name": "L_ENC_A geometry uses current actual socket and endpoint pads",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L_ENC_B geometry uses current actual socket and endpoint pads",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R_ENC_A geometry uses current actual socket and endpoint pads",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R_ENC_B geometry uses current actual socket and endpoint pads",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L_PWM geometry uses current actual socket and endpoint pads",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R_PWM geometry uses current actual socket and endpoint pads",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L_DIR geometry uses current actual socket and endpoint pads",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R_DIR geometry uses current actual socket and endpoint pads",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L_nFAULT geometry uses current actual socket and endpoint pads",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R_nFAULT geometry uses current actual socket and endpoint pads",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L_ISENSE geometry uses current actual socket and endpoint pads",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R_ISENSE geometry uses current actual socket and endpoint pads",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "MOTOR_EN_REQ geometry uses current actual socket and endpoint pads",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "BT_TX geometry uses current actual socket and endpoint pads",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "BT_RX geometry uses current actual socket and endpoint pads",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "VIDEO_TX geometry uses current actual socket and endpoint pads",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "VIDEO_RX geometry uses current actual socket and endpoint pads",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "STEP_UART_TX geometry uses current actual socket and endpoint pads",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "STEP_UART_RX geometry uses current actual socket and endpoint pads",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "LICHEE_TX geometry uses current actual socket and endpoint pads",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "LICHEE_RX geometry uses current actual socket and endpoint pads",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "TFT_SCK geometry uses current actual socket and endpoint pads",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "TFT_MOSI geometry uses current actual socket and endpoint pads",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "TFT_CS geometry uses current actual socket and endpoint pads",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "TFT_RES geometry uses current actual socket and endpoint pads",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "TFT_DC geometry uses current actual socket and endpoint pads",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "TFT_BL geometry uses current actual socket and endpoint pads",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "KEY_MODE geometry uses current actual socket and endpoint pads",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "KEY_NEXT geometry uses current actual socket and endpoint pads",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "KEY_OK geometry uses current actual socket and endpoint pads",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "KEY_START geometry uses current actual socket and endpoint pads",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "GRAY_CH1 geometry uses current actual socket and endpoint pads",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "GRAY_CH2 geometry uses current actual socket and endpoint pads",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "GRAY_CH3 geometry uses current actual socket and endpoint pads",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "GRAY_CH4 geometry uses current actual socket and endpoint pads",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "GRAY_CH5 geometry uses current actual socket and endpoint pads",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "GRAY_CH6 geometry uses current actual socket and endpoint pads",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "GRAY_CH7 geometry uses current actual socket and endpoint pads",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "GRAY_CH8 geometry uses current actual socket and endpoint pads",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "geometry counts recompute from fixed actual pad coordinates",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "negative case rejects wrong UART AF",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "negative case rejects wrong SPI instance",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "negative case rejects wrong ADC channel",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "negative case rejects wrong encoder channel",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "negative case rejects wrong wheel PWM channel",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "negative case rejects wrong fault EXTI",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "current output exists netlist.xml",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "current output exists core_netlist.xml",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "current output exists erc.json",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "current output exists verification.json",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "current output exists visual_check.json",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "current output exists functional-pinout-verification.json",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "956 schematic checks pass",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "320 full functional checks pass",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "native ERC zero errors warnings",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "ten-page PDF has no detected wire/text or text/text overlap",
+      "pass": true,
+      "detail": null
+    }
+  ]
+}

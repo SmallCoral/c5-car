@@ -1,7 +1,0 @@
-#VRML V2.0 utf8
-# GENERIC SUBSTITUTE MODEL: nominal envelope, not an exact manufacturer model.
-Transform { translation 0.0 0.0 0.255906 children [ Shape { appearance Appearance { material Material { diffuseColor 0.65 0.65 0.65 } } geometry Box { size 1.259843 0.984252 0.472441 } } ] }
-Transform { translation -0.433071 -0.314961 0.019685 children [ Shape { appearance Appearance { material Material { diffuseColor 0.7 0.6 0.3 } } geometry Box { size 0.354331 0.314961 0.03937 } } ] }
-Transform { translation -0.433071 0.314961 0.019685 children [ Shape { appearance Appearance { material Material { diffuseColor 0.7 0.6 0.3 } } geometry Box { size 0.354331 0.314961 0.03937 } } ] }
-Transform { translation 0.433071 -0.314961 0.019685 children [ Shape { appearance Appearance { material Material { diffuseColor 0.7 0.6 0.3 } } geometry Box { size 0.354331 0.314961 0.03937 } } ] }
-Transform { translation 0.433071 0.314961 0.019685 children [ Shape { appearance Appearance { material Material { diffuseColor 0.7 0.6 0.3 } } geometry Box { size 0.354331 0.314961 0.03937 } } ] }

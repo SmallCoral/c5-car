@@ -1,6 +1,26 @@
-# Coral-C5 交接：Motor 接口重分配与 Core 元件关联
+# Coral-C5 交接：Motor M2.8P2 与 PCB 元器件模型
 
 更新日期：2026-11-08。工作目录 C:/Users/sc/Documents/Dev/Hardware/c5-car，分支 main，远端 https://github.com/SmallCoral/c5-car.git。本轮起点提交 4ef36efcc087ad488966964c933727f7c5b372cc；交付提交以 git log -1 和远端 main 为准。
+
+## 2026-11-09 元器件模型更新
+
+后续用户要求将 LCD 双孔以外四个板级孔改 M3，已在原中心改为 Ø3.2mm NPTH，保留孔与焊盘 UUID。LCD 142.73/111、172.73/111 两孔仍 Ø2.0mm；原 Ø2mm 库未动，新增本地 M3 库。原生钻孔导出确认4×3.2/2×2.0，DRC仍24/156且违规内容一致；其他PCB字段、铜线、模型和原理图保持本次基线。记录 Documentation/validation/2026-11-09-m3-mounting-holes.md，基线 .scratch/m3-holes-20261109/before。
+
+用户要求从网上补齐错误/缺失模型，不自行绘制。已下载五个原样 STEP，更新 J1、F1、J19、SW1、C1/C13/C33 的 PCB 和本地库绑定。SW1 是 DEALON G5 外形参考，脚距4.7与当前4.8mm有差异；三只电解是 Nichicon D10×L12.5/P5参考，保留未剪引线。均未冒充原厂精确型号，没有变更BOM。U1/U6/U10精确EP模型仍未取得；Diodes官网STEP正常浏览器下载亦超时，原通用外形保留。
+
+起始PCB已由用户推进到146封装（140电气+6孔）、545段走线、32过孔。先保存 .scratch/models-20261109/before 及 baseline.json，再仅改model节点；PCB和五个本地封装去掉model节点后与本次基线全部字段一致。新资源工具 Motor/tools/verify_3d_models.py 终检319项通过、140/140模型路径存在；前后原生DRC均24违规/156未连接，失败保留。没有修改原理图、Core、布局、网络或铜线，未提交推送。完整来源、尺寸差异、命令与预览见 Documentation/validation/2026-11-09-3d-models.md。
+
+上轮142封装/329铜对象的字节指纹是历史快照，不能把本次合法模型元数据及用户已有布线变化当作自动覆盖设计的理由。GPIO与PCB当前电气一致性本轮未复核，不靠删旧检查制造通过。
+
+## 2026-11-08 本机续接更新
+
+当前工作目录为 D:/dev/qrs/stm32/c5-car，源码起点8725275。用户选择仅调整GPIO及原理图，保留现有铜线，并要求UART、SPI、编码器、PWM、ADC、EXTI及Core触点全部核对。本轮已实施M2.8P2，20路GPIO变化，39路完整定义以 Documentation/reference/motor-core-pins.md 和两个当前CSV为准。蓝牙USART1、Maix UART5、步进USART6、荔枝派UART4；TFT SPI3，背光PA4/TIM3_CH4；左右编码器TIM5/TIM2、轮PWM TIM4，ADC2_IN13/ADC1_IN8。
+
+原生ERC0错误0警告，原理图956项、独立原厂功能320项通过；十页PDF交叠0/0。几何直线交叉39→14，L1距离1944.202→1961.202mm，未包含实际避障、层或电源铜线。Motor PCB142封装、329走线/过孔对象保持本轮起始字节，未同步本次管脚网络，未运行DRC。Core及98触点合同未改。未改固件、电源元件或Maix限流值。
+
+基线在 .scratch/pinplan-rework-20261108/before，清单已保存到Motor/docs/pinplan-rework-baseline.json；临时脚本不是后续必须依赖的工具。新增正式检查工具为Motor/tools/verify_functional_pinout.py，输出 functional-pinout-verification.json 和 functional-pinout.csv。验证命令及限制见 Documentation/validation/2026-11-08-pinplan-rework.md。本轮未提交或推送。
+
+下面正文为上一轮M2.8P交接历史，其串口、SPI、按键映射和955项结果不再代表当前分配；Core关联修复与模块电源边界仍可追溯。
 
 ## 目标
 

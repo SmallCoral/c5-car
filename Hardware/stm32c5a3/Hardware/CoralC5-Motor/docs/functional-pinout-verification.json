@@ -1,0 +1,2071 @@
+{
+  "date": "2026-11-08",
+  "pass": true,
+  "checks": 320,
+  "failed": [],
+  "source": "https://www.st.com/content/st_com/en/technical-documents/stm32c5a3cg_asset/chunk-010-topic-stm32c5xx-db-ds-alternate-functions.html",
+  "source_sha256": "ca60bfe1debfa5c2b42a49ec3f9e58dd2bcb0fc3663f4a2059598ae66339b2b4",
+  "rows": [
+    {
+      "signal": "L_ENC_A",
+      "endpoint": "U3:6",
+      "contact": "A4",
+      "gpio": "PA0",
+      "mcu_lqfp100_pin": "23",
+      "function": "TIM5_CH1",
+      "af": 2,
+      "st_table14_cell": "TIM5_CH1"
+    },
+    {
+      "signal": "L_ENC_B",
+      "endpoint": "U3:4",
+      "contact": "A3",
+      "gpio": "PA1",
+      "mcu_lqfp100_pin": "24",
+      "function": "TIM5_CH2",
+      "af": 2,
+      "st_table14_cell": "TIM5_CH2"
+    },
+    {
+      "signal": "R_ENC_A",
+      "endpoint": "U5:6",
+      "contact": "A33",
+      "gpio": "PB3",
+      "mcu_lqfp100_pin": "89",
+      "function": "TIM2_CH2",
+      "af": 1,
+      "st_table14_cell": "TIM2_CH2"
+    },
+    {
+      "signal": "R_ENC_B",
+      "endpoint": "U5:4",
+      "contact": "A45",
+      "gpio": "PA15",
+      "mcu_lqfp100_pin": "77",
+      "function": "TIM2_CH1",
+      "af": 1,
+      "st_table14_cell": "TIM2_CH1"
+    },
+    {
+      "signal": "L_PWM",
+      "endpoint": "U2:1",
+      "contact": "A9",
+      "gpio": "PC2",
+      "mcu_lqfp100_pin": "17",
+      "function": "TIM4_CH4",
+      "af": 2,
+      "st_table14_cell": "TIM4_CH4"
+    },
+    {
+      "signal": "R_PWM",
+      "endpoint": "U4:1",
+      "contact": "A30",
+      "gpio": "PB6",
+      "mcu_lqfp100_pin": "92",
+      "function": "TIM4_CH1",
+      "af": 2,
+      "st_table14_cell": "TIM4_CH1"
+    },
+    {
+      "signal": "L_DIR",
+      "endpoint": "U2:2",
+      "contact": "A8",
+      "gpio": "PC3",
+      "mcu_lqfp100_pin": "18",
+      "function": "GPIO",
+      "af": null,
+      "st_table14_cell": ""
+    },
+    {
+      "signal": "R_DIR",
+      "endpoint": "U4:2",
+      "contact": "A43",
+      "gpio": "PC11",
+      "mcu_lqfp100_pin": "79",
+      "function": "GPIO",
+      "af": null,
+      "st_table14_cell": ""
+    },
+    {
+      "signal": "L_nFAULT",
+      "endpoint": "U2:4",
+      "contact": "A7",
+      "gpio": "PH4",
+      "mcu_lqfp100_pin": "19",
+      "function": "EXTI4",
+      "af": null,
+      "st_table14_cell": ""
+    },
+    {
+      "signal": "R_nFAULT",
+      "endpoint": "U4:4",
+      "contact": "A44",
+      "gpio": "PC10",
+      "mcu_lqfp100_pin": "78",
+      "function": "EXTI10",
+      "af": null,
+      "st_table14_cell": ""
+    },
+    {
+      "signal": "L_ISENSE",
+      "endpoint": "R15:2",
+      "contact": "A5",
+      "gpio": "PH5",
+      "mcu_lqfp100_pin": "22",
+      "function": "ADC2_IN13",
+      "af": null,
+      "st_table14_cell": ""
+    },
+    {
+      "signal": "R_ISENSE",
+      "endpoint": "R35:2",
+      "contact": "A11",
+      "gpio": "PC0",
+      "mcu_lqfp100_pin": "15",
+      "function": "ADC1_IN8",
+      "af": null,
+      "st_table14_cell": ""
+    },
+    {
+      "signal": "MOTOR_EN_REQ",
+      "endpoint": "R6:1",
+      "contact": "B2",
+      "gpio": "PA3",
+      "mcu_lqfp100_pin": "26",
+      "function": "GPIO",
+      "af": null,
+      "st_table14_cell": ""
+    },
+    {
+      "signal": "BT_TX",
+      "endpoint": "J15:3",
+      "contact": "B5",
+      "gpio": "PA6",
+      "mcu_lqfp100_pin": "31",
+      "function": "USART1_TX",
+      "af": 7,
+      "st_table14_cell": "USART1_TX"
+    },
+    {
+      "signal": "BT_RX",
+      "endpoint": "J15:4",
+      "contact": "B6",
+      "gpio": "PA7",
+      "mcu_lqfp100_pin": "32",
+      "function": "USART1_RX",
+      "af": 7,
+      "st_table14_cell": "USART1_RX"
+    },
+    {
+      "signal": "VIDEO_TX",
+      "endpoint": "J19:6",
+      "contact": "B23",
+      "gpio": "PB13",
+      "mcu_lqfp100_pin": "52",
+      "function": "UART5_TX",
+      "af": 14,
+      "st_table14_cell": "UART5_TX"
+    },
+    {
+      "signal": "VIDEO_RX",
+      "endpoint": "J19:5",
+      "contact": "B22",
+      "gpio": "PB12",
+      "mcu_lqfp100_pin": "51",
+      "function": "UART5_RX",
+      "af": 14,
+      "st_table14_cell": "UART5_RX"
+    },
+    {
+      "signal": "STEP_UART_TX",
+      "endpoint": "J23:7",
+      "contact": "B34",
+      "gpio": "PC6",
+      "mcu_lqfp100_pin": "63",
+      "function": "USART6_TX",
+      "af": 7,
+      "st_table14_cell": "USART6_TX"
+    },
+    {
+      "signal": "STEP_UART_RX",
+      "endpoint": "J23:8",
+      "contact": "B35",
+      "gpio": "PC7",
+      "mcu_lqfp100_pin": "64",
+      "function": "USART6_RX",
+      "af": 7,
+      "st_table14_cell": "USART6_RX"
+    },
+    {
+      "signal": "LICHEE_TX",
+      "endpoint": "U12:2",
+      "contact": "A26",
+      "gpio": "PB9",
+      "mcu_lqfp100_pin": "96",
+      "function": "UART4_TX",
+      "af": 8,
+      "st_table14_cell": "UART4_TX"
+    },
+    {
+      "signal": "LICHEE_RX",
+      "endpoint": "U11:4",
+      "contact": "A27",
+      "gpio": "PB8",
+      "mcu_lqfp100_pin": "95",
+      "function": "UART4_RX",
+      "af": 8,
+      "st_table14_cell": "UART4_RX"
+    },
+    {
+      "signal": "TFT_SCK",
+      "endpoint": "J17:3",
+      "contact": "B10",
+      "gpio": "PB1",
+      "mcu_lqfp100_pin": "36",
+      "function": "SPI3_SCK",
+      "af": 4,
+      "st_table14_cell": "SPI3_SCK/I2S3_CK"
+    },
+    {
+      "signal": "TFT_MOSI",
+      "endpoint": "J17:4",
+      "contact": "B11",
+      "gpio": "PB2",
+      "mcu_lqfp100_pin": "37",
+      "function": "SPI3_MOSI",
+      "af": 7,
+      "st_table14_cell": "SPI3_MOSI/I2S3_SDO"
+    },
+    {
+      "signal": "TFT_CS",
+      "endpoint": "J17:7",
+      "contact": "B7",
+      "gpio": "PC4",
+      "mcu_lqfp100_pin": "33",
+      "function": "GPIO",
+      "af": null,
+      "st_table14_cell": ""
+    },
+    {
+      "signal": "TFT_RES",
+      "endpoint": "J17:5",
+      "contact": "B9",
+      "gpio": "PB0",
+      "mcu_lqfp100_pin": "35",
+      "function": "GPIO",
+      "af": null,
+      "st_table14_cell": ""
+    },
+    {
+      "signal": "TFT_DC",
+      "endpoint": "J17:6",
+      "contact": "B8",
+      "gpio": "PC5",
+      "mcu_lqfp100_pin": "34",
+      "function": "GPIO",
+      "af": null,
+      "st_table14_cell": ""
+    },
+    {
+      "signal": "TFT_BL",
+      "endpoint": "J17:8",
+      "contact": "B3",
+      "gpio": "PA4",
+      "mcu_lqfp100_pin": "29",
+      "function": "TIM3_CH4",
+      "af": 2,
+      "st_table14_cell": "TIM3_CH4"
+    },
+    {
+      "signal": "KEY_MODE",
+      "endpoint": "SW2:1",
+      "contact": "B33",
+      "gpio": "PD15",
+      "mcu_lqfp100_pin": "62",
+      "function": "GPIO",
+      "af": null,
+      "st_table14_cell": ""
+    },
+    {
+      "signal": "KEY_NEXT",
+      "endpoint": "SW3:1",
+      "contact": "B38",
+      "gpio": "PA8",
+      "mcu_lqfp100_pin": "67",
+      "function": "GPIO",
+      "af": null,
+      "st_table14_cell": ""
+    },
+    {
+      "signal": "KEY_OK",
+      "endpoint": "SW4:1",
+      "contact": "B40",
+      "gpio": "PA10",
+      "mcu_lqfp100_pin": "69",
+      "function": "GPIO",
+      "af": null,
+      "st_table14_cell": ""
+    },
+    {
+      "signal": "KEY_START",
+      "endpoint": "SW5:1",
+      "contact": "B44",
+      "gpio": "PH3",
+      "mcu_lqfp100_pin": "73",
+      "function": "GPIO",
+      "af": null,
+      "st_table14_cell": ""
+    },
+    {
+      "signal": "GRAY_CH1",
+      "endpoint": "J20:1",
+      "contact": "B12",
+      "gpio": "PE7",
+      "mcu_lqfp100_pin": "38",
+      "function": "GPIO",
+      "af": null,
+      "st_table14_cell": ""
+    },
+    {
+      "signal": "GRAY_CH2",
+      "endpoint": "J20:2",
+      "contact": "B13",
+      "gpio": "PE8",
+      "mcu_lqfp100_pin": "39",
+      "function": "GPIO",
+      "af": null,
+      "st_table14_cell": ""
+    },
+    {
+      "signal": "GRAY_CH3",
+      "endpoint": "J20:3",
+      "contact": "B14",
+      "gpio": "PE9",
+      "mcu_lqfp100_pin": "40",
+      "function": "GPIO",
+      "af": null,
+      "st_table14_cell": ""
+    },
+    {
+      "signal": "GRAY_CH4",
+      "endpoint": "J20:4",
+      "contact": "B15",
+      "gpio": "PE10",
+      "mcu_lqfp100_pin": "41",
+      "function": "GPIO",
+      "af": null,
+      "st_table14_cell": ""
+    },
+    {
+      "signal": "GRAY_CH5",
+      "endpoint": "J20:5",
+      "contact": "B16",
+      "gpio": "PE11",
+      "mcu_lqfp100_pin": "42",
+      "function": "GPIO",
+      "af": null,
+      "st_table14_cell": ""
+    },
+    {
+      "signal": "GRAY_CH6",
+      "endpoint": "J20:6",
+      "contact": "B17",
+      "gpio": "PE12",
+      "mcu_lqfp100_pin": "43",
+      "function": "GPIO",
+      "af": null,
+      "st_table14_cell": ""
+    },
+    {
+      "signal": "GRAY_CH7",
+      "endpoint": "J20:7",
+      "contact": "B18",
+      "gpio": "PE13",
+      "mcu_lqfp100_pin": "44",
+      "function": "GPIO",
+      "af": null,
+      "st_table14_cell": ""
+    },
+    {
+      "signal": "GRAY_CH8",
+      "endpoint": "J20:8",
+      "contact": "B19",
+      "gpio": "PE14",
+      "mcu_lqfp100_pin": "45",
+      "function": "GPIO",
+      "af": null,
+      "st_table14_cell": ""
+    }
+  ],
+  "results": [
+    {
+      "name": "39 unique module signals, contacts and GPIOs",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Core USB, SWD, boot and board functions reserved",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A2 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A2 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A3 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A3 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A4 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A4 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A5 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A5 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A7 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A7 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A8 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A8 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A9 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A9 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A10 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A10 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A11 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A11 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A15 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A15 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A16 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A16 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A17 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A17 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A18 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A18 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A19 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A19 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A20 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A20 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A21 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A21 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A22 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A22 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A23 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A23 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A24 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A24 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A25 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A25 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A26 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A26 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A27 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A27 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A28 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A28 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A29 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A29 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A30 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A30 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A31 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A31 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A32 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A32 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A33 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A33 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A34 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A34 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A35 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A35 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A36 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A36 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A37 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A37 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A38 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A38 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A39 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A39 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A40 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A40 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A41 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A41 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A42 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A42 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A43 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A43 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A44 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A44 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A45 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A45 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A46 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A46 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B2 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B2 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B3 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B3 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B4 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B4 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B5 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B5 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B6 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B6 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B7 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B7 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B8 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B8 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B9 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B9 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B10 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B10 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B11 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B11 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B12 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B12 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B13 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B13 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B14 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B14 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B15 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B15 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B16 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B16 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B17 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B17 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B18 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B18 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B19 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B19 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B20 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B20 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B21 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B21 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B22 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B22 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B23 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B23 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B24 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B24 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B25 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B25 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B26 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B26 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B27 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B27 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B28 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B28 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B29 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B29 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B30 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B30 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B31 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B31 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B32 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B32 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B33 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B33 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B34 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B34 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B35 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B35 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B36 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B36 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B37 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B37 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B38 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B38 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B39 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B39 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B40 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B40 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B41 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B41 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B42 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B42 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B43 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B43 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B44 fixed package pin matches DS15137 Table13 LQFP100",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B44 Core native net reaches actual MCU pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L_ENC_A: contact maps to selected GPIO",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L_ENC_A: native Motor net reaches module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L_ENC_A: Core GPIO is a dedicated passthrough",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L_ENC_A: function occurs in independent ST HTML AF cell",
+      "pass": true,
+      "detail": {
+        "gpio": "PA0",
+        "af": 2,
+        "cell": "TIM5_CH1"
+      }
+    },
+    {
+      "name": "L_ENC_B: contact maps to selected GPIO",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L_ENC_B: native Motor net reaches module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L_ENC_B: Core GPIO is a dedicated passthrough",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L_ENC_B: function occurs in independent ST HTML AF cell",
+      "pass": true,
+      "detail": {
+        "gpio": "PA1",
+        "af": 2,
+        "cell": "TIM5_CH2"
+      }
+    },
+    {
+      "name": "R_ENC_A: contact maps to selected GPIO",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R_ENC_A: native Motor net reaches module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R_ENC_A: Core GPIO is a dedicated passthrough",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R_ENC_A: function occurs in independent ST HTML AF cell",
+      "pass": true,
+      "detail": {
+        "gpio": "PB3",
+        "af": 1,
+        "cell": "TIM2_CH2"
+      }
+    },
+    {
+      "name": "R_ENC_B: contact maps to selected GPIO",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R_ENC_B: native Motor net reaches module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R_ENC_B: Core GPIO is a dedicated passthrough",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R_ENC_B: function occurs in independent ST HTML AF cell",
+      "pass": true,
+      "detail": {
+        "gpio": "PA15",
+        "af": 1,
+        "cell": "TIM2_CH1"
+      }
+    },
+    {
+      "name": "L_PWM: contact maps to selected GPIO",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L_PWM: native Motor net reaches module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L_PWM: Core GPIO is a dedicated passthrough",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L_PWM: function occurs in independent ST HTML AF cell",
+      "pass": true,
+      "detail": {
+        "gpio": "PC2",
+        "af": 2,
+        "cell": "TIM4_CH4"
+      }
+    },
+    {
+      "name": "R_PWM: contact maps to selected GPIO",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R_PWM: native Motor net reaches module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R_PWM: Core GPIO is a dedicated passthrough",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R_PWM: function occurs in independent ST HTML AF cell",
+      "pass": true,
+      "detail": {
+        "gpio": "PB6",
+        "af": 2,
+        "cell": "TIM4_CH1"
+      }
+    },
+    {
+      "name": "L_DIR: contact maps to selected GPIO",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L_DIR: native Motor net reaches module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L_DIR: Core GPIO is a dedicated passthrough",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R_DIR: contact maps to selected GPIO",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R_DIR: native Motor net reaches module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R_DIR: Core GPIO is a dedicated passthrough",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L_nFAULT: contact maps to selected GPIO",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L_nFAULT: native Motor net reaches module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L_nFAULT: Core GPIO is a dedicated passthrough",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L_nFAULT: EXTI line equals GPIO pin index",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R_nFAULT: contact maps to selected GPIO",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R_nFAULT: native Motor net reaches module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R_nFAULT: Core GPIO is a dedicated passthrough",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R_nFAULT: EXTI line equals GPIO pin index",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L_ISENSE: contact maps to selected GPIO",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L_ISENSE: native Motor net reaches module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L_ISENSE: Core GPIO is a dedicated passthrough",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L_ISENSE: ADC instance and channel occur in Table13",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R_ISENSE: contact maps to selected GPIO",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R_ISENSE: native Motor net reaches module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R_ISENSE: Core GPIO is a dedicated passthrough",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R_ISENSE: ADC instance and channel occur in Table13",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "MOTOR_EN_REQ: contact maps to selected GPIO",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "MOTOR_EN_REQ: native Motor net reaches module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "MOTOR_EN_REQ: Core GPIO is a dedicated passthrough",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "BT_TX: contact maps to selected GPIO",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "BT_TX: native Motor net reaches module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "BT_TX: Core GPIO is a dedicated passthrough",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "BT_TX: function occurs in independent ST HTML AF cell",
+      "pass": true,
+      "detail": {
+        "gpio": "PA6",
+        "af": 7,
+        "cell": "USART1_TX"
+      }
+    },
+    {
+      "name": "BT_RX: contact maps to selected GPIO",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "BT_RX: native Motor net reaches module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "BT_RX: Core GPIO is a dedicated passthrough",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "BT_RX: function occurs in independent ST HTML AF cell",
+      "pass": true,
+      "detail": {
+        "gpio": "PA7",
+        "af": 7,
+        "cell": "USART1_RX"
+      }
+    },
+    {
+      "name": "VIDEO_TX: contact maps to selected GPIO",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "VIDEO_TX: native Motor net reaches module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "VIDEO_TX: Core GPIO is a dedicated passthrough",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "VIDEO_TX: function occurs in independent ST HTML AF cell",
+      "pass": true,
+      "detail": {
+        "gpio": "PB13",
+        "af": 14,
+        "cell": "UART5_TX"
+      }
+    },
+    {
+      "name": "VIDEO_RX: contact maps to selected GPIO",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "VIDEO_RX: native Motor net reaches module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "VIDEO_RX: Core GPIO is a dedicated passthrough",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "VIDEO_RX: function occurs in independent ST HTML AF cell",
+      "pass": true,
+      "detail": {
+        "gpio": "PB12",
+        "af": 14,
+        "cell": "UART5_RX"
+      }
+    },
+    {
+      "name": "STEP_UART_TX: contact maps to selected GPIO",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "STEP_UART_TX: native Motor net reaches module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "STEP_UART_TX: Core GPIO is a dedicated passthrough",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "STEP_UART_TX: function occurs in independent ST HTML AF cell",
+      "pass": true,
+      "detail": {
+        "gpio": "PC6",
+        "af": 7,
+        "cell": "USART6_TX"
+      }
+    },
+    {
+      "name": "STEP_UART_RX: contact maps to selected GPIO",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "STEP_UART_RX: native Motor net reaches module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "STEP_UART_RX: Core GPIO is a dedicated passthrough",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "STEP_UART_RX: function occurs in independent ST HTML AF cell",
+      "pass": true,
+      "detail": {
+        "gpio": "PC7",
+        "af": 7,
+        "cell": "USART6_RX"
+      }
+    },
+    {
+      "name": "LICHEE_TX: contact maps to selected GPIO",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "LICHEE_TX: native Motor net reaches module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "LICHEE_TX: Core GPIO is a dedicated passthrough",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "LICHEE_TX: function occurs in independent ST HTML AF cell",
+      "pass": true,
+      "detail": {
+        "gpio": "PB9",
+        "af": 8,
+        "cell": "UART4_TX"
+      }
+    },
+    {
+      "name": "LICHEE_RX: contact maps to selected GPIO",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "LICHEE_RX: native Motor net reaches module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "LICHEE_RX: Core GPIO is a dedicated passthrough",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "LICHEE_RX: function occurs in independent ST HTML AF cell",
+      "pass": true,
+      "detail": {
+        "gpio": "PB8",
+        "af": 8,
+        "cell": "UART4_RX"
+      }
+    },
+    {
+      "name": "TFT_SCK: contact maps to selected GPIO",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "TFT_SCK: native Motor net reaches module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "TFT_SCK: Core GPIO is a dedicated passthrough",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "TFT_SCK: function occurs in independent ST HTML AF cell",
+      "pass": true,
+      "detail": {
+        "gpio": "PB1",
+        "af": 4,
+        "cell": "SPI3_SCK/I2S3_CK"
+      }
+    },
+    {
+      "name": "TFT_MOSI: contact maps to selected GPIO",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "TFT_MOSI: native Motor net reaches module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "TFT_MOSI: Core GPIO is a dedicated passthrough",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "TFT_MOSI: function occurs in independent ST HTML AF cell",
+      "pass": true,
+      "detail": {
+        "gpio": "PB2",
+        "af": 7,
+        "cell": "SPI3_MOSI/I2S3_SDO"
+      }
+    },
+    {
+      "name": "TFT_CS: contact maps to selected GPIO",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "TFT_CS: native Motor net reaches module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "TFT_CS: Core GPIO is a dedicated passthrough",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "TFT_RES: contact maps to selected GPIO",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "TFT_RES: native Motor net reaches module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "TFT_RES: Core GPIO is a dedicated passthrough",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "TFT_DC: contact maps to selected GPIO",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "TFT_DC: native Motor net reaches module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "TFT_DC: Core GPIO is a dedicated passthrough",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "TFT_BL: contact maps to selected GPIO",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "TFT_BL: native Motor net reaches module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "TFT_BL: Core GPIO is a dedicated passthrough",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "TFT_BL: function occurs in independent ST HTML AF cell",
+      "pass": true,
+      "detail": {
+        "gpio": "PA4",
+        "af": 2,
+        "cell": "TIM3_CH4"
+      }
+    },
+    {
+      "name": "KEY_MODE: contact maps to selected GPIO",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "KEY_MODE: native Motor net reaches module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "KEY_MODE: Core GPIO is a dedicated passthrough",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "KEY_NEXT: contact maps to selected GPIO",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "KEY_NEXT: native Motor net reaches module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "KEY_NEXT: Core GPIO is a dedicated passthrough",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "KEY_OK: contact maps to selected GPIO",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "KEY_OK: native Motor net reaches module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "KEY_OK: Core GPIO is a dedicated passthrough",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "KEY_START: contact maps to selected GPIO",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "KEY_START: native Motor net reaches module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "KEY_START: Core GPIO is a dedicated passthrough",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "GRAY_CH1: contact maps to selected GPIO",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "GRAY_CH1: native Motor net reaches module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "GRAY_CH1: Core GPIO is a dedicated passthrough",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "GRAY_CH2: contact maps to selected GPIO",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "GRAY_CH2: native Motor net reaches module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "GRAY_CH2: Core GPIO is a dedicated passthrough",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "GRAY_CH3: contact maps to selected GPIO",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "GRAY_CH3: native Motor net reaches module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "GRAY_CH3: Core GPIO is a dedicated passthrough",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "GRAY_CH4: contact maps to selected GPIO",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "GRAY_CH4: native Motor net reaches module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "GRAY_CH4: Core GPIO is a dedicated passthrough",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "GRAY_CH5: contact maps to selected GPIO",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "GRAY_CH5: native Motor net reaches module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "GRAY_CH5: Core GPIO is a dedicated passthrough",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "GRAY_CH6: contact maps to selected GPIO",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "GRAY_CH6: native Motor net reaches module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "GRAY_CH6: Core GPIO is a dedicated passthrough",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "GRAY_CH7: contact maps to selected GPIO",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "GRAY_CH7: native Motor net reaches module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "GRAY_CH7: Core GPIO is a dedicated passthrough",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "GRAY_CH8: contact maps to selected GPIO",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "GRAY_CH8: native Motor net reaches module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "GRAY_CH8: Core GPIO is a dedicated passthrough",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Bluetooth has matching hardware TX/RX on one peripheral",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "MaixCAM2 has matching hardware TX/RX on one peripheral",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "stepper has matching hardware TX/RX on one peripheral",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Lichee has matching hardware TX/RX on one peripheral",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "four serial devices use independent peripherals",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "TFT clock and MOSI use the same SPI peripheral",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L encoder uses CH1/CH2 of an encoder-capable timer",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R encoder uses CH1/CH2 of an encoder-capable timer",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "wheel PWM uses separate channels of one timer",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "both encoders, wheel PWM and backlight have independent counters",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "motor fault EXTI lines do not conflict",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "eight grayscale inputs stay on PE7 through PE14",
+      "pass": true,
+      "detail": null
+    }
+  ],
+  "scope": "Schematic functional pinout only; firmware setup, PCB pad synchronization, copper routing, DRC and hardware operation are separate."
+}

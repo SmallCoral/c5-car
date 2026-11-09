@@ -22,8 +22,8 @@
 ## 当前进度
 
 Motor的原理图和PCB均使用J4、J6六针电机口，J3、J5两针端子已删除。
-2026-11-08 当前为 M2.8P 模块精简版：142个原理图实体、184个网络、39路GPIO；按当前模块摆放调整了25路GPIO，Core的98触点针序不变。原生ERC为0错误0警告，原理图955项核对与十页渲染检查通过。Motor PCB保留用户当前内容，尚未同步这次GPIO重分配。
-Core的43个电气器件已补齐原理图关联路径，原理图、布局及铜线均未改动。未运行本轮PCB DRC或整车实测，当前不能据原理图检查判定可制板。最新结果见[接口规划与Core关联](Documentation/validation/2026-11-08-layout-pinplan.md)、[验证记录](Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/verification.json)、[交接与续接](.agent/main/handoff.md)。
+2026-11-08 当前为 M2.8P2 模块精简版：142个原理图实体、184个网络、39路GPIO；本轮按当前模块摆放重新分配20路GPIO，Core的98触点针序不变。原生ERC为0错误0警告，原理图956项核对与十页渲染检查通过。Motor PCB保留用户当前内容，尚未同步这次GPIO重分配。
+Core的43个电气器件已补齐原理图关联路径，原理图、布局及铜线均未改动。2026-11-09 更新了 Motor 的网上现成元器件模型，部分仍为外形参考；PCB DRC 尚未通过。最新模型来源、预览和限制见[3D模型记录](Documentation/validation/2026-11-09-3d-models.md)，电气分配见[飞线规划与全功能引脚复核](Documentation/validation/2026-11-08-pinplan-rework.md)，续接见[交接](.agent/main/handoff.md)。未进行整车实测，当前不能据原理图检查判定可制板。
 
 上述模块的电源与控制接口已画入 Motor；实际模块功能、外置步进驱动、相机程序与闭环控制尚未完成。
 固件仍为系统初始化后进入空循环的生成工程。

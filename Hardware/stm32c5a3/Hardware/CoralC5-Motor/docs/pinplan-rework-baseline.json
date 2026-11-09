@@ -1,0 +1,205 @@
+{
+  "date": "2026-11-08",
+  "captured_at_utc": "2026-11-08T15:28:20.7077084Z",
+  "source_commit": "8725275ab4f3aace2bfe87971e3c5ed062f33165",
+  "files": [
+    {
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/02_Power.kicad_sch",
+      "sha256": "2130ec334833e2b18da6d480f05f4dcc243600130cda86ba1bcd2ba3d6124033"
+    },
+    {
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/03_Core_Interface.kicad_sch",
+      "sha256": "c3e8a52c732112262c0233ddca8cb5c248cac7eda448410aa6938c06e78d539b"
+    },
+    {
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/04_Left_Motor.kicad_sch",
+      "sha256": "b3904b1489bba5d486c1b1baa555fcbc46d4d6ace4c0ece7a8051b85da93aa04"
+    },
+    {
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/05_Right_Motor.kicad_sch",
+      "sha256": "482aa1705f192f23e8993d2810e8c6c182251200c10044da5fc9ac8f9c4e97e5"
+    },
+    {
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/06_Module_Power.kicad_sch",
+      "sha256": "fb62d29cd552b607d060d47357fa92112e20132e34877ba9620d4569d7810887"
+    },
+    {
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/07_TFT_Buttons.kicad_sch",
+      "sha256": "d19bd0d68d3be55b1963d9d4604d87ef8f82e816dd2b8909d2891b1fa9c791e1"
+    },
+    {
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/08_Grayscale_Cameras.kicad_sch",
+      "sha256": "3034a8fb69bc5d50c447fb002c893473bf39c5082f703881187d707d9f8d844e"
+    },
+    {
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/09_Bluetooth_Stepper.kicad_sch",
+      "sha256": "93ef5a450ae54e191ad5b25dfb69984e1266509c837ff4e0debf8e7088f68160"
+    },
+    {
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/10_Lichee_Interface.kicad_sch",
+      "sha256": "6ad059a6462b1d7302c36e0b1dc33d82fde1487e29eea47a7e455ba3325c3403"
+    },
+    {
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/CoralC5-Motor.kicad_pcb",
+      "sha256": "3280619e6cc5cd909af25863542f973a79291f6c69f65460b5e1045f2fa51c53"
+    },
+    {
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/CoralC5-Motor.kicad_prl",
+      "sha256": "6bacd7c4b0aaafd172a76fbb01cd8992bc26b80e0257515323c11496c5c0a8e5"
+    },
+    {
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/CoralC5-Motor.kicad_pro",
+      "sha256": "83e6b4e182470d3406eb5b6fd14ae7024a5ba491721f3c800a4b0012213cf89e"
+    },
+    {
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/CoralC5-Motor.kicad_sch",
+      "sha256": "80e821d364faf8aa8d9fda7d272139689bced95d4f7350b7bd68da99e749fbb0"
+    },
+    {
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/Motor.kicad_sym",
+      "sha256": "657991ecbddc68fc73d12b1b43aedaf6b88105ba011e819c1b7116b9bbf537db"
+    },
+    {
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Core/02_Power_USB.kicad_sch",
+      "sha256": "aa0680ea3030634c77f194650583659558c84b7650c1c2526428167c6dab94a9"
+    },
+    {
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Core/03_MCU.kicad_sch",
+      "sha256": "beb7bd1584cb1eb6f64bda20b870ae0482f6356b3e52781526f579e225b1d752"
+    },
+    {
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Core/04_Interface.kicad_sch",
+      "sha256": "0e7829cee3c4c2b2f0929dd47b0a38ecfee75a60b4d58bbad6cc571589de3ff4"
+    },
+    {
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Core/CoralC5-Core.kicad_sch",
+      "sha256": "fd0c69b501ebba8d38292d40d285f869d0c951c52321b79d7911eecde637be66"
+    },
+    {
+      "path": "Hardware/stm32c5a3/Hardware/Shared/interface.csv",
+      "sha256": "a3b829f4736d7f337beda64d18a258303a495cc1e890a479ff97105cebf3e653"
+    },
+    {
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/layout-pinplan.json",
+      "sha256": "3fe6ab6c2ded4562eabc335a80cea9eb98d30831d04ca9293ade2f616c062ef6"
+    },
+    {
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/core_pin_assignment.csv",
+      "sha256": "6d3c6d49c15ac14ed207c6164bb4aeb3e9320053d4b21ceee23600b056cabf41"
+    },
+    {
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/m2_pin_assignment.csv",
+      "sha256": "7a87b72a099d7ed3f1fe02ff407ed28fe4f15ea763cb379f5ac5bdf974bb8613"
+    },
+    {
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/netlist.xml",
+      "sha256": "47bba0b1cb7a736af571f00d67addc2b09b45e80df6e63356541086766517c27"
+    },
+    {
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/core_netlist.xml",
+      "sha256": "5fcca9632e6dfc30c3a3dc7ac6adef91c7b68cc950f645d7daf02ab45568fd6a"
+    },
+    {
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/verification.json",
+      "sha256": "a3f45d038dfa457d5d15ba729e66b7f69cca9dfe4ee71c228986c6e7f9be8f3a"
+    },
+    {
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/erc.json",
+      "sha256": "501201f0af2926745d5da03867423aef6211ca42e71c23b340aaa7bbda498c19"
+    },
+    {
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/visual_check.json",
+      "sha256": "84bb0a443971d63ce2590a91edc09a214668e30301df388d085d677ab3e064cd"
+    },
+    {
+      "path": "Documentation/reference/motor-core-pins.md",
+      "sha256": "db6469baf08a5b14b7c32d729a8b601ae6baab89f4e7ac817194683c77f79c8a"
+    },
+    {
+      "path": "Documentation/reference/m2-interfaces.md",
+      "sha256": "94de35f0ad4867725f13eafb41a8c4dacc6b724551f7e2bfda42fe23ad6975b3"
+    },
+    {
+      "path": "README.md",
+      "sha256": "03155dd41899aaf5b5d7cb3875b122fd1ac58eb9dfc9a9826eff0a06debcb03e"
+    }
+  ],
+  "git_status": [
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/.history/.gitignore",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/.history/02_Interface.kicad_sch",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/.history/03_Power.kicad_sch",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/.history/04_Ethernet.kicad_sch",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/.history/05_WiFi_BLE.kicad_sch",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/.history/06_microSD.kicad_sch",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/.history/07_Headers_Debug.kicad_sch",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/.history/CoralC5-Expansion.kicad_sch",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/.history/README.txt",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/02_Interface.kicad_sch",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/03_Power.kicad_sch",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/04_Ethernet.kicad_sch",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/05_WiFi_BLE.kicad_sch",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/06_microSD.kicad_sch",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/07_Headers_Debug.kicad_sch",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/CoralC5-Expansion.kicad_pcb",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/CoralC5-Expansion.kicad_prl",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/CoralC5-Expansion.kicad_pro",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/CoralC5-Expansion.kicad_sch",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/DevBoard.kicad_sym",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/DevBoard.pretty/Capacitor_SMD__C_0603_1608Metric.kicad_mod",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/DevBoard.pretty/Capacitor_SMD__C_1206_3216Metric.kicad_mod",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/DevBoard.pretty/Connector_Card__microSD_HC_Hirose_DM3AT-SF-PEJM5.kicad_mod",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/DevBoard.pretty/Connector_JST__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical.kicad_mod",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/DevBoard.pretty/Connector_PinHeader_2.54mm__PinHeader_1x02_P2.54mm_Vertical.kicad_mod",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/DevBoard.pretty/Connector_PinHeader_2.54mm__PinHeader_1x06_P2.54mm_Vertical.kicad_mod",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/DevBoard.pretty/Connector_PinHeader_2.54mm__PinHeader_2x24_P2.54mm_Vertical.kicad_mod",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/DevBoard.pretty/Connector_RJ__RJ45_Hanrun_HR911105A_Horizontal.kicad_mod",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/DevBoard.pretty/Diode_SMD__D_SMC.kicad_mod",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/DevBoard.pretty/Espressif__ESP32-C3-MINI-1U.kicad_mod",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/DevBoard.pretty/Inductor_SMD__L_0603_1608Metric.kicad_mod",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/DevBoard.pretty/Inductor_SMD__L_Bourns_SRN6045TA.kicad_mod",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/DevBoard.pretty/MountingHole__MountingHole_3mm.kicad_mod",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/DevBoard.pretty/Oscillator__Oscillator_SMD_Abracon_ASE-4Pin_3.2x2.5mm.kicad_mod",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/DevBoard.pretty/Package_DFN_QFN__VQFN-24-1EP_4x4mm_P0.5mm_EP2.5x2.5mm_ThermalVias.kicad_mod",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/DevBoard.pretty/Package_TO_SOT_SMD__TSOT-23-6.kicad_mod",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/DevBoard.pretty/Resistor_SMD__R_0603_1608Metric.kicad_mod",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/DevBoard.pretty/SW_SD1107_2P_6x3_H2.5.kicad_mod",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/DevBoard.pretty/Streamline_Socket.kicad_mod",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/DevBoard.pretty/TestPoint__TestPoint_Pad_D1.0mm.kicad_mod",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/Models/C_0603_1608Metric.step",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/Models/C_1206_3216Metric.step",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/Models/D_SMC.step",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/Models/ESP32-C3-MINI-1U.STEP",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/Models/GENERIC_ASE_3225.wrl",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/Models/GENERIC_HR911105A_ENVELOPE.wrl",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/Models/GENERIC_LAN8720A_QFN24.wrl",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/Models/GENERIC_SD1107_H2.5.wrl",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/Models/JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical.step",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/Models/L_0603_1608Metric.step",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/Models/L_Bourns_SRN6045TA.step",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/Models/PinHeader_1x02_P2.54mm_Vertical.step",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/Models/PinHeader_1x06_P2.54mm_Vertical.step",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/Models/PinHeader_2x24_P2.54mm_Vertical.step",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/Models/R_0603_1608Metric.step",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/Models/Streamline_Socket.step",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/Models/TSOT-23-6.step",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/Models/microSD_HC_Hirose_DM3AT-SF-PEJM5.step",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/README.md",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/docs/BOM.csv",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/docs/CoralC5-Expansion_Schematic.pdf",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/docs/design_manifest.json",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/docs/drc.json",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/docs/erc.json",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/docs/header_pinout.csv",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/docs/netlist.xml",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/docs/placement.json",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/docs/placement_top.png",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/docs/verification.json",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/fp-lib-table",
+    " D Hardware/stm32c5a3/Hardware/CoralC5-Expansion/sym-lib-table",
+    " M Hardware/stm32c5a3/Hardware/CoralC5-Motor/.history/03_Core_Interface.kicad_sch",
+    " M Hardware/stm32c5a3/Hardware/CoralC5-Motor/.history/CoralC5-Motor.kicad_pcb",
+    " M Hardware/stm32c5a3/Hardware/CoralC5-Motor/.history/CoralC5-Motor.kicad_sch",
+    " M Hardware/stm32c5a3/Hardware/CoralC5-Motor/CoralC5-Motor.kicad_pcb",
+    " M Hardware/stm32c5a3/Hardware/CoralC5-Motor/CoralC5-Motor.kicad_pro"
+  ]
+}

@@ -1,10 +1,14 @@
 # CoralC5-Motor
 
-2026-11-08 最新：当前180封装、176段走线、3过孔；原理图205网络与合同一致，F8预计新增0、原生一致性0。ERC0错误3警告，DRC18违规/379未连接。用户已要求先交接上传，Maix简单保护与步进直接接口均尚未实施。详见 [最新复查](../../../../Documentation/validation/2026-11-08-motor-recheck.md)、[待实施需求](../../../../Documentation/reference/module-power-simplification.md)与 [交接](../../../../.agent/main/handoff.md)。
+2026-11-09 后续：四个板级安装孔已改为 M3 用 Ø3.2mm NPTH，LCD 两个 Ø2.0mm 孔保留。孔位、UUID、铜线和原理图未改；见[修改及钻孔核对记录](../../../../Documentation/validation/2026-11-09-m3-mounting-holes.md)。
 
-以下F8修复与M2.8交付为历史快照，176段走线和本次原生检查优先。
+2026-11-09 仅更新 PCB 元器件 3D 模型，原理图仍为 M2.8P2。下载来源、七处绑定、外形参考差异、预览及未通过的原生 DRC 见[3D模型记录](../../../../Documentation/validation/2026-11-09-3d-models.md)和[模型来源说明](Models/README.md)。布局、焊盘、网络和铜线与本次基线一致，没有同步或核验本次之前的用户布线改动。
 
-2026-11-08 最新：[F8关联修复](../../../../Documentation/validation/2026-11-08-f8-association.md)。已补齐48个丢失的原理图path，180个封装按UUID唯一匹配，预计新增0。用户最新摆放及151段走线/3过孔保留；原生一致性0，当前DRC229违规/390未连接，尚未通过布线检查。重新加载磁盘PCB后再操作F8。
+2026-11-08 引脚规划快照：142实体、184网络、39路GPIO，重新分配20路。原生ERC0错误0警告，原理图956项及独立功能320项通过；该次保留当时的142封装、329个走线/过孔对象，未同步GPIO分配。当前电气定义见[GPIO分配](../../../../Documentation/reference/motor-core-pins.md)、[复核记录](../../../../Documentation/validation/2026-11-08-pinplan-rework.md)与[交接](../../../../.agent/main/handoff.md)。
+
+以下F8修复与M2.8交付均为历史快照，其中旧控电、隔离、GPIO及DRC数不代表当前状态。
+
+2026-11-08 历史：[F8关联修复](../../../../Documentation/validation/2026-11-08-f8-association.md)。当时补齐48个丢失的原理图path，180个封装按UUID唯一匹配，预计新增0；保留当时151段走线/3过孔。该报告中的DRC229违规/390未连接为历史结果。
 
 ## 原M2.8交付快照（历史）
 

@@ -9,13 +9,14 @@ from verify_m27 import native
 from simplified_contract import intended
 from m28_contract import PRIMARY_PINOUTS
 from verify_pcb_associations import audit
+from verify_functional_pinout import audit as audit_functional_pinout
 def main():
     record=json.loads((DOC/'layout-pinplan.json').read_text(encoding='utf8'));plan=record['plan'];checks=[]
     def ck(name,ok,detail=None):checks.append({'name':name,'pass':bool(ok),'detail':detail})
     def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
     def normalized_sha(p):return hashlib.sha256(p.read_bytes().replace(b'\r\n',b'\n')).hexdigest()
     _,before,_=native(DOC/'baseline-2026-11-07-m28/live-netlist.xml')
-    detach={'J14:'+r[c] for r in plan for c in ['contact','old_contact']}
+    detach={'J14:'+r[c] for r in plan for c in ['contact','old_contact','previous_contact'] if c in r}
     expected={frozenset(g-detach) for g in intended(before)};expected.discard(frozenset())
     for r in plan:
         found=[g for g in expected if r['endpoint'] in g]
@@ -78,6 +79,8 @@ def main():
     for name,tx,rx in [('BT','BT_TX','BT_RX'),('Maix','VIDEO_TX','VIDEO_RX'),('stepper','STEP_UART_TX','STEP_UART_RX'),('Lichee','LICHEE_TX','LICHEE_RX')]:
         a=bs[tx]['function'];b=bs[rx]['function'];ck(name+' UART TX RX same instance',a.endswith('_TX') and b==a[:-2]+'RX');usarts.append(a.split('_')[0])
     ck('four independent UART instances',len(set(usarts))==4)
+    functional=audit_functional_pinout()
+    ck('independent ST HTML AF and LQFP100 functional audit',functional['pass'],functional['failed'])
     ck('gray single-port PE7 through PE14',[bs['GRAY_CH'+str(i)]['gpio'] for i in range(1,9)]==['PE'+str(i) for i in range(7,15)])
     ck('module signals use corresponding socket side',not record['metrics']['newCross'])
     refs={}
@@ -114,7 +117,7 @@ def main():
     project=json.loads((ROOT/'CoralC5-Motor.kicad_pro').read_text(encoding='utf8'));ck('no ERC exclusions',not project.get('erc',{}).get('erc_exclusions'))
     visual=json.loads((DOC/'visual_check.json').read_text(encoding='utf8'))
     ck('all ten pages rendered and no wire/text overlaps',visual['pdf_sha256']==sha(DOC/'CoralC5-Motor_Schematic.pdf') and visual['pages']==10 and not visual['wire_text_intersections'] and not visual['text_text_overlaps'])
-    report={'date':record['date'],'revision':record['revision'],'source_commit':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT).decode().strip(),'kicad_version':erc['kicad_version'],'pass':all(c['pass'] for c in checks),'checks':len(checks),'failed':[c for c in checks if not c['pass']],'physical_references':len(refs),'native_nets':len(observed),'gpio_roles':len(plan),'changed_gpio_roles':sum(r['contact']!=r['old_contact'] for r in plan),'native_erc_errors':sum(v['severity']=='error' for v in viol),'native_erc_warnings':sum(v['severity']=='warning' for v in viol),'model_bound_references':sum(bool(r['models']) for r in resources),'model_missing_references':unbound,'artifacts_sha256':{f:sha(ROOT/f) for f in schemas},'results':checks,'resources':resources,'motor_pcb_update_pending':True,'pcb_drc_run':False,'limitations':['Motor PCB is byte-identical; remapped GPIO pad nets intentionally await a separate update.','MaixCAM2 ~1A typical limit versus inference/charging peaks is unmeasured; independent reverse blocking and UART isolation absent after approved simplification.','12V 12.5A source estimate ~11.09A at85% efficiency, with assumed4A wheels and3A stepper, leaves limited margin; load/startup/thermal tests required.','Stepper VM and UART are direct; current simplified circuit has no independent MCU power-off.','Core external3.3V load budget<=100mA and encoder3.3V operation need hardware confirmation.','XT60 exact model, generic-model dimensions, connector mating and button lead geometry remain unverified.','Firmware peripheral setup not implemented.']}
+    report={'date':record['date'],'revision':record['revision'],'source_commit':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT).decode().strip(),'kicad_version':erc['kicad_version'],'pass':all(c['pass'] for c in checks),'checks':len(checks),'failed':[c for c in checks if not c['pass']],'physical_references':len(refs),'native_nets':len(observed),'gpio_roles':len(plan),'changed_gpio_roles':sum(r['contact']!=r.get('previous_contact',r['old_contact']) for r in plan),'native_erc_errors':sum(v['severity']=='error' for v in viol),'native_erc_warnings':sum(v['severity']=='warning' for v in viol),'model_bound_references':sum(bool(r['models']) for r in resources),'model_missing_references':unbound,'artifacts_sha256':{f:sha(ROOT/f) for f in schemas},'results':checks,'resources':resources,'motor_pcb_update_pending':True,'pcb_drc_run':False,'limitations':['Motor PCB is byte-identical; remapped GPIO pad nets intentionally await a separate update.','MaixCAM2 no-charge startup/inference current has not been measured against the ~1A limit; independent reverse blocking and UART isolation are absent.','12V 12.5A source estimate ~11.09A at85% efficiency, with assumed4A wheels and3A stepper, leaves limited margin; load/startup/thermal tests required.','Stepper VM and UART are direct; current simplified circuit has no independent MCU power-off.','Core external3.3V load budget<=100mA and encoder3.3V operation need hardware confirmation.','XT60 exact model, generic-model dimensions, connector mating and button lead geometry remain unverified.','Firmware peripheral setup not implemented.']}
     (DOC/'verification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
     print(json.dumps({k:v for k,v in report.items() if k not in ['results','resources','artifacts_sha256']},ensure_ascii=False,indent=2))
     return 0 if report['pass'] else 1

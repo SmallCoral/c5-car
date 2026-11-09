@@ -1,0 +1,5167 @@
+{
+  "contacts": [
+    {
+      "contact": "A1",
+      "standard": "GND",
+      "gpio": "",
+      "net": "GND",
+      "mcu_pin": "",
+      "function": "",
+      "clock_link": "",
+      "custom": "False",
+      "source_contact": "",
+      "copper_layer": "",
+      "mcu_half": "",
+      "xy": [
+        190.0,
+        69.0
+      ],
+      "socket_track_ends": 0,
+      "af": {},
+      "core_net": {
+        "name": "GND",
+        "pins": [
+          "C10:2",
+          "C11:2",
+          "C12:2",
+          "C13:2",
+          "C14:2",
+          "C15:2",
+          "C16:2",
+          "C17:2",
+          "C18:2",
+          "C2:2",
+          "C3:2",
+          "C4:2",
+          "C5:2",
+          "C6:2",
+          "C7:2",
+          "C8:2",
+          "C9:2",
+          "D3:1",
+          "D4:1",
+          "J13:A1",
+          "J13:A49",
+          "J13:B1",
+          "J13:B49",
+          "J2:A1",
+          "J2:A12",
+          "J2:B1",
+          "J2:B12",
+          "J2:SH",
+          "R1:2",
+          "R2:2",
+          "R53:2",
+          "R7:2",
+          "SW1:2",
+          "SW5:2",
+          "U1:10",
+          "U1:20",
+          "U1:27",
+          "U1:49",
+          "U1:74",
+          "U1:99",
+          "U2:4",
+          "U3:2",
+          "Y1:2",
+          "Y1:4"
+        ]
+      }
+    },
+    {
+      "contact": "A2",
+      "standard": "NRST",
+      "gpio": "PA2",
+      "net": "PA2",
+      "mcu_pin": "25",
+      "function": "ETH_MDIO",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "A4",
+      "copper_layer": "B.Cu",
+      "mcu_half": "upper",
+      "xy": [
+        190.0,
+        70.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM2_CH3": 1,
+        "TIM5_CH3": 2,
+        "TIM15_CH1": 4,
+        "USART2_TX": 7,
+        "ETH1_MDIO": 10
+      },
+      "core_net": {
+        "name": "PA2",
+        "pins": [
+          "J13:A2",
+          "U1:25"
+        ]
+      }
+    },
+    {
+      "contact": "A3",
+      "standard": "VBAT",
+      "gpio": "PA1",
+      "net": "PA1",
+      "mcu_pin": "24",
+      "function": "ETH_REFCLK",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "A5",
+      "copper_layer": "B.Cu",
+      "mcu_half": "upper",
+      "xy": [
+        190.0,
+        71.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM2_CH2": 1,
+        "TIM5_CH2": 2,
+        "TIM15_CH1N": 4,
+        "USART2_RTS": 7,
+        "ETH1_MII_RX_CLK": 10,
+        "ETH1_RMII_REF_CLK": 10
+      },
+      "core_net": {
+        "name": "PA1",
+        "pins": [
+          "J13:A3",
+          "U1:24"
+        ]
+      }
+    },
+    {
+      "contact": "A4",
+      "standard": "PA2",
+      "gpio": "PA0",
+      "net": "PA0",
+      "mcu_pin": "23",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "A6",
+      "copper_layer": "B.Cu",
+      "mcu_half": "upper",
+      "xy": [
+        190.0,
+        72.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM2_CH1": 1,
+        "TIM5_CH1": 2,
+        "SPI2_RDY": 5,
+        "SPI3_RDY": 6,
+        "USART2_CTS": 7,
+        "SPI2_NSS": 9,
+        "ETH1_MII_CRS": 10,
+        "USART2_NSS": 7
+      },
+      "core_net": {
+        "name": "PA0",
+        "pins": [
+          "J13:A4",
+          "U1:23"
+        ]
+      }
+    },
+    {
+      "contact": "A5",
+      "standard": "PA1",
+      "gpio": "PH5",
+      "net": "PH5",
+      "mcu_pin": "22",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "B27",
+      "copper_layer": "B.Cu",
+      "mcu_half": "upper",
+      "xy": [
+        190.0,
+        73.0
+      ],
+      "socket_track_ends": 0,
+      "af": {},
+      "core_net": {
+        "name": "PH5",
+        "pins": [
+          "J13:A5",
+          "U1:22"
+        ]
+      }
+    },
+    {
+      "contact": "A6",
+      "standard": "PA0",
+      "gpio": "",
+      "net": "VREF_MCU",
+      "mcu_pin": "21",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "B3",
+      "copper_layer": "B.Cu",
+      "mcu_half": "upper",
+      "xy": [
+        190.0,
+        74.0
+      ],
+      "socket_track_ends": 0,
+      "af": {},
+      "core_net": {
+        "name": "VREF_MCU",
+        "pins": [
+          "C14:1",
+          "C15:1",
+          "J13:A6",
+          "R5:2",
+          "U1:21"
+        ]
+      }
+    },
+    {
+      "contact": "A7",
+      "standard": "PC3",
+      "gpio": "PH4",
+      "net": "PH4",
+      "mcu_pin": "19",
+      "function": "SD_DETECT",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "A27",
+      "copper_layer": "B.Cu",
+      "mcu_half": "upper",
+      "xy": [
+        190.0,
+        75.0
+      ],
+      "socket_track_ends": 0,
+      "af": {},
+      "core_net": {
+        "name": "PH4",
+        "pins": [
+          "J13:A7",
+          "U1:19"
+        ]
+      }
+    },
+    {
+      "contact": "A8",
+      "standard": "PC2",
+      "gpio": "PC3",
+      "net": "PC3",
+      "mcu_pin": "18",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "A7",
+      "copper_layer": "B.Cu",
+      "mcu_half": "upper",
+      "xy": [
+        190.0,
+        76.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "SPI2_MOSI": 5,
+        "ETH1_MII_TX_CLK": 10
+      },
+      "core_net": {
+        "name": "PC3",
+        "pins": [
+          "J13:A8",
+          "U1:18"
+        ]
+      }
+    },
+    {
+      "contact": "A9",
+      "standard": "PC1",
+      "gpio": "PC2",
+      "net": "PC2",
+      "mcu_pin": "17",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "A8",
+      "copper_layer": "B.Cu",
+      "mcu_half": "upper",
+      "xy": [
+        190.0,
+        77.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM17_CH1": 1,
+        "TIM4_CH4": 2,
+        "SPI2_MISO": 5,
+        "ETH1_MII_TXD2": 10
+      },
+      "core_net": {
+        "name": "PC2",
+        "pins": [
+          "J13:A9",
+          "U1:17"
+        ]
+      }
+    },
+    {
+      "contact": "A10",
+      "standard": "PC0",
+      "gpio": "PC1",
+      "net": "PC1",
+      "mcu_pin": "16",
+      "function": "ETH_MDC",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "A9",
+      "copper_layer": "B.Cu",
+      "mcu_half": "upper",
+      "xy": [
+        190.0,
+        78.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "SPI2_MOSI": 5,
+        "ETH1_MDC": 10
+      },
+      "core_net": {
+        "name": "PC1",
+        "pins": [
+          "J13:A10",
+          "U1:16"
+        ]
+      }
+    },
+    {
+      "contact": "A11",
+      "standard": "PC15",
+      "gpio": "PC0",
+      "net": "PC0",
+      "mcu_pin": "15",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "A10",
+      "copper_layer": "B.Cu",
+      "mcu_half": "upper",
+      "xy": [
+        190.0,
+        79.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "SPI2_RDY": 7
+      },
+      "core_net": {
+        "name": "PC0",
+        "pins": [
+          "J13:A11",
+          "U1:15"
+        ]
+      }
+    },
+    {
+      "contact": "A12",
+      "standard": "PC14",
+      "gpio": "",
+      "net": "NRST",
+      "mcu_pin": "14",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "A2",
+      "copper_layer": "B.Cu",
+      "mcu_half": "upper",
+      "xy": [
+        190.0,
+        82.0
+      ],
+      "socket_track_ends": 0,
+      "af": {},
+      "core_net": {
+        "name": "NRST",
+        "pins": [
+          "C16:1",
+          "J13:A12",
+          "R6:2",
+          "SW1:1",
+          "U1:14"
+        ]
+      }
+    },
+    {
+      "contact": "A13",
+      "standard": "PC13",
+      "gpio": "",
+      "net": "",
+      "mcu_pin": "",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "B38",
+      "copper_layer": "B.Cu",
+      "mcu_half": "upper",
+      "xy": [
+        190.0,
+        83.0
+      ],
+      "socket_track_ends": 0,
+      "af": {},
+      "core_net": {
+        "name": "unconnected-(J13A-A13_{slash}_NC-PadA13)",
+        "pins": [
+          "J13:A13"
+        ]
+      }
+    },
+    {
+      "contact": "A14",
+      "standard": "PE6",
+      "gpio": "",
+      "net": "",
+      "mcu_pin": "",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "A38",
+      "copper_layer": "B.Cu",
+      "mcu_half": "upper",
+      "xy": [
+        190.0,
+        84.0
+      ],
+      "socket_track_ends": 0,
+      "af": {},
+      "core_net": {
+        "name": "unconnected-(J13A-A14_{slash}_NC-PadA14)",
+        "pins": [
+          "J13:A14"
+        ]
+      }
+    },
+    {
+      "contact": "A15",
+      "standard": "PE5",
+      "gpio": "PC15",
+      "net": "PC15",
+      "mcu_pin": "9",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "A11",
+      "copper_layer": "B.Cu",
+      "mcu_half": "upper",
+      "xy": [
+        190.0,
+        85.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM12_CH2": 2
+      },
+      "core_net": {
+        "name": "PC15",
+        "pins": [
+          "J13:A15",
+          "U1:9"
+        ]
+      }
+    },
+    {
+      "contact": "A16",
+      "standard": "PE4",
+      "gpio": "PC14",
+      "net": "PC14",
+      "mcu_pin": "8",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "A12",
+      "copper_layer": "B.Cu",
+      "mcu_half": "upper",
+      "xy": [
+        190.0,
+        86.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM12_CH1": 2
+      },
+      "core_net": {
+        "name": "PC14",
+        "pins": [
+          "J13:A16",
+          "U1:8"
+        ]
+      }
+    },
+    {
+      "contact": "A17",
+      "standard": "PE3",
+      "gpio": "PC13",
+      "net": "PC13",
+      "mcu_pin": "7",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "A13",
+      "copper_layer": "B.Cu",
+      "mcu_half": "upper",
+      "xy": [
+        190.0,
+        87.0
+      ],
+      "socket_track_ends": 0,
+      "af": {},
+      "core_net": {
+        "name": "PC13",
+        "pins": [
+          "J13:A17",
+          "U1:7"
+        ]
+      }
+    },
+    {
+      "contact": "A18",
+      "standard": "PE2",
+      "gpio": "PH15",
+      "net": "PH15",
+      "mcu_pin": "6",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "A19",
+      "copper_layer": "B.Cu",
+      "mcu_half": "upper",
+      "xy": [
+        190.0,
+        88.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "USART1_RTS": 7
+      },
+      "core_net": {
+        "name": "PH15",
+        "pins": [
+          "J13:A18",
+          "U1:6"
+        ]
+      }
+    },
+    {
+      "contact": "A19",
+      "standard": "U1",
+      "gpio": "PE6",
+      "net": "PE6",
+      "mcu_pin": "5",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "A14",
+      "copper_layer": "B.Cu",
+      "mcu_half": "upper",
+      "xy": [
+        190.0,
+        89.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM15_CH2": 4,
+        "SPI3_MOSI": 5,
+        "USART1_CTS": 7,
+        "USART1_NSS": 7
+      },
+      "core_net": {
+        "name": "PE6",
+        "pins": [
+          "J13:A19",
+          "U1:5"
+        ]
+      }
+    },
+    {
+      "contact": "A20",
+      "standard": "PE1",
+      "gpio": "PE5",
+      "net": "PE5",
+      "mcu_pin": "4",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "A15",
+      "copper_layer": "B.Cu",
+      "mcu_half": "upper",
+      "xy": [
+        190.0,
+        90.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM15_CH1": 4,
+        "SPI3_MISO": 5,
+        "USART1_CK": 7,
+        "ETH1_MII_RXD1": 10,
+        "ETH1_RMII_RXD1": 10
+      },
+      "core_net": {
+        "name": "PE5",
+        "pins": [
+          "J13:A20",
+          "U1:4"
+        ]
+      }
+    },
+    {
+      "contact": "A21",
+      "standard": "PE0",
+      "gpio": "PE4",
+      "net": "PE4",
+      "mcu_pin": "3",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "A16",
+      "copper_layer": "B.Cu",
+      "mcu_half": "upper",
+      "xy": [
+        190.0,
+        91.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM15_CH1N": 4,
+        "SPI3_NSS": 5,
+        "USART1_TX": 7,
+        "ETH1_MII_RXD0": 10,
+        "ETH1_RMII_RXD0": 10
+      },
+      "core_net": {
+        "name": "PE4",
+        "pins": [
+          "J13:A21",
+          "U1:3"
+        ]
+      }
+    },
+    {
+      "contact": "A22",
+      "standard": "PB9",
+      "gpio": "PE3",
+      "net": "PE3",
+      "mcu_pin": "2",
+      "function": "LED_RED",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "A17",
+      "copper_layer": "B.Cu",
+      "mcu_half": "upper",
+      "xy": [
+        190.0,
+        92.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "USART1_RX": 7
+      },
+      "core_net": {
+        "name": "PE3",
+        "pins": [
+          "J13:A22",
+          "R51:1",
+          "U1:2"
+        ]
+      }
+    },
+    {
+      "contact": "A23",
+      "standard": "PB8",
+      "gpio": "PE2",
+      "net": "PE2",
+      "mcu_pin": "1",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "A18",
+      "copper_layer": "B.Cu",
+      "mcu_half": "upper",
+      "xy": [
+        190.0,
+        93.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "SPI3_SCK": 5,
+        "ETH1_MII_TXD3": 10
+      },
+      "core_net": {
+        "name": "PE2",
+        "pins": [
+          "J13:A23",
+          "U1:1"
+        ]
+      }
+    },
+    {
+      "contact": "A24",
+      "standard": "PB7",
+      "gpio": "PE1",
+      "net": "PE1",
+      "mcu_pin": "98",
+      "function": "PHY_INT",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "A20",
+      "copper_layer": "B.Cu",
+      "mcu_half": "upper",
+      "xy": [
+        190.0,
+        94.0
+      ],
+      "socket_track_ends": 0,
+      "af": {},
+      "core_net": {
+        "name": "PE1",
+        "pins": [
+          "J13:A24",
+          "U1:98"
+        ]
+      }
+    },
+    {
+      "contact": "A25",
+      "standard": "PB6",
+      "gpio": "PE0",
+      "net": "PE0",
+      "mcu_pin": "97",
+      "function": "PHY_NRST",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "A21",
+      "copper_layer": "B.Cu",
+      "mcu_half": "upper",
+      "xy": [
+        190.0,
+        95.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "SPI3_RDY": 6
+      },
+      "core_net": {
+        "name": "PE0",
+        "pins": [
+          "J13:A25",
+          "U1:97"
+        ]
+      }
+    },
+    {
+      "contact": "A26",
+      "standard": "PB5",
+      "gpio": "PB9",
+      "net": "PB9",
+      "mcu_pin": "96",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "A22",
+      "copper_layer": "B.Cu",
+      "mcu_half": "upper",
+      "xy": [
+        190.0,
+        96.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM4_CH4": 2,
+        "SPI2_NSS": 5,
+        "SPI3_SCK": 6
+      },
+      "core_net": {
+        "name": "PB9",
+        "pins": [
+          "J13:A26",
+          "U1:96"
+        ]
+      }
+    },
+    {
+      "contact": "A27",
+      "standard": "U3",
+      "gpio": "PB8",
+      "net": "PB8",
+      "mcu_pin": "95",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "A23",
+      "copper_layer": "B.Cu",
+      "mcu_half": "upper",
+      "xy": [
+        190.0,
+        97.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM17_CH1": 1,
+        "TIM4_CH3": 2,
+        "SPI3_NSS": 6,
+        "ETH1_MII_TXD3": 10
+      },
+      "core_net": {
+        "name": "PB8",
+        "pins": [
+          "J13:A27",
+          "U1:95"
+        ]
+      }
+    },
+    {
+      "contact": "A28",
+      "standard": "PB4",
+      "gpio": "PH2",
+      "net": "PH2",
+      "mcu_pin": "94",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "B2",
+      "copper_layer": "B.Cu",
+      "mcu_half": "upper",
+      "xy": [
+        190.0,
+        98.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM17_CH1N": 1
+      },
+      "core_net": {
+        "name": "PH2",
+        "pins": [
+          "J13:A28",
+          "R7:1",
+          "SW2:1",
+          "U1:94"
+        ]
+      }
+    },
+    {
+      "contact": "A29",
+      "standard": "PB3",
+      "gpio": "PB7",
+      "net": "PB7",
+      "mcu_pin": "93",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "A24",
+      "copper_layer": "B.Cu",
+      "mcu_half": "upper",
+      "xy": [
+        190.0,
+        99.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM17_CH1N": 1,
+        "TIM4_CH2": 2,
+        "SPI3_SCK": 6,
+        "USART1_RX": 7,
+        "TIM16_CH1": 10,
+        "USART3_RTS": 11
+      },
+      "core_net": {
+        "name": "PB7",
+        "pins": [
+          "J13:A29",
+          "U1:93"
+        ]
+      }
+    },
+    {
+      "contact": "A30",
+      "standard": "PD7",
+      "gpio": "PB6",
+      "net": "PB6",
+      "mcu_pin": "92",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "A25",
+      "copper_layer": "B.Cu",
+      "mcu_half": "upper",
+      "xy": [
+        190.0,
+        100.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM4_CH1": 2,
+        "SPI3_MISO": 6,
+        "USART1_TX": 7,
+        "TIM16_CH1N": 10,
+        "USART3_CTS": 11,
+        "ETH1_MII_TX_ER": 12,
+        "TIM8_CH4": 13,
+        "USART3_NSS": 11
+      },
+      "core_net": {
+        "name": "PB6",
+        "pins": [
+          "J13:A30",
+          "U1:92"
+        ]
+      }
+    },
+    {
+      "contact": "A31",
+      "standard": "PD6",
+      "gpio": "PB5",
+      "net": "PB5",
+      "mcu_pin": "91",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "A26",
+      "copper_layer": "B.Cu",
+      "mcu_half": "upper",
+      "xy": [
+        190.0,
+        101.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM3_CH2": 2,
+        "SPI1_MOSI": 5,
+        "SPI3_MOSI": 7,
+        "ETH1_PPS_OUT": 10,
+        "USART3_CK": 11,
+        "TIM8_CH3": 13
+      },
+      "core_net": {
+        "name": "PB5",
+        "pins": [
+          "J13:A31",
+          "U1:91"
+        ]
+      }
+    },
+    {
+      "contact": "A32",
+      "standard": "PD5",
+      "gpio": "PB4",
+      "net": "PB4",
+      "mcu_pin": "90",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "A28",
+      "copper_layer": "B.Cu",
+      "mcu_half": "upper",
+      "xy": [
+        190.0,
+        102.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM3_CH1": 2,
+        "SPI1_MISO": 5,
+        "SPI3_MISO": 6,
+        "SPI2_NSS": 7,
+        "USART3_RX": 11,
+        "ETH1_MDIO": 12,
+        "TIM8_CH2": 13
+      },
+      "core_net": {
+        "name": "PB4",
+        "pins": [
+          "J13:A32",
+          "U1:90"
+        ]
+      }
+    },
+    {
+      "contact": "A33",
+      "standard": "PD4",
+      "gpio": "PB3",
+      "net": "PB3",
+      "mcu_pin": "89",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "A29",
+      "copper_layer": "B.Cu",
+      "mcu_half": "upper",
+      "xy": [
+        190.0,
+        103.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM2_CH2": 1,
+        "TIM5_CH3": 3,
+        "SPI1_SCK": 5,
+        "SPI3_SCK": 6,
+        "USART3_TX": 11,
+        "ETH1_MDC": 12,
+        "TIM8_CH1": 13
+      },
+      "core_net": {
+        "name": "PB3",
+        "pins": [
+          "J13:A33",
+          "U1:89"
+        ]
+      }
+    },
+    {
+      "contact": "A34",
+      "standard": "PD3",
+      "gpio": "PD7",
+      "net": "PD7",
+      "mcu_pin": "88",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "A30",
+      "copper_layer": "B.Cu",
+      "mcu_half": "upper",
+      "xy": [
+        190.0,
+        104.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "SPI1_MOSI": 5,
+        "SPI3_MISO": 6,
+        "USART2_CK": 7
+      },
+      "core_net": {
+        "name": "PD7",
+        "pins": [
+          "J13:A34",
+          "U1:88"
+        ]
+      }
+    },
+    {
+      "contact": "A35",
+      "standard": "PD2",
+      "gpio": "PD6",
+      "net": "PD6",
+      "mcu_pin": "87",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "A31",
+      "copper_layer": "B.Cu",
+      "mcu_half": "upper",
+      "xy": [
+        190.0,
+        105.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "SPI3_MOSI": 5,
+        "USART2_RX": 7
+      },
+      "core_net": {
+        "name": "PD6",
+        "pins": [
+          "J13:A35",
+          "U1:87"
+        ]
+      }
+    },
+    {
+      "contact": "A36",
+      "standard": "PD1",
+      "gpio": "PD5",
+      "net": "PD5",
+      "mcu_pin": "86",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "A32",
+      "copper_layer": "B.Cu",
+      "mcu_half": "upper",
+      "xy": [
+        190.0,
+        106.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM1_CH4N": 1,
+        "SPI2_RDY": 5,
+        "USART2_TX": 7,
+        "ETH1_MII_CRS": 10
+      },
+      "core_net": {
+        "name": "PD5",
+        "pins": [
+          "J13:A36",
+          "U1:86"
+        ]
+      }
+    },
+    {
+      "contact": "A37",
+      "standard": "PD0",
+      "gpio": "PD4",
+      "net": "PD4",
+      "mcu_pin": "85",
+      "function": "WIFI_BOOT",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "A33",
+      "copper_layer": "B.Cu",
+      "mcu_half": "upper",
+      "xy": [
+        190.0,
+        107.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "USART2_RTS": 7,
+        "ETH1_CLK": 10
+      },
+      "core_net": {
+        "name": "PD4",
+        "pins": [
+          "J13:A37",
+          "U1:85"
+        ]
+      }
+    },
+    {
+      "contact": "A38",
+      "standard": "U5",
+      "gpio": "PD3",
+      "net": "PD3",
+      "mcu_pin": "84",
+      "function": "WIFI_EN",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "A34",
+      "copper_layer": "B.Cu",
+      "mcu_half": "upper",
+      "xy": [
+        190.0,
+        108.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "SPI2_SCK": 5,
+        "USART2_CTS": 7,
+        "USART2_NSS": 7
+      },
+      "core_net": {
+        "name": "PD3",
+        "pins": [
+          "J13:A38",
+          "U1:84"
+        ]
+      }
+    },
+    {
+      "contact": "A39",
+      "standard": "PC12",
+      "gpio": "PD2",
+      "net": "PD2",
+      "mcu_pin": "83",
+      "function": "USER_KEY",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "A35",
+      "copper_layer": "B.Cu",
+      "mcu_half": "upper",
+      "xy": [
+        190.0,
+        109.0
+      ],
+      "socket_track_ends": 0,
+      "af": {},
+      "core_net": {
+        "name": "PD2",
+        "pins": [
+          "J13:A39",
+          "R49:2",
+          "SW5:1",
+          "U1:83"
+        ]
+      }
+    },
+    {
+      "contact": "A40",
+      "standard": "PC11",
+      "gpio": "PD1",
+      "net": "PD1",
+      "mcu_pin": "82",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "A36",
+      "copper_layer": "B.Cu",
+      "mcu_half": "upper",
+      "xy": [
+        190.0,
+        110.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "ETH1_MII_RX_DV": 10,
+        "ETH1_RMII_CRS_DV": 10
+      },
+      "core_net": {
+        "name": "PD1",
+        "pins": [
+          "J13:A40",
+          "U1:82"
+        ]
+      }
+    },
+    {
+      "contact": "A41",
+      "standard": "PC10",
+      "gpio": "PD0",
+      "net": "PD0",
+      "mcu_pin": "81",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "A37",
+      "copper_layer": "B.Cu",
+      "mcu_half": "upper",
+      "xy": [
+        190.0,
+        111.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM8_CH4N": 3
+      },
+      "core_net": {
+        "name": "PD0",
+        "pins": [
+          "J13:A41",
+          "U1:81"
+        ]
+      }
+    },
+    {
+      "contact": "A42",
+      "standard": "PA15",
+      "gpio": "PC12",
+      "net": "PC12",
+      "mcu_pin": "80",
+      "function": "SD_MOSI",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "A39",
+      "copper_layer": "B.Cu",
+      "mcu_half": "upper",
+      "xy": [
+        190.0,
+        112.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM15_CH1": 2,
+        "TIM8_CH3N": 3,
+        "SPI3_MOSI": 6,
+        "USART3_CK": 7,
+        "ETH1_PPS_OUT": 10
+      },
+      "core_net": {
+        "name": "PC12",
+        "pins": [
+          "J13:A42",
+          "U1:80"
+        ]
+      }
+    },
+    {
+      "contact": "A43",
+      "standard": "PA14",
+      "gpio": "PC11",
+      "net": "PC11",
+      "mcu_pin": "79",
+      "function": "SD_MISO",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "A40",
+      "copper_layer": "B.Cu",
+      "mcu_half": "upper",
+      "xy": [
+        190.0,
+        113.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM8_CH2N": 3,
+        "SPI3_MISO": 6,
+        "USART3_RX": 7
+      },
+      "core_net": {
+        "name": "PC11",
+        "pins": [
+          "J13:A43",
+          "U1:79"
+        ]
+      }
+    },
+    {
+      "contact": "A44",
+      "standard": "PA11",
+      "gpio": "PC10",
+      "net": "PC10",
+      "mcu_pin": "78",
+      "function": "SD_SCK",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "A41",
+      "copper_layer": "B.Cu",
+      "mcu_half": "upper",
+      "xy": [
+        190.0,
+        114.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM8_CH1N": 3,
+        "SPI3_SCK": 6,
+        "USART3_TX": 7,
+        "ETH1_MII_TXD0": 10,
+        "ETH1_RMII_TXD0": 10
+      },
+      "core_net": {
+        "name": "PC10",
+        "pins": [
+          "J13:A44",
+          "U1:78"
+        ]
+      }
+    },
+    {
+      "contact": "A45",
+      "standard": "PA12",
+      "gpio": "PA15",
+      "net": "PA15",
+      "mcu_pin": "77",
+      "function": "SD_CS",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "A42",
+      "copper_layer": "B.Cu",
+      "mcu_half": "upper",
+      "xy": [
+        190.0,
+        115.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM2_CH1": 1,
+        "TIM1_CH2N": 2,
+        "SPI1_NSS": 5,
+        "SPI3_NSS": 6,
+        "USART2_CK": 7,
+        "ETH1_PHY_INTN": 10,
+        "USART1_TX": 11,
+        "TIM8_CH4N": 13
+      },
+      "core_net": {
+        "name": "PA15",
+        "pins": [
+          "J13:A45",
+          "U1:77"
+        ]
+      }
+    },
+    {
+      "contact": "A46",
+      "standard": "PA13",
+      "gpio": "PA14",
+      "net": "PA14",
+      "mcu_pin": "76",
+      "function": "SWCLK",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "A43",
+      "copper_layer": "B.Cu",
+      "mcu_half": "upper",
+      "xy": [
+        190.0,
+        116.0
+      ],
+      "socket_track_ends": 0,
+      "af": {},
+      "core_net": {
+        "name": "PA14",
+        "pins": [
+          "J13:A46",
+          "U1:76"
+        ]
+      }
+    },
+    {
+      "contact": "A47",
+      "standard": "3V3",
+      "gpio": "",
+      "net": "+3V3",
+      "mcu_pin": "",
+      "function": "",
+      "clock_link": "",
+      "custom": "False",
+      "source_contact": "",
+      "copper_layer": "",
+      "mcu_half": "",
+      "xy": [
+        190.0,
+        117.0
+      ],
+      "socket_track_ends": 0,
+      "af": {},
+      "core_net": {
+        "name": "+3V3",
+        "pins": [
+          "C10:1",
+          "C11:1",
+          "C12:1",
+          "C13:1",
+          "C4:1",
+          "C5:1",
+          "C8:1",
+          "C9:1",
+          "J13:A47",
+          "J13:B47",
+          "L1:2",
+          "R49:1",
+          "R5:1",
+          "R50:1",
+          "R6:1",
+          "SW2:2",
+          "U1:100",
+          "U1:11",
+          "U1:28",
+          "U1:50",
+          "U1:75",
+          "U2:1"
+        ]
+      }
+    },
+    {
+      "contact": "A48",
+      "standard": "5V",
+      "gpio": "",
+      "net": "+5V_SYS",
+      "mcu_pin": "",
+      "function": "",
+      "clock_link": "",
+      "custom": "False",
+      "source_contact": "",
+      "copper_layer": "",
+      "mcu_half": "",
+      "xy": [
+        190.0,
+        118.0
+      ],
+      "socket_track_ends": 0,
+      "af": {},
+      "core_net": {
+        "name": "+5V_SYS",
+        "pins": [
+          "C2:1",
+          "C3:1",
+          "D2:1",
+          "J13:A48",
+          "J13:B48",
+          "U2:2",
+          "U2:3"
+        ]
+      }
+    },
+    {
+      "contact": "A49",
+      "standard": "GND",
+      "gpio": "",
+      "net": "GND",
+      "mcu_pin": "",
+      "function": "",
+      "clock_link": "",
+      "custom": "False",
+      "source_contact": "",
+      "copper_layer": "",
+      "mcu_half": "",
+      "xy": [
+        190.0,
+        119.0
+      ],
+      "socket_track_ends": 0,
+      "af": {},
+      "core_net": {
+        "name": "GND",
+        "pins": [
+          "C10:2",
+          "C11:2",
+          "C12:2",
+          "C13:2",
+          "C14:2",
+          "C15:2",
+          "C16:2",
+          "C17:2",
+          "C18:2",
+          "C2:2",
+          "C3:2",
+          "C4:2",
+          "C5:2",
+          "C6:2",
+          "C7:2",
+          "C8:2",
+          "C9:2",
+          "D3:1",
+          "D4:1",
+          "J13:A1",
+          "J13:A49",
+          "J13:B1",
+          "J13:B49",
+          "J2:A1",
+          "J2:A12",
+          "J2:B1",
+          "J2:B12",
+          "J2:SH",
+          "R1:2",
+          "R2:2",
+          "R53:2",
+          "R7:2",
+          "SW1:2",
+          "SW5:2",
+          "U1:10",
+          "U1:20",
+          "U1:27",
+          "U1:49",
+          "U1:74",
+          "U1:99",
+          "U2:4",
+          "U3:2",
+          "Y1:2",
+          "Y1:4"
+        ]
+      }
+    },
+    {
+      "contact": "B1",
+      "standard": "GND",
+      "gpio": "",
+      "net": "GND",
+      "mcu_pin": "",
+      "function": "",
+      "clock_link": "",
+      "custom": "False",
+      "source_contact": "",
+      "copper_layer": "",
+      "mcu_half": "",
+      "xy": [
+        182.8,
+        69.0
+      ],
+      "socket_track_ends": 0,
+      "af": {},
+      "core_net": {
+        "name": "GND",
+        "pins": [
+          "C10:2",
+          "C11:2",
+          "C12:2",
+          "C13:2",
+          "C14:2",
+          "C15:2",
+          "C16:2",
+          "C17:2",
+          "C18:2",
+          "C2:2",
+          "C3:2",
+          "C4:2",
+          "C5:2",
+          "C6:2",
+          "C7:2",
+          "C8:2",
+          "C9:2",
+          "D3:1",
+          "D4:1",
+          "J13:A1",
+          "J13:A49",
+          "J13:B1",
+          "J13:B49",
+          "J2:A1",
+          "J2:A12",
+          "J2:B1",
+          "J2:B12",
+          "J2:SH",
+          "R1:2",
+          "R2:2",
+          "R53:2",
+          "R7:2",
+          "SW1:2",
+          "SW5:2",
+          "U1:10",
+          "U1:20",
+          "U1:27",
+          "U1:49",
+          "U1:74",
+          "U1:99",
+          "U2:4",
+          "U3:2",
+          "Y1:2",
+          "Y1:4"
+        ]
+      }
+    },
+    {
+      "contact": "B2",
+      "standard": "BO0",
+      "gpio": "PA3",
+      "net": "PA3",
+      "mcu_pin": "26",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "B4",
+      "copper_layer": "F.Cu",
+      "mcu_half": "lower",
+      "xy": [
+        182.8,
+        70.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM2_CH4": 1,
+        "TIM3_CH3": 2,
+        "TIM15_CH2": 4,
+        "SPI2_NSS": 5,
+        "SPI3_MOSI": 6,
+        "USART2_RX": 7,
+        "TIM5_CH4": 8,
+        "ETH1_MII_COL": 10
+      },
+      "core_net": {
+        "name": "PA3",
+        "pins": [
+          "J13:B2",
+          "U1:26"
+        ]
+      }
+    },
+    {
+      "contact": "B3",
+      "standard": "VA",
+      "gpio": "PA4",
+      "net": "PA4",
+      "mcu_pin": "29",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "B5",
+      "copper_layer": "F.Cu",
+      "mcu_half": "lower",
+      "xy": [
+        182.8,
+        71.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM3_CH4": 2,
+        "SPI3_MOSI": 4,
+        "SPI1_NSS": 5,
+        "SPI3_NSS": 6,
+        "USART2_CK": 7
+      },
+      "core_net": {
+        "name": "PA4",
+        "pins": [
+          "J13:B3",
+          "U1:29"
+        ]
+      }
+    },
+    {
+      "contact": "B4",
+      "standard": "PA3",
+      "gpio": "PA5",
+      "net": "PA5",
+      "mcu_pin": "30",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "B6",
+      "copper_layer": "F.Cu",
+      "mcu_half": "lower",
+      "xy": [
+        182.8,
+        72.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM2_CH1": 1,
+        "TIM1_CH3": 2,
+        "TIM8_CH1N": 3,
+        "SPI1_SCK": 5,
+        "SPI2_SCK": 6,
+        "USART1_CTS": 7,
+        "ETH1_MII_TX_EN": 10,
+        "USART1_NSS": 7,
+        "ETH1_RMII_TX_EN": 10
+      },
+      "core_net": {
+        "name": "PA5",
+        "pins": [
+          "J13:B4",
+          "U1:30"
+        ]
+      }
+    },
+    {
+      "contact": "B5",
+      "standard": "PA4",
+      "gpio": "PA6",
+      "net": "PA6",
+      "mcu_pin": "31",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "B7",
+      "copper_layer": "F.Cu",
+      "mcu_half": "lower",
+      "xy": [
+        182.8,
+        73.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM3_CH1": 2,
+        "SPI1_MISO": 5,
+        "USART1_TX": 7
+      },
+      "core_net": {
+        "name": "PA6",
+        "pins": [
+          "J13:B5",
+          "U1:31"
+        ]
+      }
+    },
+    {
+      "contact": "B6",
+      "standard": "PA5",
+      "gpio": "PA7",
+      "net": "PA7",
+      "mcu_pin": "32",
+      "function": "ETH_CRS_DV",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "B8",
+      "copper_layer": "F.Cu",
+      "mcu_half": "lower",
+      "xy": [
+        182.8,
+        74.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM1_CH1N": 1,
+        "TIM3_CH2": 2,
+        "TIM8_CH1N": 3,
+        "TIM15_CH1": 4,
+        "SPI1_MOSI": 5,
+        "SPI2_MISO": 6,
+        "USART1_RX": 7,
+        "ETH1_MII_RX_DV": 10,
+        "ETH1_RMII_CRS_DV": 10
+      },
+      "core_net": {
+        "name": "PA7",
+        "pins": [
+          "J13:B6",
+          "U1:32"
+        ]
+      }
+    },
+    {
+      "contact": "B7",
+      "standard": "PA6",
+      "gpio": "PC4",
+      "net": "PC4",
+      "mcu_pin": "33",
+      "function": "ETH_RXD0",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "B9",
+      "copper_layer": "F.Cu",
+      "mcu_half": "lower",
+      "xy": [
+        182.8,
+        75.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM2_CH4": 1,
+        "USART3_RX": 7,
+        "TIM16_CH1": 10,
+        "ETH1_MII_RXD0": 12,
+        "ETH1_RMII_RXD0": 12
+      },
+      "core_net": {
+        "name": "PC4",
+        "pins": [
+          "J13:B7",
+          "U1:33"
+        ]
+      }
+    },
+    {
+      "contact": "B8",
+      "standard": "PA7",
+      "gpio": "PC5",
+      "net": "PC5",
+      "mcu_pin": "34",
+      "function": "ETH_RXD1",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "B10",
+      "copper_layer": "F.Cu",
+      "mcu_half": "lower",
+      "xy": [
+        182.8,
+        76.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM1_CH4N": 1,
+        "TIM16_CH1N": 10,
+        "ETH1_MII_RXD1": 13,
+        "ETH1_RMII_RXD1": 13
+      },
+      "core_net": {
+        "name": "PC5",
+        "pins": [
+          "J13:B8",
+          "U1:34"
+        ]
+      }
+    },
+    {
+      "contact": "B9",
+      "standard": "PC4",
+      "gpio": "PB0",
+      "net": "PB0",
+      "mcu_pin": "35",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "B11",
+      "copper_layer": "F.Cu",
+      "mcu_half": "lower",
+      "xy": [
+        182.8,
+        77.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM1_CH2N": 1,
+        "TIM3_CH3": 2,
+        "TIM8_CH2N": 3,
+        "SPI3_MISO": 5,
+        "USART2_TX": 7,
+        "ETH1_MII_RXD2": 10
+      },
+      "core_net": {
+        "name": "PB0",
+        "pins": [
+          "J13:B9",
+          "U1:35"
+        ]
+      }
+    },
+    {
+      "contact": "B10",
+      "standard": "PC5",
+      "gpio": "PB1",
+      "net": "PB1",
+      "mcu_pin": "36",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "B12",
+      "copper_layer": "F.Cu",
+      "mcu_half": "lower",
+      "xy": [
+        182.8,
+        78.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM1_CH3N": 1,
+        "TIM3_CH4": 2,
+        "TIM8_CH3N": 3,
+        "SPI3_SCK": 4,
+        "SPI2_NSS": 5,
+        "USART3_RX": 7,
+        "ETH1_MII_RXD3": 10
+      },
+      "core_net": {
+        "name": "PB1",
+        "pins": [
+          "J13:B10",
+          "U1:36"
+        ]
+      }
+    },
+    {
+      "contact": "B11",
+      "standard": "PB0",
+      "gpio": "PB2",
+      "net": "PB2",
+      "mcu_pin": "37",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "B13",
+      "copper_layer": "F.Cu",
+      "mcu_half": "lower",
+      "xy": [
+        182.8,
+        79.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM8_CH4N": 3,
+        "SPI1_RDY": 4,
+        "SPI2_SCK": 6,
+        "SPI3_MOSI": 7,
+        "ETH1_MII_RXD0": 13,
+        "ETH1_RMII_RXD0": 13
+      },
+      "core_net": {
+        "name": "PB2",
+        "pins": [
+          "J13:B11",
+          "U1:37"
+        ]
+      }
+    },
+    {
+      "contact": "B12",
+      "standard": "PB1",
+      "gpio": "PE7",
+      "net": "PE7",
+      "mcu_pin": "38",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "B14",
+      "copper_layer": "F.Cu",
+      "mcu_half": "lower",
+      "xy": [
+        182.8,
+        82.0
+      ],
+      "socket_track_ends": 0,
+      "af": {},
+      "core_net": {
+        "name": "PE7",
+        "pins": [
+          "J13:B12",
+          "U1:38"
+        ]
+      }
+    },
+    {
+      "contact": "B13",
+      "standard": "PB2",
+      "gpio": "PE8",
+      "net": "PE8",
+      "mcu_pin": "39",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "B15",
+      "copper_layer": "F.Cu",
+      "mcu_half": "lower",
+      "xy": [
+        182.8,
+        83.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM1_CH1N": 1
+      },
+      "core_net": {
+        "name": "PE8",
+        "pins": [
+          "J13:B13",
+          "U1:39"
+        ]
+      }
+    },
+    {
+      "contact": "B14",
+      "standard": "PE7",
+      "gpio": "PE9",
+      "net": "PE9",
+      "mcu_pin": "40",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "B16",
+      "copper_layer": "F.Cu",
+      "mcu_half": "lower",
+      "xy": [
+        182.8,
+        84.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM1_CH1": 1
+      },
+      "core_net": {
+        "name": "PE9",
+        "pins": [
+          "J13:B14",
+          "U1:40"
+        ]
+      }
+    },
+    {
+      "contact": "B15",
+      "standard": "PE8",
+      "gpio": "PE10",
+      "net": "PE10",
+      "mcu_pin": "41",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "B17",
+      "copper_layer": "F.Cu",
+      "mcu_half": "lower",
+      "xy": [
+        182.8,
+        85.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM1_CH2N": 1
+      },
+      "core_net": {
+        "name": "PE10",
+        "pins": [
+          "J13:B15",
+          "U1:41"
+        ]
+      }
+    },
+    {
+      "contact": "B16",
+      "standard": "PE9",
+      "gpio": "PE11",
+      "net": "PE11",
+      "mcu_pin": "42",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "B18",
+      "copper_layer": "F.Cu",
+      "mcu_half": "lower",
+      "xy": [
+        182.8,
+        86.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM1_CH2": 1,
+        "SPI1_RDY": 4
+      },
+      "core_net": {
+        "name": "PE11",
+        "pins": [
+          "J13:B16",
+          "U1:42"
+        ]
+      }
+    },
+    {
+      "contact": "B17",
+      "standard": "PE10",
+      "gpio": "PE12",
+      "net": "PE12",
+      "mcu_pin": "43",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "B20",
+      "copper_layer": "F.Cu",
+      "mcu_half": "lower",
+      "xy": [
+        182.8,
+        87.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM1_CH3N": 1,
+        "ETH1_MDIO": 10
+      },
+      "core_net": {
+        "name": "PE12",
+        "pins": [
+          "J13:B17",
+          "U1:43"
+        ]
+      }
+    },
+    {
+      "contact": "B18",
+      "standard": "PE11",
+      "gpio": "PE13",
+      "net": "PE13",
+      "mcu_pin": "44",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "B21",
+      "copper_layer": "F.Cu",
+      "mcu_half": "lower",
+      "xy": [
+        182.8,
+        88.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM1_CH3": 1
+      },
+      "core_net": {
+        "name": "PE13",
+        "pins": [
+          "J13:B18",
+          "U1:44"
+        ]
+      }
+    },
+    {
+      "contact": "B19",
+      "standard": "U2",
+      "gpio": "PE14",
+      "net": "PE14",
+      "mcu_pin": "45",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "B22",
+      "copper_layer": "F.Cu",
+      "mcu_half": "lower",
+      "xy": [
+        182.8,
+        89.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM1_CH4": 1
+      },
+      "core_net": {
+        "name": "PE14",
+        "pins": [
+          "J13:B19",
+          "U1:45"
+        ]
+      }
+    },
+    {
+      "contact": "B20",
+      "standard": "PE12",
+      "gpio": "PE15",
+      "net": "PE15",
+      "mcu_pin": "46",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "B23",
+      "copper_layer": "F.Cu",
+      "mcu_half": "lower",
+      "xy": [
+        182.8,
+        90.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM1_CH4N": 3
+      },
+      "core_net": {
+        "name": "PE15",
+        "pins": [
+          "J13:B20",
+          "U1:46"
+        ]
+      }
+    },
+    {
+      "contact": "B21",
+      "standard": "PE13",
+      "gpio": "PB10",
+      "net": "PB10",
+      "mcu_pin": "47",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "B24",
+      "copper_layer": "F.Cu",
+      "mcu_half": "lower",
+      "xy": [
+        182.8,
+        91.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM2_CH3": 1,
+        "TIM8_CH1": 2,
+        "SPI2_SCK": 5,
+        "USART3_TX": 7,
+        "ETH1_MII_RX_ER": 10
+      },
+      "core_net": {
+        "name": "PB10",
+        "pins": [
+          "J13:B21",
+          "U1:47"
+        ]
+      }
+    },
+    {
+      "contact": "B22",
+      "standard": "PE14",
+      "gpio": "PB12",
+      "net": "PB12",
+      "mcu_pin": "51",
+      "function": "ETH_TXD0",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "B26",
+      "copper_layer": "F.Cu",
+      "mcu_half": "lower",
+      "xy": [
+        182.8,
+        92.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM8_CH3": 2,
+        "SPI2_NSS": 5,
+        "USART3_CK": 7,
+        "ETH1_MII_TXD0": 10,
+        "ETH1_RMII_TXD0": 10
+      },
+      "core_net": {
+        "name": "PB12",
+        "pins": [
+          "J13:B22",
+          "U1:51"
+        ]
+      }
+    },
+    {
+      "contact": "B23",
+      "standard": "PE15",
+      "gpio": "PB13",
+      "net": "PB13",
+      "mcu_pin": "52",
+      "function": "ETH_TXEN",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "B28",
+      "copper_layer": "F.Cu",
+      "mcu_half": "lower",
+      "xy": [
+        182.8,
+        93.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM1_CH1N": 1,
+        "TIM8_CH2": 2,
+        "SPI2_SCK": 5,
+        "USART3_CTS": 7,
+        "ETH1_MII_TX_EN": 10,
+        "USART3_NSS": 7,
+        "ETH1_RMII_TX_EN": 10
+      },
+      "core_net": {
+        "name": "PB13",
+        "pins": [
+          "J13:B23",
+          "U1:52"
+        ]
+      }
+    },
+    {
+      "contact": "B24",
+      "standard": "PB10",
+      "gpio": "PB14",
+      "net": "PB14",
+      "mcu_pin": "53",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "B29",
+      "copper_layer": "F.Cu",
+      "mcu_half": "lower",
+      "xy": [
+        182.8,
+        94.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM1_CH2N": 1,
+        "TIM12_CH1": 2,
+        "TIM8_CH2N": 3,
+        "USART1_TX": 4,
+        "SPI2_MISO": 5,
+        "USART3_RTS": 7
+      },
+      "core_net": {
+        "name": "PB14",
+        "pins": [
+          "J13:B24",
+          "U1:53"
+        ]
+      }
+    },
+    {
+      "contact": "B25",
+      "standard": "PB11",
+      "gpio": "PB15",
+      "net": "PB15",
+      "mcu_pin": "54",
+      "function": "ETH_TXD1",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "B30",
+      "copper_layer": "F.Cu",
+      "mcu_half": "lower",
+      "xy": [
+        182.8,
+        95.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM1_CH3N": 1,
+        "TIM12_CH2": 2,
+        "TIM8_CH3N": 3,
+        "USART1_RX": 4,
+        "SPI2_MOSI": 5,
+        "SPI1_MOSI": 6,
+        "SPI3_MOSI": 7,
+        "ETH1_MII_TXD1": 10,
+        "ETH1_RMII_TXD1": 10
+      },
+      "core_net": {
+        "name": "PB15",
+        "pins": [
+          "J13:B25",
+          "U1:54"
+        ]
+      }
+    },
+    {
+      "contact": "B26",
+      "standard": "PB12",
+      "gpio": "PD8",
+      "net": "PD8",
+      "mcu_pin": "55",
+      "function": "WIFI_TX",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "B31",
+      "copper_layer": "F.Cu",
+      "mcu_half": "lower",
+      "xy": [
+        182.8,
+        96.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "USART3_TX": 7,
+        "ETH1_MII_RXD0": 10,
+        "ETH1_RMII_RXD0": 10
+      },
+      "core_net": {
+        "name": "PD8",
+        "pins": [
+          "J13:B26",
+          "U1:55"
+        ]
+      }
+    },
+    {
+      "contact": "B27",
+      "standard": "U4",
+      "gpio": "PD9",
+      "net": "PD9",
+      "mcu_pin": "56",
+      "function": "WIFI_RX",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "B32",
+      "copper_layer": "F.Cu",
+      "mcu_half": "lower",
+      "xy": [
+        182.8,
+        97.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "USART3_RX": 7
+      },
+      "core_net": {
+        "name": "PD9",
+        "pins": [
+          "J13:B27",
+          "U1:56"
+        ]
+      }
+    },
+    {
+      "contact": "B28",
+      "standard": "PB13",
+      "gpio": "PD10",
+      "net": "PD10",
+      "mcu_pin": "57",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "B33",
+      "copper_layer": "F.Cu",
+      "mcu_half": "lower",
+      "xy": [
+        182.8,
+        98.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "USART3_CK": 7,
+        "ETH1_MII_CRS": 10
+      },
+      "core_net": {
+        "name": "PD10",
+        "pins": [
+          "J13:B28",
+          "U1:57"
+        ]
+      }
+    },
+    {
+      "contact": "B29",
+      "standard": "PB14",
+      "gpio": "PD11",
+      "net": "PD11",
+      "mcu_pin": "58",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "B34",
+      "copper_layer": "F.Cu",
+      "mcu_half": "lower",
+      "xy": [
+        182.8,
+        99.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "USART3_CTS": 7,
+        "ETH1_PTP_AUX_TS": 10,
+        "USART3_NSS": 7
+      },
+      "core_net": {
+        "name": "PD11",
+        "pins": [
+          "J13:B29",
+          "U1:58"
+        ]
+      }
+    },
+    {
+      "contact": "B30",
+      "standard": "PB15",
+      "gpio": "PD12",
+      "net": "PD12",
+      "mcu_pin": "59",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "B35",
+      "copper_layer": "F.Cu",
+      "mcu_half": "lower",
+      "xy": [
+        182.8,
+        100.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM4_CH1": 2,
+        "TIM8_CH1N": 3,
+        "USART3_RTS": 7
+      },
+      "core_net": {
+        "name": "PD12",
+        "pins": [
+          "J13:B30",
+          "U1:59"
+        ]
+      }
+    },
+    {
+      "contact": "B31",
+      "standard": "PD8",
+      "gpio": "PD13",
+      "net": "PD13",
+      "mcu_pin": "60",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "B36",
+      "copper_layer": "F.Cu",
+      "mcu_half": "lower",
+      "xy": [
+        182.8,
+        101.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM4_CH2": 2,
+        "TIM8_CH2N": 3
+      },
+      "core_net": {
+        "name": "PD13",
+        "pins": [
+          "J13:B31",
+          "U1:60"
+        ]
+      }
+    },
+    {
+      "contact": "B32",
+      "standard": "PD9",
+      "gpio": "PD14",
+      "net": "PD14",
+      "mcu_pin": "61",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "B37",
+      "copper_layer": "F.Cu",
+      "mcu_half": "lower",
+      "xy": [
+        182.8,
+        102.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM4_CH3": 2,
+        "TIM8_CH3N": 3
+      },
+      "core_net": {
+        "name": "PD14",
+        "pins": [
+          "J13:B32",
+          "U1:61"
+        ]
+      }
+    },
+    {
+      "contact": "B33",
+      "standard": "PD10",
+      "gpio": "PD15",
+      "net": "PD15",
+      "mcu_pin": "62",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "B39",
+      "copper_layer": "F.Cu",
+      "mcu_half": "lower",
+      "xy": [
+        182.8,
+        103.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM4_CH4": 2,
+        "TIM8_CH4N": 3
+      },
+      "core_net": {
+        "name": "PD15",
+        "pins": [
+          "J13:B33",
+          "U1:62"
+        ]
+      }
+    },
+    {
+      "contact": "B34",
+      "standard": "PD11",
+      "gpio": "PC6",
+      "net": "PC6",
+      "mcu_pin": "63",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "B40",
+      "copper_layer": "F.Cu",
+      "mcu_half": "lower",
+      "xy": [
+        182.8,
+        104.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM3_CH1": 2,
+        "TIM8_CH1": 3,
+        "USART6_TX": 7
+      },
+      "core_net": {
+        "name": "PC6",
+        "pins": [
+          "J13:B34",
+          "U1:63"
+        ]
+      }
+    },
+    {
+      "contact": "B35",
+      "standard": "PD12",
+      "gpio": "PC7",
+      "net": "PC7",
+      "mcu_pin": "64",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "B41",
+      "copper_layer": "F.Cu",
+      "mcu_half": "lower",
+      "xy": [
+        182.8,
+        105.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM3_CH2": 2,
+        "TIM8_CH2": 3,
+        "USART6_RX": 7
+      },
+      "core_net": {
+        "name": "PC7",
+        "pins": [
+          "J13:B35",
+          "U1:64"
+        ]
+      }
+    },
+    {
+      "contact": "B36",
+      "standard": "PD13",
+      "gpio": "PC8",
+      "net": "PC8",
+      "mcu_pin": "65",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "B42",
+      "copper_layer": "F.Cu",
+      "mcu_half": "lower",
+      "xy": [
+        182.8,
+        106.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM3_CH3": 2,
+        "TIM8_CH3": 3,
+        "USART6_CK": 7
+      },
+      "core_net": {
+        "name": "PC8",
+        "pins": [
+          "J13:B36",
+          "U1:65"
+        ]
+      }
+    },
+    {
+      "contact": "B37",
+      "standard": "PD14",
+      "gpio": "PC9",
+      "net": "PC9",
+      "mcu_pin": "66",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "B43",
+      "copper_layer": "F.Cu",
+      "mcu_half": "lower",
+      "xy": [
+        182.8,
+        107.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM3_CH4": 2,
+        "TIM8_CH4": 3
+      },
+      "core_net": {
+        "name": "PC9",
+        "pins": [
+          "J13:B37",
+          "U1:66"
+        ]
+      }
+    },
+    {
+      "contact": "B38",
+      "standard": "U6",
+      "gpio": "PA8",
+      "net": "PA8",
+      "mcu_pin": "67",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "B44",
+      "copper_layer": "F.Cu",
+      "mcu_half": "lower",
+      "xy": [
+        182.8,
+        108.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM1_CH1": 1,
+        "TIM15_CH2": 4,
+        "SPI1_RDY": 5,
+        "SPI2_MOSI": 6,
+        "USART1_CK": 7,
+        "TIM5_CH4": 8,
+        "TIM2_CH4": 14
+      },
+      "core_net": {
+        "name": "PA8",
+        "pins": [
+          "J13:B38",
+          "U1:67"
+        ]
+      }
+    },
+    {
+      "contact": "B39",
+      "standard": "PD15",
+      "gpio": "PA9",
+      "net": "PA9",
+      "mcu_pin": "68",
+      "function": "USB_VBUSDET",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "B45",
+      "copper_layer": "F.Cu",
+      "mcu_half": "lower",
+      "xy": [
+        182.8,
+        109.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM1_CH2": 1,
+        "TIM15_CH1N": 4,
+        "SPI2_SCK": 5,
+        "USART1_TX": 7,
+        "ETH1_MII_TX_ER": 10,
+        "TIM8_CH2N": 13
+      },
+      "core_net": {
+        "name": "PA9",
+        "pins": [
+          "J13:B39",
+          "R52:2",
+          "R53:1",
+          "U1:68"
+        ]
+      }
+    },
+    {
+      "contact": "B40",
+      "standard": "PC6",
+      "gpio": "PA10",
+      "net": "PA10",
+      "mcu_pin": "69",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "B46",
+      "copper_layer": "F.Cu",
+      "mcu_half": "lower",
+      "xy": [
+        182.8,
+        110.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM1_CH3": 1,
+        "USART1_RX": 7,
+        "ETH1_CLK": 13
+      },
+      "core_net": {
+        "name": "PA10",
+        "pins": [
+          "J13:B40",
+          "U1:69"
+        ]
+      }
+    },
+    {
+      "contact": "B41",
+      "standard": "PC7",
+      "gpio": "PA11",
+      "net": "PA11",
+      "mcu_pin": "70",
+      "function": "USB_DM",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "A44",
+      "copper_layer": "F.Cu",
+      "mcu_half": "lower",
+      "xy": [
+        182.8,
+        111.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "TIM1_CH4": 1,
+        "USART2_TX": 4,
+        "SPI2_NSS": 5,
+        "USART1_CTS": 7,
+        "USART1_NSS": 7
+      },
+      "core_net": {
+        "name": "PA11",
+        "pins": [
+          "J13:B41",
+          "R3:2",
+          "U1:70"
+        ]
+      }
+    },
+    {
+      "contact": "B42",
+      "standard": "PC8",
+      "gpio": "PA12",
+      "net": "PA12",
+      "mcu_pin": "71",
+      "function": "USB_DP",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "A45",
+      "copper_layer": "F.Cu",
+      "mcu_half": "lower",
+      "xy": [
+        182.8,
+        112.0
+      ],
+      "socket_track_ends": 0,
+      "af": {
+        "USART2_RX": 4,
+        "SPI2_SCK": 5,
+        "USART1_RTS": 7
+      },
+      "core_net": {
+        "name": "PA12",
+        "pins": [
+          "J13:B42",
+          "R4:2",
+          "U1:71"
+        ]
+      }
+    },
+    {
+      "contact": "B43",
+      "standard": "PC9",
+      "gpio": "PA13",
+      "net": "PA13",
+      "mcu_pin": "72",
+      "function": "SWDIO",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "A46",
+      "copper_layer": "F.Cu",
+      "mcu_half": "lower",
+      "xy": [
+        182.8,
+        113.0
+      ],
+      "socket_track_ends": 0,
+      "af": {},
+      "core_net": {
+        "name": "PA13",
+        "pins": [
+          "J13:B43",
+          "U1:72"
+        ]
+      }
+    },
+    {
+      "contact": "B44",
+      "standard": "PA8",
+      "gpio": "PH3",
+      "net": "PH3",
+      "mcu_pin": "73",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "B19",
+      "copper_layer": "F.Cu",
+      "mcu_half": "lower",
+      "xy": [
+        182.8,
+        114.0
+      ],
+      "socket_track_ends": 0,
+      "af": {},
+      "core_net": {
+        "name": "PH3",
+        "pins": [
+          "J13:B44",
+          "U1:73"
+        ]
+      }
+    },
+    {
+      "contact": "B45",
+      "standard": "PA9",
+      "gpio": "",
+      "net": "",
+      "mcu_pin": "",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "",
+      "copper_layer": "F.Cu",
+      "mcu_half": "unused",
+      "xy": [
+        182.8,
+        115.0
+      ],
+      "socket_track_ends": 0,
+      "af": {},
+      "core_net": {
+        "name": "unconnected-(J13B-B45_{slash}_NC-PadB45)",
+        "pins": [
+          "J13:B45"
+        ]
+      }
+    },
+    {
+      "contact": "B46",
+      "standard": "PA10",
+      "gpio": "",
+      "net": "",
+      "mcu_pin": "",
+      "function": "",
+      "clock_link": "",
+      "custom": "True",
+      "source_contact": "",
+      "copper_layer": "F.Cu",
+      "mcu_half": "unused",
+      "xy": [
+        182.8,
+        116.0
+      ],
+      "socket_track_ends": 0,
+      "af": {},
+      "core_net": {
+        "name": "unconnected-(J13B-B46_{slash}_NC-PadB46)",
+        "pins": [
+          "J13:B46"
+        ]
+      }
+    },
+    {
+      "contact": "B47",
+      "standard": "3V3",
+      "gpio": "",
+      "net": "+3V3",
+      "mcu_pin": "",
+      "function": "",
+      "clock_link": "",
+      "custom": "False",
+      "source_contact": "",
+      "copper_layer": "",
+      "mcu_half": "",
+      "xy": [
+        182.8,
+        117.0
+      ],
+      "socket_track_ends": 0,
+      "af": {},
+      "core_net": {
+        "name": "+3V3",
+        "pins": [
+          "C10:1",
+          "C11:1",
+          "C12:1",
+          "C13:1",
+          "C4:1",
+          "C5:1",
+          "C8:1",
+          "C9:1",
+          "J13:A47",
+          "J13:B47",
+          "L1:2",
+          "R49:1",
+          "R5:1",
+          "R50:1",
+          "R6:1",
+          "SW2:2",
+          "U1:100",
+          "U1:11",
+          "U1:28",
+          "U1:50",
+          "U1:75",
+          "U2:1"
+        ]
+      }
+    },
+    {
+      "contact": "B48",
+      "standard": "5V",
+      "gpio": "",
+      "net": "+5V_SYS",
+      "mcu_pin": "",
+      "function": "",
+      "clock_link": "",
+      "custom": "False",
+      "source_contact": "",
+      "copper_layer": "",
+      "mcu_half": "",
+      "xy": [
+        182.8,
+        118.0
+      ],
+      "socket_track_ends": 0,
+      "af": {},
+      "core_net": {
+        "name": "+5V_SYS",
+        "pins": [
+          "C2:1",
+          "C3:1",
+          "D2:1",
+          "J13:A48",
+          "J13:B48",
+          "U2:2",
+          "U2:3"
+        ]
+      }
+    },
+    {
+      "contact": "B49",
+      "standard": "GND",
+      "gpio": "",
+      "net": "GND",
+      "mcu_pin": "",
+      "function": "",
+      "clock_link": "",
+      "custom": "False",
+      "source_contact": "",
+      "copper_layer": "",
+      "mcu_half": "",
+      "xy": [
+        182.8,
+        119.0
+      ],
+      "socket_track_ends": 0,
+      "af": {},
+      "core_net": {
+        "name": "GND",
+        "pins": [
+          "C10:2",
+          "C11:2",
+          "C12:2",
+          "C13:2",
+          "C14:2",
+          "C15:2",
+          "C16:2",
+          "C17:2",
+          "C18:2",
+          "C2:2",
+          "C3:2",
+          "C4:2",
+          "C5:2",
+          "C6:2",
+          "C7:2",
+          "C8:2",
+          "C9:2",
+          "D3:1",
+          "D4:1",
+          "J13:A1",
+          "J13:A49",
+          "J13:B1",
+          "J13:B49",
+          "J2:A1",
+          "J2:A12",
+          "J2:B1",
+          "J2:B12",
+          "J2:SH",
+          "R1:2",
+          "R2:2",
+          "R53:2",
+          "R7:2",
+          "SW1:2",
+          "SW5:2",
+          "U1:10",
+          "U1:20",
+          "U1:27",
+          "U1:49",
+          "U1:74",
+          "U1:99",
+          "U2:4",
+          "U3:2",
+          "Y1:2",
+          "Y1:4"
+        ]
+      }
+    }
+  ],
+  "plan": [
+    {
+      "signal": "L_ENC_A",
+      "gpio": "PA0",
+      "function": "TIM5_CH1",
+      "af": 2,
+      "endpoint": "U3:6",
+      "contact": "A4",
+      "old_contact": "A4",
+      "endpoint_xy": [
+        203.1625,
+        54.05
+      ],
+      "socket_xy": [
+        190.0,
+        72.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/左电机与编码器/L_ENC_A",
+      "actual_motor_net": {
+        "name": "/左电机与编码器/L_ENC_A",
+        "pins": [
+          "J14:A4",
+          "U3:6"
+        ]
+      }
+    },
+    {
+      "signal": "L_ENC_B",
+      "gpio": "PA1",
+      "function": "TIM5_CH2",
+      "af": 2,
+      "endpoint": "U3:4",
+      "contact": "A3",
+      "old_contact": "A3",
+      "endpoint_xy": [
+        203.1625,
+        52.75
+      ],
+      "socket_xy": [
+        190.0,
+        71.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/左电机与编码器/L_ENC_B",
+      "actual_motor_net": {
+        "name": "/左电机与编码器/L_ENC_B",
+        "pins": [
+          "J14:A3",
+          "U3:4"
+        ]
+      }
+    },
+    {
+      "signal": "R_ENC_A",
+      "gpio": "PB3",
+      "function": "TIM2_CH2",
+      "af": 1,
+      "endpoint": "U5:6",
+      "contact": "A33",
+      "old_contact": "A33",
+      "endpoint_xy": [
+        205.0125,
+        132.3375
+      ],
+      "socket_xy": [
+        190.0,
+        103.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/右电机与编码器/R_ENC_A",
+      "actual_motor_net": {
+        "name": "/右电机与编码器/R_ENC_A",
+        "pins": [
+          "J14:A33",
+          "U5:6"
+        ]
+      }
+    },
+    {
+      "signal": "R_ENC_B",
+      "gpio": "PA15",
+      "function": "TIM2_CH1",
+      "af": 1,
+      "endpoint": "U5:4",
+      "contact": "A45",
+      "old_contact": "A45",
+      "endpoint_xy": [
+        205.0125,
+        133.6375
+      ],
+      "socket_xy": [
+        190.0,
+        115.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/右电机与编码器/R_ENC_B",
+      "actual_motor_net": {
+        "name": "/右电机与编码器/R_ENC_B",
+        "pins": [
+          "J14:A45",
+          "U5:4"
+        ]
+      }
+    },
+    {
+      "signal": "L_PWM",
+      "gpio": "PC2",
+      "function": "TIM4_CH4",
+      "af": 2,
+      "endpoint": "U2:1",
+      "contact": "A9",
+      "old_contact": "A9",
+      "endpoint_xy": [
+        209.8,
+        63.7146
+      ],
+      "socket_xy": [
+        190.0,
+        77.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/左电机与编码器/L_PWM",
+      "actual_motor_net": {
+        "name": "/左电机与编码器/L_PWM",
+        "pins": [
+          "J14:A9",
+          "U2:1"
+        ]
+      }
+    },
+    {
+      "signal": "R_PWM",
+      "gpio": "PB8",
+      "function": "TIM4_CH3",
+      "af": 2,
+      "endpoint": "U4:1",
+      "contact": "A27",
+      "old_contact": "A27",
+      "endpoint_xy": [
+        197.4625,
+        121.9875
+      ],
+      "socket_xy": [
+        190.0,
+        97.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/右电机与编码器/R_PWM",
+      "actual_motor_net": {
+        "name": "/右电机与编码器/R_PWM",
+        "pins": [
+          "J14:A27",
+          "U4:1"
+        ]
+      }
+    },
+    {
+      "signal": "L_DIR",
+      "gpio": "PC3",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "U2:2",
+      "contact": "A8",
+      "old_contact": "A8",
+      "endpoint_xy": [
+        209.8,
+        63.0646
+      ],
+      "socket_xy": [
+        190.0,
+        76.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/左电机与编码器/L_DIR",
+      "actual_motor_net": {
+        "name": "/左电机与编码器/L_DIR",
+        "pins": [
+          "J14:A8",
+          "U2:2"
+        ]
+      }
+    },
+    {
+      "signal": "R_DIR",
+      "gpio": "PC10",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "U4:2",
+      "contact": "A44",
+      "old_contact": "A34",
+      "endpoint_xy": [
+        197.4625,
+        122.6375
+      ],
+      "socket_xy": [
+        190.0,
+        114.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/右电机与编码器/R_DIR",
+      "actual_motor_net": {
+        "name": "/右电机与编码器/R_DIR",
+        "pins": [
+          "J14:A44",
+          "U4:2"
+        ]
+      }
+    },
+    {
+      "signal": "L_nFAULT",
+      "gpio": "PH4",
+      "function": "EXTI4",
+      "af": null,
+      "endpoint": "U2:4",
+      "contact": "A7",
+      "old_contact": "A7",
+      "endpoint_xy": [
+        209.8,
+        61.7646
+      ],
+      "socket_xy": [
+        190.0,
+        75.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/左电机与编码器/L_nFAULT",
+      "actual_motor_net": {
+        "name": "/左电机与编码器/L_nFAULT",
+        "pins": [
+          "J14:A7",
+          "R13:1",
+          "U2:4"
+        ]
+      }
+    },
+    {
+      "signal": "R_nFAULT",
+      "gpio": "PC11",
+      "function": "EXTI11",
+      "af": null,
+      "endpoint": "U4:4",
+      "contact": "A43",
+      "old_contact": "A35",
+      "endpoint_xy": [
+        197.4625,
+        123.9375
+      ],
+      "socket_xy": [
+        190.0,
+        113.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/右电机与编码器/R_nFAULT",
+      "actual_motor_net": {
+        "name": "/右电机与编码器/R_nFAULT",
+        "pins": [
+          "J14:A43",
+          "R33:1",
+          "U4:4"
+        ]
+      }
+    },
+    {
+      "signal": "L_ISENSE",
+      "gpio": "PH5",
+      "function": "ADC2_IN13",
+      "af": null,
+      "endpoint": "R15:2",
+      "contact": "A5",
+      "old_contact": "A5",
+      "endpoint_xy": [
+        207.25,
+        55.5021
+      ],
+      "socket_xy": [
+        190.0,
+        73.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/左电机与编码器/L_ISENSE",
+      "actual_motor_net": {
+        "name": "/左电机与编码器/L_ISENSE",
+        "pins": [
+          "C16:1",
+          "J14:A5",
+          "R15:2"
+        ]
+      }
+    },
+    {
+      "signal": "R_ISENSE",
+      "gpio": "PC0",
+      "function": "ADC1_IN8",
+      "af": null,
+      "endpoint": "R35:2",
+      "contact": "A11",
+      "old_contact": "A11",
+      "endpoint_xy": [
+        200.2625,
+        130.65
+      ],
+      "socket_xy": [
+        190.0,
+        79.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/右电机与编码器/R_ISENSE",
+      "actual_motor_net": {
+        "name": "/右电机与编码器/R_ISENSE",
+        "pins": [
+          "C36:1",
+          "J14:A11",
+          "R35:2"
+        ]
+      }
+    },
+    {
+      "signal": "MOTOR_EN_REQ",
+      "gpio": "PC5",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "R6:1",
+      "contact": "B8",
+      "old_contact": "B13",
+      "endpoint_xy": [
+        173.4,
+        63.5375
+      ],
+      "socket_xy": [
+        182.8,
+        76.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/核心板接口/MOTOR_EN_REQ",
+      "actual_motor_net": {
+        "name": "/核心板接口/MOTOR_EN_REQ",
+        "pins": [
+          "J14:B8",
+          "R6:1"
+        ]
+      }
+    },
+    {
+      "signal": "BT_TX",
+      "gpio": "PB0",
+      "function": "USART2_TX",
+      "af": 7,
+      "endpoint": "J15:3",
+      "contact": "B9",
+      "old_contact": "A2",
+      "endpoint_xy": [
+        162.88,
+        45.65
+      ],
+      "socket_xy": [
+        182.8,
+        77.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/四脚蓝牙与外接步进驱动接口/BT_TX",
+      "actual_motor_net": {
+        "name": "/四脚蓝牙与外接步进驱动接口/BT_TX",
+        "pins": [
+          "J14:B9",
+          "J15:3"
+        ]
+      }
+    },
+    {
+      "signal": "BT_RX",
+      "gpio": "PA3",
+      "function": "USART2_RX",
+      "af": 7,
+      "endpoint": "J15:4",
+      "contact": "B2",
+      "old_contact": "B2",
+      "endpoint_xy": [
+        160.34,
+        45.65
+      ],
+      "socket_xy": [
+        182.8,
+        70.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/四脚蓝牙与外接步进驱动接口/BT_RX",
+      "actual_motor_net": {
+        "name": "/四脚蓝牙与外接步进驱动接口/BT_RX",
+        "pins": [
+          "J14:B2",
+          "J15:4"
+        ]
+      }
+    },
+    {
+      "signal": "VIDEO_TX",
+      "gpio": "PB10",
+      "function": "USART3_TX",
+      "af": 7,
+      "endpoint": "J19:6",
+      "contact": "B21",
+      "old_contact": "B34",
+      "endpoint_xy": [
+        184.25,
+        48.0
+      ],
+      "socket_xy": [
+        182.8,
+        91.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/核心板接口/VIDEO_TX",
+      "actual_motor_net": {
+        "name": "/核心板接口/VIDEO_TX",
+        "pins": [
+          "J14:B21",
+          "J19:6"
+        ]
+      }
+    },
+    {
+      "signal": "VIDEO_RX",
+      "gpio": "PC4",
+      "function": "USART3_RX",
+      "af": 7,
+      "endpoint": "J19:5",
+      "contact": "B7",
+      "old_contact": "B35",
+      "endpoint_xy": [
+        183.0,
+        48.0
+      ],
+      "socket_xy": [
+        182.8,
+        75.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/核心板接口/VIDEO_RX",
+      "actual_motor_net": {
+        "name": "/核心板接口/VIDEO_RX",
+        "pins": [
+          "J14:B7",
+          "J19:5"
+        ]
+      }
+    },
+    {
+      "signal": "STEP_UART_TX",
+      "gpio": "PC6",
+      "function": "USART6_TX",
+      "af": 7,
+      "endpoint": "J23:7",
+      "contact": "B34",
+      "old_contact": "A30",
+      "endpoint_xy": [
+        127.75,
+        137.25
+      ],
+      "socket_xy": [
+        182.8,
+        104.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/四脚蓝牙与外接步进驱动接口/STEP_UART_TX",
+      "actual_motor_net": {
+        "name": "/四脚蓝牙与外接步进驱动接口/STEP_UART_TX",
+        "pins": [
+          "J14:B34",
+          "J23:7"
+        ]
+      }
+    },
+    {
+      "signal": "STEP_UART_RX",
+      "gpio": "PC7",
+      "function": "USART6_RX",
+      "af": 7,
+      "endpoint": "J23:8",
+      "contact": "B35",
+      "old_contact": "A29",
+      "endpoint_xy": [
+        127.75,
+        139.75
+      ],
+      "socket_xy": [
+        182.8,
+        105.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/四脚蓝牙与外接步进驱动接口/STEP_UART_RX",
+      "actual_motor_net": {
+        "name": "/四脚蓝牙与外接步进驱动接口/STEP_UART_RX",
+        "pins": [
+          "J14:B35",
+          "J23:8"
+        ]
+      }
+    },
+    {
+      "signal": "LICHEE_TX",
+      "gpio": "PB6",
+      "function": "USART1_TX",
+      "af": 7,
+      "endpoint": "U12:2",
+      "contact": "A30",
+      "old_contact": "B26",
+      "endpoint_xy": [
+        214.0875,
+        72.31
+      ],
+      "socket_xy": [
+        190.0,
+        100.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/核心板接口/LICHEE_TX",
+      "actual_motor_net": {
+        "name": "/核心板接口/LICHEE_TX",
+        "pins": [
+          "J14:A30",
+          "R73:2",
+          "U12:2"
+        ]
+      }
+    },
+    {
+      "signal": "LICHEE_RX",
+      "gpio": "PB7",
+      "function": "USART1_RX",
+      "af": 7,
+      "endpoint": "U11:4",
+      "contact": "A29",
+      "old_contact": "B27",
+      "endpoint_xy": [
+        216.3375,
+        76.61
+      ],
+      "socket_xy": [
+        190.0,
+        99.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/核心板接口/LICHEE_RX",
+      "actual_motor_net": {
+        "name": "/核心板接口/LICHEE_RX",
+        "pins": [
+          "J14:A29",
+          "R79:2",
+          "U11:4"
+        ]
+      }
+    },
+    {
+      "signal": "TFT_SCK",
+      "gpio": "PA5",
+      "function": "SPI1_SCK",
+      "af": 5,
+      "endpoint": "J17:3",
+      "contact": "B4",
+      "old_contact": "B4",
+      "endpoint_xy": [
+        153.92,
+        59.0
+      ],
+      "socket_xy": [
+        182.8,
+        72.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/中景园屏幕与四个操作按钮/TFT_SCK",
+      "actual_motor_net": {
+        "name": "/中景园屏幕与四个操作按钮/TFT_SCK",
+        "pins": [
+          "J14:B4",
+          "J17:3"
+        ]
+      }
+    },
+    {
+      "signal": "TFT_MOSI",
+      "gpio": "PA7",
+      "function": "SPI1_MOSI",
+      "af": 5,
+      "endpoint": "J17:4",
+      "contact": "B6",
+      "old_contact": "B6",
+      "endpoint_xy": [
+        156.46,
+        59.0
+      ],
+      "socket_xy": [
+        182.8,
+        74.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/中景园屏幕与四个操作按钮/TFT_MOSI",
+      "actual_motor_net": {
+        "name": "/中景园屏幕与四个操作按钮/TFT_MOSI",
+        "pins": [
+          "J14:B6",
+          "J17:4"
+        ]
+      }
+    },
+    {
+      "signal": "TFT_CS",
+      "gpio": "PA4",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "J17:7",
+      "contact": "B3",
+      "old_contact": "B3",
+      "endpoint_xy": [
+        164.08,
+        59.0
+      ],
+      "socket_xy": [
+        182.8,
+        71.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/中景园屏幕与四个操作按钮/TFT_CS",
+      "actual_motor_net": {
+        "name": "/中景园屏幕与四个操作按钮/TFT_CS",
+        "pins": [
+          "J14:B3",
+          "J17:7",
+          "R55:2"
+        ]
+      }
+    },
+    {
+      "signal": "TFT_RES",
+      "gpio": "PB1",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "J17:5",
+      "contact": "B10",
+      "old_contact": "B9",
+      "endpoint_xy": [
+        159.0,
+        59.0
+      ],
+      "socket_xy": [
+        182.8,
+        78.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/中景园屏幕与四个操作按钮/TFT_RES",
+      "actual_motor_net": {
+        "name": "/中景园屏幕与四个操作按钮/TFT_RES",
+        "pins": [
+          "J14:B10",
+          "J17:5",
+          "R56:2"
+        ]
+      }
+    },
+    {
+      "signal": "TFT_DC",
+      "gpio": "PB2",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "J17:6",
+      "contact": "B11",
+      "old_contact": "B10",
+      "endpoint_xy": [
+        161.54,
+        59.0
+      ],
+      "socket_xy": [
+        182.8,
+        79.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/中景园屏幕与四个操作按钮/TFT_DC",
+      "actual_motor_net": {
+        "name": "/中景园屏幕与四个操作按钮/TFT_DC",
+        "pins": [
+          "J14:B11",
+          "J17:6"
+        ]
+      }
+    },
+    {
+      "signal": "TFT_BL",
+      "gpio": "PA6",
+      "function": "TIM3_CH1",
+      "af": 2,
+      "endpoint": "J17:8",
+      "contact": "B5",
+      "old_contact": "A32",
+      "endpoint_xy": [
+        166.62,
+        59.0
+      ],
+      "socket_xy": [
+        182.8,
+        73.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/中景园屏幕与四个操作按钮/TFT_BL",
+      "actual_motor_net": {
+        "name": "/中景园屏幕与四个操作按钮/TFT_BL",
+        "pins": [
+          "J14:B5",
+          "J17:8"
+        ]
+      }
+    },
+    {
+      "signal": "KEY_MODE",
+      "gpio": "PH3",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "SW2:1",
+      "contact": "B44",
+      "old_contact": "B7",
+      "endpoint_xy": [
+        138.6667,
+        125.45
+      ],
+      "socket_xy": [
+        182.8,
+        114.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/中景园屏幕与四个操作按钮/KEY_MODE",
+      "actual_motor_net": {
+        "name": "/中景园屏幕与四个操作按钮/KEY_MODE",
+        "pins": [
+          "J14:B44",
+          "R50:2",
+          "SW2:1"
+        ]
+      }
+    },
+    {
+      "signal": "KEY_NEXT",
+      "gpio": "PA10",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "SW3:1",
+      "contact": "B40",
+      "old_contact": "B8",
+      "endpoint_xy": [
+        149.0833,
+        125.45
+      ],
+      "socket_xy": [
+        182.8,
+        110.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/中景园屏幕与四个操作按钮/KEY_NEXT",
+      "actual_motor_net": {
+        "name": "/中景园屏幕与四个操作按钮/KEY_NEXT",
+        "pins": [
+          "J14:B40",
+          "R51:2",
+          "SW3:1"
+        ]
+      }
+    },
+    {
+      "signal": "KEY_OK",
+      "gpio": "PA8",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "SW4:1",
+      "contact": "B38",
+      "old_contact": "B11",
+      "endpoint_xy": [
+        159.5,
+        125.45
+      ],
+      "socket_xy": [
+        182.8,
+        108.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/中景园屏幕与四个操作按钮/KEY_OK",
+      "actual_motor_net": {
+        "name": "/中景园屏幕与四个操作按钮/KEY_OK",
+        "pins": [
+          "J14:B38",
+          "R52:2",
+          "SW4:1"
+        ]
+      }
+    },
+    {
+      "signal": "KEY_START",
+      "gpio": "PC9",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "SW5:1",
+      "contact": "B37",
+      "old_contact": "B12",
+      "endpoint_xy": [
+        169.9167,
+        125.45
+      ],
+      "socket_xy": [
+        182.8,
+        107.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/中景园屏幕与四个操作按钮/KEY_START",
+      "actual_motor_net": {
+        "name": "/中景园屏幕与四个操作按钮/KEY_START",
+        "pins": [
+          "J14:B37",
+          "R53:2",
+          "SW5:1"
+        ]
+      }
+    },
+    {
+      "signal": "GRAY_CH1",
+      "gpio": "PE7",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "J20:1",
+      "contact": "B12",
+      "old_contact": "B15",
+      "endpoint_xy": [
+        145.65,
+        48.15
+      ],
+      "socket_xy": [
+        182.8,
+        82.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/核心板接口/GRAY_CH1",
+      "actual_motor_net": {
+        "name": "/核心板接口/GRAY_CH1",
+        "pins": [
+          "J14:B12",
+          "J20:1"
+        ]
+      }
+    },
+    {
+      "signal": "GRAY_CH2",
+      "gpio": "PE8",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "J20:2",
+      "contact": "B13",
+      "old_contact": "B16",
+      "endpoint_xy": [
+        143.15,
+        48.15
+      ],
+      "socket_xy": [
+        182.8,
+        83.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/核心板接口/GRAY_CH2",
+      "actual_motor_net": {
+        "name": "/核心板接口/GRAY_CH2",
+        "pins": [
+          "J14:B13",
+          "J20:2"
+        ]
+      }
+    },
+    {
+      "signal": "GRAY_CH3",
+      "gpio": "PE9",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "J20:3",
+      "contact": "B14",
+      "old_contact": "B17",
+      "endpoint_xy": [
+        140.65,
+        48.15
+      ],
+      "socket_xy": [
+        182.8,
+        84.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/核心板接口/GRAY_CH3",
+      "actual_motor_net": {
+        "name": "/核心板接口/GRAY_CH3",
+        "pins": [
+          "J14:B14",
+          "J20:3"
+        ]
+      }
+    },
+    {
+      "signal": "GRAY_CH4",
+      "gpio": "PE10",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "J20:4",
+      "contact": "B15",
+      "old_contact": "B18",
+      "endpoint_xy": [
+        138.15,
+        48.15
+      ],
+      "socket_xy": [
+        182.8,
+        85.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/核心板接口/GRAY_CH4",
+      "actual_motor_net": {
+        "name": "/核心板接口/GRAY_CH4",
+        "pins": [
+          "J14:B15",
+          "J20:4"
+        ]
+      }
+    },
+    {
+      "signal": "GRAY_CH5",
+      "gpio": "PE11",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "J20:5",
+      "contact": "B16",
+      "old_contact": "B19",
+      "endpoint_xy": [
+        135.65,
+        48.15
+      ],
+      "socket_xy": [
+        182.8,
+        86.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/核心板接口/GRAY_CH5",
+      "actual_motor_net": {
+        "name": "/核心板接口/GRAY_CH5",
+        "pins": [
+          "J14:B16",
+          "J20:5"
+        ]
+      }
+    },
+    {
+      "signal": "GRAY_CH6",
+      "gpio": "PE12",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "J20:6",
+      "contact": "B17",
+      "old_contact": "B20",
+      "endpoint_xy": [
+        133.15,
+        48.15
+      ],
+      "socket_xy": [
+        182.8,
+        87.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/核心板接口/GRAY_CH6",
+      "actual_motor_net": {
+        "name": "/核心板接口/GRAY_CH6",
+        "pins": [
+          "J14:B17",
+          "J20:6"
+        ]
+      }
+    },
+    {
+      "signal": "GRAY_CH7",
+      "gpio": "PE13",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "J20:7",
+      "contact": "B18",
+      "old_contact": "B28",
+      "endpoint_xy": [
+        130.65,
+        48.15
+      ],
+      "socket_xy": [
+        182.8,
+        88.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/核心板接口/GRAY_CH7",
+      "actual_motor_net": {
+        "name": "/核心板接口/GRAY_CH7",
+        "pins": [
+          "J14:B18",
+          "J20:7"
+        ]
+      }
+    },
+    {
+      "signal": "GRAY_CH8",
+      "gpio": "PE14",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "J20:8",
+      "contact": "B19",
+      "old_contact": "B29",
+      "endpoint_xy": [
+        128.15,
+        48.15
+      ],
+      "socket_xy": [
+        182.8,
+        89.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/核心板接口/GRAY_CH8",
+      "actual_motor_net": {
+        "name": "/核心板接口/GRAY_CH8",
+        "pins": [
+          "J14:B19",
+          "J20:8"
+        ]
+      }
+    }
+  ],
+  "tracks": 329,
+  "footprint_positions": {
+    "C74": {
+      "xy": [
+        209.225,
+        71.397
+      ],
+      "rotation": -90.0
+    },
+    "C82": {
+      "xy": [
+        209.978,
+        98.507
+      ],
+      "rotation": 90.0
+    },
+    "C2": {
+      "xy": [
+        177.75,
+        102.75
+      ],
+      "rotation": -90.0
+    },
+    "R16": {
+      "xy": [
+        203.5,
+        55.65
+      ],
+      "rotation": 0.0
+    },
+    "C72": {
+      "xy": [
+        178.893,
+        59.761
+      ],
+      "rotation": 0.0
+    },
+    "C37": {
+      "xy": [
+        204.012,
+        129.088
+      ],
+      "rotation": 180.0
+    },
+    "J20": {
+      "xy": [
+        145.65,
+        48.15
+      ],
+      "rotation": 180.0
+    },
+    "R3": {
+      "xy": [
+        176.506,
+        100.141
+      ],
+      "rotation": 180.0
+    },
+    "R60": {
+      "xy": [
+        167.662,
+        96.75
+      ],
+      "rotation": 0.0
+    },
+    "C35": {
+      "xy": [
+        198.762,
+        129.738
+      ],
+      "rotation": -90.0
+    },
+    "C86": {
+      "xy": [
+        164.36,
+        72.7
+      ],
+      "rotation": 0.0
+    },
+    "C91": {
+      "xy": [
+        163.25,
+        101.75
+      ],
+      "rotation": 0.0
+    },
+    "C54": {
+      "xy": [
+        161.9,
+        50.65
+      ],
+      "rotation": -90.0
+    },
+    "R19": {
+      "xy": [
+        201.25,
+        51.9
+      ],
+      "rotation": -90.0
+    },
+    "R73": {
+      "xy": [
+        212.225,
+        71.397
+      ],
+      "rotation": -90.0
+    },
+    "R79": {
+      "xy": [
+        214.475,
+        77.56
+      ],
+      "rotation": 90.0
+    },
+    "U5": {
+      "xy": [
+        204.175,
+        132.988
+      ],
+      "rotation": 0.0
+    },
+    "U11": {
+      "xy": [
+        217.475,
+        77.56
+      ],
+      "rotation": 180.0
+    },
+    "R50": {
+      "xy": [
+        139.579,
+        137.0
+      ],
+      "rotation": 180.0
+    },
+    "R39": {
+      "xy": [
+        206.762,
+        134.238
+      ],
+      "rotation": 90.0
+    },
+    "C90": {
+      "xy": [
+        163.17,
+        84.2
+      ],
+      "rotation": 90.0
+    },
+    "C16": {
+      "xy": [
+        205.75,
+        56.415
+      ],
+      "rotation": -90.0
+    },
+    "SW5": {
+      "xy": [
+        172.167,
+        130.0
+      ],
+      "rotation": 90.0
+    },
+    "J21": {
+      "xy": [
+        154.15,
+        48.175
+      ],
+      "rotation": 180.0
+    },
+    "R2": {
+      "xy": [
+        128.762,
+        111.35
+      ],
+      "rotation": 0.0
+    },
+    "C75": {
+      "xy": [
+        210.725,
+        71.397
+      ],
+      "rotation": -90.0
+    },
+    "R33": {
+      "xy": [
+        193.262,
+        123.487
+      ],
+      "rotation": 180.0
+    },
+    "R5": {
+      "xy": [
+        149.5,
+        114.912
+      ],
+      "rotation": 90.0
+    },
+    "C12": {
+      "xy": [
+        199.25,
+        60.165
+      ],
+      "rotation": 90.0
+    },
+    "Q2": {
+      "xy": [
+        150.46,
+        84.72
+      ],
+      "rotation": 180.0
+    },
+    "C31": {
+      "xy": [
+        206.512,
+        124.463
+      ],
+      "rotation": 90.0
+    },
+    "C92": {
+      "xy": [
+        202.775,
+        86.19
+      ],
+      "rotation": 180.0
+    },
+    "U7": {
+      "xy": [
+        164.9,
+        49.65
+      ],
+      "rotation": 0.0
+    },
+    "C11": {
+      "xy": [
+        200.75,
+        61.65
+      ],
+      "rotation": -90.0
+    },
+    "C32": {
+      "xy": [
+        208.012,
+        126.013
+      ],
+      "rotation": -90.0
+    },
+    "C5": {
+      "xy": [
+        166.25,
+        110.5
+      ],
+      "rotation": 90.0
+    },
+    "R61": {
+      "xy": [
+        161.972,
+        70.2
+      ],
+      "rotation": 180.0
+    },
+    "U4": {
+      "xy": [
+        200.363,
+        124.263
+      ],
+      "rotation": 0.0
+    },
+    "R67": {
+      "xy": [
+        163.25,
+        100.25
+      ],
+      "rotation": 180.0
+    },
+    "H2": {
+      "xy": [
+        172.73,
+        111.0
+      ],
+      "rotation": 90.0
+    },
+    "J18": {
+      "xy": [
+        219.225,
+        60.65
+      ],
+      "rotation": 0.0
+    },
+    "U10": {
+      "xy": [
+        177.345,
+        54.97
+      ],
+      "rotation": 90.0
+    },
+    "C4": {
+      "xy": [
+        171.0,
+        104.75
+      ],
+      "rotation": 180.0
+    },
+    "L2": {
+      "xy": [
+        169.92,
+        88.7
+      ],
+      "rotation": 0.0
+    },
+    "C3": {
+      "xy": [
+        179.5,
+        102.713
+      ],
+      "rotation": -90.0
+    },
+    "R4": {
+      "xy": [
+        174.056,
+        99.219
+      ],
+      "rotation": 90.0
+    },
+    "R32": {
+      "xy": [
+        197.262,
+        129.738
+      ],
+      "rotation": -90.0
+    },
+    "R13": {
+      "xy": [
+        213.25,
+        56.665
+      ],
+      "rotation": 0.0
+    },
+    "C85": {
+      "xy": [
+        161.972,
+        68.7
+      ],
+      "rotation": 180.0
+    },
+    "F1": {
+      "xy": [
+        141.75,
+        91.95
+      ],
+      "rotation": 0.0
+    },
+    "R52": {
+      "xy": [
+        160.412,
+        137.0
+      ],
+      "rotation": 180.0
+    },
+    "R51": {
+      "xy": [
+        149.996,
+        137.0
+      ],
+      "rotation": 180.0
+    },
+    "R59": {
+      "xy": [
+        164.25,
+        96.75
+      ],
+      "rotation": 0.0
+    },
+    "C83": {
+      "xy": [
+        217.35,
+        94.35
+      ],
+      "rotation": 180.0
+    },
+    "R15": {
+      "xy": [
+        207.25,
+        56.415
+      ],
+      "rotation": 90.0
+    },
+    "C40": {
+      "xy": [
+        209.762,
+        134.238
+      ],
+      "rotation": -90.0
+    },
+    "C84": {
+      "xy": [
+        161.935,
+        66.95
+      ],
+      "rotation": 180.0
+    },
+    "U3": {
+      "xy": [
+        204.0,
+        53.4
+      ],
+      "rotation": 180.0
+    },
+    "J19": {
+      "xy": [
+        181.125,
+        48.0
+      ],
+      "rotation": 0.0
+    },
+    "R14": {
+      "xy": [
+        213.25,
+        63.225
+      ],
+      "rotation": 0.0
+    },
+    "R64": {
+      "xy": [
+        158.67,
+        82.95
+      ],
+      "rotation": 90.0
+    },
+    "Q1": {
+      "xy": [
+        150.46,
+        91.78
+      ],
+      "rotation": 180.0
+    },
+    "U2": {
+      "xy": [
+        206.9,
+        61.44
+      ],
+      "rotation": 180.0
+    },
+    "C10": {
+      "xy": [
+        201.5,
+        63.9
+      ],
+      "rotation": 0.0
+    },
+    "C78": {
+      "xy": [
+        181.25,
+        56.8
+      ],
+      "rotation": 90.0
+    },
+    "R34": {
+      "xy": [
+        193.262,
+        121.987
+      ],
+      "rotation": 180.0
+    },
+    "R63": {
+      "xy": [
+        158.67,
+        75.95
+      ],
+      "rotation": -90.0
+    },
+    "J28": {
+      "xy": [
+        219.6,
+        100.85
+      ],
+      "rotation": 90.0
+    },
+    "J10": {
+      "xy": [
+        170.9,
+        61.65
+      ],
+      "rotation": 180.0
+    },
+    "C34": {
+      "xy": [
+        193.262,
+        126.487
+      ],
+      "rotation": 180.0
+    },
+    "R65": {
+      "xy": [
+        158.67,
+        79.45
+      ],
+      "rotation": 90.0
+    },
+    "J8": {
+      "xy": [
+        182.0,
+        134.225
+      ],
+      "rotation": 0.0
+    },
+    "C36": {
+      "xy": [
+        201.762,
+        129.738
+      ],
+      "rotation": 90.0
+    },
+    "R56": {
+      "xy": [
+        159.0,
+        62.5
+      ],
+      "rotation": 90.0
+    },
+    "D3": {
+      "xy": [
+        152.0,
+        113.825
+      ],
+      "rotation": 90.0
+    },
+    "C38": {
+      "xy": [
+        201.262,
+        134.988
+      ],
+      "rotation": 180.0
+    },
+    "R11": {
+      "xy": [
+        213.25,
+        59.665
+      ],
+      "rotation": 0.0
+    },
+    "C88": {
+      "xy": [
+        172.27,
+        81.7
+      ],
+      "rotation": 180.0
+    },
+    "C39": {
+      "xy": [
+        208.262,
+        134.238
+      ],
+      "rotation": -90.0
+    },
+    "R10": {
+      "xy": [
+        213.25,
+        58.165
+      ],
+      "rotation": 180.0
+    },
+    "R66": {
+      "xy": [
+        161.67,
+        84.2
+      ],
+      "rotation": -90.0
+    },
+    "H1": {
+      "xy": [
+        142.73,
+        111.0
+      ],
+      "rotation": 90.0
+    },
+    "R35": {
+      "xy": [
+        200.262,
+        129.738
+      ],
+      "rotation": -90.0
+    },
+    "J6": {
+      "xy": [
+        210.762,
+        139.762
+      ],
+      "rotation": 180.0
+    },
+    "C93": {
+      "xy": [
+        210.5,
+        85.25
+      ],
+      "rotation": 90.0
+    },
+    "SW2": {
+      "xy": [
+        140.917,
+        130.0
+      ],
+      "rotation": 90.0
+    },
+    "C1": {
+      "xy": [
+        137.1,
+        71.75
+      ],
+      "rotation": 180.0
+    },
+    "U8": {
+      "xy": [
+        213.4,
+        87.0
+      ],
+      "rotation": 0.0
+    },
+    "R92": {
+      "xy": [
+        171.162,
+        96.75
+      ],
+      "rotation": 180.0
+    },
+    "D2": {
+      "xy": [
+        147.2,
+        79.0
+      ],
+      "rotation": 180.0
+    },
+    "R93": {
+      "xy": [
+        213.75,
+        90.25
+      ],
+      "rotation": 180.0
+    },
+    "SW1": {
+      "xy": [
+        127.85,
+        98.8
+      ],
+      "rotation": -90.0
+    },
+    "R17": {
+      "xy": [
+        206.75,
+        51.9
+      ],
+      "rotation": -90.0
+    },
+    "C55": {
+      "xy": [
+        167.96,
+        49.612
+      ],
+      "rotation": -90.0
+    },
+    "C87": {
+      "xy": [
+        166.42,
+        76.45
+      ],
+      "rotation": -90.0
+    },
+    "R36": {
+      "xy": [
+        204.012,
+        130.588
+      ],
+      "rotation": 180.0
+    },
+    "R30": {
+      "xy": [
+        193.262,
+        124.987
+      ],
+      "rotation": 0.0
+    },
+    "C17": {
+      "xy": [
+        203.5,
+        57.15
+      ],
+      "rotation": 0.0
+    },
+    "R38": {
+      "xy": [
+        206.762,
+        131.238
+      ],
+      "rotation": 90.0
+    },
+    "J14": {
+      "xy": [
+        186.4,
+        94.0
+      ],
+      "rotation": -90.0
+    },
+    "C19": {
+      "xy": [
+        198.25,
+        54.9
+      ],
+      "rotation": -90.0
+    },
+    "R62": {
+      "xy": [
+        160.125,
+        72.4
+      ],
+      "rotation": 180.0
+    },
+    "R37": {
+      "xy": [
+        204.338,
+        134.988
+      ],
+      "rotation": 180.0
+    },
+    "C14": {
+      "xy": [
+        213.25,
+        61.165
+      ],
+      "rotation": 0.0
+    },
+    "J23": {
+      "xy": [
+        127.75,
+        122.25
+      ],
+      "rotation": -90.0
+    },
+    "SW4": {
+      "xy": [
+        161.75,
+        130.0
+      ],
+      "rotation": 90.0
+    },
+    "D1": {
+      "xy": [
+        134.6,
+        101.123
+      ],
+      "rotation": -90.0
+    },
+    "C33": {
+      "xy": [
+        214.012,
+        125.237
+      ],
+      "rotation": -90.0
+    },
+    "C18": {
+      "xy": [
+        208.25,
+        51.925
+      ],
+      "rotation": 90.0
+    },
+    "U16": {
+      "xy": [
+        212.95,
+        100.17
+      ],
+      "rotation": 0.0
+    },
+    "R1": {
+      "xy": [
+        132.6,
+        101.1
+      ],
+      "rotation": 90.0
+    },
+    "R72": {
+      "xy": [
+        175.798,
+        50.011
+      ],
+      "rotation": 180.0
+    },
+    "R55": {
+      "xy": [
+        164.08,
+        62.5
+      ],
+      "rotation": 90.0
+    },
+    "U12": {
+      "xy": [
+        215.225,
+        72.31
+      ],
+      "rotation": 0.0
+    },
+    "R31": {
+      "xy": [
+        193.262,
+        127.987
+      ],
+      "rotation": 180.0
+    },
+    "SW3": {
+      "xy": [
+        151.333,
+        130.0
+      ],
+      "rotation": 90.0
+    },
+    "C62": {
+      "xy": [
+        181.25,
+        53.14
+      ],
+      "rotation": -90.0
+    },
+    "C30": {
+      "xy": [
+        205.762,
+        121.737
+      ],
+      "rotation": 180.0
+    },
+    "R91": {
+      "xy": [
+        213.6,
+        103.35
+      ],
+      "rotation": 180.0
+    },
+    "C94": {
+      "xy": [
+        217.5,
+        81.25
+      ],
+      "rotation": 180.0
+    },
+    "R6": {
+      "xy": [
+        173.4,
+        62.625
+      ],
+      "rotation": 90.0
+    },
+    "C63": {
+      "xy": [
+        163.25,
+        98.75
+      ],
+      "rotation": 180.0
+    },
+    "L1": {
+      "xy": [
+        159.25,
+        108.0
+      ],
+      "rotation": -90.0
+    },
+    "C56": {
+      "xy": [
+        151.38,
+        62.5
+      ],
+      "rotation": -90.0
+    },
+    "C15": {
+      "xy": [
+        208.75,
+        56.415
+      ],
+      "rotation": 90.0
+    },
+    "C20": {
+      "xy": [
+        199.75,
+        54.9
+      ],
+      "rotation": -90.0
+    },
+    "U1": {
+      "xy": [
+        169.5,
+        100.875
+      ],
+      "rotation": 180.0
+    },
+    "D4": {
+      "xy": [
+        148.0,
+        114.912
+      ],
+      "rotation": 90.0
+    },
+    "J17": {
+      "xy": [
+        148.84,
+        59.0
+      ],
+      "rotation": 90.0
+    },
+    "R12": {
+      "xy": [
+        210.25,
+        56.415
+      ],
+      "rotation": 90.0
+    },
+    "R7": {
+      "xy": [
+        173.4,
+        58.375
+      ],
+      "rotation": 90.0
+    },
+    "J25": {
+      "xy": [
+        219.75,
+        87.75
+      ],
+      "rotation": 90.0
+    },
+    "C13": {
+      "xy": [
+        193.25,
+        61.032
+      ],
+      "rotation": 90.0
+    },
+    "R53": {
+      "xy": [
+        170.829,
+        137.0
+      ],
+      "rotation": 180.0
+    },
+    "R18": {
+      "xy": [
+        201.25,
+        54.9
+      ],
+      "rotation": -90.0
+    },
+    "J4": {
+      "xy": [
+        197.0,
+        46.125
+      ],
+      "rotation": 0.0
+    },
+    "C81": {
+      "xy": [
+        208.35,
+        109.6
+      ],
+      "rotation": -90.0
+    },
+    "J15": {
+      "xy": [
+        167.96,
+        45.65
+      ],
+      "rotation": -90.0
+    },
+    "U6": {
+      "xy": [
+        162.25,
+        78.25
+      ],
+      "rotation": -90.0
+    },
+    "C50": {
+      "xy": [
+        175.0,
+        103.25
+      ],
+      "rotation": -90.0
+    },
+    "J1": {
+      "xy": [
+        135.5,
+        91.95
+      ],
+      "rotation": 90.0
+    },
+    "C89": {
+      "xy": [
+        160.17,
+        84.2
+      ],
+      "rotation": -90.0
+    }
+  }
+}

@@ -7,7 +7,7 @@
 	(title_block
 		(title "Coral-C5 小车扩展板 M2 总览")
 		(date "2026-11-08")
-		(rev "M2.8S")
+		(rev "M2.8P2")
 		(company "SmallCoral / CoralC5-Motor")
 		(comment 1 "原理图设计；实板电流、温升与线束待验证")
 	)
@@ -34,7 +34,7 @@
 		)
 		(uuid "4bbdf050-b9c2-5a1e-b95a-ec7304429863")
 	)
-	(text "SPI1 与四键\n双孔安装"
+	(text "SPI3 与四键\n双孔安装"
 		(exclude_from_sim no)
 		(at 36.83 60.96 0)
 		(effects
@@ -45,7 +45,7 @@
 		)
 		(uuid "4cfd3c9e-8051-5fa5-8aba-7e7879c1c8b1")
 	)
-	(text "荔枝派 4A\nJ25：五伏三安 Type-C\nJ18：二乘六，原板针序\nPB6/PB7：USART1"
+	(text "荔枝派 4A\nJ25：五伏三安 Type-C\nJ18：二乘六，原板针序\nPB9/PB8：UART4"
 		(exclude_from_sim no)
 		(at 321.31 143.51 0)
 		(effects

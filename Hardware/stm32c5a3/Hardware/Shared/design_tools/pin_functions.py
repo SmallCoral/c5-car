@@ -12,7 +12,7 @@ def parse_alternate_functions(source):
   if m:port=m.group(1)
   elif not line.strip():port=None
   if not port or not centers:continue
-  for token in re.finditer(r'\b(?:ETH1_[A-Z0-9_]+|SPI[123]_[A-Z0-9_]+|USART[1236]_[A-Z0-9_]+|TIM\d+_CH[1-4]N?)\b',line):
+  for token in re.finditer(r'\b(?:ETH1_[A-Z0-9_]+|SPI[123]_[A-Z0-9_]+|(?:USART[1236]|UART[457]|LPUART1)_[A-Z0-9_]+|TIM\d+_CH[1-4]N?)\b',line):
    mid=(token.start()+token.end())/2
    af=min(centers,key=lambda n:abs(centers[n]-mid))
    functions[(port,token.group(0))]=af

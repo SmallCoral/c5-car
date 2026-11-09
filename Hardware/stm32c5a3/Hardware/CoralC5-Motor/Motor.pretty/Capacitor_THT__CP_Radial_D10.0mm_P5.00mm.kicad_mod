@@ -1839,15 +1839,9 @@
 		(remove_unused_layers no)
 	)
 	(embedded_fonts no)
-	(model "${KIPRJMOD}/Models/Capacitor_THT__CP_Radial_D10.0mm_P5.00mm__CP_Radial_D10.0mm_P5.00mm.step"
-		(offset
-			(xyz 0 0 0)
-		)
-		(scale
-			(xyz 1 1 1)
-		)
-		(rotate
-			(xyz 0 0 0)
-		)
+	(model "${KIPRJMOD}/Models/Nichicon_D10x12.5_P5_Lead_PackageReference.step"
+		(offset (xyz 2.5 0 12.5))
+		(scale (xyz 1 1 1))
+		(rotate (xyz 90 0 0))
 	)
 )

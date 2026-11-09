@@ -1,1 +1,0 @@
-(fp_lib_table (lib (name "DevBoard")(type "KiCad")(uri "${KIPRJMOD}/DevBoard.pretty")(options "")(descr "CoralC5 portable footprints")))

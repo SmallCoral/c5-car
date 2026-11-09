@@ -70,15 +70,9 @@
 		(drill oval 1.8 1.2)
 		(layers "*.Cu" "*.Mask")
 	)
-	(model "${KIPRJMOD}/Models/SS12D10G5_generic.wrl"
-		(offset
-			(xyz 0 0 0)
-		)
-		(scale
-			(xyz 1 1 1)
-		)
-		(rotate
-			(xyz 0 0 0)
-		)
+	(model "${KIPRJMOD}/Models/DEALON_SS-12D10-G5_PackageReference_C2998777.step"
+		(offset (xyz 4.8 0 0))
+		(scale (xyz 1 1 1))
+		(rotate (xyz 0 0 0))
 	)
 )

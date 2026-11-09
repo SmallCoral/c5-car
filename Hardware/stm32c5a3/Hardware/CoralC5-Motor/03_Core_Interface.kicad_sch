@@ -6,8 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "C5-EDGE-3 核心板接口与调试")
-		(date "2026-11-07")
-		(rev "M2.8")
+		(date "2026-11-08")
+		(rev "M2.8P2")
 		(company "SmallCoral / CoralC5-Motor")
 		(comment 1 "原理图设计；实板电流、温升与线束待验证")
 	)
@@ -2778,10 +2778,7 @@
 		(at 90.17 41.91)
 		(uuid "11dbbcee-70e2-5293-8fa8-6efe7a14d1e6")
 	)
-	(no_connect
-		(at 137.16 76.2)
-		(uuid "13528541-bfc8-5db5-838f-62210b5347da")
-	)
+
 	(no_connect
 		(at 137.16 55.88)
 		(uuid "19d1bc9b-b8d6-5840-ba0a-163e5e0d8721")
@@ -2858,10 +2855,7 @@
 		(at 137.16 60.96)
 		(uuid "74142957-c97f-5b1e-9ea2-7066c7849a19")
 	)
-	(no_connect
-		(at 34.29 39.37)
-		(uuid "7888ab32-760f-5f16-8529-e94195914ecd")
-	)
+
 	(no_connect
 		(at 90.17 34.29)
 		(uuid "8503b91b-7335-5b5b-8e6e-b2cdc4ac2c3b")
@@ -2878,10 +2872,7 @@
 		(at 90.17 82.55)
 		(uuid "91174c48-ce11-5b45-b99f-fe5fc8393b1a")
 	)
-	(no_connect
-		(at 34.29 41.91)
-		(uuid "992d1d51-24b9-59eb-8225-e5c2e765edb2")
-	)
+
 	(no_connect
 		(at 193.04 88.9)
 		(uuid "9b0bb56a-66ff-5856-a722-c222c6fe80b4")
@@ -2902,10 +2893,7 @@
 		(at 193.04 66.04)
 		(uuid "e5b38d06-215b-5500-ae6e-3009ea74f4c9")
 	)
-	(no_connect
-		(at 193.04 93.98)
-		(uuid "ef75d9af-8e06-54fc-9827-662ff9680784")
-	)
+
 	(no_connect
 		(at 34.29 36.83)
 		(uuid "f2e3d75d-c2a5-5469-9a44-0f07c571da78")
@@ -3224,7 +3212,7 @@
 	(uuid "be01345b-0cd6-54bb-91c3-2ef9496dbb8d")
 )
 	(label "MOTOR_EN_REQ"
-	(at 31.75 77.47 180)
+	(at 27.94 92.71 180)
 	(effects
 		(font
 			(size 1.27 1.27)
@@ -3389,7 +3377,7 @@
 )
 	(hierarchical_label "TFT_DC"
 	(shape bidirectional)
-	(at 27.94 69.85 180)
+	(at 27.94 77.47 180)
 	(effects
 		(font
 			(size 1.016 1.016)
@@ -3400,7 +3388,7 @@
 )
 	(hierarchical_label "KEY_NEXT"
 	(shape bidirectional)
-	(at 130.81 58.42 180)
+	(at 130.81 63.5 180)
 	(effects
 		(font
 			(size 1.016 1.016)
@@ -3466,7 +3454,7 @@
 )
 	(hierarchical_label "TFT_RES"
 	(shape bidirectional)
-	(at 27.94 72.39 180)
+	(at 27.94 74.93 180)
 	(effects
 		(font
 			(size 1.016 1.016)
@@ -3499,7 +3487,7 @@
 )
 	(hierarchical_label "KEY_OK"
 	(shape bidirectional)
-	(at 130.81 63.5 180)
+	(at 130.81 58.42 180)
 	(effects
 		(font
 			(size 1.016 1.016)
@@ -3510,7 +3498,7 @@
 )
 	(hierarchical_label "TFT_SCK"
 	(shape bidirectional)
-	(at 27.94 87.63 180)
+	(at 27.94 72.39 180)
 	(effects
 		(font
 			(size 1.016 1.016)
@@ -3554,7 +3542,7 @@
 )
 	(hierarchical_label "BT_TX"
 	(shape bidirectional)
-	(at 27.94 74.93 180)
+	(at 27.94 85.09 180)
 	(effects
 		(font
 			(size 1.016 1.016)
@@ -3575,19 +3563,19 @@
 		(uuid "795ccedf-9e17-5f17-a935-2e4af88b657b")
 	)
 	(hierarchical_label "TFT_MOSI"
-		(shape bidirectional)
-		(at 27.94 82.55 180)
-		(effects
-			(font
-				(size 1.016 1.016)
-			)
-			(justify right)
+	(shape bidirectional)
+	(at 27.94 69.85 180)
+	(effects
+		(font
+			(size 1.016 1.016)
 		)
-		(uuid "83716cf7-bf8d-5aa9-ac18-2b6b85c4de0c")
+		(justify right)
 	)
+	(uuid "83716cf7-bf8d-5aa9-ac18-2b6b85c4de0c")
+)
 	(hierarchical_label "R_nFAULT"
 	(shape input)
-	(at 199.39 50.8 0)
+	(at 199.39 48.26 0)
 	(effects
 		(font
 			(size 1.27 1.27)
@@ -3653,7 +3641,7 @@
 )
 	(hierarchical_label "BT_RX"
 	(shape bidirectional)
-	(at 27.94 92.71 180)
+	(at 27.94 82.55 180)
 	(effects
 		(font
 			(size 1.016 1.016)
@@ -3664,7 +3652,7 @@
 )
 	(hierarchical_label "LICHEE_RX"
 	(shape input)
-	(at 199.39 86.36 0)
+	(at 199.39 91.44 0)
 	(effects
 		(font
 			(size 1.27 1.27)
@@ -3708,7 +3696,7 @@
 )
 	(hierarchical_label "KEY_MODE"
 	(shape bidirectional)
-	(at 130.81 48.26 180)
+	(at 130.81 76.2 180)
 	(effects
 		(font
 			(size 1.016 1.016)
@@ -3719,7 +3707,7 @@
 )
 	(hierarchical_label "VIDEO_RX"
 	(shape bidirectional)
-	(at 27.94 80.01 180)
+	(at 27.94 41.91 180)
 	(effects
 		(font
 			(size 1.016 1.016)
@@ -3741,7 +3729,7 @@
 )
 	(hierarchical_label "R_PWM"
 	(shape output)
-	(at 199.39 91.44 0)
+	(at 199.39 83.82 0)
 	(effects
 		(font
 			(size 1.27 1.27)
@@ -3752,7 +3740,7 @@
 )
 	(hierarchical_label "R_DIR"
 	(shape output)
-	(at 199.39 48.26 0)
+	(at 199.39 50.8 0)
 	(effects
 		(font
 			(size 1.27 1.27)
@@ -3785,7 +3773,7 @@
 )
 	(hierarchical_label "TFT_BL"
 	(shape bidirectional)
-	(at 27.94 85.09 180)
+	(at 27.94 90.17 180)
 	(effects
 		(font
 			(size 1.016 1.016)
@@ -3796,7 +3784,7 @@
 )
 	(hierarchical_label "TFT_CS"
 	(shape bidirectional)
-	(at 27.94 90.17 180)
+	(at 27.94 80.01 180)
 	(effects
 		(font
 			(size 1.016 1.016)
@@ -3807,7 +3795,7 @@
 )
 	(hierarchical_label "KEY_START"
 	(shape bidirectional)
-	(at 130.81 66.04 180)
+	(at 130.81 48.26 180)
 	(effects
 		(font
 			(size 1.016 1.016)
@@ -3818,7 +3806,7 @@
 )
 	(hierarchical_label "LICHEE_TX"
 	(shape output)
-	(at 199.39 83.82 0)
+	(at 199.39 93.98 0)
 	(effects
 		(font
 			(size 1.27 1.27)
@@ -3829,7 +3817,7 @@
 )
 	(hierarchical_label "VIDEO_TX"
 	(shape bidirectional)
-	(at 27.94 44.45 180)
+	(at 27.94 39.37 180)
 	(effects
 		(font
 			(size 1.016 1.016)
@@ -5529,8 +5517,8 @@
 )
 (wire
 	(pts
-		(xy 193.04 91.44)
-		(xy 199.39 91.44)
+		(xy 193.04 83.82)
+		(xy 199.39 83.82)
 	)
 	(stroke
 		(width 0)
@@ -5551,8 +5539,8 @@
 )
 (wire
 	(pts
-		(xy 193.04 48.26)
-		(xy 199.39 48.26)
+		(xy 193.04 50.8)
+		(xy 199.39 50.8)
 	)
 	(stroke
 		(width 0)
@@ -5573,8 +5561,8 @@
 )
 (wire
 	(pts
-		(xy 193.04 50.8)
-		(xy 199.39 50.8)
+		(xy 193.04 48.26)
+		(xy 199.39 48.26)
 	)
 	(stroke
 		(width 0)
@@ -5606,8 +5594,8 @@
 )
 (wire
 	(pts
-		(xy 34.29 77.47)
-		(xy 31.75 77.47)
+		(xy 34.29 92.71)
+		(xy 27.94 92.71)
 	)
 	(stroke
 		(width 0)
@@ -5617,8 +5605,8 @@
 )
 (wire
 	(pts
-		(xy 34.29 74.93)
-		(xy 27.94 74.93)
+		(xy 34.29 85.09)
+		(xy 27.94 85.09)
 	)
 	(stroke
 		(width 0)
@@ -5628,8 +5616,8 @@
 )
 (wire
 	(pts
-		(xy 34.29 92.71)
-		(xy 27.94 92.71)
+		(xy 34.29 82.55)
+		(xy 27.94 82.55)
 	)
 	(stroke
 		(width 0)
@@ -5639,8 +5627,8 @@
 )
 (wire
 	(pts
-		(xy 34.29 44.45)
-		(xy 27.94 44.45)
+		(xy 34.29 39.37)
+		(xy 27.94 39.37)
 	)
 	(stroke
 		(width 0)
@@ -5650,8 +5638,8 @@
 )
 (wire
 	(pts
-		(xy 34.29 80.01)
-		(xy 27.94 80.01)
+		(xy 34.29 41.91)
+		(xy 27.94 41.91)
 	)
 	(stroke
 		(width 0)
@@ -5683,8 +5671,8 @@
 )
 (wire
 	(pts
-		(xy 193.04 83.82)
-		(xy 199.39 83.82)
+		(xy 193.04 93.98)
+		(xy 199.39 93.98)
 	)
 	(stroke
 		(width 0)
@@ -5694,47 +5682,14 @@
 )
 (wire
 	(pts
-		(xy 193.04 86.36)
-		(xy 199.39 86.36)
+		(xy 193.04 91.44)
+		(xy 199.39 91.44)
 	)
 	(stroke
 		(width 0)
 		(type default)
 	)
 	(uuid "126b49e2-0f1c-5607-a78d-371fc75becac")
-)
-(wire
-	(pts
-		(xy 34.29 87.63)
-		(xy 27.94 87.63)
-	)
-	(stroke
-		(width 0)
-		(type default)
-	)
-	(uuid "db05b025-a2f5-5ccc-96c1-a073aa0d0b3d")
-)
-(wire
-	(pts
-		(xy 34.29 82.55)
-		(xy 27.94 82.55)
-	)
-	(stroke
-		(width 0)
-		(type default)
-	)
-	(uuid "e5e0bd07-952e-5a7f-8793-6ffc492cbdd8")
-)
-(wire
-	(pts
-		(xy 34.29 90.17)
-		(xy 27.94 90.17)
-	)
-	(stroke
-		(width 0)
-		(type default)
-	)
-	(uuid "69d328e3-24ab-51c7-9aea-e3a47d5f4a7d")
 )
 (wire
 	(pts
@@ -5745,7 +5700,7 @@
 		(width 0)
 		(type default)
 	)
-	(uuid "aeea73cb-e442-5b48-90b4-b720b303f503")
+	(uuid "db05b025-a2f5-5ccc-96c1-a073aa0d0b3d")
 )
 (wire
 	(pts
@@ -5756,12 +5711,45 @@
 		(width 0)
 		(type default)
 	)
+	(uuid "e5e0bd07-952e-5a7f-8793-6ffc492cbdd8")
+)
+(wire
+	(pts
+		(xy 34.29 80.01)
+		(xy 27.94 80.01)
+	)
+	(stroke
+		(width 0)
+		(type default)
+	)
+	(uuid "69d328e3-24ab-51c7-9aea-e3a47d5f4a7d")
+)
+(wire
+	(pts
+		(xy 34.29 74.93)
+		(xy 27.94 74.93)
+	)
+	(stroke
+		(width 0)
+		(type default)
+	)
+	(uuid "aeea73cb-e442-5b48-90b4-b720b303f503")
+)
+(wire
+	(pts
+		(xy 34.29 77.47)
+		(xy 27.94 77.47)
+	)
+	(stroke
+		(width 0)
+		(type default)
+	)
 	(uuid "7da1e19e-3053-54cf-a14d-39527e26e347")
 )
 (wire
 	(pts
-		(xy 34.29 85.09)
-		(xy 27.94 85.09)
+		(xy 34.29 90.17)
+		(xy 27.94 90.17)
 	)
 	(stroke
 		(width 0)
@@ -5771,25 +5759,14 @@
 )
 (wire
 	(pts
-		(xy 137.16 48.26)
-		(xy 130.81 48.26)
+		(xy 137.16 76.2)
+		(xy 130.81 76.2)
 	)
 	(stroke
 		(width 0)
 		(type default)
 	)
 	(uuid "68a6b967-e3a0-575e-8312-0be41f806e07")
-)
-(wire
-	(pts
-		(xy 137.16 58.42)
-		(xy 130.81 58.42)
-	)
-	(stroke
-		(width 0)
-		(type default)
-	)
-	(uuid "343512c5-784e-5a5c-8c86-10fa6a2fd73e")
 )
 (wire
 	(pts
@@ -5800,12 +5777,23 @@
 		(width 0)
 		(type default)
 	)
+	(uuid "343512c5-784e-5a5c-8c86-10fa6a2fd73e")
+)
+(wire
+	(pts
+		(xy 137.16 58.42)
+		(xy 130.81 58.42)
+	)
+	(stroke
+		(width 0)
+		(type default)
+	)
 	(uuid "35628e54-b020-5365-8a47-f8247f915ef1")
 )
 (wire
 	(pts
-		(xy 137.16 66.04)
-		(xy 130.81 66.04)
+		(xy 137.16 48.26)
+		(xy 130.81 48.26)
 	)
 	(stroke
 		(width 0)
@@ -5937,7 +5925,7 @@
 	(at 137.16 86.36)
 	(uuid "669f00e7-b7ba-522f-8dd9-c3521b82bf75")
 )
-(text "蓝牙 USART2；MaixCAM2 USART3\n步进 USART6；荔枝派 USART1\nTFT 用 SPI1，背光 PA6/TIM3_CH1\n灰度 PE7～PE14；按键 PH3/PA10/PA8/PC9"
+(text "蓝牙 USART1；MaixCAM2 UART5\n步进 USART6；荔枝派 UART4\nTFT 用 SPI3，背光 PA4/TIM3_CH4\n灰度 PE7～PE14；按键 PD15/PA8/PA10/PH3"
 	(at 176.53 113.03 0)
 	(effects
 		(font
@@ -6012,5 +6000,21 @@
 		(type default)
 	)
 	(uuid "538e5469-ac2f-5f60-8851-7e9dd8f2eaa0")
+)
+(no_connect
+	(at 34.29 44.45)
+	(uuid "e75f9a4e-f54b-4a14-9085-5b6dff995c7f")
+)
+(no_connect
+	(at 137.16 66.04)
+	(uuid "d5148807-7ebe-4953-bd6b-bb4471ab7825")
+)
+(no_connect
+	(at 34.29 87.63)
+	(uuid "d8100bbd-ee0f-44aa-b926-980ad7ae4b17")
+)
+(no_connect
+	(at 193.04 86.36)
+	(uuid "09f7ab18-cf46-4f43-b5a7-320eeb115449")
 )
 )

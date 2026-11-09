@@ -1,0 +1,79 @@
+{
+  "date": "2026-11-08",
+  "method": "in-memory plan substitutions; no project files changed",
+  "cases": [
+    {
+      "case": "UART AF",
+      "signal": "BT_TX",
+      "injected": {
+        "function": "USART2_TX"
+      },
+      "rejected": true,
+      "failed_checks": [
+        "BT_TX: function occurs in independent ST HTML AF cell",
+        "Bluetooth has matching hardware TX/RX on one peripheral"
+      ]
+    },
+    {
+      "case": "SPI instance",
+      "signal": "TFT_MOSI",
+      "injected": {
+        "function": "SPI2_MOSI"
+      },
+      "rejected": true,
+      "failed_checks": [
+        "TFT_MOSI: function occurs in independent ST HTML AF cell",
+        "TFT clock and MOSI use the same SPI peripheral"
+      ]
+    },
+    {
+      "case": "ADC channel",
+      "signal": "L_ISENSE",
+      "injected": {
+        "function": "ADC1_IN13"
+      },
+      "rejected": true,
+      "failed_checks": [
+        "L_ISENSE: ADC instance and channel occur in Table13"
+      ]
+    },
+    {
+      "case": "encoder channel",
+      "signal": "R_ENC_B",
+      "injected": {
+        "function": "TIM2_CH2"
+      },
+      "rejected": true,
+      "failed_checks": [
+        "R_ENC_B: function occurs in independent ST HTML AF cell",
+        "R encoder uses CH1/CH2 of an encoder-capable timer",
+        "both encoders, wheel PWM and backlight have independent counters"
+      ]
+    },
+    {
+      "case": "wheel PWM channel",
+      "signal": "R_PWM",
+      "injected": {
+        "function": "TIM4_CH4"
+      },
+      "rejected": true,
+      "failed_checks": [
+        "R_PWM: function occurs in independent ST HTML AF cell",
+        "wheel PWM uses separate channels of one timer"
+      ]
+    },
+    {
+      "case": "fault EXTI",
+      "signal": "R_nFAULT",
+      "injected": {
+        "function": "EXTI4"
+      },
+      "rejected": true,
+      "failed_checks": [
+        "R_nFAULT: EXTI line equals GPIO pin index",
+        "motor fault EXTI lines do not conflict"
+      ]
+    }
+  ],
+  "pass": true
+}

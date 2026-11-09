@@ -1,6 +1,6 @@
 # Motor 外接模块接口
 
-更新日期：2026-11-08。以下描述当前精简电路及 M2.8P 引脚规划，替代旧版的独立步进控电、Maix 理想二极管和荔枝派 Q3 感知方案。[GPIO 分配](motor-core-pins.md)单独维护，[原生原理图](../../Hardware/stm32c5a3/Hardware/CoralC5-Motor/CoralC5-Motor.kicad_sch)为电气依据。
+更新日期：2026-11-08。以下描述当前精简电路及 M2.8P2 引脚规划，替代旧版的独立步进控电、Maix 理想二极管和荔枝派 Q3 感知方案。[GPIO 分配](motor-core-pins.md)单独维护，[原生原理图](../../Hardware/stm32c5a3/Hardware/CoralC5-Motor/CoralC5-Motor.kicad_sch)为电气依据。
 
 ## 板端针序
 
@@ -36,7 +36,7 @@ J25 是固定五伏源端，无 PD/PPS 或数据。J18 的 1 脚五伏、2 脚�
 | 11 | 原板 UART1_RX，通过 U12 接 Core TX |
 | 12 | 原板 UART1_TX，1.8V，通过 U11 升至 Core 3.3V RX |
 
-11 脚原板内已有分压，外部按 3.3V 接收使用；不再先降至 1.8V。U11 为 SN74LV1T125DBVR，U12 为 SN74LVC1G125DBVR。两者由 Core 3.3V 供电，OE 接地常使能，已取消 Q3 感知通断。不要将此结构描述为 UART 掉电隔离。Linux 端为 UART1（原资料默认 /dev/ttyS1），Core 端为 USART1，两侧编号不必相同。协议、波特率及上电时序尚需程序与实物验证。
+11 脚原板内已有分压，外部按 3.3V 接收使用；不再先降至 1.8V。U11 为 SN74LV1T125DBVR，U12 为 SN74LVC1G125DBVR。两者由 Core 3.3V 供电，OE 接地常使能，已取消 Q3 感知通断。不要将此结构描述为 UART 掉电隔离。Linux 端为 UART1（原资料默认 /dev/ttyS1），Core 端为 UART4，两侧编号不必相同。协议、波特率及上电时序尚需程序与实物验证。
 
 ## 步进
 

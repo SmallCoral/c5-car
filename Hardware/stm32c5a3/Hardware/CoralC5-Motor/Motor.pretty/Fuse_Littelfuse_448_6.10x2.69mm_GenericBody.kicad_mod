@@ -181,15 +181,9 @@
 		(uuid "118349d3-6d67-474c-a6ff-45fc28bcbfe6")
 	)
 	(embedded_fonts no)
-	(model "${KIPRJMOD}/Models/Fuse_454_generic.wrl"
-		(offset
-			(xyz 0 0 0)
-		)
-		(scale
-			(xyz 1 1 1)
-		)
-		(rotate
-			(xyz 0 0 0)
-		)
+	(model "${KIPRJMOD}/Models/Littelfuse_0448015-MR_EasyEDA_C187551.step"
+		(offset (xyz 0 0 1.35))
+		(scale (xyz 1 1 1))
+		(rotate (xyz 0 0 0))
 	)
 )

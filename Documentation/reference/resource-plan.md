@@ -1,22 +1,22 @@
 # Motor M2 当前资源与集成范围
 
-2026-11-07，M2.8。保留荔枝派 4A、MaixCAM2 识别、Action 4 图传，ZDT_XS 第二代 TTL 一体套件与感为八路灰度。十页原理图：主页 A2，电源/灰度识别/蓝牙步进/荔枝派 A3，其余 A4。98 触点合同不变，13 路轮控制加 27 路外设，共 40 路 GPIO。
+2026-11-08，M2.8P2。保留荔枝派4A、MaixCAM2识别、Action 4图传、ZDT_XS第二代TTL套件及感为八路灰度。十页原理图、98触点合同不变，13路轮控制加26路外设，共39路GPIO。逐针定义和AF只维护在[当前分配](motor-core-pins.md)。
 
 | 资源 | 当前分工 |
 | --- | --- |
 | TIM5 / TIM2 | 左右编码器，独立计数器 |
-| TIM4 CH4 / CH3 | 左右轮 PWM，共享频率 |
-| TIM3 CH1 / SPI1 | TFT 背光与显示 |
-| USART2 | HC-08，固定三伏三 |
-| USART6 | MaixCAM2 UART4，经 U13 隔离 |
-| USART1 | ZDT TTL，经 U15 隔离，J23:7/8 |
-| USART3 AF7 | PD8/B26 TX、PD9/B27 RX，荔枝派 J18:11/12 UART1 |
-| PD12 / B30 | STEP_PWR_EN，高有效、硬件默认断电 |
+| TIM4 CH4 / CH1 | 左右轮PWM，共享频率 |
+| TIM3 CH4 / SPI3 | TFT背光与显示 |
+| USART1 | HC-08，固定三伏三 |
+| UART5 | MaixCAM2模块侧UART4，三伏三直连 |
+| USART6 | ZDT TTL，J23:7/8，VM与UART直连 |
+| UART4 | 荔枝派J18:11/12 UART1，保留1.8V/3.3V电平转换 |
+| ADC2 / ADC1 | 左右轮电流采样，通道分别为IN13/IN8 |
 | 灰度 | 八路数字输入，无内部上下拉；J21 GND/五伏，CLK/DAT 不接 |
 | 四键 | 低有效，10k 上拉，固件消抖 |
 
-PE9、PD13/PD14/PD15 仍空闲。PB6/PB7 已用于 USART1，不作 I²C1。PA9 USB 检测、PA11/PA12 USB、PA13/PA14 SWD 以及 Core 专用脚保留。摆杆角度探头尚未画入当前原理图，不能把预想的 AS5600/I²C 写成已集成功能。
+PD12仍空闲，已无STEP_PWR_EN、独立步进控电或U15；PD15改为模式键，PB6改为右轮PWM。PA9 USB检测、PA11/PA12 USB、PA13/PA14 SWD以及Core专用脚保留。摆杆角度探头尚未画入当前原理图，不能把预想的AS5600/I²C写成已集成功能。
 
 双路 AP64500 标称 5.088V：A 轨 4.2A 预算供荔枝派/Core/灰度/TFT蓝牙，B 轨 4.0A 预算供 Maix/Action 4。U7 LDO 与 Core 三伏三分开，D3 隔离不变。12V/12.5A 适配器共用，输入连续预算约 11.09A，启动与热仍需实测。
 
-[详细接线](m2-interfaces.md)、[本轮验证](../validation/2026-11-07-m28-resume.md)。PCB 已同步 180 个封装，新增 33 个待布局，原生一致性 0；仍有 40 条 DRC 与 390 项未连接。固件、机械重建及实物验收未完成。
+[详细接线](m2-interfaces.md)、[本轮验证](../validation/2026-11-08-pinplan-rework.md)。当前142个实体、184网络；原理图ERC0/0，956项及独立320项功能核对通过。Motor PCB保留用户当前内容，未同步本轮GPIO分配、未运行本轮DRC。固件、机械重建及实物验收未完成。

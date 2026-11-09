@@ -1,0 +1,1376 @@
+{
+  "method": "reviewed legal candidate search plus grouped UART/SPI constraints and local GPIO refinements; straight-line crossings are a proxy, not routed copper",
+  "before": {
+    "straight_line_crossings": 39,
+    "manhattan_mm": 1944.202,
+    "crossing_pairs": [
+      [
+        "R_ENC_A",
+        "R_PWM"
+      ],
+      [
+        "R_ENC_A",
+        "R_ISENSE"
+      ],
+      [
+        "R_ENC_B",
+        "R_ISENSE"
+      ],
+      [
+        "R_PWM",
+        "LICHEE_TX"
+      ],
+      [
+        "R_PWM",
+        "LICHEE_RX"
+      ],
+      [
+        "R_DIR",
+        "R_nFAULT"
+      ],
+      [
+        "R_ISENSE",
+        "LICHEE_TX"
+      ],
+      [
+        "R_ISENSE",
+        "LICHEE_RX"
+      ],
+      [
+        "MOTOR_EN_REQ",
+        "BT_TX"
+      ],
+      [
+        "MOTOR_EN_REQ",
+        "TFT_SCK"
+      ],
+      [
+        "MOTOR_EN_REQ",
+        "TFT_MOSI"
+      ],
+      [
+        "MOTOR_EN_REQ",
+        "TFT_CS"
+      ],
+      [
+        "MOTOR_EN_REQ",
+        "TFT_BL"
+      ],
+      [
+        "BT_TX",
+        "BT_RX"
+      ],
+      [
+        "BT_TX",
+        "TFT_SCK"
+      ],
+      [
+        "BT_TX",
+        "TFT_MOSI"
+      ],
+      [
+        "BT_TX",
+        "TFT_CS"
+      ],
+      [
+        "BT_TX",
+        "TFT_BL"
+      ],
+      [
+        "STEP_UART_TX",
+        "KEY_MODE"
+      ],
+      [
+        "STEP_UART_RX",
+        "KEY_MODE"
+      ],
+      [
+        "STEP_UART_RX",
+        "KEY_NEXT"
+      ],
+      [
+        "LICHEE_TX",
+        "LICHEE_RX"
+      ],
+      [
+        "TFT_SCK",
+        "TFT_MOSI"
+      ],
+      [
+        "TFT_SCK",
+        "TFT_RES"
+      ],
+      [
+        "TFT_SCK",
+        "TFT_DC"
+      ],
+      [
+        "TFT_SCK",
+        "TFT_BL"
+      ],
+      [
+        "TFT_SCK",
+        "GRAY_CH1"
+      ],
+      [
+        "TFT_SCK",
+        "GRAY_CH2"
+      ],
+      [
+        "TFT_MOSI",
+        "TFT_RES"
+      ],
+      [
+        "TFT_MOSI",
+        "TFT_DC"
+      ],
+      [
+        "TFT_MOSI",
+        "GRAY_CH1"
+      ],
+      [
+        "TFT_CS",
+        "TFT_BL"
+      ],
+      [
+        "TFT_RES",
+        "TFT_DC"
+      ],
+      [
+        "KEY_MODE",
+        "KEY_NEXT"
+      ],
+      [
+        "KEY_MODE",
+        "KEY_OK"
+      ],
+      [
+        "KEY_MODE",
+        "KEY_START"
+      ],
+      [
+        "KEY_NEXT",
+        "KEY_OK"
+      ],
+      [
+        "KEY_NEXT",
+        "KEY_START"
+      ],
+      [
+        "KEY_OK",
+        "KEY_START"
+      ]
+    ],
+    "changed_roles": 0
+  },
+  "after": {
+    "straight_line_crossings": 14,
+    "manhattan_mm": 1961.202,
+    "crossing_pairs": [
+      [
+        "R_ENC_A",
+        "R_PWM"
+      ],
+      [
+        "R_ENC_A",
+        "R_ISENSE"
+      ],
+      [
+        "R_ENC_B",
+        "R_ISENSE"
+      ],
+      [
+        "R_ISENSE",
+        "LICHEE_TX"
+      ],
+      [
+        "R_ISENSE",
+        "LICHEE_RX"
+      ],
+      [
+        "MOTOR_EN_REQ",
+        "BT_TX"
+      ],
+      [
+        "MOTOR_EN_REQ",
+        "BT_RX"
+      ],
+      [
+        "BT_TX",
+        "TFT_BL"
+      ],
+      [
+        "BT_RX",
+        "TFT_BL"
+      ],
+      [
+        "STEP_UART_RX",
+        "KEY_NEXT"
+      ],
+      [
+        "TFT_SCK",
+        "TFT_MOSI"
+      ],
+      [
+        "TFT_SCK",
+        "GRAY_CH1"
+      ],
+      [
+        "TFT_SCK",
+        "GRAY_CH2"
+      ],
+      [
+        "TFT_MOSI",
+        "GRAY_CH1"
+      ]
+    ],
+    "changed_roles": 20
+  },
+  "objective": 2263.6020000000003,
+  "valid_candidates": 3000,
+  "plan": [
+    {
+      "signal": "L_ENC_A",
+      "gpio": "PA0",
+      "function": "TIM5_CH1",
+      "af": 2,
+      "endpoint": "U3:6",
+      "contact": "A4",
+      "old_contact": "A4",
+      "endpoint_xy": [
+        203.1625,
+        54.05
+      ],
+      "socket_xy": [
+        190.0,
+        72.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/左电机与编码器/L_ENC_A",
+      "actual_motor_net": {
+        "name": "/左电机与编码器/L_ENC_A",
+        "pins": [
+          "J14:A4",
+          "U3:6"
+        ]
+      },
+      "previous_contact": "A4",
+      "previous_gpio": "PA0",
+      "previous_function": "TIM5_CH1"
+    },
+    {
+      "signal": "L_ENC_B",
+      "gpio": "PA1",
+      "function": "TIM5_CH2",
+      "af": 2,
+      "endpoint": "U3:4",
+      "contact": "A3",
+      "old_contact": "A3",
+      "endpoint_xy": [
+        203.1625,
+        52.75
+      ],
+      "socket_xy": [
+        190.0,
+        71.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/左电机与编码器/L_ENC_B",
+      "actual_motor_net": {
+        "name": "/左电机与编码器/L_ENC_B",
+        "pins": [
+          "J14:A3",
+          "U3:4"
+        ]
+      },
+      "previous_contact": "A3",
+      "previous_gpio": "PA1",
+      "previous_function": "TIM5_CH2"
+    },
+    {
+      "signal": "R_ENC_A",
+      "gpio": "PB3",
+      "function": "TIM2_CH2",
+      "af": 1,
+      "endpoint": "U5:6",
+      "contact": "A33",
+      "old_contact": "A33",
+      "endpoint_xy": [
+        205.0125,
+        132.3375
+      ],
+      "socket_xy": [
+        190.0,
+        103.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/右电机与编码器/R_ENC_A",
+      "actual_motor_net": {
+        "name": "/右电机与编码器/R_ENC_A",
+        "pins": [
+          "J14:A33",
+          "U5:6"
+        ]
+      },
+      "previous_contact": "A33",
+      "previous_gpio": "PB3",
+      "previous_function": "TIM2_CH2"
+    },
+    {
+      "signal": "R_ENC_B",
+      "gpio": "PA15",
+      "function": "TIM2_CH1",
+      "af": 1,
+      "endpoint": "U5:4",
+      "contact": "A45",
+      "old_contact": "A45",
+      "endpoint_xy": [
+        205.0125,
+        133.6375
+      ],
+      "socket_xy": [
+        190.0,
+        115.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/右电机与编码器/R_ENC_B",
+      "actual_motor_net": {
+        "name": "/右电机与编码器/R_ENC_B",
+        "pins": [
+          "J14:A45",
+          "U5:4"
+        ]
+      },
+      "previous_contact": "A45",
+      "previous_gpio": "PA15",
+      "previous_function": "TIM2_CH1"
+    },
+    {
+      "signal": "L_PWM",
+      "gpio": "PC2",
+      "function": "TIM4_CH4",
+      "af": 2,
+      "endpoint": "U2:1",
+      "contact": "A9",
+      "old_contact": "A9",
+      "endpoint_xy": [
+        209.8,
+        63.7146
+      ],
+      "socket_xy": [
+        190.0,
+        77.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/左电机与编码器/L_PWM",
+      "actual_motor_net": {
+        "name": "/左电机与编码器/L_PWM",
+        "pins": [
+          "J14:A9",
+          "U2:1"
+        ]
+      },
+      "previous_contact": "A9",
+      "previous_gpio": "PC2",
+      "previous_function": "TIM4_CH4"
+    },
+    {
+      "signal": "R_PWM",
+      "gpio": "PB6",
+      "function": "TIM4_CH1",
+      "af": 2,
+      "endpoint": "U4:1",
+      "contact": "A30",
+      "old_contact": "A27",
+      "endpoint_xy": [
+        197.4625,
+        121.9875
+      ],
+      "socket_xy": [
+        190.0,
+        100.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/右电机与编码器/R_PWM",
+      "actual_motor_net": {
+        "name": "/右电机与编码器/R_PWM",
+        "pins": [
+          "J14:A27",
+          "U4:1"
+        ]
+      },
+      "previous_contact": "A27",
+      "previous_gpio": "PB8",
+      "previous_function": "TIM4_CH3"
+    },
+    {
+      "signal": "L_DIR",
+      "gpio": "PC3",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "U2:2",
+      "contact": "A8",
+      "old_contact": "A8",
+      "endpoint_xy": [
+        209.8,
+        63.0646
+      ],
+      "socket_xy": [
+        190.0,
+        76.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/左电机与编码器/L_DIR",
+      "actual_motor_net": {
+        "name": "/左电机与编码器/L_DIR",
+        "pins": [
+          "J14:A8",
+          "U2:2"
+        ]
+      },
+      "previous_contact": "A8",
+      "previous_gpio": "PC3",
+      "previous_function": "GPIO"
+    },
+    {
+      "signal": "R_DIR",
+      "gpio": "PC11",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "U4:2",
+      "contact": "A43",
+      "old_contact": "A34",
+      "endpoint_xy": [
+        197.4625,
+        122.6375
+      ],
+      "socket_xy": [
+        190.0,
+        113.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/右电机与编码器/R_DIR",
+      "actual_motor_net": {
+        "name": "/右电机与编码器/R_DIR",
+        "pins": [
+          "J14:A44",
+          "U4:2"
+        ]
+      },
+      "previous_contact": "A44",
+      "previous_gpio": "PC10",
+      "previous_function": "GPIO"
+    },
+    {
+      "signal": "L_nFAULT",
+      "gpio": "PH4",
+      "function": "EXTI4",
+      "af": null,
+      "endpoint": "U2:4",
+      "contact": "A7",
+      "old_contact": "A7",
+      "endpoint_xy": [
+        209.8,
+        61.7646
+      ],
+      "socket_xy": [
+        190.0,
+        75.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/左电机与编码器/L_nFAULT",
+      "actual_motor_net": {
+        "name": "/左电机与编码器/L_nFAULT",
+        "pins": [
+          "J14:A7",
+          "R13:1",
+          "U2:4"
+        ]
+      },
+      "previous_contact": "A7",
+      "previous_gpio": "PH4",
+      "previous_function": "EXTI4"
+    },
+    {
+      "signal": "R_nFAULT",
+      "gpio": "PC10",
+      "function": "EXTI10",
+      "af": null,
+      "endpoint": "U4:4",
+      "contact": "A44",
+      "old_contact": "A35",
+      "endpoint_xy": [
+        197.4625,
+        123.9375
+      ],
+      "socket_xy": [
+        190.0,
+        114.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/右电机与编码器/R_nFAULT",
+      "actual_motor_net": {
+        "name": "/右电机与编码器/R_nFAULT",
+        "pins": [
+          "J14:A43",
+          "R33:1",
+          "U4:4"
+        ]
+      },
+      "previous_contact": "A43",
+      "previous_gpio": "PC11",
+      "previous_function": "EXTI11"
+    },
+    {
+      "signal": "L_ISENSE",
+      "gpio": "PH5",
+      "function": "ADC2_IN13",
+      "af": null,
+      "endpoint": "R15:2",
+      "contact": "A5",
+      "old_contact": "A5",
+      "endpoint_xy": [
+        207.25,
+        55.5021
+      ],
+      "socket_xy": [
+        190.0,
+        73.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/左电机与编码器/L_ISENSE",
+      "actual_motor_net": {
+        "name": "/左电机与编码器/L_ISENSE",
+        "pins": [
+          "C16:1",
+          "J14:A5",
+          "R15:2"
+        ]
+      },
+      "previous_contact": "A5",
+      "previous_gpio": "PH5",
+      "previous_function": "ADC2_IN13"
+    },
+    {
+      "signal": "R_ISENSE",
+      "gpio": "PC0",
+      "function": "ADC1_IN8",
+      "af": null,
+      "endpoint": "R35:2",
+      "contact": "A11",
+      "old_contact": "A11",
+      "endpoint_xy": [
+        200.2625,
+        130.65
+      ],
+      "socket_xy": [
+        190.0,
+        79.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/右电机与编码器/R_ISENSE",
+      "actual_motor_net": {
+        "name": "/右电机与编码器/R_ISENSE",
+        "pins": [
+          "C36:1",
+          "J14:A11",
+          "R35:2"
+        ]
+      },
+      "previous_contact": "A11",
+      "previous_gpio": "PC0",
+      "previous_function": "ADC1_IN8"
+    },
+    {
+      "signal": "MOTOR_EN_REQ",
+      "gpio": "PA3",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "R6:1",
+      "contact": "B2",
+      "old_contact": "B13",
+      "endpoint_xy": [
+        173.4,
+        63.5375
+      ],
+      "socket_xy": [
+        182.8,
+        70.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/核心板接口/MOTOR_EN_REQ",
+      "actual_motor_net": {
+        "name": "/核心板接口/MOTOR_EN_REQ",
+        "pins": [
+          "J14:B8",
+          "R6:1"
+        ]
+      },
+      "previous_contact": "B8",
+      "previous_gpio": "PC5",
+      "previous_function": "GPIO"
+    },
+    {
+      "signal": "BT_TX",
+      "gpio": "PA6",
+      "function": "USART1_TX",
+      "af": 7,
+      "endpoint": "J15:3",
+      "contact": "B5",
+      "old_contact": "A2",
+      "endpoint_xy": [
+        162.88,
+        45.65
+      ],
+      "socket_xy": [
+        182.8,
+        73.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/四脚蓝牙与外接步进驱动接口/BT_TX",
+      "actual_motor_net": {
+        "name": "/四脚蓝牙与外接步进驱动接口/BT_TX",
+        "pins": [
+          "J14:B9",
+          "J15:3"
+        ]
+      },
+      "previous_contact": "B9",
+      "previous_gpio": "PB0",
+      "previous_function": "USART2_TX"
+    },
+    {
+      "signal": "BT_RX",
+      "gpio": "PA7",
+      "function": "USART1_RX",
+      "af": 7,
+      "endpoint": "J15:4",
+      "contact": "B6",
+      "old_contact": "B2",
+      "endpoint_xy": [
+        160.34,
+        45.65
+      ],
+      "socket_xy": [
+        182.8,
+        74.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/四脚蓝牙与外接步进驱动接口/BT_RX",
+      "actual_motor_net": {
+        "name": "/四脚蓝牙与外接步进驱动接口/BT_RX",
+        "pins": [
+          "J14:B2",
+          "J15:4"
+        ]
+      },
+      "previous_contact": "B2",
+      "previous_gpio": "PA3",
+      "previous_function": "USART2_RX"
+    },
+    {
+      "signal": "VIDEO_TX",
+      "gpio": "PB13",
+      "function": "UART5_TX",
+      "af": 14,
+      "endpoint": "J19:6",
+      "contact": "B23",
+      "old_contact": "B34",
+      "endpoint_xy": [
+        184.25,
+        48.0
+      ],
+      "socket_xy": [
+        182.8,
+        93.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/核心板接口/VIDEO_TX",
+      "actual_motor_net": {
+        "name": "/核心板接口/VIDEO_TX",
+        "pins": [
+          "J14:B21",
+          "J19:6"
+        ]
+      },
+      "previous_contact": "B21",
+      "previous_gpio": "PB10",
+      "previous_function": "USART3_TX"
+    },
+    {
+      "signal": "VIDEO_RX",
+      "gpio": "PB12",
+      "function": "UART5_RX",
+      "af": 14,
+      "endpoint": "J19:5",
+      "contact": "B22",
+      "old_contact": "B35",
+      "endpoint_xy": [
+        183.0,
+        48.0
+      ],
+      "socket_xy": [
+        182.8,
+        92.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/核心板接口/VIDEO_RX",
+      "actual_motor_net": {
+        "name": "/核心板接口/VIDEO_RX",
+        "pins": [
+          "J14:B7",
+          "J19:5"
+        ]
+      },
+      "previous_contact": "B7",
+      "previous_gpio": "PC4",
+      "previous_function": "USART3_RX"
+    },
+    {
+      "signal": "STEP_UART_TX",
+      "gpio": "PC6",
+      "function": "USART6_TX",
+      "af": 7,
+      "endpoint": "J23:7",
+      "contact": "B34",
+      "old_contact": "A30",
+      "endpoint_xy": [
+        127.75,
+        137.25
+      ],
+      "socket_xy": [
+        182.8,
+        104.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/四脚蓝牙与外接步进驱动接口/STEP_UART_TX",
+      "actual_motor_net": {
+        "name": "/四脚蓝牙与外接步进驱动接口/STEP_UART_TX",
+        "pins": [
+          "J14:B34",
+          "J23:7"
+        ]
+      },
+      "previous_contact": "B34",
+      "previous_gpio": "PC6",
+      "previous_function": "USART6_TX"
+    },
+    {
+      "signal": "STEP_UART_RX",
+      "gpio": "PC7",
+      "function": "USART6_RX",
+      "af": 7,
+      "endpoint": "J23:8",
+      "contact": "B35",
+      "old_contact": "A29",
+      "endpoint_xy": [
+        127.75,
+        139.75
+      ],
+      "socket_xy": [
+        182.8,
+        105.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/四脚蓝牙与外接步进驱动接口/STEP_UART_RX",
+      "actual_motor_net": {
+        "name": "/四脚蓝牙与外接步进驱动接口/STEP_UART_RX",
+        "pins": [
+          "J14:B35",
+          "J23:8"
+        ]
+      },
+      "previous_contact": "B35",
+      "previous_gpio": "PC7",
+      "previous_function": "USART6_RX"
+    },
+    {
+      "signal": "LICHEE_TX",
+      "gpio": "PB9",
+      "function": "UART4_TX",
+      "af": 8,
+      "endpoint": "U12:2",
+      "contact": "A26",
+      "old_contact": "B26",
+      "endpoint_xy": [
+        214.0875,
+        72.31
+      ],
+      "socket_xy": [
+        190.0,
+        96.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/核心板接口/LICHEE_TX",
+      "actual_motor_net": {
+        "name": "/核心板接口/LICHEE_TX",
+        "pins": [
+          "J14:A30",
+          "R73:2",
+          "U12:2"
+        ]
+      },
+      "previous_contact": "A30",
+      "previous_gpio": "PB6",
+      "previous_function": "USART1_TX"
+    },
+    {
+      "signal": "LICHEE_RX",
+      "gpio": "PB8",
+      "function": "UART4_RX",
+      "af": 8,
+      "endpoint": "U11:4",
+      "contact": "A27",
+      "old_contact": "B27",
+      "endpoint_xy": [
+        216.3375,
+        76.61
+      ],
+      "socket_xy": [
+        190.0,
+        97.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/核心板接口/LICHEE_RX",
+      "actual_motor_net": {
+        "name": "/核心板接口/LICHEE_RX",
+        "pins": [
+          "J14:A29",
+          "R79:2",
+          "U11:4"
+        ]
+      },
+      "previous_contact": "A29",
+      "previous_gpio": "PB7",
+      "previous_function": "USART1_RX"
+    },
+    {
+      "signal": "TFT_SCK",
+      "gpio": "PB1",
+      "function": "SPI3_SCK",
+      "af": 4,
+      "endpoint": "J17:3",
+      "contact": "B10",
+      "old_contact": "B4",
+      "endpoint_xy": [
+        153.92,
+        59.0
+      ],
+      "socket_xy": [
+        182.8,
+        78.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/中景园屏幕与四个操作按钮/TFT_SCK",
+      "actual_motor_net": {
+        "name": "/中景园屏幕与四个操作按钮/TFT_SCK",
+        "pins": [
+          "J14:B4",
+          "J17:3"
+        ]
+      },
+      "previous_contact": "B4",
+      "previous_gpio": "PA5",
+      "previous_function": "SPI1_SCK"
+    },
+    {
+      "signal": "TFT_MOSI",
+      "gpio": "PB2",
+      "function": "SPI3_MOSI",
+      "af": 7,
+      "endpoint": "J17:4",
+      "contact": "B11",
+      "old_contact": "B6",
+      "endpoint_xy": [
+        156.46,
+        59.0
+      ],
+      "socket_xy": [
+        182.8,
+        79.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/中景园屏幕与四个操作按钮/TFT_MOSI",
+      "actual_motor_net": {
+        "name": "/中景园屏幕与四个操作按钮/TFT_MOSI",
+        "pins": [
+          "J14:B6",
+          "J17:4"
+        ]
+      },
+      "previous_contact": "B6",
+      "previous_gpio": "PA7",
+      "previous_function": "SPI1_MOSI"
+    },
+    {
+      "signal": "TFT_CS",
+      "gpio": "PC4",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "J17:7",
+      "contact": "B7",
+      "old_contact": "B3",
+      "endpoint_xy": [
+        164.08,
+        59.0
+      ],
+      "socket_xy": [
+        182.8,
+        75.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/中景园屏幕与四个操作按钮/TFT_CS",
+      "actual_motor_net": {
+        "name": "/中景园屏幕与四个操作按钮/TFT_CS",
+        "pins": [
+          "J14:B3",
+          "J17:7",
+          "R55:2"
+        ]
+      },
+      "previous_contact": "B3",
+      "previous_gpio": "PA4",
+      "previous_function": "GPIO"
+    },
+    {
+      "signal": "TFT_RES",
+      "gpio": "PB0",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "J17:5",
+      "contact": "B9",
+      "old_contact": "B9",
+      "endpoint_xy": [
+        159.0,
+        59.0
+      ],
+      "socket_xy": [
+        182.8,
+        77.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/中景园屏幕与四个操作按钮/TFT_RES",
+      "actual_motor_net": {
+        "name": "/中景园屏幕与四个操作按钮/TFT_RES",
+        "pins": [
+          "J14:B10",
+          "J17:5",
+          "R56:2"
+        ]
+      },
+      "previous_contact": "B10",
+      "previous_gpio": "PB1",
+      "previous_function": "GPIO"
+    },
+    {
+      "signal": "TFT_DC",
+      "gpio": "PC5",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "J17:6",
+      "contact": "B8",
+      "old_contact": "B10",
+      "endpoint_xy": [
+        161.54,
+        59.0
+      ],
+      "socket_xy": [
+        182.8,
+        76.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/中景园屏幕与四个操作按钮/TFT_DC",
+      "actual_motor_net": {
+        "name": "/中景园屏幕与四个操作按钮/TFT_DC",
+        "pins": [
+          "J14:B11",
+          "J17:6"
+        ]
+      },
+      "previous_contact": "B11",
+      "previous_gpio": "PB2",
+      "previous_function": "GPIO"
+    },
+    {
+      "signal": "TFT_BL",
+      "gpio": "PA4",
+      "function": "TIM3_CH4",
+      "af": 2,
+      "endpoint": "J17:8",
+      "contact": "B3",
+      "old_contact": "A32",
+      "endpoint_xy": [
+        166.62,
+        59.0
+      ],
+      "socket_xy": [
+        182.8,
+        71.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/中景园屏幕与四个操作按钮/TFT_BL",
+      "actual_motor_net": {
+        "name": "/中景园屏幕与四个操作按钮/TFT_BL",
+        "pins": [
+          "J14:B5",
+          "J17:8"
+        ]
+      },
+      "previous_contact": "B5",
+      "previous_gpio": "PA6",
+      "previous_function": "TIM3_CH1"
+    },
+    {
+      "signal": "KEY_MODE",
+      "gpio": "PD15",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "SW2:1",
+      "contact": "B33",
+      "old_contact": "B7",
+      "endpoint_xy": [
+        138.6667,
+        125.45
+      ],
+      "socket_xy": [
+        182.8,
+        103.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/中景园屏幕与四个操作按钮/KEY_MODE",
+      "actual_motor_net": {
+        "name": "/中景园屏幕与四个操作按钮/KEY_MODE",
+        "pins": [
+          "J14:B44",
+          "R50:2",
+          "SW2:1"
+        ]
+      },
+      "previous_contact": "B44",
+      "previous_gpio": "PH3",
+      "previous_function": "GPIO"
+    },
+    {
+      "signal": "KEY_NEXT",
+      "gpio": "PA8",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "SW3:1",
+      "contact": "B38",
+      "old_contact": "B8",
+      "endpoint_xy": [
+        149.0833,
+        125.45
+      ],
+      "socket_xy": [
+        182.8,
+        108.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/中景园屏幕与四个操作按钮/KEY_NEXT",
+      "actual_motor_net": {
+        "name": "/中景园屏幕与四个操作按钮/KEY_NEXT",
+        "pins": [
+          "J14:B40",
+          "R51:2",
+          "SW3:1"
+        ]
+      },
+      "previous_contact": "B40",
+      "previous_gpio": "PA10",
+      "previous_function": "GPIO"
+    },
+    {
+      "signal": "KEY_OK",
+      "gpio": "PA10",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "SW4:1",
+      "contact": "B40",
+      "old_contact": "B11",
+      "endpoint_xy": [
+        159.5,
+        125.45
+      ],
+      "socket_xy": [
+        182.8,
+        110.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/中景园屏幕与四个操作按钮/KEY_OK",
+      "actual_motor_net": {
+        "name": "/中景园屏幕与四个操作按钮/KEY_OK",
+        "pins": [
+          "J14:B38",
+          "R52:2",
+          "SW4:1"
+        ]
+      },
+      "previous_contact": "B38",
+      "previous_gpio": "PA8",
+      "previous_function": "GPIO"
+    },
+    {
+      "signal": "KEY_START",
+      "gpio": "PH3",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "SW5:1",
+      "contact": "B44",
+      "old_contact": "B12",
+      "endpoint_xy": [
+        169.9167,
+        125.45
+      ],
+      "socket_xy": [
+        182.8,
+        114.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/中景园屏幕与四个操作按钮/KEY_START",
+      "actual_motor_net": {
+        "name": "/中景园屏幕与四个操作按钮/KEY_START",
+        "pins": [
+          "J14:B37",
+          "R53:2",
+          "SW5:1"
+        ]
+      },
+      "previous_contact": "B37",
+      "previous_gpio": "PC9",
+      "previous_function": "GPIO"
+    },
+    {
+      "signal": "GRAY_CH1",
+      "gpio": "PE7",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "J20:1",
+      "contact": "B12",
+      "old_contact": "B15",
+      "endpoint_xy": [
+        145.65,
+        48.15
+      ],
+      "socket_xy": [
+        182.8,
+        82.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/核心板接口/GRAY_CH1",
+      "actual_motor_net": {
+        "name": "/核心板接口/GRAY_CH1",
+        "pins": [
+          "J14:B12",
+          "J20:1"
+        ]
+      },
+      "previous_contact": "B12",
+      "previous_gpio": "PE7",
+      "previous_function": "GPIO"
+    },
+    {
+      "signal": "GRAY_CH2",
+      "gpio": "PE8",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "J20:2",
+      "contact": "B13",
+      "old_contact": "B16",
+      "endpoint_xy": [
+        143.15,
+        48.15
+      ],
+      "socket_xy": [
+        182.8,
+        83.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/核心板接口/GRAY_CH2",
+      "actual_motor_net": {
+        "name": "/核心板接口/GRAY_CH2",
+        "pins": [
+          "J14:B13",
+          "J20:2"
+        ]
+      },
+      "previous_contact": "B13",
+      "previous_gpio": "PE8",
+      "previous_function": "GPIO"
+    },
+    {
+      "signal": "GRAY_CH3",
+      "gpio": "PE9",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "J20:3",
+      "contact": "B14",
+      "old_contact": "B17",
+      "endpoint_xy": [
+        140.65,
+        48.15
+      ],
+      "socket_xy": [
+        182.8,
+        84.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/核心板接口/GRAY_CH3",
+      "actual_motor_net": {
+        "name": "/核心板接口/GRAY_CH3",
+        "pins": [
+          "J14:B14",
+          "J20:3"
+        ]
+      },
+      "previous_contact": "B14",
+      "previous_gpio": "PE9",
+      "previous_function": "GPIO"
+    },
+    {
+      "signal": "GRAY_CH4",
+      "gpio": "PE10",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "J20:4",
+      "contact": "B15",
+      "old_contact": "B18",
+      "endpoint_xy": [
+        138.15,
+        48.15
+      ],
+      "socket_xy": [
+        182.8,
+        85.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/核心板接口/GRAY_CH4",
+      "actual_motor_net": {
+        "name": "/核心板接口/GRAY_CH4",
+        "pins": [
+          "J14:B15",
+          "J20:4"
+        ]
+      },
+      "previous_contact": "B15",
+      "previous_gpio": "PE10",
+      "previous_function": "GPIO"
+    },
+    {
+      "signal": "GRAY_CH5",
+      "gpio": "PE11",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "J20:5",
+      "contact": "B16",
+      "old_contact": "B19",
+      "endpoint_xy": [
+        135.65,
+        48.15
+      ],
+      "socket_xy": [
+        182.8,
+        86.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/核心板接口/GRAY_CH5",
+      "actual_motor_net": {
+        "name": "/核心板接口/GRAY_CH5",
+        "pins": [
+          "J14:B16",
+          "J20:5"
+        ]
+      },
+      "previous_contact": "B16",
+      "previous_gpio": "PE11",
+      "previous_function": "GPIO"
+    },
+    {
+      "signal": "GRAY_CH6",
+      "gpio": "PE12",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "J20:6",
+      "contact": "B17",
+      "old_contact": "B20",
+      "endpoint_xy": [
+        133.15,
+        48.15
+      ],
+      "socket_xy": [
+        182.8,
+        87.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/核心板接口/GRAY_CH6",
+      "actual_motor_net": {
+        "name": "/核心板接口/GRAY_CH6",
+        "pins": [
+          "J14:B17",
+          "J20:6"
+        ]
+      },
+      "previous_contact": "B17",
+      "previous_gpio": "PE12",
+      "previous_function": "GPIO"
+    },
+    {
+      "signal": "GRAY_CH7",
+      "gpio": "PE13",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "J20:7",
+      "contact": "B18",
+      "old_contact": "B28",
+      "endpoint_xy": [
+        130.65,
+        48.15
+      ],
+      "socket_xy": [
+        182.8,
+        88.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/核心板接口/GRAY_CH7",
+      "actual_motor_net": {
+        "name": "/核心板接口/GRAY_CH7",
+        "pins": [
+          "J14:B18",
+          "J20:7"
+        ]
+      },
+      "previous_contact": "B18",
+      "previous_gpio": "PE13",
+      "previous_function": "GPIO"
+    },
+    {
+      "signal": "GRAY_CH8",
+      "gpio": "PE14",
+      "function": "GPIO",
+      "af": null,
+      "endpoint": "J20:8",
+      "contact": "B19",
+      "old_contact": "B29",
+      "endpoint_xy": [
+        128.15,
+        48.15
+      ],
+      "socket_xy": [
+        182.8,
+        89.0
+      ],
+      "socket_track_ends": 0,
+      "pcb_net": "/核心板接口/GRAY_CH8",
+      "actual_motor_net": {
+        "name": "/核心板接口/GRAY_CH8",
+        "pins": [
+          "J14:B19",
+          "J20:8"
+        ]
+      },
+      "previous_contact": "B19",
+      "previous_gpio": "PE14",
+      "previous_function": "GPIO"
+    }
+  ]
+}

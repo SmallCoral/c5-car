@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <export version="E">
   <design>
-    <source>C:\Users\sc\Documents\Dev\Hardware\c5-car\Hardware\stm32c5a3\Hardware\CoralC5-Motor\CoralC5-Motor.kicad_sch</source>
-    <date>2026-11-08T22:45:14</date>
-    <tool>Eeschema 10.0.6</tool>
+    <source>D:\dev\qrs\stm32\c5-car\Hardware\stm32c5a3\Hardware\CoralC5-Motor\CoralC5-Motor.kicad_sch</source>
+    <date>2026-11-08T23:56:37</date>
+    <tool>Eeschema 10.0.8</tool>
     <textvar name="AUTHOR">SmallCoral</textvar>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
         <title>Coral-C5 小车扩展板 M2 总览</title>
         <company>SmallCoral / CoralC5-Motor</company>
-        <rev>M2.8S</rev>
+        <rev>M2.8P2</rev>
         <date>2026-11-08</date>
         <source>CoralC5-Motor.kicad_sch</source>
         <comment number="1" value="原理图设计；实板电流、温升与线束待验证"/>
@@ -45,8 +45,8 @@
       <title_block>
         <title>C5-EDGE-3 核心板接口与调试</title>
         <company>SmallCoral / CoralC5-Motor</company>
-        <rev>M2.8</rev>
-        <date>2026-11-07</date>
+        <rev>M2.8P2</rev>
+        <date>2026-11-08</date>
         <source>03_Core_Interface.kicad_sch</source>
         <comment number="1" value="原理图设计；实板电流、温升与线束待验证"/>
         <comment number="2" value=""/>
@@ -1575,7 +1575,7 @@
       <property name="Sheetname" value="核心板接口"/>
       <property name="Sheetfile" value="03_Core_Interface.kicad_sch"/>
       <sheetpath names="/核心板接口/" tstamps="/c813fdd4-725f-5df7-aa4a-68cd15d401cf/"/>
-      <tstamps>8c9c7b19-b75d-593c-a829-0649560b29f7 b37c04c5-9b5f-511b-9c74-f377aa32d4bc 30a59f44-06c2-5f5a-bb1c-18c06bfa40da</tstamps>
+      <tstamps>b37c04c5-9b5f-511b-9c74-f377aa32d4bc 8c9c7b19-b75d-593c-a829-0649560b29f7 30a59f44-06c2-5f5a-bb1c-18c06bfa40da</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -5133,49 +5133,49 @@
       <node ref="U6" pin="2" pinfunction="VIN_2" pintype="power_in"/>
     </net>
     <net code="7" name="/中景园屏幕与四个操作按钮/KEY_MODE" class="Default">
-      <node ref="J14" pin="B44" pinfunction="B44_/_PH3_B44" pintype="bidirectional"/>
+      <node ref="J14" pin="B33" pinfunction="B33_/_PD15_B33" pintype="bidirectional"/>
       <node ref="R50" pin="2" pintype="passive"/>
       <node ref="SW2" pin="1" pinfunction="1_1" pintype="passive"/>
     </net>
     <net code="8" name="/中景园屏幕与四个操作按钮/KEY_NEXT" class="Default">
-      <node ref="J14" pin="B40" pinfunction="B40_/_PA10_B40" pintype="bidirectional"/>
+      <node ref="J14" pin="B38" pinfunction="B38_/_PA8_B38" pintype="bidirectional"/>
       <node ref="R51" pin="2" pintype="passive"/>
       <node ref="SW3" pin="1" pinfunction="1_1" pintype="passive"/>
     </net>
     <net code="9" name="/中景园屏幕与四个操作按钮/KEY_OK" class="Default">
-      <node ref="J14" pin="B38" pinfunction="B38_/_PA8_B38" pintype="bidirectional"/>
+      <node ref="J14" pin="B40" pinfunction="B40_/_PA10_B40" pintype="bidirectional"/>
       <node ref="R52" pin="2" pintype="passive"/>
       <node ref="SW4" pin="1" pinfunction="1_1" pintype="passive"/>
     </net>
     <net code="10" name="/中景园屏幕与四个操作按钮/KEY_START" class="Default">
-      <node ref="J14" pin="B37" pinfunction="B37_/_PC9_B37" pintype="bidirectional"/>
+      <node ref="J14" pin="B44" pinfunction="B44_/_PH3_B44" pintype="bidirectional"/>
       <node ref="R53" pin="2" pintype="passive"/>
       <node ref="SW5" pin="1" pinfunction="1_1" pintype="passive"/>
     </net>
     <net code="11" name="/中景园屏幕与四个操作按钮/TFT_BL" class="Default">
-      <node ref="J14" pin="B5" pinfunction="B5_/_PA6_B5" pintype="bidirectional"/>
+      <node ref="J14" pin="B3" pinfunction="B3_/_PA4_B3" pintype="bidirectional"/>
       <node ref="J17" pin="8" pinfunction="BL_8" pintype="passive"/>
     </net>
     <net code="12" name="/中景园屏幕与四个操作按钮/TFT_CS" class="Default">
-      <node ref="J14" pin="B3" pinfunction="B3_/_PA4_B3" pintype="bidirectional"/>
+      <node ref="J14" pin="B7" pinfunction="B7_/_PC4_B7" pintype="bidirectional"/>
       <node ref="J17" pin="7" pinfunction="CS_7" pintype="passive"/>
       <node ref="R55" pin="2" pintype="passive"/>
     </net>
     <net code="13" name="/中景园屏幕与四个操作按钮/TFT_DC" class="Default">
-      <node ref="J14" pin="B11" pinfunction="B11_/_PB2_B11" pintype="bidirectional"/>
+      <node ref="J14" pin="B8" pinfunction="B8_/_PC5_B8" pintype="bidirectional"/>
       <node ref="J17" pin="6" pinfunction="DC_6" pintype="passive"/>
     </net>
     <net code="14" name="/中景园屏幕与四个操作按钮/TFT_MOSI" class="Default">
-      <node ref="J14" pin="B6" pinfunction="B6_/_PA7_B6" pintype="bidirectional"/>
+      <node ref="J14" pin="B11" pinfunction="B11_/_PB2_B11" pintype="bidirectional"/>
       <node ref="J17" pin="4" pinfunction="SDA_4" pintype="passive"/>
     </net>
     <net code="15" name="/中景园屏幕与四个操作按钮/TFT_RES" class="Default">
-      <node ref="J14" pin="B10" pinfunction="B10_/_PB1_B10" pintype="bidirectional"/>
+      <node ref="J14" pin="B9" pinfunction="B9_/_PB0_B9" pintype="bidirectional"/>
       <node ref="J17" pin="5" pinfunction="RES_5" pintype="passive"/>
       <node ref="R56" pin="2" pintype="passive"/>
     </net>
     <net code="16" name="/中景园屏幕与四个操作按钮/TFT_SCK" class="Default">
-      <node ref="J14" pin="B4" pinfunction="B4_/_PA5_B4" pintype="bidirectional"/>
+      <node ref="J14" pin="B10" pinfunction="B10_/_PB1_B10" pintype="bidirectional"/>
       <node ref="J17" pin="3" pinfunction="SCL_3" pintype="passive"/>
     </net>
     <net code="17" name="/右电机与编码器/MOTOR_RUN" class="Default">
@@ -5187,7 +5187,7 @@
       <node ref="U4" pin="3" pinfunction="nSLEEP_3" pintype="input"/>
     </net>
     <net code="18" name="/右电机与编码器/R_DIR" class="Default">
-      <node ref="J14" pin="A44" pinfunction="A44_/_PC10_A44" pintype="bidirectional"/>
+      <node ref="J14" pin="A43" pinfunction="A43_/_PC11_A43" pintype="bidirectional"/>
       <node ref="U4" pin="2" pinfunction="PH/IN2_2" pintype="input"/>
     </net>
     <net code="19" name="/右电机与编码器/R_ENC_A" class="Default">
@@ -5212,20 +5212,20 @@
       <node ref="U4" pin="10" pinfunction="OUT2_10" pintype="power_out"/>
     </net>
     <net code="24" name="/右电机与编码器/R_PWM" class="Default">
-      <node ref="J14" pin="A27" pinfunction="A27_/_PB8_A27" pintype="bidirectional"/>
+      <node ref="J14" pin="A30" pinfunction="A30_/_PB6_A30" pintype="bidirectional"/>
       <node ref="U4" pin="1" pinfunction="EN/IN1_1" pintype="input"/>
     </net>
     <net code="25" name="/右电机与编码器/R_nFAULT" class="Default">
-      <node ref="J14" pin="A43" pinfunction="A43_/_PC11_A43" pintype="bidirectional"/>
+      <node ref="J14" pin="A44" pinfunction="A44_/_PC10_A44" pintype="bidirectional"/>
       <node ref="R33" pin="1" pintype="passive"/>
       <node ref="U4" pin="4" pinfunction="nFAULT_4" pintype="open_collector"/>
     </net>
     <net code="26" name="/四脚蓝牙与外接步进驱动接口/BT_RX" class="Default">
-      <node ref="J14" pin="B2" pinfunction="B2_/_PA3_B2" pintype="bidirectional"/>
+      <node ref="J14" pin="B6" pinfunction="B6_/_PA7_B6" pintype="bidirectional"/>
       <node ref="J15" pin="4" pinfunction="TXD_4" pintype="passive"/>
     </net>
     <net code="27" name="/四脚蓝牙与外接步进驱动接口/BT_TX" class="Default">
-      <node ref="J14" pin="B9" pinfunction="B9_/_PB0_B9" pintype="bidirectional"/>
+      <node ref="J14" pin="B5" pinfunction="B5_/_PA6_B5" pintype="bidirectional"/>
       <node ref="J15" pin="3" pinfunction="RXD_3" pintype="passive"/>
     </net>
     <net code="28" name="/四脚蓝牙与外接步进驱动接口/STEP_UART_RX" class="Default">
@@ -5303,17 +5303,17 @@
       <node ref="J20" pin="8" pinfunction="CH8_8" pintype="passive"/>
     </net>
     <net code="46" name="/核心板接口/LICHEE_RX" class="Default">
-      <node ref="J14" pin="A29" pinfunction="A29_/_PB7_A29" pintype="bidirectional"/>
+      <node ref="J14" pin="A27" pinfunction="A27_/_PB8_A27" pintype="bidirectional"/>
       <node ref="R79" pin="2" pintype="passive"/>
       <node ref="U11" pin="4" pinfunction="Y_4" pintype="tri_state"/>
     </net>
     <net code="47" name="/核心板接口/LICHEE_TX" class="Default">
-      <node ref="J14" pin="A30" pinfunction="A30_/_PB6_A30" pintype="bidirectional"/>
+      <node ref="J14" pin="A26" pinfunction="A26_/_PB9_A26" pintype="bidirectional"/>
       <node ref="R73" pin="2" pintype="passive"/>
       <node ref="U12" pin="2" pinfunction="A_2" pintype="input"/>
     </net>
     <net code="48" name="/核心板接口/MOTOR_EN_REQ" class="Default">
-      <node ref="J14" pin="B8" pinfunction="B8_/_PC5_B8" pintype="bidirectional"/>
+      <node ref="J14" pin="B2" pinfunction="B2_/_PA3_B2" pintype="bidirectional"/>
       <node ref="R6" pin="1" pintype="passive"/>
     </net>
     <net code="49" name="/核心板接口/SWCLK" class="Default">
@@ -5325,11 +5325,11 @@
       <node ref="J8" pin="2" pinfunction="Pin_2_2" pintype="passive"/>
     </net>
     <net code="51" name="/核心板接口/VIDEO_RX" class="Default">
-      <node ref="J14" pin="B7" pinfunction="B7_/_PC4_B7" pintype="bidirectional"/>
+      <node ref="J14" pin="B22" pinfunction="B22_/_PB12_B22" pintype="bidirectional"/>
       <node ref="J19" pin="5" pinfunction="UART4_TX_5" pintype="passive"/>
     </net>
     <net code="52" name="/核心板接口/VIDEO_TX" class="Default">
-      <node ref="J14" pin="B21" pinfunction="B21_/_PB10_B21" pintype="bidirectional"/>
+      <node ref="J14" pin="B23" pinfunction="B23_/_PB13_B23" pintype="bidirectional"/>
       <node ref="J19" pin="6" pinfunction="UART4_RX_6" pintype="passive"/>
     </net>
     <net code="53" name="/灰度与 MaixCAM2 识别/V5_MAIX_PROT" class="Default">
@@ -5752,14 +5752,14 @@
     <net code="123" name="unconnected-(J14A-A25_{slash}_PE0-PadA25)" class="Default">
       <node ref="J14" pin="A25" pinfunction="A25_/_PE0_A25" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="124" name="unconnected-(J14A-B20_{slash}_PE15-PadB20)" class="Default">
+    <net code="124" name="unconnected-(J14A-B4_{slash}_PA5-PadB4)" class="Default">
+      <node ref="J14" pin="B4" pinfunction="B4_/_PA5_B4" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="125" name="unconnected-(J14A-B20_{slash}_PE15-PadB20)" class="Default">
       <node ref="J14" pin="B20" pinfunction="B20_/_PE15_B20" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="125" name="unconnected-(J14A-B22_{slash}_PB12-PadB22)" class="Default">
-      <node ref="J14" pin="B22" pinfunction="B22_/_PB12_B22" pintype="bidirectional+no_connect"/>
-    </net>
-    <net code="126" name="unconnected-(J14A-B23_{slash}_PB13-PadB23)" class="Default">
-      <node ref="J14" pin="B23" pinfunction="B23_/_PB13_B23" pintype="bidirectional+no_connect"/>
+    <net code="126" name="unconnected-(J14A-B21_{slash}_PB10-PadB21)" class="Default">
+      <node ref="J14" pin="B21" pinfunction="B21_/_PB10_B21" pintype="bidirectional+no_connect"/>
     </net>
     <net code="127" name="unconnected-(J14A-B24_{slash}_PB14-PadB24)" class="Default">
       <node ref="J14" pin="B24" pinfunction="B24_/_PB14_B24" pintype="bidirectional+no_connect"/>
@@ -5767,11 +5767,11 @@
     <net code="128" name="unconnected-(J14A-B25_{slash}_PB15-PadB25)" class="Default">
       <node ref="J14" pin="B25" pinfunction="B25_/_PB15_B25" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="129" name="unconnected-(J14B-A26_{slash}_PB9-PadA26)" class="Default">
-      <node ref="J14" pin="A26" pinfunction="A26_/_PB9_A26" pintype="bidirectional+no_connect"/>
-    </net>
-    <net code="130" name="unconnected-(J14B-A28_{slash}_PH2-PadA28)" class="Default">
+    <net code="129" name="unconnected-(J14B-A28_{slash}_PH2-PadA28)" class="Default">
       <node ref="J14" pin="A28" pinfunction="A28_/_PH2_A28" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="130" name="unconnected-(J14B-A29_{slash}_PB7-PadA29)" class="Default">
+      <node ref="J14" pin="A29" pinfunction="A29_/_PB7_A29" pintype="bidirectional+no_connect"/>
     </net>
     <net code="131" name="unconnected-(J14B-A31_{slash}_PB5-PadA31)" class="Default">
       <node ref="J14" pin="A31" pinfunction="A31_/_PB5_A31" pintype="bidirectional+no_connect"/>
@@ -5827,11 +5827,11 @@
     <net code="148" name="unconnected-(J14B-B32_{slash}_PD14-PadB32)" class="Default">
       <node ref="J14" pin="B32" pinfunction="B32_/_PD14_B32" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="149" name="unconnected-(J14B-B33_{slash}_PD15-PadB33)" class="Default">
-      <node ref="J14" pin="B33" pinfunction="B33_/_PD15_B33" pintype="bidirectional+no_connect"/>
-    </net>
-    <net code="150" name="unconnected-(J14B-B36_{slash}_PC8-PadB36)" class="Default">
+    <net code="149" name="unconnected-(J14B-B36_{slash}_PC8-PadB36)" class="Default">
       <node ref="J14" pin="B36" pinfunction="B36_/_PC8_B36" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="150" name="unconnected-(J14B-B37_{slash}_PC9-PadB37)" class="Default">
+      <node ref="J14" pin="B37" pinfunction="B37_/_PC9_B37" pintype="bidirectional+no_connect"/>
     </net>
     <net code="151" name="unconnected-(J14B-B39_{slash}_PA9-PadB39)" class="Default">
       <node ref="J14" pin="B39" pinfunction="B39_/_PA9_B39" pintype="bidirectional+no_connect"/>

@@ -1,0 +1,1654 @@
+{
+  "date": "2026-11-09",
+  "scope": "3D resources only",
+  "passed": true,
+  "checks": 319,
+  "failures": [],
+  "footprints": 146,
+  "electrical_footprints": 140,
+  "model_bound_electrical_footprints": 140,
+  "mechanical_hole_exceptions": [
+    {
+      "reference": "H1",
+      "uuid": "01a1c957-0223-4652-a81d-8ccc9bbfdee1"
+    },
+    {
+      "reference": "H1",
+      "uuid": "078d1b6b-c603-40a3-a4a7-2b4b39cee0aa"
+    },
+    {
+      "reference": "H2",
+      "uuid": "4a8cfdf8-f4bf-4c72-9db8-82ca58fc4e75"
+    },
+    {
+      "reference": "H1",
+      "uuid": "53318ad9-5a32-4e96-9f4d-684505ffd4d3"
+    },
+    {
+      "reference": "H1",
+      "uuid": "7d53c0c3-af37-48f3-b247-fb8f460e38f8"
+    },
+    {
+      "reference": "H1",
+      "uuid": "cf03d95f-2a76-4592-acf3-2d0b35b52248"
+    }
+  ],
+  "downloaded_models": 5,
+  "updated_references": [
+    "J1",
+    "F1",
+    "J19",
+    "SW1",
+    "C1",
+    "C13",
+    "C33"
+  ],
+  "pcb_sha256": "ebf9593409df1450adedcb3f712c7182457a805a13dcb4a63acdb5dbbaf6d6d7",
+  "baseline_pcb_sha256": "89a2ec220ce0d86236412cf064f121cb4cb443ffa870d112ff9f2c04f1b26dac",
+  "non_model_data_sha256": "3f83a18c7c6e7841c1191d5f2c2c457fd763faf1508e898b93c492760cd08eb4",
+  "segments": 545,
+  "vias": 32,
+  "limitations": [
+    "Resource existence and unchanged bytes do not prove mechanical accuracy.",
+    "SW1 and C1/C13/C33 are explicitly identified external package references.",
+    "U1/U6/U10 retain generic SOIC exterior models; exact EP geometry is unresolved.",
+    "Native PCB DRC and physical validation are separate."
+  ],
+  "results": [
+    {
+      "name": "C74 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C74 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "C82 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C82 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "C2 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C2 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0805_2012Metric__C_0805_2012Metric.step"
+    },
+    {
+      "name": "R16 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "R16 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "C72 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C72 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "C37 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C37 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "J20 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "J20 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Connector_JST__JST_XH_B8B-XH-A_1x08_P2.50mm_Vertical.step"
+    },
+    {
+      "name": "R3 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "R3 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "R60 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "R60 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "C35 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C35 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "C86 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C86 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_1210_3225Metric__C_1210_3225Metric.step"
+    },
+    {
+      "name": "C91 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C91 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "C54 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C54 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "R19 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "R19 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "R73 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "R73 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "R79 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "R79 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "U5 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "U5 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Package_TO_SOT_SMD__SOT-363_SC-70-6__SOT-363_SC-70-6.step"
+    },
+    {
+      "name": "U11 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "U11 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Package_TO_SOT_SMD__SOT-23-5__SOT-23-5.step"
+    },
+    {
+      "name": "R50 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "R50 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "R39 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "R39 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "C90 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C90 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "C16 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C16 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "SW5 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "SW5 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/SW_Push_6x6x4.3mm_SMD_Generic.step"
+    },
+    {
+      "name": "J21 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "J21 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Connector_JST__JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical.step"
+    },
+    {
+      "name": "R2 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "R2 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "C75 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C75 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "R33 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "R33 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "R5 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "R5 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "C12 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C12 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "Q2 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Q2 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Package_TO_SOT_SMD__TO-252-2.step"
+    },
+    {
+      "name": "C31 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C31 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "C92 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C92 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__CP_Elec_10x7.9__CP_Elec_10x7.9.step"
+    },
+    {
+      "name": "U7 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "U7 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Package_TO_SOT_SMD__SOT-23-5__SOT-23-5.step"
+    },
+    {
+      "name": "C11 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C11 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "C32 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C32 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "C5 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C5 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_1210_3225Metric__C_1210_3225Metric.step"
+    },
+    {
+      "name": "R61 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "R61 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "U4 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "U4 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/DRV8874_PWP0016__HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.78x3.37mm.step"
+    },
+    {
+      "name": "R67 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "R67 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "J18 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "J18 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Connector_PinHeader_2.54mm__PinHeader_2x06_P2.54mm_Vertical__PinHeader_2x06_P2.54mm_Vertical.step"
+    },
+    {
+      "name": "U10 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "U10 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Package_SO__SOIC-8_3.9x4.9mm_P1.27mm__SOIC-8_3.9x4.9mm_P1.27mm.step"
+    },
+    {
+      "name": "C4 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C4 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "L2 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "L2 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Inductor_SMD__L_Wuerth_HCI-1050__L_Wuerth_HCI-1050.step"
+    },
+    {
+      "name": "C3 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C3 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "R4 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "R4 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "R32 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "R32 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "R13 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "R13 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "C85 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C85 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "F1 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "F1 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Littelfuse_0448015-MR_EasyEDA_C187551.step"
+    },
+    {
+      "name": "R52 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "R52 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "R51 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "R51 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "R59 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "R59 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "C83 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C83 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0805_2012Metric__C_0805_2012Metric.step"
+    },
+    {
+      "name": "R15 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "R15 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "C40 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C40 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "C84 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C84 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0805_2012Metric__C_0805_2012Metric.step"
+    },
+    {
+      "name": "U3 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "U3 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Package_TO_SOT_SMD__SOT-363_SC-70-6__SOT-363_SC-70-6.step"
+    },
+    {
+      "name": "J19 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "J19 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Megastar_ZX-MX1.25-6PWT_EasyEDA_C7430472.step"
+    },
+    {
+      "name": "R14 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "R14 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "R64 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "R64 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "Q1 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Q1 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Package_TO_SOT_SMD__TO-252-2.step"
+    },
+    {
+      "name": "U2 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "U2 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/DRV8874_PWP0016__HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.78x3.37mm.step"
+    },
+    {
+      "name": "C10 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C10 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "C78 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C78 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0805_2012Metric__C_0805_2012Metric.step"
+    },
+    {
+      "name": "R34 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "R34 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "R63 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "R63 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "J28 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "J28 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Connector_USB__USB_C_Receptacle_GCT_USB4125-xx-x_6P_TopMnt_Horizontal__USB_C_Receptacle_GCT_USB4125-xx-x_6P_TopMnt_Horizontal.step"
+    },
+    {
+      "name": "J10 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "J10 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Connector_PinHeader_2.54mm__PinHeader_1x02_P2.54mm_Vertical__PinHeader_1x02_P2.54mm_Vertical.step"
+    },
+    {
+      "name": "C34 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C34 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "R65 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "R65 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "J8 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "J8 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Connector_JST__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical.step"
+    },
+    {
+      "name": "C36 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C36 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "R56 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "R56 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "D3 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "D3 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Diode_SMD__D_SMA__D_SMA.step"
+    },
+    {
+      "name": "C38 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C38 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "R11 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "R11 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "C88 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C88 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_1210_3225Metric__C_1210_3225Metric.step"
+    },
+    {
+      "name": "C39 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C39 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "R10 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "R10 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "R66 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "R66 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "R35 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "R35 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "J6 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "J6 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical.step"
+    },
+    {
+      "name": "C93 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C93 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "SW2 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "SW2 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/SW_Push_6x6x4.3mm_SMD_Generic.step"
+    },
+    {
+      "name": "C1 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C1 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Nichicon_D10x12.5_P5_Lead_PackageReference.step"
+    },
+    {
+      "name": "U8 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "U8 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Package_DFN_QFN__Texas_RVC0020A_WQFN-20-1EP_3x4mm_P0.5mm_EP1.6x2.6mm__Texas_RVC0020A_WQFN-20-1EP_3x4mm_P0.5mm_EP1.6x2.6mm.step"
+    },
+    {
+      "name": "R92 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "R92 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "D2 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "D2 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Diode_SMD__D_SMA__D_SMA.step"
+    },
+    {
+      "name": "R93 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "R93 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "SW1 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "SW1 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/DEALON_SS-12D10-G5_PackageReference_C2998777.step"
+    },
+    {
+      "name": "R17 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "R17 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "C55 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C55 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "C87 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C87 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "R36 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "R36 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "R30 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "R30 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "C17 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C17 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "R38 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "R38 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "J14 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "J14 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/C5_EDGE_3_Socket__Streamline_Socket.step"
+    },
+    {
+      "name": "C19 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C19 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "R62 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "R62 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "R37 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "R37 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "C14 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C14 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "J23 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "J23 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Connector_JST__JST_XH_B8B-XH-A_1x08_P2.50mm_Vertical.step"
+    },
+    {
+      "name": "SW4 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "SW4 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/SW_Push_6x6x4.3mm_SMD_Generic.step"
+    },
+    {
+      "name": "D1 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "D1 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Diode_SMD__D_SOD-123__D_SOD-123.step"
+    },
+    {
+      "name": "C33 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C33 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Nichicon_D10x12.5_P5_Lead_PackageReference.step"
+    },
+    {
+      "name": "C18 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C18 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "U16 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "U16 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Package_DFN_QFN__Texas_RVC0020A_WQFN-20-1EP_3x4mm_P0.5mm_EP1.6x2.6mm__Texas_RVC0020A_WQFN-20-1EP_3x4mm_P0.5mm_EP1.6x2.6mm.step"
+    },
+    {
+      "name": "R1 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "R1 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "R72 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "R72 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "R55 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "R55 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "U12 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "U12 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Package_TO_SOT_SMD__SOT-23-5__SOT-23-5.step"
+    },
+    {
+      "name": "R31 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "R31 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "SW3 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "SW3 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/SW_Push_6x6x4.3mm_SMD_Generic.step"
+    },
+    {
+      "name": "C62 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C62 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0805_2012Metric__C_0805_2012Metric.step"
+    },
+    {
+      "name": "C30 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C30 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "R91 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "R91 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "C94 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C94 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0805_2012Metric__C_0805_2012Metric.step"
+    },
+    {
+      "name": "R6 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "R6 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "C63 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C63 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "L1 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "L1 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Inductor_SMD__L_Wuerth_HCI-1050__L_Wuerth_HCI-1050.step"
+    },
+    {
+      "name": "C56 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C56 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "C15 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C15 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "C20 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C20 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "U1 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "U1 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Package_SO__SOIC-8_3.9x4.9mm_P1.27mm__SOIC-8_3.9x4.9mm_P1.27mm.step"
+    },
+    {
+      "name": "D4 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "D4 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/LED_SMD__LED_0603_1608Metric__LED_0603_1608Metric.step"
+    },
+    {
+      "name": "J17 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "J17 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Connector_PinSocket_2.54mm__PinSocket_1x08_P2.54mm_Vertical.step"
+    },
+    {
+      "name": "R12 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "R12 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "R7 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "R7 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "J25 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "J25 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Connector_USB__USB_C_Receptacle_GCT_USB4125-xx-x_6P_TopMnt_Horizontal__USB_C_Receptacle_GCT_USB4125-xx-x_6P_TopMnt_Horizontal.step"
+    },
+    {
+      "name": "C13 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C13 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Nichicon_D10x12.5_P5_Lead_PackageReference.step"
+    },
+    {
+      "name": "R53 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "R53 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "R18 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "R18 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+    },
+    {
+      "name": "J4 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "J4 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical.step"
+    },
+    {
+      "name": "C81 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C81 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__CP_Elec_10x7.9__CP_Elec_10x7.9.step"
+    },
+    {
+      "name": "J15 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "J15 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Connector_PinSocket_2.54mm__PinSocket_1x04_P2.54mm_Vertical.step"
+    },
+    {
+      "name": "U6 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "U6 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Package_SO__SOIC-8_3.9x4.9mm_P1.27mm__SOIC-8_3.9x4.9mm_P1.27mm.step"
+    },
+    {
+      "name": "C50 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C50 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_1210_3225Metric__C_1210_3225Metric.step"
+    },
+    {
+      "name": "J1 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "J1 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/AMASS_XT60PW-M_EasyEDA_C98732.step"
+    },
+    {
+      "name": "C89 model bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C89 portable model exists",
+      "passed": true,
+      "detail": "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+    },
+    {
+      "name": "AMASS_XT60PW-M_EasyEDA_C98732.step downloaded bytes unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "AMASS_XT60PW-M_EasyEDA_C98732.step native STEP header",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "J1 unique footprint",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "J1 PCB and library model agree",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "J1 expected downloaded model",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "J1 library non-model fields preserved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Littelfuse_0448015-MR_EasyEDA_C187551.step downloaded bytes unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Littelfuse_0448015-MR_EasyEDA_C187551.step native STEP header",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "F1 unique footprint",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "F1 PCB and library model agree",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "F1 expected downloaded model",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "F1 library non-model fields preserved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Megastar_ZX-MX1.25-6PWT_EasyEDA_C7430472.step downloaded bytes unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Megastar_ZX-MX1.25-6PWT_EasyEDA_C7430472.step native STEP header",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "J19 unique footprint",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "J19 PCB and library model agree",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "J19 expected downloaded model",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "J19 library non-model fields preserved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "DEALON_SS-12D10-G5_PackageReference_C2998777.step downloaded bytes unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "DEALON_SS-12D10-G5_PackageReference_C2998777.step native STEP header",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "SW1 unique footprint",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "SW1 PCB and library model agree",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "SW1 expected downloaded model",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "SW1 library non-model fields preserved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Nichicon_D10x12.5_P5_Lead_PackageReference.step downloaded bytes unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Nichicon_D10x12.5_P5_Lead_PackageReference.step native STEP header",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C1 unique footprint",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C1 PCB and library model agree",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C1 expected downloaded model",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C1 library non-model fields preserved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C13 unique footprint",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C13 PCB and library model agree",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C13 expected downloaded model",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C13 library non-model fields preserved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C33 unique footprint",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C33 PCB and library model agree",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C33 expected downloaded model",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "C33 library non-model fields preserved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "PCB all non-model fields preserved",
+      "passed": true,
+      "detail": null
+    }
+  ]
+}

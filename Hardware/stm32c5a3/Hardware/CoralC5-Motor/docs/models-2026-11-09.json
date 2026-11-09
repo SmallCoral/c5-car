@@ -1,0 +1,140 @@
+{
+  "date": "2026-11-09",
+  "source_commit": "8725275ab4f3aace2bfe87971e3c5ed062f33165",
+  "scope": "Downloaded external STEP bindings only; no generated component geometry, no electrical/BOM/placement/copper changes.",
+  "library_credit": "嘉立创EDA/EasyEDA官方库; https://lceda.cn/ ; https://easyeda.com ; and Nichicon",
+  "models": [
+    {
+      "refs": [
+        "J1"
+      ],
+      "file": "AMASS_XT60PW-M_EasyEDA_C98732.step",
+      "offset": [
+        3.6,
+        7.1,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        90
+      ],
+      "code": "C98732",
+      "match": "Exact MPN supplier-library model; pin axes and mounting tabs checked.",
+      "sha256": "3b036d033f3037f3bb025b765d33774d9f1a53459046d49200378027d424d01a",
+      "bytes": 2005370,
+      "retrieved": "2026-11-09",
+      "geometry_modified": false,
+      "source_url": "https://modules.easyeda.com/qAxj6KHrDKw4blvCG8QJPs7Y/d22c67b9ac914fc88e11c9408076081e",
+      "catalog_url": "https://easyeda.com/api/products/C98732/components?version=6.4.19.5",
+      "source_title": "CONN-TH_XT60PW-M",
+      "source_library": "JLCEDA/EasyEDA Official Library"
+    },
+    {
+      "refs": [
+        "F1"
+      ],
+      "file": "Littelfuse_0448015-MR_EasyEDA_C187551.step",
+      "offset": [
+        0,
+        0,
+        1.35
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "code": "C187551",
+      "match": "Exact MPN supplier-library model; 6.1 x 2.7 x 2.7 mm package.",
+      "sha256": "80e41a34764cae48e12d5599ab86b7cf89dfcf1ef554308be31b702be97cda7a",
+      "bytes": 1424538,
+      "retrieved": "2026-11-09",
+      "geometry_modified": false,
+      "source_url": "https://modules.easyeda.com/qAxj6KHrDKw4blvCG8QJPs7Y/7fd7f90ca3ad4eb69fac3d6fa5526814",
+      "catalog_url": "https://easyeda.com/api/products/C187551/components?version=6.4.19.5",
+      "source_title": "FUSE-SMD_L6.1-W2.7-H2.7",
+      "source_library": "JLCEDA/EasyEDA Official Library"
+    },
+    {
+      "refs": [
+        "J19"
+      ],
+      "file": "Megastar_ZX-MX1.25-6PWT_EasyEDA_C7430472.step",
+      "offset": [
+        0,
+        2.55,
+        0.02
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "code": "C7430472",
+      "match": "Exact MPN supplier-library model; signal solder feet aligned to current pads. Native MP foot differs slightly from current drawing lands; not a footprint certification.",
+      "sha256": "4665411daee1c3827c49bf1583b5c66f68a5f7e60315275fab9a6fb231f4bc66",
+      "bytes": 1938152,
+      "retrieved": "2026-11-09",
+      "geometry_modified": false,
+      "source_url": "https://modules.easyeda.com/qAxj6KHrDKw4blvCG8QJPs7Y/e5b8ce44993a4e3898b4d095327f9c83",
+      "catalog_url": "https://easyeda.com/api/products/C7430472/components?version=6.4.19.5",
+      "source_title": "CONN-SMD_6P-P1.25_MEGASTAR_ZX-MX1.25-6PWT",
+      "source_library": "JLCEDA/EasyEDA Official Library"
+    },
+    {
+      "refs": [
+        "SW1"
+      ],
+      "file": "DEALON_SS-12D10-G5_PackageReference_C2998777.step",
+      "offset": [
+        4.8,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "code": "C2998777",
+      "match": "External package reference, NOT SHOU HAN exact CAD. Existing DEALON G5 model: 12.7 x 6.7 mm, 5 mm actuator, 11.4 mm overall height; SHOU HAN drawing nominal 11.6 mm. Source model pin pitch 4.7 mm versus current footprint 4.8 mm: outer pin center error +/-0.1 mm. No rescaling or geometry changes. Not an exact mechanical verification model.",
+      "sha256": "799887bd7556044030594a532c557f25135860a26bb8a0efe1b9d3e655a4f54c",
+      "bytes": 423128,
+      "retrieved": "2026-11-09",
+      "geometry_modified": false,
+      "source_url": "https://modules.easyeda.com/qAxj6KHrDKw4blvCG8QJPs7Y/7410863b289f4ba29ad7fd1fac9354df",
+      "catalog_url": "https://easyeda.com/api/products/C2998777/components?version=6.4.19.5",
+      "source_title": "SW-TH_SS-12D10-G050",
+      "source_library": "JLCEDA/EasyEDA Official Library"
+    },
+    {
+      "refs": [
+        "C1",
+        "C13",
+        "C33"
+      ],
+      "file": "Nichicon_D10x12.5_P5_Lead_PackageReference.step",
+      "offset": [
+        2.5,
+        0,
+        12.5
+      ],
+      "rotation": [
+        90,
+        0,
+        0
+      ],
+      "code": null,
+      "match": "External package reference, NOT Panasonic exact CAD. Nichicon existing D10 x L12.5, P5 mm miniature radial model; original uncut leads retained. Negative stripe and short lead at pad 2.",
+      "sha256": "659bacf23c440d119984d1adad81d75da4c5540a4c2ec3135c2d6c47d9487b14",
+      "bytes": 189042,
+      "retrieved": "2026-11-09",
+      "geometry_modified": false,
+      "source_url": "https://www.nichicon.com/getmedia/2d359ea4-201f-4559-b57f-a3005ed54753/10X12-5_Lead.zip",
+      "source_title": "10x12.5 Series / Miniature Type Aluminum Electrolytic Capacitors",
+      "archive_member": "10X12.5_Lead/10x12.5_Lead.stp",
+      "source_library": "Nichicon"
+    }
+  ]
+}
