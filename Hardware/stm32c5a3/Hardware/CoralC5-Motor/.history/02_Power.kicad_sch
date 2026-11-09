@@ -3500,7 +3500,7 @@
 	)
 	(text "标称 5.088V，500kHz；芯片额定五安。\nCOMP：15.8k + 10nF，旁路 470pF。\n输出总电容含 USB 入口 150uF；稳定性待实测。"
 		(exclude_from_sim no)
-		(at 18.288 209.042 0)
+		(at 20.066 224.536 0)
 		(effects
 			(font
 				(size 2.54 2.54)
@@ -3555,7 +3555,7 @@
 	)
 	(text "D3 后接核心板 A48/B48；Core USB 不反供外设。\n两路散热焊盘均须接地焊接，额定电流不代表实板能力。"
 		(exclude_from_sim no)
-		(at 18.288 229.87 0)
+		(at 20.066 245.364 0)
 		(effects
 			(font
 				(size 2.54 2.54)
@@ -3566,7 +3566,7 @@
 	)
 	(text "预算 4.2A；荔枝派三安、Core 0.75A。\n灰度 0.30A、屏幕蓝牙 LDO 0.15A。"
 		(exclude_from_sim no)
-		(at 18.288 244.856 0)
+		(at 20.066 260.35 0)
 		(effects
 			(font
 				(size 2.54 2.54)
