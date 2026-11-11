@@ -1,6 +1,11 @@
 # 视觉板与摄像头接口
 
-2026-11-07 M2.8：**荔枝派 4A、MaixCAM2 与 DJI Osmo Action 4 均保留**。MaixCAM2 识别经 J19 同序六针，只接 1/2/5/6，额定 1A，保留保护和防反灌。Action 4 图传由 B 轨 J28 Type-C 供电，荔枝派由 A 轨 J25 Type-C 供电，两口固定五伏、3A 通告，无 PD/PPS。荔枝派 J18 原板针序 UART1 经电平处理连接 Core USART3；具体应用职责与通信协议未实现。详见 [接线](m2-interfaces.md)和 [M2.8 验证](../validation/2026-11-07-m28-resume.md)。
+整理日期：2026-11-11。
+当前保留荔枝派 4A、MaixCAM2 与 DJI Osmo Action 4。
+MaixCAM2 经 J19 六针接入，保留 U10 简化保护，没有独立防反灌或 UART 掉电隔离。
+Action 4 与荔枝派分别由 J28/J25 的固定五伏 Type-C 供电，无 PD/PPS。
+荔枝派模块 UART1 经电平处理接 Core UART4；MaixCAM2 接 Core UART5。
+详细脚序与保护边界见[接线表](m2-interfaces.md)，当前 PCB 状态见[复查记录](../validation/2026-11-10-motor-pcb-review.md)。
 
 荔枝派电源及串口已恢复；MaixCAM2 的识别职责保留。机械模型尚未按这三个模块的实际外形重建，旧夹持包络与孔位不能直接用于加工。
 

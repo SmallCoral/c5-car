@@ -1,0 +1,95 @@
+{
+  "date": "2026-11-10",
+  "scope": "Motor PCB only",
+  "commit": "0b9b2a6",
+  "kicad_version": "10.0.6",
+  "pcb_sha256": "9de443e35a98fb3a4f64617e2b5f9bcd7b38bafe53b79f5d6056c7db906da830",
+  "method": [
+    "Native DRC with --severity-all --all-track-errors --schematic-parity --refill-zones; without --save-board",
+    "Fresh Motor schematic kicadxml export",
+    "tools/verify_pcb_sync.py on a byte-identical temporary PCB copy and the fresh netlist; historical preservation checks skipped for the copy",
+    "Native statistics and separate PTH/NPTH drill export",
+    "Top 3D and copper/fabrication layer visual review; direct pad, track, via and zone inspection"
+  ],
+  "native_results": {
+    "pad_net_mismatches": 0,
+    "duplicate_H1_references": 5,
+    "drc_errors": 17,
+    "microvias": 1,
+    "drc_warnings": 6,
+    "schematic_parity_warnings": 6,
+    "unconnected": 0
+  },
+  "resolved_since_previous_review": [
+    "14 unconnected items including U16 OUT14 and GND",
+    "J8 V3V3/SWCLK clearance",
+    "Dangling L_nFAULT via"
+  ],
+  "remaining": [
+    {
+      "action": "Check the connector drawing and retract copper/paste around the NPTH; preserve required locating-hole geometry",
+      "location_mm": [
+        186.4,
+        120.8
+      ],
+      "id": "P1-J14",
+      "finding": "J14 pad51 to NPTH clearance 0.05mm vs configured 0.25mm"
+    },
+    {
+      "action": "Replace with a standard through via, e.g.0.6mm pad/0.3mm drill, then rerun DRC",
+      "location_mm": [
+        179.5,
+        118
+      ],
+      "id": "P1-MICROVIA",
+      "finding": "V5_SYS microvia diameter0.3/drill0.1 at board thickness1.6mm"
+    },
+    {
+      "action": "Widen or pour power paths, use multiple vias for layer transitions and budget drop/temperature at actual copper weight and 3A full load",
+      "classification": "Layout risk, not an open circuit or measured overheating",
+      "id": "P1-USB-POWER",
+      "finding": "U8 VBUS output uses 0.2mm traces; U16 input and output also contain 0.2mm current-carrying sections; no same-net power zones bypass these sections"
+    },
+    {
+      "action": "Add effective ground copper and thermal vias near/under EP following the manufacturer land-pattern and assembly requirements",
+      "classification": "Layout risk; temperature not measured",
+      "id": "P1-THERMAL",
+      "finding": "No GND thermal vias under EP of U1/U6/U2/U4; U6/U2/U4 have no GND vias within5mm of device center"
+    },
+    {
+      "action": "Move each inductor nearer SW, shorten power loops and keep feedback away from switching routes",
+      "classification": "Layout risk; EMI and load-step performance unmeasured",
+      "id": "P1-BUCK-SW",
+      "finding": "U1-SW to L1 and U6-SW to L2 use about8-9mm routes of width0.8mm"
+    },
+    {
+      "action": "Check actual package dimensions and assembly access; move parts or document justified exceptions; courtyard overlap alone does not establish a physical body collision",
+      "id": "P2-COURTYARD",
+      "finding": "16 courtyard overlaps, listed individually in drc-refill.json"
+    },
+    {
+      "action": "Use unique references for mechanical holes and reconcile PCB-only status and the2mm/3.2mm footprint definition",
+      "id": "P2-IDENTITY",
+      "finding": "Five H1 references, four without schematic paths; six native parity warnings remain"
+    },
+    {
+      "action": "Trim silk and add readable connector/polarity labels",
+      "id": "P3-SILK",
+      "finding": "J1 outline crosses edge x2; C13 silk clipped by C19 mask x4"
+    }
+  ],
+  "sources": [
+    "https://www.jlc.com/portal/vtechnology.html",
+    "https://www.diodes.com/datasheet/download/AP64500.pdf",
+    "https://www.ti.com/lit/ds/symlink/drv8874.pdf",
+    "https://www.ti.com/lit/ds/symlink/tps25810.pdf"
+  ],
+  "limitations": [
+    "No PCB or schematic edits made",
+    "No physical module/connector fit, thermal, power-startup, load-step or EMI validation",
+    "Current project rules are not a complete fabrication-specific DFM profile; only theDefault netclass is present",
+    "KiCad configured severities are preserved; native ignored_checks are recorded in DRC JSON",
+    "Board reviewed from saved files, not unsaved editor memory"
+  ],
+  "ready_for_fabrication": false
+}

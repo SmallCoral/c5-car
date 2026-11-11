@@ -1,6 +1,8 @@
 # Coral-C5 小车机械框架
 
-2026-11-09 已另行导出当前 Motor＋竖插 Core 的完整 PCB 总装到 `C:/Users/Shan_/Downloads/CoralC5-Motor_Core_Assembly.step`，并保存同名 PNG 预览。两板及182个元器件模型均包含，原PCB未改；三个Core按键在导出副本中采用现成STEP参考外形。来源指纹、装配参数、覆盖检查及限制见[本次PCB导出记录](validation/pcb-assembly-export-2026-11-09.json)。下方整车框架仍为2026-11-05历史模型。
+2026-11-09 另行导出过 Motor＋竖插 Core 的 PCB 总装和 PNG 预览，导出文件本体位于当时的本地 Downloads，未随仓库收录。
+两板及182个元器件模型的导出覆盖、三个Core按键的参考外形与来源指纹见[PCB 导出记录](validation/pcb-assembly-export-2026-11-09.json)。
+下方整车框架仍为2026-11-05历史模型；其中 Motor 99×99mm 是旧规划，当前 PCB 统计为100×100mm，见[PCB 复查](../Documentation/validation/2026-11-10-motor-pcb-review.md)。
 
 2026-11-05 首版总装。按本次要求自行设计底盘，复用 EdgeMind 的编码电机、轮胎和万向轮，采用当前 Core 实际 PCB 和 99×99 mm Motor 规划外形。此版用于布局和机构讨论，尚未完成加工、承载及实物装配验证。
 

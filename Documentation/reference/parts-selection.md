@@ -1,5 +1,13 @@
 # A 题器件选型与采购
 
+## 当前采购入口
+
+Motor 的完整 BOM、精简 RC 表和降本候选见[采购表说明](motor-bom.md)。
+2026-11-09 的完整表覆盖当前 PCB 的 140 个电气位号；其中替代件仍须验证，不能直接当作已实施选型或生产 BOM。
+以下 2026-11-07 M2.8 记录和更早报价保留为历史来源；其中 178 位号、复杂保护和已删除器件不代表当前精简设计。
+
+## 历史 M2.8 采购记录
+
 2026-11-07 M2.8，保留荔枝派 4A、MaixCAM2 与 Action 4。扩展板 U1/U6 为双路 AP64500SP-13，标称 5.088V、500kHz；U7 单独供 TFT/蓝牙三伏三。Core 仍由 D3 后 A48/B48 供电并由本板 AP63203 降压，三伏三不并联。
 
 22 种新增或修订 SKU 已取得立创国内直接商品页、明确型号和本地仓现货记录，覆盖全部 33 个新增器件及修订的旧器件。该范围之外的旧料尚未逐项重新核价；178 位号草表不是生产采购清单。见 [草表](../../Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/BOM_M2_SCHEMATIC_DRAFT.csv)、[原始记录](../../Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/procurement_m28.json)、[M2.8 验证](../validation/2026-11-07-m28-resume.md)。

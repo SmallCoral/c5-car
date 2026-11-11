@@ -1,0 +1,260 @@
+{
+  "date": "2026-11-11",
+  "source_commit": "0b9b2a66126a25e0a6bbb31a1b0634d705a871a3",
+  "tools": {
+    "git": "git version 2.45.1.windows.1",
+    "python": "3.11.5",
+    "documentation_skill": "mthines/agent-skills docs update",
+    "documentation_skill_commit": "2b8d75d325c4816c4c1f5f3e982f682442b79c5d"
+  },
+  "source_preservation": {
+    "checked_files": 1864,
+    "allowed_readme_edits": [
+      "Firmware/README.md",
+      "Hardware/stm32c5a3/Hardware/CoralC5-Motor/README.md",
+      "Hardware/stm32c5a3/README.md",
+      "Mechanical/README.md"
+    ],
+    "changed_design_files": [],
+    "missing_files": []
+  },
+  "preserved_incoming_files": [
+    {
+      "original": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/CoralC5-Motor_立创BOM_国内现货_2026-11-09.xlsx",
+      "current": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/bom/CoralC5-Motor_立创BOM_国内现货_2026-11-09.xlsx",
+      "sha256": "802d0f5037786578d883681789b3f920450b813a5669d0f6df4898ac1894cb3b",
+      "unchanged": true
+    },
+    {
+      "original": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/CoralC5-Motor_立创BOM_精简RC_2026-11-09.xlsx",
+      "current": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/bom/CoralC5-Motor_立创BOM_精简RC_2026-11-09.xlsx",
+      "sha256": "d74e06819cd7088395c425ca0c60706b1be3808390fa0d1d69034ffbe634c8ec",
+      "unchanged": true
+    },
+    {
+      "original": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/CoralC5-Motor_立创BOM_精简RC_降本_2026-11-09.xlsx",
+      "current": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/bom/CoralC5-Motor_立创BOM_精简RC_降本_2026-11-09.xlsx",
+      "sha256": "477e333085b8dbe2a248538e71baac5bb806f309b0e453a185120d03e583aa0a",
+      "unchanged": true
+    },
+    {
+      "original": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/pcb-review-2026-11-10/drc-refill.json",
+      "current": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/pcb-review-2026-11-10/drc-refill.json",
+      "sha256": "55de102076d06bdb34a1078cf60a3f1e1c7b070e2a4e22c8c2ff60d4df2733cd",
+      "unchanged": true
+    },
+    {
+      "original": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/pcb-review-2026-11-10/drill-report.txt",
+      "current": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/pcb-review-2026-11-10/drill-report.txt",
+      "sha256": "20075b7fecce5ddedc93e7ea3654bfdcabe5adf4131d9481798ced8434f317d7",
+      "unchanged": true
+    },
+    {
+      "original": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/pcb-review-2026-11-10/review-summary.json",
+      "current": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/pcb-review-2026-11-10/review-summary.json",
+      "sha256": "ed1a3b61863e62f2499c6760ee59d1b955991a73e111bf80b905be97a9d4964c",
+      "unchanged": true
+    },
+    {
+      "original": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/pcb-review-2026-11-10/stats.txt",
+      "current": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/pcb-review-2026-11-10/stats.txt",
+      "sha256": "681467be6f8e0003059be30e60c465951e25344b721532dc1e82aa9606bf6cbf",
+      "unchanged": true
+    },
+    {
+      "original": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/pcb-review-2026-11-10/verify-pcb-sync.json",
+      "current": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/pcb-review-2026-11-10/verify-pcb-sync.json",
+      "sha256": "07c4ca0be4835db60032c6bc1b9c4872ca9cb27b0daa879b2e2715f3d1a56193",
+      "unchanged": true
+    },
+    {
+      "original": "pelican-bike.html",
+      "current": "Documentation/archive/web-demos/pelican-bike.html",
+      "sha256": "7dd8b2fe0ddb3e308bc4a1275f5e1fd7689c6782c1d2e2b8854baf222fd47606",
+      "unchanged": true
+    }
+  ],
+  "links": {
+    "files": 62,
+    "local_links": 449,
+    "broken": []
+  },
+  "boms": [
+    {
+      "file": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/bom/CoralC5-Motor_立创BOM_国内现货_2026-11-09.xlsx",
+      "sha256": "802d0f5037786578d883681789b3f920450b813a5669d0f6df4898ac1894cb3b",
+      "material_rows": 53,
+      "parts": 140,
+      "unique_parts": 140,
+      "missing_from_board": [],
+      "extra": [],
+      "duplicates": [],
+      "wrong_quantities": []
+    },
+    {
+      "file": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/bom/CoralC5-Motor_立创BOM_精简RC_2026-11-09.xlsx",
+      "sha256": "d74e06819cd7088395c425ca0c60706b1be3808390fa0d1d69034ffbe634c8ec",
+      "material_rows": 39,
+      "parts": 98,
+      "unique_parts": 98,
+      "missing_from_board": [
+        "C10",
+        "C15",
+        "C17",
+        "C18",
+        "C2",
+        "C20",
+        "C30",
+        "C35",
+        "C37",
+        "C38",
+        "C40",
+        "C54",
+        "C55",
+        "C62",
+        "C63",
+        "C78",
+        "C83",
+        "C84",
+        "C89",
+        "C90",
+        "C91",
+        "C94",
+        "R1",
+        "R14",
+        "R15",
+        "R16",
+        "R17",
+        "R2",
+        "R3",
+        "R34",
+        "R35",
+        "R36",
+        "R37",
+        "R5",
+        "R6",
+        "R61",
+        "R63",
+        "R73",
+        "R79",
+        "R91",
+        "R92",
+        "R93"
+      ],
+      "extra": [],
+      "duplicates": [],
+      "wrong_quantities": []
+    },
+    {
+      "file": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/bom/CoralC5-Motor_立创BOM_精简RC_降本_2026-11-09.xlsx",
+      "sha256": "477e333085b8dbe2a248538e71baac5bb806f309b0e453a185120d03e583aa0a",
+      "material_rows": 39,
+      "parts": 98,
+      "unique_parts": 98,
+      "missing_from_board": [
+        "C10",
+        "C15",
+        "C17",
+        "C18",
+        "C2",
+        "C20",
+        "C30",
+        "C35",
+        "C37",
+        "C38",
+        "C40",
+        "C54",
+        "C55",
+        "C62",
+        "C63",
+        "C78",
+        "C83",
+        "C84",
+        "C89",
+        "C90",
+        "C91",
+        "C94",
+        "R1",
+        "R14",
+        "R15",
+        "R16",
+        "R17",
+        "R2",
+        "R3",
+        "R34",
+        "R35",
+        "R36",
+        "R37",
+        "R5",
+        "R6",
+        "R61",
+        "R63",
+        "R73",
+        "R79",
+        "R91",
+        "R92",
+        "R93"
+      ],
+      "extra": [],
+      "duplicates": [],
+      "wrong_quantities": []
+    }
+  ],
+  "gpio_csv": {
+    "signals": 39,
+    "endpoint_net_mismatches": []
+  },
+  "pcb": {
+    "sha256": "9de443e35a98fb3a4f64617e2b5f9bcd7b38bafe53b79f5d6056c7db906da830",
+    "historical_report_matches_saved_board": true,
+    "errors": 17,
+    "warnings": 6,
+    "unconnected": 0,
+    "parity_warnings": 6,
+    "ready_for_fabrication": false
+  },
+  "offline_images": {
+    "files": 27,
+    "total_bytes": 4482417,
+    "changed_or_missing": [],
+    "original_source_document_unchanged": true
+  },
+  "legacy_link_repairs": [
+    {
+      "file": "Documentation/电机/ACG720与现有电源板接线_2026-10-10.md",
+      "previous_sha256": "7da192751a4881fc2e767d40140a24a8128f58346391532243e358962a3b229d",
+      "legacy_references": [
+        "../../code/fpga/acg720-motor-test/README.md",
+        "../../code/fpga/acg720-motor-test/MOTOR-IMPLEMENTATION-2026-10-10.md"
+      ],
+      "new_sha256": "6e63a43b2dfd95b2094ea202f5fcbee19d7e68ffae098fb45b6f998d2a59dbe9"
+    },
+    {
+      "file": "Documentation/电机/ACG720与现有电源板接线_2026-10-14.md",
+      "previous_sha256": "f25b3e376fc070e8f3f6a9516752dc2f3822a97d1c475eb1d4235d7721ef1e32",
+      "legacy_references": [
+        "../../code/fpga/acg720-motion-control/BUILD-2026-10-14.md",
+        "../../output/pdf/ACG720-AT8236-wiring-2026-10-14.pdf",
+        "../../output/pdf/ACG720-AT8236-wiring-2026-10-14.png"
+      ],
+      "new_sha256": "0db3a89ec07b039648261ad33f4c91f38eb7fc2791ad9680c37d19654ff908fa"
+    },
+    {
+      "file": "Documentation/电机/AT8236模块资料核对.md",
+      "previous_sha256": "8cf05d7b5eec9032736abb22c7089b0243391d3ae8a06735a29fe200e0bec8b7",
+      "legacy_references": [
+        "../../pcb/power/kicad/review/at8236-interface-audit.json"
+      ],
+      "new_sha256": "45176566d72a09ecb8f6f95d2754cd6dc251589ded621d75fcee0d2e14dd4288"
+    }
+  ],
+  "not_performed": [
+    "new stock or price verification",
+    "hardware design edits",
+    "new PCB DRC run",
+    "firmware build/flash",
+    "mechanical rebuild",
+    "physical validation"
+  ],
+  "pass": true
+}

@@ -1,5 +1,12 @@
 # Skills 安装与使用记录
 
+## 2026-11-11 项目整理
+
+本轮从项目本地缓存的完整支持树读取 `skills/authoring/docs/SKILL.md`，使用 `update` 模式。
+缓存版本仍为下述 `2b8d75d325c4816c4c1f5f3e982f682442b79c5d`，读取 routing、placement、writing、drift 和 CLAUDE.md 规则；没有全局安装或升级技能。
+缓存位于被忽略的 `.scratch/m2/docs-support/`，不随 Git 提交。
+此路径只描述本轮环境；历史 Shan_ 路径不应当作其他机器的可执行命令。
+
 核对日期：2026-11-03。
 来源为[mthines/agent-skills](https://github.com/mthines/agent-skills)。
 本机完整支持树固定在提交 `2b8d75d325c4816c4c1f5f3e982f682442b79c5d`。

@@ -1,10 +1,32 @@
 # CoralC5-Motor
 
+## 当前状态
+
+整理日期：2026-11-11。
+当前电路为 M2.8P2，PCB 主要布线已完成。
+11 月 10 日原生 DRC 重新铺铜后为 0 项未连接、17 条错误、6 条警告，另有 6 条原理图一致性警告。
+有效电气焊盘的网络核对无错配；安装孔位号、封装定义、微孔和电源布局仍待处理。
+这不是打板发布版，具体问题、源码指纹和工具命令见[PCB 复查](../../../../Documentation/validation/2026-11-10-motor-pcb-review.md)。
+
+| 内容 | 入口 |
+| --- | --- |
+| 编辑工程 | [KiCad 工程](CoralC5-Motor.kicad_pro)、[原理图](CoralC5-Motor.kicad_sch)、[PCB](CoralC5-Motor.kicad_pcb) |
+| 查看图纸 | [十页原理图 PDF](docs/CoralC5-Motor_Schematic.pdf) |
+| 采购 | [完整 BOM、精简 RC 和降本候选](docs/bom/README.md) |
+| 电气定义 | [外接接口](../../../../Documentation/reference/m2-interfaces.md)、[GPIO 分配](../../../../Documentation/reference/motor-core-pins.md) |
+| 原始 PCB 检查 | [DRC](docs/pcb-review-2026-11-10/drc-refill.json)、[同步核对](docs/pcb-review-2026-11-10/verify-pcb-sync.json)、[摘要](docs/pcb-review-2026-11-10/review-summary.json) |
+| 历史检查 | [验证索引](../../../../Documentation/validation/README.md) |
+
+三份 XLSX 均为采购快照，不自动更新原理图或 PCB 中的料号。
+精简表省略的阻容仍属于设计，降本替换仍须核对引脚、封装及外围。
+
+## 历史工作记录
+
 2026-11-09 后续：四个板级安装孔已改为 M3 用 Ø3.2mm NPTH，LCD 两个 Ø2.0mm 孔保留。孔位、UUID、铜线和原理图未改；见[修改及钻孔核对记录](../../../../Documentation/validation/2026-11-09-m3-mounting-holes.md)。
 
 2026-11-09 仅更新 PCB 元器件 3D 模型，原理图仍为 M2.8P2。下载来源、七处绑定、外形参考差异、预览及未通过的原生 DRC 见[3D模型记录](../../../../Documentation/validation/2026-11-09-3d-models.md)和[模型来源说明](Models/README.md)。布局、焊盘、网络和铜线与本次基线一致，没有同步或核验本次之前的用户布线改动。
 
-2026-11-08 引脚规划快照：142实体、184网络、39路GPIO，重新分配20路。原生ERC0错误0警告，原理图956项及独立功能320项通过；该次保留当时的142封装、329个走线/过孔对象，未同步GPIO分配。当前电气定义见[GPIO分配](../../../../Documentation/reference/motor-core-pins.md)、[复核记录](../../../../Documentation/validation/2026-11-08-pinplan-rework.md)与[交接](../../../../.agent/main/handoff.md)。
+2026-11-08 引脚规划快照：142实体、184网络、39路GPIO，重新分配20路。原生ERC0错误0警告，原理图956项及独立功能320项通过；该次保留当时的142封装、329个走线/过孔对象，未同步GPIO分配。这是当时状态，后续有效焊盘网络以 11 月 10 日复查为准。当前电气定义见[GPIO分配](../../../../Documentation/reference/motor-core-pins.md)、[复核记录](../../../../Documentation/validation/2026-11-08-pinplan-rework.md)与[交接](../../../../.agent/main/handoff.md)。
 
 以下F8修复与M2.8交付均为历史快照，其中旧控电、隔离、GPIO及DRC数不代表当前状态。
 

@@ -1,0 +1,31 @@
+Drill report for CoralC5-Motor.kicad_pcb
+Created on 2026-11-10T19:39:14
+
+Copper Layer Stackup:
+    =============================================================
+    L1 :  F.Cu                      front
+    L2 :  B.Cu                      back
+
+
+Drill file 'CoralC5-Motor-PTH.drl' contains
+    plated through holes:
+    =============================================================
+    T1  0.100mm  0.0039"  (1 hole)
+    T2  0.300mm  0.0118"  (872 holes))
+    T3  0.600mm  0.0236"  (10 holes)  (with 10 slots)
+    T4  0.950mm  0.0374"  (32 holes))
+    T5  1.000mm  0.0394"  (34 holes))
+    T6  1.200mm  0.0472"  (3 holes)  (with 3 slots)
+    T7  2.700mm  0.1063"  (2 holes))
+
+    Total plated holes count 954
+
+
+Drill file 'CoralC5-Motor-NPTH.drl' contains
+    unplated through holes:
+    =============================================================
+    T1  1.200mm  0.0472"  (2 holes))
+    T2  2.000mm  0.0787"  (2 holes))
+    T3  3.200mm  0.1260"  (4 holes))
+
+    Total unplated holes count 8

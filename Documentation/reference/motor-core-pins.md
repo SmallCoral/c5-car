@@ -1,6 +1,8 @@
 # Motor 核心板信号分配
 
-更新日期：2026-11-08，M2.8P2。本轮按用户当前 PCB 焊盘位置重新分配20路 GPIO，共39路。Core 的98触点针序、原理图、Motor PCB 器件位置与铜线保持原样。**PCB 焊盘网络尚未同步本轮分配，旧飞线不能代表下表。**
+分配日期：2026-11-08，M2.8P2，共39路 GPIO。
+下表保留当时重新分配20路 GPIO 的结果，Core 的98触点合同不变。
+2026-11-10 复查已确认当前 Motor PCB 的有效焊盘网络与原理图匹配，未连接项为零；剩余孔间距、散热和功率布线问题见[PCB 复查](../validation/2026-11-10-motor-pcb-review.md)。
 
 机器表为 [13路轮控制](../../Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/core_pin_assignment.csv)和[26路外设](../../Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/m2_pin_assignment.csv)。固定触点依据[共享接口表](../../Hardware/stm32c5a3/Hardware/Shared/interface.csv)；逐路功能证据见[39路审计表](../../Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/functional-pinout.csv)，本轮范围和命令见[复核记录](../validation/2026-11-08-pinplan-rework.md)。
 
@@ -67,4 +69,5 @@ TX/RX 从 Core 方向命名，MCU TX 接模块 RX。J14 的 A/B 触点编号按�
 - 左故障 PH4/EXTI4，右故障 PC10/EXTI10，互不冲突。四键低有效、轮询消抖；灰度PE7～PE14使用无内部上下拉输入。
 - MOTOR_EN_REQ改PA3；上电、复位及故障时保持低。PA9、PA11/PA12、PA13/PA14、PH2、PE3、PD2仍保留Core原用途。
 
-本轮未编写这些外设的初始化或协议。原理图功能成立不代表现有固件、未同步PCB或整车已经可运行。封装、线序、电源和电平边界见[M2接口](m2-interfaces.md)。
+这些外设的初始化和协议尚未写入固件。
+网络匹配不能代替铜线载流、实物或整车验证；封装、线序、电源和电平边界见[M2接口](m2-interfaces.md)。

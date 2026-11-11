@@ -1,0 +1,172 @@
+{
+  "date": "2026-11-11",
+  "source_page": "https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/6_peripheral.html",
+  "purpose": "Restore missing images referenced by the existing offline source document.",
+  "original_document_sha256": "50c0e64c52e752328103e0178339b4ff3d19c10a3546289497c5fca9250a1710",
+  "original_document_unchanged": true,
+  "license": "Original Sipeed copyright and notices remain applicable; this is not an open-hardware license declaration.",
+  "files": [
+    {
+      "file": "audiomixer.png",
+      "url": "https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/assets/peripheral/audiomixer.png",
+      "bytes": 28404,
+      "sha256": "6deac4cea466e00b368e1a192fd2f82601a221a4ec69be270f52b4ecfbddca41"
+    },
+    {
+      "file": "check_debugserver.png",
+      "url": "https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/assets/peripheral/check_debugserver.png",
+      "bytes": 220615,
+      "sha256": "1c00065ef70938f7349fd2ed9a2dc032d73bc973f5fec007dfc17a95ed401d85"
+    },
+    {
+      "file": "check_usb_lan_ip.png",
+      "url": "https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/assets/peripheral/check_usb_lan_ip.png",
+      "bytes": 81775,
+      "sha256": "9c76ba9c3779a8e37099bb392cf148203abe35f015daed3599cd24ca29f1ce89"
+    },
+    {
+      "file": "fpc.jpg",
+      "url": "https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/assets/peripheral/fpc.jpg",
+      "bytes": 309389,
+      "sha256": "b89bace542ab100c8128db10f9daecc7f9b9b82d65607aebd7a6e0786d049c04"
+    },
+    {
+      "file": "gpio_num.png",
+      "url": "https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/assets/peripheral/gpio_num.png",
+      "bytes": 371929,
+      "sha256": "05c5b12b9eb91b590fe9c9a7caa4868e512913c7c7daa9132977a6b95da0c732"
+    },
+    {
+      "file": "gpu_status_desktop.png",
+      "url": "https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/assets/peripheral/gpu_status_desktop.png",
+      "bytes": 36092,
+      "sha256": "389685fe5b5ac9cb25ea14c218d1ff51861a0ce2fff46fb6853b14e72d80909a"
+    },
+    {
+      "file": "gpu_status_play_video.png",
+      "url": "https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/assets/peripheral/gpu_status_play_video.png",
+      "bytes": 390755,
+      "sha256": "111dda14d2bd8b44db90c5f17655eb6a5cba540236092991ac7091e3ecacee02"
+    },
+    {
+      "file": "i2c_io.png",
+      "url": "https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/assets/peripheral/i2c_io.png",
+      "bytes": 84110,
+      "sha256": "794270d7e75786ff6f7cbe40d54fcfabb91b4e21bc7b6ceb181dad7b97e8c12c"
+    },
+    {
+      "file": "io_map.png",
+      "url": "https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/assets/peripheral/io_map.png",
+      "bytes": 193150,
+      "sha256": "784fedce55aabc59a6cc9f1d9141bc032cf9e4c39a8c4267f0996f2d202ef5b6"
+    },
+    {
+      "file": "jtag_connect_out.jpg",
+      "url": "https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/assets/peripheral/jtag_connect_out.jpg",
+      "bytes": 112052,
+      "sha256": "18a76c7ae98ef39c31cc2d8e700a72a152b02e15d750ad85c0f00815641c56d6"
+    },
+    {
+      "file": "jtag_connect_pin.jpg",
+      "url": "https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/assets/peripheral/jtag_connect_pin.jpg",
+      "bytes": 55295,
+      "sha256": "7876cfe0fd62a9a9ad5afbd225f2fbabaa927139f2fdea50b04fc8343a2ba8e3"
+    },
+    {
+      "file": "list_touchsreen.png",
+      "url": "https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/assets/peripheral/list_touchsreen.png",
+      "bytes": 67149,
+      "sha256": "47fbf5fd114ec8cb9569358bb5993d1c31de6082a9a29d38fc9651f533c33f2a"
+    },
+    {
+      "file": "mipi_csi_connect.jpg",
+      "url": "https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/assets/peripheral/mipi_csi_connect.jpg",
+      "bytes": 215883,
+      "sha256": "7dbd2ffc231611e9b12d3185232a3651038a4bf2213160f8ff0d71fc9652f7ef"
+    },
+    {
+      "file": "mipi_dsi_connect.jpeg",
+      "url": "https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/assets/peripheral/mipi_dsi_connect.jpeg",
+      "bytes": 260494,
+      "sha256": "dea3b426e6d4463b291d0582ad08abea936ef9f13cc270827da953b7aef8c8e0"
+    },
+    {
+      "file": "open_debugserver.png",
+      "url": "https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/assets/peripheral/open_debugserver.png",
+      "bytes": 121476,
+      "sha256": "e08d82faff204f9e8ee4610b3a869772ffcac60234eb783e85a2b269aff05c61"
+    },
+    {
+      "file": "peripheral_gpio_information.png",
+      "url": "https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/assets/peripheral/peripheral_gpio_information.png",
+      "bytes": 29041,
+      "sha256": "531879974d4caf9db8661746bac4647431b3275e22ea178174046da77c9fcd4a"
+    },
+    {
+      "file": "tft_demo.jpg",
+      "url": "https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/assets/peripheral/tft_demo.jpg",
+      "bytes": 97249,
+      "sha256": "f4dacfd74d473c8f4e41ac62eddee518271b71d87120b22c88088e1e32018fae"
+    },
+    {
+      "file": "touchconnector_on_board.jpeg",
+      "url": "https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/assets/peripheral/touchconnector_on_board.jpeg",
+      "bytes": 80109,
+      "sha256": "4a240e1d9b241ca811a7690545240e92d3a3d196461b1dffacff6134d0d42399"
+    },
+    {
+      "file": "tpconnector_on_touchscreen.jpeg",
+      "url": "https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/assets/peripheral/tpconnector_on_touchscreen.jpeg",
+      "bytes": 81250,
+      "sha256": "a4e1ddc734285f5967b44e3256336902e9f91a168191ebd6b6c365cf0b93db76"
+    },
+    {
+      "file": "ttl_link.png",
+      "url": "https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/assets/peripheral/ttl_link.png",
+      "bytes": 355316,
+      "sha256": "02dd88f3aefc2c81e37147afc91d6981a2d754eb4dcfda555d36859e3ad0c2f8"
+    },
+    {
+      "file": "ttl_login.png",
+      "url": "https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/assets/peripheral/ttl_login.png",
+      "bytes": 7749,
+      "sha256": "b9f7bceef63202c52ea007a9de4ccc2292a44766004a1b19f06e46f7c35c1339"
+    },
+    {
+      "file": "usb_cam_connect.jpg",
+      "url": "https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/assets/peripheral/usb_cam_connect.jpg",
+      "bytes": 248321,
+      "sha256": "6ef1bcea88268f7b683874183db91a09bc1775f97e29cb58a438b09156d2a91d"
+    },
+    {
+      "file": "usb_cam_use.jpg",
+      "url": "https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/assets/peripheral/usb_cam_use.jpg",
+      "bytes": 145143,
+      "sha256": "eb65169c71d5698688c3be8ef55eac10ff88e69ee0cb46addc33f7e1db196296"
+    },
+    {
+      "file": "usb_lan_connect.jpg",
+      "url": "https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/assets/peripheral/usb_lan_connect.jpg",
+      "bytes": 264754,
+      "sha256": "236c5f08e26476115c85cdab12c5aaeef791aeac4be98e4ca82744bec21ebad4"
+    },
+    {
+      "file": "usb_lan_use.png",
+      "url": "https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/assets/peripheral/usb_lan_use.png",
+      "bytes": 4388,
+      "sha256": "01cb5c1e74145966fc6e7bd23ea5689941b14eba403201e5a5cb07945ec62999"
+    },
+    {
+      "file": "usb_ssd_connect.jpg",
+      "url": "https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/assets/peripheral/usb_ssd_connect.jpg",
+      "bytes": 232530,
+      "sha256": "c5de980e12e0b225251e1e2c4ef08b928b23d61187c602dacd87ed12c59d9e75"
+    },
+    {
+      "file": "usb_ssd_use.png",
+      "url": "https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/assets/peripheral/usb_ssd_use.png",
+      "bytes": 387999,
+      "sha256": "627f83c3cd79485db28d5e8689a2bc5d9b2beb6954d0f6757d05f9213f44451d"
+    }
+  ]
+}

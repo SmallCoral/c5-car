@@ -1,8 +1,11 @@
 # Coral-C5 固件
 
-这里保留了 STM32C5A3VGT6 的配置文件和生成的 CMake 工程。当前 `main.c` 只调用 `mx_system_init()`，初始化成功后进入空循环。硬件已拆成 B1 的 Core 和 Expansion，配置与应用尚未按这次端口分配重新生成，网口、ESP32-C3 和 microSD 的应用代码也还没有接进去。
+这里保留了 STM32C5A3VGT6 的配置文件和生成的 CMake 工程。
+当前 `main.c` 只调用 `mx_system_init()`，初始化成功后进入空循环。
+校赛 A 题采用 Core + Motor，配置尚未按当前 GPIO 分配接入。
+下方网络 Expansion 的外设说明属于历史方案，其工程文件不在当前仓库中。
 
-Core也可配Motor底板，两种底板分别使用，不能把其外设配置同时套用。
+Core 的 Motor 与历史 Expansion 外设配置不能同时套用。
 Motor当前引脚和定时器分配见[Motor核心板信号分配](../Documentation/reference/motor-core-pins.md)；该配置尚未写入固件。
 
 ## 文件放在哪里

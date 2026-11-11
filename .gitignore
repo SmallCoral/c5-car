@@ -4,6 +4,7 @@ __pycache__/
 .venv/
 node_modules/
 /.scratch/
+/.workbuddy-ai/
 
 # Firmware build products and local editor state.
 Firmware/**/build/
@@ -13,3 +14,6 @@ Firmware/**/build/
 *.kicad_prl
 *.lck
 *-backups/
+~$*.xlsx
+~$*.docx
+/Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/schematic-only-resume/raster-preview-profile/
