@@ -1,0 +1,1361 @@
+{
+  "date": "2026-11-16",
+  "base_commit": "b9aaa695109ca046874f67017f2174d682bed09d",
+  "index_files": 6282,
+  "markdown_by_scope": {
+    "archive": 26,
+    "project_docs": 88,
+    "source_material_or_archive": 13,
+    "vendor": 13
+  },
+  "local_links_by_scope": {
+    "archive": 199,
+    "project_docs": 638,
+    "source_material_or_archive": 80,
+    "vendor": 5
+  },
+  "broken_links": [
+    {
+      "scope": "archive",
+      "path": ".agent/main/archive/2026-11-08-before-simplification-handoff.md",
+      "line": 7,
+      "target": "../../Documentation/validation/2026-11-08-f8-association.md",
+      "resolved": ".agent/Documentation/validation/2026-11-08-f8-association.md"
+    },
+    {
+      "scope": "archive",
+      "path": ".agent/main/archive/2026-11-08-before-simplification-handoff.md",
+      "line": 32,
+      "target": "../../README.md",
+      "resolved": ".agent/README.md"
+    },
+    {
+      "scope": "archive",
+      "path": ".agent/main/archive/2026-11-08-before-simplification-handoff.md",
+      "line": 32,
+      "target": "../../Documentation/validation/2026-11-07-m28-resume.md",
+      "resolved": ".agent/Documentation/validation/2026-11-07-m28-resume.md"
+    },
+    {
+      "scope": "archive",
+      "path": ".agent/main/archive/2026-11-08-before-simplification-handoff.md",
+      "line": 33,
+      "target": "../../Documentation/reference/m2-interfaces.md",
+      "resolved": ".agent/Documentation/reference/m2-interfaces.md"
+    },
+    {
+      "scope": "archive",
+      "path": ".agent/main/archive/2026-11-08-before-simplification-handoff.md",
+      "line": 44,
+      "target": "archive/",
+      "resolved": ".agent/main/archive/archive"
+    },
+    {
+      "scope": "vendor",
+      "path": "Firmware/vendor/CMSIS/Documentation/Overview.md",
+      "line": 7,
+      "target": "./images/cmsis_components.png",
+      "resolved": "Firmware/vendor/CMSIS/Documentation/images/cmsis_components.png"
+    },
+    {
+      "scope": "vendor",
+      "path": "Firmware/vendor/CMSIS/Documentation/Overview.md",
+      "line": 13,
+      "target": "./images/cmsis6introwebinar.png",
+      "resolved": "Firmware/vendor/CMSIS/Documentation/images/cmsis6introwebinar.png"
+    },
+    {
+      "scope": "vendor",
+      "path": "Firmware/vendor/stm32c5xx_drivers/Release_Notes.md",
+      "line": 14,
+      "target": "_htmresc/st_logo_2020.png",
+      "resolved": "Firmware/vendor/stm32c5xx_drivers/_htmresc/st_logo_2020.png"
+    },
+    {
+      "scope": "vendor",
+      "path": "Firmware/vendor/stm32c5xx_drivers/Release_Notes.md",
+      "line": 4,
+      "target": "_htmresc/favicon.png",
+      "resolved": "Firmware/vendor/stm32c5xx_drivers/_htmresc/favicon.png"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/README.md",
+      "line": 7,
+      "target": "2026校赛题目（小车·无人机·嵌入式AI）.pdf",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/2026校赛题目（小车·无人机·嵌入式AI）.pdf"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/README.md",
+      "line": 7,
+      "target": "AC题清单.doc",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/AC题清单.doc"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/README.md",
+      "line": 8,
+      "target": "explanation/a-system-outline.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/explanation/a-system-outline.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/README.md",
+      "line": 9,
+      "target": "reference/classmate-materials.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/reference/classmate-materials.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/README.md",
+      "line": 9,
+      "target": "26电赛/README.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/26电赛/README.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/README.md",
+      "line": 9,
+      "target": "step_motor/README.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/step_motor/README.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/README.md",
+      "line": 10,
+      "target": "explanation/classmate-balance-reference.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/explanation/classmate-balance-reference.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/README.md",
+      "line": 11,
+      "target": "../Mechanical/README.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Mechanical/README.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/README.md",
+      "line": 11,
+      "target": "explanation/mechanical-outline.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/explanation/mechanical-outline.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/README.md",
+      "line": 11,
+      "target": "../Mechanical/parameters.yaml",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Mechanical/parameters.yaml"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/README.md",
+      "line": 12,
+      "target": "reference/parts-selection.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/reference/parts-selection.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/README.md",
+      "line": 13,
+      "target": "reference/cameras.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/reference/cameras.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/README.md",
+      "line": 14,
+      "target": "reference/external-modules.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/reference/external-modules.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/README.md",
+      "line": 15,
+      "target": "感为八路灰度资料/README.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/感为八路灰度资料/README.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/README.md",
+      "line": 16,
+      "target": "reference/pending-hardware-changes.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/reference/pending-hardware-changes.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/README.md",
+      "line": 17,
+      "target": "reference/motor-interface.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/reference/motor-interface.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/README.md",
+      "line": 17,
+      "target": "reference/motor-core-pins.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/reference/motor-core-pins.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/README.md",
+      "line": 17,
+      "target": "reference/resource-plan.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/reference/resource-plan.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/README.md",
+      "line": 18,
+      "target": "how-to/bring-up.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/how-to/bring-up.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/README.md",
+      "line": 19,
+      "target": "validation/2026-11-06-m2-schematic.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/validation/2026-11-06-m2-schematic.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/README.md",
+      "line": 19,
+      "target": "validation/2026-11-03-motor-pin-remap.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/validation/2026-11-03-motor-pin-remap.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/README.md",
+      "line": 19,
+      "target": "validation/2026-11-03-remove-j3-j5.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/validation/2026-11-03-remove-j3-j5.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/README.md",
+      "line": 19,
+      "target": "validation/2026-11-03.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/validation/2026-11-03.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/README.md",
+      "line": 20,
+      "target": "validation/2026-11-05-classmate-materials.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/validation/2026-11-05-classmate-materials.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/README.md",
+      "line": 21,
+      "target": "validation/2026-11-05-mechanical-framework.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/validation/2026-11-05-mechanical-framework.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/README.md",
+      "line": 33,
+      "target": "reference/skills.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/reference/skills.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/reference/m2-interfaces.md",
+      "line": 3,
+      "target": "../../Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/CoralC5-Motor_Schematic.pdf",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/CoralC5-Motor_Schematic.pdf"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/reference/m2-interfaces.md",
+      "line": 3,
+      "target": "../../Hardware/stm32c5a3/Hardware/CoralC5-Motor/CoralC5-Motor.kicad_pro",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Hardware/stm32c5a3/Hardware/CoralC5-Motor/CoralC5-Motor.kicad_pro"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/reference/m2-interfaces.md",
+      "line": 3,
+      "target": "../validation/2026-11-06-m2-schematic.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/validation/2026-11-06-m2-schematic.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/reference/m2-interfaces.md",
+      "line": 27,
+      "target": "../../Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/sources/TFT_dimension_detail.png",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/sources/TFT_dimension_detail.png"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/reference/m2-interfaces.md",
+      "line": 27,
+      "target": "../../Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/sources/TFT_hole_offset_detail.png",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/sources/TFT_hole_offset_detail.png"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/reference/m2-interfaces.md",
+      "line": 71,
+      "target": "../../Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/core_motor_98_contact_audit.csv",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/core_motor_98_contact_audit.csv"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Hardware/stm32c5a3/Hardware/CoralC5-Motor/README.md",
+      "line": 3,
+      "target": "CoralC5-Motor.kicad_pro",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Hardware/stm32c5a3/Hardware/CoralC5-Motor/CoralC5-Motor.kicad_pro"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Hardware/stm32c5a3/Hardware/CoralC5-Motor/README.md",
+      "line": 3,
+      "target": "CoralC5-Motor.kicad_sch",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Hardware/stm32c5a3/Hardware/CoralC5-Motor/CoralC5-Motor.kicad_sch"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Hardware/stm32c5a3/Hardware/CoralC5-Motor/README.md",
+      "line": 3,
+      "target": "docs/CoralC5-Motor_Schematic.pdf",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/CoralC5-Motor_Schematic.pdf"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Hardware/stm32c5a3/Hardware/CoralC5-Motor/README.md",
+      "line": 7,
+      "target": "docs/m2_pin_assignment.csv",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/m2_pin_assignment.csv"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Hardware/stm32c5a3/Hardware/CoralC5-Motor/README.md",
+      "line": 17,
+      "target": "../../../../Documentation/validation/2026-11-06-m2-schematic.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/validation/2026-11-06-m2-schematic.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Hardware/stm32c5a3/Hardware/CoralC5-Motor/README.md",
+      "line": 21,
+      "target": "docs/BOM_M2_SCHEMATIC_DRAFT.csv",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/BOM_M2_SCHEMATIC_DRAFT.csv"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Hardware/stm32c5a3/Hardware/CoralC5-Motor/README.md",
+      "line": 21,
+      "target": "docs/sources/README.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/sources/README.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/README.md",
+      "line": 10,
+      "target": "Documentation/explanation/a-system-outline.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/explanation/a-system-outline.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/README.md",
+      "line": 11,
+      "target": "Documentation/reference/classmate-materials.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/reference/classmate-materials.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/README.md",
+      "line": 12,
+      "target": "Documentation/reference/external-modules.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/reference/external-modules.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/README.md",
+      "line": 13,
+      "target": "Documentation/reference/parts-selection.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/reference/parts-selection.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/README.md",
+      "line": 14,
+      "target": "Documentation/reference/motor-interface.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/reference/motor-interface.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/README.md",
+      "line": 15,
+      "target": "Documentation/reference/motor-core-pins.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/reference/motor-core-pins.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/README.md",
+      "line": 16,
+      "target": "Mechanical/README.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Mechanical/README.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/README.md",
+      "line": 17,
+      "target": "Documentation/reference/resource-plan.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/reference/resource-plan.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/README.md",
+      "line": 18,
+      "target": "Documentation/validation/2026-11-03-motor-pin-remap.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/validation/2026-11-03-motor-pin-remap.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/README.md",
+      "line": 19,
+      "target": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/CoralC5-Motor.kicad_pro",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Hardware/stm32c5a3/Hardware/CoralC5-Motor/CoralC5-Motor.kicad_pro"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/README.md",
+      "line": 20,
+      "target": "Firmware/README.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Firmware/README.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/README.md",
+      "line": 28,
+      "target": "Documentation/validation/2026-11-06-m2-schematic.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Documentation/validation/2026-11-06-m2-schematic.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/README.md",
+      "line": 44,
+      "target": "Hardware/stm32c5a3/THIRD_PARTY.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-layout/documentation-before-layout/Hardware/stm32c5a3/THIRD_PARTY.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/README.md",
+      "line": 7,
+      "target": "2026校赛题目（小车·无人机·嵌入式AI）.pdf",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/2026校赛题目（小车·无人机·嵌入式AI）.pdf"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/README.md",
+      "line": 7,
+      "target": "AC题清单.doc",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/AC题清单.doc"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/README.md",
+      "line": 9,
+      "target": "reference/classmate-materials.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/reference/classmate-materials.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/README.md",
+      "line": 9,
+      "target": "26电赛/README.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/26电赛/README.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/README.md",
+      "line": 9,
+      "target": "step_motor/README.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/step_motor/README.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/README.md",
+      "line": 10,
+      "target": "explanation/classmate-balance-reference.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/explanation/classmate-balance-reference.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/README.md",
+      "line": 11,
+      "target": "../Mechanical/README.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Mechanical/README.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/README.md",
+      "line": 11,
+      "target": "explanation/mechanical-outline.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/explanation/mechanical-outline.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/README.md",
+      "line": 11,
+      "target": "../Mechanical/parameters.yaml",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Mechanical/parameters.yaml"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/README.md",
+      "line": 13,
+      "target": "reference/cameras.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/reference/cameras.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/README.md",
+      "line": 15,
+      "target": "感为八路灰度资料/README.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/感为八路灰度资料/README.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/README.md",
+      "line": 17,
+      "target": "reference/motor-interface.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/reference/motor-interface.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/README.md",
+      "line": 18,
+      "target": "how-to/bring-up.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/how-to/bring-up.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/README.md",
+      "line": 19,
+      "target": "validation/2026-11-03-motor-pin-remap.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/validation/2026-11-03-motor-pin-remap.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/README.md",
+      "line": 19,
+      "target": "validation/2026-11-03-remove-j3-j5.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/validation/2026-11-03-remove-j3-j5.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/README.md",
+      "line": 19,
+      "target": "validation/2026-11-03.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/validation/2026-11-03.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/README.md",
+      "line": 20,
+      "target": "validation/2026-11-05-classmate-materials.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/validation/2026-11-05-classmate-materials.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/README.md",
+      "line": 21,
+      "target": "validation/2026-11-05-mechanical-framework.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/validation/2026-11-05-mechanical-framework.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/README.md",
+      "line": 33,
+      "target": "reference/skills.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/reference/skills.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/explanation/a-system-outline.md",
+      "line": 4,
+      "target": "../reference/cameras.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/reference/cameras.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/reference/external-modules.md",
+      "line": 7,
+      "target": "cameras.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/reference/cameras.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/reference/external-modules.md",
+      "line": 8,
+      "target": "cameras.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/reference/cameras.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/reference/external-modules.md",
+      "line": 9,
+      "target": "motor-interface.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/reference/motor-interface.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/reference/external-modules.md",
+      "line": 9,
+      "target": "../Emm_V5.0闭环步进资料/README.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/Emm_V5.0闭环步进资料/README.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/reference/external-modules.md",
+      "line": 9,
+      "target": "../step_motor/README.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/step_motor/README.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/reference/external-modules.md",
+      "line": 10,
+      "target": "../感为八路灰度资料/README.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/感为八路灰度资料/README.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/reference/external-modules.md",
+      "line": 16,
+      "target": "../26电赛/26H 平衡球装置 天空星F4.zip",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/26电赛/26H 平衡球装置 天空星F4.zip"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/reference/external-modules.md",
+      "line": 19,
+      "target": "motor-interface.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/reference/motor-interface.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/reference/external-modules.md",
+      "line": 24,
+      "target": "../validation/2026-11-06-external-modules.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/validation/2026-11-06-external-modules.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/reference/motor-core-pins.md",
+      "line": 5,
+      "target": "../../Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/core_pin_assignment.csv",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/core_pin_assignment.csv"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/reference/motor-core-pins.md",
+      "line": 6,
+      "target": "../../Hardware/stm32c5a3/Hardware/Shared/interface.csv",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Hardware/stm32c5a3/Hardware/Shared/interface.csv"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/reference/motor-core-pins.md",
+      "line": 64,
+      "target": "../../Hardware/stm32c5a3/Hardware/Shared/sources/DS15137_STM32C5Axxx_Datasheet_Rev3.pdf",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Hardware/stm32c5a3/Hardware/Shared/sources/DS15137_STM32C5Axxx_Datasheet_Rev3.pdf"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/reference/motor-core-pins.md",
+      "line": 71,
+      "target": "../validation/2026-11-03-motor-pin-remap.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/validation/2026-11-03-motor-pin-remap.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/reference/parts-selection.md",
+      "line": 4,
+      "target": "cameras.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/reference/cameras.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/reference/parts-selection.md",
+      "line": 5,
+      "target": "../感为八路灰度资料/README.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/感为八路灰度资料/README.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/reference/parts-selection.md",
+      "line": 17,
+      "target": "motor-interface.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/reference/motor-interface.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/reference/parts-selection.md",
+      "line": 22,
+      "target": "../感为八路灰度资料/README.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/感为八路灰度资料/README.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/reference/pending-hardware-changes.md",
+      "line": 6,
+      "target": "../../Mechanical/README.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Mechanical/README.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/reference/pending-hardware-changes.md",
+      "line": 16,
+      "target": "../中景园ZJY180S0800TG01技术资料/01-规格书与控制芯片手册/ZJY180S0800TG01.pdf",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/中景园ZJY180S0800TG01技术资料/01-规格书与控制芯片手册/ZJY180S0800TG01.pdf"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/reference/resource-plan.md",
+      "line": 6,
+      "target": "../../Hardware/stm32c5a3/Hardware/Shared/interface.csv",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Hardware/stm32c5a3/Hardware/Shared/interface.csv"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Hardware/stm32c5a3/Hardware/CoralC5-Motor/README.md",
+      "line": 4,
+      "target": "CoralC5-Motor.kicad_pro",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Hardware/stm32c5a3/Hardware/CoralC5-Motor/CoralC5-Motor.kicad_pro"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Hardware/stm32c5a3/Hardware/CoralC5-Motor/README.md",
+      "line": 4,
+      "target": "CoralC5-Motor.kicad_sch",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Hardware/stm32c5a3/Hardware/CoralC5-Motor/CoralC5-Motor.kicad_sch"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Hardware/stm32c5a3/Hardware/CoralC5-Motor/README.md",
+      "line": 4,
+      "target": "docs/CoralC5-Motor_Schematic.pdf",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/CoralC5-Motor_Schematic.pdf"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Hardware/stm32c5a3/Hardware/CoralC5-Motor/README.md",
+      "line": 6,
+      "target": "../../../../Documentation/validation/2026-11-03-motor-pin-remap.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/validation/2026-11-03-motor-pin-remap.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Hardware/stm32c5a3/Hardware/CoralC5-Motor/README.md",
+      "line": 27,
+      "target": "../../../../Documentation/reference/motor-interface.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/reference/motor-interface.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Hardware/stm32c5a3/Hardware/CoralC5-Motor/README.md",
+      "line": 37,
+      "target": "../Shared/interface.csv",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Hardware/stm32c5a3/Hardware/Shared/interface.csv"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Hardware/stm32c5a3/Hardware/CoralC5-Motor/README.md",
+      "line": 39,
+      "target": "docs/core_pin_assignment.csv",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/core_pin_assignment.csv"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Hardware/stm32c5a3/Hardware/CoralC5-Motor/README.md",
+      "line": 58,
+      "target": "docs/verification.json",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/verification.json"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Hardware/stm32c5a3/Hardware/CoralC5-Motor/README.md",
+      "line": 61,
+      "target": "docs/visual_check.json",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/visual_check.json"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Hardware/stm32c5a3/Hardware/CoralC5-Motor/README.md",
+      "line": 70,
+      "target": "docs/BOM.csv",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/BOM.csv"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Hardware/stm32c5a3/Hardware/CoralC5-Motor/README.md",
+      "line": 70,
+      "target": "docs/battery_assessment.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/battery_assessment.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/README.md",
+      "line": 11,
+      "target": "Documentation/reference/classmate-materials.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/reference/classmate-materials.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/README.md",
+      "line": 14,
+      "target": "Documentation/reference/motor-interface.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/reference/motor-interface.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/README.md",
+      "line": 16,
+      "target": "Mechanical/README.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Mechanical/README.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/README.md",
+      "line": 18,
+      "target": "Documentation/validation/2026-11-03-motor-pin-remap.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Documentation/validation/2026-11-03-motor-pin-remap.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/README.md",
+      "line": 19,
+      "target": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/CoralC5-Motor.kicad_pro",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Hardware/stm32c5a3/Hardware/CoralC5-Motor/CoralC5-Motor.kicad_pro"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/README.md",
+      "line": 20,
+      "target": "Firmware/README.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Firmware/README.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/README.md",
+      "line": 42,
+      "target": "Hardware/stm32c5a3/THIRD_PARTY.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-06-m2/documentation-before-m2/Hardware/stm32c5a3/THIRD_PARTY.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-07-m28-resume-local-ee068449/README.md",
+      "line": 25,
+      "target": "../../../../Documentation/reference/m2-interfaces.md",
+      "resolved": "Hardware/stm32c5a3/Documentation/reference/m2-interfaces.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-07-m28-resume-local-ee068449/README.md",
+      "line": 25,
+      "target": "../../../../Documentation/validation/2026-11-07-m27-unified-power.md",
+      "resolved": "Hardware/stm32c5a3/Documentation/validation/2026-11-07-m27-unified-power.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/.agent/main/handoff.md",
+      "line": 23,
+      "target": "../../Documentation/validation/2026-11-07-m28-resume.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/validation/2026-11-07-m28-resume.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/.agent/main/handoff.md",
+      "line": 24,
+      "target": "../../Documentation/reference/m2-interfaces.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/reference/m2-interfaces.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/.agent/main/handoff.md",
+      "line": 35,
+      "target": "archive/",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/.agent/main/archive"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/README.md",
+      "line": 7,
+      "target": "2026校赛题目（小车·无人机·嵌入式AI）.pdf",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/2026校赛题目（小车·无人机·嵌入式AI）.pdf"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/README.md",
+      "line": 7,
+      "target": "AC题清单.doc",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/AC题清单.doc"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/README.md",
+      "line": 8,
+      "target": "explanation/a-system-outline.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/explanation/a-system-outline.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/README.md",
+      "line": 9,
+      "target": "reference/classmate-materials.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/reference/classmate-materials.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/README.md",
+      "line": 9,
+      "target": "26电赛/README.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/26电赛/README.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/README.md",
+      "line": 9,
+      "target": "step_motor/README.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/step_motor/README.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/README.md",
+      "line": 10,
+      "target": "explanation/classmate-balance-reference.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/explanation/classmate-balance-reference.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/README.md",
+      "line": 11,
+      "target": "../Mechanical/README.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Mechanical/README.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/README.md",
+      "line": 11,
+      "target": "explanation/mechanical-outline.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/explanation/mechanical-outline.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/README.md",
+      "line": 11,
+      "target": "../Mechanical/parameters.yaml",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Mechanical/parameters.yaml"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/README.md",
+      "line": 12,
+      "target": "reference/parts-selection.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/reference/parts-selection.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/README.md",
+      "line": 13,
+      "target": "reference/cameras.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/reference/cameras.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/README.md",
+      "line": 14,
+      "target": "reference/external-modules.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/reference/external-modules.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/README.md",
+      "line": 15,
+      "target": "感为八路灰度资料/README.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/感为八路灰度资料/README.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/README.md",
+      "line": 16,
+      "target": "reference/pending-hardware-changes.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/reference/pending-hardware-changes.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/README.md",
+      "line": 17,
+      "target": "reference/motor-interface.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/reference/motor-interface.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/README.md",
+      "line": 17,
+      "target": "reference/motor-core-pins.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/reference/motor-core-pins.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/README.md",
+      "line": 17,
+      "target": "reference/resource-plan.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/reference/resource-plan.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/README.md",
+      "line": 18,
+      "target": "how-to/bring-up.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/how-to/bring-up.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/README.md",
+      "line": 19,
+      "target": "validation/2026-11-07-m28-resume.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/validation/2026-11-07-m28-resume.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/README.md",
+      "line": 19,
+      "target": "validation/2026-11-07-m27-unified-power.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/validation/2026-11-07-m27-unified-power.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/README.md",
+      "line": 19,
+      "target": "validation/2026-11-06-m25-vision-power.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/validation/2026-11-06-m25-vision-power.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/README.md",
+      "line": 19,
+      "target": "validation/2026-11-06-m23-power-connectors.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/validation/2026-11-06-m23-power-connectors.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/README.md",
+      "line": 19,
+      "target": "validation/2026-11-06-schematic-layout.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/validation/2026-11-06-schematic-layout.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/README.md",
+      "line": 19,
+      "target": "validation/2026-11-06-m2-schematic.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/validation/2026-11-06-m2-schematic.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/README.md",
+      "line": 19,
+      "target": "validation/2026-11-03-motor-pin-remap.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/validation/2026-11-03-motor-pin-remap.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/README.md",
+      "line": 19,
+      "target": "validation/2026-11-03-remove-j3-j5.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/validation/2026-11-03-remove-j3-j5.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/README.md",
+      "line": 19,
+      "target": "validation/2026-11-03.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/validation/2026-11-03.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/README.md",
+      "line": 20,
+      "target": "validation/2026-11-05-classmate-materials.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/validation/2026-11-05-classmate-materials.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/README.md",
+      "line": 21,
+      "target": "validation/2026-11-05-mechanical-framework.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/validation/2026-11-05-mechanical-framework.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/README.md",
+      "line": 33,
+      "target": "reference/skills.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/reference/skills.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Hardware/stm32c5a3/Hardware/CoralC5-Motor/README.md",
+      "line": 3,
+      "target": "CoralC5-Motor.kicad_sch",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Hardware/stm32c5a3/Hardware/CoralC5-Motor/CoralC5-Motor.kicad_sch"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Hardware/stm32c5a3/Hardware/CoralC5-Motor/README.md",
+      "line": 3,
+      "target": "docs/CoralC5-Motor_Schematic.pdf",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/CoralC5-Motor_Schematic.pdf"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Hardware/stm32c5a3/Hardware/CoralC5-Motor/README.md",
+      "line": 26,
+      "target": "../../../../Documentation/reference/m2-interfaces.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/reference/m2-interfaces.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Hardware/stm32c5a3/Hardware/CoralC5-Motor/README.md",
+      "line": 26,
+      "target": "../../../../Documentation/validation/2026-11-07-m28-resume.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/validation/2026-11-07-m28-resume.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Hardware/stm32c5a3/Hardware/CoralC5-Motor/README.md",
+      "line": 26,
+      "target": "docs/BOM_M2_SCHEMATIC_DRAFT.csv",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/BOM_M2_SCHEMATIC_DRAFT.csv"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Hardware/stm32c5a3/Hardware/CoralC5-Motor/README.md",
+      "line": 26,
+      "target": "docs/procurement_m28.json",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/procurement_m28.json"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/README.md",
+      "line": 10,
+      "target": "Documentation/explanation/a-system-outline.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/explanation/a-system-outline.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/README.md",
+      "line": 11,
+      "target": "Documentation/reference/classmate-materials.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/reference/classmate-materials.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/README.md",
+      "line": 12,
+      "target": "Documentation/reference/external-modules.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/reference/external-modules.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/README.md",
+      "line": 13,
+      "target": "Documentation/reference/parts-selection.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/reference/parts-selection.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/README.md",
+      "line": 14,
+      "target": "Documentation/reference/motor-interface.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/reference/motor-interface.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/README.md",
+      "line": 15,
+      "target": "Documentation/reference/motor-core-pins.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/reference/motor-core-pins.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/README.md",
+      "line": 16,
+      "target": "Mechanical/README.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Mechanical/README.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/README.md",
+      "line": 17,
+      "target": "Documentation/reference/resource-plan.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/reference/resource-plan.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/README.md",
+      "line": 18,
+      "target": "Documentation/validation/2026-11-03-motor-pin-remap.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/validation/2026-11-03-motor-pin-remap.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/README.md",
+      "line": 19,
+      "target": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/CoralC5-Motor.kicad_pro",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Hardware/stm32c5a3/Hardware/CoralC5-Motor/CoralC5-Motor.kicad_pro"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/README.md",
+      "line": 20,
+      "target": "Firmware/README.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Firmware/README.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/README.md",
+      "line": 27,
+      "target": "Documentation/reference/m2-interfaces.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/reference/m2-interfaces.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/README.md",
+      "line": 27,
+      "target": "Documentation/validation/2026-11-07-m28-resume.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Documentation/validation/2026-11-07-m28-resume.md"
+    },
+    {
+      "scope": "archive",
+      "path": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/README.md",
+      "line": 42,
+      "target": "Hardware/stm32c5a3/THIRD_PARTY.md",
+      "resolved": "Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/baseline-2026-11-08-f8-association-71d22540/docs-before/Hardware/stm32c5a3/THIRD_PARTY.md"
+    }
+  ],
+  "text_files_scanned_for_high_confidence_credentials": 4571,
+  "credential_findings": [],
+  "protected_hardware_mechanical_files": 7,
+  "changed_protected_files": [],
+  "local_state_removed_from_index": [],
+  "local_state_preserved_on_disk": true,
+  "tracked_ignored_files": [],
+  "largest_files": [
+    {
+      "path": "Documentation/26电赛/22C 双车跟随 天猛星M0.zip",
+      "bytes": 70702738
+    },
+    {
+      "path": "Documentation/26电赛/25E 激光打靶 天猛星M0.zip",
+      "bytes": 70523479
+    },
+    {
+      "path": "Documentation/26电赛/23E 激光跟随 天空星F4.zip",
+      "bytes": 51152728
+    },
+    {
+      "path": "Mechanical/step/CoralC5_Framework.step",
+      "bytes": 41335483
+    },
+    {
+      "path": "Documentation/26电赛/21E 送药小车 天猛星M0.zip",
+      "bytes": 33866332
+    },
+    {
+      "path": "Documentation/Emm_V5.0闭环步进资料/上位机/CAN上位机/X42_E_CAN_Tool_V2.0.4.exe",
+      "bytes": 23533568
+    },
+    {
+      "path": "Documentation/step_motor/Emm_V5.0闭环步进资料/上位机/CAN上位机/X42_E_CAN_Tool_V2.0.4.exe",
+      "bytes": 23533568
+    },
+    {
+      "path": "Documentation/Emm_V5.0闭环步进资料/上位机/TTL或485上位机/X42_E_TTL_Tool_V1.2.4.exe",
+      "bytes": 22388736
+    },
+    {
+      "path": "Documentation/step_motor/Emm_V5.0闭环步进资料/上位机/TTL或485上位机/X42_E_TTL_Tool_V1.2.4.exe",
+      "bytes": 22388736
+    },
+    {
+      "path": "Mechanical/reference/reused-hardware/RearLWheel.brep",
+      "bytes": 22033726
+    }
+  ],
+  "rust_index_entries": [
+    "100644 eee436ba415b5c4ece11dea926945dd6a790c79f 0\tFirmware/Rust/.cargo/config.toml",
+    "100644 a742227c7a841ddce1eb889d35d137844d551353 0\tFirmware/Rust/.gitignore",
+    "100644 a65bb6fabb66c465bf44d08916129ef2fd49a97d 0\tFirmware/Rust/.run/Coral_ARM_App_Build.run.xml",
+    "100644 bb99ddecb3e6d4c697f94256aa9752a0b588a394 0\tFirmware/Rust/.run/Coral_ARM_Boot_Build.run.xml",
+    "100644 9eaa1ce59ab7db5544696cb17bc5d024c973abb1 0\tFirmware/Rust/.run/Coral_Host_Check.run.xml",
+    "100644 56a75eff3009f201d0fe2698b9b27321e8b931ff 0\tFirmware/Rust/Cargo.lock",
+    "100644 27aa4c508a91728aef026994b989e9ade1e1984d 0\tFirmware/Rust/Cargo.toml",
+    "100644 caca67006a789a936eab4511a580b8ab965d9416 0\tFirmware/Rust/README.md",
+    "100644 1514ee36faea533eb26850b0a6d81a130a4796fa 0\tFirmware/Rust/VALIDATION.md",
+    "100644 e097b8c5a16847d60454e9220b7901f7be59bec6 0\tFirmware/Rust/core/Cargo.toml",
+    "100644 a360e3097e1c86eaa7a97aa1f3426c04674918f6 0\tFirmware/Rust/core/src/controls.rs",
+    "100644 e533f697ab527cfecbd7f88395e71cdf29b7acce 0\tFirmware/Rust/core/src/emm.rs",
+    "100644 ba83b060572575103119bd1307d3c6d8c71c41f5 0\tFirmware/Rust/core/src/font.rs",
+    "100644 d29758058dfc183bbe6aa8dfb4f873a008f44664 0\tFirmware/Rust/core/src/lib.rs",
+    "100644 e8f527be71d9356ac0918e0261bac02261c5fdeb 0\tFirmware/Rust/core/src/ota.rs",
+    "100644 fa2761e985bee0bb39193100746ff6073929db45 0\tFirmware/Rust/core/src/store.rs",
+    "100644 0b240a2c454812c3630a93132e2c92d09c60e9ba 0\tFirmware/Rust/core/src/telemetry.rs",
+    "100644 a15c9445985792e6b4116d98c6b69f23140edb79 0\tFirmware/Rust/core/src/text.rs",
+    "100644 24a0d85b58769b12189a5e10475f3f4e3f11a7a2 0\tFirmware/Rust/core/src/ui.rs",
+    "100644 bd1179c3df735965e994a10b286f5e2da0c28003 0\tFirmware/Rust/core/tests/fixtures/README.md",
+    "100644 532d6282358d38c7559fdb64494c5caca63fe07b 0\tFirmware/Rust/core/tests/fixtures/ui_crc32.txt",
+    "100644 b0c2ab2d6e11ecd73d8ed90a4cafe21e5d3fa517 0\tFirmware/Rust/core/tests/fixtures/v1_begin.bin",
+    "100644 776c447f878352e38457e78df48d71d550c5fa8a 0\tFirmware/Rust/core/tests/fixtures/v1_header.bin",
+    "100644 021ee55a24cddceac2401baa143fdbc3aaa7fa18 0\tFirmware/Rust/core/tests/motion.rs",
+    "100644 b7b89daf72c719cf3c56ee8604600c09a6705661 0\tFirmware/Rust/core/tests/protocol.rs",
+    "100644 27bddfb5b9953f5da4163b4d6ca38b82ebc322bf 0\tFirmware/Rust/core/tests/storage.rs",
+    "100644 4be1c748c58f32b5cd2aca256dbe0216ee6641ef 0\tFirmware/Rust/device/Cargo.toml",
+    "100644 908df77cff8aa53eebdb6cc09d610a786c65bf05 0\tFirmware/Rust/device/build.rs",
+    "100644 b1f3e7186c1beaef91af5d3c096d48a6949e0936 0\tFirmware/Rust/device/link.x",
+    "100644 ae541cb5f2886225842bb820f2f69a09b1a9bf5c 0\tFirmware/Rust/device/registers-source.md",
+    "100644 986dd1fef244fb80353b0b34bab29b350c46ad29 0\tFirmware/Rust/device/src/app.rs",
+    "100644 1fe456a874c416652702d93429be8cea4d2b756c 0\tFirmware/Rust/device/src/bin/app.rs",
+    "100644 7e0d56399a6f5399ed9ec5ef291c23d545060ca3 0\tFirmware/Rust/device/src/bin/boot.rs",
+    "100644 daf106715cd2efee710482e7c777c10c5ffc02be 0\tFirmware/Rust/device/src/board.rs",
+    "100644 c23e627bddeadcf3ad0d0f7f654bb8324c123fe3 0\tFirmware/Rust/device/src/boot.rs",
+    "100644 885c1135574d2a20ae94daa35e7cb0043ecf14de 0\tFirmware/Rust/device/src/display.rs",
+    "100644 4226c5513f78fd20e9f39abfe33279ca116a449c 0\tFirmware/Rust/device/src/flash.rs",
+    "100644 4092f8771aa0f9f709ff1a66aaada7a1fea14e2b 0\tFirmware/Rust/device/src/lib.rs",
+    "100644 a62b823c42fa10dbd3219d37e592f059585320a8 0\tFirmware/Rust/device/src/registers.rs",
+    "100644 c44c83a91b75da44d706a1b0dcd0a147777ecdd4 0\tFirmware/Rust/device/src/runtime.rs",
+    "100644 b768279bf159da239260127a16a412d77c2f33de 0\tFirmware/Rust/device/src/serial.rs",
+    "100644 7b0d53bde2cf49456a10a54af7d7b8093ffe4832 0\tFirmware/Rust/device/src/startup.s",
+    "100644 29845fc10a11aa53bba54d1071f6a6dc5f5a2fee 0\tFirmware/Rust/host/Cargo.toml",
+    "100644 c82e460e114b51ac91afe2aaa45686173798690c 0\tFirmware/Rust/host/src/exchange.rs",
+    "100644 8a3de843ef6713ec198f1e743ddfd2f68419f9c8 0\tFirmware/Rust/host/src/lib.rs",
+    "100644 abf03ae138c141727f04c49eef51999b75aea46e 0\tFirmware/Rust/host/src/main.rs",
+    "100644 2531d0b1a3ef2fbcb8f1bcc62be27b22e782814c 0\tFirmware/Rust/host/src/radio.rs",
+    "100644 77a9994f7814bf894130db5df14097cfcb738089 0\tFirmware/Rust/host/tests/exchange.rs",
+    "100644 d4b674d01f3a1ce539bbc4128deb7900f10966c9 0\tFirmware/Rust/host/tests/tools.rs",
+    "100644 bb4045c0110d8f07f14c1ba6142394bb3169443e 0\tFirmware/Rust/rust-toolchain.toml"
+  ],
+  "protected_hardware_sha256": {
+    "Hardware/stm32c5a3/Hardware/CoralC5-Core/02_Power_USB.kicad_sch": "aa0680ea3030634c77f194650583659558c84b7650c1c2526428167c6dab94a9",
+    "Hardware/stm32c5a3/Hardware/CoralC5-Core/03_MCU.kicad_sch": "9f6fd0ced7b0cb6dd4567e8bfe824e80ccabfe156e5a80c8fa13655fe43fa2cd",
+    "Hardware/stm32c5a3/Hardware/CoralC5-Core/04_Interface.kicad_sch": "0e7829cee3c4c2b2f0929dd47b0a38ecfee75a60b4d58bbad6cc571589de3ff4",
+    "Hardware/stm32c5a3/Hardware/CoralC5-Core/CoralC5-Core.kicad_pcb": "8d3f9d996f6875353d674549a757ca84ed05715aade4d5f93737edb54f70404a",
+    "Hardware/stm32c5a3/Hardware/CoralC5-Core/CoralC5-Core.kicad_sch": "fd0c69b501ebba8d38292d40d285f869d0c951c52321b79d7911eecde637be66",
+    "Hardware/stm32c5a3/Hardware/CoralC5-Motor/10_Lichee_Interface.kicad_sch": "5a0610b1258a46a714d6b7d0dcb8d7901b0e071bfb602ea98dfbb30dfe1e19ea",
+    "Hardware/stm32c5a3/Hardware/Transfer/Transfer.kicad_sch": "7eddf974e2d564fd048d270d01f901037026fd00966a75567fc8c103a39bd734"
+  },
+  "git_diff_check": {
+    "full_exit_code": 2,
+    "raw_log_findings": [
+      "Documentation/validation/2026-11-16-rust-handoff/host-tests.txt:151: new blank line at EOF."
+    ],
+    "excluding_raw_log_exit_code": 0
+  }
+}

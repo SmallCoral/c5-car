@@ -5,6 +5,9 @@
 上电进入 ALL，电机不自动启动。按最左侧 RUN 后，两轮和步进持续旋转；再次按 RUN 全部停止。
 默认两轮 PWM 45%、步进 30 RPM。当前不是循线或钢球控制程序。
 
+独立 Rust 迁移工程位于 [Rust](Rust/README.md)，其工具链与 RustRover 配置见 [Rust 开发说明](../Documentation/how-to/rust-development.md)。
+Rust 版尚未烧录，本页的板上操作和无线升级步骤适用于已实测的 C/LL 版。
+
 按用户照片的摆放方向：**按钮在上、屏幕在下**，左至右为 **RUN / DIR / PWR（步进页为 SPD）/ TASK**。
 
 - TASK：ALL → MONITOR → LEFT → RIGHT → BOTH → STEPPER → ALL。

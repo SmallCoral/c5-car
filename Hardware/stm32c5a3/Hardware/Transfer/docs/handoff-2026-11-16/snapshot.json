@@ -1,0 +1,51 @@
+{
+  "date": "2026-11-16",
+  "board": "Transfer",
+  "kicad_version": "10.0.6",
+  "base_commit": "b9aaa695109ca046874f67017f2174d682bed09d",
+  "source_sha256": {
+    "Transfer.kicad_sch": "7eddf974e2d564fd048d270d01f901037026fd00966a75567fc8c103a39bd734"
+  },
+  "commands": [
+    {
+      "command": [
+        "C:\\Program Files\\KiCad\\10.0\\bin\\kicad-cli.exe",
+        "sch",
+        "export",
+        "netlist",
+        "--format",
+        "kicadxml",
+        "-o",
+        "C:\\Users\\sc\\Documents\\Dev\\Hardware\\c5-car\\.scratch\\rdhw\\Hardware\\stm32c5a3\\Hardware\\Transfer\\docs\\Transfer.net.xml",
+        "C:\\Users\\sc\\Documents\\Dev\\Hardware\\c5-car\\.scratch\\rdhw\\Hardware\\stm32c5a3\\Hardware\\Transfer\\Transfer.kicad_sch"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "C:\\Program Files\\KiCad\\10.0\\bin\\kicad-cli.exe",
+        "sch",
+        "erc",
+        "--format",
+        "json",
+        "--exit-code-violations",
+        "-o",
+        "C:\\Users\\sc\\Documents\\Dev\\Hardware\\c5-car\\.scratch\\rdhw\\Hardware\\stm32c5a3\\Hardware\\Transfer\\docs\\Transfer.erc.json",
+        "C:\\Users\\sc\\Documents\\Dev\\Hardware\\c5-car\\.scratch\\rdhw\\Hardware\\stm32c5a3\\Hardware\\Transfer\\Transfer.kicad_sch"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python",
+        "tools/verify_schematic.py"
+      ],
+      "exit_code": 1
+    }
+  ],
+  "erc_counts": {},
+  "erc_types": {},
+  "verifier_available": true,
+  "pcb_drc_run": false,
+  "note": "Copied snapshot; original design files are unchanged. Existing verifier metadata describes its historical contract, not this run."
+}

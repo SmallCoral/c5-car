@@ -1,0 +1,47 @@
+{
+  "date": "2026-11-16",
+  "board": "CoralC5-Core",
+  "kicad_version": "10.0.6",
+  "base_commit": "b9aaa695109ca046874f67017f2174d682bed09d",
+  "source_sha256": {
+    "02_Power_USB.kicad_sch": "aa0680ea3030634c77f194650583659558c84b7650c1c2526428167c6dab94a9",
+    "03_MCU.kicad_sch": "9f6fd0ced7b0cb6dd4567e8bfe824e80ccabfe156e5a80c8fa13655fe43fa2cd",
+    "04_Interface.kicad_sch": "0e7829cee3c4c2b2f0929dd47b0a38ecfee75a60b4d58bbad6cc571589de3ff4",
+    "CoralC5-Core.kicad_sch": "fd0c69b501ebba8d38292d40d285f869d0c951c52321b79d7911eecde637be66"
+  },
+  "commands": [
+    {
+      "command": [
+        "C:\\Program Files\\KiCad\\10.0\\bin\\kicad-cli.exe",
+        "sch",
+        "export",
+        "netlist",
+        "--format",
+        "kicadxml",
+        "-o",
+        "C:\\Users\\sc\\Documents\\Dev\\Hardware\\c5-car\\.scratch\\rdhw\\Hardware\\stm32c5a3\\Hardware\\CoralC5-Core\\docs\\netlist.xml",
+        "C:\\Users\\sc\\Documents\\Dev\\Hardware\\c5-car\\.scratch\\rdhw\\Hardware\\stm32c5a3\\Hardware\\CoralC5-Core\\CoralC5-Core.kicad_sch"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "C:\\Program Files\\KiCad\\10.0\\bin\\kicad-cli.exe",
+        "sch",
+        "erc",
+        "--format",
+        "json",
+        "--exit-code-violations",
+        "-o",
+        "C:\\Users\\sc\\Documents\\Dev\\Hardware\\c5-car\\.scratch\\rdhw\\Hardware\\stm32c5a3\\Hardware\\CoralC5-Core\\docs\\erc.json",
+        "C:\\Users\\sc\\Documents\\Dev\\Hardware\\c5-car\\.scratch\\rdhw\\Hardware\\stm32c5a3\\Hardware\\CoralC5-Core\\CoralC5-Core.kicad_sch"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "erc_counts": {},
+  "erc_types": {},
+  "verifier_available": false,
+  "pcb_drc_run": false,
+  "note": "Copied snapshot; original design files are unchanged. Existing verifier metadata describes its historical contract, not this run."
+}

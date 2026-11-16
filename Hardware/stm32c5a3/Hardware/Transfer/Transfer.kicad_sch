@@ -338,7 +338,7 @@
 	)
 	(wire
 		(pts
-			(xy 97.79 68.58) (xy 102.87 68.58)
+			(xy 97.79 68.58) (xy 100.33 68.58)
 		)
 		(stroke
 			(width 0)
@@ -358,7 +358,7 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 68.58) (xy 95.25 68.58)
+			(xy 92.71 68.58) (xy 95.25 68.58)
 		)
 		(stroke
 			(width 0)
@@ -368,7 +368,7 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 66.04) (xy 95.25 66.04)
+			(xy 92.71 66.04) (xy 95.25 66.04)
 		)
 		(stroke
 			(width 0)
@@ -378,7 +378,7 @@
 	)
 	(wire
 		(pts
-			(xy 97.79 66.04) (xy 102.87 66.04)
+			(xy 97.79 66.04) (xy 100.33 66.04)
 		)
 		(stroke
 			(width 0)
@@ -388,7 +388,7 @@
 	)
 	(symbol
 		(lib_id "Transfer:XT60PW-F")
-		(at 107.95 66.04 0)
+		(at 105.41 66.04 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -398,7 +398,7 @@
 		(dnp no)
 		(uuid "a5026802-4222-4bb9-894a-8c2b28825874")
 		(property "Reference" "J2"
-			(at 107.95 58.42 0)
+			(at 105.41 58.42 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -408,7 +408,7 @@
 			)
 		)
 		(property "Value" "XT60PW-F"
-			(at 107.95 60.96 0)
+			(at 105.41 60.96 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -418,7 +418,7 @@
 			)
 		)
 		(property "Footprint" "Transfer:AMASS_XT60PW-F_1x02_P7.20mm_Horizontal"
-			(at 107.95 66.04 0)
+			(at 105.41 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -429,7 +429,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.triopak.fi/files/product/Amass/XT60PW%20SPEC.pdf"
-			(at 107.95 66.04 0)
+			(at 105.41 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -440,7 +440,7 @@
 			)
 		)
 		(property "Description" "AMASS XT60PW-F horizontal female; pin 2 positive, pin 1 negative; mounting tabs unnumbered"
-			(at 107.95 66.04 0)
+			(at 105.41 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -451,7 +451,7 @@
 			)
 		)
 		(property "Manufacturer" "AMASS"
-			(at 107.95 66.04 0)
+			(at 105.41 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -462,7 +462,7 @@
 			)
 		)
 		(property "MPN" "XT60PW-F"
-			(at 107.95 66.04 0)
+			(at 105.41 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -473,7 +473,7 @@
 			)
 		)
 		(property "LCSC" "C428722"
-			(at 107.95 66.04 0)
+			(at 105.41 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -484,7 +484,7 @@
 			)
 		)
 		(property "Supplier_Link" "https://item.szlcsc.com/423834.html"
-			(at 107.95 66.04 0)
+			(at 105.41 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -511,7 +511,7 @@
 	)
 	(symbol
 		(lib_id "Transfer:XT60PW-M")
-		(at 85.09 66.04 0)
+		(at 87.63 66.04 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -521,7 +521,7 @@
 		(dnp no)
 		(uuid "bfa9588c-df3c-40ea-8547-2a1a6178ae1c")
 		(property "Reference" "J1"
-			(at 85.09 58.42 0)
+			(at 87.63 58.42 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -531,7 +531,7 @@
 			)
 		)
 		(property "Value" "XT60PW-M"
-			(at 85.09 60.96 0)
+			(at 87.63 60.96 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -541,7 +541,7 @@
 			)
 		)
 		(property "Footprint" "Transfer:AMASS_XT60PW-M_1x02_P7.20mm_Horizontal"
-			(at 85.09 66.04 0)
+			(at 87.63 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -552,7 +552,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.triopak.fi/files/product/Amass/XT60PW%20SPEC.pdf"
-			(at 85.09 66.04 0)
+			(at 87.63 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -563,7 +563,7 @@
 			)
 		)
 		(property "Description" "AMASS XT60PW-M horizontal male; pin 2 positive, pin 1 negative; mounting tabs unnumbered"
-			(at 85.09 66.04 0)
+			(at 87.63 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -574,7 +574,7 @@
 			)
 		)
 		(property "Manufacturer" "AMASS"
-			(at 85.09 66.04 0)
+			(at 87.63 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -585,7 +585,7 @@
 			)
 		)
 		(property "MPN" "XT60PW-M"
-			(at 85.09 66.04 0)
+			(at 87.63 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -596,7 +596,7 @@
 			)
 		)
 		(property "LCSC" "C98732"
-			(at 85.09 66.04 0)
+			(at 87.63 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -607,7 +607,7 @@
 			)
 		)
 		(property "Supplier_Link" "https://item.szlcsc.com/99942.html"
-			(at 85.09 66.04 0)
+			(at 87.63 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Coral Host Check" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
+    <option name="command" value="check --workspace --all-targets --features radio --locked" />
+    <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+    <option name="channel" value="DEFAULT" />
+    <option name="requiredFeatures" value="true" />
+    <option name="allFeatures" value="false" />
+    <option name="emulateTerminal" value="false" />
+    <envs />
+    <method v="2" />
+  </configuration>
+</component>

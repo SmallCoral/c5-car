@@ -1,0 +1,101 @@
+{
+  "date": "2026-11-16",
+  "source": "Git staged Firmware/Rust, exported without .scratch/.idea/target/dist",
+  "target_directory": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\c5-car\\.scratch\\rdtarget",
+  "commands": [
+    {
+      "name": "host-check",
+      "command": [
+        "cargo",
+        "check",
+        "--workspace",
+        "--all-targets",
+        "--features",
+        "radio",
+        "--locked"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "host-tests",
+      "command": [
+        "cargo",
+        "test",
+        "--workspace",
+        "--features",
+        "radio",
+        "--locked"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "format",
+      "command": [
+        "cargo",
+        "fmt",
+        "--all",
+        "--check"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "host-clippy",
+      "command": [
+        "cargo",
+        "clippy",
+        "--workspace",
+        "--all-targets",
+        "--features",
+        "radio",
+        "--locked",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "arm-clippy",
+      "command": [
+        "cargo",
+        "clippy",
+        "-p",
+        "coral-device",
+        "--target",
+        "thumbv8m.main-none-eabihf",
+        "--locked",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "arm-debug",
+      "command": [
+        "cargo",
+        "build",
+        "-p",
+        "coral-device",
+        "--target",
+        "thumbv8m.main-none-eabihf",
+        "--locked"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "arm-release",
+      "command": [
+        "cargo",
+        "build",
+        "-p",
+        "coral-device",
+        "--target",
+        "thumbv8m.main-none-eabihf",
+        "--release",
+        "--locked"
+      ],
+      "exit_code": 0
+    }
+  ]
+}

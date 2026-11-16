@@ -1,5 +1,12 @@
 # Skills 安装与使用记录
 
+## 2026-11-16 Rust 与交接整理
+
+采用 `docs update` 模式，范围为 Rust 开发入口、项目索引、硬件快照状态与验证记录。
+沿用 `.scratch/docs-support/skills/authoring/docs/` 完整支持树，读取 routing、placement、writing、drift 和 CLAUDE.md 规则。
+采用本机 `handoff` 技能更新 `.agent/main/handoff.md`，覆盖 C/Rust 现状、构建、剩余工作和硬件边界。
+没有安装或升级技能，也没有运行自动 PR 流程。
+
 ## 2026-11-16 固件与项目整理
 
 文档继续采用 `docs update`，从本机 `.scratch/docs-support/skills/authoring/docs/` 的完整支持树读取入口及 routing、placement、writing、drift、CLAUDE.md 规则。目录仅记录当前环境，不作为克隆项目后的必需依赖。

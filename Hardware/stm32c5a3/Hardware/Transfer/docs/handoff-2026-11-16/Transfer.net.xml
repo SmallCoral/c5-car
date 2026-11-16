@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>C:\Users\sc\Documents\Dev\Hardware\c5-car\.scratch\rdhw\Hardware\stm32c5a3\Hardware\Transfer\Transfer.kicad_sch</source>
+    <date>2026-11-16T22:05:19</date>
+    <tool>Eeschema 10.0.6</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>Transfer.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="J1">
+      <value>XT60PW-M</value>
+      <footprint>Transfer:AMASS_XT60PW-M_1x02_P7.20mm_Horizontal</footprint>
+      <datasheet>https://www.triopak.fi/files/product/Amass/XT60PW%20SPEC.pdf</datasheet>
+      <description>AMASS XT60PW-M horizontal male; pin 2 positive, pin 1 negative; mounting tabs unnumbered</description>
+      <fields>
+        <field name="Manufacturer">AMASS</field>
+        <field name="MPN">XT60PW-M</field>
+        <field name="LCSC">C98732</field>
+        <field name="Supplier_Link">https://item.szlcsc.com/99942.html</field>
+        <field name="Footprint">Transfer:AMASS_XT60PW-M_1x02_P7.20mm_Horizontal</field>
+        <field name="Datasheet">https://www.triopak.fi/files/product/Amass/XT60PW%20SPEC.pdf</field>
+        <field name="Description">AMASS XT60PW-M horizontal male; pin 2 positive, pin 1 negative; mounting tabs unnumbered</field>
+      </fields>
+      <libsource lib="Transfer" part="XT60PW-M" description="AMASS XT60PW-M horizontal male; pin 2 positive, pin 1 negative; mounting tabs unnumbered"/>
+      <property name="Manufacturer" value="AMASS"/>
+      <property name="MPN" value="XT60PW-M"/>
+      <property name="LCSC" value="C98732"/>
+      <property name="Supplier_Link" value="https://item.szlcsc.com/99942.html"/>
+      <property name="Sheetname" value="根目录"/>
+      <property name="Sheetfile" value="Transfer.kicad_sch"/>
+      <property name="ki_keywords" value="XT60 power connector M horizontal polarized"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>bfa9588c-df3c-40ea-8547-2a1a6178ae1c</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="2"/>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J2">
+      <value>XT60PW-F</value>
+      <footprint>Transfer:AMASS_XT60PW-F_1x02_P7.20mm_Horizontal</footprint>
+      <datasheet>https://www.triopak.fi/files/product/Amass/XT60PW%20SPEC.pdf</datasheet>
+      <description>AMASS XT60PW-F horizontal female; pin 2 positive, pin 1 negative; mounting tabs unnumbered</description>
+      <fields>
+        <field name="Manufacturer">AMASS</field>
+        <field name="MPN">XT60PW-F</field>
+        <field name="LCSC">C428722</field>
+        <field name="Supplier_Link">https://item.szlcsc.com/423834.html</field>
+        <field name="Footprint">Transfer:AMASS_XT60PW-F_1x02_P7.20mm_Horizontal</field>
+        <field name="Datasheet">https://www.triopak.fi/files/product/Amass/XT60PW%20SPEC.pdf</field>
+        <field name="Description">AMASS XT60PW-F horizontal female; pin 2 positive, pin 1 negative; mounting tabs unnumbered</field>
+      </fields>
+      <libsource lib="Transfer" part="XT60PW-F" description="AMASS XT60PW-F horizontal female; pin 2 positive, pin 1 negative; mounting tabs unnumbered"/>
+      <property name="Manufacturer" value="AMASS"/>
+      <property name="MPN" value="XT60PW-F"/>
+      <property name="LCSC" value="C428722"/>
+      <property name="Supplier_Link" value="https://item.szlcsc.com/423834.html"/>
+      <property name="Sheetname" value="根目录"/>
+      <property name="Sheetfile" value="Transfer.kicad_sch"/>
+      <property name="ki_keywords" value="XT60 power connector F horizontal polarized"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a5026802-4222-4bb9-894a-8c2b28825874</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="2"/>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Transfer" part="XT60PW-F">
+      <description>AMASS XT60PW-F horizontal female; pin 2 positive, pin 1 negative; mounting tabs unnumbered</description>
+      <docs>https://www.triopak.fi/files/product/Amass/XT60PW%20SPEC.pdf</docs>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">XT60PW-F</field>
+        <field name="Footprint">Transfer:AMASS_XT60PW-F_1x02_P7.20mm_Horizontal</field>
+        <field name="Datasheet">https://www.triopak.fi/files/product/Amass/XT60PW%20SPEC.pdf</field>
+        <field name="Description">AMASS XT60PW-F horizontal female; pin 2 positive, pin 1 negative; mounting tabs unnumbered</field>
+      </fields>
+      <pins>
+        <pin num="1" name="-" type="passive"/>
+        <pin num="2" name="+" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Transfer" part="XT60PW-M">
+      <description>AMASS XT60PW-M horizontal male; pin 2 positive, pin 1 negative; mounting tabs unnumbered</description>
+      <docs>https://www.triopak.fi/files/product/Amass/XT60PW%20SPEC.pdf</docs>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">XT60PW-M</field>
+        <field name="Footprint">Transfer:AMASS_XT60PW-M_1x02_P7.20mm_Horizontal</field>
+        <field name="Datasheet">https://www.triopak.fi/files/product/Amass/XT60PW%20SPEC.pdf</field>
+        <field name="Description">AMASS XT60PW-M horizontal male; pin 2 positive, pin 1 negative; mounting tabs unnumbered</field>
+      </fields>
+      <pins>
+        <pin num="1" name="-" type="passive"/>
+        <pin num="2" name="+" type="passive"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Transfer">
+      <uri>${KIPRJMOD}/Transfer.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="Net-(J1-+)" class="Default">
+      <node ref="J1" pin="2" pinfunction="+_2" pintype="passive"/>
+      <node ref="J2" pin="1" pinfunction="-_1" pintype="passive"/>
+    </net>
+    <net code="2" name="Net-(J1--)" class="Default">
+      <node ref="J1" pin="1" pinfunction="-_1" pintype="passive"/>
+      <node ref="J2" pin="2" pinfunction="+_2" pintype="passive"/>
+    </net>
+  </nets>
+</export>

@@ -8,6 +8,8 @@
 | 内容 | 入口 |
 | --- | --- |
 | 编译、按钮操作、当前固件 | [固件说明](Firmware/README.md) |
+| 独立 Rust 版与 RustRover | [Rust 工程](Firmware/Rust/README.md)、[开发环境](Documentation/how-to/rust-development.md) |
+| 接手项目与后续任务 | [当前交接](.agent/main/handoff.md) |
 | 日常无线烧录、CLion 与恢复 | [HC-08 无线升级](Documentation/how-to/wireless-update.md) |
 | 原理图、PCB、模型与 Transfer 电源转接板 | [硬件入口](Hardware/stm32c5a3/README.md) |
 | 小车 3D 总装、预览与参数 | [机械模型](Mechanical/README.md) |
@@ -24,6 +26,8 @@ LL 固件支持四键彩屏、轮 PWM/编码器、步进连续旋转、灰度输
 
 当前板已安装无线升级引导程序，两次 HC-08 完整上传与传输中断恢复通过实测；日常更新使用[无线烧录](Documentation/how-to/wireless-update.md)，J-Link 保留用于首次安装、调试与救援。当前尚未完成轮速闭环、循线、视觉标定和钢球稳控。
 
+`Firmware/Rust` 已独立迁移应用、引导程序和电脑端工具，主机测试与 ARM 编译通过；Rust 版尚未烧录或完成实物验证，板上继续使用 C/LL 版。
+
 三份采购表已归档，完整表与精简表的范围、库存快照日期和未落实替代件见[BOM 说明](Documentation/reference/motor-bom.md)。
 11 月 10 日 [PCB 复查](Documentation/validation/2026-11-10-motor-pcb-review.md)描述当时版本。Motor PCB 此后由用户继续保存修改，本轮整理原样纳入，未重新运行 DRC；实物联调不能替代 PCB 发布验证。
 
@@ -31,9 +35,9 @@ LL 固件支持四键彩屏、轮 PWM/编码器、步进连续旋转、灰度输
 
 `Documentation` 保存比赛原件、总体方案、器件依据和检查记录。
 `Hardware/stm32c5a3/Hardware` 保存 Core、Motor 和共享接口。
-`Firmware` 保存 LL 固件、固定厂商库、测试与电脑接收工具。
+`Firmware` 保存 LL 固件、固定厂商库、测试与电脑接收工具；`Firmware/Rust` 保存独立 Rust workspace。
 `Mechanical` 保存原生总装、STEP、交互预览及机械参数；板内 `Models` 用于元器件外形。
-现有硬件工程与本地资源保持原路径。网络 Expansion 是历史方案，当前仓库不含其工程；Transfer 用于修正原电源输入正负极画反的问题，仓库中的设计仍待完成连线与验证。
+现有硬件工程与本地资源保持原路径。网络 Expansion 是历史方案，当前仓库不含其工程；Transfer 用于修正原电源输入正负极画反的问题，当前原理图已交叉连接，PCB 与实物极性仍待验证。
 当前硬件检查与采购状态从 [Motor 说明](Hardware/stm32c5a3/Hardware/CoralC5-Motor/README.md)进入，历史记录见[验证索引](Documentation/validation/README.md)，后续工作见[交接](.agent/main/handoff.md)。
 
 第三方资源和许可见 [来源说明](Hardware/stm32c5a3/THIRD_PARTY.md)。

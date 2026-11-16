@@ -1,0 +1,21 @@
+[package]
+name = "coral-device"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+build = "build.rs"
+
+[target.'cfg(target_arch = "arm")'.dependencies]
+coral-core = { path = "../core" }
+
+[[bin]]
+name = "coral-app"
+path = "src/bin/app.rs"
+test = false
+bench = false
+
+[[bin]]
+name = "coral-boot"
+path = "src/bin/boot.rs"
+test = false
+bench = false

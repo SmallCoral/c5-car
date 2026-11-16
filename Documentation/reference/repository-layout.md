@@ -5,6 +5,8 @@
 | 目录 | 内容与维护入口 |
 | --- | --- |
 | `Firmware` | 当前 LL 应用、无线引导程序、固定厂商依赖、主机测试和 BLE 工具；[固件说明](../../Firmware/README.md) |
+| `Firmware/Rust` | 独立 Rust 应用、引导程序、电脑端 CLI 与测试；[Rust 说明](../../Firmware/Rust/README.md) |
+| `Firmware/Rust/.run` | 可移植的 RustRover 检查和 ARM 构建配置，不包含机器环境或烧录步骤 |
 | `Firmware/validation` | 实物遥测、烧录输出、测试日志、源码/产物哈希；按日期保存，历史记录不改写成当前结果 |
 | `Hardware/stm32c5a3/Hardware` | Core、Motor、Transfer 的 KiCad 原生工程、随板库和模型；[硬件说明](../../Hardware/stm32c5a3/README.md) |
 | `Hardware/.../Shared` | Core/Motor 的 98 触点合同、共用参考与设计工具 |
@@ -23,9 +25,14 @@
 
 普通构建与测试不会连接板子；`flash-wireless.ps1` 和 CMake `wireless_flash` 才会进行无线烧录。首次安装和引导程序救援使用合并包，见[无线升级说明](../how-to/wireless-update.md)。
 
+Rust 使用自己的 Cargo workspace 和锁文件，按要求只修改代码、做离线验证。
+原 C/LL 源码、Python 工具和厂家参考资料继续保留；Rust 构建不依赖 `.scratch` 中的本机生成脚本。
+
 ## 不纳入 Git 的本机文件
 
 `.gitignore` 排除构建目录、Python 环境、`.scratch`、IDE 会话、KiCad `.kicad_prl`/锁文件/自动历史，以及 `.agent/diagnostics` 中的原始 USB 扫描和 Flash 备份。这些本机文件仍保留在磁盘上。
+
+Rust 的 `target/`、`dist/` 和 `.idea/` 不提交；`Cargo.lock`、`.cargo/config.toml`、`.run/` 和测试用固定二进制样本需要提交。
 
 KiCad 自动历史、`.kicad_prl` 和两份 Python 字节码曾被跟踪，2026-11-16 起停止跟踪；旧提交中的历史不改写。正式设计、模型、BOM、厂家资料以及用于解释检查结论的日期记录继续提交。
 

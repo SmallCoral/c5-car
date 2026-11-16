@@ -97,7 +97,7 @@
 			(at 0 -6.509048 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "fce05593-9f12-43bc-9545-ed3f504ec0e7")
+			(uuid "303f5ba8-3e54-4e75-9cef-29f13153584d")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -109,7 +109,7 @@
 			(at 0 3 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "5ab08134-9e83-4622-bab0-5ea6ad1c9b79")
+			(uuid "1b76cc1c-72a2-4a46-9287-ca6b591d7d86")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -121,7 +121,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "7ef7e0a3-e107-4916-a3d9-dbe015e25ec4")
+			(uuid "e27c9172-db78-440b-b567-9c3513c5a1de")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -132,13 +132,14 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "80beb352-5aed-4f5d-ad10-9fcf4206898f")
+			(uuid "edc02d08-b7ec-4c73-8f2c-a9bf57aac4b8")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
+		(path "/74a8a62a-9b00-5f7f-826a-d15ca1a04db7/a1d289e7-ab7b-5c93-9a02-26c73b7e2d5f")
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -262,7 +263,6 @@
 				(xyz 0 0 0)
 			)
 		)
-		(path "/74a8a62a-9b00-5f7f-826a-d15ca1a04db7/a1d289e7-ab7b-5c93-9a02-26c73b7e2d5f")
 	)
 	(footprint "DevBoard:Resistor_SMD__R_0603_1608Metric"
 		(layer "F.Cu")
@@ -274,7 +274,7 @@
 			(at 0 1.901149 45)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "064753b0-0cf6-477c-81cc-4385c3a1e68e")
+			(uuid "35d15912-00df-46be-a177-b413b64d4f49")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -286,7 +286,7 @@
 			(at 0 1.43 45)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "46505f88-f8a1-470a-b719-b3f419aeaa67")
+			(uuid "f8ffa453-866f-4b86-baa0-61d6f4487cb8")
 			(effects
 				(font
 					(size 1 1)
@@ -298,7 +298,7 @@
 			(at 0 0 45)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "b1d1852f-a2dd-40d9-a6ac-34bca4f806da")
+			(uuid "7bb8540b-7d6d-4a5b-8875-88e1259a9b91")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -309,7 +309,7 @@
 			(at 0 0 45)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "5e20b7a2-775d-4824-97e5-8f2f89b1942e")
+			(uuid "474c5ba2-997b-414a-b8a5-f1a7c4028e0b")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -328,6 +328,7 @@
 				)
 			)
 		)
+		(path "/74a8a62a-9b00-5f7f-826a-d15ca1a04db7/0999c90c-f161-534a-957c-6c9a12c45655")
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -402,7 +403,6 @@
 				(xyz 0 0 0)
 			)
 		)
-		(path "/74a8a62a-9b00-5f7f-826a-d15ca1a04db7/0999c90c-f161-534a-957c-6c9a12c45655")
 	)
 	(footprint "DevBoard:Package_TO_SOT_SMD__TSOT-23-6"
 		(layer "F.Cu")
@@ -414,7 +414,7 @@
 			(at 0 -3.04615 90)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "c811579f-2b67-44d6-a9f3-2f8a86c7e782")
+			(uuid "4f2a8e29-f32c-4e5c-9f41-f69480bbf71f")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -426,7 +426,7 @@
 			(at 0 2.4 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "1e23d83c-8590-4134-ac78-ad6b9ea749ac")
+			(uuid "45600a0e-81df-48d0-9eec-d79d8e6354ad")
 			(effects
 				(font
 					(size 1 1)
@@ -438,7 +438,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "bf5837b8-20d4-42f9-b17a-383af9dbb2a8")
+			(uuid "5e927aac-a366-41ac-91ed-95f941c47836")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -449,7 +449,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "7fa63ca5-5e82-4cae-83be-d1360298c8a5")
+			(uuid "c6200a18-bac2-413f-a5bb-ee55181fbf0e")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -468,6 +468,7 @@
 				)
 			)
 		)
+		(path "/864407e1-5936-5bc7-915c-23278a5808f5/8dcb2569-359b-5586-b7c9-a3bca3f3973b")
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -734,7 +735,6 @@
 				(xyz 0 0 0)
 			)
 		)
-		(path "/864407e1-5936-5bc7-915c-23278a5808f5/8dcb2569-359b-5586-b7c9-a3bca3f3973b")
 	)
 	(footprint "DevBoard:Resistor_SMD__R_0603_1608Metric"
 		(layer "F.Cu")
@@ -746,7 +746,7 @@
 			(at 0 2.481904 90)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "dca03a60-7f48-4c28-a233-66e2ada80197")
+			(uuid "34f61dd7-276c-47d7-b29b-df4fc43081d7")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -758,7 +758,7 @@
 			(at 0 1.43 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "dee939ed-7b0e-430e-8008-2861a362aa4f")
+			(uuid "6621a2eb-01f4-49c1-9c16-da536ae6cc35")
 			(effects
 				(font
 					(size 1 1)
@@ -770,7 +770,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "6dfd08fb-1667-469c-ab9b-76f86e3406f9")
+			(uuid "1c6ab06f-2df6-48e5-b6c9-177559b3b74e")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -781,7 +781,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "b682bd47-344a-474f-acb4-ac37d667d802")
+			(uuid "40ba63f0-1504-4bba-a8c8-d07939c1e316")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -800,6 +800,7 @@
 				)
 			)
 		)
+		(path "/d26173da-a26d-50f4-8596-ef1da0dd0c82/4746bb9e-6e19-5ac2-a663-1a45c6ecde52")
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -872,7 +873,6 @@
 				(xyz 0 0 0)
 			)
 		)
-		(path "/d26173da-a26d-50f4-8596-ef1da0dd0c82/4746bb9e-6e19-5ac2-a663-1a45c6ecde52")
 	)
 	(footprint "DevBoard:Resistor_SMD__R_0603_1608Metric"
 		(layer "F.Cu")
@@ -884,7 +884,7 @@
 			(at 2.65115 -0.000001 0)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "de950c82-140c-4a95-aba9-dbb3eab4f06e")
+			(uuid "7f8480e7-795e-4876-ac39-0a500c008c94")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -896,7 +896,7 @@
 			(at 0 1.43 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "bd3e174e-00d3-40d8-b250-62ec0068d2ad")
+			(uuid "180edc63-6646-416b-8f2b-3224224b6caa")
 			(effects
 				(font
 					(size 1 1)
@@ -908,7 +908,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "0f1efd85-7380-4beb-8d58-f300cf270e42")
+			(uuid "45f5b50b-d126-469b-a2ab-aa8542aecd6b")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -919,7 +919,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "15d79ed3-b7cf-4d2f-b52d-f5a32e41e5d0")
+			(uuid "3f4a2e2e-8f6d-4e4d-970f-7de7b4f6cbab")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -938,6 +938,7 @@
 				)
 			)
 		)
+		(path "/864407e1-5936-5bc7-915c-23278a5808f5/2cb9865e-ec81-5585-9ba1-a2b6856d14a4")
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -1010,7 +1011,6 @@
 				(xyz 0 0 0)
 			)
 		)
-		(path "/864407e1-5936-5bc7-915c-23278a5808f5/2cb9865e-ec81-5585-9ba1-a2b6856d14a4")
 	)
 	(footprint "DevBoard:SW_SD1107_2P_6x3_H2.5"
 		(layer "F.Cu")
@@ -1022,7 +1022,7 @@
 			(at 0 -6.509048 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "78ebe961-10a6-43cf-a276-0bddeaa3a0bd")
+			(uuid "dc1249d6-dc4b-412d-9e78-ee2820a15845")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -1034,7 +1034,7 @@
 			(at 0 3 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "26f02fbe-b5bb-42ec-8103-afedef4c591c")
+			(uuid "2469befe-2b17-4723-88c8-1c77f5c64663")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -1046,7 +1046,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "dbf41032-1fc9-43a8-a2ca-80d38b423598")
+			(uuid "f7338dce-7b70-467f-a5a0-1d12fea8815a")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1057,13 +1057,14 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "ab9cd868-89db-49bb-ab08-852c206d2655")
+			(uuid "9a72e96e-c9cb-4a14-b494-9bfadc1c54a5")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
+		(path "/74a8a62a-9b00-5f7f-826a-d15ca1a04db7/7202256b-868f-54e7-be6e-b12e3d3dec7b")
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -1187,7 +1188,6 @@
 				(xyz 0 0 0)
 			)
 		)
-		(path "/74a8a62a-9b00-5f7f-826a-d15ca1a04db7/7202256b-868f-54e7-be6e-b12e3d3dec7b")
 	)
 	(footprint "DevBoard:Capacitor_SMD__C_0603_1608Metric"
 		(layer "F.Cu")
@@ -1199,7 +1199,7 @@
 			(at -3.231905 -0.000001 135)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "4aee6166-6ea1-4416-be50-ab98c71b9f93")
+			(uuid "8902d2ef-c346-48a0-b6e0-5f69776af291")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -1211,7 +1211,7 @@
 			(at 0 1.43 135)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "54edb482-aca2-4b45-8982-7747964e6197")
+			(uuid "1e3349cc-36df-44af-afa0-5da93d7703b3")
 			(effects
 				(font
 					(size 1 1)
@@ -1223,7 +1223,7 @@
 			(at 0 0 135)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "df5703f8-c870-48ef-8946-5db626f6bf2b")
+			(uuid "927b8806-2884-4a5a-847c-b282c17a51c0")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1234,7 +1234,7 @@
 			(at 0 0 135)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "9df3998b-e110-40df-b2c8-7b2641c43489")
+			(uuid "939ee3a8-01ea-4eee-ae80-4bbbcece81cd")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1253,6 +1253,7 @@
 				)
 			)
 		)
+		(path "/74a8a62a-9b00-5f7f-826a-d15ca1a04db7/87afefff-d8e7-5412-a51b-26288e0d6a79")
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -1327,7 +1328,6 @@
 				(xyz 0 0 0)
 			)
 		)
-		(path "/74a8a62a-9b00-5f7f-826a-d15ca1a04db7/87afefff-d8e7-5412-a51b-26288e0d6a79")
 	)
 	(footprint "DevBoard:Resistor_SMD__R_0603_1608Metric"
 		(layer "F.Cu")
@@ -1339,7 +1339,7 @@
 			(at 3.231905 0 0)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "32fe915f-5846-410f-abbe-fba272ed0b84")
+			(uuid "831d3b86-4641-4b86-a8ee-63b0b5e7521e")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -1351,7 +1351,7 @@
 			(at 0 1.43 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "7a9a401a-e38b-46f0-ac1d-ffbad8fa02e0")
+			(uuid "4293f6bc-102e-4e16-abb3-2761c17d26e6")
 			(effects
 				(font
 					(size 1 1)
@@ -1363,7 +1363,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "cb8aa440-bd39-4ad3-b34d-846dd52a1422")
+			(uuid "293e2447-55ee-4527-a7bc-15940bd4d003")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1374,7 +1374,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "5ba95f4f-db91-4ac2-afa7-bf95fc8718c3")
+			(uuid "9d4d483f-515c-4e3c-9986-6d4fb138ef6e")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1393,6 +1393,7 @@
 				)
 			)
 		)
+		(path "/864407e1-5936-5bc7-915c-23278a5808f5/57a1adfb-83cf-56fb-925d-8b2bfda3fca3")
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -1465,7 +1466,6 @@
 				(xyz 0 0 0)
 			)
 		)
-		(path "/864407e1-5936-5bc7-915c-23278a5808f5/57a1adfb-83cf-56fb-925d-8b2bfda3fca3")
 	)
 	(footprint "DevBoard:Capacitor_SMD__C_0603_1608Metric"
 		(layer "F.Cu")
@@ -1477,7 +1477,7 @@
 			(at -2.600001 0 0)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "65624f9e-5d92-497c-9201-c974db938194")
+			(uuid "84e85fc2-e4ef-4641-b916-475385f256b5")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -1489,7 +1489,7 @@
 			(at 0 1.43 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "919983bb-270f-42cb-af8c-34838a39a24d")
+			(uuid "a87b16c0-b5d4-4b96-b017-9fb23680515f")
 			(effects
 				(font
 					(size 1 1)
@@ -1501,7 +1501,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "cffa5a3d-081a-424e-ad66-8a21bb7127de")
+			(uuid "54074f76-4a85-4835-898c-583a3470f9cf")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1512,7 +1512,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "170119aa-a893-4e25-90d8-562e4d3e2f46")
+			(uuid "1a3fc56a-4cae-405e-8fee-3b023c8e15f2")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1531,6 +1531,7 @@
 				)
 			)
 		)
+		(path "/74a8a62a-9b00-5f7f-826a-d15ca1a04db7/9fee3e11-dcb3-56a6-ae78-216600b7d9ab")
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -1605,7 +1606,6 @@
 				(xyz 0 0 0)
 			)
 		)
-		(path "/74a8a62a-9b00-5f7f-826a-d15ca1a04db7/9fee3e11-dcb3-56a6-ae78-216600b7d9ab")
 	)
 	(footprint "DevBoard:Capacitor_SMD__C_0603_1608Metric"
 		(layer "F.Cu")
@@ -1617,7 +1617,7 @@
 			(at 2.651151 0 0)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "cd2f0c2c-31a4-4de3-a723-84a0fae2b92e")
+			(uuid "dfce3da1-3a79-45a7-9e3e-99e3e99635e0")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -1629,7 +1629,7 @@
 			(at 0 1.43 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "1cc5c9e9-d371-4108-9918-547823d57673")
+			(uuid "431bc721-d4c2-4f7e-936f-efafceefe64a")
 			(effects
 				(font
 					(size 1 1)
@@ -1641,7 +1641,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "d1c8edce-b818-4790-89e6-9d920cec1d60")
+			(uuid "d9f5c159-c094-454e-b477-d9fd5f5f23df")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1652,7 +1652,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "1c220955-fe6c-4eaf-ad5d-108a37110dc0")
+			(uuid "7a89c7c9-e020-41cf-8487-c56b489d821d")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1671,6 +1671,7 @@
 				)
 			)
 		)
+		(path "/864407e1-5936-5bc7-915c-23278a5808f5/6ce2bf93-8888-517b-97d0-d3825f08e1c9")
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -1743,7 +1744,6 @@
 				(xyz 0 0 0)
 			)
 		)
-		(path "/864407e1-5936-5bc7-915c-23278a5808f5/6ce2bf93-8888-517b-97d0-d3825f08e1c9")
 	)
 	(footprint "DevBoard:Capacitor_SMD__C_0603_1608Metric"
 		(layer "F.Cu")
@@ -1755,7 +1755,7 @@
 			(at 0 1.90115 45)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "5e289100-58f4-4591-9693-5e00be14ca49")
+			(uuid "febbf926-64ed-4d2b-b39c-65a51da29366")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -1767,7 +1767,7 @@
 			(at 0 1.43 45)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "fbc20d5f-ff13-4aaa-a6cb-c90cbc2030da")
+			(uuid "e8e62970-9d1e-4e30-946b-4b5207efa279")
 			(effects
 				(font
 					(size 1 1)
@@ -1779,7 +1779,7 @@
 			(at 0 0 45)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "91818286-59b2-4502-ab33-3bfceec9e72d")
+			(uuid "8f8eee1a-ce2c-4a26-a7bc-9dc5d9eddd2f")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1790,7 +1790,7 @@
 			(at 0 0 45)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "4c2a7b8c-49c6-4f16-96bc-64d772d4325c")
+			(uuid "8a02b3b5-3e56-408e-8629-1e36da1d91ac")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1809,6 +1809,7 @@
 				)
 			)
 		)
+		(path "/74a8a62a-9b00-5f7f-826a-d15ca1a04db7/ae593b6a-69e8-5402-8b66-4b04b05de210")
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -1883,7 +1884,6 @@
 				(xyz 0 0 0)
 			)
 		)
-		(path "/74a8a62a-9b00-5f7f-826a-d15ca1a04db7/ae593b6a-69e8-5402-8b66-4b04b05de210")
 	)
 	(footprint "DevBoard:Resistor_SMD__R_0603_1608Metric"
 		(layer "F.Cu")
@@ -1895,7 +1895,7 @@
 			(at 0 -1.90115 0)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "d5bfca56-7fb2-46da-8107-86d50b9fbca0")
+			(uuid "803d5468-d885-40bd-8b14-f3d31a020823")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -1907,7 +1907,7 @@
 			(at 0 1.43 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "079c63f4-c9d7-4f43-9d64-27f3cbd81ff6")
+			(uuid "0d626024-afaf-49ab-bbf3-497072e3924b")
 			(effects
 				(font
 					(size 1 1)
@@ -1919,7 +1919,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "6990101a-917f-404f-a83d-1248f62508a1")
+			(uuid "25309eb8-4bc2-4bb1-ac30-761c941c1967")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1930,7 +1930,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "610c430f-7dda-4f54-b032-a3736c6a1ec2")
+			(uuid "138a3988-02fd-4b81-8bb4-41f3c39fcc5f")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1949,6 +1949,7 @@
 				)
 			)
 		)
+		(path "/864407e1-5936-5bc7-915c-23278a5808f5/d0ee1094-326e-5ffb-9add-f0969bd7067d")
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -2021,7 +2022,6 @@
 				(xyz 0 0 0)
 			)
 		)
-		(path "/864407e1-5936-5bc7-915c-23278a5808f5/d0ee1094-326e-5ffb-9add-f0969bd7067d")
 	)
 	(footprint "DevBoard:Package_QFP__LQFP-100_14x14mm_P0.5mm"
 		(layer "F.Cu")
@@ -2033,7 +2033,7 @@
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "513558cf-b6e7-48c7-afd0-275f321dd1aa")
+			(uuid "0d6fbe41-1433-4bb9-9e60-81cf6446396f")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -2045,7 +2045,7 @@
 			(at 0 9.43 135)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "de3cd175-b7bb-420e-b33d-e91025204777")
+			(uuid "1ec96914-4660-49fe-a042-62f63a63e5dd")
 			(effects
 				(font
 					(size 1 1)
@@ -2057,7 +2057,7 @@
 			(at 0 0 135)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "fc9545b3-41f7-4940-a242-dfaf3d54678c")
+			(uuid "f61432e8-0fda-4d42-a1fd-0d539794283d")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2068,7 +2068,7 @@
 			(at 0 0 135)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "f80086a0-bd89-4d68-9197-3e05421b9d4e")
+			(uuid "04e7feaa-9a18-4ae6-b3b1-2b7ee56dde35")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2087,6 +2087,7 @@
 				)
 			)
 		)
+		(path "/74a8a62a-9b00-5f7f-826a-d15ca1a04db7/945f1eb9-a67c-5640-b66c-ce2a5e52ebd8")
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -3205,7 +3206,6 @@
 				(xyz 0 0 0)
 			)
 		)
-		(path "/74a8a62a-9b00-5f7f-826a-d15ca1a04db7/945f1eb9-a67c-5640-b66c-ce2a5e52ebd8")
 	)
 	(footprint "DevBoard:Capacitor_SMD__C_0603_1608Metric"
 		(layer "F.Cu")
@@ -3217,7 +3217,7 @@
 			(at -5.400952 0 135)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "5eb5b01e-287f-496c-a1a4-a7d0eba64e42")
+			(uuid "6f6a90b2-44be-4cd1-9d85-208979bc0108")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -3229,7 +3229,7 @@
 			(at 0 1.43 135)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "e53ce0d9-384c-4f83-901d-57dabd0b04bb")
+			(uuid "cd6c1596-f940-47b8-8945-e6281ea2ceb1")
 			(effects
 				(font
 					(size 1 1)
@@ -3241,7 +3241,7 @@
 			(at 0 0 135)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "133ce0bb-1e1c-4c8d-ae87-329b6b484501")
+			(uuid "40841213-b5a1-4550-be07-f5ce7f47e149")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3252,7 +3252,7 @@
 			(at 0 0 135)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "11a32d16-b264-47ea-b02c-3cad35da1f37")
+			(uuid "cbfab06c-f01e-4d7d-ba43-9ac454b7c520")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3271,6 +3271,7 @@
 				)
 			)
 		)
+		(path "/74a8a62a-9b00-5f7f-826a-d15ca1a04db7/2f44dd50-21a6-529f-8f29-52a15a1ad8c5")
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -3345,7 +3346,6 @@
 				(xyz 0 0 0)
 			)
 		)
-		(path "/74a8a62a-9b00-5f7f-826a-d15ca1a04db7/2f44dd50-21a6-529f-8f29-52a15a1ad8c5")
 	)
 	(footprint "DevBoard:Resistor_SMD__R_0603_1608Metric"
 		(layer "F.Cu")
@@ -3357,7 +3357,7 @@
 			(at 0 1.90115 0)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "33a91245-12de-42bb-b571-5884b31c673f")
+			(uuid "683fae08-7f64-4c2c-97f4-ce05b6fa4eb6")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -3369,7 +3369,7 @@
 			(at 0 1.43 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "1e6512ee-e4ba-4d8c-ae5f-c063bf4f4e3b")
+			(uuid "5049c01b-1a69-4948-bc75-ceefd50f4b38")
 			(effects
 				(font
 					(size 1 1)
@@ -3381,7 +3381,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "57c03286-a6bd-4228-8041-33520d854cfe")
+			(uuid "6174361d-887e-4cdd-a0ce-222e8a3924aa")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3392,7 +3392,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "687707eb-3dd2-47c4-81e0-4b380b086b63")
+			(uuid "90d8bbbc-1956-46b2-8c16-706a7143be77")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3411,6 +3411,7 @@
 				)
 			)
 		)
+		(path "/d26173da-a26d-50f4-8596-ef1da0dd0c82/baaeee05-eea8-5943-8734-fb13fa795861")
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -3483,7 +3484,6 @@
 				(xyz 0 0 0)
 			)
 		)
-		(path "/d26173da-a26d-50f4-8596-ef1da0dd0c82/baaeee05-eea8-5943-8734-fb13fa795861")
 	)
 	(footprint "DevBoard:Connector_USB__USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal"
 		(layer "F.Cu")
@@ -3495,7 +3495,7 @@
 			(at -6.49115 -0.29 0)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "d3f44036-6d0e-4f72-a178-3b7bc3f05c98")
+			(uuid "3e02b22e-0310-480e-9b2f-e823f5f499de")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -3508,7 +3508,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "adee3cee-204b-4c92-8a1f-5dcab14b55ba")
+			(uuid "f246a2bf-348a-4740-95f0-efc1ae5f0879")
 			(effects
 				(font
 					(size 1 1)
@@ -3521,7 +3521,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "9a9b3420-0502-4815-921e-1f9ef516a001")
+			(uuid "c2bdd7c9-a726-4d4a-9358-b5e85cf41815")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3534,7 +3534,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "08df71b9-d94b-4f00-8f96-7af440a1daf1")
+			(uuid "e0304b5c-4e72-4704-a921-feb94449d90a")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3542,6 +3542,7 @@
 				)
 			)
 		)
+		(path "/864407e1-5936-5bc7-915c-23278a5808f5/ff04c7b4-13b7-5e57-bd26-4c2f1c94b73d")
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -3790,7 +3791,6 @@
 				(xyz 0 0 0)
 			)
 		)
-		(path "/864407e1-5936-5bc7-915c-23278a5808f5/ff04c7b4-13b7-5e57-bd26-4c2f1c94b73d")
 	)
 	(footprint "DevBoard:Package_TO_SOT_SMD__SOT-23-6"
 		(layer "F.Cu")
@@ -3802,7 +3802,7 @@
 			(at -3.22115 -0.087501 90)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "759b72a9-7f69-4e93-95bf-36f1e5f97ff8")
+			(uuid "eb265b0c-9337-4739-ac61-22a48ee6b3e7")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -3814,7 +3814,7 @@
 			(at 0 2.4 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "97da364f-73b6-4d12-b5b5-827f27578dfb")
+			(uuid "2f51d9e8-6ae5-4ba1-8ec4-688e5c8a2ac3")
 			(effects
 				(font
 					(size 1 1)
@@ -3826,7 +3826,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "a7c53a36-63be-409d-aa53-7c99c357ae74")
+			(uuid "5a7e6857-ade0-4dfc-bfb1-8277fd843939")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3837,7 +3837,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "3d343fe2-d053-4416-9d32-5ae35fde9df3")
+			(uuid "a04a418e-b0cc-400f-9284-4192ebfb0f70")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3856,6 +3856,7 @@
 				)
 			)
 		)
+		(path "/864407e1-5936-5bc7-915c-23278a5808f5/fee29482-9959-5942-9454-8678982a7c79")
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -4122,7 +4123,6 @@
 				(xyz 0 0 0)
 			)
 		)
-		(path "/864407e1-5936-5bc7-915c-23278a5808f5/fee29482-9959-5942-9454-8678982a7c79")
 	)
 	(footprint "DevBoard:Inductor_SMD__L_Bourns_SRN6045TA"
 		(layer "F.Cu")
@@ -4134,7 +4134,7 @@
 			(at -4.794762 0 90)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "2d5cb40d-466d-4bba-9d7b-4c17a40c3b33")
+			(uuid "b6d00e37-aaaa-4432-b6b3-44b00c13fe0c")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -4146,7 +4146,7 @@
 			(at 0 4.2 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "c2a004cb-4cae-4ef7-a38c-a504e560be56")
+			(uuid "127ea01d-d3aa-48b0-99d3-cf5bec8eed74")
 			(effects
 				(font
 					(size 1 1)
@@ -4159,7 +4159,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "315e3396-7c89-4ad5-a811-a70f6b712112")
+			(uuid "b78fb457-fc11-4278-b518-d5534f99eb14")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4172,7 +4172,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "c3d6e8b3-9447-4605-bd75-82e78f45d577")
+			(uuid "d4511104-0a73-4e26-8c69-48c19a1a4be7")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4180,6 +4180,7 @@
 				)
 			)
 		)
+		(path "/864407e1-5936-5bc7-915c-23278a5808f5/0ce77cb4-301a-52d6-b4dd-c921eb37448a")
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -4348,7 +4349,6 @@
 				(xyz 0 0 0)
 			)
 		)
-		(path "/864407e1-5936-5bc7-915c-23278a5808f5/0ce77cb4-301a-52d6-b4dd-c921eb37448a")
 	)
 	(footprint "DevBoard:Capacitor_SMD__C_1206_3216Metric"
 		(layer "F.Cu")
@@ -4360,7 +4360,7 @@
 			(at 3.471151 0 90)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "a9f86b50-e97b-4bf9-a5be-8f6c6cbd2d77")
+			(uuid "b2928b70-db2a-41f4-99bb-125dba09216f")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -4372,7 +4372,7 @@
 			(at 0 1.85 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "d3172175-e08c-413e-8957-53f50ea397bd")
+			(uuid "973cf638-f491-45a0-8522-97786a462af8")
 			(effects
 				(font
 					(size 1 1)
@@ -4384,7 +4384,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "d71ad593-d7de-4144-ad76-0e4fe4e63752")
+			(uuid "6ecfb650-ab75-414e-885e-394dff86961d")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4395,7 +4395,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "7dea8764-5512-4488-ad52-b0205616ce18")
+			(uuid "45a8da90-34e8-4229-b55e-7546f99df103")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4414,6 +4414,7 @@
 				)
 			)
 		)
+		(path "/864407e1-5936-5bc7-915c-23278a5808f5/ba2f49e4-937f-5a1e-a7a4-a690c0e2457d")
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -4486,7 +4487,6 @@
 				(xyz 0 0 0)
 			)
 		)
-		(path "/864407e1-5936-5bc7-915c-23278a5808f5/ba2f49e4-937f-5a1e-a7a4-a690c0e2457d")
 	)
 	(footprint "DevBoard:Streamline_Core_Edge"
 		(locked yes)
@@ -4545,6 +4545,7 @@
 				)
 			)
 		)
+		(path "/d26173da-a26d-50f4-8596-ef1da0dd0c82/b3bd1ed6-243a-55d9-bda8-b5bb07b65d64")
 		(attr exclude_from_pos_files exclude_from_bom)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -5817,7 +5818,6 @@
 			(uuid "701f92e7-2357-459f-992c-90a67a2553c0")
 		)
 		(embedded_fonts no)
-		(path "/d26173da-a26d-50f4-8596-ef1da0dd0c82/b3bd1ed6-243a-55d9-bda8-b5bb07b65d64")
 	)
 	(footprint "DevBoard:Logo_SmallCoral_11mm"
 		(layer "F.Cu")
@@ -5829,7 +5829,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "af56c780-fe91-450f-8e7b-2474dbb4381f")
+			(uuid "3c49463b-a1e0-43f8-8866-ecb1a23b33b0")
 			(effects
 				(font
 					(size 1 1)
@@ -5841,7 +5841,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "eaf18248-f0b5-48d4-a4fb-815153c70256")
+			(uuid "1048caa0-72ae-48c4-b622-a49b3c855660")
 			(effects
 				(font
 					(size 1 1)
@@ -5853,7 +5853,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "505aeec7-021e-4c27-b901-db4c312d961e")
+			(uuid "bf7595fa-1645-4b18-b59e-937bbf1637d3")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5864,7 +5864,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "ba296ac8-8cd5-43ab-ad51-91c40a245fa6")
+			(uuid "d4180fab-0cd3-44da-9f3d-1276c2e0ffb2")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6054,7 +6054,7 @@
 			(at -0.020001 -2.140953 45)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "6b056fc3-a80e-43c6-ab38-7b54770a7187")
+			(uuid "b94b874c-814c-4590-aa72-5f128e94f9c8")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -6066,7 +6066,7 @@
 			(at 0 1.43 135)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "a9be5652-1b2f-46ed-9d12-8c1c175ac132")
+			(uuid "c6c0174e-bc00-45c3-a79f-95edd82ad15c")
 			(effects
 				(font
 					(size 1 1)
@@ -6078,7 +6078,7 @@
 			(at 0 0 135)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "4ece8949-4491-460c-b944-ba3538df7426")
+			(uuid "e8ed7f00-ee90-4802-99ec-34c538a21692")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6089,7 +6089,7 @@
 			(at 0 0 135)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "f3bfe91b-1e0d-485a-b0f5-050fcb596b0e")
+			(uuid "d869beb1-bc41-4486-9038-73766a7687aa")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6108,6 +6108,7 @@
 				)
 			)
 		)
+		(path "/d26173da-a26d-50f4-8596-ef1da0dd0c82/b267d243-2771-5170-9274-62ab282fa8d8")
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -6230,7 +6231,6 @@
 				(xyz 0 0 0)
 			)
 		)
-		(path "/d26173da-a26d-50f4-8596-ef1da0dd0c82/b267d243-2771-5170-9274-62ab282fa8d8")
 	)
 	(footprint "DevBoard:Resistor_SMD__R_0603_1608Metric"
 		(layer "F.Cu")
@@ -6242,7 +6242,7 @@
 			(at -2.651149 -0.000001 0)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "86439eee-4165-40f1-8b22-dcc6c74af587")
+			(uuid "a7aea5d7-53c1-49ae-af29-414fe3db3172")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -6254,7 +6254,7 @@
 			(at 0 1.43 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "2abc2bc9-49c7-400d-9bdd-f14afc91f992")
+			(uuid "9c9b864b-57b8-463b-b798-4e9a1243af9b")
 			(effects
 				(font
 					(size 1 1)
@@ -6266,7 +6266,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "a1fffdde-b1ed-428d-b16d-6c59df04978c")
+			(uuid "90095bae-76bb-4025-bea1-160b24c600c6")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6277,7 +6277,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "f2362604-71ae-4041-bcac-dcde613c9878")
+			(uuid "fe21a1b0-3e79-4d2d-b902-ca218a11b98f")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6296,6 +6296,7 @@
 				)
 			)
 		)
+		(path "/864407e1-5936-5bc7-915c-23278a5808f5/46a9dc5e-8ffa-5356-9aee-39586a12e55d")
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -6368,7 +6369,6 @@
 				(xyz 0 0 0)
 			)
 		)
-		(path "/864407e1-5936-5bc7-915c-23278a5808f5/46a9dc5e-8ffa-5356-9aee-39586a12e55d")
 	)
 	(footprint "DevBoard:Capacitor_SMD__C_1206_3216Metric"
 		(layer "F.Cu")
@@ -6380,7 +6380,7 @@
 			(at 0 -5.070953 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "b6d806d8-2446-4e7a-bbea-647d10901c11")
+			(uuid "f8efa517-e7d4-40cf-a390-826b8823bd99")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -6392,7 +6392,7 @@
 			(at 0 1.85 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "1a0bdbd5-1f9b-44c3-963d-315cb2f44374")
+			(uuid "3a7fd724-71da-400b-9ccb-2351ecbb58ee")
 			(effects
 				(font
 					(size 1 1)
@@ -6404,7 +6404,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "6e7bd207-0b98-4727-bd6c-764e438a8a8a")
+			(uuid "6cc55fb6-b611-4281-85c3-bf98ca6340ae")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6415,7 +6415,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "ea61ac39-c933-4fee-8520-06a369d16a8c")
+			(uuid "b787bdf8-7591-40c9-84e8-af6063bfc941")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6434,6 +6434,7 @@
 				)
 			)
 		)
+		(path "/864407e1-5936-5bc7-915c-23278a5808f5/0402fd5c-0cc2-538a-be84-0f303fa0d936")
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -6506,7 +6507,6 @@
 				(xyz 0 0 0)
 			)
 		)
-		(path "/864407e1-5936-5bc7-915c-23278a5808f5/0402fd5c-0cc2-538a-be84-0f303fa0d936")
 	)
 	(footprint "DevBoard:Resistor_SMD__R_0603_1608Metric"
 		(layer "F.Cu")
@@ -6518,7 +6518,7 @@
 			(at 0 -2.481905 135)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "276401a3-d690-4a82-be3e-765b85c84a8a")
+			(uuid "fdef1415-b74b-4312-9726-63e474e1712f")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -6530,7 +6530,7 @@
 			(at 0 1.43 45)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "ebf923c4-5741-4240-bbd0-1ff9e727b025")
+			(uuid "2d6eb27e-3a72-4729-97b9-e36e841e7b0d")
 			(effects
 				(font
 					(size 1 1)
@@ -6542,7 +6542,7 @@
 			(at 0 0 45)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "be820283-5b36-4ab8-a576-d355b0b0757d")
+			(uuid "ef4ce239-a509-4829-aa63-962172fe05ce")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6553,7 +6553,7 @@
 			(at 0 0 45)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "8cb1846b-33a2-44f4-80a8-136aaf917609")
+			(uuid "4740b292-ed3f-491b-bdda-444e6487f2cb")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6572,6 +6572,7 @@
 				)
 			)
 		)
+		(path "/d26173da-a26d-50f4-8596-ef1da0dd0c82/e4905281-3c12-53c2-a3cd-43e12f547f43")
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -6646,7 +6647,6 @@
 				(xyz 0 0 0)
 			)
 		)
-		(path "/d26173da-a26d-50f4-8596-ef1da0dd0c82/e4905281-3c12-53c2-a3cd-43e12f547f43")
 	)
 	(footprint "DevBoard:Resistor_SMD__R_0603_1608Metric"
 		(layer "F.Cu")
@@ -6658,7 +6658,7 @@
 			(at 0 1.90115 45)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "2c1a2058-29d3-41da-a36b-cb0f957971d0")
+			(uuid "9edb94c1-f79f-4bec-b3e0-536111d3469f")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -6670,7 +6670,7 @@
 			(at 0 1.43 45)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "afa399e6-d758-45f7-9610-46e4a84378c4")
+			(uuid "efcee5b6-b9a9-4393-9dd8-46d03cc57303")
 			(effects
 				(font
 					(size 1 1)
@@ -6682,7 +6682,7 @@
 			(at 0 0 45)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "8761a5bd-9c1f-47ba-a3d8-59064c5ca4a2")
+			(uuid "888b4885-7fc2-4ef8-9568-d1d3798011f8")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6693,7 +6693,7 @@
 			(at 0 0 45)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "a49d8916-9acc-4219-acbb-9b360a69ccd9")
+			(uuid "d2be4fbc-916f-4761-bf6f-7958866148b7")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6712,6 +6712,7 @@
 				)
 			)
 		)
+		(path "/74a8a62a-9b00-5f7f-826a-d15ca1a04db7/1cbe850f-c57a-5842-a5c1-e88044a31a10")
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -6786,7 +6787,6 @@
 				(xyz 0 0 0)
 			)
 		)
-		(path "/74a8a62a-9b00-5f7f-826a-d15ca1a04db7/1cbe850f-c57a-5842-a5c1-e88044a31a10")
 	)
 	(footprint "DevBoard:Capacitor_SMD__C_1206_3216Metric"
 		(layer "F.Cu")
@@ -6798,7 +6798,7 @@
 			(at 0 -2.520953 0)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "d458a7d5-1a1a-4e6a-9eda-5f4ed77a18b4")
+			(uuid "a29cc171-a654-47c2-b14c-7068291c1abc")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -6810,7 +6810,7 @@
 			(at 0 1.85 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "767f1106-5950-4fa5-b73e-5ac69657ff94")
+			(uuid "66bd7dbd-4fb3-4b19-9d0b-f5725d508a03")
 			(effects
 				(font
 					(size 1 1)
@@ -6822,7 +6822,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "c046d329-6165-4b54-8734-e68a4d0076e0")
+			(uuid "a609fc67-34b6-436c-9c5f-2169f3664390")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6833,7 +6833,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "541fce16-a63f-4ad0-85e6-0dfefc8806e7")
+			(uuid "d356aaa0-66d1-4b9b-8b59-1d83ed8e0836")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6852,6 +6852,7 @@
 				)
 			)
 		)
+		(path "/864407e1-5936-5bc7-915c-23278a5808f5/ad360939-e1c2-522a-8d11-045b48235190")
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -6924,7 +6925,6 @@
 				(xyz 0 0 0)
 			)
 		)
-		(path "/864407e1-5936-5bc7-915c-23278a5808f5/ad360939-e1c2-522a-8d11-045b48235190")
 	)
 	(footprint "DevBoard:Capacitor_SMD__C_0603_1608Metric"
 		(layer "F.Cu")
@@ -6936,7 +6936,7 @@
 			(at -5.400952 0 45)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "1dc3b189-4b96-42ff-b504-1f1cae3534bc")
+			(uuid "fe06be83-f0b6-421f-bd94-79a9b9d53fe6")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -6948,7 +6948,7 @@
 			(at 0 1.43 45)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "6851921e-49c6-4dc1-9a23-fd4c5c4ac3e2")
+			(uuid "df1a0ae1-2cbf-4205-a606-1b8fc223f9f6")
 			(effects
 				(font
 					(size 1 1)
@@ -6960,7 +6960,7 @@
 			(at 0 0 45)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "af0c5ff3-466a-4d79-a526-cf91782d7238")
+			(uuid "2fde1e12-bcda-4c59-824c-6ce735ca989e")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6971,7 +6971,7 @@
 			(at 0 0 45)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "8dd3a52d-37f0-4fa9-af9b-0f6716db12cd")
+			(uuid "c6d91533-0a16-4d7e-bade-c5021063b27a")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6990,6 +6990,7 @@
 				)
 			)
 		)
+		(path "/74a8a62a-9b00-5f7f-826a-d15ca1a04db7/7f008420-4f01-51fc-898d-e5ec1a119182")
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -7064,7 +7065,6 @@
 				(xyz 0 0 0)
 			)
 		)
-		(path "/74a8a62a-9b00-5f7f-826a-d15ca1a04db7/7f008420-4f01-51fc-898d-e5ec1a119182")
 	)
 	(footprint "DevBoard:Crystal__Crystal_SMD_3225-4Pin_3.2x2.5mm"
 		(layer "F.Cu")
@@ -7075,7 +7075,7 @@
 			(at 0.000001 -3.06381 45)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "f891031a-4f29-4124-946c-888fc258aaa8")
+			(uuid "df80c569-7d4e-40bc-87f7-95c8de6e1e8a")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -7087,7 +7087,7 @@
 			(at 0.000001 2.45 135)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "250d62b0-31a3-4cec-8a5a-6ddd6333ce3d")
+			(uuid "7d0047e8-a720-4f16-bc97-cc82f07b21fd")
 			(effects
 				(font
 					(size 1 1)
@@ -7099,7 +7099,7 @@
 			(at 0 0 135)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "440398ff-45f9-4d77-89e2-ad684fc8ed11")
+			(uuid "f9a53362-e6e0-4a02-aa39-04999f757170")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7110,7 +7110,7 @@
 			(at 0 0 135)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "ef1f9781-28db-4331-acdf-e089c66028bf")
+			(uuid "ad77a61b-f5f1-4e5e-bae3-28ad1beb16d5")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7129,6 +7129,7 @@
 				)
 			)
 		)
+		(path "/74a8a62a-9b00-5f7f-826a-d15ca1a04db7/a682bc26-1b01-5def-ac03-ea667d41c3f2")
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -7219,7 +7220,6 @@
 				(xyz 0 0 0)
 			)
 		)
-		(path "/74a8a62a-9b00-5f7f-826a-d15ca1a04db7/a682bc26-1b01-5def-ac03-ea667d41c3f2")
 	)
 	(footprint "DevBoard:Resistor_SMD__R_0603_1608Metric"
 		(layer "F.Cu")
@@ -7231,7 +7231,7 @@
 			(at -2.5 -0.2 0)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "6374945f-ec95-4e65-950a-6032e8e5da34")
+			(uuid "3930b849-8dce-43d1-aa64-c54f2b4035b4")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -7243,7 +7243,7 @@
 			(at 0 1.43 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "a2bce208-0b00-431c-9a01-55ecae88cfb3")
+			(uuid "f155742b-e008-430f-924a-dec91771595c")
 			(effects
 				(font
 					(size 1 1)
@@ -7255,7 +7255,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "0707448d-b680-4500-9348-3beb200ce08b")
+			(uuid "3e39b10a-1d0e-458f-9855-92e0de5a84b8")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7266,7 +7266,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "88f45d9a-2307-46a1-a3da-10562a003047")
+			(uuid "a201596b-c751-449b-a489-c510a983d29b")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7285,6 +7285,7 @@
 				)
 			)
 		)
+		(path "/864407e1-5936-5bc7-915c-23278a5808f5/18a61d37-ffb2-5933-abe4-11436bb1e9d5")
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -7357,7 +7358,6 @@
 				(xyz 0 0 0)
 			)
 		)
-		(path "/864407e1-5936-5bc7-915c-23278a5808f5/18a61d37-ffb2-5933-abe4-11436bb1e9d5")
 	)
 	(footprint "DevBoard:Capacitor_SMD__C_0603_1608Metric"
 		(layer "F.Cu")
@@ -7369,7 +7369,7 @@
 			(at 0 -1.9 0)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "9313ba01-2e1e-4555-ae37-7b25613824db")
+			(uuid "5d5a771a-9443-41fe-9d2c-38471e510653")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -7381,7 +7381,7 @@
 			(at 0 1.43 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "d43aa5ac-8fc0-4d81-90f4-7393fc0de160")
+			(uuid "385a427d-e584-4fe8-bc24-2b4bc71c22b9")
 			(effects
 				(font
 					(size 1 1)
@@ -7393,7 +7393,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "98c3c3db-86b2-480c-b143-488201e2f0c2")
+			(uuid "6d3b5422-3fe1-464b-b9e3-22cb3a5b36a5")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7404,7 +7404,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "10b114b8-1627-4572-ba80-005a6e6d5310")
+			(uuid "dd4fb318-0e90-4b71-bacf-6e1571d42d93")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7423,6 +7423,7 @@
 				)
 			)
 		)
+		(path "/74a8a62a-9b00-5f7f-826a-d15ca1a04db7/228819ec-2202-5dac-bf50-0b8fc01db564")
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -7497,7 +7498,6 @@
 				(xyz 0 0 0)
 			)
 		)
-		(path "/74a8a62a-9b00-5f7f-826a-d15ca1a04db7/228819ec-2202-5dac-bf50-0b8fc01db564")
 	)
 	(footprint "DevBoard:LED_0603_YellowGreen"
 		(layer "F.Cu")
@@ -7509,7 +7509,7 @@
 			(at -0.02 2.140952 90)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "56c647c6-3ce1-4566-8b25-fa4c8e2c45ec")
+			(uuid "83ac3f13-bb33-4652-8a21-cf73251e45b8")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -7521,7 +7521,7 @@
 			(at 0 1.43 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "fd7b7e5d-cd6f-4267-b9d8-71483083b875")
+			(uuid "9022ab8a-a703-4e01-969f-0957d694ab87")
 			(effects
 				(font
 					(size 1 1)
@@ -7533,7 +7533,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "0aff761b-7e70-418a-8205-1d82ff7dc13e")
+			(uuid "e11ed9f4-6fcf-4282-b4be-07df79c5167a")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7544,7 +7544,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "fbf67456-b05c-4377-bfec-e89b95035089")
+			(uuid "2f001fa3-6018-44bf-addb-343ccb5af9ed")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7563,6 +7563,7 @@
 				)
 			)
 		)
+		(path "/d26173da-a26d-50f4-8596-ef1da0dd0c82/4faa04da-9248-555b-85ed-b0bee0276f0c")
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -7684,7 +7685,6 @@
 				(xyz 0 0 0)
 			)
 		)
-		(path "/d26173da-a26d-50f4-8596-ef1da0dd0c82/4faa04da-9248-555b-85ed-b0bee0276f0c")
 	)
 	(footprint "DevBoard:Capacitor_SMD__C_0603_1608Metric"
 		(layer "F.Cu")
@@ -7696,7 +7696,7 @@
 			(at -0.000001 -1.90115 90)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "47286c7a-06f0-48f2-a0f8-fdc92894e39c")
+			(uuid "db2c2ad2-c684-4f90-89c3-c6fd00c82065")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -7708,7 +7708,7 @@
 			(at 0 1.43 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "440583f5-7674-4253-b328-4f1dc260ceaf")
+			(uuid "d943a598-f38c-488e-a35d-9d53a2f91ca2")
 			(effects
 				(font
 					(size 1 1)
@@ -7720,7 +7720,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "8dfbc4eb-6e81-4741-b698-6cc3b975f12e")
+			(uuid "8e59c9f2-b4d9-4b66-aac0-e932d8147b5e")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7731,7 +7731,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "9ed43578-6fa2-43f1-985d-fe8ca67e7114")
+			(uuid "9589eb8d-6c2c-4005-9260-8a55cf40b6a8")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7750,6 +7750,7 @@
 				)
 			)
 		)
+		(path "/74a8a62a-9b00-5f7f-826a-d15ca1a04db7/bbd33d44-13c1-5c4e-97f2-784a21b37288")
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -7824,7 +7825,6 @@
 				(xyz 0 0 0)
 			)
 		)
-		(path "/74a8a62a-9b00-5f7f-826a-d15ca1a04db7/bbd33d44-13c1-5c4e-97f2-784a21b37288")
 	)
 	(footprint "DevBoard:Resistor_SMD__R_0603_1608Metric"
 		(layer "F.Cu")
@@ -7836,7 +7836,7 @@
 			(at 2.651151 0 90)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "5330fb58-9092-4138-8138-77774fb41d9d")
+			(uuid "ba63437d-4afd-4c15-b8ff-e76a2adc510f")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -7848,7 +7848,7 @@
 			(at 0 1.43 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "a69f4972-a31c-447c-a3a0-89382130511b")
+			(uuid "7ca295e9-e29f-4b97-a3f0-c9820ffe8874")
 			(effects
 				(font
 					(size 1 1)
@@ -7860,7 +7860,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "498eeba8-f2de-414e-8ce0-e73f221ac5c4")
+			(uuid "3c720b52-82f7-4830-9e87-47a38b76f97b")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7871,7 +7871,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "65870ed3-e242-442f-b7d6-c690add65835")
+			(uuid "6af6fd8f-99f4-4612-9f33-529393f46e09")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7890,6 +7890,7 @@
 				)
 			)
 		)
+		(path "/74a8a62a-9b00-5f7f-826a-d15ca1a04db7/b47e5342-96e7-52c2-84fa-3f49406a2c17")
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -7964,7 +7965,6 @@
 				(xyz 0 0 0)
 			)
 		)
-		(path "/74a8a62a-9b00-5f7f-826a-d15ca1a04db7/b47e5342-96e7-52c2-84fa-3f49406a2c17")
 	)
 	(footprint "DevBoard:SW_SD1107_2P_6x3_H2.5"
 		(layer "F.Cu")
@@ -7976,7 +7976,7 @@
 			(at 6.12115 0 0)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "81836763-f52b-499a-a152-de48d3083494")
+			(uuid "737d20bb-755c-4ebb-8248-f0634b09b58b")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -7988,7 +7988,7 @@
 			(at 0 3 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "2a6db542-5afd-428d-8b44-b39934c80734")
+			(uuid "ccddf2a9-819c-412f-9305-2176c14d5f1a")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -8000,7 +8000,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "b94cc6c2-91a2-4cd3-af0f-8087821c79d7")
+			(uuid "784a1cd1-b797-4eaa-bfb2-f802be1a7db7")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8011,13 +8011,14 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "41da36eb-0808-4d78-9e02-5352dd2c91a3")
+			(uuid "954c7ebe-dac9-4a77-b89e-63ef8d38c1b2")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
+		(path "/d26173da-a26d-50f4-8596-ef1da0dd0c82/4fe2e710-a118-59e7-b1fd-7f19ec05f009")
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -8141,7 +8142,6 @@
 				(xyz 0 0 0)
 			)
 		)
-		(path "/d26173da-a26d-50f4-8596-ef1da0dd0c82/4fe2e710-a118-59e7-b1fd-7f19ec05f009")
 	)
 	(footprint "DevBoard:Diode_SMD__D_SMA"
 		(layer "F.Cu")
@@ -8153,7 +8153,7 @@
 			(at -7.465953 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "b9c8f71c-639e-4ac3-ab21-429f030e3a78")
+			(uuid "c9045918-2465-4f5b-8f50-c0c6d3a61a58")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -8165,7 +8165,7 @@
 			(at 0 2.6 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "a276a8d9-f59e-4b95-a807-bdbf161c24d4")
+			(uuid "17b8a303-202f-4412-b535-4bf55af6622c")
 			(effects
 				(font
 					(size 1 1)
@@ -8178,7 +8178,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "e9f52550-411e-471a-9feb-60e6af8126cf")
+			(uuid "56edf8e6-d334-404d-a380-aa1a4ac33d54")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8191,7 +8191,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "5d797bc5-3a35-43f4-ace0-911795488918")
+			(uuid "e0676e6c-12b7-4c47-9aa1-1384069947aa")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8199,6 +8199,7 @@
 				)
 			)
 		)
+		(path "/864407e1-5936-5bc7-915c-23278a5808f5/b8216364-96ca-5b7c-b5a4-f98cbc356da0")
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -8399,7 +8400,6 @@
 				(xyz 0 0 0)
 			)
 		)
-		(path "/864407e1-5936-5bc7-915c-23278a5808f5/b8216364-96ca-5b7c-b5a4-f98cbc356da0")
 	)
 	(footprint "DevBoard:Capacitor_SMD__C_0603_1608Metric"
 		(layer "F.Cu")
@@ -8411,7 +8411,7 @@
 			(at 3.231905 0 45)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "75dafcf9-7f6e-4d39-bade-00e6239cb2d6")
+			(uuid "d8051045-449f-4287-8703-0d8197639e8e")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -8423,7 +8423,7 @@
 			(at 0 1.43 45)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "e2343957-65e0-48db-bc91-b77a3a8a533f")
+			(uuid "8a4f2418-920d-45e2-9d20-47aa0a6c5594")
 			(effects
 				(font
 					(size 1 1)
@@ -8435,7 +8435,7 @@
 			(at 0 0 45)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "42c2fa38-b565-4d16-9792-96f0311e35ce")
+			(uuid "78e3781d-606a-4e69-9477-fe00b7460186")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8446,7 +8446,7 @@
 			(at 0 0 45)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "2852a5b3-d1be-4e17-95d1-8649183787f5")
+			(uuid "f1c91aa1-1a51-4a4d-87ff-9914d97dc56c")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8465,6 +8465,7 @@
 				)
 			)
 		)
+		(path "/74a8a62a-9b00-5f7f-826a-d15ca1a04db7/a38ddc85-aa2d-5e26-8d66-ea7f22ac040f")
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -8539,7 +8540,6 @@
 				(xyz 0 0 0)
 			)
 		)
-		(path "/74a8a62a-9b00-5f7f-826a-d15ca1a04db7/a38ddc85-aa2d-5e26-8d66-ea7f22ac040f")
 	)
 	(footprint "DevBoard:Capacitor_SMD__C_0603_1608Metric"
 		(layer "F.Cu")
@@ -8551,7 +8551,7 @@
 			(at 0 2.481905 0)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "6a83d25c-ffb4-43d3-8362-d441c2e1b526")
+			(uuid "cbc3287b-1b97-4d16-9d6e-051542c88f4e")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -8563,7 +8563,7 @@
 			(at 0 1.43 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "29340d55-9ea3-4302-ba94-1c5e8dfa3761")
+			(uuid "a68b2a84-92fd-4e75-b929-39c9a2c000ca")
 			(effects
 				(font
 					(size 1 1)
@@ -8575,7 +8575,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "683c2687-890d-4f0e-ab05-729f26fd3e22")
+			(uuid "bcf608b7-6eda-4c1d-b1f5-7091d77ed7c1")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8586,7 +8586,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "77ae79c7-5e66-4f4c-996c-552451131acb")
+			(uuid "3ace07eb-a523-42c8-9170-b0fbf22dda59")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8605,6 +8605,7 @@
 				)
 			)
 		)
+		(path "/74a8a62a-9b00-5f7f-826a-d15ca1a04db7/030247e4-417a-5de5-93b9-8e747913397b")
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -8679,7 +8680,6 @@
 				(xyz 0 0 0)
 			)
 		)
-		(path "/74a8a62a-9b00-5f7f-826a-d15ca1a04db7/030247e4-417a-5de5-93b9-8e747913397b")
 	)
 	(footprint "DevBoard:Capacitor_SMD__C_0603_1608Metric"
 		(layer "F.Cu")
@@ -8691,7 +8691,7 @@
 			(at -0.000001 -1.901151 45)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "3437fc2b-c999-4846-a86c-b638166c070a")
+			(uuid "0008c9ac-2270-4a42-b075-d4325d23f0da")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -8703,7 +8703,7 @@
 			(at 0 1.43 45)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "99a2c87f-30b6-43f4-8596-33df9ea44e69")
+			(uuid "3157f06b-a457-4aab-a0f5-8debfe99e046")
 			(effects
 				(font
 					(size 1 1)
@@ -8715,7 +8715,7 @@
 			(at 0 0 45)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "15e0b38e-9a33-4191-84b5-3fcbdec696f0")
+			(uuid "4743e2b6-6853-43c5-b78e-5754bf059456")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8726,7 +8726,7 @@
 			(at 0 0 45)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "227a1f9f-05db-4805-9c27-f5d09955023a")
+			(uuid "05e33b93-2a78-4889-b755-a890cd0ef6da")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8745,6 +8745,7 @@
 				)
 			)
 		)
+		(path "/74a8a62a-9b00-5f7f-826a-d15ca1a04db7/206c0019-5c9e-5fb5-9bc6-73b5ef301d07")
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -8819,7 +8820,6 @@
 				(xyz 0 0 0)
 			)
 		)
-		(path "/74a8a62a-9b00-5f7f-826a-d15ca1a04db7/206c0019-5c9e-5fb5-9bc6-73b5ef301d07")
 	)
 	(footprint "DevBoard:Resistor_SMD__R_0603_1608Metric"
 		(layer "F.Cu")
@@ -8831,7 +8831,7 @@
 			(at 3.231905 0 0)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "e6361f5a-6722-40a3-8dcf-c97c75ade448")
+			(uuid "b7e10da1-f994-4903-ba47-160acc742bc8")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -8843,7 +8843,7 @@
 			(at 0 1.43 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "5243a256-d490-4d38-9d1c-9b6a2ebdbb72")
+			(uuid "88f1ae15-82bf-43e1-bd5e-9677feeb46a1")
 			(effects
 				(font
 					(size 1 1)
@@ -8855,7 +8855,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "62b4e4a4-519c-406e-b33a-31aabf15964b")
+			(uuid "bb705587-bf8e-4493-83d2-a5b383473131")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8866,7 +8866,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "acbed7e4-b461-4672-acb9-74d481798cba")
+			(uuid "b3c8f441-eb3a-463b-9d33-1560109f9f33")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8885,6 +8885,7 @@
 				)
 			)
 		)
+		(path "/864407e1-5936-5bc7-915c-23278a5808f5/09cf44a3-eb7c-57f5-b1de-bb08c89f201b")
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -8957,7 +8958,6 @@
 				(xyz 0 0 0)
 			)
 		)
-		(path "/864407e1-5936-5bc7-915c-23278a5808f5/09cf44a3-eb7c-57f5-b1de-bb08c89f201b")
 	)
 	(footprint "DevBoard:Capacitor_SMD__C_0603_1608Metric"
 		(layer "F.Cu")
@@ -8969,7 +8969,7 @@
 			(at 0 -1.90115 90)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "b67a9f48-9af4-4cbe-9d8a-c0be3dc7e5df")
+			(uuid "f7a19342-e065-4530-9437-0b205b361291")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -8981,7 +8981,7 @@
 			(at 0 1.43 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "8cafc627-b7b1-4f59-8786-2f19abc0057f")
+			(uuid "f230ac27-ca69-4178-b992-aa0e7a054093")
 			(effects
 				(font
 					(size 1 1)
@@ -8993,7 +8993,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "91352caf-ea85-4134-9dc4-4eabce6ad4de")
+			(uuid "26435219-3bd9-451f-a04f-caa13e6270d4")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9004,7 +9004,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "0e202cd4-7318-4bf7-a2b5-3ab86e26de3d")
+			(uuid "03766fd0-d369-4915-91f5-aa82de89caf0")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9023,6 +9023,7 @@
 				)
 			)
 		)
+		(path "/864407e1-5936-5bc7-915c-23278a5808f5/16631eea-acad-5481-aaf3-e18b2f66d35a")
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -9095,7 +9096,6 @@
 				(xyz 0 0 0)
 			)
 		)
-		(path "/864407e1-5936-5bc7-915c-23278a5808f5/16631eea-acad-5481-aaf3-e18b2f66d35a")
 	)
 	(footprint "DevBoard:Capacitor_SMD__C_0603_1608Metric"
 		(layer "F.Cu")
@@ -9107,7 +9107,7 @@
 			(at 0 -1.901151 90)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "d67c0507-888d-4d4f-82e2-6cb8ecbfbe6b")
+			(uuid "0c38a33d-9564-42a3-9108-f0ed32df788c")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -9119,7 +9119,7 @@
 			(at 0 1.43 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "6a5ca74c-07e6-40c9-b1d4-ec2ee8d8166d")
+			(uuid "11056204-79fc-4335-ad19-d635951474ea")
 			(effects
 				(font
 					(size 1 1)
@@ -9131,7 +9131,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "f1b1405d-7816-48f2-afdc-976ed65d26e1")
+			(uuid "e6b66cf8-ead5-46fc-af99-1721f7939dc0")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9142,7 +9142,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "03a81f7f-a23d-432d-b2b5-51ce9be44bf3")
+			(uuid "89e91aca-f28a-4b77-8f40-5e191d7dfbdc")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9161,6 +9161,7 @@
 				)
 			)
 		)
+		(path "/74a8a62a-9b00-5f7f-826a-d15ca1a04db7/0e11b69d-91e0-53cb-b859-0df10aeb33a5")
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -9233,7 +9234,6 @@
 				(xyz 0 0 0)
 			)
 		)
-		(path "/74a8a62a-9b00-5f7f-826a-d15ca1a04db7/0e11b69d-91e0-53cb-b859-0df10aeb33a5")
 	)
 	(footprint "DevBoard:Capacitor_SMD__C_0603_1608Metric"
 		(layer "F.Cu")
@@ -9245,7 +9245,7 @@
 			(at 0 1.90115 90)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "92175af1-9ccd-41bd-b9fa-5ee7f8f4dc78")
+			(uuid "83164a53-9f36-48c7-a2ba-8bd63fc33dff")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -9257,7 +9257,7 @@
 			(at 0 1.43 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "8a129dd8-af83-4161-915e-88d0516b9950")
+			(uuid "39d63aab-d74e-455f-88f5-c4e3baadd706")
 			(effects
 				(font
 					(size 1 1)
@@ -9269,7 +9269,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "5482e2b3-6550-4291-8c11-b031c1a4e9c9")
+			(uuid "71adce74-97a1-4664-ba90-50bf77d8aec9")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9280,7 +9280,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "87448723-c029-4c37-a385-6edade627983")
+			(uuid "30338571-8302-41ce-a581-4f2be55ca4fa")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9299,6 +9299,7 @@
 				)
 			)
 		)
+		(path "/864407e1-5936-5bc7-915c-23278a5808f5/6540545e-32b6-5973-a809-f77b0e57df59")
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -9371,7 +9372,6 @@
 				(xyz 0 0 0)
 			)
 		)
-		(path "/864407e1-5936-5bc7-915c-23278a5808f5/6540545e-32b6-5973-a809-f77b0e57df59")
 	)
 	(footprint "DevBoard:Capacitor_SMD__C_0603_1608Metric"
 		(layer "F.Cu")
@@ -9383,7 +9383,7 @@
 			(at 0 -1.90115 45)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "fdaa7886-4deb-4188-bbab-cca8d23c0d05")
+			(uuid "ce7acd73-d303-45d3-96d1-138338ed9314")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -9395,7 +9395,7 @@
 			(at 0 1.43 45)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "2de9ea5a-8388-444c-b8a0-fde5c678568b")
+			(uuid "33e9a80f-1f56-4d27-a2b9-47c170eb8c36")
 			(effects
 				(font
 					(size 1 1)
@@ -9407,7 +9407,7 @@
 			(at 0 0 45)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "1aca0331-f0a0-49d5-9129-5b364c84073c")
+			(uuid "2d9dbbde-f655-48e4-af36-0487415712da")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9418,7 +9418,7 @@
 			(at 0 0 45)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "e1f647b8-1ea2-4dec-abe6-a20f3521a748")
+			(uuid "fa710dfe-c0a5-4624-bd60-e8f3dfee6f13")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9437,6 +9437,7 @@
 				)
 			)
 		)
+		(path "/74a8a62a-9b00-5f7f-826a-d15ca1a04db7/15711c9c-b705-59e0-9947-9dc90dd82fc9")
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -9511,7 +9512,6 @@
 				(xyz 0 0 0)
 			)
 		)
-		(path "/74a8a62a-9b00-5f7f-826a-d15ca1a04db7/15711c9c-b705-59e0-9947-9dc90dd82fc9")
 	)
 	(gr_text "NOT PCIe"
 		(at 69.45 75.05 0)

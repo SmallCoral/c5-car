@@ -1,0 +1,6 @@
+[target."thumbv8m.main-none-eabihf"]
+rustflags = ["-C", "target-cpu=cortex-m33"]
+
+[alias]
+app = "build -p coral-device --bin coral-app --target thumbv8m.main-none-eabihf"
+boot = "build -p coral-device --bin coral-boot --target thumbv8m.main-none-eabihf"

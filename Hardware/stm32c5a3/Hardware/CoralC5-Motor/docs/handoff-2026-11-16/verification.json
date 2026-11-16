@@ -1,0 +1,5843 @@
+{
+  "date": "2026-11-08",
+  "revision": "M2.8P2",
+  "source_commit": "b9aaa695109ca046874f67017f2174d682bed09d",
+  "kicad_version": "10.0.6",
+  "pass": false,
+  "checks": 957,
+  "failed": [
+    {
+      "name": "Core schematic unchanged except permitted Git EOL 03_MCU.kicad_sch",
+      "pass": false,
+      "detail": null
+    },
+    {
+      "name": "Motor PCB unchanged except permitted Git EOL",
+      "pass": false,
+      "detail": null
+    },
+    {
+      "name": "only existing XT60 exact model missing",
+      "pass": false,
+      "detail": []
+    },
+    {
+      "name": "all Motor UUID associations retained",
+      "pass": false,
+      "detail": null
+    }
+  ],
+  "physical_references": 142,
+  "native_nets": 184,
+  "gpio_roles": 39,
+  "changed_gpio_roles": 20,
+  "native_erc_errors": 0,
+  "native_erc_warnings": 0,
+  "model_bound_references": 140,
+  "model_missing_references": [],
+  "artifacts_sha256": {
+    "CoralC5-Motor.kicad_sch": "53613ff23585f6b51eb830f6d281d405fab82505d1c052b6e4d823b8bab5c796",
+    "10_Lichee_Interface.kicad_sch": "5a0610b1258a46a714d6b7d0dcb8d7901b0e071bfb602ea98dfbb30dfe1e19ea",
+    "06_Module_Power.kicad_sch": "fb62d29cd552b607d060d47357fa92112e20132e34877ba9620d4569d7810887",
+    "02_Power.kicad_sch": "8bf6c8de5dccd7e4c953ffb00cee4ff041b5643d65241157ded1144112e169f0",
+    "07_TFT_Buttons.kicad_sch": "d19bd0d68d3be55b1963d9d4604d87ef8f82e816dd2b8909d2891b1fa9c791e1",
+    "09_Bluetooth_Stepper.kicad_sch": "445df9ddd0cd4c1dae95b0f081a452d9088548a750c159d733181eba16a44a90",
+    "03_Core_Interface.kicad_sch": "038e0ab2fbca1c7aaba1d04d18ed95ea188466b8985f5a3199fb74fd262a3d4d",
+    "08_Grayscale_Cameras.kicad_sch": "b961b874c76bc7b1fbc038c474057bd3d8ad8a6659e6c8de9a52a98fe6d7289e",
+    "05_Right_Motor.kicad_sch": "482aa1705f192f23e8993d2810e8c6c182251200c10044da5fc9ac8f9c4e97e5",
+    "04_Left_Motor.kicad_sch": "b3904b1489bba5d486c1b1baa555fcbc46d4d6ace4c0ece7a8051b85da93aa04"
+  },
+  "results": [
+    {
+      "name": "full native net partition matches historical circuit plus explicit approved changes",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "142 physical references retained",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "184 nets retained",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "BOM.csv exact 140 electrical references",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "BOM_M2_SCHEMATIC_DRAFT.csv exact 140 electrical references",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Core schematic unchanged except permitted Git EOL 02_Power_USB.kicad_sch",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Core schematic unchanged except permitted Git EOL 03_MCU.kicad_sch",
+      "pass": false,
+      "detail": null
+    },
+    {
+      "name": "Core schematic unchanged except permitted Git EOL 04_Interface.kicad_sch",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Core schematic unchanged except permitted Git EOL CoralC5-Core.kicad_sch",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Motor PCB unchanged except permitted Git EOL",
+      "pass": false,
+      "detail": null
+    },
+    {
+      "name": "98 unique fixed contacts",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "39 distinct GPIOs and contacts",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "USB SWD VBUS BOOT and Core user pins reserved",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "canonical allocation tables match 39 roles",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "ten active hierarchy pages",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A1 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A1 supply contact grouping",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A2 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A2 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A2 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A2 unused GPIO NC",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A3 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A3 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A3 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A3 correct module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A4 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A4 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A4 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A4 correct module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A5 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A5 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A5 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A5 correct module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A6 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A6 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A7 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A7 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A7 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A7 correct module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A8 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A8 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A8 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A8 correct module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A9 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A9 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A9 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A9 correct module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A10 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A10 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A10 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A10 unused GPIO NC",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A11 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A11 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A11 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A11 correct module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A12 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A12 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A13 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A14 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A15 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A15 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A15 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A15 unused GPIO NC",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A16 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A16 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A16 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A16 unused GPIO NC",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A17 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A17 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A17 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A17 unused GPIO NC",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A18 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A18 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A18 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A18 unused GPIO NC",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A19 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A19 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A19 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A19 unused GPIO NC",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A20 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A20 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A20 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A20 unused GPIO NC",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A21 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A21 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A21 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A21 unused GPIO NC",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A22 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A22 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A22 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A22 unused GPIO NC",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A23 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A23 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A23 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A23 unused GPIO NC",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A24 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A24 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A24 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A24 unused GPIO NC",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A25 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A25 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A25 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A25 unused GPIO NC",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A26 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A26 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A26 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A26 correct module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A27 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A27 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A27 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A27 correct module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A28 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A28 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A28 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A28 unused GPIO NC",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A29 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A29 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A29 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A29 unused GPIO NC",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A30 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A30 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A30 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A30 correct module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A31 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A31 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A31 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A31 unused GPIO NC",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A32 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A32 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A32 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A32 unused GPIO NC",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A33 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A33 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A33 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A33 correct module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A34 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A34 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A34 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A34 unused GPIO NC",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A35 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A35 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A35 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A35 unused GPIO NC",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A36 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A36 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A36 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A36 unused GPIO NC",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A37 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A37 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A37 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A37 unused GPIO NC",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A38 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A38 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A38 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A38 unused GPIO NC",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A39 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A39 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A39 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A39 unused GPIO NC",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A40 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A40 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A40 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A40 unused GPIO NC",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A41 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A41 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A41 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A41 unused GPIO NC",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A42 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A42 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A42 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A42 unused GPIO NC",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A43 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A43 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A43 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A43 correct module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A44 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A44 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A44 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A44 correct module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A45 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A45 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A45 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A45 correct module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A46 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A46 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A46 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A47 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A47 supply contact grouping",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A48 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A48 supply contact grouping",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A49 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A49 supply contact grouping",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B1 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B1 supply contact grouping",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B2 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B2 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B2 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B2 correct module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B3 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B3 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B3 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B3 correct module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B4 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B4 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B4 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B4 unused GPIO NC",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B5 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B5 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B5 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B5 correct module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B6 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B6 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B6 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B6 correct module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B7 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B7 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B7 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B7 correct module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B8 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B8 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B8 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B8 correct module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B9 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B9 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B9 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B9 correct module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B10 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B10 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B10 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B10 correct module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B11 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B11 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B11 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B11 correct module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B12 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B12 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B12 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B12 correct module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B13 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B13 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B13 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B13 correct module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B14 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B14 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B14 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B14 correct module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B15 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B15 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B15 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B15 correct module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B16 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B16 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B16 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B16 correct module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B17 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B17 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B17 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B17 correct module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B18 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B18 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B18 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B18 correct module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B19 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B19 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B19 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B19 correct module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B20 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B20 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B20 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B20 unused GPIO NC",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B21 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B21 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B21 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B21 unused GPIO NC",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B22 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B22 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B22 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B22 correct module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B23 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B23 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B23 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B23 correct module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B24 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B24 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B24 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B24 unused GPIO NC",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B25 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B25 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B25 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B25 unused GPIO NC",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B26 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B26 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B26 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B26 unused GPIO NC",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B27 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B27 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B27 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B27 unused GPIO NC",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B28 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B28 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B28 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B28 unused GPIO NC",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B29 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B29 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B29 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B29 unused GPIO NC",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B30 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B30 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B30 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B30 unused GPIO NC",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B31 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B31 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B31 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B31 unused GPIO NC",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B32 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B32 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B32 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B32 unused GPIO NC",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B33 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B33 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B33 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B33 correct module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B34 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B34 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B34 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B34 correct module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B35 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B35 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B35 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B35 correct module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B36 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B36 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B36 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B36 unused GPIO NC",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B37 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B37 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B37 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B37 unused GPIO NC",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B38 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B38 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B38 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B38 correct module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B39 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B39 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B39 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B39 unused GPIO NC",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B40 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B40 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B40 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B40 correct module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B41 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B41 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B41 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B41 unused GPIO NC",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B42 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B42 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B42 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B42 unused GPIO NC",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B43 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B43 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B43 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B44 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B44 fixed GPIO name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B44 actual Core MCU pad",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B44 correct module endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B45 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B46 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B47 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B47 supply contact grouping",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B48 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B48 supply contact grouping",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B49 present in Core and Motor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B49 supply contact grouping",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L_ENC_A contact mapping",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L_ENC_A DS15137 Table14 AF",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L_ENC_B contact mapping",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L_ENC_B DS15137 Table14 AF",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R_ENC_A contact mapping",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R_ENC_A DS15137 Table14 AF",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R_ENC_B contact mapping",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R_ENC_B DS15137 Table14 AF",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L_PWM contact mapping",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L_PWM DS15137 Table14 AF",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R_PWM contact mapping",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R_PWM DS15137 Table14 AF",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L_DIR contact mapping",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R_DIR contact mapping",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L_nFAULT contact mapping",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R_nFAULT contact mapping",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L_ISENSE contact mapping",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L_ISENSE Table13 ADC",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R_ISENSE contact mapping",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R_ISENSE Table13 ADC",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "MOTOR_EN_REQ contact mapping",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "BT_TX contact mapping",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "BT_TX DS15137 Table14 AF",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "BT_RX contact mapping",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "BT_RX DS15137 Table14 AF",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "VIDEO_TX contact mapping",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "VIDEO_TX DS15137 Table14 AF",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "VIDEO_RX contact mapping",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "VIDEO_RX DS15137 Table14 AF",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "STEP_UART_TX contact mapping",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "STEP_UART_TX DS15137 Table14 AF",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "STEP_UART_RX contact mapping",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "STEP_UART_RX DS15137 Table14 AF",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "LICHEE_TX contact mapping",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "LICHEE_TX DS15137 Table14 AF",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "LICHEE_RX contact mapping",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "LICHEE_RX DS15137 Table14 AF",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "TFT_SCK contact mapping",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "TFT_SCK DS15137 Table14 AF",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "TFT_MOSI contact mapping",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "TFT_MOSI DS15137 Table14 AF",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "TFT_CS contact mapping",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "TFT_RES contact mapping",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "TFT_DC contact mapping",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "TFT_BL contact mapping",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "TFT_BL DS15137 Table14 AF",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "KEY_MODE contact mapping",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "KEY_NEXT contact mapping",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "KEY_OK contact mapping",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "KEY_START contact mapping",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "GRAY_CH1 contact mapping",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "GRAY_CH2 contact mapping",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "GRAY_CH3 contact mapping",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "GRAY_CH4 contact mapping",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "GRAY_CH5 contact mapping",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "GRAY_CH6 contact mapping",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "GRAY_CH7 contact mapping",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "GRAY_CH8 contact mapping",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L encoder uses CH1 and CH2 of one timer",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R encoder uses CH1 and CH2 of one timer",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "wheel PWM TIM4 separate channels",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "encoders wheel PWM and backlight do not share counters",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "BT UART TX RX same instance",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Maix UART TX RX same instance",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "stepper UART TX RX same instance",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Lichee UART TX RX same instance",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "four independent UART instances",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "independent ST HTML AF and LQFP100 functional audit",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "gray single-port PE7 through PE14",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "module signals use corresponding socket side",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "CoralC5-Motor.kicad_sch no duplicate top-level UUIDs",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "CoralC5-Motor.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "CoralC5-Motor.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "CoralC5-Motor.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "CoralC5-Motor.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "CoralC5-Motor.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "CoralC5-Motor.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "CoralC5-Motor.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "CoralC5-Motor.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "CoralC5-Motor.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "CoralC5-Motor.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "10_Lichee_Interface.kicad_sch hierarchy port names",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "06_Module_Power.kicad_sch hierarchy port names",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "02_Power.kicad_sch hierarchy port names",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "07_TFT_Buttons.kicad_sch hierarchy port names",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "09_Bluetooth_Stepper.kicad_sch hierarchy port names",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "03_Core_Interface.kicad_sch hierarchy port names",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "08_Grayscale_Cameras.kicad_sch hierarchy port names",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "05_Right_Motor.kicad_sch hierarchy port names",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "04_Left_Motor.kicad_sch hierarchy port names",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "10_Lichee_Interface.kicad_sch no duplicate top-level UUIDs",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "10_Lichee_Interface.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "10_Lichee_Interface.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "10_Lichee_Interface.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "10_Lichee_Interface.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "10_Lichee_Interface.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "06_Module_Power.kicad_sch no duplicate top-level UUIDs",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "06_Module_Power.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "06_Module_Power.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "06_Module_Power.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "06_Module_Power.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "02_Power.kicad_sch no duplicate top-level UUIDs",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "02_Power.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "02_Power.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "02_Power.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "02_Power.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "02_Power.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "02_Power.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "02_Power.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "02_Power.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "02_Power.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "02_Power.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "02_Power.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "07_TFT_Buttons.kicad_sch no duplicate top-level UUIDs",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "07_TFT_Buttons.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "07_TFT_Buttons.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "07_TFT_Buttons.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "07_TFT_Buttons.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "07_TFT_Buttons.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "09_Bluetooth_Stepper.kicad_sch no duplicate top-level UUIDs",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "09_Bluetooth_Stepper.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "09_Bluetooth_Stepper.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "09_Bluetooth_Stepper.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "09_Bluetooth_Stepper.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "03_Core_Interface.kicad_sch no duplicate top-level UUIDs",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "03_Core_Interface.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "03_Core_Interface.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "03_Core_Interface.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "03_Core_Interface.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "03_Core_Interface.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "03_Core_Interface.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "03_Core_Interface.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "08_Grayscale_Cameras.kicad_sch no duplicate top-level UUIDs",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "08_Grayscale_Cameras.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "08_Grayscale_Cameras.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "08_Grayscale_Cameras.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "08_Grayscale_Cameras.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "08_Grayscale_Cameras.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "05_Right_Motor.kicad_sch no duplicate top-level UUIDs",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "05_Right_Motor.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "05_Right_Motor.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "05_Right_Motor.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "05_Right_Motor.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "04_Left_Motor.kicad_sch no duplicate top-level UUIDs",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "04_Left_Motor.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "04_Left_Motor.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "04_Left_Motor.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "04_Left_Motor.kicad_sch 100mil note",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R73 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R73 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R73 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C75 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C75 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C75 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "U8 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "U8 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "U8 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "U11 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "U11 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "U11 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C74 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C74 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C74 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "U12 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "U12 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "U12 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R79 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R79 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R79 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C94 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C94 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C94 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C92 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C92 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C92 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "J25 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "J25 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "J25 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C93 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C93 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C93 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R93 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R93 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R93 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "J18 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "J18 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "J18 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "J28 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "J28 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "J28 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C82 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C82 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C82 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C55 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C55 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C55 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R91 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R91 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R91 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C54 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C54 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C54 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C83 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C83 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C83 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "U16 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "U16 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "U16 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "U7 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "U7 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "U7 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C81 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C81 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C81 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "D3 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "D3 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "D3 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R67 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R67 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R67 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "D1 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "D1 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "D1 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R65 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R65 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R65 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "D4 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "D4 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "D4 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C3 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C3 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C3 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C5 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C5 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C5 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C84 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C84 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C84 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C1 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C1 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C1 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R1 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R1 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R1 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R63 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R63 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R63 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R60 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R60 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R60 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "D2 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "D2 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "D2 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R92 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R92 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R92 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C88 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C88 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C88 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R4 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R4 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R4 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C87 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C87 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C87 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C2 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C2 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C2 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "F1 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "F1 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "F1 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C63 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C63 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C63 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R5 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R5 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R5 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R64 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R64 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R64 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "U1 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "U1 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "U1 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R59 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R59 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R59 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C50 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C50 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C50 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R62 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R62 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R62 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R3 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R3 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R3 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C4 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C4 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C4 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Q2 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Q2 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Q2 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C86 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C86 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C86 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "J1 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "J1 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "J1 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C85 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C85 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C85 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R66 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R66 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R66 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "U6 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "U6 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "U6 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R61 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R61 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R61 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "SW1 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "SW1 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "SW1 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R2 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R2 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R2 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C91 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C91 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C91 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L2 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L2 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L2 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Q1 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Q1 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Q1 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C90 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C90 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C90 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C89 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C89 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C89 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L1 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L1 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L1 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "J17 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "J17 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "J17 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R52 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R52 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R52 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "H2 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "H2 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C56 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C56 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C56 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R53 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R53 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R53 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "H1 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "H1 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R56 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R56 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R56 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R51 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R51 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R51 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R50 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R50 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R50 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "SW5 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "SW5 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "SW5 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "SW3 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "SW3 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "SW3 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "SW2 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "SW2 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "SW2 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R55 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R55 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R55 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "SW4 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "SW4 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "SW4 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "J23 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "J23 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "J23 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "J15 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "J15 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "J15 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R7 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R7 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R7 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "J14 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "J14 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "J14 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "J10 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "J10 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "J10 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "J8 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "J8 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "J8 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R6 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R6 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R6 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "J20 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "J20 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "J20 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "U10 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "U10 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "U10 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C78 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C78 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C78 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "J21 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "J21 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "J21 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R72 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R72 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R72 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C72 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C72 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C72 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "J19 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "J19 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "J19 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C62 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C62 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C62 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C34 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C34 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C34 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "J6 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "J6 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "J6 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C35 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C35 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C35 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C38 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C38 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C38 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R37 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R37 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R37 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C39 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C39 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C39 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R35 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R35 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R35 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C32 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C32 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C32 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R33 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R33 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R33 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C40 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C40 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C40 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C37 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C37 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C37 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R30 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R30 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R30 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R38 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R38 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R38 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R31 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R31 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R31 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C31 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C31 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C31 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C30 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C30 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C30 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C33 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C33 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C33 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "U5 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "U5 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "U5 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R39 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R39 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R39 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R34 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R34 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R34 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R32 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R32 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R32 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C36 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C36 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C36 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "U4 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "U4 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "U4 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R36 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R36 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R36 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C20 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C20 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C20 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C12 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C12 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C12 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R15 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R15 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R15 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R11 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R11 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R11 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R18 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R18 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R18 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "J4 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "J4 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "J4 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C10 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C10 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C10 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R14 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R14 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R14 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R16 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R16 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R16 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R19 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R19 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R19 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C15 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C15 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C15 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "U3 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "U3 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "U3 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C19 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C19 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C19 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C14 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C14 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C14 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C11 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C11 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C11 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R12 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R12 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R12 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C16 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C16 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C16 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R13 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R13 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R13 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C13 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C13 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C13 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C17 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C17 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C17 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R17 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R17 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R17 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C18 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C18 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C18 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "U2 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "U2 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "U2 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R10 local footprint exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R10 numbered symbol pads match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "R10 portable existing model",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "only existing XT60 exact model missing",
+      "pass": false,
+      "detail": []
+    },
+    {
+      "name": "U1 manufacturer package pin identities",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "U6 manufacturer package pin identities",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "U8 manufacturer package pin identities",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "U16 manufacturer package pin identities",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "U11 manufacturer package pin identities",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "U12 manufacturer package pin identities",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "J18 manufacturer package pin identities",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "all Motor UUID associations retained",
+      "pass": false,
+      "detail": null
+    },
+    {
+      "name": "native ERC zero errors and warnings",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "no ERC exclusions",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "all ten pages rendered and no wire/text overlaps",
+      "pass": true,
+      "detail": null
+    }
+  ],
+  "resources": [
+    {
+      "reference": "R73",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "C75",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "U8",
+      "footprint": "Motor:Package_DFN_QFN__Texas_RVC0020A_WQFN-20-1EP_3x4mm_P0.5mm_EP1.6x2.6mm",
+      "models": [
+        "${KIPRJMOD}/Models/Package_DFN_QFN__Texas_RVC0020A_WQFN-20-1EP_3x4mm_P0.5mm_EP1.6x2.6mm__Texas_RVC0020A_WQFN-20-1EP_3x4mm_P0.5mm_EP1.6x2.6mm.step"
+      ]
+    },
+    {
+      "reference": "U11",
+      "footprint": "Motor:Package_TO_SOT_SMD__SOT-23-5",
+      "models": [
+        "${KIPRJMOD}/Models/Package_TO_SOT_SMD__SOT-23-5__SOT-23-5.step"
+      ]
+    },
+    {
+      "reference": "C74",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "U12",
+      "footprint": "Motor:Package_TO_SOT_SMD__SOT-23-5",
+      "models": [
+        "${KIPRJMOD}/Models/Package_TO_SOT_SMD__SOT-23-5__SOT-23-5.step"
+      ]
+    },
+    {
+      "reference": "R79",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "C94",
+      "footprint": "Motor:Capacitor_SMD__C_0805_2012Metric",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0805_2012Metric__C_0805_2012Metric.step"
+      ]
+    },
+    {
+      "reference": "C92",
+      "footprint": "Motor:Capacitor_SMD__CP_Elec_10x7.9",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__CP_Elec_10x7.9__CP_Elec_10x7.9.step"
+      ]
+    },
+    {
+      "reference": "J25",
+      "footprint": "Motor:Connector_USB__USB_C_Receptacle_GCT_USB4125-xx-x_6P_TopMnt_Horizontal",
+      "models": [
+        "${KIPRJMOD}/Models/Connector_USB__USB_C_Receptacle_GCT_USB4125-xx-x_6P_TopMnt_Horizontal__USB_C_Receptacle_GCT_USB4125-xx-x_6P_TopMnt_Horizontal.step"
+      ]
+    },
+    {
+      "reference": "C93",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "R93",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "J18",
+      "footprint": "Motor:Connector_PinHeader_2.54mm__PinHeader_2x06_P2.54mm_Vertical",
+      "models": [
+        "${KIPRJMOD}/Models/Connector_PinHeader_2.54mm__PinHeader_2x06_P2.54mm_Vertical__PinHeader_2x06_P2.54mm_Vertical.step"
+      ]
+    },
+    {
+      "reference": "J28",
+      "footprint": "Motor:Connector_USB__USB_C_Receptacle_GCT_USB4125-xx-x_6P_TopMnt_Horizontal",
+      "models": [
+        "${KIPRJMOD}/Models/Connector_USB__USB_C_Receptacle_GCT_USB4125-xx-x_6P_TopMnt_Horizontal__USB_C_Receptacle_GCT_USB4125-xx-x_6P_TopMnt_Horizontal.step"
+      ]
+    },
+    {
+      "reference": "C82",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "C55",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "R91",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "C54",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "C83",
+      "footprint": "Motor:Capacitor_SMD__C_0805_2012Metric",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0805_2012Metric__C_0805_2012Metric.step"
+      ]
+    },
+    {
+      "reference": "U16",
+      "footprint": "Motor:Package_DFN_QFN__Texas_RVC0020A_WQFN-20-1EP_3x4mm_P0.5mm_EP1.6x2.6mm",
+      "models": [
+        "${KIPRJMOD}/Models/Package_DFN_QFN__Texas_RVC0020A_WQFN-20-1EP_3x4mm_P0.5mm_EP1.6x2.6mm__Texas_RVC0020A_WQFN-20-1EP_3x4mm_P0.5mm_EP1.6x2.6mm.step"
+      ]
+    },
+    {
+      "reference": "U7",
+      "footprint": "Motor:Package_TO_SOT_SMD__SOT-23-5",
+      "models": [
+        "${KIPRJMOD}/Models/Package_TO_SOT_SMD__SOT-23-5__SOT-23-5.step"
+      ]
+    },
+    {
+      "reference": "C81",
+      "footprint": "Motor:Capacitor_SMD__CP_Elec_10x7.9",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__CP_Elec_10x7.9__CP_Elec_10x7.9.step"
+      ]
+    },
+    {
+      "reference": "D3",
+      "footprint": "Motor:Diode_SMD__D_SMA",
+      "models": [
+        "${KIPRJMOD}/Models/Diode_SMD__D_SMA__D_SMA.step"
+      ]
+    },
+    {
+      "reference": "R67",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "D1",
+      "footprint": "Motor:Diode_SMD__D_SOD-123",
+      "models": [
+        "${KIPRJMOD}/Models/Diode_SMD__D_SOD-123__D_SOD-123.step"
+      ]
+    },
+    {
+      "reference": "R65",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "D4",
+      "footprint": "Motor:LED_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/LED_SMD__LED_0603_1608Metric__LED_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "C3",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "C5",
+      "footprint": "Motor:Capacitor_SMD__C_1210_3225Metric",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_1210_3225Metric__C_1210_3225Metric.step"
+      ]
+    },
+    {
+      "reference": "C84",
+      "footprint": "Motor:Capacitor_SMD__C_0805_2012Metric",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0805_2012Metric__C_0805_2012Metric.step"
+      ]
+    },
+    {
+      "reference": "C1",
+      "footprint": "Motor:Capacitor_THT__CP_Radial_D10.0mm_P5.00mm",
+      "models": [
+        "${KIPRJMOD}/Models/Nichicon_D10x12.5_P5_Lead_PackageReference.step"
+      ]
+    },
+    {
+      "reference": "R1",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "R63",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "R60",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "D2",
+      "footprint": "Motor:Diode_SMD__D_SMA",
+      "models": [
+        "${KIPRJMOD}/Models/Diode_SMD__D_SMA__D_SMA.step"
+      ]
+    },
+    {
+      "reference": "R92",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "C88",
+      "footprint": "Motor:Capacitor_SMD__C_1210_3225Metric",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_1210_3225Metric__C_1210_3225Metric.step"
+      ]
+    },
+    {
+      "reference": "R4",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "C87",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "C2",
+      "footprint": "Motor:Capacitor_SMD__C_0805_2012Metric",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0805_2012Metric__C_0805_2012Metric.step"
+      ]
+    },
+    {
+      "reference": "F1",
+      "footprint": "Motor:Fuse_Littelfuse_448_6.10x2.69mm_GenericBody",
+      "models": [
+        "${KIPRJMOD}/Models/Littelfuse_0448015-MR_EasyEDA_C187551.step"
+      ]
+    },
+    {
+      "reference": "C63",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "R5",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "R64",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "U1",
+      "footprint": "Motor:Diodes_SO8EP_AP64500",
+      "models": [
+        "${KIPRJMOD}/Models/Package_SO__SOIC-8_3.9x4.9mm_P1.27mm__SOIC-8_3.9x4.9mm_P1.27mm.step"
+      ]
+    },
+    {
+      "reference": "R59",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "C50",
+      "footprint": "Motor:Capacitor_SMD__C_1210_3225Metric",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_1210_3225Metric__C_1210_3225Metric.step"
+      ]
+    },
+    {
+      "reference": "R62",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "R3",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "C4",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "Q2",
+      "footprint": "Motor:Package_TO_SOT_SMD__TO-252-2",
+      "models": [
+        "${KIPRJMOD}/Models/Package_TO_SOT_SMD__TO-252-2.step"
+      ]
+    },
+    {
+      "reference": "C86",
+      "footprint": "Motor:Capacitor_SMD__C_1210_3225Metric",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_1210_3225Metric__C_1210_3225Metric.step"
+      ]
+    },
+    {
+      "reference": "J1",
+      "footprint": "Motor:AMASS_XT60PW-M_1x02_P7.20mm_Horizontal",
+      "models": [
+        "${KIPRJMOD}/Models/AMASS_XT60PW-M_EasyEDA_C98732.step"
+      ]
+    },
+    {
+      "reference": "C85",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "R66",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "U6",
+      "footprint": "Motor:Diodes_SO8EP_AP64500",
+      "models": [
+        "${KIPRJMOD}/Models/Package_SO__SOIC-8_3.9x4.9mm_P1.27mm__SOIC-8_3.9x4.9mm_P1.27mm.step"
+      ]
+    },
+    {
+      "reference": "R61",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "SW1",
+      "footprint": "Motor:SS12D10G5_SHOUHAN_3P_P4.80mm",
+      "models": [
+        "${KIPRJMOD}/Models/DEALON_SS-12D10-G5_PackageReference_C2998777.step"
+      ]
+    },
+    {
+      "reference": "R2",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "C91",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "L2",
+      "footprint": "Motor:Inductor_SMD__L_Wuerth_HCI-1050",
+      "models": [
+        "${KIPRJMOD}/Models/Inductor_SMD__L_Wuerth_HCI-1050__L_Wuerth_HCI-1050.step"
+      ]
+    },
+    {
+      "reference": "Q1",
+      "footprint": "Motor:Package_TO_SOT_SMD__TO-252-2",
+      "models": [
+        "${KIPRJMOD}/Models/Package_TO_SOT_SMD__TO-252-2.step"
+      ]
+    },
+    {
+      "reference": "C90",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "C89",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "L1",
+      "footprint": "Motor:Inductor_SMD__L_Wuerth_HCI-1050",
+      "models": [
+        "${KIPRJMOD}/Models/Inductor_SMD__L_Wuerth_HCI-1050__L_Wuerth_HCI-1050.step"
+      ]
+    },
+    {
+      "reference": "J17",
+      "footprint": "Motor:Connector_PinSocket_2.54mm__PinSocket_1x08_P2.54mm_Vertical",
+      "models": [
+        "${KIPRJMOD}/Models/Connector_PinSocket_2.54mm__PinSocket_1x08_P2.54mm_Vertical.step"
+      ]
+    },
+    {
+      "reference": "R52",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "H2",
+      "footprint": "Motor:MountingHole__MountingHole_2mm",
+      "models": []
+    },
+    {
+      "reference": "C56",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "R53",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "H1",
+      "footprint": "Motor:MountingHole__MountingHole_2mm",
+      "models": []
+    },
+    {
+      "reference": "R56",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "R51",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "R50",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "SW5",
+      "footprint": "Motor:SW_Push_6x6x4.3mm_SMD_4Pad_Generic",
+      "models": [
+        "${KIPRJMOD}/Models/SW_Push_6x6x4.3mm_SMD_Generic.step"
+      ]
+    },
+    {
+      "reference": "SW3",
+      "footprint": "Motor:SW_Push_6x6x4.3mm_SMD_4Pad_Generic",
+      "models": [
+        "${KIPRJMOD}/Models/SW_Push_6x6x4.3mm_SMD_Generic.step"
+      ]
+    },
+    {
+      "reference": "SW2",
+      "footprint": "Motor:SW_Push_6x6x4.3mm_SMD_4Pad_Generic",
+      "models": [
+        "${KIPRJMOD}/Models/SW_Push_6x6x4.3mm_SMD_Generic.step"
+      ]
+    },
+    {
+      "reference": "R55",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "SW4",
+      "footprint": "Motor:SW_Push_6x6x4.3mm_SMD_4Pad_Generic",
+      "models": [
+        "${KIPRJMOD}/Models/SW_Push_6x6x4.3mm_SMD_Generic.step"
+      ]
+    },
+    {
+      "reference": "J23",
+      "footprint": "Motor:Connector_JST__JST_XH_B8B-XH-A_1x08_P2.50mm_Vertical",
+      "models": [
+        "${KIPRJMOD}/Models/Connector_JST__JST_XH_B8B-XH-A_1x08_P2.50mm_Vertical.step"
+      ]
+    },
+    {
+      "reference": "J15",
+      "footprint": "Motor:Connector_PinSocket_2.54mm__PinSocket_1x04_P2.54mm_Vertical",
+      "models": [
+        "${KIPRJMOD}/Models/Connector_PinSocket_2.54mm__PinSocket_1x04_P2.54mm_Vertical.step"
+      ]
+    },
+    {
+      "reference": "R7",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "J14",
+      "footprint": "Motor:C5_EDGE_3_Socket",
+      "models": [
+        "${KIPRJMOD}/Models/C5_EDGE_3_Socket__Streamline_Socket.step"
+      ]
+    },
+    {
+      "reference": "J10",
+      "footprint": "Motor:Connector_PinHeader_2.54mm__PinHeader_1x02_P2.54mm_Vertical",
+      "models": [
+        "${KIPRJMOD}/Models/Connector_PinHeader_2.54mm__PinHeader_1x02_P2.54mm_Vertical__PinHeader_1x02_P2.54mm_Vertical.step"
+      ]
+    },
+    {
+      "reference": "J8",
+      "footprint": "Motor:Connector_JST__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical",
+      "models": [
+        "${KIPRJMOD}/Models/Connector_JST__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical__JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical.step"
+      ]
+    },
+    {
+      "reference": "R6",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "J20",
+      "footprint": "Motor:Connector_JST__JST_XH_B8B-XH-A_1x08_P2.50mm_Vertical",
+      "models": [
+        "${KIPRJMOD}/Models/Connector_JST__JST_XH_B8B-XH-A_1x08_P2.50mm_Vertical.step"
+      ]
+    },
+    {
+      "reference": "U10",
+      "footprint": "Motor:SGM_PS8_SOIC8_EP2.33x3.22_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Package_SO__SOIC-8_3.9x4.9mm_P1.27mm__SOIC-8_3.9x4.9mm_P1.27mm.step"
+      ]
+    },
+    {
+      "reference": "C78",
+      "footprint": "Motor:Capacitor_SMD__C_0805_2012Metric",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0805_2012Metric__C_0805_2012Metric.step"
+      ]
+    },
+    {
+      "reference": "J21",
+      "footprint": "Motor:Connector_JST__JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical",
+      "models": [
+        "${KIPRJMOD}/Models/Connector_JST__JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical.step"
+      ]
+    },
+    {
+      "reference": "R72",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "C72",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "J19",
+      "footprint": "Motor:ZX_MX1.25_6PWT",
+      "models": [
+        "${KIPRJMOD}/Models/Megastar_ZX-MX1.25-6PWT_EasyEDA_C7430472.step"
+      ]
+    },
+    {
+      "reference": "C62",
+      "footprint": "Motor:Capacitor_SMD__C_0805_2012Metric",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0805_2012Metric__C_0805_2012Metric.step"
+      ]
+    },
+    {
+      "reference": "C34",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "J6",
+      "footprint": "Motor:Connector_JST__JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical",
+      "models": [
+        "${KIPRJMOD}/Models/JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical.step"
+      ]
+    },
+    {
+      "reference": "C35",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "C38",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "R37",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "C39",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "R35",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "C32",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "R33",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "C40",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "C37",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "R30",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "R38",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "R31",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "C31",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "C30",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "C33",
+      "footprint": "Motor:Capacitor_THT__CP_Radial_D10.0mm_P5.00mm",
+      "models": [
+        "${KIPRJMOD}/Models/Nichicon_D10x12.5_P5_Lead_PackageReference.step"
+      ]
+    },
+    {
+      "reference": "U5",
+      "footprint": "Motor:Package_TO_SOT_SMD__SOT-363_SC-70-6",
+      "models": [
+        "${KIPRJMOD}/Models/Package_TO_SOT_SMD__SOT-363_SC-70-6__SOT-363_SC-70-6.step"
+      ]
+    },
+    {
+      "reference": "R39",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "R34",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "R32",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "C36",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "U4",
+      "footprint": "Motor:DRV8874_PWP0016",
+      "models": [
+        "${KIPRJMOD}/Models/DRV8874_PWP0016__HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.78x3.37mm.step"
+      ]
+    },
+    {
+      "reference": "R36",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "C20",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "C12",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "R15",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "R11",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "R18",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "J4",
+      "footprint": "Motor:Connector_JST__JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical",
+      "models": [
+        "${KIPRJMOD}/Models/JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical.step"
+      ]
+    },
+    {
+      "reference": "C10",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "R14",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "R16",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "R19",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "C15",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "U3",
+      "footprint": "Motor:Package_TO_SOT_SMD__SOT-363_SC-70-6",
+      "models": [
+        "${KIPRJMOD}/Models/Package_TO_SOT_SMD__SOT-363_SC-70-6__SOT-363_SC-70-6.step"
+      ]
+    },
+    {
+      "reference": "C19",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "C14",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "C11",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "R12",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "C16",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "R13",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "C13",
+      "footprint": "Motor:Capacitor_THT__CP_Radial_D10.0mm_P5.00mm",
+      "models": [
+        "${KIPRJMOD}/Models/Nichicon_D10x12.5_P5_Lead_PackageReference.step"
+      ]
+    },
+    {
+      "reference": "C17",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "R17",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "C18",
+      "footprint": "Motor:C_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Capacitor_SMD__C_0603_1608Metric__C_0603_1608Metric.step"
+      ]
+    },
+    {
+      "reference": "U2",
+      "footprint": "Motor:DRV8874_PWP0016",
+      "models": [
+        "${KIPRJMOD}/Models/DRV8874_PWP0016__HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.78x3.37mm.step"
+      ]
+    },
+    {
+      "reference": "R10",
+      "footprint": "Motor:R_0603_1608Metric_Gap0.85mm_HandSolder",
+      "models": [
+        "${KIPRJMOD}/Models/Resistor_SMD__R_0603_1608Metric__R_0603_1608Metric.step"
+      ]
+    }
+  ],
+  "motor_pcb_update_pending": true,
+  "pcb_drc_run": false,
+  "limitations": [
+    "Motor PCB is byte-identical; remapped GPIO pad nets intentionally await a separate update.",
+    "MaixCAM2 no-charge startup/inference current has not been measured against the ~1A limit; independent reverse blocking and UART isolation are absent.",
+    "12V 12.5A source estimate ~11.09A at85% efficiency, with assumed4A wheels and3A stepper, leaves limited margin; load/startup/thermal tests required.",
+    "Stepper VM and UART are direct; current simplified circuit has no independent MCU power-off.",
+    "Core external3.3V load budget<=100mA and encoder3.3V operation need hardware confirmation.",
+    "XT60 exact model, generic-model dimensions, connector mating and button lead geometry remain unverified.",
+    "Firmware peripheral setup not implemented."
+  ]
+}

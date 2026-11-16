@@ -1,0 +1,16 @@
+[package]
+name = "coral-host"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+
+[features]
+default = []
+radio = ["dep:btleplug", "dep:tokio", "dep:futures", "dep:serialport"]
+
+[dependencies]
+coral-core = { path = "../core" }
+btleplug = { version = "=0.13.5", optional = true }
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "time", "signal"], optional = true }
+futures = { version = "0.3", optional = true }
+serialport = { version = "4", optional = true }

@@ -1,0 +1,20 @@
+[workspace]
+members = ["core", "device", "host"]
+default-members = ["core", "host"]
+resolver = "2"
+
+[workspace.package]
+edition = "2024"
+rust-version = "1.100"
+version = "0.1.0"
+
+[profile.dev]
+opt-level = 1
+panic = "abort"
+
+[profile.release]
+opt-level = "s"
+lto = true
+codegen-units = 1
+panic = "abort"
+overflow-checks = true
