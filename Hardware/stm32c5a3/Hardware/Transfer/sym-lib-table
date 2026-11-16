@@ -1,0 +1,9 @@
+(sym_lib_table
+	(lib
+		(name "Transfer")
+		(type "KiCad")
+		(uri "${KIPRJMOD}/Transfer.kicad_sym")
+		(options "")
+		(descr "Transfer local XT60PW symbols")
+	)
+)

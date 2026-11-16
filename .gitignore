@@ -5,15 +5,19 @@ __pycache__/
 node_modules/
 /.scratch/
 /.workbuddy-ai/
+/.agent/diagnostics/
 
 # Firmware build products and local editor state.
 Firmware/**/build/
 .vscode/
+.idea/
+CMakeUserPresets.json
 
 # KiCad local state; keep source, libraries, BOMs and reports.
 *.kicad_prl
 *.lck
 *-backups/
+.history/
 ~$*.xlsx
 ~$*.docx
 /Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/schematic-only-resume/raster-preview-profile/

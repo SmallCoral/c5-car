@@ -1,0 +1,2 @@
+PASS: recovery after 591 installation interruption points
+PASS: CRC, framing, bounds, lost ACKs, staging integrity, download interruptions

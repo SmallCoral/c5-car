@@ -1,0 +1,88 @@
+
+Firmware/build/debug/coral_boot.elf:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+Disassembly of section .ramfunc:
+
+20000000 <flash_operation>:
+20000000:	f3ef 8c10 	mrs	ip, PRIMASK
+20000004:	b672      	cpsid	i
+20000006:	4a2c      	ldr	r2, [pc, #176]	@ (200000b8 <flash_operation+0xb8>)
+20000008:	4b2c      	ldr	r3, [pc, #176]	@ (200000bc <flash_operation+0xbc>)
+2000000a:	6053      	str	r3, [r2, #4]
+2000000c:	f103 3388 	add.w	r3, r3, #2290649224	@ 0x88888888
+20000010:	6053      	str	r3, [r2, #4]
+20000012:	6a93      	ldr	r3, [r2, #40]	@ 0x28
+20000014:	07db      	lsls	r3, r3, #31
+20000016:	d435      	bmi.n	20000084 <flash_operation+0x84>
+20000018:	f44f 031f 	mov.w	r3, #10420224	@ 0x9f0000
+2000001c:	b410      	push	{r4}
+2000001e:	6313      	str	r3, [r2, #48]	@ 0x30
+20000020:	2900      	cmp	r1, #0
+20000022:	d03a      	beq.n	2000009a <flash_operation+0x9a>
+20000024:	460b      	mov	r3, r1
+20000026:	2402      	movs	r4, #2
+20000028:	3110      	adds	r1, #16
+2000002a:	6294      	str	r4, [r2, #40]	@ 0x28
+2000002c:	1ac2      	subs	r2, r0, r3
+2000002e:	18d0      	adds	r0, r2, r3
+20000030:	f853 4b04 	ldr.w	r4, [r3], #4
+20000034:	428b      	cmp	r3, r1
+20000036:	6004      	str	r4, [r0, #0]
+20000038:	d1f9      	bne.n	2000002e <flash_operation+0x2e>
+2000003a:	f3bf 8f4f 	dsb	sy
+2000003e:	491e      	ldr	r1, [pc, #120]	@ (200000b8 <flash_operation+0xb8>)
+20000040:	6a0b      	ldr	r3, [r1, #32]
+20000042:	f013 0f0b 	tst.w	r3, #11
+20000046:	d008      	beq.n	2000005a <flash_operation+0x5a>
+20000048:	4b1d      	ldr	r3, [pc, #116]	@ (200000c0 <flash_operation+0xc0>)
+2000004a:	e001      	b.n	20000050 <flash_operation+0x50>
+2000004c:	3b01      	subs	r3, #1
+2000004e:	d01d      	beq.n	2000008c <flash_operation+0x8c>
+20000050:	bf00      	nop
+20000052:	6a0a      	ldr	r2, [r1, #32]
+20000054:	f012 0f0b 	tst.w	r2, #11
+20000058:	d1f8      	bne.n	2000004c <flash_operation+0x4c>
+2000005a:	f44f 011f 	mov.w	r1, #10420224	@ 0x9f0000
+2000005e:	2201      	movs	r2, #1
+20000060:	4b15      	ldr	r3, [pc, #84]	@ (200000b8 <flash_operation+0xb8>)
+20000062:	6a18      	ldr	r0, [r3, #32]
+20000064:	6319      	str	r1, [r3, #48]	@ 0x30
+20000066:	629a      	str	r2, [r3, #40]	@ 0x28
+20000068:	f3bf 8f4f 	dsb	sy
+2000006c:	f3bf 8f6f 	isb	sy
+20000070:	f38c 8810 	msr	PRIMASK, ip
+20000074:	f400 001e 	and.w	r0, r0, #10354688	@ 0x9e0000
+20000078:	fab0 f080 	clz	r0, r0
+2000007c:	f85d 4b04 	ldr.w	r4, [sp], #4
+20000080:	0940      	lsrs	r0, r0, #5
+20000082:	4770      	bx	lr
+20000084:	f38c 8810 	msr	PRIMASK, ip
+20000088:	2000      	movs	r0, #0
+2000008a:	4770      	bx	lr
+2000008c:	4b0d      	ldr	r3, [pc, #52]	@ (200000c4 <flash_operation+0xc4>)
+2000008e:	4a0e      	ldr	r2, [pc, #56]	@ (200000c8 <flash_operation+0xc8>)
+20000090:	60da      	str	r2, [r3, #12]
+20000092:	f3bf 8f4f 	dsb	sy
+20000096:	bf00      	nop
+20000098:	e7fd      	b.n	20000096 <flash_operation+0x96>
+2000009a:	490c      	ldr	r1, [pc, #48]	@ (200000cc <flash_operation+0xcc>)
+2000009c:	0b43      	lsrs	r3, r0, #13
+2000009e:	4288      	cmp	r0, r1
+200000a0:	bf94      	ite	ls
+200000a2:	2000      	movls	r0, #0
+200000a4:	2001      	movhi	r0, #1
+200000a6:	019b      	lsls	r3, r3, #6
+200000a8:	f403 637c 	and.w	r3, r3, #4032	@ 0xfc0
+200000ac:	ea43 73c0 	orr.w	r3, r3, r0, lsl #31
+200000b0:	f043 0324 	orr.w	r3, r3, #36	@ 0x24
+200000b4:	6293      	str	r3, [r2, #40]	@ 0x28
+200000b6:	e7c0      	b.n	2000003a <flash_operation+0x3a>
+200000b8:	40022000 	.word	0x40022000
+200000bc:	45670123 	.word	0x45670123
+200000c0:	0098967f 	.word	0x0098967f
+200000c4:	e000ed00 	.word	0xe000ed00
+200000c8:	05fa0004 	.word	0x05fa0004
+200000cc:	0807ffff 	.word	0x0807ffff

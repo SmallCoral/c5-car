@@ -1,6 +1,8 @@
 # CoralC5-Core
 
-用 KiCad 10 打开 CoralC5-Core.kicad_pro。本板保留 STM32C5A3VGT6 最小系统、24MHz HSE 晶体、独立 3.3V 降压、USB-C、复位与 BOOT、用户按键和两颗 LED，通过 J13 金手指插入 Expansion。
+用 KiCad 10 打开 CoralC5-Core.kicad_pro。本板保留 STM32C5A3VGT6 最小系统、24MHz HSE 晶体、独立 3.3V 降压、USB-C、复位与 BOOT、用户按键和两颗 LED，当前通过 J13 金手指与 Motor 底板配套。历史 Expansion 方案不在当前仓库；配套接口以 [98 触点合同](../Shared/interface.csv)为准。
+
+2026-11-16 已完成焊接后的外设联调和无线升级，入口见[LL 固件](../../../../Firmware/README.md)。下文带日期的硬件检查保留当时结论，不能替代最新文件或实物的重新验证。
 
 正面丝印已补上 RESET、BOOT0 和 USER，用户按键接 PD2。左侧空白处放了从 Coral-Wave 沿用的珊瑚 Logo，下方署名 Designed by SmallCoral。图案转换成 11mm 单色轮廓，封装和来源放在 [Logo 说明](../Shared/branding/README.md)，可在 KiCad 中整组移动。
 
@@ -12,7 +14,7 @@
 
 照片中的 H562 使用 AMS1117，我们保留 AP63203 与电感，电源区按降压回路集中摆放。D3 是黄绿色电源灯，D4 是红色用户灯，PE3 高电平点亮。SW1、SW2、SW5 已统一改为两脚 3×6×2.5 贴片款，按 SD-1107 图纸绘制，实际本体 6.1×3.6mm，需与现有按键脚距核对。照片用于估计功能区域，具体走线和晶体回路仍需后续布局布线时复核。
 
-四线 XH SWD 座放在 Expansion，顺序为 3V3／VTref、SWDIO、SWCLK、GND。当前保存的 Core 已移除 TP1 至 TP4，单独调试需从金手指或对应网络接线。BOOT0 保留 C5A3 的 PH2。Y2 及 C19、C20 已移除，当前没有外部 LSE 晶体。R45 至 R48 也已从原理图和 PCB 删除，PC14、PC15 直接连接 A16、A15；PH0、PH1 仅接 HSE，A14、A13 标为不连接。C5-EDGE-3 为自定义电气针序，除这两个空位外，信号顺序沿用 MCU 当前摆放对应的正面 B 排和背面 A 排。须配套使用同步更新后的 Expansion。
+SWD 由金手指引出至配套底板，当前 Motor 的调试接口见[接口表](../../../../Documentation/reference/m2-interfaces.md)。当前保存的 Core 已移除 TP1 至 TP4，单独调试需从金手指或对应网络接线。BOOT0 保留 C5A3 的 PH2。Y2 及 C19、C20 已移除，当前没有外部 LSE 晶体。R45 至 R48 也已从原理图和 PCB 删除，PC14、PC15 直接连接 A16、A15；PH0、PH1 仅接 HSE，A14、A13 标为不连接。C5-EDGE-3 为自定义电气针序，除这两个空位外，信号顺序沿用 MCU 当前摆放对应的正面 B 排和背面 A 排。配套底板须使用同步的 98 触点合同。
 
 本板有四页原理图，见 [电路 PDF](docs/CoralC5-Core_Schematic.pdf)，元件清单在 [BOM.csv](docs/BOM.csv)。42 个采购位号均绑定本地模型，三个开关模型为标明来源的通用外形；J13 金手指属于板本身。JP1 已移除，USB_VBUS 直接接 D2 阳极，D2 保留反灌隔离；USB 供电仍仅用于低负载调试。
 

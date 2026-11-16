@@ -1,6 +1,8 @@
 # Motor 外接模块接口
 
-更新日期：2026-11-08。以下描述当前精简电路及 M2.8P2 引脚规划，替代旧版的独立步进控电、Maix 理想二极管和荔枝派 Q3 感知方案。[GPIO 分配](motor-core-pins.md)单独维护，[原生原理图](../../Hardware/stm32c5a3/Hardware/CoralC5-Motor/CoralC5-Motor.kicad_sch)为电气依据。
+更新日期：2026-11-16。以下描述精简电路及 M2.8P2 引脚规划，替代旧版的独立步进控电、Maix 理想二极管和荔枝派 Q3 感知方案。[GPIO 分配](motor-core-pins.md)单独维护，[原生原理图](../../Hardware/stm32c5a3/Hardware/CoralC5-Motor/CoralC5-Motor.kicad_sch)保留设计连接。
+
+电源输入勘误：用户已确认原输入正负极画反，Transfer 用于输入极性修正。现有原理图不能作为极性已修正的证明；上电前核对实际插头至板上 VM/GND 的导通及极性，设计快照和验证状态见[Transfer 说明](../../Hardware/stm32c5a3/Hardware/Transfer/README.md)。
 
 ## 板端针序
 
@@ -19,7 +21,7 @@
 | J21 灰度电源 | GND、5V_EXT；与 J20 配合使用 |
 | J23 ZDT TTL | VM、GND、NC、NC、NC、NC、模块 RX、模块 TX；只用 1/2/7/8 |
 | J28 Action 4 | Type-C，5V B 轨，经 U16 接入检测、3A 通告和限流；无 MCU 数据 |
-| SW2～SW5 | 模式、下一项、确认、启动；6×6×4.3mm 四脚 SMD 通用封装，脚跨距待实物核对 |
+| SW2～SW5 | 四个任务按键；6×6×4.3mm 四脚 SMD 通用封装。当前“按钮在上、屏幕在下”时从左至右为 RUN、DIR、PWR/SPD、TASK，行为见[固件说明](../../Firmware/README.md) |
 | H1/H2 | 保留两只 TFT 安装孔；本轮不改孔位，装配尺寸须与实屏核对 |
 
 J22/J24/J26/J27 均不在当前设计，不再按旧图接线。J10 仅控制轮驱动，不控制步进或整车总电源。

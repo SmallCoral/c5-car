@@ -1,0 +1,50 @@
+      -------------------------------------------------------------------
+                       STM32CubeProgrammer v2.23.0                  
+      -------------------------------------------------------------------
+
+Connecting to J-Link/Flasher Probe
+Device=Cortex-M33
+Device ID   : 0x45A
+Voltage     : 3.27V
+Frequency   : 4000 KHz
+NVM size    : 1 MBytes
+
+
+Opening and parsing file: coral_c5.hex
+
+
+Memory Programming ...
+  File          : coral_c5.hex
+  Size          : 15.32 KB 
+  Address       : 0x08000000
+
+
+Erasing memory corresponding to segment 0:
+Erasing internal memory sectors [0 1]
+Download in Progress:
+�������������������������������������������������� 0%
+�������������������������������������������������� 100%
+
+File download complete
+Time elapsed during download operation: 00:00:00.219
+
+
+
+Verifying...
+
+
+Read progress:
+�������������������������������������������������� 50%
+�������������������������������������������������� 100%
+
+Time elapsed during verifying operation: 00:00:00.075
+
+
+Download verified successfully
+
+
+
+RUNNING Program ... 
+  Address:      : 0x8000000
+Application is running, Please Hold on...
+Start operation achieved successfully

@@ -1,0 +1,7 @@
+[1/7] Building C object CMakeFiles/render_ui.dir/tests/render_ui.c.obj
+[2/7] Building C object CMakeFiles/render_ui.dir/src/logic.c.obj
+[3/7] Building C object CMakeFiles/test_logic.dir/src/logic.c.obj
+[4/7] Building C object CMakeFiles/test_logic.dir/src/stepper.c.obj
+[5/7] Building C object CMakeFiles/test_logic.dir/tests/test_logic.c.obj
+[6/7] Linking C executable test_logic.exe
+[7/7] Linking C executable render_ui.exe

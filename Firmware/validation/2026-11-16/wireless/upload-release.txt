@@ -1,0 +1,23 @@
+Bootloader ready; current app 18976 bytes CRC32=4084B512; received=0
+  0%  128/16696 bytes
+ 10%  1792/16696 bytes
+Retry command 3, sequence 28
+ 20%  3456/16696 bytes
+Retry command 3, sequence 35
+Retry command 3, sequence 42
+ 30%  5120/16696 bytes
+ 40%  6784/16696 bytes
+Retry command 3, sequence 62
+Retry command 3, sequence 67
+ 50%  8448/16696 bytes
+ 60%  10112/16696 bytes
+ 70%  11776/16696 bytes
+ 80%  13440/16696 bytes
+ 90%  15104/16696 bytes
+Retry command 3, sequence 123
+Retry command 3, sequence 125
+Retry command 3, sequence 131
+100%  16696/16696 bytes
+Image verified in staging; installing...
+Verified running application: 16696 bytes, CRC32=D7E57D4B
+Wireless update complete in 52.5s; retries=8; motors remain stopped

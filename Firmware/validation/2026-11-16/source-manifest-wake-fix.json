@@ -1,0 +1,41 @@
+{
+  "date": "2026-11-16",
+  "git_base": "64c5210ef6b4a552aac22b4bfe8a288ffd95149f",
+  "source_state": "uncommitted working tree",
+  "sha256": {
+    "Firmware/cmake/arm-none-eabi.cmake": "ae7c2b4ae7748eed53e9b8c9a2f4eab1b2756dc7ac8289c969d73d4e6b6a1343",
+    "Firmware/CMakeLists.txt": "b53693f7289f8f50753f88d8de8a007da7afc7bcb4b055a6610a6c7b34e1634c",
+    "Firmware/CMakePresets.json": "3cfc17e96b52d618fdb68dccc07112712d492522e879e485f366e7d2e968036f",
+    "Firmware/include/board.h": "fb3484cc0e79c7784489c33c34c1f8d88f2c1db7d592e3ab3cee63477a65c721",
+    "Firmware/include/config.h": "ad2e81c5adec73a811f2872d08428f8116dd874283780089fe46e766c95cd446",
+    "Firmware/include/display.h": "7305da71764da6569c14c08efdc42c465b05d84ecc2845d105f438fb91a28e17",
+    "Firmware/include/emm.h": "ab06f8918d866561afedc69c792de6d1ff7ccbf64bc46984d4ed5129114542fe",
+    "Firmware/include/logic.h": "b47bcc6f72c32d323b78c5f24789ff5078ae0ea7936c8c20d3aafb6588a67b24",
+    "Firmware/include/serial.h": "f27aef8028662b736b5ac4663f88a78ae2b5bee77b5ba49df6e635ec8cd87f75",
+    "Firmware/include/stepper.h": "657acca7693e36701aeb58243c4c2f3f0944f1bc0555dcd8eb65748a0f84c0be",
+    "Firmware/include/ui.h": "47b0b877f4cefd37a836244c8b15c4352b63e618a6aef12640fe9b0c40140888",
+    "Firmware/platform/stm32c5a3.ld": "6ca961e94f07cfd31a5eadf1ece1b9d67809b74593e2a180a8b957817ec07f0f",
+    "Firmware/src/board.c": "ed4443bf17152f4843a4eaf3fa574f7be4054fe6ed1e09aaf6dfd611582de221",
+    "Firmware/src/display.c": "f723bab1945ea2de2babb105729b24c82802b61f27dfd0b1d0dbc5be3e84780f",
+    "Firmware/src/emm.c": "c3c12537ddbbae14f89e4dd91bdf1239d2a561d3c6cc724cc35ce13cc4930e6b",
+    "Firmware/src/logic.c": "008ef84a323b1908dcb7451c49b8ea287c5df6282d7c0ce7279817a6cb5e1991",
+    "Firmware/src/main.c": "0128c83a8a0570457ace44a6e0429087278a146d09af81b3d4480f55310919fe",
+    "Firmware/src/runtime.c": "d69d1a482438e52d14522e323a94cd8421fe7ab4235f046930f6056397463aaa",
+    "Firmware/src/serial.c": "c985a35735771426948a26457a16f66f8eeb87d4845848f9d2b825f1a2ef4bce",
+    "Firmware/src/stepper.c": "4f4d23142dcf2910c464f602fcac9b038ef1bbce310c47a1e8a32f6afd143e2b",
+    "Firmware/src/ui.c": "b04330387ebf1ad9e9ce9c83f9c0697bb78fd018dc314db3514cc1567423deca",
+    "Firmware/tests/render_ui.c": "f5270fe39ed8d7d8ef2f563d7f12a3949a5b9deed328ab70cfad414327f828ca",
+    "Firmware/tests/test_logic.c": "a60b5283ce9da96f4fd09a7cbf768533b6266b79072e9c8997026f2f14b7b258",
+    "Firmware/tests/test_monitor.py": "0b6db1f3d6d16a64eb9df17597a5a6399928c437df5d3192e2eb291e8f3d9ba9",
+    "Firmware/tools/monitor.py": "95e8e9c9db3c09c251afcf122e640780e177e5c9f1e5b340ec3c15df5d2b60e9",
+    "Firmware/tools/requirements.txt": "fc29b325dc2fab2e7eabccf34b54bcafe061cb6ee137f8fe9aca7876fccf6c06"
+  },
+  "build_sha256": {
+    "Firmware/build/debug/coral_c5.elf": "87fd2a3fa06d1b9e05877fdff83257b8774eb56a6c269758efb2583e6a6619e4",
+    "Firmware/build/debug/coral_c5.hex": "041c1d8a86b1800ca2fdb297d9c4b5e9cdd24c78cb4efac3acab9c37a2f0a618",
+    "Firmware/build/debug/coral_c5.bin": "b6d749a7abb8b1f6813b93faed179bf7b2e831aff165327f4631bd0cb6a80922",
+    "Firmware/build/release/coral_c5.elf": "a41219fb63c3fe352336bf100d4e57927bf4b700f49b2a0e38dc0a3e9874f564",
+    "Firmware/build/release/coral_c5.hex": "4613b4a1e3314d122c691b5dbb1724bdc75b0e198b45e61f111118efdb75c472",
+    "Firmware/build/release/coral_c5.bin": "8c6814661962c6a6348bcd6faabd34c25603b4ac5d369e8c958248bdd7074bcc"
+  }
+}

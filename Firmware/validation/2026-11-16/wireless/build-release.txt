@@ -1,0 +1,14 @@
+[0/1] Re-running CMake...
+-- Configuring done (0.2s)
+-- Generating done (0.0s)
+-- Build files have been written to: C:/Users/sc/Documents/Dev/Hardware/c5-car/Firmware/build/release
+[1/4] Building C object CMakeFiles/coral_boot.dir/boot/flash_port.c.obj
+[2/4] Linking C executable coral_boot.elf
+Memory region         Used Size  Region Size  %age Used
+           FLASH:       16020 B        64 KB     24.44%
+             RAM:       43728 B       248 KB     17.22%
+           STACK:        8160 B       8160 B    100.00%
+   text	   data	    bss	    dec	    hex	filename
+  13736	   2280	  49400	  65416	   ff88	C:/Users/sc/Documents/Dev/Hardware/c5-car/Firmware/build/release/coral_boot.elf
+[3/4] Packaging wireless image and first-install HEX
+OTA: 16696 bytes, CRC32=D7E57D4B; first_install.hex includes bootloader

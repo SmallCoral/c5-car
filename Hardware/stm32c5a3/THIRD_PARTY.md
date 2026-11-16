@@ -4,16 +4,15 @@ Coral-C5 把硬件、固件和本地元件资源放在一起，方便换一台�
 
 ## 固件
 
-ST 设备支持包、HAL 和系统调用代码保留了原文件头及随附许可。
+当前固件使用 ST 设备支持包、LL 驱动头和 Arm CMSIS，保留原文件头及随附许可；迁移与版本依据见[固定依赖说明](../../Firmware/vendor/README.md)。HAL 源码随厂商包留存，但不参与当前构建。
 
 | 内容 | 本地许可证 |
 | --- | --- |
-| STM32C5 设备支持 | [stm32c5xx_dfp/LICENSE.md](../../Firmware/STM32C5A3VGT6_cmake/stm32c5xx_dfp/LICENSE.md) |
-| STM32 HAL | [stm32c5xx_drivers/LICENSE.md](../../Firmware/STM32C5A3VGT6_cmake/stm32c5xx_drivers/LICENSE.md) |
-| Arm CMSIS | [arch/cmsis/LICENSE.md](../../Firmware/STM32C5A3VGT6_cmake/arch/cmsis/LICENSE.md) |
-| 系统调用 | [utilities/syscalls/LICENSE.md](../../Firmware/STM32C5A3VGT6_cmake/utilities/syscalls/LICENSE.md) |
+| STM32C5 设备支持 | [stm32c5xx_dfp/LICENSE.md](../../Firmware/vendor/stm32c5xx_dfp/LICENSE.md) |
+| STM32 LL / HAL 驱动包 | [stm32c5xx_drivers/LICENSE.md](../../Firmware/vendor/stm32c5xx_drivers/LICENSE.md) |
+| Arm CMSIS | [CMSIS/LICENSE.md](../../Firmware/vendor/CMSIS/LICENSE.md) |
 
-生成目录中还保留了 `mx_stm32c5xx_hal_drivers_license.md` 和 `mx_syscalls_license.md`，它们对应各自的生成文件。
+旧 MX2 生成工程和系统调用文件已退出当前构建，其文件与许可可从 Git 历史查阅；当前 C 入口由 `Firmware/src/runtime.c` 实现。
 
 ## 元件库和资料
 
@@ -28,6 +27,8 @@ Streamline 公共符号、板框金手指封装、母座封装及 STEP 来自 [C
 `Hardware/Shared/sources` 保存了设计时使用的厂家资料，并保留 DS15137 的文本提取结果供检查脚本使用。手册、产品图纸和其中的内容归原权利人所有。关键版本、章节和原始链接列在 [资料依据](Hardware/Shared/sources/README.md) 中。
 
 新增 `Hardware/CoralC5-Motor` 的通用符号、封装和模型基于KiCad 10安装库，母座资源沿用上述Streamline来源。DRV8874封装按TI PWP0016原厂图调整，DC-005和SS12D07VG4封装按各自厂家图建立；这两件的VRML是明确标注的通用外形。厂家资料、用户指定的schematic-design skill快照及限制见 [Motor资料依据](Hardware/CoralC5-Motor/docs/sources/README.md)，原资料版权归原权利人。
+
+Transfer 的 XT60PW 符号、封装、STEP 与厂家图纸来源单独记录在[模型说明](Hardware/Transfer/Models/README.md)，其电源输入极性修正用途与当前设计状态见[Transfer 说明](Hardware/Transfer/README.md)。
 
 ## 珊瑚 Logo
 

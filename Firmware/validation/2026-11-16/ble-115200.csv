@@ -1,0 +1,1 @@
+received_utc,tag,version,ms,seq,task,running,duty_permille,left_count,right_count,left_cps,right_cps,gray_raw,encoder_ab,fault_mask,enable_request,step_online,step_phase,step_flags,step_position_raw,step_error,uart_errors,rx_drops,tx_drops,lcd_ok,wheel_trip,step_timeouts,step_position_valid,step_target_rpm,step_rpm,step_rpm_valid

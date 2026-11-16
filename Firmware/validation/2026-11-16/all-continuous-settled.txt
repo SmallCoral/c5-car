@@ -1,0 +1,38 @@
+   115012 ms  ALL     run=0  L=  -9949 (    +0/s)  R=  11353 (    +0/s)  gray=00000000  fault=0 emm=1/E2 rpm=0
+   115512 ms  ALL     run=0  L=  -9949 (    +0/s)  R=  11353 (    +0/s)  gray=00000000  fault=0 emm=1/E2 rpm=0
+   116012 ms  ALL     run=0  L=  -9949 (    +0/s)  R=  11353 (    +0/s)  gray=00000000  fault=0 emm=1/E2 rpm=0
+RUN ALL cycle 1
+   116512 ms  ALL     run=1  L= -10078 (  -580/s)  R=  11507 (  +690/s)  gray=00000000  fault=0 emm=1/00 rpm=?
+   117013 ms  ALL     run=1  L= -10382 (  -620/s)  R=  11863 (  +720/s)  gray=00000000  fault=0 emm=1/00 rpm=29
+   117513 ms  ALL     run=1  L= -10695 (  -620/s)  R=  12225 (  +720/s)  gray=00000000  fault=0 emm=1/00 rpm=30
+   118013 ms  ALL     run=1  L= -11010 (  -630/s)  R=  12588 (  +730/s)  gray=00000000  fault=0 emm=1/00 rpm=29
+   118513 ms  ALL     run=1  L= -11327 (  -630/s)  R=  12954 (  +730/s)  gray=00000000  fault=0 emm=1/00 rpm=29
+   119013 ms  ALL     run=1  L= -11641 (  -630/s)  R=  13322 (  +740/s)  gray=00000000  fault=0 emm=1/00 rpm=30
+   119513 ms  ALL     run=1  L= -11959 (  -650/s)  R=  13694 (  +750/s)  gray=00000000  fault=0 emm=1/00 rpm=30
+   120013 ms  ALL     run=1  L= -12282 (  -660/s)  R=  14066 (  +740/s)  gray=00000000  fault=0 emm=1/00 rpm=30
+   120513 ms  ALL     run=1  L= -12611 (  -660/s)  R=  14440 (  +740/s)  gray=00000000  fault=0 emm=1/00 rpm=29
+   121013 ms  ALL     run=1  L= -12939 (  -650/s)  R=  14816 (  +760/s)  gray=00000000  fault=0 emm=1/00 rpm=29
+   121513 ms  ALL     run=1  L= -13264 (  -650/s)  R=  15192 (  +750/s)  gray=00000000  fault=0 emm=1/00 rpm=29
+   122013 ms  ALL     run=1  L= -13592 (  -660/s)  R=  15569 (  +750/s)  gray=00000000  fault=0 emm=1/00 rpm=30
+   122513 ms  ALL     run=1  L= -13922 (  -660/s)  R=  15946 (  +760/s)  gray=00000000  fault=0 emm=1/00 rpm=30
+   123013 ms  ALL     run=1  L= -14257 (  -670/s)  R=  16325 (  +760/s)  gray=00000000  fault=0 emm=1/00 rpm=30
+RUN again: stop ALL
+   123513 ms  ALL     run=0  L= -14481 (   +20/s)  R=  16597 (   +50/s)  gray=00000000  fault=0 emm=1/00 rpm=30
+   124016 ms  ALL     run=0  L= -14482 (    +0/s)  R=  16597 (    +0/s)  gray=00000000  fault=0 emm=1/00 rpm=0
+RESULT {"cycle": 1, "observed_running_ms": 6501, "left_delta": -4533, "right_delta": 5244, "step_position_delta": 223346, "step_rpm_values": [29, 30], "stopped": true, "wheel_trip": 0}
+   124516 ms  ALL     run=0  L= -14482 (    +0/s)  R=  16597 (    +0/s)  gray=00000000  fault=0 emm=1/00 rpm=0
+   125016 ms  ALL     run=0  L= -14482 (    +0/s)  R=  16597 (    +0/s)  gray=00000000  fault=0 emm=1/00 rpm=0
+RUN ALL cycle 2
+   125516 ms  ALL     run=0  L= -14482 (    +0/s)  R=  16597 (    +0/s)  gray=00000000  fault=0 emm=1/00 rpm=0
+   126018 ms  ALL     run=1  L= -14719 (  -660/s)  R=  16866 (  +760/s)  gray=00000000  fault=0 emm=1/00 rpm=29
+   126518 ms  ALL     run=1  L= -15055 (  -660/s)  R=  17244 (  +760/s)  gray=00000000  fault=0 emm=1/00 rpm=29
+   127018 ms  ALL     run=1  L= -15393 (  -680/s)  R=  17622 (  +760/s)  gray=00000000  fault=0 emm=1/00 rpm=29
+   127518 ms  ALL     run=1  L= -15732 (  -680/s)  R=  18001 (  +760/s)  gray=00000000  fault=0 emm=1/00 rpm=29
+RUN again: stop ALL
+   128018 ms  ALL     run=0  L= -15972 (   -30/s)  R=  18288 (  +120/s)  gray=00000000  fault=0 emm=1/00 rpm=27
+   128518 ms  ALL     run=0  L= -15973 (    +0/s)  R=  18287 (    +0/s)  gray=00000000  fault=0 emm=1/00 rpm=0
+   129021 ms  ALL     run=0  L= -15973 (    +0/s)  R=  18287 (    +0/s)  gray=00000000  fault=0 emm=1/00 rpm=0
+RESULT {"cycle": 2, "observed_running_ms": 1500, "left_delta": -1491, "right_delta": 1690, "step_position_delta": 65416, "step_rpm_values": [29], "stopped": true, "wheel_trip": 0}
+   129567 ms  ALL     run=0  L= -15973 (    +0/s)  R=  18287 (    +0/s)  gray=00000000  fault=0 emm=1/00 rpm=0
+   130067 ms  ALL     run=0  L= -15973 (    +0/s)  R=  18287 (    +0/s)  gray=00000000  fault=0 emm=1/00 rpm=0
+DONE 31 frames; invalid 0

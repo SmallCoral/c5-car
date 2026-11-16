@@ -1,0 +1,9 @@
+{
+  "readback_span_bytes": 96534,
+  "boot_compared_bytes": 17916,
+  "boot_sha256": "0c7f2a82c077bec9b4b576203d0223fe83e129d1201cf1a8346b588e876e42fa",
+  "application_compared_bytes": 18976,
+  "app_crc32": "4084B512",
+  "boot_matches_initial_install": true,
+  "application_matches_wireless_upload": true
+}

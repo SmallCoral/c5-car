@@ -1,5 +1,11 @@
 # Skills 安装与使用记录
 
+## 2026-11-16 固件与项目整理
+
+文档继续采用 `docs update`，从本机 `.scratch/docs-support/skills/authoring/docs/` 的完整支持树读取入口及 routing、placement、writing、drift、CLAUDE.md 规则。目录仅记录当前环境，不作为克隆项目后的必需依赖。
+
+本轮整理当前 LL 固件、无线升级、硬件入口和交接；保留原始资料与历史失败结果。固件开发采用 `kernel-guided-coding` 的通用工程原则与嵌入式 C 适配。没有全局安装/更新技能，也没有运行自动 PR 流程。
+
 ## 2026-11-11 项目整理
 
 本轮从项目本地缓存的完整支持树读取 `skills/authoring/docs/SKILL.md`，使用 `update` 模式。

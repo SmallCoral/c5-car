@@ -1,0 +1,5 @@
+received_utc,tag,version,ms,seq,task,running,duty_permille,left_count,right_count,left_cps,right_cps,gray_raw,encoder_ab,fault_mask,enable_request,step_online,step_phase,step_flags,step_position_raw,step_error,uart_errors,rx_drops,tx_drops,lcd_ok,wheel_trip,step_timeouts,step_position_valid,step_target_rpm,step_rpm,step_rpm_valid
+2026-11-16T05:09:17.168285+00:00,C5,2,193567,386,5,0,0,-16762,19422,0,0,0,8,0,0,1,1,2,831561,0,0,0,0,1,0,0,1,0,0,1
+2026-11-16T05:09:17.188878+00:00,C5,2,194067,387,5,0,0,-16762,19422,0,0,0,8,0,0,1,1,2,831561,0,0,0,0,1,0,0,1,0,0,1
+2026-11-16T05:09:17.696168+00:00,C5,2,194567,388,5,0,0,-16762,19422,0,0,0,8,0,0,1,1,2,831561,0,0,0,0,1,0,0,1,0,0,1
+2026-11-16T05:09:18.190410+00:00,C5,2,195067,389,5,0,0,-16762,19422,0,0,0,8,0,0,1,1,2,831561,0,0,0,0,1,0,0,1,0,0,1

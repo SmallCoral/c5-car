@@ -1,0 +1,15 @@
+[
+  {
+    "cycle": 1,
+    "observed_running_ms": 6501,
+    "left_delta": -3969,
+    "right_delta": 4642,
+    "step_position_delta": 220166,
+    "step_rpm_values": [
+      29,
+      30
+    ],
+    "stopped": true,
+    "wheel_trip": 0
+  }
+]

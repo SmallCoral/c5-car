@@ -1,0 +1,26 @@
+[
+  {
+    "side": "left",
+    "duty_permille": 100,
+    "start_ms": 53002,
+    "end_ms": 57003,
+    "left_delta": 0,
+    "right_delta": 0,
+    "peak_cps": 0,
+    "fault_mask": 0,
+    "wheel_trip": 2,
+    "stopped": true
+  },
+  {
+    "side": "right",
+    "duty_permille": 100,
+    "start_ms": 58503,
+    "end_ms": 62503,
+    "left_delta": 0,
+    "right_delta": 0,
+    "peak_cps": 0,
+    "fault_mask": 0,
+    "wheel_trip": 2,
+    "stopped": true
+  }
+]

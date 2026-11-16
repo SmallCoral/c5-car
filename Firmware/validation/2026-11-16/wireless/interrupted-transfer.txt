@@ -1,0 +1,5 @@
+Bootloader ready; current app 16696 bytes CRC32=D7E57D4B; received=0
+PASS: duplicate packet, corrupt CRC rejected; old app D7E57D4B intact; disconnect at 1024 bytes
+Retry command 6, sequence 1
+Verified running application: 16696 bytes, CRC32=D7E57D4B
+PASS: reconnect after incomplete transfer; previous app booted without J-Link

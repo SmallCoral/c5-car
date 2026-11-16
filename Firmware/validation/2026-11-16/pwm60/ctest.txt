@@ -1,0 +1,9 @@
+Test project C:/Users/sc/Documents/Dev/Hardware/c5-car/Firmware/build/host
+    Start 1: logic
+1/2 Test #1: logic ............................   Passed    0.01 sec
+    Start 2: ui_bounds
+2/2 Test #2: ui_bounds ........................   Passed    0.01 sec
+
+100% tests passed, 0 tests failed out of 2
+
+Total Test time (real) =   0.04 sec

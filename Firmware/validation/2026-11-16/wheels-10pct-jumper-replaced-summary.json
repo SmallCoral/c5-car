@@ -1,0 +1,14 @@
+[
+  {
+    "side": "left",
+    "duty_permille": 100,
+    "start_ms": 11002,
+    "end_ms": 12002,
+    "left_delta": 0,
+    "right_delta": 0,
+    "peak_cps": 0,
+    "fault_mask": 0,
+    "wheel_trip": 4,
+    "stopped": true
+  }
+]

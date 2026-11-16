@@ -1,0 +1,97 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-11-14T14:56:42",
+    "ignored_checks": [
+        {
+            "description": "Global label only appears once in the schematic",
+            "key": "single_global_label"
+        },
+        {
+            "description": "Four connection points are joined together",
+            "key": "four_way_junction"
+        },
+        {
+            "description": "SPICE model issue",
+            "key": "simulation_model_issue"
+        },
+        {
+            "description": "Assigned footprint doesn't match footprint filters",
+            "key": "footprint_filter"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning"
+    ],
+    "kicad_version": "10.0.6",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/70d16d07-c26c-4e1c-a3ff-32a8766b85e2",
+            "violations": [
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol J1 引脚 2 [+, Passive, Line]",
+                            "pos": {
+                                "x": 1.1938,
+                                "y": 0.8509
+                            },
+                            "uuid": "9ed55360-e70c-4ebc-9bc3-a34c6d7c7188"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol J1 引脚 1 [-, Passive, Line]",
+                            "pos": {
+                                "x": 1.1938,
+                                "y": 0.8763
+                            },
+                            "uuid": "462c5d21-fc8f-4e3f-98c2-bb7607553260"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol J2 引脚 2 [+, Passive, Line]",
+                            "pos": {
+                                "x": 1.4732,
+                                "y": 0.8509
+                            },
+                            "uuid": "8a950858-053b-4d20-8869-bb9275eee041"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol J2 引脚 1 [-, Passive, Line]",
+                            "pos": {
+                                "x": 1.4732,
+                                "y": 0.8763
+                            },
+                            "uuid": "19cb674c-5281-442a-9aa6-9de36a73d022"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                }
+            ]
+        }
+    ],
+    "source": "Transfer.kicad_sch"
+}

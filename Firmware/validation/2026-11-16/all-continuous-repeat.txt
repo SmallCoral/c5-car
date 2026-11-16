@@ -1,0 +1,28 @@
+    55508 ms  ALL     run=0  L=  -9944 (  -410/s)  R=  11342 (  +500/s)  gray=00000000  fault=0 emm=1/00 rpm=0
+RUN ALL cycle 1
+    56011 ms  ALL     run=0  L=  -9949 (    +0/s)  R=  11353 (    +0/s)  gray=00000000  fault=0 emm=1/E2 rpm=?
+    56511 ms  ALL     run=0  L=  -9949 (    +0/s)  R=  11353 (    +0/s)  gray=00000000  fault=0 emm=1/E2 rpm=0
+    57012 ms  ALL     run=0  L=  -9949 (    +0/s)  R=  11353 (    +0/s)  gray=00000000  fault=0 emm=1/E2 rpm=0
+    57512 ms  ALL     run=0  L=  -9949 (    +0/s)  R=  11353 (    +0/s)  gray=00000000  fault=0 emm=1/E2 rpm=0
+    58012 ms  ALL     run=0  L=  -9949 (    +0/s)  R=  11353 (    +0/s)  gray=00000000  fault=0 emm=1/E2 rpm=0
+    58512 ms  ALL     run=0  L=  -9949 (    +0/s)  R=  11353 (    +0/s)  gray=00000000  fault=0 emm=1/E2 rpm=0
+    59012 ms  ALL     run=0  L=  -9949 (    +0/s)  R=  11353 (    +0/s)  gray=00000000  fault=0 emm=1/E2 rpm=0
+DONE 8 frames; invalid 0
+Traceback (most recent call last):
+  File "C:\Users\sc\Documents\Dev\Hardware\c5-car\.scratch\wheel-test\all-run.py", line 128, in <module>
+    asyncio.run(main())
+  File "C:\Program Files\WindowsApps\OpenAI.CodexPrimaryRuntime.v26-1112-611-0_26.1112.611.0_x64__3k8sg7r9htsxt\dependencies\python\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\OpenAI.CodexPrimaryRuntime.v26-1112-611-0_26.1112.611.0_x64__3k8sg7r9htsxt\dependencies\python\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\OpenAI.CodexPrimaryRuntime.v26-1112-611-0_26.1112.611.0_x64__3k8sg7r9htsxt\dependencies\python\Lib\asyncio\base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\sc\Documents\Dev\Hardware\c5-car\.scratch\wheel-test\all-run.py", line 85, in main
+    started = await wait_for(lambda r: r['running'] == 1 and r['enable_request'] == 1 and
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sc\Documents\Dev\Hardware\c5-car\.scratch\wheel-test\all-run.py", line 53, in wait_for
+    raise RuntimeError('Expected motor state did not arrive')
+RuntimeError: Expected motor state did not arrive

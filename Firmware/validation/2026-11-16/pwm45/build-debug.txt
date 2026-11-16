@@ -1,0 +1,13 @@
+[1/7] Building C object CMakeFiles/coral_c5.dir/src/display.c.obj
+[2/7] Building C object CMakeFiles/coral_c5.dir/src/logic.c.obj
+[3/7] Building C object CMakeFiles/coral_c5.dir/src/main.c.obj
+[4/7] Building C object CMakeFiles/coral_c5.dir/src/stepper.c.obj
+[5/7] Building C object CMakeFiles/coral_c5.dir/src/serial.c.obj
+[6/7] Building C object CMakeFiles/coral_c5.dir/src/board.c.obj
+[7/7] Linking C executable coral_c5.elf
+Memory region         Used Size  Region Size  %age Used
+           FLASH:       16988 B         1 MB      1.62%
+             RAM:       42668 B       248 KB     16.80%
+           STACK:          8 KB         8 KB    100.00%
+   text	   data	    bss	    dec	    hex	filename
+  15524	   1464	  49396	  66384	  10350	C:/Users/sc/Documents/Dev/Hardware/c5-car/Firmware/build/debug/coral_c5.elf

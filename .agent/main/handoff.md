@@ -1,43 +1,39 @@
 # Coral-C5 当前交接
 
-更新日期：2026-11-11。
-仓库为 `SmallCoral/c5-car`，分支为 `main`；本轮起点为 `0b9b2a66126a25e0a6bbb31a1b0634d705a871a3`。
-交付提交和远端状态以 `git log -1`、`git status -sb` 为准。
+更新日期：2026-11-16。仓库 `SmallCoral/c5-car`，分支 `main`。
+本轮整理起点为 `64c5210ef6b4a552aac22b4bfe8a288ffd95149f`；交付提交与远端状态以 Git 记录为准。
 
 ## 当前状态
 
-- 校赛 A 题采用 Core + Motor。网络 Expansion 是历史方案，当前仓库没有其工程文件。
-- Motor 电路为 M2.8P2，142 个原理图实体、184 个网络、39 路 GPIO；PCB 有 146 个封装，其中 140 个电气元件、6 个孔。
-- 2026-11-10 KiCad 10.0.6 原生 DRC：17 条错误、6 条警告、0 项未连接，另有 6 条原理图一致性警告。
-- 新导出网表与 PCB 的有效电气焊盘网络无错配；H1 重复位号和机械孔关联仍使同步检查失败。不要宣称完全通过。
-- 当前 PCB SHA256 为 `9de443e35a98fb3a4f64617e2b5f9bcd7b38bafe53b79f5d6056c7db906da830`，11 月 11 日整理时核对未变。
-- 固件仍为初始化后空循环；机械总装为历史框架；未完成整车实物验证。
+- 校赛 A 题使用 STM32C5A3 Core + Motor，用户已完成焊接。左右编码器焊接及 PA3 使能问题已处理，两轮主动转动、连续步进和彩屏/蓝牙联调通过。
+- `Firmware` 已替换旧 MX2 空工程，使用 C5 LL/CMSIS。默认 ALL，轮 PWM 45%、步进 30 RPM；上电停止，按 RUN 联动，再按停止。界面方向为按钮在上、屏幕在下，左至右 RUN / DIR / LVL / TASK。
+- 已安装无线引导程序，日常更新默认使用 HC-08。当前板最后验证的 Debug 应用为 CRC `4084B512`、18,976 B，应用位于 `0x08010000`；新构建的实际身份以生成包和查询回复为准。
+- HC-08 USART1 PA6/PA7 使用 57600 8N1；Emm USART6 PC6/PC7 使用 115200 8N1、地址 1。蓝牙升级会先停止电机，未提供远程启动。
+- Motor PCB 在 11 月 10 日检查后由用户继续保存修改。本轮原样纳入，未重跑 DRC。旧报告的 17 错误、6 警告及 6 一致性警告只代表当时版本。
+- Transfer 是电源输入转接板，用来修正此前输入正负极画反的问题（用户于 11 月 16 日确认）。仓库快照已有 XT60PW 公母头、封装与模型，但原理图未连线、ERC 有 4 个错误，PCB 尚无布线，极性修正未在该快照中实现或验证。
+- 机械总装保留历史参考框架。循线、轮速闭环、视觉标定、摆杆角度反馈和钢球稳控尚未实现。
 
 ## 从这里继续
 
-| 内容 | 文件 |
+| 内容 | 入口 |
 | --- | --- |
-| 主要入口 | [根 README](../../README.md)、[Motor README](../../Hardware/stm32c5a3/Hardware/CoralC5-Motor/README.md) |
-| 最新 PCB 检查 | [复查说明](../../Documentation/validation/2026-11-10-motor-pcb-review.md)、[原始 DRC](../../Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/pcb-review-2026-11-10/drc-refill.json) |
-| 采购表 | [Motor BOM 说明](../../Documentation/reference/motor-bom.md) |
-| 接口 | [接线](../../Documentation/reference/m2-interfaces.md)、[GPIO](../../Documentation/reference/motor-core-pins.md)、[电机六针](../../Documentation/reference/motor-interface.md) |
-| 本轮整理 | [整理记录](../../Documentation/validation/2026-11-11-project-cleanup.md) |
-| 原交接 | [整理前版本](archive/2026-11-11-before-cleanup-handoff.md) |
+| 项目与目录 | [首页](../../README.md)、[目录归属](../../Documentation/reference/repository-layout.md) |
+| 固件与操作 | [构建和测试](../../Firmware/README.md)、[按键联调](../../Documentation/how-to/firmware-bringup.md) |
+| 无线升级 | [一键脚本与恢复](../../Documentation/how-to/wireless-update.md)、[协议](../../Documentation/reference/wireless-update.md)、[实测记录](../../Documentation/validation/2026-11-16-wireless-update.md) |
+| 电机与遥测 | [联动记录](../../Documentation/validation/2026-11-16-wheel-drive.md)、[遥测字段](../../Documentation/reference/firmware-telemetry.md) |
+| 硬件 | [Core/Motor/Transfer 入口](../../Hardware/stm32c5a3/README.md)、[现状和待完成项](../../Documentation/reference/pending-hardware-changes.md) |
+| 接口与采购 | [接线](../../Documentation/reference/m2-interfaces.md)、[GPIO](../../Documentation/reference/motor-core-pins.md)、[BOM](../../Documentation/reference/motor-bom.md) |
+| 本次整理 | [提交前检查](../../Documentation/validation/2026-11-16-project-cleanup.md) |
 
-## 未完成工作
+普通改程序后，在项目根目录运行 `./Firmware/flash-wireless.ps1`；Release 加 `-Preset release`。关闭其他 BLE 客户端后再上传。J-Link 用于首次安装、引导程序修复及调试；不要单独下载应用而遗漏匹配的元数据。
 
-1. 依据连接器原厂图纸处理 J14 的 0.05mm 孔到铜间距；将 V5_SYS 的 0.1mm 微孔改成适合 1.6mm 板厚的普通通孔。
-2. 检查 U8/U16 的大电流细线、U1/U6 的开关回路，以及 U1/U6/U2/U4 的局部散热地铜和过孔。
-3. 按实际器件尺寸检查 16 处 Courtyard 重叠，处理安装孔重复位号、封装定义及丝印，再重新跑 DRC。
-4. 三份 BOM 中只有完整表覆盖 140 个位号。精简表省略 42 个阻容；U10、MOS 和降本替换仍是候选，不能直接写成已实现器件。
-5. 完成电源启动、持续负载、温升、负载阶跃、模块供电、编码器和整车验证；按当前分配接入固件。
+## 后续开发边界
 
-本轮授权为项目整理和推送，未执行上述硬件修改。
-继续修改前读取根 AGENTS.md 和新的用户指令；保留实时设计，不重跑旧生成器或用历史基线覆盖设计。
+1. 先标定轮径、方向和编码器每转计数，再实现轮速闭环与灰度循线。当前 45% 为开环 PWM，不能当作速度设定值。
+2. 核对 MaixCAM2 J19 线束、供电与 UART 数据，再接入视觉坐标和稳球控制；现有资料不代表视觉链路已验证。
+3. 完成机械、负载与整车测试。AS5600 仍是未集成候选，采购替换仍需核对。
+4. 对最新 Motor PCB 重新进行原生 DRC 和功率布局检查；实物外设运行不替代设计发布验证。
+5. 无线升级已经完成真实上传和传输中断恢复；实物随机断电、Flash ECC 注入、极限镜像以及持 TASK 上电仍未做现场验证，详情见无线记录。
 
-## 本轮提交内容
-
-归档三份采购工作簿和 11 月 10 日原始检查报告，更新项目、文档、硬件与固件入口，标明历史方案和未落实替代件。
-根目录 `core.png` 原样移到 `Images/core.png`；独立网页原样移到 `Documentation/archive/web-demos/pelican-bike.html`。
-本地工作缓存、Office 锁文件、浏览器状态和代理记忆继续排除在版本控制外。
-硬件源文件、符号封装模型、固件源码和机械设计保持原内容。
+继续修改前读取根 AGENTS.md 和 Firmware/AGENTS.md。保留用户手工设计，不运行旧硬件生成器覆盖布局；不修改只供参考的旧项目。
+原始诊断、Flash 备份、IDE 会话和 KiCad 自动历史保留本机并忽略。正式设计、日期验证记录、厂商依赖与模型均随仓库维护；先前交接可从 Git 历史查看。

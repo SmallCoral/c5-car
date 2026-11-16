@@ -1,0 +1,41 @@
+     3501 ms  ALL     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray=00000000  fault=0 emm=1/00 rpm=0
+RUN ALL cycle 1
+     4002 ms  ALL     run=1  L=    -83 (  -445/s)  R=    106 (  +544/s)  gray=00000000  fault=0 emm=1/00 rpm=?
+     4502 ms  ALL     run=1  L=   -332 (  -510/s)  R=    398 (  +590/s)  gray=00000000  fault=0 emm=1/00 rpm=29
+     5003 ms  ALL     run=1  L=   -601 (  -550/s)  R=    718 (  +650/s)  gray=00000000  fault=0 emm=1/00 rpm=29
+     5503 ms  ALL     run=1  L=   -882 (  -570/s)  R=   1045 (  +660/s)  gray=00000000  fault=0 emm=1/00 rpm=30
+     6003 ms  ALL     run=1  L=  -1168 (  -560/s)  R=   1380 (  +670/s)  gray=00000000  fault=0 emm=1/00 rpm=30
+     6503 ms  ALL     run=1  L=  -1448 (  -540/s)  R=   1711 (  +660/s)  gray=00000000  fault=0 emm=1/00 rpm=30
+     7003 ms  ALL     run=1  L=  -1713 (  -530/s)  R=   2044 (  +680/s)  gray=00000000  fault=0 emm=1/00 rpm=30
+     7503 ms  ALL     run=1  L=  -1989 (  -560/s)  R=   2377 (  +670/s)  gray=00000000  fault=0 emm=1/00 rpm=29
+     8003 ms  ALL     run=1  L=  -2273 (  -590/s)  R=   2713 (  +670/s)  gray=00000000  fault=0 emm=1/00 rpm=29
+     8503 ms  ALL     run=1  L=  -2573 (  -600/s)  R=   3048 (  +680/s)  gray=00000000  fault=0 emm=1/00 rpm=30
+     9003 ms  ALL     run=1  L=  -2873 (  -600/s)  R=   3393 (  +700/s)  gray=00000000  fault=0 emm=1/00 rpm=30
+     9503 ms  ALL     run=1  L=  -3176 (  -610/s)  R=   3740 (  +700/s)  gray=00000000  fault=0 emm=1/00 rpm=30
+    10003 ms  ALL     run=1  L=  -3484 (  -630/s)  R=   4088 (  +700/s)  gray=00000000  fault=0 emm=1/00 rpm=30
+    10503 ms  ALL     run=1  L=  -3796 (  -630/s)  R=   4439 (  +710/s)  gray=00000000  fault=0 emm=1/00 rpm=29
+RUN again: stop ALL
+    11003 ms  ALL     run=0  L=  -3969 (    +0/s)  R=   4642 (    +0/s)  gray=00000000  fault=0 emm=1/00 rpm=2
+    11503 ms  ALL     run=0  L=  -3969 (    +0/s)  R=   4642 (    +0/s)  gray=00000000  fault=0 emm=1/00 rpm=0
+    12003 ms  ALL     run=0  L=  -3969 (    +0/s)  R=   4642 (    +0/s)  gray=00000000  fault=0 emm=1/00 rpm=0
+RESULT {"cycle": 1, "observed_running_ms": 6501, "left_delta": -3969, "right_delta": 4642, "step_position_delta": 220166, "step_rpm_values": [29, 30], "stopped": true, "wheel_trip": 0}
+    12503 ms  ALL     run=0  L=  -3969 (    +0/s)  R=   4642 (    +0/s)  gray=00000000  fault=0 emm=1/00 rpm=0
+RUN ALL cycle 2
+    13006 ms  ALL     run=1  L=  -3969 (    +0/s)  R=   4642 (    +0/s)  gray=00000000  fault=3 emm=1/00 rpm=?
+    13506 ms  ALL     run=0  L=  -4029 (    +0/s)  R=   4724 (    +0/s)  gray=00000000  fault=0 emm=1/00 rpm=0
+DONE 21 frames; invalid 0
+Traceback (most recent call last):
+  File "C:\Users\sc\Documents\Dev\Hardware\c5-car\.scratch\wheel-test\all-run.py", line 119, in <module>
+    asyncio.run(main())
+  File "C:\Program Files\WindowsApps\OpenAI.CodexPrimaryRuntime.v26-1112-611-0_26.1112.611.0_x64__3k8sg7r9htsxt\dependencies\python\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\OpenAI.CodexPrimaryRuntime.v26-1112-611-0_26.1112.611.0_x64__3k8sg7r9htsxt\dependencies\python\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\OpenAI.CodexPrimaryRuntime.v26-1112-611-0_26.1112.611.0_x64__3k8sg7r9htsxt\dependencies\python\Lib\asyncio\base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\sc\Documents\Dev\Hardware\c5-car\.scratch\wheel-test\all-run.py", line 83, in main
+    raise RuntimeError('Unexpected protection or early stop')
+RuntimeError: Unexpected protection or early stop

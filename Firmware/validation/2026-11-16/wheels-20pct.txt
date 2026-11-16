@@ -1,0 +1,33 @@
+   104003 ms  RIGHT   run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray=00000000  fault=0 emm=1/00 rpm=0
+   104503 ms  RIGHT   run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray=00000000  fault=0 emm=1/00 rpm=0
+   105003 ms  BOTH    run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray=00000000  fault=0 emm=1/00 rpm=0
+   105503 ms  STEPPER run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray=00000000  fault=0 emm=1/00 rpm=0
+   106003 ms  MONITOR run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray=00000000  fault=0 emm=1/00 rpm=0
+   106503 ms  LEFT    run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray=00000000  fault=0 emm=1/00 rpm=0
+START left 20 percent, max 3 seconds
+   107003 ms  LEFT    run=1  L=      0 (    +0/s)  R=      0 (    +0/s)  gray=00000000  fault=0 emm=1/00 rpm=0
+   107503 ms  LEFT    run=1  L=      0 (    +0/s)  R=      0 (    +0/s)  gray=00000000  fault=0 emm=1/00 rpm=0
+   108003 ms  LEFT    run=1  L=      0 (    +0/s)  R=      0 (    +0/s)  gray=00000000  fault=0 emm=1/00 rpm=0
+   108503 ms  LEFT    run=1  L=      0 (    +0/s)  R=      0 (    +0/s)  gray=00000000  fault=0 emm=1/00 rpm=0
+   109003 ms  LEFT    run=1  L=      0 (    +0/s)  R=      0 (    +0/s)  gray=00000000  fault=0 emm=1/00 rpm=0
+   109503 ms  LEFT    run=1  L=      0 (    +0/s)  R=      0 (    +0/s)  gray=00000000  fault=0 emm=1/00 rpm=0
+   110003 ms  LEFT    run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray=00000000  fault=0 emm=1/00 rpm=0
+   110503 ms  LEFT    run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray=00000000  fault=0 emm=1/00 rpm=0
+RESULT {"side": "left", "duty_permille": 200, "start_ms": 106503, "end_ms": 110503, "left_delta": 0, "right_delta": 0, "peak_cps": 0, "fault_mask": 0, "wheel_trip": 0, "stopped": true}
+   111003 ms  LEFT    run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray=00000000  fault=0 emm=1/00 rpm=0
+   111503 ms  LEFT    run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray=00000000  fault=0 emm=1/00 rpm=0
+   112003 ms  RIGHT   run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray=00000000  fault=0 emm=1/00 rpm=0
+START right 20 percent, max 3 seconds
+   112503 ms  RIGHT   run=1  L=      0 (    +0/s)  R=      0 (    +0/s)  gray=00000000  fault=0 emm=1/00 rpm=0
+   113003 ms  RIGHT   run=1  L=      0 (    +0/s)  R=      0 (    +0/s)  gray=00000000  fault=0 emm=1/00 rpm=0
+   113503 ms  RIGHT   run=1  L=      0 (    +0/s)  R=      0 (    +0/s)  gray=00000000  fault=0 emm=1/00 rpm=0
+   114003 ms  RIGHT   run=1  L=      0 (    +0/s)  R=      0 (    +0/s)  gray=00000000  fault=0 emm=1/00 rpm=0
+   114503 ms  RIGHT   run=1  L=      0 (    +0/s)  R=      0 (    +0/s)  gray=00000000  fault=0 emm=1/00 rpm=0
+   115003 ms  RIGHT   run=1  L=      0 (    +0/s)  R=      0 (    +0/s)  gray=00000000  fault=0 emm=1/00 rpm=0
+   115503 ms  RIGHT   run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray=00000000  fault=0 emm=1/00 rpm=0
+   116003 ms  RIGHT   run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray=00000000  fault=0 emm=1/00 rpm=0
+RESULT {"side": "right", "duty_permille": 200, "start_ms": 112003, "end_ms": 116003, "left_delta": 0, "right_delta": 0, "peak_cps": 0, "fault_mask": 0, "wheel_trip": 2, "stopped": true}
+   116503 ms  RIGHT   run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray=00000000  fault=0 emm=1/00 rpm=0
+   117003 ms  RIGHT   run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray=00000000  fault=0 emm=1/00 rpm=0
+   117503 ms  RIGHT   run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray=00000000  fault=0 emm=1/00 rpm=0
+DONE 28 frames; invalid 0
