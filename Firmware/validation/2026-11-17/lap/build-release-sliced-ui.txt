@@ -1,0 +1,33 @@
+[1/20] Building C object CMakeFiles/coral_c5.dir/src/display.c.obj
+[2/20] Building C object CMakeFiles/coral_c5.dir/src/grayscale.c.obj
+[3/20] Building C object CMakeFiles/coral_c5.dir/src/logic.c.obj
+[4/20] Building C object CMakeFiles/coral_boot.dir/src/display.c.obj
+[5/20] Building C object CMakeFiles/coral_boot.dir/src/grayscale.c.obj
+[6/20] Building C object CMakeFiles/coral_boot.dir/src/logic.c.obj
+[7/20] Building C object CMakeFiles/coral_c5.dir/src/serial.c.obj
+[8/20] Building C object CMakeFiles/coral_c5.dir/src/lap.c.obj
+[9/20] Building C object CMakeFiles/coral_c5.dir/src/stepper.c.obj
+[10/20] Building C object CMakeFiles/coral_boot.dir/src/serial.c.obj
+[11/20] Building C object CMakeFiles/coral_boot.dir/src/lap.c.obj
+[12/20] Building C object CMakeFiles/coral_c5.dir/src/ui.c.obj
+[13/20] Building C object CMakeFiles/coral_boot.dir/src/ui.c.obj
+[14/20] Building C object CMakeFiles/coral_boot.dir/src/board.c.obj
+[15/20] Building C object CMakeFiles/coral_boot.dir/boot/main.c.obj
+[16/20] Building C object CMakeFiles/coral_c5.dir/src/board.c.obj
+[17/20] Building C object CMakeFiles/coral_c5.dir/src/main.c.obj
+[18/20] Linking C executable coral_boot.elf
+Memory region         Used Size  Region Size  %age Used
+           FLASH:       17848 B        64 KB     27.23%
+             RAM:       43888 B       248 KB     17.28%
+           STACK:        8160 B       8160 B    100.00%
+   text	   data	    bss	    dec	    hex	filename
+  15516	   2328	  49512	  67356	  1071c	C:/Users/sc/Documents/Dev/Hardware/c5-car/Firmware/build/release/coral_boot.elf
+[19/20] Linking C executable coral_c5.elf
+Memory region         Used Size  Region Size  %age Used
+           FLASH:       21000 B       448 KB      4.58%
+             RAM:       43796 B       248 KB     17.25%
+           STACK:        8160 B       8160 B    100.00%
+   text	   data	    bss	    dec	    hex	filename
+  18756	   2244	  49712	  70712	  11438	C:/Users/sc/Documents/Dev/Hardware/c5-car/Firmware/build/release/coral_c5.elf
+[20/20] Packaging wireless image and first-install HEX
+OTA: 21000 bytes, CRC32=DBCEB891; first_install.hex includes bootloader

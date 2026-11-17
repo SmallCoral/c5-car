@@ -1,0 +1,65 @@
+Observer connected attempt 1; no motion commands sent
+{"ms": 38964, "running": 0, "lap_status": 0, "gray_raw": 255, "gray_position": 0, "lap_ms": 0, "lap_counts": 0, "lap_armed": 0, "lap_left_cps": 0, "lap_right_cps": 0}
+{"ms": 54389, "running": 0, "lap_status": 0, "gray_raw": 255, "gray_position": 0, "lap_ms": 0, "lap_counts": 0, "lap_armed": 0, "lap_left_cps": 0, "lap_right_cps": 0}
+{"ms": 70326, "running": 0, "lap_status": 0, "gray_raw": 255, "gray_position": 0, "lap_ms": 0, "lap_counts": 0, "lap_armed": 0, "lap_left_cps": 0, "lap_right_cps": 0}
+{"ms": 85238, "running": 0, "lap_status": 0, "gray_raw": 255, "gray_position": 0, "lap_ms": 0, "lap_counts": 0, "lap_armed": 0, "lap_left_cps": 0, "lap_right_cps": 0}
+{"ms": 101175, "running": 0, "lap_status": 0, "gray_raw": 255, "gray_position": 0, "lap_ms": 0, "lap_counts": 0, "lap_armed": 0, "lap_left_cps": 0, "lap_right_cps": 0}
+{"ms": 116601, "running": 0, "lap_status": 0, "gray_raw": 255, "gray_position": 0, "lap_ms": 0, "lap_counts": 0, "lap_armed": 0, "lap_left_cps": 0, "lap_right_cps": 0}
+{"ms": 131970, "running": 0, "lap_status": 0, "gray_raw": 255, "gray_position": 0, "lap_ms": 0, "lap_counts": 0, "lap_armed": 0, "lap_left_cps": 0, "lap_right_cps": 0}
+{"ms": 146730, "running": 0, "lap_status": 9, "gray_raw": 67, "gray_position": 0, "lap_ms": 0, "lap_counts": 0, "lap_armed": 0, "lap_left_cps": 0, "lap_right_cps": 0}
+{"ms": 161870, "running": 0, "lap_status": 9, "gray_raw": 195, "gray_position": 0, "lap_ms": 0, "lap_counts": 0, "lap_armed": 0, "lap_left_cps": 0, "lap_right_cps": 0}
+{"ms": 176528, "running": 0, "lap_status": 9, "gray_raw": 195, "gray_position": 0, "lap_ms": 0, "lap_counts": 0, "lap_armed": 0, "lap_left_cps": 0, "lap_right_cps": 0}
+{"ms": 192197, "running": 0, "lap_status": 9, "gray_raw": 195, "gray_position": 0, "lap_ms": 0, "lap_counts": 0, "lap_armed": 0, "lap_left_cps": 0, "lap_right_cps": 0}
+{"ms": 206854, "running": 0, "lap_status": 9, "gray_raw": 195, "gray_position": 0, "lap_ms": 0, "lap_counts": 0, "lap_armed": 0, "lap_left_cps": 0, "lap_right_cps": 0}
+{
+  "frames": 343,
+  "connections": 1,
+  "final": {
+    "ms": 213425,
+    "seq": 417,
+    "task": 7,
+    "running": 0,
+    "duty_permille": 0,
+    "left_count": -18,
+    "right_count": 0,
+    "left_cps": 0,
+    "right_cps": 0,
+    "gray_raw": 195,
+    "encoder_ab": 2,
+    "fault_mask": 0,
+    "enable_request": 0,
+    "step_online": 0,
+    "step_phase": 7,
+    "step_flags": 0,
+    "step_position_raw": 0,
+    "step_error": 224,
+    "uart_errors": 0,
+    "rx_drops": 0,
+    "tx_drops": 0,
+    "lcd_ok": 1,
+    "wheel_trip": 0,
+    "step_timeouts": 300,
+    "step_position_valid": 0,
+    "step_target_rpm": 0,
+    "step_rpm": 0,
+    "step_rpm_valid": 0,
+    "gray_black": 60,
+    "gray_line": 60,
+    "gray_count": 4,
+    "gray_groups": 1,
+    "gray_position": 0,
+    "gray_status": 2,
+    "gray_white": 0,
+    "lap_status": 9,
+    "lap_left_pwm": 0,
+    "lap_right_pwm": 0,
+    "lap_left_target": 0,
+    "lap_right_target": 0,
+    "lap_left_cps": 0,
+    "lap_right_cps": 0,
+    "lap_ms": 0,
+    "lap_counts": 0,
+    "lap_armed": 0,
+    "version": 4
+  }
+}

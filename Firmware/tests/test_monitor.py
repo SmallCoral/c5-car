@@ -10,14 +10,57 @@ spec.loader.exec_module(monitor)
 
 
 class MonitorTest(unittest.TestCase):
-    def frame(self):
-        return ("C5,2," + ",".join("0" for _ in monitor.FIELDS[2:]) + "\r\n").encode()
+    def frame(self, version=6):
+        length = monitor.VERSION_LENGTHS[version]
+        return (f"C5,{version}," + ",".join("0" for _ in monitor.FIELDS[2:length]) + "\r\n").encode()
 
     def test_previous_version(self):
-        frame = ("C5,1," + ",".join("0" for _ in monitor.FIELDS[2:-3]) + "\r\n").encode()
-        record, = monitor.Decoder().feed(frame)
-        self.assertEqual(record["version"], 1)
-        self.assertEqual(record["step_rpm_valid"], 0)
+        for version in (1, 2, 3, 4, 5):
+            record, = monitor.Decoder().feed(self.frame(version))
+            self.assertEqual(record["version"], version)
+            self.assertEqual(record["step_rpm_valid"], 0)
+            self.assertEqual(record["gray_status"], 0)
+            self.assertEqual(record["lap_status"], 0)
+            self.assertEqual(record["lap_control_ms"], 0)
+            self.assertEqual(record["lap_marker_hits"], 0)
+
+    def test_gray_frame(self):
+        values = self.frame().decode().strip().split(",")
+        fields = {"task": 6, "gray_raw": 231, "gray_black": 24, "gray_line": 24,
+                  "gray_count": 2, "gray_groups": 1, "gray_position": 0, "gray_status": 2}
+        for field, value in fields.items():
+            values[monitor.FIELDS.index(field)] = str(value)
+        record, = monitor.Decoder().feed((",".join(values) + "\n").encode())
+        self.assertEqual(monitor.TASKS[record["task"]], "GRAY")
+        for field, value in fields.items():
+            self.assertEqual(record[field], value)
+
+    def test_version_length_mismatch(self):
+        decoder = monitor.Decoder()
+        self.assertEqual(decoder.feed(self.frame().replace(b"C5,6", b"C5,5")), [])
+        self.assertEqual(decoder.feed(self.frame(5).replace(b"C5,5", b"C5,6")), [])
+        self.assertEqual(decoder.invalid, 2)
+
+    def test_lap_frame(self):
+        values = self.frame().decode().strip().split(",")
+        for field, value in {"task": 7, "running": 1, "lap_status": 1,
+                             "lap_left_pwm": 120, "lap_right_pwm": 160,
+                             "lap_position": -320, "lap_position_rate": 4500,
+                             "lap_steering": -120, "lap_differential": 80,
+                             "lap_base_target": 1700, "lap_control_ms": 12,
+                             "lap_departing": 1, "lap_marker_hits": 2, "lap_marker_peak": 8,
+                             "lap_ms": 2300, "lap_counts": 2200, "lap_armed": 1}.items():
+            values[monitor.FIELDS.index(field)] = str(value)
+        record, = monitor.Decoder().feed((",".join(values) + "\n").encode())
+        self.assertEqual(monitor.TASKS[record["task"]], "LAP")
+        self.assertEqual(record["lap_status"], 1)
+        self.assertEqual(record["lap_right_pwm"], 160)
+        self.assertEqual(record["lap_position_rate"], 4500)
+        self.assertEqual(record["lap_steering"], -120)
+        self.assertEqual(record["lap_control_ms"], 12)
+        self.assertEqual(record["lap_departing"], 1)
+        self.assertEqual(record["lap_marker_hits"], 2)
+        self.assertEqual(record["lap_marker_peak"], 8)
 
     def test_combined_motion_task(self):
         values = self.frame().decode().strip().split(",")
@@ -29,6 +72,16 @@ class MonitorTest(unittest.TestCase):
         self.assertEqual(monitor.TASKS[record["task"]], "ALL")
         self.assertEqual(record["duty_permille"], 100)
         self.assertEqual(record["step_target_rpm"], 30)
+
+    def test_spliced_frame_with_valid_column_count(self):
+        # Observed over BLE: a spliced v6 row had armed=1313/departing=97.
+        for field, value in (("lap_armed", 1313), ("lap_departing", 97)):
+            values = self.frame().decode().strip().split(",")
+            values[monitor.FIELDS.index(field)] = str(value)
+            decoder = monitor.Decoder()
+            self.assertEqual(decoder.feed((",".join(values) + "\n").encode()), [])
+            self.assertEqual(decoder.invalid, 1)
+            self.assertEqual(len(decoder.feed(self.frame())), 1)
 
     def test_every_fragment_boundary(self):
         frame = self.frame()

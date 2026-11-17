@@ -42,14 +42,25 @@ void controls_key(struct controls *ctl, enum key_id key, uint32_t now)
 		ctl->task = (ctl->task + 1) % TASK_COUNT;
 		break;
 	case KEY_NEXT:
+		if (ctl->task == TASK_LAP) {
+			ctl->lap_level = (ctl->lap_level + 1) % LAP_SPEED_LEVELS;
+			break;
+		}
+		if (ctl->task == TASK_GRAY) {
+			ctl->gray_white = !ctl->gray_white;
+			break;
+		}
 		ctl->level = (ctl->level + 1) %
 			(ctl->task == TASK_STEPPER ? 3U : WHEEL_LEVEL_COUNT);
 		break;
 	case KEY_OK:
-		ctl->reverse = !ctl->reverse;
+		if (ctl->task == TASK_LAP)
+			ctl->lap_reverse = !ctl->lap_reverse;
+		else if (ctl->task != TASK_GRAY)
+			ctl->reverse = !ctl->reverse;
 		break;
 	case KEY_START:
-		if (ctl->task != TASK_MONITOR) {
+		if (ctl->task != TASK_MONITOR && ctl->task != TASK_GRAY) {
 			ctl->running = true;
 			ctl->started_at = now;
 		}
@@ -84,7 +95,7 @@ uint16_t controls_rpm(const struct controls *ctl)
 bool task_uses_wheels(enum task_id task)
 {
 	return task == TASK_LEFT || task == TASK_RIGHT ||
-	       task == TASK_BOTH || task == TASK_ALL;
+	       task == TASK_BOTH || task == TASK_ALL || task == TASK_LAP;
 }
 
 bool task_uses_stepper(enum task_id task)
@@ -94,13 +105,13 @@ bool task_uses_stepper(enum task_id task)
 
 bool task_continuous(enum task_id task)
 {
-	return task == TASK_STEPPER || task == TASK_ALL;
+	return task == TASK_STEPPER || task == TASK_ALL || task == TASK_LAP;
 }
 
 const char *task_name(enum task_id task)
 {
 	static const char *const names[] = {
-		"MONITOR", "LEFT", "RIGHT", "BOTH", "STEPPER", "ALL"
+		"MONITOR", "LEFT", "RIGHT", "BOTH", "STEPPER", "ALL", "GRAY", "LAP"
 	};
 
 	return (unsigned int)task < TASK_COUNT ? names[task] : "INVALID";

@@ -1,0 +1,17 @@
+{
+  "frames": 181,
+  "running_frames": 2,
+  "statuses": [
+    0,
+    1,
+    10
+  ],
+  "final": {
+    "lap_status": "10",
+    "lap_ms": "175",
+    "left_count": "-970",
+    "right_count": "-54",
+    "enable_request": "0",
+    "running": "0"
+  }
+}

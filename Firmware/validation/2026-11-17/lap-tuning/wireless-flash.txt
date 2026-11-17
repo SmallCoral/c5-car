@@ -1,0 +1,12 @@
+-- Configuring done (0.2s)
+-- Generating done (0.0s)
+-- Build files have been written to: C:/Users/sc/Documents/Dev/Hardware/c5-car/Firmware/build/debug
+[1/2] Packaging wireless image and first-install HEX
+OTA: 24244 bytes, CRC32=05E37A81; first_install.hex includes bootloader
+[1/2] Updating Coral-C5 over HC-08 BLE
+BLE connection interrupted (HC-08 not found; power the board and close the telemetry monitor); reconnecting 1/2...
+BLE connection interrupted (HC-08 not found; power the board and close the telemetry monitor); reconnecting 2/2...
+Error: HC-08 not found; power the board and close the telemetry monitor
+FAILED: [code=1] CMakeFiles/wireless_flash C:/Users/sc/Documents/Dev/Hardware/c5-car/Firmware/build/debug/CMakeFiles/wireless_flash
+C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\sc\Documents\Dev\Hardware\c5-car\Firmware\build\debug && C:\Users\sc\Documents\Dev\Hardware\c5-car\Firmware\..\.scratch\firmware-tools\Scripts\python.exe C:/Users/sc/Documents/Dev/Hardware/c5-car/Firmware/tools/wireless_flash.py C:/Users/sc/Documents/Dev/Hardware/c5-car/Firmware/build/debug/coral_c5.ota"
+ninja: build stopped: subcommand failed.

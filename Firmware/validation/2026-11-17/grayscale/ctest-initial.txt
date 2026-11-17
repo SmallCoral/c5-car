@@ -1,0 +1,19 @@
+Test project C:/Users/sc/Documents/Dev/Hardware/c5-car/Firmware/build/host
+    Start 1: logic
+1/4 Test #1: logic ............................***Failed    1.18 sec
+Assertion failed: ctl.task == TASK_MONITOR, file C:/Users/sc/Documents/Dev/Hardware/c5-car/Firmware/tests/test_logic.c, line 168
+
+    Start 2: grayscale
+2/4 Test #2: grayscale ........................   Passed    0.01 sec
+    Start 3: ui_bounds
+3/4 Test #3: ui_bounds ........................   Passed    0.02 sec
+    Start 4: ota_recovery
+4/4 Test #4: ota_recovery .....................   Passed    0.53 sec
+
+75% tests passed, 1 tests failed out of 4
+
+Total Test time (real) =   1.75 sec
+
+The following tests FAILED:
+	  1 - logic (Failed)
+Errors while running CTest

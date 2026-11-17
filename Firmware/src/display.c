@@ -4,6 +4,7 @@
 #include "logic.h"
 
 static uint8_t framebuffer[UI_BYTES];
+static struct ui_state frame_state;
 static uint32_t frame_time;
 static uint32_t stripe_time;
 static unsigned int next_y = UI_HEIGHT;
@@ -71,23 +72,25 @@ bool display_poll(const struct ui_state *state, uint32_t now)
 	if (next_y == UI_HEIGHT) {
 		if (!elapsed(now, frame_time, 200))
 			return true;
-		ui_render(framebuffer, state);
+		frame_state = *state;
 		frame_time = now;
 		next_y = 0;
 	}
 	if (!elapsed(now, stripe_time, 5))
 		return true;
 	stripe_time = now;
+	/* Two rows bound LCD work so a short A marker can be sampled repeatedly. */
+	ui_render_rows(framebuffer, &frame_state, next_y, 2);
 	rows[1] = (uint8_t)(next_y + 1);
-	rows[3] = (uint8_t)(next_y + 8);
+	rows[3] = (uint8_t)(next_y + 2);
 	if (!command(0x2a, columns, sizeof(columns)) ||
 	    !command(0x2b, rows, sizeof(rows)) ||
-	    !command(0x2c, &framebuffer[next_y * UI_WIDTH * 2], UI_WIDTH * 8 * 2)) {
+	    !command(0x2c, &framebuffer[next_y * UI_WIDTH * 2], UI_WIDTH * 2 * 2)) {
 		ready = false;
 		board_lcd_backlight(false);
 		return false;
 	}
-	next_y += 8;
+	next_y += 2;
 	if (next_y == UI_HEIGHT)
 		board_lcd_backlight(true);
 	return true;

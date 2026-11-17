@@ -1,0 +1,35 @@
+[0/1] Re-running CMake...
+-- Configuring done (0.3s)
+-- Generating done (0.1s)
+-- Build files have been written to: C:/Users/sc/Documents/Dev/Hardware/c5-car/Firmware/build/debug
+[1/19] Building C object CMakeFiles/coral_c5.dir/src/logic.c.obj
+[2/19] Building C object CMakeFiles/coral_c5.dir/src/display.c.obj
+[3/19] Building C object CMakeFiles/coral_c5.dir/src/grayscale.c.obj
+[4/19] Building C object CMakeFiles/coral_boot.dir/src/display.c.obj
+[5/19] Building C object CMakeFiles/coral_boot.dir/src/logic.c.obj
+[6/19] Building C object CMakeFiles/coral_c5.dir/src/stepper.c.obj
+[7/19] Building C object CMakeFiles/coral_boot.dir/src/grayscale.c.obj
+[8/19] Building C object CMakeFiles/coral_c5.dir/src/serial.c.obj
+[9/19] Building C object CMakeFiles/coral_boot.dir/src/lap.c.obj
+[10/19] Building C object CMakeFiles/coral_c5.dir/src/lap.c.obj
+[11/19] Building C object CMakeFiles/coral_boot.dir/src/serial.c.obj
+[12/19] Building C object CMakeFiles/coral_boot.dir/boot/main.c.obj
+[13/19] Building C object CMakeFiles/coral_c5.dir/src/main.c.obj
+[14/19] Building C object CMakeFiles/coral_c5.dir/src/board.c.obj
+[15/19] Building C object CMakeFiles/coral_boot.dir/src/board.c.obj
+[16/19] Linking C executable coral_c5.elf
+Memory region         Used Size  Region Size  %age Used
+           FLASH:       24324 B       448 KB      5.30%
+             RAM:       43808 B       248 KB     17.25%
+           STACK:        8160 B       8160 B    100.00%
+   text	   data	    bss	    dec	    hex	filename
+  22080	   2244	  49724	  74048	  12140	C:/Users/sc/Documents/Dev/Hardware/c5-car/Firmware/build/debug/coral_c5.elf
+[17/19] Linking C executable coral_boot.elf
+Memory region         Used Size  Region Size  %age Used
+           FLASH:       20072 B        64 KB     30.63%
+             RAM:       43888 B       248 KB     17.28%
+           STACK:        8160 B       8160 B    100.00%
+   text	   data	    bss	    dec	    hex	filename
+  17740	   2328	  49512	  69580	  10fcc	C:/Users/sc/Documents/Dev/Hardware/c5-car/Firmware/build/debug/coral_boot.elf
+[18/19] Packaging wireless image and first-install HEX
+OTA: 24324 bytes, CRC32=B1A813D4; first_install.hex includes bootloader

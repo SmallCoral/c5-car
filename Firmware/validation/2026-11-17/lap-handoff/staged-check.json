@@ -1,0 +1,18 @@
+{
+  "captured_utc": "2026-11-17T11:15:05.937401+00:00",
+  "scope": "Staged files, excluding this generated receipt; own link resolves when receipt is staged",
+  "changed_files_excluding_receipt": 199,
+  "markdown_files": 25,
+  "local_markdown_link_paths_checked": 352,
+  "markdown_anchor_fragments_checked": false,
+  "maximum_file_bytes": 131440,
+  "allowed_binary_evidence": [
+    "Firmware/validation/2026-11-17/grayscale/gray-preview.png",
+    "Firmware/validation/2026-11-17/lap/lap-preview.png"
+  ],
+  "credential_scan": "No common private-key/GitHub/OpenAI token signatures found",
+  "whitespace_exit_code": 0,
+  "hardware_not_staged": true,
+  "preserved_hardware_worktree_sha256": "127c94f293488a4580a3ace25a269fb2d0d18e2a3b7df8548e6c7ce7cd7dd768",
+  "failures": []
+}

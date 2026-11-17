@@ -1,0 +1,27 @@
+{
+  "captured_utc": "2026-11-17T11:12:11.844118+00:00",
+  "cwd": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\c5-car",
+  "commands": [
+    {
+      "label": "configure-release",
+      "argv": [
+        "cmake",
+        "--preset",
+        "release",
+        "-S",
+        "C:\\Users\\sc\\Documents\\Dev\\Hardware\\c5-car\\.scratch\\lap-delivery-20261117\\Firmware",
+        "-DPython3_EXECUTABLE=C:/Users/sc/Documents/Dev/Hardware/c5-car/.scratch/firmware-tools/Scripts/python.exe"
+      ],
+      "exit_code": 0
+    },
+    {
+      "label": "build-release",
+      "argv": [
+        "cmake",
+        "--build",
+        "C:\\Users\\sc\\Documents\\Dev\\Hardware\\c5-car\\.scratch\\lap-delivery-20261117\\Firmware\\build\\release"
+      ],
+      "exit_code": 0
+    }
+  ]
+}

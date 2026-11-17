@@ -1,0 +1,44 @@
+[
+  {
+    "source_zip": "Documentation\\26电赛\\21E 送药小车 天猛星M0.zip",
+    "member": "21E 送药小车 M0G3507/21E/3507mode/empty/XunJi/Xunji.c",
+    "local": ".scratch\\lap-reference-20261117\\21E-2-Xunji.c",
+    "bytes": 5778,
+    "excerpt_sha256": "90b3e27b53f1e2731530fb557b46ee7162e47147ebf5634b7be8d63ed83b6c81"
+  },
+  {
+    "source_zip": "Documentation\\26电赛\\22C 双车跟随 天猛星M0.zip",
+    "member": "22C 双车跟随 M0G3507/follow/22C_dicheng/OLED/3507modeOLED/3507mode/empty/app/encoder.c",
+    "local": ".scratch\\lap-reference-20261117\\22C-0-encoder.c",
+    "bytes": 1525,
+    "excerpt_sha256": "093168e83c017392a369ab05263aa8704036dec4ba93736a0bac31211437c1df"
+  },
+  {
+    "source_zip": "Documentation\\26电赛\\22C 双车跟随 天猛星M0.zip",
+    "member": "22C 双车跟随 M0G3507/follow/22C_dicheng/OLED/3507modeOLED/3507mode/empty/app/Motor.c",
+    "local": ".scratch\\lap-reference-20261117\\22C-1-Motor.c",
+    "bytes": 2515,
+    "excerpt_sha256": "0bc4341dd375b9578e8bf9142c29f9d5a8862e5e857eb4a9183a76d0eddffc5b"
+  },
+  {
+    "source_zip": "Documentation\\26电赛\\22C 双车跟随 天猛星M0.zip",
+    "member": "22C 双车跟随 M0G3507/follow/22C_dicheng/OLED/3507modeOLED/3507mode/empty/app/pid.c",
+    "local": ".scratch\\lap-reference-20261117\\22C-3-pid.c",
+    "bytes": 2766,
+    "excerpt_sha256": "55aaf27bfc0482da61459c626afda340336d5d21cf803c91d5f758b4c463c5ed"
+  },
+  {
+    "source_zip": "Documentation\\26电赛\\26H 平衡球装置 天空星F4.zip",
+    "member": "26H 平衡球装置 F407/26H_F4 _Speed_now/XunJi/Motor.c",
+    "local": ".scratch\\lap-reference-20261117\\26H-0-Motor.c",
+    "bytes": 3090,
+    "excerpt_sha256": "022db9ff6f30d0e88667ea0a53e476c963a02102c0614b98318464bfdcfa16ce"
+  },
+  {
+    "source_zip": "Documentation\\26电赛\\26H 平衡球装置 天空星F4.zip",
+    "member": "26H 平衡球装置 F407/26H_F4 _Speed_now/XunJi/Xunji.c",
+    "local": ".scratch\\lap-reference-20261117\\26H-2-Xunji.c",
+    "bytes": 12828,
+    "excerpt_sha256": "06f21363b49475754cf9c1add9099da5bf60e15ff216ee79b912cae6a50368c4"
+  }
+]

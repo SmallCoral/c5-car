@@ -12,7 +12,20 @@ if(HOST_TESTS)
   target_include_directories(test_logic PRIVATE include)
   target_compile_options(test_logic PRIVATE -Wall -Wextra -Werror)
   add_test(NAME logic COMMAND test_logic)
-  add_executable(render_ui tests/render_ui.c src/ui.c src/logic.c)
+  add_executable(test_grayscale tests/test_grayscale.c src/grayscale.c src/logic.c)
+  target_include_directories(test_grayscale PRIVATE include)
+  target_compile_options(test_grayscale PRIVATE -Wall -Wextra -Werror)
+  add_test(NAME grayscale COMMAND test_grayscale)
+  add_executable(test_lap tests/test_lap.c src/lap.c src/logic.c src/grayscale.c)
+  target_include_directories(test_lap PRIVATE include)
+  target_compile_options(test_lap PRIVATE -Wall -Wextra -Werror)
+  add_test(NAME lap_control COMMAND test_lap)
+  add_executable(test_lap_dynamics tests/test_lap_dynamics.c src/lap.c src/logic.c src/grayscale.c)
+  target_include_directories(test_lap_dynamics PRIVATE include)
+  target_compile_options(test_lap_dynamics PRIVATE -Wall -Wextra -Werror)
+  target_link_libraries(test_lap_dynamics PRIVATE m)
+  add_test(NAME lap_dynamics COMMAND test_lap_dynamics)
+  add_executable(render_ui tests/render_ui.c src/ui.c src/logic.c src/grayscale.c src/lap.c)
   target_include_directories(render_ui PRIVATE include)
   target_compile_options(render_ui PRIVATE -Wall -Wextra -Werror)
   add_test(NAME ui_bounds COMMAND render_ui ${CMAKE_CURRENT_BINARY_DIR}/ui.ppm)
@@ -26,12 +39,12 @@ endif()
 set(DFP ${CMAKE_CURRENT_SOURCE_DIR}/vendor/stm32c5xx_dfp)
 add_executable(coral_c5
   src/main.c src/board.c src/serial.c src/logic.c src/emm.c
-  src/stepper.c src/display.c src/ui.c src/runtime.c src/ota.c
+  src/stepper.c src/display.c src/ui.c src/runtime.c src/ota.c src/grayscale.c src/lap.c
   ${DFP}/Source/Templates/system_stm32c5xx.c
   ${DFP}/Source/startup_stm32c5a3xx.c)
 add_executable(coral_boot
   boot/main.c boot/flash_port.c boot/ota_store.c src/ota.c
-  src/board.c src/serial.c src/logic.c src/emm.c src/display.c src/ui.c src/runtime.c
+  src/board.c src/serial.c src/logic.c src/emm.c src/display.c src/ui.c src/grayscale.c src/lap.c src/runtime.c
   ${DFP}/Source/Templates/system_stm32c5xx.c
   ${DFP}/Source/startup_stm32c5a3xx.c)
 set(CPU_FLAGS -mcpu=cortex-m33 -mthumb -mfpu=fpv5-sp-d16 -mfloat-abi=hard)

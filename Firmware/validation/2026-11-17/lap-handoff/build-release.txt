@@ -1,0 +1,45 @@
+[1/32] Building C object CMakeFiles/coral_c5.dir/src/runtime.c.obj
+[2/32] Building C object CMakeFiles/coral_c5.dir/src/grayscale.c.obj
+[3/32] Building C object CMakeFiles/coral_c5.dir/src/display.c.obj
+[4/32] Building C object CMakeFiles/coral_c5.dir/src/emm.c.obj
+[5/32] Building C object CMakeFiles/coral_c5.dir/src/ota.c.obj
+[6/32] Building C object CMakeFiles/coral_c5.dir/src/logic.c.obj
+[7/32] Building C object CMakeFiles/coral_boot.dir/boot/ota_store.c.obj
+[8/32] Building C object CMakeFiles/coral_c5.dir/src/stepper.c.obj
+[9/32] Building C object CMakeFiles/coral_c5.dir/src/serial.c.obj
+[10/32] Building C object CMakeFiles/coral_c5.dir/vendor/stm32c5xx_dfp/Source/startup_stm32c5a3xx.c.obj
+[11/32] Building C object CMakeFiles/coral_boot.dir/boot/main.c.obj
+[12/32] Building C object CMakeFiles/coral_c5.dir/src/lap.c.obj
+[13/32] Building C object CMakeFiles/coral_c5.dir/src/main.c.obj
+[14/32] Building C object CMakeFiles/coral_boot.dir/src/ota.c.obj
+[15/32] Building C object CMakeFiles/coral_boot.dir/boot/flash_port.c.obj
+[16/32] Building C object CMakeFiles/coral_c5.dir/vendor/stm32c5xx_dfp/Source/Templates/system_stm32c5xx.c.obj
+[17/32] Building C object CMakeFiles/coral_c5.dir/src/board.c.obj
+[18/32] Building C object CMakeFiles/coral_boot.dir/src/logic.c.obj
+[19/32] Building C object CMakeFiles/coral_c5.dir/src/ui.c.obj
+[20/32] Building C object CMakeFiles/coral_boot.dir/src/emm.c.obj
+[21/32] Building C object CMakeFiles/coral_boot.dir/src/display.c.obj
+[22/32] Building C object CMakeFiles/coral_boot.dir/src/runtime.c.obj
+[23/32] Building C object CMakeFiles/coral_boot.dir/src/grayscale.c.obj
+[24/32] Building C object CMakeFiles/coral_boot.dir/src/board.c.obj
+[25/32] Building C object CMakeFiles/coral_boot.dir/vendor/stm32c5xx_dfp/Source/startup_stm32c5a3xx.c.obj
+[26/32] Building C object CMakeFiles/coral_boot.dir/vendor/stm32c5xx_dfp/Source/Templates/system_stm32c5xx.c.obj
+[27/32] Building C object CMakeFiles/coral_boot.dir/src/serial.c.obj
+[28/32] Building C object CMakeFiles/coral_boot.dir/src/ui.c.obj
+[29/32] Building C object CMakeFiles/coral_boot.dir/src/lap.c.obj
+[30/32] Linking C executable coral_c5.elf
+Memory region         Used Size  Region Size  %age Used
+           FLASH:       21724 B       448 KB      4.74%
+             RAM:       43832 B       248 KB     17.26%
+           STACK:        8160 B       8160 B    100.00%
+   text	   data	    bss	    dec	    hex	filename
+  19480	   2244	  49748	  71472	  11730	C:/Users/sc/Documents/Dev/Hardware/c5-car/.scratch/lap-delivery-20261117/Firmware/build/release/coral_c5.elf
+[31/32] Linking C executable coral_boot.elf
+Memory region         Used Size  Region Size  %age Used
+           FLASH:       17964 B        64 KB     27.41%
+             RAM:       43896 B       248 KB     17.29%
+           STACK:        8160 B       8160 B    100.00%
+   text	   data	    bss	    dec	    hex	filename
+  15628	   2332	  49516	  67476	  10794	C:/Users/sc/Documents/Dev/Hardware/c5-car/.scratch/lap-delivery-20261117/Firmware/build/release/coral_boot.elf
+[32/32] Packaging wireless image and first-install HEX
+OTA: 21724 bytes, CRC32=04A4FE7E; first_install.hex includes bootloader

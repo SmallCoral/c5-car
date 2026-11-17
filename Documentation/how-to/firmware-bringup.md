@@ -24,16 +24,16 @@ STM32_Programmer_CLI -c port=JLINK sn=69730331 -w Firmware/build/debug/first_ins
 ## 2. 屏幕与按键
 
 以按钮在上、LCD 排针在下的照片方向使用。`LCD_MADCTL=0x00`，列偏移 2、行偏移 1；首版 `0xC0` 曾造成文字倒置。
-上电默认 ALL，保持停止。最左侧 RUN 按一次，两路车轮和步进持续运行；再按一次全部停止。
-默认轮 PWM 45%、步进 30 RPM，ALL 不受单独轮测试的 3 秒期限限制。
+上电默认 LAP，保持停止。首圈方向检查和 RUN 操作见[循线一圈](line-following-lap.md)。
+原联动测试需选择 ALL，最左侧 RUN 启动两轮和步进，再按停止；默认轮 PWM 45%、步进 30 RPM，ALL 不受单独轮测试的 3 秒期限限制。
 屏幕顶部提示对应从左到右 SW5、SW4、SW3、SW2：
 
 | 按钮 | 停止时 | 运行时 |
 | --- | --- | --- |
-| RUN / STOP | 启动所选测试；MONITOR 不动作 | 停止 |
-| DIR | 反转下次启动方向 | 先停止 |
-| PWR / SPD / LVL | 轮 PWM 10/20/30/45%；步进 30/60/90 RPM；ALL 页从默认 45%/30 RPM 循环到 10%/30 RPM、20%/60 RPM、30%/90 RPM | 先停止 |
-| TASK | ALL、MONITOR、LEFT、RIGHT、BOTH、STEPPER 循环 | 先停止 |
+| RUN / STOP | 启动所选测试；MONITOR、GRAY 不动作 | 停止 |
+| DIR / MAP | 反转下次启动方向；LAP 切换安装方向 A/B；GRAY 不动作 | 先停止 |
+| PWR / SPD / LVL / B/W | 普通轮 PWM 10/20/30/45%；步进 30/60/90 RPM；LAP 800/1800/2200 CPS；GRAY 切换黑线/白线目标；ALL 档位见固件说明 | 先停止 |
+| TASK | LAP、MONITOR、LEFT、RIGHT、BOTH、STEPPER、ALL、GRAY 循环 | 先停止 |
 
 LEFT/RIGHT 大数字是上电后的原始正交计数，`/S` 是每秒计数；并非 RPM。
 标题右侧两个小点分别显示该路 A/B 的瞬时输入电平。
@@ -41,7 +41,7 @@ LEFT/RIGHT 大数字是上电后的原始正交计数，`/S` 是每秒计数；�
 `ENABLE LOW / PA3` 表示请求后 PA3 前端仍读到低电平，程序已停止轮任务；按[使能线路排查](wheel-enable-check.md)检查后再尝试启动。
 `FAULT L:x R:x` 同时显示当前 nFAULT 和已锁存的轮故障；下一次启动请求重新检查。
 ALL 会先等待步进接受速度命令再启动轮 PWM。轮驱动或步进异常会停止联动，恢复通信不自动启动；停止时等 EMM READY 后再按 RUN。
-灰度 1–8 青色表示低电平，尚未标定黑白含义。
+普通页灰度 1–8 青色表示滤波后的黑色。GRAY 专页提供原始值、目标极性、段数和通道偏差，见[灰度联调](grayscale-check.md)；用户已确认黑白识别正常、左到右为 1～8。
 BT 点表示发送数据已排入串口队列，不代表电脑已经收到。
 
 ## 3. J10 不插时检查编码器

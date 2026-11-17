@@ -1,0 +1,10 @@
+[1/3] Building C object CMakeFiles/coral_c5.dir/src/main.c.obj
+[2/3] Linking C executable coral_c5.elf
+Memory region         Used Size  Region Size  %age Used
+           FLASH:       23604 B       448 KB      5.15%
+             RAM:       43672 B       248 KB     17.20%
+           STACK:        8160 B       8160 B    100.00%
+   text	   data	    bss	    dec	    hex	filename
+  21364	   2240	  49592	  73196	  11dec	C:/Users/sc/Documents/Dev/Hardware/c5-car/Firmware/build/debug/coral_c5.elf
+[3/3] Packaging wireless image and first-install HEX
+OTA: 23604 bytes, CRC32=CBD366C1; first_install.hex includes bootloader

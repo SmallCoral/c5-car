@@ -1,0 +1,75 @@
+Observer connected attempt 1; no motion commands sent
+{"ms": 33080, "running": 0, "lap_status": 0, "gray_raw": 223, "gray_position": 1500, "lap_ms": 0, "lap_counts": 0, "lap_armed": 0, "lap_left_cps": 0, "lap_right_cps": 0}
+{"ms": 48618, "running": 0, "lap_status": 0, "gray_raw": 223, "gray_position": 1500, "lap_ms": 0, "lap_counts": 0, "lap_armed": 0, "lap_left_cps": 0, "lap_right_cps": 0}
+{"ms": 64157, "running": 0, "lap_status": 0, "gray_raw": 223, "gray_position": 1500, "lap_ms": 0, "lap_counts": 0, "lap_armed": 0, "lap_left_cps": 0, "lap_right_cps": 0}
+{"ms": 79696, "running": 0, "lap_status": 0, "gray_raw": 223, "gray_position": 1500, "lap_ms": 0, "lap_counts": 0, "lap_armed": 0, "lap_left_cps": 0, "lap_right_cps": 0}
+{"ms": 95235, "running": 0, "lap_status": 0, "gray_raw": 223, "gray_position": 1500, "lap_ms": 0, "lap_counts": 0, "lap_armed": 0, "lap_left_cps": 0, "lap_right_cps": 0}
+{"ms": 107402, "running": 1, "lap_status": 1, "gray_raw": 0, "gray_position": 0, "lap_ms": 0, "lap_counts": 0, "lap_armed": 0, "lap_left_cps": 0, "lap_right_cps": 0}
+{"ms": 122514, "running": 1, "lap_status": 1, "gray_raw": 231, "gray_position": 0, "lap_ms": 15104, "lap_counts": 28322, "lap_armed": 0, "lap_left_cps": 2178, "lap_right_cps": 2207}
+{"ms": 132183, "running": 0, "lap_status": 2, "gray_raw": 0, "gray_position": 0, "lap_ms": 24333, "lap_counts": 43059, "lap_armed": 1, "lap_left_cps": 1287, "lap_right_cps": 804}
+Completed observed run 1
+{"ms": 135668, "running": 1, "lap_status": 1, "gray_raw": 0, "gray_position": 0, "lap_ms": 0, "lap_counts": 0, "lap_armed": 0, "lap_left_cps": 0, "lap_right_cps": 0}
+{"ms": 150818, "running": 1, "lap_status": 1, "gray_raw": 231, "gray_position": 0, "lap_ms": 15141, "lap_counts": 28342, "lap_armed": 0, "lap_left_cps": 2215, "lap_right_cps": 2229}
+{"ms": 160408, "running": 0, "lap_status": 2, "gray_raw": 0, "gray_position": 0, "lap_ms": 24262, "lap_counts": 42898, "lap_armed": 1, "lap_left_cps": 1252, "lap_right_cps": 775}
+Completed observed run 2
+{
+  "frames": 632,
+  "connections": 1,
+  "final": {
+    "ms": 160408,
+    "seq": 704,
+    "task": 7,
+    "running": 0,
+    "duty_permille": 0,
+    "left_count": 95018,
+    "right_count": 77557,
+    "left_cps": 80,
+    "right_cps": 30,
+    "gray_raw": 0,
+    "encoder_ab": 5,
+    "fault_mask": 0,
+    "enable_request": 0,
+    "step_online": 0,
+    "step_phase": 7,
+    "step_flags": 0,
+    "step_position_raw": 0,
+    "step_error": 224,
+    "uart_errors": 0,
+    "rx_drops": 0,
+    "tx_drops": 0,
+    "lcd_ok": 1,
+    "wheel_trip": 0,
+    "step_timeouts": 228,
+    "step_position_valid": 0,
+    "step_target_rpm": 0,
+    "step_rpm": 0,
+    "step_rpm_valid": 0,
+    "gray_black": 255,
+    "gray_line": 255,
+    "gray_count": 8,
+    "gray_groups": 1,
+    "gray_position": 0,
+    "gray_status": 3,
+    "gray_white": 0,
+    "lap_status": 2,
+    "lap_left_pwm": 0,
+    "lap_right_pwm": 0,
+    "lap_left_target": 0,
+    "lap_right_target": 0,
+    "lap_left_cps": 1252,
+    "lap_right_cps": 775,
+    "lap_ms": 24262,
+    "lap_counts": 42898,
+    "lap_armed": 1,
+    "lap_position": 2302,
+    "lap_position_rate": 0,
+    "lap_steering": 0,
+    "lap_differential": 238,
+    "lap_base_target": 0,
+    "lap_control_ms": 10,
+    "lap_departing": 0,
+    "lap_marker_hits": 1,
+    "lap_marker_peak": 3,
+    "version": 6
+  }
+}

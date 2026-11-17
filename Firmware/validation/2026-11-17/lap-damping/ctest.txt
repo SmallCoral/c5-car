@@ -1,0 +1,17 @@
+Test project C:/Users/sc/Documents/Dev/Hardware/c5-car/Firmware/build/host
+    Start 1: logic
+1/6 Test #1: logic ............................   Passed    0.01 sec
+    Start 2: grayscale
+2/6 Test #2: grayscale ........................   Passed    0.01 sec
+    Start 3: lap_control
+3/6 Test #3: lap_control ......................   Passed    0.01 sec
+    Start 4: lap_dynamics
+4/6 Test #4: lap_dynamics .....................   Passed    0.13 sec
+    Start 5: ui_bounds
+5/6 Test #5: ui_bounds ........................   Passed    0.01 sec
+    Start 6: ota_recovery
+6/6 Test #6: ota_recovery .....................   Passed    0.50 sec
+
+100% tests passed, 0 tests failed out of 6
+
+Total Test time (real) =   0.69 sec

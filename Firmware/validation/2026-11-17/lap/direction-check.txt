@@ -1,0 +1,183 @@
+BLE connected; receiving. Ctrl+C exits. J10 state is not sensed.
+    62000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    62500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    63000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    63500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    64000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    64500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    65000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    65500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    66000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    66500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    67000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    67500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    68000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    68500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    69000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    69500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    70000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    70500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    71000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    71500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    72000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    72500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    73000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    73500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    74000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    74500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    75000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    75500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    76000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    76500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    77000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    77500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    78000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    78500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    79000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    79500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    80000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    80500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    81000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    81500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    82000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    82500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    83000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    83500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    84000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    84500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    85000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    85500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    86000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    86500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    87000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    87500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    88000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    88500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    89000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    89500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    90000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    90500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    91000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    91500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    92000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    92500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    93000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    93500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    94000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    94500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    95000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    95500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    96000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    96500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    97000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    97500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    98000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    98500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    99000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    99500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   100000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   100500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   101000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   101500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   102000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   102500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   103000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   103500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   104000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   104500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   105000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   105500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   106000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   106500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   107000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   107500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   108000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   108500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   109000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   109500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   110000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   110500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   111000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   111500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   112000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   112500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   113000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   113500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   114000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   114500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   115000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   115500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   116000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   116500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   117000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   117500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   118000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   118500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   119000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   119500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   120000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   120500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   121000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   121500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   122000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   122500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   123000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   123500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   124000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   124500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   125000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   125500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   126000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   126500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   127000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   127500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   128000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   128500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   129000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   129500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   130000 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   130500 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+   131001 ms  LAP     run=1  L=     -1 (    -9/s)  R=     -1 (    -9/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=FOLLOW pwm=74/52 fault=0 emm=0/E0 rpm=?
+   131501 ms  LAP     run=1  L=   -324 ( -1160/s)  R=     -3 (   -10/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=FOLLOW pwm=215/76 fault=0 emm=0/E0 rpm=?
+   132001 ms  LAP     run=0  L=   -946 (  -663/s)  R=    -49 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=LOOP LATE pwm=0/0 fault=0 emm=0/E0 rpm=?
+   132501 ms  LAP     run=0  L=   -971 (    +0/s)  R=    -49 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=LOOP LATE pwm=0/0 fault=0 emm=0/E0 rpm=?
+   133001 ms  LAP     run=0  L=   -971 (    +0/s)  R=    -49 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=LOOP LATE pwm=0/0 fault=0 emm=0/E0 rpm=?
+   133501 ms  LAP     run=0  L=   -971 (    +0/s)  R=    -49 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=LOOP LATE pwm=0/0 fault=0 emm=0/E0 rpm=?
+   134001 ms  LAP     run=0  L=   -971 (    +0/s)  R=    -49 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=LOOP LATE pwm=0/0 fault=0 emm=0/E0 rpm=?
+   134501 ms  LAP     run=0  L=   -971 (    +0/s)  R=    -49 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=LOOP LATE pwm=0/0 fault=0 emm=0/E0 rpm=?
+   135001 ms  LAP     run=0  L=   -971 (    +0/s)  R=    -49 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=LOOP LATE pwm=0/0 fault=0 emm=0/E0 rpm=?
+   135501 ms  LAP     run=0  L=   -971 (    +0/s)  R=    -49 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=LOOP LATE pwm=0/0 fault=0 emm=0/E0 rpm=?
+   136001 ms  LAP     run=0  L=   -971 (    +0/s)  R=    -49 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=LOOP LATE pwm=0/0 fault=0 emm=0/E0 rpm=?
+   136501 ms  LAP     run=0  L=   -971 (    +0/s)  R=    -49 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=LOOP LATE pwm=0/0 fault=0 emm=0/E0 rpm=?
+   137001 ms  LAP     run=0  L=   -971 (    +0/s)  R=    -49 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=LOOP LATE pwm=0/0 fault=0 emm=0/E0 rpm=?
+   137501 ms  LAP     run=0  L=   -971 (    +0/s)  R=    -49 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=LOOP LATE pwm=0/0 fault=0 emm=0/E0 rpm=?
+   138001 ms  LAP     run=0  L=   -971 (    +0/s)  R=    -49 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=LOOP LATE pwm=0/0 fault=0 emm=0/E0 rpm=?
+   138501 ms  LAP     run=0  L=   -971 (    +0/s)  R=    -49 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=LOOP LATE pwm=0/0 fault=0 emm=0/E0 rpm=?
+   139001 ms  LAP     run=0  L=   -971 (    +0/s)  R=    -49 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=LOOP LATE pwm=0/0 fault=0 emm=0/E0 rpm=?
+   139501 ms  LAP     run=0  L=   -971 (    +0/s)  R=    -49 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=LOOP LATE pwm=0/0 fault=0 emm=0/E0 rpm=?
+   140001 ms  LAP     run=0  L=   -971 (    +0/s)  R=    -49 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=LOOP LATE pwm=0/0 fault=0 emm=0/E0 rpm=?
+   140501 ms  LAP     run=0  L=   -971 (    +0/s)  R=    -54 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=LOOP LATE pwm=0/0 fault=0 emm=0/E0 rpm=?
+   141001 ms  LAP     run=0  L=   -971 (    +0/s)  R=    -54 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=LOOP LATE pwm=0/0 fault=0 emm=0/E0 rpm=?
+   141501 ms  LAP     run=0  L=   -970 (   +30/s)  R=    -54 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=LOOP LATE pwm=0/0 fault=0 emm=0/E0 rpm=?
+   142001 ms  LAP     run=0  L=   -970 (    +0/s)  R=    -54 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=LOOP LATE pwm=0/0 fault=0 emm=0/E0 rpm=?
+   142501 ms  LAP     run=0  L=   -970 (    +0/s)  R=    -54 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=LOOP LATE pwm=0/0 fault=0 emm=0/E0 rpm=?
+   143001 ms  LAP     run=0  L=   -970 (    +0/s)  R=    -54 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=LOOP LATE pwm=0/0 fault=0 emm=0/E0 rpm=?
+   143501 ms  LAP     run=0  L=   -970 (    +0/s)  R=    -54 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=LOOP LATE pwm=0/0 fault=0 emm=0/E0 rpm=?
+   144001 ms  LAP     run=0  L=   -970 (    +0/s)  R=    -54 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=LOOP LATE pwm=0/0 fault=0 emm=0/E0 rpm=?
+   144501 ms  LAP     run=0  L=   -970 (    +0/s)  R=    -54 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=LOOP LATE pwm=0/0 fault=0 emm=0/E0 rpm=?
+   145001 ms  LAP     run=0  L=   -970 (    +0/s)  R=    -54 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=LOOP LATE pwm=0/0 fault=0 emm=0/E0 rpm=?
+   145501 ms  LAP     run=0  L=   -970 (    +0/s)  R=    -54 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=LOOP LATE pwm=0/0 fault=0 emm=0/E0 rpm=?
+   146001 ms  LAP     run=0  L=   -970 (    +0/s)  R=    -54 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=LOOP LATE pwm=0/0 fault=0 emm=0/E0 rpm=?
+   146501 ms  LAP     run=0  L=   -970 (    +0/s)  R=    -54 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=LOOP LATE pwm=0/0 fault=0 emm=0/E0 rpm=?
+   147001 ms  LAP     run=0  L=   -970 (    +0/s)  R=    -54 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=LOOP LATE pwm=0/0 fault=0 emm=0/E0 rpm=?
+   147501 ms  LAP     run=0  L=   -970 (    +0/s)  R=    -54 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=LOOP LATE pwm=0/0 fault=0 emm=0/E0 rpm=?
+   148001 ms  LAP     run=0  L=   -970 (    +0/s)  R=    -54 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=LOOP LATE pwm=0/0 fault=0 emm=0/E0 rpm=?
+   148501 ms  LAP     run=0  L=   -970 (    +0/s)  R=    -54 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=LOOP LATE pwm=0/0 fault=0 emm=0/E0 rpm=?
+   149001 ms  LAP     run=0  L=   -970 (    +0/s)  R=    -54 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=LOOP LATE pwm=0/0 fault=0 emm=0/E0 rpm=?
+   149501 ms  LAP     run=0  L=   -970 (    +0/s)  R=    -54 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=LOOP LATE pwm=0/0 fault=0 emm=0/E0 rpm=?
+   150001 ms  LAP     run=0  L=   -970 (    +0/s)  R=    -54 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=LOOP LATE pwm=0/0 fault=0 emm=0/E0 rpm=?
+   150501 ms  LAP     run=0  L=   -970 (    +0/s)  R=    -54 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=LOOP LATE pwm=0/0 fault=0 emm=0/E0 rpm=?
+   151001 ms  LAP     run=0  L=   -970 (    +0/s)  R=    -54 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=LOOP LATE pwm=0/0 fault=0 emm=0/E0 rpm=?
+   151501 ms  LAP     run=0  L=   -970 (    +0/s)  R=    -54 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=LOOP LATE pwm=0/0 fault=0 emm=0/E0 rpm=?
+   152001 ms  LAP     run=0  L=   -970 (    +0/s)  R=    -54 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=LOOP LATE pwm=0/0 fault=0 emm=0/E0 rpm=?
+Saved 181 frame(s) to Firmware\validation\2026-11-17\lap\direction-check.csv; received 21274 byte(s); rejected 0

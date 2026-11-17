@@ -11,6 +11,8 @@ enum task_id {
 	TASK_BOTH,
 	TASK_STEPPER,
 	TASK_ALL,
+	TASK_GRAY,
+	TASK_LAP,
 	TASK_COUNT
 };
 
@@ -26,6 +28,9 @@ struct controls {
 	enum task_id task;
 	unsigned int level;
 	bool reverse;
+	bool gray_white;
+	unsigned int lap_level;
+	bool lap_reverse;
 	bool running;
 	uint32_t started_at;
 };

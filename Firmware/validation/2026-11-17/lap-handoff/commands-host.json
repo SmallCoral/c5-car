@@ -1,0 +1,54 @@
+{
+  "captured_utc": "2026-11-17T11:12:12.609094+00:00",
+  "cwd": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\c5-car",
+  "commands": [
+    {
+      "label": "configure-host",
+      "argv": [
+        "cmake",
+        "-S",
+        "C:\\Users\\sc\\Documents\\Dev\\Hardware\\c5-car\\.scratch\\lap-delivery-20261117\\Firmware",
+        "-B",
+        "C:\\Users\\sc\\Documents\\Dev\\Hardware\\c5-car\\.scratch\\lap-delivery-20261117\\Firmware\\build\\host",
+        "-G",
+        "Ninja",
+        "-DHOST_TESTS=ON",
+        "-DCMAKE_C_COMPILER=C:/Program Files/JetBrains/CLion 2026.2.4.1/bin/mingw/bin/gcc.exe"
+      ],
+      "exit_code": 0
+    },
+    {
+      "label": "build-host",
+      "argv": [
+        "cmake",
+        "--build",
+        "C:\\Users\\sc\\Documents\\Dev\\Hardware\\c5-car\\.scratch\\lap-delivery-20261117\\Firmware\\build\\host"
+      ],
+      "exit_code": 0
+    },
+    {
+      "label": "ctest",
+      "argv": [
+        "ctest",
+        "--test-dir",
+        "C:\\Users\\sc\\Documents\\Dev\\Hardware\\c5-car\\.scratch\\lap-delivery-20261117\\Firmware\\build\\host",
+        "--output-on-failure"
+      ],
+      "exit_code": 0
+    },
+    {
+      "label": "python-tests",
+      "argv": [
+        "C:\\Users\\sc\\Documents\\Dev\\Hardware\\c5-car\\.scratch\\firmware-tools\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "C:\\Users\\sc\\Documents\\Dev\\Hardware\\c5-car\\.scratch\\lap-delivery-20261117\\Firmware\\tests",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0
+    }
+  ]
+}

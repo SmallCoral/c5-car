@@ -1,0 +1,17 @@
+{
+  "frames": 18,
+  "moving_frames": 3,
+  "left_delta": -1655,
+  "right_delta": -1847,
+  "statuses": [
+    3,
+    11
+  ],
+  "final_running": 0,
+  "final_enable": 0,
+  "check_duration_ms": 1514,
+  "perf": [
+    "C5PERF,1,21,19,3",
+    "C5PERF,1,21,19,3"
+  ]
+}

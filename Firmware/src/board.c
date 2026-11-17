@@ -7,6 +7,8 @@
 #include "board.h"
 #include "config.h"
 #include "logic.h"
+#include "wheel_map.h"
+#include "gray_map.h"
 
 static volatile uint32_t ticks;
 static volatile uint32_t heartbeat;
@@ -15,8 +17,10 @@ static volatile bool wheel_active;
 static volatile bool wheel_continuous;
 static volatile enum wheel_trip wheel_trip;
 static volatile uint8_t wheel_fault_pins;
-static uint32_t left_compare;
-static uint32_t right_compare;
+static uint32_t j4_compare;
+static uint32_t j6_compare;
+static bool j4_reverse;
+static bool j6_reverse;
 
 static void pin_mode(GPIO_TypeDef *port, unsigned int pin, uint32_t mode,
 		     uint32_t pull)
@@ -203,25 +207,29 @@ uint8_t board_keys(void)
 
 uint8_t board_gray(void)
 {
-	return (uint8_t)(LL_GPIO_ReadInputPort(GPIOE) >> 7);
+	return gray_input_order((uint8_t)(LL_GPIO_ReadInputPort(GPIOE) >> 7));
 }
 
 uint8_t board_faults(void)
 {
-	return (!LL_GPIO_IsInputPinSet(GPIOH, LL_GPIO_PIN_4)) |
-	       (!LL_GPIO_IsInputPinSet(GPIOC, LL_GPIO_PIN_10) << 1);
+	uint8_t channels = (!LL_GPIO_IsInputPinSet(GPIOH, LL_GPIO_PIN_4)) |
+			   (!LL_GPIO_IsInputPinSet(GPIOC, LL_GPIO_PIN_10) << 1);
+
+	return wheel_faults_to_physical(channels);
 }
 
 uint8_t board_encoder_pins(void)
 {
-	return (LL_GPIO_ReadInputPort(GPIOA) & 3U) |
-	       (LL_GPIO_IsInputPinSet(GPIOB, LL_GPIO_PIN_3) << 2) |
-	       (LL_GPIO_IsInputPinSet(GPIOA, LL_GPIO_PIN_15) << 3);
+	uint8_t channels = (LL_GPIO_ReadInputPort(GPIOA) & 3U) |
+		(LL_GPIO_IsInputPinSet(GPIOB, LL_GPIO_PIN_3) << 2) |
+		(LL_GPIO_IsInputPinSet(GPIOA, LL_GPIO_PIN_15) << 3);
+
+	return wheel_phases_to_physical(channels);
 }
 
 uint32_t board_encoder(unsigned int side)
 {
-	return LL_TIM_GetCounter(side ? TIM2 : TIM5);
+	return LL_TIM_GetCounter(wheel_channel(side) ? TIM2 : TIM5);
 }
 
 void board_wheels_stop(void)
@@ -243,6 +251,7 @@ static uint32_t duty_compare(int duty)
 bool board_wheels_start(int left, int right, bool continuous)
 {
 	uint32_t irq = __get_PRIMASK();
+	struct wheel_channels channels = wheel_to_channels(left, right);
 
 	if (left < -WHEEL_MAX_PERMILLE || left > WHEEL_MAX_PERMILLE ||
 	    right < -WHEEL_MAX_PERMILLE || right > WHEEL_MAX_PERMILLE)
@@ -256,16 +265,18 @@ bool board_wheels_start(int left, int right, bool continuous)
 		__set_PRIMASK(irq);
 		return false;
 	}
-	if (left >= 0)
+	if (channels.j4 >= 0)
 		LL_GPIO_SetOutputPin(GPIOC, LL_GPIO_PIN_3);
 	else
 		LL_GPIO_ResetOutputPin(GPIOC, LL_GPIO_PIN_3);
-	if (right >= 0)
+	if (channels.j6 >= 0)
 		LL_GPIO_SetOutputPin(GPIOC, LL_GPIO_PIN_11);
 	else
 		LL_GPIO_ResetOutputPin(GPIOC, LL_GPIO_PIN_11);
-	left_compare = duty_compare(left);
-	right_compare = duty_compare(right);
+	j4_compare = duty_compare(channels.j4);
+	j6_compare = duty_compare(channels.j6);
+	j4_reverse = channels.j4 < 0;
+	j6_reverse = channels.j6 < 0;
 	wheel_started = ticks;
 	heartbeat = ticks;
 	wheel_continuous = continuous;
@@ -304,10 +315,37 @@ void board_wheels_poll(void)
 	wheels_check();
 	/* DRV8874 wake-up is 1 ms typical; allow 5 ms before PWM. */
 	if (wheel_active && elapsed(ticks, wheel_started, WHEEL_WAKE_MS)) {
-		LL_TIM_OC_SetCompareCH4(TIM4, left_compare);
-		LL_TIM_OC_SetCompareCH1(TIM4, right_compare);
+		LL_TIM_OC_SetCompareCH4(TIM4, j4_compare);
+		LL_TIM_OC_SetCompareCH1(TIM4, j6_compare);
 	}
 	__set_PRIMASK(irq);
+}
+
+bool board_wheels_set(int left, int right)
+{
+	uint32_t irq;
+	bool ok;
+	struct wheel_channels channels = wheel_to_channels(left, right);
+
+	if (left < -WHEEL_MAX_PERMILLE || left > WHEEL_MAX_PERMILLE ||
+	    right < -WHEEL_MAX_PERMILLE || right > WHEEL_MAX_PERMILLE)
+		return false;
+	irq = __get_PRIMASK();
+	__disable_irq();
+	wheels_check();
+	/* Live speed changes cannot restart a tripped drive or reverse its PH. */
+	ok = wheel_active && (!channels.j4 || (channels.j4 < 0) == j4_reverse) &&
+	     (!channels.j6 || (channels.j6 < 0) == j6_reverse);
+	if (ok) {
+		j4_compare = duty_compare(channels.j4);
+		j6_compare = duty_compare(channels.j6);
+		if (elapsed(ticks, wheel_started, WHEEL_WAKE_MS)) {
+			LL_TIM_OC_SetCompareCH4(TIM4, j4_compare);
+			LL_TIM_OC_SetCompareCH1(TIM4, j6_compare);
+		}
+	}
+	__set_PRIMASK(irq);
+	return ok;
 }
 
 bool board_wheels_active(void)

@@ -1,0 +1,24 @@
+    80672 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+    81178 ms  LAP     run=0  L=      0 (    +0/s)  R=      0 (    +0/s)  gray(CH1..8)=11111000 LINE pos=2500  lap=READY pwm=0/0 fault=0 emm=0/E0 rpm=?
+Starting authorized raised-wheel 150-permille / 1500-ms check
+Traceback (most recent call last):
+  File "C:\Users\sc\Documents\Dev\Hardware\c5-car\.scratch\lap-bench.py", line 75, in <module>
+    asyncio.run(main())
+  File "C:\Program Files\WindowsApps\OpenAI.CodexPrimaryRuntime.v26-1112-611-0_26.1112.611.0_x64__3k8sg7r9htsxt\dependencies\python\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\OpenAI.CodexPrimaryRuntime.v26-1112-611-0_26.1112.611.0_x64__3k8sg7r9htsxt\dependencies\python\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\OpenAI.CodexPrimaryRuntime.v26-1112-611-0_26.1112.611.0_x64__3k8sg7r9htsxt\dependencies\python\Lib\asyncio\base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\sc\Documents\Dev\Hardware\c5-car\.scratch\lap-bench.py", line 53, in main
+    await link.write(b'!')
+  File "C:\Users\sc\Documents\Dev\Hardware\c5-car\Firmware\tools\wireless_flash.py", line 53, in write
+    await self.client.write_gatt_char(self.characteristic, data[offset:offset + 20],
+  File "C:\Users\sc\Documents\Dev\Hardware\c5-car\.scratch\firmware-tools\Lib\site-packages\bleak\__init__.py", line 923, in write_gatt_char
+    await self._backend.write_gatt_char(characteristic, data, response)
+  File "C:\Users\sc\Documents\Dev\Hardware\c5-car\.scratch\firmware-tools\Lib\site-packages\bleak\backends\winrt\client.py", line 970, in write_gatt_char
+    raise BleakError("Not connected")
+bleak.exc.BleakError: Not connected

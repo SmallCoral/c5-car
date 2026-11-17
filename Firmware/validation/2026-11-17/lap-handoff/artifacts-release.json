@@ -1,0 +1,12 @@
+{
+  "build/release/coral_c5.bin": {
+    "bytes": 21724,
+    "sha256": "ea80dbfe2acc363cc37d298c3736c86fb4ab7d9f9862ef5b8646a97d6906deba",
+    "crc32": "04A4FE7E"
+  },
+  "build/release/coral_c5.ota": {
+    "bytes": 21756,
+    "sha256": "c515ebeff01b2f0977a18bb35a23ab4b5329d5510ef4a64f78e91b6341a89500",
+    "crc32": "57C6A993"
+  }
+}

@@ -1,0 +1,201 @@
+{
+  "captured_utc": "2026-11-17T11:11:28.815397+00:00",
+  "baseline": "5c09ee0d09d186b52a6b1959b378c783622240dd",
+  "export": "git checkout-index of staged Firmware files; logs added afterwards",
+  "export_directory": "C:/Users/sc/Documents/Dev/Hardware/c5-car/.scratch/lap-delivery-20261117",
+  "exported_files": 816,
+  "source_manifest": "Firmware/validation/2026-11-17/lap-repeat/source-manifest.json",
+  "sources": {
+    "Firmware/src/board.c": {
+      "working_sha256": "be5a7afc8f4151affd7736d31ec6fed32c5f08cbfcfabac5848437664cdb3be9",
+      "export_sha256": "831e67c4bebd9684e833656c4f8efbdf1d5dcad4bb539fc3a2e7b6130cddc68b",
+      "normalized_match": true
+    },
+    "Firmware/src/display.c": {
+      "working_sha256": "87fa1b5520c4517b160905fd52ade323cf49dbf3f245067c31ee38f2fff1dd57",
+      "export_sha256": "5510d29cdf295b303cf6605919b10d201f78ed50068acb38b020eb90f3e3a2d8",
+      "normalized_match": true
+    },
+    "Firmware/src/emm.c": {
+      "working_sha256": "c3c12537ddbbae14f89e4dd91bdf1239d2a561d3c6cc724cc35ce13cc4930e6b",
+      "export_sha256": "66270e4a8768d09773b11973be8bc97068751e42141c5c318f0a2ee2b147a1c2",
+      "normalized_match": true
+    },
+    "Firmware/src/grayscale.c": {
+      "working_sha256": "b6c765fe11b098ae9eb73ad06a51e5754774402e85af1e95b6c379689fa0d400",
+      "export_sha256": "65c54dc6adc8f60b2243d13c6ce22f50861628b9d1d13dc7866abbb31fcc00c3",
+      "normalized_match": true
+    },
+    "Firmware/src/lap.c": {
+      "working_sha256": "331db08d7534e27fe3a95d4d7ca6d7187920d87ecd2a3833af66861e535426a0",
+      "export_sha256": "318d879332716ecdb5b7a3b81f75dd0290c980056164a919220306be21c7d163",
+      "normalized_match": true
+    },
+    "Firmware/src/logic.c": {
+      "working_sha256": "06c1cdb82d057227d4e75ccaea2e11eae431ca7ec627c8e2b8a9f360e7cc5bc4",
+      "export_sha256": "0be983dc93d8fd08178b526de0ea4ccdde0684b46df60371a54d2d3338a1491e",
+      "normalized_match": true
+    },
+    "Firmware/src/main.c": {
+      "working_sha256": "ea93d9411d294a496ce71b2a2392a3b86b38dfc16e8b9841e861ae3b7d4637d4",
+      "export_sha256": "6ec3b6a31185c4fbc013cbba24906b6e4d92dfb5b18dcdb03e686571c466b8f4",
+      "normalized_match": true
+    },
+    "Firmware/src/ota.c": {
+      "working_sha256": "244a5adbd18d063f77cf8c9ced933b957b43016602a5328dff54cf0cb41d301c",
+      "export_sha256": "25e736e1f72f8a3af958fcc681886ba3896f1ef308838370949dea5c36451334",
+      "normalized_match": true
+    },
+    "Firmware/src/runtime.c": {
+      "working_sha256": "d69d1a482438e52d14522e323a94cd8421fe7ab4235f046930f6056397463aaa",
+      "export_sha256": "fd5501c47b77973b28724ac19d6ff0153c15f0c3b4dd9b8cd098359060ee2afd",
+      "normalized_match": true
+    },
+    "Firmware/src/serial.c": {
+      "working_sha256": "7099e42552c5fd6e631216fedf35a8b416673fd571f5fb41bff10c8de5f2a0b4",
+      "export_sha256": "f1c3ad901110ac8f6459aa743fc7cec8816529067ed21e3f83f73c427f5a51bb",
+      "normalized_match": true
+    },
+    "Firmware/src/stepper.c": {
+      "working_sha256": "4f4d23142dcf2910c464f602fcac9b038ef1bbce310c47a1e8a32f6afd143e2b",
+      "export_sha256": "52fd35da82b3e783b31bee60adabb6155261f8ede634990f766a8f7dca93549f",
+      "normalized_match": true
+    },
+    "Firmware/src/ui.c": {
+      "working_sha256": "87209dfad3966b1a5af7396f287acbb8b5b566b4f9f41bfefde15cda21146dcb",
+      "export_sha256": "d20a287636848886d7a16552c85247f450d698d314acf9060181c5637aa447ae",
+      "normalized_match": true
+    },
+    "Firmware/include/board.h": {
+      "working_sha256": "77149adf1d03c5f410864e144b8e436a39228439f7ea4d0aebb229acd8aec3bd",
+      "export_sha256": "92254ede5490372c3dd49c78bece6d48cf7b22f0eab9f870faad2d3ca5850543",
+      "normalized_match": true
+    },
+    "Firmware/include/config.h": {
+      "working_sha256": "704811f0bc50d8246d55f335c1804da598b035ff0909203dd9d0fc4baec5ecaf",
+      "export_sha256": "d6ddd5ed11d021bcb9c793d49091ee1e057b41eca885ae9938c6556edaadf37b",
+      "normalized_match": true
+    },
+    "Firmware/include/display.h": {
+      "working_sha256": "7305da71764da6569c14c08efdc42c465b05d84ecc2845d105f438fb91a28e17",
+      "export_sha256": "a2c6bd25a878e4676e97a4487fe2ea779090caeae0b7cf17408a5a90f739bffe",
+      "normalized_match": true
+    },
+    "Firmware/include/emm.h": {
+      "working_sha256": "ab06f8918d866561afedc69c792de6d1ff7ccbf64bc46984d4ed5129114542fe",
+      "export_sha256": "3a4487983f7218c0365caee603e6b210b27af0a38d468a0445c7701fb9c99b7a",
+      "normalized_match": true
+    },
+    "Firmware/include/grayscale.h": {
+      "working_sha256": "f9a41b329657b5d4fdb0a40ea9216f4a0f2c738a7502d9370558a8e7ba8ab2d0",
+      "export_sha256": "d7311ee24f17253d7b0fbdf8801995342495fae82aa8bf1eb251500279e87df9",
+      "normalized_match": true
+    },
+    "Firmware/include/gray_map.h": {
+      "working_sha256": "79e8b17dd48493db3af91b52b3fcb4c9a60d9a8f02c15cad65321568d9f8a426",
+      "export_sha256": "2225c3742b717026b36b3f9a7b1a7a6b407d1125dae83e100d74bd96e3e4a778",
+      "normalized_match": true
+    },
+    "Firmware/include/lap.h": {
+      "working_sha256": "cdbe701b3ff07cfa4718fed6078dcfa89bc8145cdbe9eb87e9c1198b859378f7",
+      "export_sha256": "73477739b083bd415cea9fd5f8c845dffb6fba2ec8b351e800608704c091a9e2",
+      "normalized_match": true
+    },
+    "Firmware/include/logic.h": {
+      "working_sha256": "2f610b7828c946a09889c3731408d23373d407962ac86bd30b7cb9eb0d0aecb3",
+      "export_sha256": "09624ada7d98febff81bfd1ee11e07058af6c6810e3ec2cc34da56c426880fdd",
+      "normalized_match": true
+    },
+    "Firmware/include/ota.h": {
+      "working_sha256": "fd36d0d14a8cafc293631c6cbc3423706fbe32de9e54c8feac782b8d51cb9b7f",
+      "export_sha256": "24bc002c76b856e50096609f00358a2de4e295e97f81ff9bb78b7153ac83ff89",
+      "normalized_match": true
+    },
+    "Firmware/include/ota_store.h": {
+      "working_sha256": "6780ab553b0d2658a89a068a570c591ecbb4ff36f92a4e603298fa6d9dc03b1f",
+      "export_sha256": "56c23a315b80cd4c02e112b50e45770e4a666a50056ba9e6198a9e2ef12446dc",
+      "normalized_match": true
+    },
+    "Firmware/include/serial.h": {
+      "working_sha256": "2847a9138bd6291841edf03ed156c9644652f08e4e54b98629ef021d884629a7",
+      "export_sha256": "58f388bb5a230886202ff366565d83dcd20bb1fd08bcd542259a0329500633c2",
+      "normalized_match": true
+    },
+    "Firmware/include/stepper.h": {
+      "working_sha256": "657acca7693e36701aeb58243c4c2f3f0944f1bc0555dcd8eb65748a0f84c0be",
+      "export_sha256": "6f33543ae3eb5a84bcbae586069e2efb35faa339cf543822c804bca1c5299b85",
+      "normalized_match": true
+    },
+    "Firmware/include/ui.h": {
+      "working_sha256": "92926f87c553a139a9ffea7bb034aa06fa18171676aa42b7b851ff8952d9c3c7",
+      "export_sha256": "9d592dd0658807ea234cec5917f0eb1c7a21a815d63bdc3fe19c291595a8078d",
+      "normalized_match": true
+    },
+    "Firmware/include/wheel_map.h": {
+      "working_sha256": "0bfb4fd99b98820eb1ccdbd7dfe074c152448a07615cbd67f2b2c24cff0592b9",
+      "export_sha256": "e93f0e6a2797e37fb8be4fcdd26a7bde64cc4a90e9dcaf6a80cf1efa57a83fae",
+      "normalized_match": true
+    },
+    "Firmware/tests/render_ui.c": {
+      "working_sha256": "bab953b93e8425e783cae6d2405b01faa1c0a7061e39904ef861ad2a08d8be97",
+      "export_sha256": "1acafdf8379d40964f04ad789266704b35798ae06937db33f2144ecdd410aac0",
+      "normalized_match": true
+    },
+    "Firmware/tests/test_grayscale.c": {
+      "working_sha256": "2e90f09dce453547559bf38e05522bdc2e10f82b94f7e08cdc7aef5129f44891",
+      "export_sha256": "03b46398eaa9973f72272517e28916d38faf7baf6ee9dd5155312ac5685cb87b",
+      "normalized_match": true
+    },
+    "Firmware/tests/test_lap.c": {
+      "working_sha256": "fc4e06a262848bc8c309c16a3e71c6fae45b37cd337ec25290359981837b5452",
+      "export_sha256": "5c2b12899e7459fcfcea35ee9ffd2a3ed43b73491120af29bc51028399fff25d",
+      "normalized_match": true
+    },
+    "Firmware/tests/test_lap_dynamics.c": {
+      "working_sha256": "0f15b9300be077ab475e08ddb3b3ae55411250b5d276a2a72957752580f6472a",
+      "export_sha256": "20eea4be21d4676298809c533781f4641177b5885fb265d93905eebf7e007030",
+      "normalized_match": true
+    },
+    "Firmware/tests/test_logic.c": {
+      "working_sha256": "a73833bb1c0d8df3e391e57f434cbb7ba1080ca79847d48c1ebf9587ae75f779",
+      "export_sha256": "27b9342387ce3d7024180b11f48eb99f1b66508f7aa17757ffba06ffd6824cb8",
+      "normalized_match": true
+    },
+    "Firmware/tests/test_monitor.py": {
+      "working_sha256": "57e234d4d8650f72df98e9bc12b351efecc52162241bede69f52bf2c4563bd3b",
+      "export_sha256": "136a800ff1a748041a2cc43e9fa6c1157c6645d1a96bac40f1a6992e3cc0de9f",
+      "normalized_match": true
+    },
+    "Firmware/tests/test_ota.c": {
+      "working_sha256": "e3f13978cb5e3a496d58d6db04a272f32bab13cf61af76c8c424a756e50fc934",
+      "export_sha256": "1f81f95a1ebc646998a7154ef848e21efae31e557c44eef91e679d9ad91facab",
+      "normalized_match": true
+    },
+    "Firmware/tests/test_ota_tools.py": {
+      "working_sha256": "77a4460341f70fe9412c70e238a7bcefa8c61f8be6543cc8bec6cd8b8d7e38d4",
+      "export_sha256": "e1d98eeeff41bc9445de05ed5e60475d7bb31302b3dffa90c6a662e102c45a88",
+      "normalized_match": true
+    },
+    "Firmware/tools/monitor.py": {
+      "working_sha256": "3d20905aaff14b55869d7f6798ba1c27dc45dba6c587e584387daae9922564d8",
+      "export_sha256": "495f2a4f15755f9915e1937d3e1817f2e8eee675534c473727d462fa452fa799",
+      "normalized_match": true
+    },
+    "Firmware/CMakeLists.txt": {
+      "working_sha256": "fb105b543556b943c4205c05250ce92b21fdd602b71c1a246493b1e1505c9aac",
+      "export_sha256": "fb105b543556b943c4205c05250ce92b21fdd602b71c1a246493b1e1505c9aac",
+      "normalized_match": true
+    }
+  },
+  "scope_excluded": [
+    "Hardware/stm32c5a3/Hardware/CoralC5-Motor/05_Right_Motor.kicad_sch",
+    "Firmware/Rust (unchanged)"
+  ],
+  "log_normalization": {
+    "path": "Firmware/validation/2026-11-17/lap-tuning/wireless-flash.txt",
+    "line": 10,
+    "change": "Removed one trailing space from Ninja failure output; diagnostic content unchanged",
+    "original_sha256": "f7417a605a79a4d4d21d91eb300821ed3990fb9fb0f0665b3402cabf6453c7a2",
+    "normalized_sha256": "a6e104c7f00a53ccd148bc2c1c6b20fbdc117ad2033b3e450f64283c5f76dff7"
+  }
+}

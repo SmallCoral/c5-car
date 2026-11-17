@@ -165,6 +165,10 @@ static void test_all_toggle(void)
 	}
 	assert(controls_rpm(&ctl) == 30);
 	controls_key(&ctl, KEY_MODE, 900004);
+	assert(ctl.task == TASK_GRAY);
+	controls_key(&ctl, KEY_MODE, 900005);
+	assert(ctl.task == TASK_LAP);
+	controls_key(&ctl, KEY_MODE, 900006);
 	assert(ctl.task == TASK_MONITOR);
 }
 

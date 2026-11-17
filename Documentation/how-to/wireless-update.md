@@ -12,9 +12,9 @@
 
 默认编译并上传 Debug；Release 使用 `./Firmware/flash-wireless.ps1 -Preset release`。脚本使用 CMake、Ninja、Arm GCC 和 Python；当前电脑的工具链与 BLE Python 环境已配置。
 
-工具连接地址 `F8:2E:0C:F3:68:37`，先停止电机，再进入升级界面、分包上传、校验、安装和重启。完成后应看到 `Verified running application`，包含与上传文件一致的长度和 CRC。程序保持 ALL 停止状态，轮 PWM 默认 45%、步进 30 RPM；仍需按 RUN 才启动。
+工具连接地址 `F8:2E:0C:F3:68:37`，先停止电机，再进入升级界面、分包上传、校验、安装和重启。完成后应看到 `Verified running application`，包含与上传文件一致的长度和 CRC。程序进入 LAP 并保持停止，默认目标 2200 CPS；仍需按 RUN 才启动循线。ALL 页保留两轮 45% PWM、步进 30 RPM 的联调任务。
 
-屏幕按“按钮在上、屏幕在下”显示 UPDATE、当前阶段和进度条。安装阶段保持供电。当前固件大小约 17–19 KB；上传时间取决于蓝牙重试，实际记录见[验证结果](../validation/2026-11-16-wireless-update.md)。
+屏幕按“按钮在上、屏幕在下”显示 UPDATE、当前阶段和进度条。安装阶段保持供电。镜像大小随构建变化，上传时间取决于蓝牙重试；最近一次应用更新见[A 点重复起停记录](../validation/2026-11-17-lap-repeat.md)，引导程序与恢复测试见[首次验证结果](../validation/2026-11-16-wireless-update.md)。
 
 ## CLion
 

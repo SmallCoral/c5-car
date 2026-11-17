@@ -35,12 +35,17 @@ enum color {
 	RED = 0xfacc, DARK_GREEN = 0x1249
 };
 
+/* Rendering is main-loop owned. Slice clipping bounds each LCD service call. */
+static int clip_top;
+static int clip_bottom = UI_HEIGHT;
+
 static void rect(uint8_t *pixels, int x, int y, int w, int h, uint16_t color)
 {
 	int row;
 	int col;
 
-	for (row = y; row < y + h && row < UI_HEIGHT; row++) {
+	for (row = y > clip_top ? y : clip_top;
+	     row < y + h && row < clip_bottom; row++) {
 		for (col = x; col < x + w && col < UI_WIDTH; col++) {
 			unsigned int offset;
 
@@ -62,6 +67,9 @@ static void card(uint8_t *pixels, int x, int y, int w, int h, uint16_t color)
 static void text(uint8_t *pixels, int x, int y, const char *label,
 		 unsigned int scale, uint16_t color)
 {
+	/* Entire off-slice labels used to traverse every glyph on every stripe. */
+	if (y >= clip_bottom || y + 7 * (int)scale <= clip_top)
+		return;
 	for (; *label && x < UI_WIDTH; label++, x += 6 * (int)scale) {
 		const char *glyph = strchr(glyph_chars, *label);
 		unsigned int row;
@@ -128,6 +136,99 @@ static void update_page(uint8_t *pixels, const struct ui_state *state)
 	text(pixels, 6, 145, "KEEP POWER ON", 1, AMBER);
 }
 
+static void gray_page(uint8_t *pixels, const struct ui_state *state)
+{
+	static const char *const keys[] = { "VIEW", "-", "B/W", "TASK" };
+	const struct gray_reading *gray = &state->grayscale;
+	char line[24];
+	unsigned int index;
+
+	rect(pixels, 0, 0, UI_WIDTH, UI_HEIGHT, BG);
+	for (index = 0; index < 4; index++) {
+		card(pixels, index * 32, 0, 30, 13, PANEL);
+		text(pixels, index * 32 + 3, 3, keys[index], 1, MUTED);
+	}
+	text(pixels, 5, 20, state->gray_white ? "GRAY / WHITE" : "GRAY / BLACK",
+	     1, CYAN);
+	for (index = 0; index < 8; index++) {
+		int x = 6 + (int)index * 15;
+		bool active = gray->status != GRAY_WARMUP &&
+			      (gray->line & (1U << index));
+
+		snprintf(line, sizeof(line), "%u", index + 1);
+		text(pixels, x + 4, 35, line, 1, MUTED);
+		card(pixels, x, 46, 12, 18, active ? GREEN : PANEL);
+	}
+	for (index = 0; index < 8; index++)
+		line[index] = gray->raw & (1U << index) ? '1' : '0';
+	line[8] = '\0';
+	text(pixels, 5, 72, "RAW", 1, MUTED);
+	text(pixels, 36, 72, line, 1, WHITE);
+	snprintf(line, sizeof(line), "N:%u GROUP:%u", gray->count, gray->groups);
+	text(pixels, 5, 86, line, 1, MUTED);
+	text(pixels, 5, 102, gray_status_name(gray->status), 2,
+	     gray->status == GRAY_LINE ? GREEN : AMBER);
+	if (gray->status == GRAY_LINE)
+		snprintf(line, sizeof(line), "POS %+d", (int)gray->position);
+	else
+		snprintf(line, sizeof(line), "POS --");
+	text(pixels, 5, 123, line, 1, WHITE);
+	text(pixels, 5, 139, "CH1 - / CH8 +", 1, MUTED);
+	text(pixels, 5, 151, "B/W: TARGET COLOR", 1, CYAN);
+}
+
+static void lap_page(uint8_t *pixels, const struct ui_state *state)
+{
+	static const char *const keys[] = { "RUN", "MAP", "SPD", "TASK" };
+	char line[24];
+	unsigned int index;
+
+	rect(pixels, 0, 0, UI_WIDTH, UI_HEIGHT, BG);
+	for (index = 0; index < 4; index++) {
+		card(pixels, index * 32, 0, 30, 13, PANEL);
+		text(pixels, index * 32 + 3, 3,
+		     index == 0 && state->running ? "STOP" : keys[index], 1, MUTED);
+	}
+	text(pixels, 5, 20, "LAP", 2, WHITE);
+	text(pixels, 53, 25, "1 TO 8 L-R", 1, CYAN);
+	text(pixels, 5, 43, state->lap_departing ? "LEAVE A" :
+	     lap_status_name(state->lap_status), 1,
+	     state->lap_status == LAP_RUNNING || state->lap_status == LAP_DONE ? GREEN : AMBER);
+	snprintf(line, sizeof(line), "%u CPS / MAP %s", state->lap_speed,
+		 state->lap_reverse ? "B" : "A");
+	text(pixels, 5, 57, line, 1, MUTED);
+	if (state->grayscale.status == GRAY_LINE)
+		snprintf(line, sizeof(line), "POS %+d", (int)state->grayscale.position);
+	else
+		snprintf(line, sizeof(line), "POS -- %s", gray_status_name(state->grayscale.status));
+	text(pixels, 5, 71, line, 1, CYAN);
+	for (index = 0; index < 2; index++) {
+		int x = index ? 66 : 4;
+
+		card(pixels, x, 84, 58, 35, PANEL);
+		text(pixels, x + 5, 88, index ? "RIGHT" : "LEFT", 1, MUTED);
+		snprintf(line, sizeof(line), "%d/S", state->lap_cps[index]);
+		text(pixels, x + 5, 99, line, 1, WHITE);
+		snprintf(line, sizeof(line), "PWM %d%%", state->lap_pwm[index] / 10);
+		text(pixels, x + 5, 110, line, 1, CYAN);
+	}
+	text(pixels, 5, 130, "GRAY", 1, MUTED);
+	for (index = 0; index < 8; index++) {
+		int x = 36 + (int)index * 11;
+		bool black = state->grayscale.status != GRAY_WARMUP &&
+			     (state->grayscale.black & (1U << index));
+
+		card(pixels, x, 127, 9, 12, black ? GREEN : PANEL);
+		snprintf(line, sizeof(line), "%u", index + 1);
+		text(pixels, x + 2, 130, line, 1, black ? BG : MUTED);
+	}
+	snprintf(line, sizeof(line), "A %s %lu.%luS", state->lap_approach ? "NEAR" :
+		 state->lap_armed ? "ARMED" : "WAIT",
+		 (unsigned long)(state->lap_ms / 1000),
+		 (unsigned long)(state->lap_ms / 100 % 10));
+	text(pixels, 5, 150, line, 1, MUTED);
+}
+
 void ui_render(uint8_t *pixels, const struct ui_state *state)
 {
 	static const char *const keys[] = { "RUN", "DIR", "PWR", "TASK" };
@@ -140,6 +241,14 @@ void ui_render(uint8_t *pixels, const struct ui_state *state)
 
 	if (state->updating) {
 		update_page(pixels, state);
+		return;
+	}
+	if (state->task == TASK_GRAY) {
+		gray_page(pixels, state);
+		return;
+	}
+	if (state->task == TASK_LAP) {
+		lap_page(pixels, state);
 		return;
 	}
 	rect(pixels, 0, 0, UI_WIDTH, UI_HEIGHT, BG);
@@ -201,7 +310,8 @@ void ui_render(uint8_t *pixels, const struct ui_state *state)
 	text(pixels, 5, 129, "GRAY", 1, MUTED);
 	for (index = 0; index < 8; index++) {
 		int x = 36 + (int)index * 11;
-		bool low = !(state->gray & (1U << index));
+		bool low = state->grayscale.status != GRAY_WARMUP &&
+			   (state->grayscale.black & (1U << index));
 
 		card(pixels, x, 127, 9, 12, low ? CYAN : PANEL);
 		snprintf(line, sizeof(line), "%u", index + 1);
@@ -224,4 +334,16 @@ void ui_render(uint8_t *pixels, const struct ui_state *state)
 	else
 		snprintf(line, sizeof(line), "WHEELS OFF / J10 ?");
 	text(pixels, 5, 150, line, 1, fault ? RED : MUTED);
+}
+
+void ui_render_rows(uint8_t *pixels, const struct ui_state *state,
+		    unsigned int first, unsigned int rows)
+{
+	if (first >= UI_HEIGHT || !rows)
+		return;
+	clip_top = (int)first;
+	clip_bottom = rows >= UI_HEIGHT - first ? UI_HEIGHT : (int)(first + rows);
+	ui_render(pixels, state);
+	clip_top = 0;
+	clip_bottom = UI_HEIGHT;
 }

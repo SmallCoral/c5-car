@@ -1,0 +1,71 @@
+{
+  "captured_utc": "2026-11-17T10:53:43.738751+00:00",
+  "git_head": "5c09ee0d09d186b52a6b1959b378c783622240dd",
+  "source_state": "Existing worktree plus partial A window, approach slowdown and repeat-start fixes; not committed",
+  "sources": {
+    "Firmware/src/board.c": "be5a7afc8f4151affd7736d31ec6fed32c5f08cbfcfabac5848437664cdb3be9",
+    "Firmware/src/display.c": "87fa1b5520c4517b160905fd52ade323cf49dbf3f245067c31ee38f2fff1dd57",
+    "Firmware/src/emm.c": "c3c12537ddbbae14f89e4dd91bdf1239d2a561d3c6cc724cc35ce13cc4930e6b",
+    "Firmware/src/grayscale.c": "b6c765fe11b098ae9eb73ad06a51e5754774402e85af1e95b6c379689fa0d400",
+    "Firmware/src/lap.c": "331db08d7534e27fe3a95d4d7ca6d7187920d87ecd2a3833af66861e535426a0",
+    "Firmware/src/logic.c": "06c1cdb82d057227d4e75ccaea2e11eae431ca7ec627c8e2b8a9f360e7cc5bc4",
+    "Firmware/src/main.c": "ea93d9411d294a496ce71b2a2392a3b86b38dfc16e8b9841e861ae3b7d4637d4",
+    "Firmware/src/ota.c": "244a5adbd18d063f77cf8c9ced933b957b43016602a5328dff54cf0cb41d301c",
+    "Firmware/src/runtime.c": "d69d1a482438e52d14522e323a94cd8421fe7ab4235f046930f6056397463aaa",
+    "Firmware/src/serial.c": "7099e42552c5fd6e631216fedf35a8b416673fd571f5fb41bff10c8de5f2a0b4",
+    "Firmware/src/stepper.c": "4f4d23142dcf2910c464f602fcac9b038ef1bbce310c47a1e8a32f6afd143e2b",
+    "Firmware/src/ui.c": "87209dfad3966b1a5af7396f287acbb8b5b566b4f9f41bfefde15cda21146dcb",
+    "Firmware/include/board.h": "77149adf1d03c5f410864e144b8e436a39228439f7ea4d0aebb229acd8aec3bd",
+    "Firmware/include/config.h": "704811f0bc50d8246d55f335c1804da598b035ff0909203dd9d0fc4baec5ecaf",
+    "Firmware/include/display.h": "7305da71764da6569c14c08efdc42c465b05d84ecc2845d105f438fb91a28e17",
+    "Firmware/include/emm.h": "ab06f8918d866561afedc69c792de6d1ff7ccbf64bc46984d4ed5129114542fe",
+    "Firmware/include/grayscale.h": "f9a41b329657b5d4fdb0a40ea9216f4a0f2c738a7502d9370558a8e7ba8ab2d0",
+    "Firmware/include/gray_map.h": "79e8b17dd48493db3af91b52b3fcb4c9a60d9a8f02c15cad65321568d9f8a426",
+    "Firmware/include/lap.h": "cdbe701b3ff07cfa4718fed6078dcfa89bc8145cdbe9eb87e9c1198b859378f7",
+    "Firmware/include/logic.h": "2f610b7828c946a09889c3731408d23373d407962ac86bd30b7cb9eb0d0aecb3",
+    "Firmware/include/ota.h": "fd36d0d14a8cafc293631c6cbc3423706fbe32de9e54c8feac782b8d51cb9b7f",
+    "Firmware/include/ota_store.h": "6780ab553b0d2658a89a068a570c591ecbb4ff36f92a4e603298fa6d9dc03b1f",
+    "Firmware/include/serial.h": "2847a9138bd6291841edf03ed156c9644652f08e4e54b98629ef021d884629a7",
+    "Firmware/include/stepper.h": "657acca7693e36701aeb58243c4c2f3f0944f1bc0555dcd8eb65748a0f84c0be",
+    "Firmware/include/ui.h": "92926f87c553a139a9ffea7bb034aa06fa18171676aa42b7b851ff8952d9c3c7",
+    "Firmware/include/wheel_map.h": "0bfb4fd99b98820eb1ccdbd7dfe074c152448a07615cbd67f2b2c24cff0592b9",
+    "Firmware/tests/render_ui.c": "bab953b93e8425e783cae6d2405b01faa1c0a7061e39904ef861ad2a08d8be97",
+    "Firmware/tests/test_grayscale.c": "2e90f09dce453547559bf38e05522bdc2e10f82b94f7e08cdc7aef5129f44891",
+    "Firmware/tests/test_lap.c": "fc4e06a262848bc8c309c16a3e71c6fae45b37cd337ec25290359981837b5452",
+    "Firmware/tests/test_lap_dynamics.c": "0f15b9300be077ab475e08ddb3b3ae55411250b5d276a2a72957752580f6472a",
+    "Firmware/tests/test_logic.c": "a73833bb1c0d8df3e391e57f434cbb7ba1080ca79847d48c1ebf9587ae75f779",
+    "Firmware/tests/test_monitor.py": "57e234d4d8650f72df98e9bc12b351efecc52162241bede69f52bf2c4563bd3b",
+    "Firmware/tests/test_ota.c": "e3f13978cb5e3a496d58d6db04a272f32bab13cf61af76c8c424a756e50fc934",
+    "Firmware/tests/test_ota_tools.py": "77a4460341f70fe9412c70e238a7bcefa8c61f8be6543cc8bec6cd8b8d7e38d4",
+    "Firmware/tools/monitor.py": "3d20905aaff14b55869d7f6798ba1c27dc45dba6c587e584387daae9922564d8",
+    "Firmware/CMakeLists.txt": "fb105b543556b943c4205c05250ce92b21fdd602b71c1a246493b1e1505c9aac"
+  },
+  "artifacts": {
+    "Firmware/build/debug/coral_c5.bin": {
+      "bytes": 25132,
+      "sha256": "dee77cc171dcf18621dfe51bd74c0dd3cf888cbbc4fb5ea10137048f3132890f",
+      "crc32": "29D123B8"
+    },
+    "Firmware/build/debug/coral_c5.ota": {
+      "bytes": 25164,
+      "sha256": "6334c98513b8fbd549723c6cab7df8c0f443f54dcef7cae51cb8033451664454",
+      "crc32": "E2D7E9AB"
+    },
+    "Firmware/build/release/coral_c5.bin": {
+      "bytes": 21724,
+      "sha256": "ea80dbfe2acc363cc37d298c3736c86fb4ab7d9f9862ef5b8646a97d6906deba",
+      "crc32": "04A4FE7E"
+    },
+    "Firmware/build/release/coral_c5.ota": {
+      "bytes": 21756,
+      "sha256": "c515ebeff01b2f0977a18bb35a23ab4b5329d5510ef4a64f78e91b6341a89500",
+      "crc32": "57C6A993"
+    }
+  },
+  "tools": {
+    "python": "3.12.14",
+    "cmake": "cmake version 4.3.1",
+    "arm_gcc": "arm-none-eabi-gcc.exe (GNU Tools for STM32 14.3.rel1.20251027-0700) 14.3.1 20250623",
+    "host_gcc": "gcc.exe (GCC) 15.2.0"
+  }
+}

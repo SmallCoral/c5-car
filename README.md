@@ -20,16 +20,18 @@
 
 ## 当前进度
 
-更新日期：2026-11-16。
+更新日期：2026-11-17。
 用户已完成 Core、Motor 焊接，接入屏幕、HC-08、Emm 步进、灰度和两只编码电机，进入实物联调。
-LL 固件支持四键彩屏、轮 PWM/编码器、步进连续旋转、灰度输入和蓝牙遥测。上电进入 ALL 并保持停止；最左侧 RUN 按一次联动，再按一次停止。默认轮 PWM 45%、步进 30 RPM；运动实测范围见[联动记录](Documentation/validation/2026-11-16-wheel-drive.md)。
+LL 固件支持四键彩屏、轮 PWM/编码器、步进连续旋转、灰度输入和蓝牙遥测。上电进入 LAP 并保持停止，RUN 启动灰度循线一圈任务；ALL 页保留原来的两轮和步进联动。操作与实测边界见[循线一圈](Documentation/how-to/line-following-lap.md)、[原联动记录](Documentation/validation/2026-11-16-wheel-drive.md)。
 
-当前板已安装无线升级引导程序，两次 HC-08 完整上传与传输中断恢复通过实测；日常更新使用[无线烧录](Documentation/how-to/wireless-update.md)，J-Link 保留用于首次安装、调试与救援。当前尚未完成轮速闭环、循线、视觉标定和钢球稳控。
+当前循线使用灰度位置、编码器 PI 轮速与轮速差反馈，前进加速和转向修正分开限制；实车电机与灰度左右映射已修正，用户反馈摆动明显减轻。默认 2200 CPS，支持从 A 判断线起步、接近 A 减速及部分覆盖识别。连续两次 RUN 分别 24.333 s、24.262 s，均获用户确认回 A 自动停车；停车位置误差尚未量测。板上 Debug 镜像为 `29D123B8`，过程与限制见[最新实测](Documentation/validation/2026-11-17-lap-repeat.md)，提交检查见[整理记录](Documentation/validation/2026-11-17-lap-handoff.md)。
 
-`Firmware/Rust` 已独立迁移应用、引导程序和电脑端工具，主机测试与 ARM 编译通过；Rust 版尚未烧录或完成实物验证，板上继续使用 C/LL 版。
+当前板已安装无线升级引导程序，两次 HC-08 完整上传与传输中断恢复通过实测；日常更新使用[无线烧录](Documentation/how-to/wireless-update.md)，J-Link 保留用于首次安装、调试与救援。轮速/循线控制仍需实车整定，视觉标定和钢球稳控尚未完成。
+
+`Firmware/Rust` 已独立迁移应用、引导程序和电脑端工具，主机测试与 ARM 编译通过；尚未同步本轮 C/LL 循线与遥测 v6，也未烧录或完成实物验证。板上继续使用 C/LL 版。
 
 三份采购表已归档，完整表与精简表的范围、库存快照日期和未落实替代件见[BOM 说明](Documentation/reference/motor-bom.md)。
-11 月 10 日 [PCB 复查](Documentation/validation/2026-11-10-motor-pcb-review.md)描述当时版本。Motor PCB 此后由用户继续保存修改，本轮整理原样纳入，未重新运行 DRC；实物联调不能替代 PCB 发布验证。
+11 月 10 日 [PCB 复查](Documentation/validation/2026-11-10-motor-pcb-review.md)描述当时版本。用户后续修改的硬件快照已在 11 月 16 日归档，尚未重新运行 DRC；本次循线整理不包含新的硬件设计改动，实物联调不能替代 PCB 发布验证。
 
 ## 文件归属
 

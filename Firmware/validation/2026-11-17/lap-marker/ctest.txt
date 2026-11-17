@@ -1,0 +1,135 @@
+Start testing: Nov 17 18:37 中国标准时间
+----------------------------------------------------------
+1/6 Testing: logic
+1/6 Test: logic
+Command: "C:/Users/sc/Documents/Dev/Hardware/c5-car/Firmware/build/host/test_logic.exe"
+Directory: C:/Users/sc/Documents/Dev/Hardware/c5-car/Firmware/build/host
+"logic" start time: Nov 17 18:37 中国标准时间
+Output:
+----------------------------------------------------------
+PASS: debounce, task stops, timer/encoder wrap, Emm framing and failure paths
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"logic" end time: Nov 17 18:37 中国标准时间
+"logic" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/6 Testing: grayscale
+2/6 Test: grayscale
+Command: "C:/Users/sc/Documents/Dev/Hardware/c5-car/Firmware/build/host/test_grayscale.exe"
+Directory: C:/Users/sc/Documents/Dev/Hardware/c5-car/Firmware/build/host
+"grayscale" start time: Nov 17 18:37 中国标准时间
+Output:
+----------------------------------------------------------
+PASS: 512 polarity/pattern cases, per-channel filtering, wrap, safe gray controls
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"grayscale" end time: Nov 17 18:37 中国标准时间
+"grayscale" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/6 Testing: lap_control
+3/6 Test: lap_control
+Command: "C:/Users/sc/Documents/Dev/Hardware/c5-car/Firmware/build/host/test_lap.exe"
+Directory: C:/Users/sc/Documents/Dev/Hardware/c5-car/Firmware/build/host
+"lap_control" start time: Nov 17 18:37 中国标准时间
+Output:
+----------------------------------------------------------
+PASS: lap marker gating, PD direction, wheel PI, loss/stall/timeout, wrap and controls
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"lap_control" end time: Nov 17 18:37 中国标准时间
+"lap_control" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/6 Testing: lap_dynamics
+4/6 Test: lap_dynamics
+Command: "C:/Users/sc/Documents/Dev/Hardware/c5-car/Firmware/build/host/test_lap_dynamics.exe"
+Directory: C:/Users/sc/Documents/Dev/Hardware/c5-car/Firmware/build/host
+"lap_dynamics" start time: Nov 17 18:37 中国标准时间
+Output:
+----------------------------------------------------------
+lookahead=80 motor_ms=50 bend=0 jitter=0 status=FOLLOW bias_mm=4.451 sway_rms_mm=0.376 sway_pp_mm=0.970 PASS
+lookahead=80 motor_ms=50 bend=0 jitter=1 status=FOLLOW bias_mm=4.629 sway_rms_mm=0.150 sway_pp_mm=0.502 PASS
+lookahead=80 motor_ms=50 bend=1 jitter=0 status=FOLLOW bias_mm=-18.169 sway_rms_mm=0.068 sway_pp_mm=0.227 PASS
+lookahead=80 motor_ms=50 bend=1 jitter=1 status=FOLLOW bias_mm=-18.187 sway_rms_mm=0.076 sway_pp_mm=0.302 PASS
+lookahead=80 motor_ms=100 bend=0 jitter=0 status=FOLLOW bias_mm=4.760 sway_rms_mm=0.110 sway_pp_mm=0.362 PASS
+lookahead=80 motor_ms=100 bend=0 jitter=1 status=FOLLOW bias_mm=4.468 sway_rms_mm=0.226 sway_pp_mm=0.686 PASS
+lookahead=80 motor_ms=100 bend=1 jitter=0 status=FOLLOW bias_mm=-18.264 sway_rms_mm=0.080 sway_pp_mm=0.273 PASS
+lookahead=80 motor_ms=100 bend=1 jitter=1 status=FOLLOW bias_mm=-18.266 sway_rms_mm=0.086 sway_pp_mm=0.300 PASS
+lookahead=80 motor_ms=150 bend=0 jitter=0 status=FOLLOW bias_mm=4.497 sway_rms_mm=0.226 sway_pp_mm=0.783 PASS
+lookahead=80 motor_ms=150 bend=0 jitter=1 status=FOLLOW bias_mm=4.232 sway_rms_mm=0.338 sway_pp_mm=1.055 PASS
+lookahead=80 motor_ms=150 bend=1 jitter=0 status=FOLLOW bias_mm=-18.313 sway_rms_mm=0.087 sway_pp_mm=0.293 PASS
+lookahead=80 motor_ms=150 bend=1 jitter=1 status=FOLLOW bias_mm=-18.324 sway_rms_mm=0.088 sway_pp_mm=0.323 PASS
+lookahead=120 motor_ms=50 bend=0 jitter=0 status=FOLLOW bias_mm=4.680 sway_rms_mm=0.048 sway_pp_mm=0.198 PASS
+lookahead=120 motor_ms=50 bend=0 jitter=1 status=FOLLOW bias_mm=4.343 sway_rms_mm=0.237 sway_pp_mm=0.753 PASS
+lookahead=120 motor_ms=50 bend=1 jitter=0 status=FOLLOW bias_mm=-10.006 sway_rms_mm=0.067 sway_pp_mm=0.245 PASS
+lookahead=120 motor_ms=50 bend=1 jitter=1 status=FOLLOW bias_mm=-9.994 sway_rms_mm=0.071 sway_pp_mm=0.271 PASS
+lookahead=120 motor_ms=100 bend=0 jitter=0 status=FOLLOW bias_mm=4.156 sway_rms_mm=0.261 sway_pp_mm=0.903 PASS
+lookahead=120 motor_ms=100 bend=0 jitter=1 status=FOLLOW bias_mm=4.496 sway_rms_mm=0.190 sway_pp_mm=0.610 PASS
+lookahead=120 motor_ms=100 bend=1 jitter=0 status=FOLLOW bias_mm=-10.199 sway_rms_mm=0.074 sway_pp_mm=0.268 PASS
+lookahead=120 motor_ms=100 bend=1 jitter=1 status=FOLLOW bias_mm=-10.238 sway_rms_mm=0.096 sway_pp_mm=0.390 PASS
+lookahead=120 motor_ms=150 bend=0 jitter=0 status=FOLLOW bias_mm=4.494 sway_rms_mm=0.291 sway_pp_mm=0.991 PASS
+lookahead=120 motor_ms=150 bend=0 jitter=1 status=FOLLOW bias_mm=4.410 sway_rms_mm=0.241 sway_pp_mm=0.724 PASS
+lookahead=120 motor_ms=150 bend=1 jitter=0 status=FOLLOW bias_mm=-10.291 sway_rms_mm=0.076 sway_pp_mm=0.272 PASS
+lookahead=120 motor_ms=150 bend=1 jitter=1 status=FOLLOW bias_mm=-10.275 sway_rms_mm=0.084 sway_pp_mm=0.287 PASS
+lookahead=160 motor_ms=50 bend=0 jitter=0 status=FOLLOW bias_mm=4.482 sway_rms_mm=0.175 sway_pp_mm=0.569 PASS
+lookahead=160 motor_ms=50 bend=0 jitter=1 status=FOLLOW bias_mm=4.504 sway_rms_mm=0.110 sway_pp_mm=0.372 PASS
+lookahead=160 motor_ms=50 bend=1 jitter=0 status=FOLLOW bias_mm=1.166 sway_rms_mm=0.061 sway_pp_mm=0.233 PASS
+lookahead=160 motor_ms=50 bend=1 jitter=1 status=FOLLOW bias_mm=1.079 sway_rms_mm=0.063 sway_pp_mm=0.252 PASS
+lookahead=160 motor_ms=100 bend=0 jitter=0 status=FOLLOW bias_mm=4.366 sway_rms_mm=0.322 sway_pp_mm=1.089 PASS
+lookahead=160 motor_ms=100 bend=0 jitter=1 status=FOLLOW bias_mm=4.468 sway_rms_mm=0.137 sway_pp_mm=0.509 PASS
+lookahead=160 motor_ms=100 bend=1 jitter=0 status=FOLLOW bias_mm=0.937 sway_rms_mm=0.065 sway_pp_mm=0.230 PASS
+lookahead=160 motor_ms=100 bend=1 jitter=1 status=FOLLOW bias_mm=0.942 sway_rms_mm=0.096 sway_pp_mm=0.398 PASS
+lookahead=160 motor_ms=150 bend=0 jitter=0 status=FOLLOW bias_mm=4.556 sway_rms_mm=0.055 sway_pp_mm=0.182 PASS
+lookahead=160 motor_ms=150 bend=0 jitter=1 status=FOLLOW bias_mm=4.234 sway_rms_mm=0.214 sway_pp_mm=0.729 PASS
+lookahead=160 motor_ms=150 bend=1 jitter=0 status=FOLLOW bias_mm=0.888 sway_rms_mm=0.072 sway_pp_mm=0.251 PASS
+lookahead=160 motor_ms=150 bend=1 jitter=1 status=FOLLOW bias_mm=0.840 sway_rms_mm=0.079 sway_pp_mm=0.303 PASS
+<end of output>
+Test time =   0.14 sec
+----------------------------------------------------------
+Test Passed.
+"lap_dynamics" end time: Nov 17 18:37 中国标准时间
+"lap_dynamics" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/6 Testing: ui_bounds
+5/6 Test: ui_bounds
+Command: "C:/Users/sc/Documents/Dev/Hardware/c5-car/Firmware/build/host/render_ui.exe" "C:/Users/sc/Documents/Dev/Hardware/c5-car/Firmware/build/host/ui.ppm"
+Directory: C:/Users/sc/Documents/Dev/Hardware/c5-car/Firmware/build/host
+"ui_bounds" start time: Nov 17 18:37 中国标准时间
+Output:
+----------------------------------------------------------
+PASS: UI rendering and framebuffer guards
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"ui_bounds" end time: Nov 17 18:37 中国标准时间
+"ui_bounds" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/6 Testing: ota_recovery
+6/6 Test: ota_recovery
+Command: "C:/Users/sc/Documents/Dev/Hardware/c5-car/Firmware/build/host/test_ota.exe"
+Directory: C:/Users/sc/Documents/Dev/Hardware/c5-car/Firmware/build/host
+"ota_recovery" start time: Nov 17 18:37 中国标准时间
+Output:
+----------------------------------------------------------
+PASS: recovery after 591 installation interruption points
+PASS: CRC, framing, bounds, lost ACKs, staging integrity, download interruptions
+<end of output>
+Test time =   0.51 sec
+----------------------------------------------------------
+Test Passed.
+"ota_recovery" end time: Nov 17 18:37 中国标准时间
+"ota_recovery" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 17 18:37 中国标准时间

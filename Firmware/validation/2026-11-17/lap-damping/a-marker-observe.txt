@@ -1,0 +1,4 @@
+BLE connected; receiving. Ctrl+C exits. J10 state is not sensed.
+   305691 ms  LAP     run=0  L= 100839 (    +0/s)  R=  82636 (    +0/s)  gray(CH1..8)=11110111 LINE pos=500  lap=STOPPED pwm=0/0 fault=0 emm=0/E0 rpm=?
+Saved 1 frame(s) to Firmware\validation\2026-11-17\lap-damping\a-marker-observe.csv; received 156 byte(s); rejected 0
+Error: BLE disconnected

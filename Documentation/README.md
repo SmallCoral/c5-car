@@ -1,6 +1,6 @@
 # A 题项目文档
 
-整理日期：2026-11-16。
+整理日期：2026-11-17。
 用途、当前状态与工程入口从[项目首页](../README.md)开始。
 接口和采购以参考表为入口，检查结果按日期保留。
 
@@ -18,6 +18,8 @@
 | PCB 元器件模型 | [模型来源及精确性限制](validation/2026-11-09-3d-models.md)、[M3 安装孔](validation/2026-11-09-m3-mounting-holes.md) |
 | 调试 | [分阶段上电与验收](how-to/bring-up.md) |
 | 实物固件 | [构建入口](../Firmware/README.md)、[按键与蓝牙联调](how-to/firmware-bringup.md)、[遥测字段](reference/firmware-telemetry.md) |
+| 灰度联调 | [校准、通道顺序与偏差显示](how-to/grayscale-check.md)、[无线烧录与板上采集记录](validation/2026-11-17-grayscale.md) |
+| 循线一圈 | [LAP 操作、方向与停车条件](how-to/line-following-lap.md)、[摆动调参](validation/2026-11-17-lap-damping.md)、[最新连续两次 A 点起停](validation/2026-11-17-lap-repeat.md) |
 | Rust 迁移 | [独立工程](../Firmware/Rust/README.md)、[RustRover 与工具链](how-to/rust-development.md)、[代码验证](../Firmware/Rust/VALIDATION.md) |
 | 接手项目 | [当前交接与后续步骤](../.agent/main/handoff.md) |
 | 无线升级 | [一键烧录与恢复](how-to/wireless-update.md)、[分区与协议](reference/wireless-update.md)、[实测结果](validation/2026-11-16-wireless-update.md) |
@@ -30,7 +32,7 @@
 | 摄像头资料 | [模块与原始资料](摄像头与视觉板/README.md)、[摄像头参数](reference/cameras.md) |
 | 灰度资料 | [实物、MSPM0L1306 辅助板及原始源码](感为八路灰度资料/README.md) |
 | 附带网页归档 | [独立网页示例](archive/README.md) |
-| 仓库维护 | [目录与提交范围](reference/repository-layout.md)、[Rust 与硬件快照整理](validation/2026-11-16-rust-handoff.md)、[前次 LL 整理](validation/2026-11-16-project-cleanup.md) |
+| 仓库维护 | [目录与提交范围](reference/repository-layout.md)、[循线代码与交接整理](validation/2026-11-17-lap-handoff.md)、[前次 Rust 与硬件快照](validation/2026-11-16-rust-handoff.md) |
 
 旧项目 `D:/dev/qrs/stm32/Coral-C5` 仅作为历史资料来源。
 厂家原文和旧项目记录按原样保留，其中部分外部资源未随本仓库收录；不能将这些资料的旧检查结果当作当前实现状态。

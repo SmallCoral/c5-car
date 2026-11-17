@@ -1,85 +1,72 @@
-# Coral-C5 交接：独立 Rust 版与当前硬件快照
+# Coral-C5 交接：循迹调参与 A 点重复起停
 
-更新日期：2026-11-16。仓库 `SmallCoral/c5-car`，分支 `main`。
-本轮起点为 `b9aaa695109ca046874f67017f2174d682bed09d`；交付版本以包含本文件的 Git 提交为准。
-本文面向没有本次对话记录的接手者，覆盖项目现状、开发方法与剩余工作。
+更新：2026-11-17；仓库 `SmallCoral/c5-car`，分支 `main`。
+本轮基线为 `5c09ee0d09d186b52a6b1959b378c783622240dd`；交付源码以包含本文的提交为准。历史实测使用基线加工作区，具体文件散列在各次 `source-manifest.json`，不要用基线提交单独重建实测版本。
 
 ## 目标与完成条件
 
-校赛 A 题使用 STM32C5A3 Core + Motor，实现循线小车与钢球稳控装置。
-本轮交付独立 Rust 代码、可复现构建入口、当前手工硬件快照和文档；GitHub `main` 与本地交付提交一致即完成本轮同步。
-Rust 的实物联调不在本轮范围内。
+校赛 A 题使用 STM32C5A3 Core + Motor 实现循线小车与钢球稳控。本轮交付 C/LL 循线减摆、提速、A 标记起步与重复回 A 停车修复，以及测试、操作说明和原始记录；验证暂存源码能够独立构建后同步 GitHub。
 
 ## 当前状态
 
-- **已实测，C/LL 版：** 双编码器已修复焊接问题，两轮主动转动、Emm 连续旋转、彩屏和 HC-08 联调通过。J10 接通轮驱动使能；拔下仍可手转读编码器。默认 ALL，上电停止，RUN 启动，再按任意键停止；两轮 45% PWM、步进 30 RPM。
-- **已实测，C/LL 无线升级：** 板上已装引导程序，两次完整上传和传输中断恢复通过。最后记录的 Debug 应用为 18,976 B、CRC `4084B512`，地址 `0x08010000`；后续镜像身份以实际构建包和设备查询为准。
-- **已离线验证，Rust 版：** `Firmware/Rust` 包含 `core`、`device`、`host`；应用、引导程序、BLE/串口工具与原协议迁移完成。30 项主机测试、Clippy、Windows workspace 检查及 ARM Debug/Release 编译通过。Rust 未烧录、未实测，不能沿用 C 版的实测结论。
-- **已修复，RustRover：** Rust 1.100.0、标准库源码和 Cargo 工程已关联；`app`/`boot` 的 Windows 条件编译错误已修复。ARM 使用无标准库固件入口；误在电脑运行固件时打印正确构建命令并返回 1。三份共享 `.run` 配置随仓库维护。
-- **已导出检查，硬件：** 本轮原样收录 7 个手工修改文件。Core、Motor、Transfer 原生 ERC 均为 0 错误、0 警告；Motor 检查脚本 957 项中 4 项失败，Transfer 28 项中 4 项失败，原始结果已保留。PCB DRC 未运行。
-- **已确认，Transfer 用途：** 修正原电源输入正负极画反。新网表确认 `J1:1 ↔ J2:2`、`J1:2 ↔ J2:1`；嵌入符号与本地符号库不一致，PCB 同步、布线和实物极性待验证。
-- **尚未实现：** 轮速闭环、灰度循线、视觉标定、摆杆角度反馈和钢球稳控。45% 是开环占空比，不是速度目标。
+- **已实测：** 电机与灰度实车左右映射已修正。前进加速与转向分别限速，增加编码器轮速差反馈后，用户反馈全程摆动明显减轻。LAP 默认目标 2200 CPS，另有 800/1800 档；不是 PWM 百分比或已标定的 m/s。
+- **已实测：** A 横线及含中部探头的分段边缘可受限驶离，接近终点减速，行程窗口内允许三路部分覆盖停车。连续两次 RUN 为 **24.333 s / 43059 计数**、**24.262 s / 42898 计数**，均 DONE，左右 PWM、目标和使能归零；用户确认“两次都在 A 自动停车”。停车误差 ≤3 cm **未量测**，不能宣称所有工况可靠。
+- **板上身份已核对：** Debug 应用 **25,132 B，CRC `29D123B8`**，HC-08 上传后重连返回 `C5APP,1,29D123B8,25132`。性能查询 `C5PERF,1,6,4,3`；两轮运行采样控制间隔均为 10 ms。Release 为 21,724 B、CRC `04A4FE7E`，本轮未在板上运行。
+- **离线验证：** CTest 6 项、Python 16 项及 ARM Debug/Release 构建通过；整理时的独立暂存源码复核见[交付记录](../../Documentation/validation/2026-11-17-lap-handoff.md)。36 组模型是合成回归测试，不是实车摆幅测量。
+- **遥测边界：** 当前 C/LL 为 v6、56 列，LAP 运行时约 10 Hz，其余约 2 Hz。两次 RUN 共 632 条有效帧，8 行拒绝、8 个序号缺口；MCU UART/队列丢弃/轮故障计数为零。随后补充查询未搜索到 HC-08，保留失败，身份依据上传后的成功查询。
+- **Rust 保持独立：** `Firmware/Rust` 仍为代码迁移版，遥测 v2，未同步本轮灰度、循线和左右映射，未烧录。11 月 16 日主机 30 项测试及 ARM 构建证据见 [Rust 验证](../../Firmware/Rust/VALIDATION.md)，不能替代 C/LL 当前结果。
+- **硬件范围：** 本次未编辑硬件，也未重跑 ERC/DRC。整理时发现 `Hardware/stm32c5a3/Hardware/CoralC5-Motor/05_Right_Motor.kicad_sch` 有用户手工改动，保留本地、未纳入本次代码文档提交。11 月 16 日快照的 Motor/Transfer 脚本各 4 项失败及未运行 DRC 的边界仍见[历史交接检查](../../Documentation/validation/2026-11-16-rust-handoff.md)。
 
-## 下一步
+## 后续步骤
 
-1. 按 [Rust 开发说明](../../Documentation/how-to/rust-development.md)打开 `Firmware/Rust/Cargo.toml`，运行 `Coral Host Check`、`Coral ARM App Build` 和 `Coral ARM Boot Build`，确认接手环境可用。
-2. 继续 Rust 开发时保持原协议、按键启动和故障停机行为；修改协议/UI 时运行固定兼容样本测试。不要用 Rust 自己的新输出覆盖原 C/Python 样本来消除差异。
-3. 先核对本轮[硬件失败项](../../Documentation/validation/2026-11-16-rust-handoff.md)：Motor UUID/PCB 关联、历史基线假设，以及 Transfer 嵌入符号差异。核实实际设计意图后再更新合同或设计，不能直接关闭检查。
-4. 完成 Transfer PCB 同步、布线、原生 DRC 和实物极性检查；对最新 Core/Motor PCB 重新做 DRC。保留设计位号、UUID 和布局约束，不重跑生成器覆盖手工设计。
-5. 用户另行安排 Rust 实物联调后，再逐项核查时钟、中断、屏幕方向、双编码器、PWM、Emm、遥测和无线恢复。先阅读[寄存器与运行时边界](../../Firmware/Rust/device/registers-source.md)及 Rust 未验证范围。
-6. 控制开发先标定轮径、方向和编码器每转计数，再做轮速闭环、循线；确认 MaixCAM2 的 J19 线束、供电和 UART 实测数据后接入视觉与稳球。AS5600 等候选尚未形成已验证实现。
+1. 从 A 朝 B 放车，在 LAP 按 RUN；自动停稳后原地再次 RUN。记录一圈时间、停止提示、实际停车位置及相对车体基准点的误差，覆盖不同电量和重复次数。操作见[循线一圈](../../Documentation/how-to/line-following-lap.md)。
+2. 标定轮径、编码器每转计数和实际圈长；更换场地、轮胎或起点时重测 A 窗口。约 43000 计数/圈只是本车本赛道经验，不能换算成精确位置。保护停车不在 A 时先把车放回 A。
+3. 如仍摆动或漏停，先保留遥测中的位置、变化率、轮速差、转向目标、控制间隔和标记峰值；与基线比较后调整有依据的参数，不关闭丢线、编码器、超时或行程保护。
+4. 视觉、摆杆角度反馈和钢球稳控尚未实现。确认 J19 线束、单一供电与 UART 数据后再接入；AS5600 等候选未形成已验证实现。手工硬件改动另行保存基线、检查合同/网表/ERC/DRC，保留位号、UUID 和布局。
+5. Rust 后续工作先按[开发说明](../../Documentation/how-to/rust-development.md)迁移本轮控制与协议、做离线验证；用户当前要求只改代码、不实际烧录，不得用 C/LL 板上结论替代 Rust 实测。
 
 ## 关键文件
 
-| 文件 | 用途 |
+| 路径 | 用途 |
 | --- | --- |
-| [根 README](../../README.md) | 项目状态、C/Rust 与硬件入口 |
-| [Firmware/README.md](../../Firmware/README.md) | 原 C/LL 构建、按键及已实测操作 |
-| [Firmware/Rust/README.md](../../Firmware/Rust/README.md) | Rust 结构、命令与工具接口 |
-| [Firmware/Rust/VALIDATION.md](../../Firmware/Rust/VALIDATION.md) | 30 项测试、兼容样本、内存/ELF 检查和实物边界 |
-| [Firmware/Rust/core](../../Firmware/Rust/core) | 可移植的任务、协议、OTA、遥测和 UI；禁止 unsafe |
-| [Firmware/Rust/device/src/app.rs](../../Firmware/Rust/device/src/app.rs) | MCU 业务循环；入口在同目录的 `bin/app.rs`，引导入口为 `bin/boot.rs` |
-| [Firmware/Rust/host/src/main.rs](../../Firmware/Rust/host/src/main.rs) | 电脑端 CLI，不是 MCU 主函数 |
-| [Firmware/Rust/.run](../../Firmware/Rust/.run) | 可共享的检查与 ARM 构建配置，不含烧录命令 |
-| [本轮整理记录](../../Documentation/validation/2026-11-16-rust-handoff.md) | 暂存源码独立构建、硬件快照、失败项与提交检查 |
-| [硬件入口](../../Hardware/stm32c5a3/README.md) | Core/Motor/Transfer 原生设计与本地资源 |
-| [接口合同](../../Hardware/stm32c5a3/Hardware/Shared/interface.csv) | 98 触点；电机六针线序另见 [motor-interface.md](../../Documentation/reference/motor-interface.md) |
-| [无线升级步骤](../../Documentation/how-to/wireless-update.md) | 已实测 C 版的日常更新和恢复；[协议](../../Documentation/reference/wireless-update.md) |
+| [Firmware/include/config.h](../../Firmware/include/config.h) | 速度、滤波、转向、标记窗口、超时与实车映射参数 |
+| [Firmware/src/lap.c](../../Firmware/src/lap.c)、[lap.h](../../Firmware/include/lap.h) | 起步/循线/停车状态、轮速 PI、转向阻尼、行程与保护 |
+| [Firmware/src/grayscale.c](../../Firmware/src/grayscale.c)、[grayscale.h](../../Firmware/include/grayscale.h) | 逐路滤波、目标段和偏差 |
+| [Firmware/src/board.c](../../Firmware/src/board.c)、[board.h](../../Firmware/include/board.h)、[gray_map.h](../../Firmware/include/gray_map.h)、[wheel_map.h](../../Firmware/include/wheel_map.h) | 实车输入输出归一化与轮驱动保护 |
+| [Firmware/src/main.c](../../Firmware/src/main.c)、[logic.c](../../Firmware/src/logic.c)、[logic.h](../../Firmware/include/logic.h) | LAP 调度、按键任务、诊断和 v6 发送 |
+| [Firmware/src/display.c](../../Firmware/src/display.c)、[ui.c](../../Firmware/src/ui.c)、[ui.h](../../Firmware/include/ui.h) | 两行切片、片外文字裁剪、LAP/GRAY 页面 |
+| [Firmware/tools/monitor.py](../../Firmware/tools/monitor.py) | BLE/串口接收，兼容 v1～v6，拒绝错位布尔字段 |
+| [Firmware/tests](../../Firmware/tests)、[CMakeLists.txt](../../Firmware/CMakeLists.txt) | 灰度、控制/模型、左右映射、UI 切片、接收与恢复测试 |
+| [固件说明](../../Firmware/README.md)、[遥测字段](../../Documentation/reference/firmware-telemetry.md) | 构建、按钮和协议入口 |
+| [重复 RUN 实测](../../Documentation/validation/2026-11-17-lap-repeat.md)、[原始记录](../../Firmware/validation/2026-11-17/lap-repeat) | 当前镜像散列、上传、两轮轨迹、失败与限制 |
+| [摆动排查](../../Documentation/validation/2026-11-17-lap-damping.md)、[前版起停及漏停](../../Documentation/validation/2026-11-17-lap-marker.md) | 调参依据、LCD 调度问题、单次成功后重跑失败 |
+| [验证总索引](../../Documentation/validation/README.md) | 灰度校准、方向修正、旧版本和硬件记录 |
 
-## 约束与易错点
+## 决策与注意事项
 
-- 开始修改前读取根 `AGENTS.md` 和 `Firmware/AGENTS.md`。Rust 按用户要求单独放在 `Firmware/Rust`，当前只改代码、不实际烧录；原 C/Python 工具和厂家资料保留。
-- `core` 为 no_std 可移植代码，`device` 使用 C5A3 寄存器与 ARM 启动代码，`host` 依赖电脑端 std。不要把整个 workspace 都按 ARM 目标构建。
-- Rust 不链接 C LL/HAL，寄存器常量按固定 ST DFP/LL 头文件核对。MCU 运行时少量汇编和 unsafe 边界不应替换成其他 STM32 系列常量。
-- 按照片方向“按钮在上、屏幕在下”，左至右 RUN / DIR / LEVEL / TASK。蓝牙为 USART1 PA6/PA7、57600 8N1；Emm 为 USART6 PC6/PC7、115200 8N1、地址 1。
-- 引导区 `0x08000000`、应用 `0x08010000`、暂存 `0x08080000`，元数据 `0x080FC000` / `0x080FE000`。协议 CRC 校验完整性，不提供签名认证。Flash/ECC 和真实断电恢复未做 Rust 实测。
-- `.scratch` 工具链、`.idea`、`target`、`dist`、设备原始诊断和 KiCad 本机历史不提交。共享 `.run`、Cargo.lock、固定测试样本必须保留。
-- 原理图 ERC、资源/合同检查、PCB DRC、实物验证分别报告。旧报告中的日期、基线或“未实现固件”等文字是旧检查合同，不代表当前固件状态；本次执行时间和源码摘要见各板 `docs/handoff-2026-11-16/snapshot.json`。
-- 旧项目 `D:/dev/qrs/stm32/Coral-C5` 只用于参考，不修改。此前交接可从 Git 历史查阅。
+- **实车方向：** J6 为左轮、J4 为右轮，`WHEEL_SWAP_SIDES=1` 同时映射驱动、编码器和故障位。MAP A 前进为 J6 正/J4 负，两路前进计数均为正；原理图组名和旧 ALL 同向电气输出不能用来推断实车前进。
+- **灰度方向：** 探头在轮轴前方，黑 0/白 1；`GRAY_REVERSE_CHANNELS=1` 后 PE14 为物理最左 CH1，PE7 为最右 CH8。位置左负右正，1000 单位/探头间距。MAP 只改轮方向，不改灰度左右。
+- **控制：** 位置低通 20 ms，D 按实际秒数计算并滤波；编码器半轮速差负反馈抑制转向。共同目标加速 2000、减速 4000 CPS/s，转向变化 6000 CPS/s；避免对两轮各自缓升而拖慢纠偏。没有 IMU、绝对航向或电流闭环。
+- **A 识别：** LEAVE A 最高共同目标 800 CPS，窄线稳定 100 ms 后退出，最多 1.5 s 或 1000 计数。离开起点且运行 ≥2 s、行程 ≥30000 后允许四路标记保持 10 ms 停车；39000 起共同目标限至 1100；41000～47000 内三路、至多两段保持 30 ms 也可 DONE。60000 仍无标记为 NO A MARK；里程本身不产生 DONE。窗口内类似黑色区域有误判可能，需现场确认位置。
+- **操作：** 按钮在上、屏幕在下。上电 LAP 停止，左到右 RUN / MAP / SPD / TASK；其他页按页面标签操作。LAP 不启动步进；ALL 保留两轮 45%/步进 30 RPM。运行任意键或 BLE `!` 停止，保护解除后不自动重启。J10 只控制驱动使能，拔下仍能手转读编码器，软件不能检测跳帽。
+- **记录：** `monitor.py --lap` 会先停止并切页，运行中只观察必须去掉 `--lap`。`C5:CHECK` 是 Debug 主动架空检查，会使车轮运动；查看状态不要发送它。此次 LAP 中步进离线，不影响单独轮循线，也不构成本轮对步进的再次验收。
+- **升级：** C/LL 日常使用 HC-08；应用固定 `0x08010000`，不擦引导区或改 Option Bytes。先关闭占用 BLE 的监测程序。J-Link 保留首次安装/调试/救援用途，详见[无线升级](../../Documentation/how-to/wireless-update.md)。本次整理未重新烧录或启动电机。
+- **仓库：** `.scratch`、工具链、构建产物与本机 IDE 状态不提交；选定的 `Firmware/validation` 文本/CSV 是需保留的实测证据。旧项目 `D:/dev/qrs/stm32/Coral-C5` 只读参考。Transfer 是电源输入极性修正转接，PCB 同步与实物极性仍待核验。
 
 ## 构建与验证
 
-新机器按 [Rust 工具链步骤](../../Documentation/how-to/rust-development.md)安装 Rust 1.100.0、组件和本机链接器。
-本机可先在仓库根目录执行 `. ./.scratch/rust-env.ps1` 加载隔离环境，再执行：
+从仓库根目录执行。要求 CMake ≥3.22、Ninja、Python ≥3.10、主机 GCC 和 Arm GNU；本轮使用 CMake 4.3.1、Python 3.12.14、主机 GCC 15.2.0、ARM GCC 14.3.1。两个 GCC 入口均须能在当前进程 PATH 中找到，主机 `gcc` 不可误指 ARM 编译器。
 
 ```powershell
-cd Firmware/Rust
-cargo check --workspace --all-targets --features radio --locked
-cargo test --workspace --features radio --locked
-cargo fmt --all --check
-cargo clippy --workspace --all-targets --features radio --locked -- -D warnings
-cargo app --locked
-cargo boot --locked
-cargo app --release --locked
-cargo boot --release --locked
-```
-
-C/LL 原工程离线构建从仓库根目录执行：
-
-```powershell
+cmake -S Firmware -B Firmware/build/host -G Ninja -DHOST_TESTS=ON -DCMAKE_C_COMPILER=gcc
+cmake --build Firmware/build/host
+ctest --test-dir Firmware/build/host --output-on-failure
+python -m unittest discover -s Firmware/tests -p 'test_*.py'
 cmake --preset debug -S Firmware
 cmake --build Firmware/build/debug
+cmake --preset release -S Firmware
+cmake --build Firmware/build/release
 ```
 
-需要更新已实测 C 版时，入口仍为 `./Firmware/flash-wireless.ps1`；不要把它当作 Rust 构建或升级脚本。
-本轮没有运行任何烧录或电机启动命令。
+Python 无线工具依赖见 `Firmware/tools/requirements.txt`；本机已有 `.scratch/firmware-tools/Scripts/python.exe`，克隆后按[无线升级步骤](../../Documentation/how-to/wireless-update.md)安装。需要部署新 C/LL 修改时执行 `./Firmware/flash-wireless.ps1`，确认返回镜像长度和 CRC；此命令不属于离线验证，也不是 Rust 烧录入口。
+Rust 构建命令与隔离环境统一从 [Rust 开发说明](../../Documentation/how-to/rust-development.md)进入，不对整个 workspace 强设 ARM target。旧交接可从 Git 历史查阅。

@@ -1,0 +1,61 @@
+{
+  "date_local": "2026-11-17T16:19:50.018279+08:00",
+  "git_base": "5c09ee0d09d186b52a6b1959b378c783622240dd",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "source_sha256": {
+    "Firmware/boot/flash_port.c": "d742ac86512300033d9d5d4ad17f07389f881565fb32e209c35267f22aad1a9a",
+    "Firmware/boot/flash_port.h": "c0fb93203dbd55b31ea08f810a588e8a613bccbf46b5eb62d50dda20c9f4ad50",
+    "Firmware/boot/main.c": "1fa74a238c142ab697687252a2c2ee84c8fc774de08b4550fc932565f03d68f3",
+    "Firmware/boot/ota_store.c": "a21e0759b53d5a6cad243fd33f63df6435756af31d8620b9f40aa7543def0fa4",
+    "Firmware/cmake/arm-none-eabi.cmake": "ae7c2b4ae7748eed53e9b8c9a2f4eab1b2756dc7ac8289c969d73d4e6b6a1343",
+    "Firmware/CMakeLists.txt": "b13bd8138bb8abdc3469f3e96c8216478a26dec28ca2640e20b2f8639a0e1813",
+    "Firmware/CMakePresets.json": "3cfc17e96b52d618fdb68dccc07112712d492522e879e485f366e7d2e968036f",
+    "Firmware/include/board.h": "dcdb43930f61823ea238742ec95a90a7dd0f81abd1f6bdf0abc2eb13608d77c0",
+    "Firmware/include/config.h": "042e8d4a3b316a963c2a30934662cdd29bc3751f36ad7481b4ef02dd79ac35d7",
+    "Firmware/include/display.h": "7305da71764da6569c14c08efdc42c465b05d84ecc2845d105f438fb91a28e17",
+    "Firmware/include/emm.h": "ab06f8918d866561afedc69c792de6d1ff7ccbf64bc46984d4ed5129114542fe",
+    "Firmware/include/grayscale.h": "6dfc2126349e9a24f891d08430692f507d39dd66630495b3492a7c0a9428f158",
+    "Firmware/include/logic.h": "d34aaf741473494ad1ffb883cbbbb53c3d3cc776cdc79a513f749f2e8a262cd9",
+    "Firmware/include/ota.h": "fd36d0d14a8cafc293631c6cbc3423706fbe32de9e54c8feac782b8d51cb9b7f",
+    "Firmware/include/ota_store.h": "6780ab553b0d2658a89a068a570c591ecbb4ff36f92a4e603298fa6d9dc03b1f",
+    "Firmware/include/serial.h": "2847a9138bd6291841edf03ed156c9644652f08e4e54b98629ef021d884629a7",
+    "Firmware/include/stepper.h": "657acca7693e36701aeb58243c4c2f3f0944f1bc0555dcd8eb65748a0f84c0be",
+    "Firmware/include/ui.h": "835258603d12248dfc91e9d22249d94f1f8f1997ae44db4ef2378d10b740c4cd",
+    "Firmware/platform/bootloader.ld": "8f89ba3436bbe1357cddeccbeff1b51f0d7467f13f852b21b799ec266e70b0d6",
+    "Firmware/platform/stm32c5a3.ld": "9b969ff2f23e74ee10ab36e96531ae46958e7f77c44bb64babe003ec9137063b",
+    "Firmware/src/board.c": "6f8fea1ccd0f39e4883b01e2ab62aa6ff866ef5f0936073a6fb937639001cdc0",
+    "Firmware/src/display.c": "f723bab1945ea2de2babb105729b24c82802b61f27dfd0b1d0dbc5be3e84780f",
+    "Firmware/src/emm.c": "c3c12537ddbbae14f89e4dd91bdf1239d2a561d3c6cc724cc35ce13cc4930e6b",
+    "Firmware/src/grayscale.c": "b6c765fe11b098ae9eb73ad06a51e5754774402e85af1e95b6c379689fa0d400",
+    "Firmware/src/logic.c": "5ec8248fca6c2df122826234d04b256fc1433e5fec65b7557528e342156aace1",
+    "Firmware/src/main.c": "493be47fc079ab8bd6ff1d48d1561019a3ff431668df765e9302cb6b6fa3d890",
+    "Firmware/src/ota.c": "244a5adbd18d063f77cf8c9ced933b957b43016602a5328dff54cf0cb41d301c",
+    "Firmware/src/runtime.c": "d69d1a482438e52d14522e323a94cd8421fe7ab4235f046930f6056397463aaa",
+    "Firmware/src/serial.c": "7099e42552c5fd6e631216fedf35a8b416673fd571f5fb41bff10c8de5f2a0b4",
+    "Firmware/src/stepper.c": "4f4d23142dcf2910c464f602fcac9b038ef1bbce310c47a1e8a32f6afd143e2b",
+    "Firmware/src/ui.c": "7880ee3db4c914c415ba592e607ad6cdaded7ae333f6ce5b66ffb7ce6b1a24a3",
+    "Firmware/tests/render_ui.c": "e6d37cb0395ea6272492823ac7f25e3b51f0fd841d6175ebe961853fdc76bc58",
+    "Firmware/tests/test_grayscale.c": "e473ef839a459518ad342691151540d97c11094ba9c79caa3efb0b4b88f918fa",
+    "Firmware/tests/test_logic.c": "b61cfa39d0c09ac424809520813f544afe7d1fa6eaf12fd6df351daeb9569601",
+    "Firmware/tests/test_monitor.py": "d340840b2601aa82ecdcab937d3b6d465b23b951666ae94858623d1919654b57",
+    "Firmware/tests/test_ota.c": "e3f13978cb5e3a496d58d6db04a272f32bab13cf61af76c8c424a756e50fc934",
+    "Firmware/tests/test_ota_tools.py": "77a4460341f70fe9412c70e238a7bcefa8c61f8be6543cc8bec6cd8b8d7e38d4",
+    "Firmware/tools/monitor.py": "c9f31a0920f74945908bda8f0a7d7ee294a83a718f3dc9c11c2e43345f56bf29",
+    "Firmware/tools/ota_protocol.py": "8bb3071f316f969c5ca00de5882251b4823a377a9c82a7b5c2812112e56fd129",
+    "Firmware/tools/package_firmware.py": "34c9bec139a1a7259b2b0ea2fa5aeaeed8d20a98872685991f15f75178a3598e",
+    "Firmware/tools/requirements.txt": "a3e2564d908d77c01419d897dd3d020a0e6312c470a7d7d4535406b6f4f97965",
+    "Firmware/tools/wireless_flash.py": "06a1994aa7aedbca9ceed04d6652424647cd98a7533ff6c86977b3bc92affcfc"
+  },
+  "images": {
+    "debug": {
+      "size": 20324,
+      "crc32": "B63CDAED",
+      "sha256": "4fec72ee7762a3fedfcb5f3f667756eb1f3dee82221e7bc52934c46738f4d236"
+    },
+    "release": {
+      "size": 17808,
+      "crc32": "EED9E897",
+      "sha256": "ebc8e29173c3706cae40daecff918cc9df2c520fb631de970364adba39624608"
+    }
+  }
+}
