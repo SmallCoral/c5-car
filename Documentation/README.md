@@ -19,7 +19,7 @@
 | 调试 | [分阶段上电与验收](how-to/bring-up.md) |
 | 实物固件 | [构建入口](../Firmware/README.md)、[按键与蓝牙联调](how-to/firmware-bringup.md)、[遥测字段](reference/firmware-telemetry.md) |
 | 灰度联调 | [校准、通道顺序与偏差显示](how-to/grayscale-check.md)、[无线烧录与板上采集记录](validation/2026-11-17-grayscale.md) |
-| 循线一圈 | [LAP 操作、方向与停车条件](how-to/line-following-lap.md)、[摆动调参](validation/2026-11-17-lap-damping.md)、[最新连续两次 A 点起停](validation/2026-11-17-lap-repeat.md) |
+| 循线一圈 | [LAP 操作、方向与停车条件](how-to/line-following-lap.md)、[弯道居中与提速](validation/2026-11-18-lap-centering.md)、[2200 CPS 连续两次 A 点起停](validation/2026-11-17-lap-repeat.md) |
 | Rust 迁移 | [独立工程](../Firmware/Rust/README.md)、[RustRover 与工具链](how-to/rust-development.md)、[代码验证](../Firmware/Rust/VALIDATION.md) |
 | 接手项目 | [当前交接与后续步骤](../.agent/main/handoff.md) |
 | 无线升级 | [一键烧录与恢复](how-to/wireless-update.md)、[分区与协议](reference/wireless-update.md)、[实测结果](validation/2026-11-16-wireless-update.md) |

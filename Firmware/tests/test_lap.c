@@ -203,7 +203,7 @@ static void test_binary_edge_smoothing(void)
 	int previous_steering = 0;
 
 	assert(lap_start(&lap, &gray, 0, 0, 0, LAP_DEFAULT_LEVEL, false));
-	assert(lap_speed(LAP_DEFAULT_LEVEL) == 2200);
+	assert(lap_speed(LAP_DEFAULT_LEVEL) == 3300);
 	tick(&lap, line(500), 15, 15);
 	assert(lap.last_position > 0 && lap.last_position < 500);
 	/* A one-sample reversal cannot instantly command the opposite full turn. */
@@ -233,12 +233,17 @@ static void test_turn_during_acceleration(void)
 	struct gray_reading gray = line(-1500);
 
 	assert(lap_start(&lap, &gray, 0, 0, 0, 2, false));
-	for (int i = 0; i < 25; i++)
+	for (int i = 0; i < 25; i++) {
+		int previous = lap.base_target;
+
 		tick(&lap, gray, 5, 5);
+		assert(lap.base_target - previous <= LAP_ACCEL_CPS_S / 100);
+	}
 	/* Both wheels used to ramp identically for ~0.6 s despite a left error. */
 	assert(lap.wheel[1].target - lap.wheel[0].target >= 400);
 	assert(lap.wheel[0].target >= LAP_TARGET_MIN_CPS);
-	assert((lap.wheel[0].target + lap.wheel[1].target) / 2 == 500);
+	assert(lap.base_target >= 500);
+	assert((lap.wheel[0].target + lap.wheel[1].target) / 2 == lap.base_target);
 }
 
 static void test_encoder_damping_and_reacquisition(void)
@@ -342,7 +347,7 @@ static void test_partial_marker_window(void)
 	assert(lap_start(&lap, &gray, 0, 0, 0, 2, false));
 	for (int i = 0; i < 4000; i++)
 		tick(&lap, gray, 10, 10);
-	assert(lap.base_target == LAP_APPROACH_CPS);
+	assert(lap.base_target <= LAP_APPROACH_CPS);
 	/* Normal three-probe curves before the finish window cannot stop us. */
 	for (int i = 0; i < 90; i++)
 		tick(&lap, partial, 10, 10);
@@ -396,6 +401,114 @@ static void test_short_a_marker_and_missed_marker(void)
 	for (int i = 0; i < 6000 && lap.status == LAP_RUNNING; i++)
 		tick(&lap, gray, 10, 10);
 	assert(lap.status == LAP_NO_MARKER && !lap.wheel[1].pwm);
+}
+
+static void test_fast_cruise_and_finish_approach(void)
+{
+	struct gray_reading gray = line(0);
+	struct lap lap;
+
+	assert(lap_speed(0) == 800 && lap_speed(1) == 1800 && lap_speed(2) == 2200);
+	assert(lap_speed(LAP_SPEED_LEVELS) == lap_speed(0));
+	assert(lap_start(&lap, &gray, 0, 0, 0, LAP_DEFAULT_LEVEL, false));
+	for (int i = 0; i < 250; i++)
+		tick(&lap, gray, 33, 33);
+	assert(lap.wheel[0].target == 3300 && lap.wheel[1].target == 3300);
+
+	for (int sign = -1; sign <= 1; sign += 2) {
+		struct lap corner = lap;
+
+		for (int i = 0; i < 8; i++)
+			tick(&corner, line(sign * 3500), 33, 33);
+		assert(sign * corner.steering >= 600);
+		assert(corner.wheel[sign > 0 ? 0 : 1].target <= LAP_TARGET_MAX_CPS);
+		assert(corner.wheel[sign > 0 ? 1 : 0].target <= 2300);
+	}
+
+	/* Cross the actual approach threshold at full cruise with wheel inertia. */
+	lap.wheel[0].progress = lap.wheel[1].progress = LAP_APPROACH_COUNTS - 33;
+	for (int i = 0; i < 40; i++)
+		tick(&lap, gray, 33, 33);
+	assert(lap.base_target == LAP_APPROACH_CPS && lap.status == LAP_RUNNING);
+}
+
+static void test_bend_memory(void)
+{
+	struct gray_reading gray = line(0);
+	struct gray_reading lost = { .status = GRAY_LOST };
+	struct lap lap;
+
+	for (int sign = -1; sign <= 1; sign += 2) {
+		assert(lap_start(&lap, &gray, 0, 0, 0, LAP_DEFAULT_LEVEL, false));
+		assert(!lap.bend_ratio_ppm);
+		/* Return the delivered turn through both encoder inputs. */
+		for (int i = 0; i < 160; i++)
+			tick(&lap, line(sign * 1500), (lap.wheel[0].target + 50) / 100,
+			     (lap.wheel[1].target + 50) / 100);
+		assert(sign * lap.bend_ratio_ppm > 100000);
+		assert(sign * lap.bend_ratio_ppm <= LAP_BEND_MAX_PERMILLE * 1000);
+		for (int i = 0; i < 50; i++)
+			tick(&lap, gray, (lap.wheel[0].target + 50) / 100,
+			     (lap.wheel[1].target + 50) / 100);
+		assert(sign * lap.steering > 100);
+		int ratio = lap.bend_ratio_ppm;
+		for (int i = 0; i < 5; i++)
+			tick(&lap, lost, 10, 10);
+		assert(lap.status == LAP_RUNNING && lap.bend_ratio_ppm == ratio);
+		tick(&lap, marker(), 10, 10);
+		assert(lap.bend_ratio_ppm == ratio);
+		lap_stop(&lap, LAP_CANCELLED);
+		assert(!lap.bend_ratio_ppm && !lap.wheel[0].pwm && !lap.wheel[1].pwm);
+	}
+}
+
+static void test_course_from_a(void)
+{
+	struct gray_reading bar = marker();
+	struct gray_reading center = line(0);
+	struct lap lap;
+
+	assert(lap_start(&lap, &bar, 0, 0, 0, LAP_DEFAULT_LEVEL, false));
+	assert(lap.from_a);
+	for (int i = 0; i < 20; i++)
+		tick(&lap, center, 5, 5);
+	assert(lap.departed);
+	for (int arc = 0; arc < 2; arc++) {
+		int counts = arc * LAP_HALF_COURSE_COUNTS;
+
+		lap.wheel[0].progress = lap.wheel[1].progress = counts + LAP_BEND_BRAKE_COUNTS;
+		for (int i = 0; i < 30; i++)
+			tick(&lap, center, 22, 22);
+		assert(lap.base_target <= LAP_COURSE_BEND_CPS && !lap.steering);
+		lap.wheel[0].progress = lap.wheel[1].progress =
+			counts + LAP_BEND_ENTRY_COUNTS + LAP_BEND_BLEND_COUNTS;
+		for (int i = 0; i < 40; i++)
+			tick(&lap, center, 26, 18);
+		assert(lap.steering >= 300 && lap.steering <= 600);
+
+		/* Seen on the first fast run: right error held for 0.4 s, then
+		 * the line crossed to the left. The old targets reached 2800/200
+		 * and still requested a right turn with the line on the left.
+		 */
+		for (int i = 0; i < 40; i++) {
+			tick(&lap, line(2000), 28, 12);
+			assert(lap.steering * 1000 <= lap.base_target * LAP_COURSE_TURN_PERMILLE);
+		}
+		for (int i = 0; i < 10; i++)
+			tick(&lap, line(-1500), 28, 12);
+		assert(lap.steering <= 0);
+		/* Confirm that the intervening straight can regain full speed. */
+		if (arc == 0) {
+			lap.wheel[0].progress = lap.wheel[1].progress = LAP_BEND_END_COUNTS;
+			for (int i = 0; i < 120; i++)
+				tick(&lap, center, 33, 33);
+			assert(lap.base_target >= 3200);
+		}
+	}
+	assert(lap_start(&lap, &center, 0, 0, 0, LAP_DEFAULT_LEVEL, false));
+	assert(!lap.from_a);
+	assert(lap_start(&lap, &bar, 0, 0, 0, LAP_DEFAULT_LEVEL, true));
+	assert(!lap.from_a);
 }
 
 static void test_fitted_wheel_mapping(void)
@@ -463,6 +576,9 @@ int main(void)
 	test_a_marker_departure();
 	test_short_a_marker_and_missed_marker();
 	test_partial_marker_window();
+	test_fast_cruise_and_finish_approach();
+	test_bend_memory();
+	test_course_from_a();
 	test_fitted_wheel_mapping();
 	test_probe_to_motor_direction();
 	puts("PASS: lap marker gating, PD direction, wheel PI, loss/stall/timeout, wrap and controls");

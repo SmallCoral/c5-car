@@ -1,19 +1,19 @@
-# Coral-C5 交接：循迹调参与 A 点重复起停
+# Coral-C5 交接 · 弯道居中与提速
 
-更新：2026-11-17；仓库 `SmallCoral/c5-car`，分支 `main`。
-本轮基线为 `5c09ee0d09d186b52a6b1959b378c783622240dd`；交付源码以包含本文的提交为准。历史实测使用基线加工作区，具体文件散列在各次 `source-manifest.json`，不要用基线提交单独重建实测版本。
+2026-11-18 更新于 `SmallCoral/c5-car` 的 `main` 分支。本轮从 `84abdadee05df6177606b2f3b0e4f54efa13ad0b` 修改 C/LL 固件。板上应用对应工作区的[源码与镜像散列](../../Firmware/validation/2026-11-18/lap-centering/source-manifest.json)。
 
 ## 目标与完成条件
 
-校赛 A 题使用 STM32C5A3 Core + Motor 实现循线小车与钢球稳控。本轮交付 C/LL 循线减摆、提速、A 标记起步与重复回 A 停车修复，以及测试、操作说明和原始记录；验证暂存源码能够独立构建后同步 GitHub。
+校赛 A 题使用 STM32C5A3 Core + Motor 实现循线小车与钢球稳控。本轮将直线默认目标提高 50%，减少弯道持续偏在外侧探头的情况。比较指标为窄线落在 CH4/CH5 范围内的采样占比、全白样本、圈时和回 A 结果。
 
 ## 当前状态
 
-- **已实测：** 电机与灰度实车左右映射已修正。前进加速与转向分别限速，增加编码器轮速差反馈后，用户反馈全程摆动明显减轻。LAP 默认目标 2200 CPS，另有 800/1800 档；不是 PWM 百分比或已标定的 m/s。
-- **已实测：** A 横线及含中部探头的分段边缘可受限驶离，接近终点减速，行程窗口内允许三路部分覆盖停车。连续两次 RUN 为 **24.333 s / 43059 计数**、**24.262 s / 42898 计数**，均 DONE，左右 PWM、目标和使能归零；用户确认“两次都在 A 自动停车”。停车误差 ≤3 cm **未量测**，不能宣称所有工况可靠。
-- **板上身份已核对：** Debug 应用 **25,132 B，CRC `29D123B8`**，HC-08 上传后重连返回 `C5APP,1,29D123B8,25132`。性能查询 `C5PERF,1,6,4,3`；两轮运行采样控制间隔均为 10 ms。Release 为 21,724 B、CRC `04A4FE7E`，本轮未在板上运行。
-- **离线验证：** CTest 6 项、Python 16 项及 ARM Debug/Release 构建通过；整理时的独立暂存源码复核见[交付记录](../../Documentation/validation/2026-11-17-lap-handoff.md)。36 组模型是合成回归测试，不是实车摆幅测量。
-- **遥测边界：** 当前 C/LL 为 v6、56 列，LAP 运行时约 10 Hz，其余约 2 Hz。两次 RUN 共 632 条有效帧，8 行拒绝、8 个序号缺口；MCU UART/队列丢弃/轮故障计数为零。随后补充查询未搜索到 HC-08，保留失败，身份依据上传后的成功查询。
+- 默认 3300 CPS，SPD 仍可选 800、1800 和 2200。对持续窄线偏差按已实现的轮速差积累转弯修正，外轮余量不足时下调共同速度。
+- 第一版 `BB32054B` 实车直道均速 3298 CPS，在第一弯出现两次反摆，6.123 s 丢线停车。修正版从已识别的 A 横线按 MAP A 起步，两个右弯提前降至最高 2200 CPS，基础半差速为共同速度的 20%，灰度继续纠偏，最终半差速上限为 38%。
+- 当前 Debug 应用为 25,892 B、CRC `BF33A9F7`，通过 HC-08 烧录并重连核对，性能查询为 `C5PERF,1,6,4,3`。Release 为 22,412 B、CRC `94CF3A1E`。
+- 修正版实车两轮分别记录 18.872 s / 41939 计数和 18.905 s / 41872 计数，均为 DONE，用户确认回到 A、过弯稳定。第一圈有全程轨迹，正常路段 107/144 个窄线样本居中，弯道内部 36/65 个居中，直道实测均速 3154 CPS。第二圈取得停后状态。
+- 主机 CTest 6 项、Python 16 项及双配置 ARM 构建通过。180 组模型包括 36 组从 A 到 A 的完整赛道。实车验证范围、模型假设与各项结果见[本轮记录](../../Documentation/validation/2026-11-18-lap-centering.md)。
+- 旧版 2200 CPS 在同一赛道两次回 A，分别为 24.333 s / 43059 计数、24.262 s / 42898 计数。停车误差仍待量测。C/LL 遥测为 v6、56 列，运行时约 10 Hz。[旧版两圈记录](../../Documentation/validation/2026-11-17-lap-repeat.md)
 - **Rust 保持独立：** `Firmware/Rust` 仍为代码迁移版，遥测 v2，未同步本轮灰度、循线和左右映射，未烧录。11 月 16 日主机 30 项测试及 ARM 构建证据见 [Rust 验证](../../Firmware/Rust/VALIDATION.md)，不能替代 C/LL 当前结果。
 - **硬件范围：** 本次未编辑硬件，也未重跑 ERC/DRC。整理时发现 `Hardware/stm32c5a3/Hardware/CoralC5-Motor/05_Right_Motor.kicad_sch` 有用户手工改动，保留本地、未纳入本次代码文档提交。11 月 16 日快照的 Motor/Transfer 脚本各 4 项失败及未运行 DRC 的边界仍见[历史交接检查](../../Documentation/validation/2026-11-16-rust-handoff.md)。
 
@@ -38,7 +38,7 @@
 | [Firmware/tools/monitor.py](../../Firmware/tools/monitor.py) | BLE/串口接收，兼容 v1～v6，拒绝错位布尔字段 |
 | [Firmware/tests](../../Firmware/tests)、[CMakeLists.txt](../../Firmware/CMakeLists.txt) | 灰度、控制/模型、左右映射、UI 切片、接收与恢复测试 |
 | [固件说明](../../Firmware/README.md)、[遥测字段](../../Documentation/reference/firmware-telemetry.md) | 构建、按钮和协议入口 |
-| [重复 RUN 实测](../../Documentation/validation/2026-11-17-lap-repeat.md)、[原始记录](../../Firmware/validation/2026-11-17/lap-repeat) | 当前镜像散列、上传、两轮轨迹、失败与限制 |
+| [本轮记录](../../Documentation/validation/2026-11-18-lap-centering.md)、[原始记录](../../Firmware/validation/2026-11-18/lap-centering) | 当前镜像、居中模型、无线上传与实车证据 |
 | [摆动排查](../../Documentation/validation/2026-11-17-lap-damping.md)、[前版起停及漏停](../../Documentation/validation/2026-11-17-lap-marker.md) | 调参依据、LCD 调度问题、单次成功后重跑失败 |
 | [验证总索引](../../Documentation/validation/README.md) | 灰度校准、方向修正、旧版本和硬件记录 |
 
@@ -46,11 +46,11 @@
 
 - **实车方向：** J6 为左轮、J4 为右轮，`WHEEL_SWAP_SIDES=1` 同时映射驱动、编码器和故障位。MAP A 前进为 J6 正/J4 负，两路前进计数均为正；原理图组名和旧 ALL 同向电气输出不能用来推断实车前进。
 - **灰度方向：** 探头在轮轴前方，黑 0/白 1；`GRAY_REVERSE_CHANNELS=1` 后 PE14 为物理最左 CH1，PE7 为最右 CH8。位置左负右正，1000 单位/探头间距。MAP 只改轮方向，不改灰度左右。
-- **控制：** 位置低通 20 ms，D 按实际秒数计算并滤波；编码器半轮速差负反馈抑制转向。共同目标加速 2000、减速 4000 CPS/s，转向变化 6000 CPS/s；避免对两轮各自缓升而拖慢纠偏。没有 IMU、绝对航向或电流闭环。
+- 控制每 10 ms 更新。位置滤波 15 ms，变化率滤波 35 ms。中心附近轻调方向，线超出中间两路后增加位置增益。前进目标加速上限 3200 CPS/s，减速斜率 8000 CPS/s，外轮目标受限时优先保留差速。[实现与参数](../../Firmware/README.md)
 - **A 识别：** LEAVE A 最高共同目标 800 CPS，窄线稳定 100 ms 后退出，最多 1.5 s 或 1000 计数。离开起点且运行 ≥2 s、行程 ≥30000 后允许四路标记保持 10 ms 停车；39000 起共同目标限至 1100；41000～47000 内三路、至多两段保持 30 ms 也可 DONE。60000 仍无标记为 NO A MARK；里程本身不产生 DONE。窗口内类似黑色区域有误判可能，需现场确认位置。
 - **操作：** 按钮在上、屏幕在下。上电 LAP 停止，左到右 RUN / MAP / SPD / TASK；其他页按页面标签操作。LAP 不启动步进；ALL 保留两轮 45%/步进 30 RPM。运行任意键或 BLE `!` 停止，保护解除后不自动重启。J10 只控制驱动使能，拔下仍能手转读编码器，软件不能检测跳帽。
-- **记录：** `monitor.py --lap` 会先停止并切页，运行中只观察必须去掉 `--lap`。`C5:CHECK` 是 Debug 主动架空检查，会使车轮运动；查看状态不要发送它。此次 LAP 中步进离线，不影响单独轮循线，也不构成本轮对步进的再次验收。
-- **升级：** C/LL 日常使用 HC-08；应用固定 `0x08010000`，不擦引导区或改 Option Bytes。先关闭占用 BLE 的监测程序。J-Link 保留首次安装/调试/救援用途，详见[无线升级](../../Documentation/how-to/wireless-update.md)。本次整理未重新烧录或启动电机。
+- 运行中用 `monitor.py` 被动接收遥测。`--lap` 会先停止并切页，`C5:CHECK` 会主动转动车轮。LAP 单独驱动两轮。
+- C/LL 日常使用 HC-08，应用地址为 `0x08010000`。上传前关闭占用 BLE 的监测程序，重启后从 LAP 停止态开始。[无线升级](../../Documentation/how-to/wireless-update.md)
 - **仓库：** `.scratch`、工具链、构建产物与本机 IDE 状态不提交；选定的 `Firmware/validation` 文本/CSV 是需保留的实测证据。旧项目 `D:/dev/qrs/stm32/Coral-C5` 只读参考。Transfer 是电源输入极性修正转接，PCB 同步与实物极性仍待核验。
 
 ## 构建与验证

@@ -8,6 +8,16 @@ static int clamp(int value, int low, int high)
 	return value < low ? low : value > high ? high : value;
 }
 
+static int min_int(int a, int b)
+{
+	return a < b ? a : b;
+}
+
+static int magnitude(int value)
+{
+	return value < 0 ? -value : value;
+}
+
 static bool wide_marker(const struct gray_reading *gray)
 {
 	return gray->status != GRAY_WARMUP && gray->groups >= 1 &&
@@ -41,7 +51,8 @@ static bool partial_marker(const struct lap *lap, const struct gray_reading *gra
 int lap_speed(unsigned int level)
 {
 	static const int speeds[LAP_SPEED_LEVELS] = {
-		LAP_SPEED_SLOW_CPS, LAP_SPEED_NORMAL_CPS, LAP_SPEED_FAST_CPS
+		LAP_SPEED_SLOW_CPS, LAP_SPEED_NORMAL_CPS, LAP_SPEED_TRACK_CPS,
+		LAP_SPEED_FAST_CPS
 	};
 
 	return speeds[level % LAP_SPEED_LEVELS];
@@ -59,6 +70,7 @@ void lap_stop(struct lap *lap, enum lap_status status)
 	lap->steering = 0;
 	lap->base_target = 0;
 	lap->position_rate = 0;
+	lap->bend_ratio_ppm = 0;
 	lap->departing = false;
 	for (unsigned int side = 0; side < 2; side++) {
 		lap->wheel[side].target = 0;
@@ -88,6 +100,7 @@ bool lap_start(struct lap *lap, const struct gray_reading *gray, uint32_t now,
 		return false;
 	}
 	lap->departing = start_marker(gray);
+	lap->from_a = lap->departing && !reverse;
 	lap->last_position = lap->departing ? 0 : gray->position;
 	lap->status = LAP_RUNNING;
 	return true;
@@ -139,6 +152,7 @@ static void speed_control(struct lap_wheel *wheel, int target, uint32_t dt)
 {
 	int error;
 	int integral;
+	int drive;
 	int pwm;
 
 	/* Forward acceleration and differential slew were limited separately.
@@ -151,54 +165,149 @@ static void speed_control(struct lap_wheel *wheel, int target, uint32_t dt)
 	/* Feedforward from the previous 10% wheel test; PI removes wheel mismatch.
 	 * Integral units are count/s * ms. Reject windup at either PWM limit.
 	 */
-	pwm = wheel->target / 7 + error / 10 + integral / 4000;
+	drive = target / LAP_CPS_PER_PERMILLE + error / 6;
+	pwm = drive + integral / 3200;
 	if (!((pwm > LAP_MAX_PERMILLE && error > 0) || (pwm < 0 && error < 0)))
 		wheel->integral = integral;
-	pwm = wheel->target / 7 + error / 10 + wheel->integral / 4000;
-	wheel->pwm = clamp(pwm, 0, LAP_MAX_PERMILLE);
+	wheel->pwm = clamp(drive + wheel->integral / 3200, 0, LAP_MAX_PERMILLE);
+}
+
+struct course_target {
+	int speed;
+	int bend_permille;
+};
+
+static struct course_target course_target(const struct lap *lap)
+{
+	struct course_target target = { .speed = lap_speed(lap->level) };
+	int counts = (int)lap_progress(lap);
+	int blend;
+
+	if (!lap->from_a || lap->departing)
+		return target;
+	if (counts >= LAP_HALF_COURSE_COUNTS + LAP_BEND_BRAKE_COUNTS)
+		counts -= LAP_HALF_COURSE_COUNTS;
+	if (counts < LAP_BEND_BRAKE_COUNTS || counts >= LAP_BEND_END_COUNTS)
+		return target;
+
+	target.speed = min_int(target.speed, LAP_COURSE_BEND_CPS);
+	blend = min_int(counts - LAP_BEND_ENTRY_COUNTS, LAP_BEND_END_COUNTS - counts);
+	target.bend_permille = clamp(blend, 0, LAP_BEND_BLEND_COUNTS) *
+		LAP_COURSE_BEND_PERMILLE / LAP_BEND_BLEND_COUNTS;
+	return target;
+}
+
+static void update_bend_ratio(struct lap *lap, int error, int dt)
+{
+	int sign = error < 0 ? -1 : 1;
+	int lag = sign * (lap->steering - lap->differential);
+	int ratio = lap->bend_ratio_ppm;
+	int gain = lap->from_a ? LAP_COURSE_TRIM_KI : LAP_BEND_KI;
+	int limit = 1000 * (lap->from_a ? LAP_COURSE_TRIM_PERMILLE : LAP_BEND_MAX_PERMILLE);
+
+	/* Let small corrections decay near center. Hold an established bend
+	 * through centered samples so it does not require a permanent offset.
+	 */
+	if (magnitude(lap->last_position) <= LAP_CENTER_POSITION + LAP_POSITION_DEADBAND &&
+	    magnitude(ratio) < 100000)
+		ratio -= ratio * dt / (LAP_TRIM_DECAY_MS + dt);
+
+	/* Grow the integral only when the encoders confirm a turn in this
+	 * direction and the wheels are keeping up. Always allow unwinding.
+	 */
+	if (sign * ratio < 0 ||
+	    (sign * lap->differential > lap->base_target / 16 && lag < LAP_TURN_LAG_CPS))
+		ratio += error * dt * gain / 1000;
+	lap->bend_ratio_ppm = clamp(ratio, -limit, limit);
+}
+
+static int line_steering(struct lap *lap, int dt, bool tracking, int bend_permille)
+{
+	int position = lap->last_position;
+	int error = position - clamp(position, -LAP_POSITION_DEADBAND,
+				     LAP_POSITION_DEADBAND);
+	int outer = position - clamp(position, -LAP_CENTER_POSITION, LAP_CENTER_POSITION);
+	int outer_gain = lap->from_a ? LAP_COURSE_OUTER_KP : LAP_OUTER_KP;
+	int rate_limit = min_int(LAP_CENTER_RATE_CPS + 2 * magnitude(outer),
+				 LAP_RATE_LIMIT_CPS);
+	int derivative = clamp((int)((int64_t)lap->position_rate *
+		LAP_LINE_KD / 1000), -rate_limit, rate_limit);
+	int slew = magnitude(position) > 1000 || magnitude(lap->steering) > 500 ?
+		LAP_EDGE_SLEW_CPS_S : LAP_STEER_SLEW_CPS_S;
+	int step = slew * dt / 1000;
+	int bend;
+	int steer;
+
+	if (tracking)
+		update_bend_ratio(lap, error, dt);
+	/* Scale the learned turn with forward speed, including on approach to A.
+	 * Damp wheel-speed differences about that turn rather than about zero.
+	 */
+	bend = (bend_permille + lap->bend_ratio_ppm / 1000) * lap->base_target / 1000;
+	steer = error * LAP_LINE_KP / 1000 + outer * outer_gain / 1000 + derivative;
+	steer += bend + bend * LAP_TURN_DAMPING / 1000 -
+		lap->differential * LAP_TURN_DAMPING / 1000;
+	steer = clamp(steer, -LAP_STEER_MAX_CPS, LAP_STEER_MAX_CPS);
+	return lap->steering + clamp(steer - lap->steering, -step, step);
+}
+
+static int forward_speed(const struct lap *lap, int steer, int cruise, bool narrow)
+{
+	int offset = magnitude(lap->last_position);
+	int projected = magnitude(lap->last_position +
+		lap->position_rate * LAP_BRAKE_LOOKAHEAD_MS / 1000);
+	int turn = magnitude(steer);
+	int base, turn_cap;
+
+	if (projected > offset)
+		offset = projected;
+	base = LAP_SPEED_FAST_CPS - clamp(offset - LAP_CENTER_POSITION, 0, 3000) *
+		LAP_CORNER_SLOWDOWN / 1000;
+	if (magnitude(lap->differential) > turn)
+		turn = magnitude(lap->differential);
+	turn_cap = clamp(LAP_SPEED_FAST_CPS - 2 * turn, 1500, LAP_SPEED_FAST_CPS);
+	base = min_int(base, min_int(turn_cap, cruise));
+
+	/* Estimate remaining wheel-speed headroom from measured speed and PWM.
+	 * Under load, give up forward speed before the PI loses the differential.
+	 */
+	for (unsigned int side = 0; side < 2; side++) {
+		const struct lap_wheel *wheel = &lap->wheel[side];
+		int headroom = LAP_MAX_PERMILLE - LAP_PWM_RESERVE - wheel->pwm;
+		int available = wheel->cps + headroom * LAP_CPS_PER_PERMILLE;
+
+		base = min_int(base, available - (side ? -steer : steer));
+	}
+	if (lap_progress(lap) >= LAP_APPROACH_COUNTS)
+		base = min_int(base, LAP_APPROACH_CPS);
+	if (!narrow || lap->departing)
+		base = min_int(base, LAP_SPEED_SLOW_CPS);
+	return clamp(base, LAP_SPEED_SLOW_CPS / 2, LAP_SPEED_FAST_CPS);
 }
 
 static void steer_control(struct lap *lap, uint32_t dt, bool narrow)
 {
-	int position = lap->last_position;
-	int magnitude = position < 0 ? -position : position;
-	int error = magnitude > LAP_POSITION_DEADBAND ?
-		magnitude - LAP_POSITION_DEADBAND : 0;
-	int derivative = clamp((int)((int64_t)lap->position_rate *
-		LAP_LINE_KD / 1000), -LAP_RATE_LIMIT_CPS, LAP_RATE_LIMIT_CPS);
-	int steer;
+	struct course_target course = course_target(lap);
+	int steer = line_steering(lap, (int)dt, narrow && !lap->departing, course.bend_permille);
+	int base = forward_speed(lap, steer, course.speed, narrow);
+	int step = (base < lap->base_target ? LAP_DECEL_CPS_S : LAP_ACCEL_CPS_S) *
+		(int)dt / 1000;
 	int limit;
-	int step;
-	int base;
 
-	if (position < 0)
-		error = -error;
-	/* Gray locates the line. Encoders damp a turn already in progress,
-	 * including when the binary position has not changed yet. No heading
-	 * is integrated: wheel slip and absolute yaw are not observable here.
-	 */
-	steer = error * LAP_LINE_KP / 1000 + derivative -
-		lap->differential * LAP_TURN_DAMPING / 1000;
-	steer = clamp(steer, -LAP_STEER_MAX_CPS, LAP_STEER_MAX_CPS);
-	step = (int)(LAP_STEER_SLEW_CPS_S * dt / 1000);
-	lap->steering += clamp(steer - lap->steering, -step, step);
-
-	base = lap_speed(lap->level) - magnitude * LAP_CORNER_SLOWDOWN / 1000;
-	if (lap_progress(lap) >= LAP_APPROACH_COUNTS && base > LAP_APPROACH_CPS)
-		base = LAP_APPROACH_CPS;
-	if ((!narrow || lap->departing) && base > LAP_SPEED_SLOW_CPS)
-		base = LAP_SPEED_SLOW_CPS;
-	base = clamp(base, LAP_SPEED_SLOW_CPS / 2, LAP_SPEED_FAST_CPS);
-	step = (int)((base < lap->base_target ? LAP_DECEL_CPS_S :
-		LAP_ACCEL_CPS_S) * dt / 1000);
 	lap->base_target += clamp(base - lap->base_target, -step, step);
 
-	/* Preserve the mean speed and turn direction under either wheel limit.
-	 * At startup the common ramp may still be below the normal minimum.
+	/* Give a turn priority over cruise speed at the outer wheel ceiling.
+	 * During launch keep both targets on the common forward ramp.
 	 */
-	limit = clamp(lap->base_target - LAP_TARGET_MIN_CPS, 0,
-		LAP_TARGET_MAX_CPS - lap->base_target);
-	lap->steering = clamp(lap->steering, -limit, limit);
+	lap->base_target = min_int(lap->base_target, LAP_TARGET_MAX_CPS - magnitude(steer));
+	limit = clamp(lap->base_target - LAP_TARGET_MIN_CPS, 0, LAP_STEER_MAX_CPS);
+	/* On the measured course the fast run reached an 87% half-difference
+	 * on a bend that normally needs about 20%, then crossed the line twice.
+	 * Keep both wheels moving and leave room for gray feedback.
+	 */
+	if (lap->from_a)
+		limit = min_int(limit, lap->base_target * LAP_COURSE_TURN_PERMILLE / 1000);
+	lap->steering = clamp(steer, -limit, limit);
 	speed_control(&lap->wheel[0], lap->base_target + lap->steering, dt);
 	speed_control(&lap->wheel[1], lap->base_target - lap->steering, dt);
 }

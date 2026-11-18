@@ -26,7 +26,7 @@
 #define GRAY_FILTER_SAMPLES	3U
 /* Fitted cable: PE14 is physical left, PE7 is physical right. */
 #define GRAY_REVERSE_CHANNELS	1
-/* First-track tuning values, in encoder counts/s (wheel scale uncalibrated). */
+/* LAP speeds are encoder counts/s (wheel scale uncalibrated). */
 #define LAP_CONTROL_MS		10U
 #define LAP_CONTROL_MAX_MS	50U
 #define LAP_TIMEOUT_MS		90000U
@@ -48,33 +48,57 @@
 #define LAP_PARTIAL_MAX_COUNTS	47000U
 #define LAP_PARTIAL_CHANNELS	3U
 #define LAP_PARTIAL_HOLD_MS	30U
+/* Two clockwise R=0.5 m arcs. Counts are referenced to a detected A start. */
+#define LAP_HALF_COURSE_COUNTS	21500
+#define LAP_BEND_BRAKE_COUNTS	9800
+#define LAP_BEND_ENTRY_COUNTS	10500
+#define LAP_BEND_END_COUNTS	22300
+#define LAP_BEND_BLEND_COUNTS	1000
+#define LAP_COURSE_BEND_CPS	2200
+#define LAP_COURSE_BEND_PERMILLE	200
+#define LAP_COURSE_TRIM_PERMILLE	70
+#define LAP_COURSE_TURN_PERMILLE	380
+#define LAP_COURSE_TRIM_KI	110
+#define LAP_COURSE_OUTER_KP	150
 #define LAP_STALL_GRACE_MS	1200U
 #define LAP_STALL_MS		500U
-#define LAP_MAX_PERMILLE		400
+#define LAP_MAX_PERMILLE		WHEEL_MAX_PERMILLE
 #define LAP_SPEED_SLOW_CPS	800
 #define LAP_SPEED_NORMAL_CPS	1800
-#define LAP_SPEED_FAST_CPS	2200
-#define LAP_SPEED_LEVELS		3U
-#define LAP_DEFAULT_LEVEL	2U
+#define LAP_SPEED_TRACK_CPS	2200
+#define LAP_SPEED_FAST_CPS	3300
+#define LAP_SPEED_LEVELS		4U
+#define LAP_DEFAULT_LEVEL	3U
 #define LAP_CHECK_MS		1500U
 #define LAP_CHECK_PERMILLE	150
 #define LAP_TARGET_MIN_CPS	200
-#define LAP_TARGET_MAX_CPS	2800
-#define LAP_ACCEL_CPS_S		2000
-#define LAP_DECEL_CPS_S		4000
+#define LAP_TARGET_MAX_CPS	3500
+#define LAP_ACCEL_CPS_S		3200
+#define LAP_DECEL_CPS_S		8000
 /* Position uses 1000 units/probe; rate uses position units/second. */
-#define LAP_LINE_KP		200
-#define LAP_LINE_KD		20
-#define LAP_POSITION_DEADBAND	200
-#define LAP_POSITION_FILTER_MS	20U
-#define LAP_RATE_FILTER_MS	40U
-#define LAP_RATE_LIMIT_CPS	500
+#define LAP_CENTER_POSITION	500	/* CH4 and CH5 */
+#define LAP_LINE_KP		220
+#define LAP_OUTER_KP		850	/* additional gain beyond CH4/5 */
+#define LAP_LINE_KD		48
+#define LAP_BEND_KI		700	/* permille per probe interval per second */
+#define LAP_BEND_MAX_PERMILLE	420	/* half wheel-speed difference / mean */
+#define LAP_TRIM_DECAY_MS	120
+#define LAP_TURN_LAG_CPS		270
+#define LAP_POSITION_DEADBAND	150
+#define LAP_POSITION_FILTER_MS	15U
+#define LAP_RATE_FILTER_MS	35U
+#define LAP_CENTER_RATE_CPS	130
+#define LAP_RATE_LIMIT_CPS	650
 #define LAP_ENCODER_FILTER_MS	30U
 /* Feedback is half the forward wheel-speed difference, not an IMU yaw rate. */
-#define LAP_TURN_DAMPING		250
-#define LAP_CORNER_SLOWDOWN	200
+#define LAP_TURN_DAMPING		800
+#define LAP_CORNER_SLOWDOWN	750	/* CPS per probe beyond the middle pair */
+#define LAP_BRAKE_LOOKAHEAD_MS	60
+#define LAP_PWM_RESERVE		20	/* permille of PWM reserved for steering */
+#define LAP_CPS_PER_PERMILLE	7	/* wheel feedforward slope */
 #define LAP_STEER_SLEW_CPS_S	6000U
-#define LAP_STEER_MAX_CPS		1100
+#define LAP_EDGE_SLEW_CPS_S	14000U
+#define LAP_STEER_MAX_CPS		1400
 #define LAP_TELEMETRY_MS		100U
 /* Physical sides after WHEEL_SWAP_SIDES: forward left J6+, right J4-. */
 #define LAP_LEFT_DRIVE_SIGN	1

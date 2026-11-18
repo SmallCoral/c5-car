@@ -1,0 +1,24 @@
+{
+  "base_commit": "84abdadee05df6177606b2f3b0e4f54efa13ad0b",
+  "source_sha256": {
+    "include/config.h": "7ffc0e51847b4a88f7a56a69eb61a7d550570f083f91c6336a2d262fccd8af91",
+    "include/lap.h": "38ca85c48d7360162d5574e5be15cce13c5fd74271a5ab59c122f44770e6b11b",
+    "src/lap.c": "6428a92790d95abedb68a6178f1d1403f3f92399f27f41f9fe3915a32be50ed8",
+    "tests/test_lap.c": "f092f90c55bf46a39b373fa55c42c8690cfb9263fe04c4ea6867b6a8d6a54528",
+    "tests/test_lap_dynamics.c": "b2ce49b0e9948312db2dde2f09f6fa6748fa402dc027cd8b6d931a0f8c5d8f8c"
+  },
+  "images": {
+    "debug": {
+      "bytes": 25640,
+      "crc32": "BB32054B",
+      "bin_sha256": "d6be80a77555ba37be64f0f0c7212bc70eea5e78f1ec39f6fa3a4564320048ee",
+      "ota_sha256": "ec7cc0e9755169ecfb24f9b3ec9345a1d0a093e732cb6be7dce46b42a9713f1b"
+    },
+    "release": {
+      "bytes": 22196,
+      "crc32": "B2418E03",
+      "bin_sha256": "b058f5d32c3c51970810356df4ea2d778bd03716582ab61de13bb4042cac6217",
+      "ota_sha256": "4af84c6ccd888ad74c7ce350a2d8ccf4bd7cc9b01492912fc619080dd27ea762"
+    }
+  }
+}

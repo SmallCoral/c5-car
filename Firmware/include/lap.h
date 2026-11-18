@@ -45,12 +45,14 @@ struct lap {
 	int last_position;
 	int position_rate;
 	int differential;
+	int bend_ratio_ppm;	/* learned half wheel-speed difference / mean */
 	int base_target;
 	int steering;
 	unsigned int level;
 	bool reverse;
 	bool departed;
 	bool departing;
+	bool from_a;
 	bool narrow;
 	bool marker;
 	bool armed;

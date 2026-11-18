@@ -6,40 +6,99 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include "config.h"
 #include "grayscale.h"
 #include "lap.h"
 
-static bool simulate(double lookahead, double motor_ms, bool bend, bool jitter)
+enum path { STRAIGHT, RIGHT_BEND, LEFT_BEND, REVERSE_BENDS, A_COURSE };
+
+/* Track geometry in mm, independent of the firmware's encoder windows. */
+static const double half_lap_mm = 1500.0 + 500.0 * 3.141592653589793;
+
+static bool on_arc(double distance)
+{
+	return (distance >= 1500 && distance < half_lap_mm) ||
+	       (distance >= half_lap_mm + 1500 && distance < 2 * half_lap_mm);
+}
+
+static double arc_offset(double axle, double ahead, double start, double end)
+{
+	/* Integrate the bend over the portion actually in front of the axle.
+	 * The probe bar crosses the tangent before the axle does.
+	 */
+	double a = fmin(ahead, fmax(0, start - axle));
+	double b = fmin(ahead, fmax(0, end - axle));
+
+	return ((ahead - a) * (ahead - a) - (ahead - b) * (ahead - b)) / 1000.0;
+}
+
+static double path_curvature(enum path path, uint32_t now)
+{
+	const double bend = 1.0 / 500.0;
+
+	if (now < 4000 || path == STRAIGHT)
+		return 0;
+	if (path == RIGHT_BEND)
+		return bend;
+	if (path == LEFT_BEND)
+		return -bend;
+	/* A right arc, a short straight, a left arc and a straight exit. */
+	if (now < 6500)
+		return bend;
+	if (now >= 7200 && now < 9700)
+		return -bend;
+	return 0;
+}
+
+static bool simulate(double lookahead, double motor_ms, enum path path, bool jitter,
+		     bool weak_motors)
 {
 	const double dt = 0.002;
 	const double counts_per_mm = 7.0;
 	const double track_mm = 210.0;
-	const double gain[2] = { 6.5, 5.5 };
+	const bool course = path == A_COURSE;
+	const double pitch = course ? 12.0 : 10.0;
+	/* The original low-gain plant cannot reach 3300 CPS at 45% PWM.
+	 * The second plant can; both have unequal left/right wheel gains.
+	 */
+	const double gain[2] = { weak_motors ? 6.5 : 8.2, weak_motors ? 5.5 : 7.7 };
 	struct grayscale gray = { 0 };
 	struct lap lap;
 	double speed[2] = { 0, 0 }, counts[2] = { 0, 0 };
-	double lateral = 10.0, heading = 0.08;
-	double sum = 0, squared = 0, high = -999, low = 999;
-	unsigned int measured = 0;
+	double lateral = course ? 0.0 : 10.0, heading = course ? 0.0 : 0.08;
+	double traveled = 0;
+	double sum = 0, squared = 0, high = -999, low = 999, straight_speed = 0;
+	unsigned int measured = 0, centered = 0, cruise_samples = 0, gaps = 0;
 	uint32_t next_control = 10;
 	bool running = true;
 
-	for (uint32_t now = 0; now <= 12000; now += 2) {
-		double curvature = bend && now >= 4000 ? 1.0 / 500.0 : 0;
-		double front = lateral + lookahead * sin(heading) -
-			curvature * pow(lookahead * cos(heading), 2) / 2;
+	for (uint32_t now = 0; now <= (course ? 45000U : 12000U); now += 2) {
+		double curvature = path_curvature(path, now);
+		double ahead = lookahead * cos(heading);
+		double offset = curvature * ahead * ahead / 2;
 		uint8_t raw = 0xff;
 
+		if (course) {
+			double axle = traveled - lookahead;
+
+			curvature = on_arc(axle) ? 1.0 / 500.0 : 0;
+			offset = arc_offset(axle, ahead, 1500, half_lap_mm) +
+				arc_offset(axle, ahead, half_lap_mm + 1500, 2 * half_lap_mm);
+		}
+		double front = lateral + lookahead * sin(heading) - offset;
 		for (int probe = 0; probe < 8; probe++) {
-			double distance = front + (probe * 10.0 - 35.0) * cos(heading);
+			double distance = front + (probe - 3.5) * pitch * cos(heading);
 
 			if (fabs(distance) <= 10.0)
 				raw &= (uint8_t)~(1U << probe);
 		}
+		if (course && (traveled < 35 || fabs(traveled - 2 * half_lap_mm) < 15))
+			raw = 0;	/* the physical transverse mark */
 		gray_update(&gray, raw, now, false);
-		if (now == 4 && !lap_start(&lap, &gray.reading, now, 0, 0, 2, false))
+		if (now == 4 && !lap_start(&lap, &gray.reading, now, 0, 0,
+					   LAP_DEFAULT_LEVEL, false))
 			return false;
 		if (now < 4)
 			continue;
@@ -59,10 +118,21 @@ static bool simulate(double lookahead, double motor_ms, bool bend, bool jitter)
 		}
 		double forward = (speed[0] + speed[1]) / (2 * counts_per_mm);
 		double yaw = (speed[0] - speed[1]) / (counts_per_mm * track_mm);
+		traveled += forward * cos(heading) * dt / (1 - curvature * lateral);
 		lateral += forward * sin(heading) * dt;
 		heading += (yaw - forward * cos(heading) * curvature /
 			    (1 - curvature * lateral)) * dt;
-		if (now >= 8000) {
+		if (now >= 2000 && now < 4000) {
+			straight_speed += (speed[0] + speed[1]) / 2;
+			cruise_samples++;
+		}
+		if (now >= 4000 && gray.reading.status == GRAY_LOST)
+			gaps++;
+		/* Include every entry, reversal and exit on the alternating course.
+		 * A short white gap counts even if it never trips the stop timeout.
+		 */
+		if (course ? traveled > 300 && traveled < 6000 :
+		    now >= (path == REVERSE_BENDS ? 4000U : 8000U)) {
 			sum += lateral;
 			squared += lateral * lateral;
 			measured++;
@@ -70,6 +140,9 @@ static bool simulate(double lookahead, double motor_ms, bool bend, bool jitter)
 				high = lateral;
 			if (lateral < low)
 				low = lateral;
+			if (gray.reading.status == GRAY_LINE &&
+			    abs(gray.reading.position) <= 500)
+				centered++;
 		}
 	}
 	double mean = measured ? sum / measured : 999;
@@ -79,13 +152,24 @@ static bool simulate(double lookahead, double motor_ms, bool bend, bool jitter)
 	 * from oscillation. Require convergence within one probe interval.
 	 * Curved-path bias also depends on the synthetic sensor lookahead.
 	 */
-	bool passed = running && measured && fabs(mean) < (bend ? 40.0 : 5.0) &&
-		high - low < 10.0;
+	double center_pct = measured ? 100.0 * centered / measured : 0;
+	double cruise_cps = cruise_samples ? straight_speed / cruise_samples : 0;
+	bool axle_stable = path == REVERSE_BENDS ||
+		(fabs(mean) < (path == STRAIGHT ? 5.0 : 40.0) && high - low < 10.0);
+	/* A controller that only slows down must fail on a capable straight. */
+	bool passed = running && !gaps && axle_stable &&
+		(weak_motors || cruise_cps >= 3000.0) &&
+		center_pct >= (path == REVERSE_BENDS ? 65.0 : 90.0);
+	if (course)
+		passed = lap.status == LAP_DONE && fabs(traveled - 2 * half_lap_mm) <= 25 &&
+			!gaps && center_pct >= 75.0;
 
-	printf("lookahead=%.0f motor_ms=%.0f bend=%u jitter=%u status=%s "
-	       "bias_mm=%.3f sway_rms_mm=%.3f sway_pp_mm=%.3f %s\n",
-	       lookahead, motor_ms, bend, jitter, lap_status_name(lap.status),
-	       mean, rms, high - low, passed ? "PASS" : "FAIL");
+	printf("lookahead=%.0f motor_ms=%.0f path=%d jitter=%u weak=%u status=%s "
+	       "bias_mm=%.3f sway_rms_mm=%.3f sway_pp_mm=%.3f center_pct=%.1f "
+	       "gap_ms=%u cruise_cps=%.0f %s\n",
+	       lookahead, motor_ms, path, jitter, weak_motors, lap_status_name(lap.status),
+	       mean, rms, high - low, center_pct, gaps * 2,
+	       cruise_cps, passed ? "PASS" : "FAIL");
 	return passed;
 }
 
@@ -96,8 +180,9 @@ int main(int argc, char **argv)
 
 	for (int lookahead = 80; lookahead <= 160; lookahead += 40)
 		for (int motor = 50; motor <= 150; motor += 50)
-			for (int bend = 0; bend <= 1; bend++)
+			for (enum path path = STRAIGHT; path <= A_COURSE; path++)
 				for (int jitter = 0; jitter <= 1; jitter++)
-					passed &= simulate(lookahead, motor, bend, jitter);
+					for (int weak = 0; weak <= 1; weak++)
+						passed &= simulate(lookahead, motor, path, jitter, weak);
 	return passed || report ? 0 : 1;
 }

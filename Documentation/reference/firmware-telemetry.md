@@ -38,7 +38,7 @@ v1 为前 27 列，v2 为前 30 列，v3 为前 37 列，v4 为前 47 列，v5 �
 | `gray_status` | 0 WAIT（滤波未就绪）；1 NO LINE（无目标）；2 LINE（单段且非全覆盖，偏差有效）；3 ALL（八路全覆盖）；4 MULTI（多段，偏差无效） |
 | `gray_white` | 0 检测黑线（默认），1 检测白线，由 GRAY 页 B/W 键切换 |
 | `lap_status` | 0 READY；1 FOLLOW；2 DONE；3 STOPPED；4 LOST LINE；5 BAD LINE；6 ENC ERROR；7 TIMEOUT；8 DRIVE ERR；9 ALIGN LINE；10 LOOP LATE；11 DIR CHECK（Debug 架空检查）；12 NO A MARK（行程上限内未识别 A） |
-| `lap_left_pwm`, `lap_right_pwm` | LAP 左右轮 PWM 幅值，0～400‰；电气极性取决于 LAP 页 MAP，停止时清零 |
+| `lap_left_pwm`, `lap_right_pwm` | LAP 左右轮 PWM 幅值。11 月 18 日版上限为 450‰，11 月 17 日的 2200 CPS 版为 400‰。电气极性取决于 MAP，停止时清零 |
 | `lap_left_target`, `lap_right_target` | 共同前进目标加/减差速后的左右轮目标，编码器计数/秒；不是 RPM 或 m/s |
 | `lap_left_cps`, `lap_right_cps` | 根据当前 MAP 归一化为前进为正、低通滤波后的双轮反馈，计数/秒；原始符号仍保留在 `left_cps/right_cps` |
 | `lap_ms`, `lap_counts` | 最近一次 LAP 的运行毫秒、两轮正向编码器行程平均值，停止后保留；行程未换算为毫米 |
@@ -47,7 +47,7 @@ v1 为前 27 列，v2 为前 30 列，v3 为前 37 列，v4 为前 47 列，v5 �
 | `lap_position_rate` | 滤波位置变化率，位置单位/秒；非窄线、重新见线的首个周期及停止时清零 |
 | `lap_steering` | 实际施加的半轮速差目标，CPS；正值左目标更快，负值右目标更快，停止清零 |
 | `lap_differential` | `(lap_left_cps - lap_right_cps) / 2`，CPS；编码器转向反馈，未标定为 rad/s，停止后保留最后样本 |
-| `lap_base_target` | 两轮共同速度目标，CPS；加速 2000 CPS/s、减速 4000 CPS/s，停止清零 |
+| `lap_base_target` | 两轮共同速度目标，CPS。11 月 18 日版加速斜率 3200 CPS/s，减速斜率 8000 CPS/s。外轮触及目标上限时进一步下调共同目标，停车清零 |
 | `lap_control_ms` | 最近一次 LAP 控制调用的实际时间间隔；由 MCU 时钟测量，停止后保留 |
 | `lap_departing` | 1 为从起点标记受限直行驶离，屏幕显示 LEAVE A；停止时为 0 |
 | `lap_marker_hits` | `lap_armed=1` 后标记候选的上升沿次数，包含预计终点窗口内的三路候选；未满足保持时间的候选也计数，停止后保留 |
