@@ -24,7 +24,7 @@
 用户已完成 Core、Motor 焊接，接入屏幕、HC-08、Emm 步进、灰度和两只编码电机，进入实物联调。
 LL 固件支持四键彩屏、轮 PWM/编码器、步进连续旋转、灰度输入和蓝牙遥测。上电进入 LAP 并保持停止，RUN 启动灰度循线一圈任务；ALL 页保留原来的两轮和步进联动。操作与实测边界见[循线一圈](Documentation/how-to/line-following-lap.md)、[原联动记录](Documentation/validation/2026-11-16-wheel-drive.md)。
 
-当前 C/LL 循线以 CH4/CH5 中点为目标，默认直线目标 3300 CPS。从 A 横线顺时针起步时，提前为两个半圆弯减速，灰度与编码器持续纠偏。板上 Debug 镜像为 `BF33A9F7`，实车两圈分别 18.872 s、18.905 s，用户确认回 A、过弯稳定。[弯道居中记录](Documentation/validation/2026-11-18-lap-centering.md)、[2200 CPS 旧版两圈实测](Documentation/validation/2026-11-17-lap-repeat.md)
+当前 C/LL 默认直道 4600 CPS、比赛半圆弯 3100 CPS，以灰度 CH4/CH5 中点为目标。实车两圈 14.712 s、14.612 s，用户确认都回 A、过弯稳定。此前约 18.9 s 的 3300/2200 CPS 稳定版已单独存档，新固件也可用 SPD 选回该档。[高速档记录](Documentation/validation/2026-11-18-lap-fast.md)、[稳定版固件与恢复命令](Firmware/releases/lap-3300-BF33A9F7/README.md)
 
 当前板已安装无线升级引导程序，两次 HC-08 完整上传与传输中断恢复通过实测；日常更新使用[无线烧录](Documentation/how-to/wireless-update.md)，J-Link 保留用于首次安装、调试与救援。轮速/循线控制仍需实车整定，视觉标定和钢球稳控尚未完成。
 

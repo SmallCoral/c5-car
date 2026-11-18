@@ -245,8 +245,8 @@ static void follow_line(uint32_t now)
 	    !lap_update(&lap, &gray.reading, now, board_encoder(0), board_encoder(1)))
 		return;
 	if ((lap.status == LAP_RUNNING || lap.status == LAP_CHECK) &&
-	    !board_wheels_set(direction * LAP_LEFT_DRIVE_SIGN * lap.wheel[0].pwm,
-			      direction * LAP_RIGHT_DRIVE_SIGN * lap.wheel[1].pwm))
+	    !board_lap_set_wheels(direction * LAP_LEFT_DRIVE_SIGN * lap.wheel[0].pwm,
+				  direction * LAP_RIGHT_DRIVE_SIGN * lap.wheel[1].pwm))
 		lap_stop(&lap, LAP_DRIVE);
 	if (lap.status != LAP_RUNNING && lap.status != LAP_CHECK) {
 		TRACE_STOP(7U | (uint32_t)lap.status << 8);

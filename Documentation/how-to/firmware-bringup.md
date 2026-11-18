@@ -32,7 +32,7 @@ STM32_Programmer_CLI -c port=JLINK sn=69730331 -w Firmware/build/debug/first_ins
 | --- | --- | --- |
 | RUN / STOP | 启动所选测试；MONITOR、GRAY 不动作 | 停止 |
 | DIR / MAP | 反转下次启动方向；LAP 切换安装方向 A/B；GRAY 不动作 | 先停止 |
-| PWR / SPD / LVL / B/W | 普通轮 PWM 10/20/30/45%，步进 30/60/90 RPM，LAP 800/1800/2200/3300 CPS。GRAY 切换黑线/白线目标，ALL 档位见固件说明 | 先停止 |
+| PWR / SPD / LVL / B/W | 普通轮 PWM 10/20/30/45%，步进 30/60/90 RPM，LAP 800/1800/2200/3300/4600 CPS。GRAY 切换黑线/白线目标，ALL 档位见固件说明 | 先停止 |
 | TASK | LAP、MONITOR、LEFT、RIGHT、BOTH、STEPPER、ALL、GRAY 循环 | 先停止 |
 
 LEFT/RIGHT 大数字是上电后的原始正交计数，`/S` 是每秒计数；并非 RPM。

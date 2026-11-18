@@ -56,6 +56,9 @@
 #define LAP_BEND_BLEND_COUNTS	1000
 #define LAP_COURSE_BEND_CPS	2200
 #define LAP_COURSE_BEND_PERMILLE	200
+/* Both measured bends need more braking distance on the high gear. */
+#define LAP_RACE_BRAKE_COUNTS	9300
+#define LAP_RACE_BEND_CPS	3100
 #define LAP_COURSE_TRIM_PERMILLE	70
 #define LAP_COURSE_TURN_PERMILLE	380
 #define LAP_COURSE_TRIM_KI	110
@@ -67,13 +70,19 @@
 #define LAP_SPEED_NORMAL_CPS	1800
 #define LAP_SPEED_TRACK_CPS	2200
 #define LAP_SPEED_FAST_CPS	3300
-#define LAP_SPEED_LEVELS		4U
-#define LAP_DEFAULT_LEVEL	3U
+#define LAP_SPEED_RACE_CPS	4600
+#define LAP_FAST_LEVEL		3U
+#define LAP_RACE_LEVEL		4U
+#define LAP_SPEED_LEVELS		(LAP_RACE_LEVEL + 1U)
+#define LAP_DEFAULT_LEVEL	LAP_RACE_LEVEL
 #define LAP_CHECK_MS		1500U
 #define LAP_CHECK_PERMILLE	150
 #define LAP_TARGET_MIN_CPS	200
 #define LAP_TARGET_MAX_CPS	3500
+#define LAP_RACE_WHEEL_MAX_CPS	4800
+#define LAP_RACE_MAX_PERMILLE	600
 #define LAP_ACCEL_CPS_S		3200
+#define LAP_RACE_ACCEL_CPS_S	4300
 #define LAP_DECEL_CPS_S		8000
 /* Position uses 1000 units/probe; rate uses position units/second. */
 #define LAP_CENTER_POSITION	500	/* CH4 and CH5 */
@@ -81,6 +90,7 @@
 #define LAP_OUTER_KP		850	/* additional gain beyond CH4/5 */
 #define LAP_LINE_KD		48
 #define LAP_BEND_KI		700	/* permille per probe interval per second */
+#define LAP_RACE_BEND_KI		775	/* unmarked start, gray-guided turns */
 #define LAP_BEND_MAX_PERMILLE	420	/* half wheel-speed difference / mean */
 #define LAP_TRIM_DECAY_MS	120
 #define LAP_TURN_LAG_CPS		270

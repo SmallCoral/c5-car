@@ -1,0 +1,38 @@
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: C:/Users/sc/Documents/Dev/Hardware/c5-car/Firmware/build/debug
+[1/2] Packaging wireless image and first-install HEX
+OTA: 26224 bytes, CRC32=E361560E; first_install.hex includes bootloader
+[1/2] Updating Coral-C5 over HC-08 BLE
+Bootloader ready; current app 25892 bytes CRC32=BF33A9F7; received=0
+  0%  128/26224 bytes
+ 10%  2688/26224 bytes
+Retry command 3, sequence 28
+Retry command 3, sequence 41
+ 20%  5248/26224 bytes
+Retry command 3, sequence 46
+Retry command 3, sequence 55
+ 30%  7936/26224 bytes
+Retry command 3, sequence 73
+Retry command 3, sequence 76
+Retry command 3, sequence 79
+ 40%  10496/26224 bytes
+Retry command 3, sequence 87
+Retry command 3, sequence 95
+Retry command 3, sequence 102
+ 50%  13184/26224 bytes
+Retry command 3, sequence 106
+Retry command 3, sequence 115
+ 60%  15744/26224 bytes
+Retry command 3, sequence 139
+Retry command 3, sequence 145
+ 70%  18432/26224 bytes
+ 80%  20992/26224 bytes
+Retry command 3, sequence 167
+Retry command 3, sequence 176
+ 90%  23680/26224 bytes
+Retry command 3, sequence 201
+100%  26224/26224 bytes
+Image verified in staging; installing...
+Verified running application: 26224 bytes, CRC32=E361560E
+Wireless update complete in 114.1s; retries=17; motors remain stopped

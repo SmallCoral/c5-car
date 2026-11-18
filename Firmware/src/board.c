@@ -321,14 +321,14 @@ void board_wheels_poll(void)
 	__set_PRIMASK(irq);
 }
 
-bool board_wheels_set(int left, int right)
+bool board_lap_set_wheels(int left, int right)
 {
 	uint32_t irq;
 	bool ok;
 	struct wheel_channels channels = wheel_to_channels(left, right);
 
-	if (left < -WHEEL_MAX_PERMILLE || left > WHEEL_MAX_PERMILLE ||
-	    right < -WHEEL_MAX_PERMILLE || right > WHEEL_MAX_PERMILLE)
+	if (left < -LAP_RACE_MAX_PERMILLE || left > LAP_RACE_MAX_PERMILLE ||
+	    right < -LAP_RACE_MAX_PERMILLE || right > LAP_RACE_MAX_PERMILLE)
 		return false;
 	irq = __get_PRIMASK();
 	__disable_irq();

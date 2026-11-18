@@ -24,7 +24,7 @@ uint8_t board_faults(void);
 uint8_t board_encoder_pins(void);
 uint32_t board_encoder(unsigned int side);
 bool board_wheels_start(int left, int right, bool continuous);
-bool board_wheels_set(int left, int right);
+bool board_lap_set_wheels(int left, int right);
 void board_wheels_poll(void);
 void board_wheels_stop(void);
 bool board_wheels_active(void);

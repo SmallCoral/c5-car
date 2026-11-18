@@ -18,6 +18,11 @@ static int magnitude(int value)
 	return value < 0 ? -value : value;
 }
 
+static bool unmapped_race(const struct lap *lap)
+{
+	return lap->level == LAP_RACE_LEVEL && !lap->from_a;
+}
+
 static bool wide_marker(const struct gray_reading *gray)
 {
 	return gray->status != GRAY_WARMUP && gray->groups >= 1 &&
@@ -52,7 +57,7 @@ int lap_speed(unsigned int level)
 {
 	static const int speeds[LAP_SPEED_LEVELS] = {
 		LAP_SPEED_SLOW_CPS, LAP_SPEED_NORMAL_CPS, LAP_SPEED_TRACK_CPS,
-		LAP_SPEED_FAST_CPS
+		LAP_SPEED_FAST_CPS, LAP_SPEED_RACE_CPS
 	};
 
 	return speeds[level % LAP_SPEED_LEVELS];
@@ -84,7 +89,7 @@ static void initialize(struct lap *lap, uint32_t now, uint32_t left,
 {
 	memset(lap, 0, sizeof(*lap));
 	lap->started_at = lap->updated_at = lap->line_at = now;
-	lap->level = level;
+	lap->level = level % LAP_SPEED_LEVELS;
 	lap->reverse = reverse;
 	lap->wheel[0].previous = left;
 	lap->wheel[1].previous = right;
@@ -148,7 +153,7 @@ static bool sample_wheel(struct lap *lap, unsigned int side, uint32_t count,
 	return true;
 }
 
-static void speed_control(struct lap_wheel *wheel, int target, uint32_t dt)
+static void speed_control(struct lap_wheel *wheel, int target, uint32_t dt, int pwm_limit)
 {
 	int error;
 	int integral;
@@ -167,9 +172,9 @@ static void speed_control(struct lap_wheel *wheel, int target, uint32_t dt)
 	 */
 	drive = target / LAP_CPS_PER_PERMILLE + error / 6;
 	pwm = drive + integral / 3200;
-	if (!((pwm > LAP_MAX_PERMILLE && error > 0) || (pwm < 0 && error < 0)))
+	if (!((pwm > pwm_limit && error > 0) || (pwm < 0 && error < 0)))
 		wheel->integral = integral;
-	wheel->pwm = clamp(drive + wheel->integral / 3200, 0, LAP_MAX_PERMILLE);
+	wheel->pwm = clamp(drive + wheel->integral / 3200, 0, pwm_limit);
 }
 
 struct course_target {
@@ -177,20 +182,63 @@ struct course_target {
 	int bend_permille;
 };
 
+/* Measured at A starts on the fitted track. Both arc entries flatten;
+ * the middle of the first arc needs more wheel difference than the second.
+ * Values are half the wheel-speed difference / mean, in permille.
+ * Interpolate in encoder distance so a change of speed preserves the shape.
+ */
+static int race_bend_ratio(int counts, unsigned int arc)
+{
+	static const struct {
+		int16_t counts;
+		int16_t ratio[2];
+	} bend[] = {
+		{  9800, {   0,   0 } }, { 10400, {   0,  80 } },
+		{ 11400, { 130, 155 } }, { 12500, { 135, 130 } },
+		{ 14000, { 235, 230 } }, { 15300, { 330, 230 } },
+		{ 16100, { 225, 230 } }, { 20500, { 230, 230 } },
+		{ 21500, { 140, 145 } }, { 22200, {  35,   0 } },
+		{ 23600, {  45,   0 } }, { 24400, {   0,   0 } },
+	};
+
+	if (counts <= bend[0].counts)
+		return 0;
+	for (unsigned int i = 1; i < sizeof(bend) / sizeof(bend[0]); i++) {
+		if (counts <= bend[i].counts) {
+			int from = bend[i - 1].ratio[arc];
+			int span = bend[i].counts - bend[i - 1].counts;
+
+			return from + (bend[i].ratio[arc] - from) *
+				(counts - bend[i - 1].counts) / span;
+		}
+	}
+	return 0;
+}
+
 static struct course_target course_target(const struct lap *lap)
 {
 	struct course_target target = { .speed = lap_speed(lap->level) };
+	bool race = lap->level == LAP_RACE_LEVEL;
+	int brake = race ? LAP_RACE_BRAKE_COUNTS : LAP_BEND_BRAKE_COUNTS;
 	int counts = (int)lap_progress(lap);
+	bool second = counts >= LAP_HALF_COURSE_COUNTS + brake;
 	int blend;
 
 	if (!lap->from_a || lap->departing)
 		return target;
-	if (counts >= LAP_HALF_COURSE_COUNTS + LAP_BEND_BRAKE_COUNTS)
+	if (second)
 		counts -= LAP_HALF_COURSE_COUNTS;
-	if (counts < LAP_BEND_BRAKE_COUNTS || counts >= LAP_BEND_END_COUNTS)
+	if (counts < brake)
+		return target;
+	if (counts < LAP_BEND_END_COUNTS)
+		target.speed = min_int(target.speed, race ? LAP_RACE_BEND_CPS : LAP_COURSE_BEND_CPS);
+	if (race) {
+		target.bend_permille = race_bend_ratio(counts, second);
+		return target;
+	}
+	if (counts >= LAP_BEND_END_COUNTS)
 		return target;
 
-	target.speed = min_int(target.speed, LAP_COURSE_BEND_CPS);
 	blend = min_int(counts - LAP_BEND_ENTRY_COUNTS, LAP_BEND_END_COUNTS - counts);
 	target.bend_permille = clamp(blend, 0, LAP_BEND_BLEND_COUNTS) *
 		LAP_COURSE_BEND_PERMILLE / LAP_BEND_BLEND_COUNTS;
@@ -205,6 +253,8 @@ static void update_bend_ratio(struct lap *lap, int error, int dt)
 	int gain = lap->from_a ? LAP_COURSE_TRIM_KI : LAP_BEND_KI;
 	int limit = 1000 * (lap->from_a ? LAP_COURSE_TRIM_PERMILLE : LAP_BEND_MAX_PERMILLE);
 
+	if (unmapped_race(lap))
+		gain = LAP_RACE_BEND_KI;
 	/* Let small corrections decay near center. Hold an established bend
 	 * through centered samples so it does not require a permanent offset.
 	 */
@@ -238,34 +288,47 @@ static int line_steering(struct lap *lap, int dt, bool tracking, int bend_permil
 	int bend;
 	int steer;
 
+	/* With no A reference all turn entry and release come from the probes. */
+	if (unmapped_race(lap))
+		step += step / 2;
 	if (tracking)
 		update_bend_ratio(lap, error, dt);
 	/* Scale the learned turn with forward speed, including on approach to A.
 	 * Damp wheel-speed differences about that turn rather than about zero.
 	 */
 	bend = (bend_permille + lap->bend_ratio_ppm / 1000) * lap->base_target / 1000;
-	steer = error * LAP_LINE_KP / 1000 + outer * outer_gain / 1000 + derivative;
+	steer = error * LAP_LINE_KP / 1000 + outer * outer_gain / 1000;
+	if (lap->from_a && lap->level == LAP_RACE_LEVEL)
+		steer = steer * clamp(lap->base_target, LAP_COURSE_BEND_CPS,
+				      LAP_RACE_BEND_CPS) / LAP_COURSE_BEND_CPS;
+	steer += derivative;
 	steer += bend + bend * LAP_TURN_DAMPING / 1000 -
 		lap->differential * LAP_TURN_DAMPING / 1000;
 	steer = clamp(steer, -LAP_STEER_MAX_CPS, LAP_STEER_MAX_CPS);
 	return lap->steering + clamp(steer - lap->steering, -step, step);
 }
 
-static int forward_speed(const struct lap *lap, int steer, int cruise, bool narrow)
+static int forward_speed(const struct lap *lap, int steer, int cruise, bool narrow,
+			 int pwm_limit)
 {
+	int ceiling = lap->level == LAP_RACE_LEVEL ? LAP_SPEED_RACE_CPS : LAP_SPEED_FAST_CPS;
 	int offset = magnitude(lap->last_position);
 	int projected = magnitude(lap->last_position +
 		lap->position_rate * LAP_BRAKE_LOOKAHEAD_MS / 1000);
 	int turn = magnitude(steer);
+	int turn_cost = unmapped_race(lap) ? 5 : 2;
 	int base, turn_cap;
 
 	if (projected > offset)
 		offset = projected;
-	base = LAP_SPEED_FAST_CPS - clamp(offset - LAP_CENTER_POSITION, 0, 3000) *
-		LAP_CORNER_SLOWDOWN / 1000;
+	offset = clamp(offset - LAP_CENTER_POSITION, 0, 3000);
+	/* The extra cruise speed is available at center and tapers to zero
+	 * over the next probe interval, including predicted outward drift. */
+	base = ceiling - offset * LAP_CORNER_SLOWDOWN / 1000 -
+		(ceiling - LAP_SPEED_FAST_CPS) * min_int(offset, 1000) / 1000;
 	if (magnitude(lap->differential) > turn)
 		turn = magnitude(lap->differential);
-	turn_cap = clamp(LAP_SPEED_FAST_CPS - 2 * turn, 1500, LAP_SPEED_FAST_CPS);
+	turn_cap = clamp(ceiling - turn_cost * turn, 1500, ceiling);
 	base = min_int(base, min_int(turn_cap, cruise));
 
 	/* Estimate remaining wheel-speed headroom from measured speed and PWM.
@@ -273,7 +336,7 @@ static int forward_speed(const struct lap *lap, int steer, int cruise, bool narr
 	 */
 	for (unsigned int side = 0; side < 2; side++) {
 		const struct lap_wheel *wheel = &lap->wheel[side];
-		int headroom = LAP_MAX_PERMILLE - LAP_PWM_RESERVE - wheel->pwm;
+		int headroom = pwm_limit - LAP_PWM_RESERVE - wheel->pwm;
 		int available = wheel->cps + headroom * LAP_CPS_PER_PERMILLE;
 
 		base = min_int(base, available - (side ? -steer : steer));
@@ -282,16 +345,19 @@ static int forward_speed(const struct lap *lap, int steer, int cruise, bool narr
 		base = min_int(base, LAP_APPROACH_CPS);
 	if (!narrow || lap->departing)
 		base = min_int(base, LAP_SPEED_SLOW_CPS);
-	return clamp(base, LAP_SPEED_SLOW_CPS / 2, LAP_SPEED_FAST_CPS);
+	return clamp(base, LAP_SPEED_SLOW_CPS / 2, ceiling);
 }
 
 static void steer_control(struct lap *lap, uint32_t dt, bool narrow)
 {
 	struct course_target course = course_target(lap);
+	bool race = lap->level == LAP_RACE_LEVEL;
+	int pwm_limit = race ? LAP_RACE_MAX_PERMILLE : LAP_MAX_PERMILLE;
+	int wheel_limit = race ? LAP_RACE_WHEEL_MAX_CPS : LAP_TARGET_MAX_CPS;
+	int accel = race ? LAP_RACE_ACCEL_CPS_S : LAP_ACCEL_CPS_S;
 	int steer = line_steering(lap, (int)dt, narrow && !lap->departing, course.bend_permille);
-	int base = forward_speed(lap, steer, course.speed, narrow);
-	int step = (base < lap->base_target ? LAP_DECEL_CPS_S : LAP_ACCEL_CPS_S) *
-		(int)dt / 1000;
+	int base = forward_speed(lap, steer, course.speed, narrow, pwm_limit);
+	int step = (base < lap->base_target ? LAP_DECEL_CPS_S : accel) * (int)dt / 1000;
 	int limit;
 
 	lap->base_target += clamp(base - lap->base_target, -step, step);
@@ -299,7 +365,7 @@ static void steer_control(struct lap *lap, uint32_t dt, bool narrow)
 	/* Give a turn priority over cruise speed at the outer wheel ceiling.
 	 * During launch keep both targets on the common forward ramp.
 	 */
-	lap->base_target = min_int(lap->base_target, LAP_TARGET_MAX_CPS - magnitude(steer));
+	lap->base_target = min_int(lap->base_target, wheel_limit - magnitude(steer));
 	limit = clamp(lap->base_target - LAP_TARGET_MIN_CPS, 0, LAP_STEER_MAX_CPS);
 	/* On the measured course the fast run reached an 87% half-difference
 	 * on a bend that normally needs about 20%, then crossed the line twice.
@@ -308,8 +374,8 @@ static void steer_control(struct lap *lap, uint32_t dt, bool narrow)
 	if (lap->from_a)
 		limit = min_int(limit, lap->base_target * LAP_COURSE_TURN_PERMILLE / 1000);
 	lap->steering = clamp(steer, -limit, limit);
-	speed_control(&lap->wheel[0], lap->base_target + lap->steering, dt);
-	speed_control(&lap->wheel[1], lap->base_target - lap->steering, dt);
+	speed_control(&lap->wheel[0], lap->base_target + lap->steering, dt, pwm_limit);
+	speed_control(&lap->wheel[1], lap->base_target - lap->steering, dt, pwm_limit);
 }
 
 bool lap_update(struct lap *lap, const struct gray_reading *gray, uint32_t now,

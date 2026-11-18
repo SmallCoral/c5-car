@@ -1,5 +1,6 @@
 #include <assert.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include "config.h"
 #include "lap.h"
@@ -202,8 +203,8 @@ static void test_binary_edge_smoothing(void)
 	struct gray_reading gray = line(0);
 	int previous_steering = 0;
 
-	assert(lap_start(&lap, &gray, 0, 0, 0, LAP_DEFAULT_LEVEL, false));
-	assert(lap_speed(LAP_DEFAULT_LEVEL) == 3300);
+	assert(lap_start(&lap, &gray, 0, 0, 0, LAP_FAST_LEVEL, false));
+	assert(lap_speed(LAP_FAST_LEVEL) == 3300);
 	tick(&lap, line(500), 15, 15);
 	assert(lap.last_position > 0 && lap.last_position < 500);
 	/* A one-sample reversal cannot instantly command the opposite full turn. */
@@ -410,7 +411,7 @@ static void test_fast_cruise_and_finish_approach(void)
 
 	assert(lap_speed(0) == 800 && lap_speed(1) == 1800 && lap_speed(2) == 2200);
 	assert(lap_speed(LAP_SPEED_LEVELS) == lap_speed(0));
-	assert(lap_start(&lap, &gray, 0, 0, 0, LAP_DEFAULT_LEVEL, false));
+	assert(lap_start(&lap, &gray, 0, 0, 0, LAP_FAST_LEVEL, false));
 	for (int i = 0; i < 250; i++)
 		tick(&lap, gray, 33, 33);
 	assert(lap.wheel[0].target == 3300 && lap.wheel[1].target == 3300);
@@ -468,7 +469,7 @@ static void test_course_from_a(void)
 	struct gray_reading center = line(0);
 	struct lap lap;
 
-	assert(lap_start(&lap, &bar, 0, 0, 0, LAP_DEFAULT_LEVEL, false));
+	assert(lap_start(&lap, &bar, 0, 0, 0, LAP_FAST_LEVEL, false));
 	assert(lap.from_a);
 	for (int i = 0; i < 20; i++)
 		tick(&lap, center, 5, 5);
@@ -509,6 +510,55 @@ static void test_course_from_a(void)
 	assert(!lap.from_a);
 	assert(lap_start(&lap, &bar, 0, 0, 0, LAP_DEFAULT_LEVEL, true));
 	assert(!lap.from_a);
+}
+
+static void test_race_speed_and_centering(void)
+{
+	struct gray_reading bar = marker();
+	struct gray_reading center = line(0);
+	struct lap lap;
+	struct controls ctl = { .task = TASK_LAP, .lap_level = LAP_FAST_LEVEL };
+
+	controls_key(&ctl, KEY_NEXT, 0);
+	assert(ctl.lap_level == LAP_DEFAULT_LEVEL && lap_speed(ctl.lap_level) == 4600);
+	assert(lap_start(&lap, &bar, 0, 0, 0, ctl.lap_level, false));
+	for (int i = 0; i < 15; i++)
+		tick(&lap, center, 5, 5);
+	for (int arc = 0; arc < 2; arc++) {
+		int start = arc * LAP_HALF_COURSE_COUNTS;
+
+		lap.wheel[0].progress = lap.wheel[1].progress = start + 1000;
+		for (int i = 0; i < 150; i++)
+			tick(&lap, center, 46, 46);
+		assert(lap.base_target == 4600 && abs(lap.steering) < 10);
+		assert(lap.wheel[0].pwm > LAP_MAX_PERMILLE &&
+		       lap.wheel[0].pwm <= LAP_RACE_MAX_PERMILLE);
+		lap.wheel[0].progress = lap.wheel[1].progress = start + LAP_RACE_BRAKE_COUNTS;
+		for (int i = 0; i < 20; i++)
+			tick(&lap, center, 24, 24);
+		assert(lap.base_target == 3100 && abs(lap.steering) < 60);
+		lap.wheel[0].progress = lap.wheel[1].progress = start + 11400;
+		for (int i = 0; i < 25; i++)
+			tick(&lap, center, 35, 27);
+		assert(lap.steering >= 320 && lap.steering <= 520);
+		lap.wheel[0].progress = lap.wheel[1].progress = start + 16000;
+		for (int i = 0; i < 35; i++)
+			tick(&lap, center, 38, 24);
+		assert(lap.base_target == 3100 && lap.steering >= 600 && lap.steering <= 800);
+		/* A sustained inside error must override the scheduled right turn. */
+		for (int i = 0; i < 22; i++) {
+			tick(&lap, line(-2000), 38, 24);
+			assert(lap.wheel[0].target <= LAP_RACE_WHEEL_MAX_CPS);
+			assert(lap.wheel[1].pwm <= LAP_RACE_MAX_PERMILLE);
+		}
+		assert(lap.steering < 0 && lap.base_target < 3100);
+	}
+	lap.wheel[0].progress = lap.wheel[1].progress = LAP_APPROACH_COUNTS;
+	for (int i = 0; i < 50; i++)
+		tick(&lap, center, 12, 10);
+	assert(lap.base_target == LAP_APPROACH_CPS && lap.status == LAP_RUNNING);
+	controls_key(&ctl, KEY_NEXT, 1);
+	assert(ctl.lap_level == 0);
 }
 
 static void test_fitted_wheel_mapping(void)
@@ -579,6 +629,7 @@ int main(void)
 	test_fast_cruise_and_finish_approach();
 	test_bend_memory();
 	test_course_from_a();
+	test_race_speed_and_centering();
 	test_fitted_wheel_mapping();
 	test_probe_to_motor_direction();
 	puts("PASS: lap marker gating, PD direction, wheel PI, loss/stall/timeout, wrap and controls");

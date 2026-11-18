@@ -14,7 +14,7 @@
 
 工具连接地址 `F8:2E:0C:F3:68:37`，先停止电机，再进入升级界面、分包上传、校验、安装和重启。完成后应看到 `Verified running application`，包含与上传文件一致的长度和 CRC。重启后程序进入 LAP，按 RUN 才启动。[当前速度档和操作](line-following-lap.md)
 
-屏幕按“按钮在上、屏幕在下”显示 UPDATE、当前阶段和进度条。安装阶段保持供电。镜像大小随构建变化，上传时间取决于蓝牙重试。[最近一次应用更新](../validation/2026-11-18-lap-centering.md)、[引导程序与恢复测试](../validation/2026-11-16-wireless-update.md)
+屏幕按“按钮在上、屏幕在下”显示 UPDATE、当前阶段和进度条。安装阶段保持供电。镜像大小随构建变化，上传时间取决于蓝牙重试。[最近一次应用更新](../validation/2026-11-18-lap-fast.md)、[3300 稳定版恢复命令](../../Firmware/releases/lap-3300-BF33A9F7/README.md)、[引导程序与恢复测试](../validation/2026-11-16-wireless-update.md)
 
 ## CLion
 

@@ -1,0 +1,644 @@
+{
+  "stable_3300": [
+    {
+      "samples": 144,
+      "center": 107,
+      "outer": 7,
+      "position_counts": [
+        [
+          -1500,
+          5
+        ],
+        [
+          -1000,
+          11
+        ],
+        [
+          -500,
+          31
+        ],
+        [
+          0,
+          63
+        ],
+        [
+          500,
+          13
+        ],
+        [
+          1000,
+          19
+        ],
+        [
+          1500,
+          2
+        ]
+      ],
+      "actual_mean_cps": 2507,
+      "actual_median_cps": 2198,
+      "bends": {
+        "samples": 65,
+        "center": 36,
+        "outer": 5,
+        "position_counts": [
+          [
+            -1500,
+            4
+          ],
+          [
+            -1000,
+            10
+          ],
+          [
+            -500,
+            4
+          ],
+          [
+            0,
+            28
+          ],
+          [
+            500,
+            4
+          ],
+          [
+            1000,
+            14
+          ],
+          [
+            1500,
+            1
+          ]
+        ],
+        "actual_mean_cps": 2122,
+        "actual_median_cps": 2166
+      },
+      "straights": {
+        "samples": 43,
+        "center": 38,
+        "outer": 1,
+        "position_counts": [
+          [
+            -500,
+            22
+          ],
+          [
+            0,
+            12
+          ],
+          [
+            500,
+            4
+          ],
+          [
+            1000,
+            4
+          ],
+          [
+            1500,
+            1
+          ]
+        ],
+        "actual_mean_cps": 3154,
+        "actual_median_cps": 3188
+      },
+      "full_run_frames": 186,
+      "normal_frames": 145,
+      "no_line_frames": 1,
+      "seq_gaps": 3,
+      "final": {
+        "lap_ms": 18872,
+        "lap_counts": 41939,
+        "lap_status": 2,
+        "running": 0,
+        "lap_left_pwm": 0,
+        "lap_right_pwm": 0,
+        "enable_request": 0,
+        "fault_mask": 0,
+        "wheel_trip": 0,
+        "lap_marker_peak": 4,
+        "lap_marker_hits": 1
+      }
+    }
+  ],
+  "track-1": [
+    {
+      "samples": 112,
+      "center": 63,
+      "outer": 22,
+      "position_counts": [
+        [
+          -1500,
+          10
+        ],
+        [
+          -1000,
+          15
+        ],
+        [
+          -500,
+          17
+        ],
+        [
+          0,
+          36
+        ],
+        [
+          500,
+          10
+        ],
+        [
+          1000,
+          12
+        ],
+        [
+          1500,
+          7
+        ],
+        [
+          2000,
+          2
+        ],
+        [
+          2500,
+          1
+        ],
+        [
+          3500,
+          2
+        ]
+      ],
+      "actual_mean_cps": 3253,
+      "actual_median_cps": 3092,
+      "bends": {
+        "samples": 51,
+        "center": 18,
+        "outer": 17,
+        "position_counts": [
+          [
+            -1500,
+            10
+          ],
+          [
+            -1000,
+            8
+          ],
+          [
+            -500,
+            5
+          ],
+          [
+            0,
+            12
+          ],
+          [
+            500,
+            1
+          ],
+          [
+            1000,
+            8
+          ],
+          [
+            1500,
+            2
+          ],
+          [
+            2000,
+            2
+          ],
+          [
+            2500,
+            1
+          ],
+          [
+            3500,
+            2
+          ]
+        ],
+        "actual_mean_cps": 2688,
+        "actual_median_cps": 2841
+      },
+      "straights": {
+        "samples": 34,
+        "center": 25,
+        "outer": 2,
+        "position_counts": [
+          [
+            -1000,
+            4
+          ],
+          [
+            -500,
+            8
+          ],
+          [
+            0,
+            10
+          ],
+          [
+            500,
+            7
+          ],
+          [
+            1000,
+            3
+          ],
+          [
+            1500,
+            2
+          ]
+        ],
+        "actual_mean_cps": 4110,
+        "actual_median_cps": 4472
+      },
+      "full_run_frames": 152,
+      "normal_frames": 112,
+      "no_line_frames": 0,
+      "seq_gaps": 1,
+      "final": {
+        "lap_ms": 15288,
+        "lap_counts": 41777,
+        "lap_status": 2,
+        "running": 0,
+        "lap_left_pwm": 0,
+        "lap_right_pwm": 0,
+        "enable_request": 0,
+        "fault_mask": 0,
+        "wheel_trip": 0,
+        "lap_marker_peak": 4,
+        "lap_marker_hits": 2
+      }
+    },
+    {
+      "samples": 112,
+      "center": 69,
+      "outer": 19,
+      "position_counts": [
+        [
+          -2000,
+          3
+        ],
+        [
+          -1500,
+          5
+        ],
+        [
+          -1000,
+          18
+        ],
+        [
+          -500,
+          14
+        ],
+        [
+          0,
+          34
+        ],
+        [
+          500,
+          21
+        ],
+        [
+          1000,
+          6
+        ],
+        [
+          1500,
+          7
+        ],
+        [
+          2000,
+          2
+        ],
+        [
+          3000,
+          2
+        ]
+      ],
+      "actual_mean_cps": 3238,
+      "actual_median_cps": 3078,
+      "bends": {
+        "samples": 51,
+        "center": 25,
+        "outer": 14,
+        "position_counts": [
+          [
+            -2000,
+            3
+          ],
+          [
+            -1500,
+            5
+          ],
+          [
+            -1000,
+            10
+          ],
+          [
+            -500,
+            3
+          ],
+          [
+            0,
+            16
+          ],
+          [
+            500,
+            6
+          ],
+          [
+            1000,
+            2
+          ],
+          [
+            1500,
+            2
+          ],
+          [
+            2000,
+            2
+          ],
+          [
+            3000,
+            2
+          ]
+        ],
+        "actual_mean_cps": 2727,
+        "actual_median_cps": 2982
+      },
+      "straights": {
+        "samples": 34,
+        "center": 25,
+        "outer": 3,
+        "position_counts": [
+          [
+            -1000,
+            5
+          ],
+          [
+            -500,
+            6
+          ],
+          [
+            0,
+            10
+          ],
+          [
+            500,
+            9
+          ],
+          [
+            1000,
+            1
+          ],
+          [
+            1500,
+            3
+          ]
+        ],
+        "actual_mean_cps": 4041,
+        "actual_median_cps": 4152
+      },
+      "full_run_frames": 149,
+      "normal_frames": 112,
+      "no_line_frames": 0,
+      "seq_gaps": 2,
+      "final": {
+        "lap_ms": 15250,
+        "lap_counts": 41693,
+        "lap_status": 2,
+        "running": 0,
+        "lap_left_pwm": 0,
+        "lap_right_pwm": 0,
+        "enable_request": 0,
+        "fault_mask": 0,
+        "wheel_trip": 0,
+        "lap_marker_peak": 4,
+        "lap_marker_hits": 1
+      }
+    }
+  ],
+  "track-2": [
+    {
+      "samples": 107,
+      "center": 76,
+      "outer": 2,
+      "position_counts": [
+        [
+          -1000,
+          18
+        ],
+        [
+          -500,
+          25
+        ],
+        [
+          0,
+          32
+        ],
+        [
+          500,
+          19
+        ],
+        [
+          1000,
+          11
+        ],
+        [
+          1500,
+          2
+        ]
+      ],
+      "actual_mean_cps": 3438,
+      "actual_median_cps": 3071,
+      "bends": {
+        "samples": 47,
+        "center": 26,
+        "outer": 1,
+        "position_counts": [
+          [
+            -1000,
+            13
+          ],
+          [
+            -500,
+            7
+          ],
+          [
+            0,
+            15
+          ],
+          [
+            500,
+            4
+          ],
+          [
+            1000,
+            7
+          ],
+          [
+            1500,
+            1
+          ]
+        ],
+        "actual_mean_cps": 2968,
+        "actual_median_cps": 3030
+      },
+      "straights": {
+        "samples": 32,
+        "center": 28,
+        "outer": 0,
+        "position_counts": [
+          [
+            -1000,
+            3
+          ],
+          [
+            -500,
+            3
+          ],
+          [
+            0,
+            12
+          ],
+          [
+            500,
+            13
+          ],
+          [
+            1000,
+            1
+          ]
+        ],
+        "actual_mean_cps": 4312,
+        "actual_median_cps": 4512
+      },
+      "full_run_frames": 148,
+      "normal_frames": 108,
+      "no_line_frames": 1,
+      "seq_gaps": 0,
+      "final": {
+        "lap_ms": 14712,
+        "lap_counts": 41943,
+        "lap_status": 2,
+        "running": 0,
+        "lap_left_pwm": 0,
+        "lap_right_pwm": 0,
+        "enable_request": 0,
+        "fault_mask": 0,
+        "wheel_trip": 0,
+        "lap_marker_peak": 4,
+        "lap_marker_hits": 1
+      }
+    },
+    {
+      "samples": 107,
+      "center": 93,
+      "outer": 4,
+      "position_counts": [
+        [
+          -1000,
+          4
+        ],
+        [
+          -500,
+          30
+        ],
+        [
+          0,
+          47
+        ],
+        [
+          500,
+          16
+        ],
+        [
+          1000,
+          6
+        ],
+        [
+          1500,
+          4
+        ]
+      ],
+      "actual_mean_cps": 3474,
+      "actual_median_cps": 3102,
+      "bends": {
+        "samples": 48,
+        "center": 36,
+        "outer": 4,
+        "position_counts": [
+          [
+            -1000,
+            2
+          ],
+          [
+            -500,
+            11
+          ],
+          [
+            0,
+            21
+          ],
+          [
+            500,
+            4
+          ],
+          [
+            1000,
+            6
+          ],
+          [
+            1500,
+            4
+          ]
+        ],
+        "actual_mean_cps": 2936,
+        "actual_median_cps": 3048
+      },
+      "straights": {
+        "samples": 32,
+        "center": 30,
+        "outer": 0,
+        "position_counts": [
+          [
+            -1000,
+            2
+          ],
+          [
+            -500,
+            5
+          ],
+          [
+            0,
+            16
+          ],
+          [
+            500,
+            9
+          ]
+        ],
+        "actual_mean_cps": 4421,
+        "actual_median_cps": 4510
+      },
+      "full_run_frames": 145,
+      "normal_frames": 107,
+      "no_line_frames": 0,
+      "seq_gaps": 2,
+      "final": {
+        "lap_ms": 14612,
+        "lap_counts": 41722,
+        "lap_status": 2,
+        "running": 0,
+        "lap_left_pwm": 0,
+        "lap_right_pwm": 0,
+        "enable_request": 0,
+        "fault_mask": 0,
+        "wheel_trip": 0,
+        "lap_marker_peak": 4,
+        "lap_marker_hits": 2
+      }
+    }
+  ]
+}
