@@ -1,3 +1,5 @@
+/* 上电引导和蓝牙升级入口。先检查暂存与应用镜像，再选择启动或等待电脑下载；擦写与校验期间在屏幕显示进度。 */
+
 #include <string.h>
 #include "stm32c5xx.h"
 #include "board.h"
@@ -14,6 +16,7 @@ static struct ota_header application;
 static bool app_valid;
 static bool lcd_ok;
 
+/* 把已完成字节数同步到升级界面，并在耗时操作间更新心跳。 */
 static void progress(uint32_t done, uint32_t total)
 {
 	screen.update_bytes = done;
@@ -28,6 +31,7 @@ static const struct ota_flash flash = {
 	.program = flash_port_program, .progress = progress,
 };
 
+/* 从向量表加载新应用的栈顶，恢复执行状态后跳至复位入口。 */
 __attribute__((naked, noreturn)) static void enter_application(uint32_t sp __attribute__((unused)),
 							    uint32_t entry __attribute__((unused)))
 {
@@ -39,6 +43,7 @@ __attribute__((naked, noreturn)) static void enter_application(uint32_t sp __att
 			"bx r1\n");
 }
 
+/* 关闭旧 SysTick 及中断，切换向量表，再把控制权交给应用。 */
 static void jump_to_app(void)
 {
 	const uint32_t *vectors = (const uint32_t *)OTA_APP_ADDR;
@@ -58,6 +63,7 @@ static void jump_to_app(void)
 	enter_application(vectors[0], vectors[1]);
 }
 
+/* 向步进串口依次发送停转和失能，使机构进入升级所需状态。 */
 static void stop_stepper(void)
 {
 	uint8_t bytes[6];
@@ -68,6 +74,7 @@ static void stop_stepper(void)
 	serial_write(SERIAL_STEP, bytes, length);
 }
 
+/* 编码带原请求序号的应答，再交给蓝牙串口发送。 */
 static void respond(const struct ota_frame *request, enum ota_status status)
 {
 	struct ota_frame response = {
@@ -89,6 +96,7 @@ static void respond(const struct ota_frame *request, enum ota_status status)
 	serial_write(SERIAL_BT, bytes, ota_encode(bytes, &response));
 }
 
+/* 按引导命令分发版本查询、分块下载、校验和启动请求。 */
 static bool command(const struct ota_frame *request)
 {
 	struct ota_header header;
@@ -128,7 +136,7 @@ static bool command(const struct ota_frame *request)
 		}
 		break;
 	case OTA_ABORT:
-		/* Committed data is installed on reset; never discard the recovery copy. */
+		/* 复位时优先安装已经提交的暂存镜像，保留这份恢复副本。 */
 		if (!request->length && !download.committed) {
 			download.active = false;
 			status = OTA_OK;
@@ -142,6 +150,7 @@ static bool command(const struct ota_frame *request)
 	return reboot;
 }
 
+/* 上电校验已提交镜像，决定正常启动或进入蓝牙升级收包循环。 */
 int main(void)
 {
 	volatile uint32_t *request = (volatile uint32_t *)OTA_REQUEST_ADDR;
@@ -192,7 +201,7 @@ int main(void)
 				reset_at = now;
 			}
 		}
-		/* Let both UART shift registers and the HC-08 notification buffer drain. */
+		/* 等两个 UART 移位寄存器和 HC-08 通知缓冲发送完毕。 */
 		if (reboot && now - reset_at >= 300 && serial_tx_idle(SERIAL_BT) &&
 		    serial_tx_idle(SERIAL_STEP))
 			NVIC_SystemReset();

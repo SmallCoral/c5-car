@@ -1,4 +1,4 @@
-"""Audit the reviewed Motor pin plan without writing either PCB."""
+"""核对已评审的 Motor 引脚规划，只读使用两块 PCB。"""
 from pathlib import Path
 import sys,json,csv,re,hashlib,subprocess
 ROOT=Path(__file__).resolve().parents[1];DOC=ROOT/'docs'
@@ -10,10 +10,14 @@ from simplified_contract import intended
 from m28_contract import PRIMARY_PINOUTS
 from verify_pcb_associations import audit
 from verify_functional_pinout import audit as audit_functional_pinout
+# 对照预期网络、GPIO、原生网表和本地资源检查当前 Motor 工程。
 def main():
     record=json.loads((DOC/'layout-pinplan.json').read_text(encoding='utf8'));plan=record['plan'];checks=[]
+    # 记录每条检查的真假及原因。
     def ck(name,ok,detail=None):checks.append({'name':name,'pass':bool(ok),'detail':detail})
+    # 按文件原始字节计算 SHA-256。
     def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+    # 统一 CRLF 与 LF 后比较内容指纹。
     def normalized_sha(p):return hashlib.sha256(p.read_bytes().replace(b'\r\n',b'\n')).hexdigest()
     _,before,_=native(DOC/'baseline-2026-11-07-m28/live-netlist.xml')
     detach={'J14:'+r[c] for r in plan for c in ['contact','old_contact','previous_contact'] if c in r}
@@ -44,6 +48,7 @@ def main():
     table=list(csv.DictReader((DOC/'core_pin_assignment.csv').open(encoding='utf-8-sig')))+list(csv.DictReader((DOC/'m2_pin_assignment.csv').open(encoding='utf-8-sig')))
     ck('canonical allocation tables match 39 roles',len(table)==39 and {t['signal'] for t in table}=={r['signal'] for r in plan} and all(all(str(t[k])==('' if r[k] is None else str(r[k])) for k in ['gpio','contact','function','af','endpoint']) for r in plan for t in table if t['signal']==r['signal']))
     schemas={}
+    # 递归访问层次原理图，并跳过已经处理的页。
     def visit(f):
         if f in schemas:return
         d=parse((ROOT/f).read_text(encoding='utf8'));schemas[f]=d

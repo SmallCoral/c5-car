@@ -1,3 +1,5 @@
+/* 以可注入擦写中断的 Flash 模型检验引导程序的传输与掉电恢复。 */
+
 #include <assert.h>
 #include <stdio.h>
 #include <string.h>
@@ -13,18 +15,21 @@ static uint8_t new_image[IMAGE_SIZE];
 static int remaining = -1;
 static unsigned int writes;
 
+/* 把目标 Flash 地址映射到模拟数组位置。 */
 static uint8_t *at(uint32_t address, size_t size)
 {
 	assert(address >= OTA_APP_ADDR && address - FLASH_BASE_TEST + size <= sizeof(memory));
 	return memory + address - FLASH_BASE_TEST;
 }
 
+/* 从模拟 Flash 读取指定范围。 */
 static bool read_flash(uint32_t address, void *data, size_t size)
 {
 	memcpy(data, at(address, size), size);
 	return true;
 }
 
+/* 模拟整页擦除及可能的断电。 */
 static bool erase_flash(uint32_t address)
 {
 	assert(address % OTA_PAGE_SIZE == 0);
@@ -37,6 +42,7 @@ static bool erase_flash(uint32_t address)
 	return true;
 }
 
+/* 模拟 Flash 四字编程及中途断电。 */
 static bool program_flash(uint32_t address, const void *data, size_t size)
 {
 	const uint8_t *source = data;
@@ -47,7 +53,7 @@ static bool program_flash(uint32_t address, const void *data, size_t size)
 		for (size_t i = 0; i < 16; i++)
 			assert(destination[offset + i] == 0xff);
 		if (remaining == 0) {
-			/* Simulate a power cut inside a quadword, including metadata. */
+			/* 模拟写入 Flash 四字途中掉电，覆盖元数据写入。 */
 			memcpy(destination + offset, source + offset, 7);
 			return false;
 		}
@@ -63,6 +69,7 @@ static const struct ota_flash flash = {
 	.read = read_flash, .erase = erase_flash, .program = program_flash,
 };
 
+/* 在模拟应用区放入可启动的旧镜像。 */
 static void seed_old(void)
 {
 	struct ota_header header;
@@ -75,6 +82,7 @@ static void seed_old(void)
 	writes = 0;
 }
 
+/* 用分块协议将测试镜像传入暂存区。 */
 static void upload(struct ota_download *download)
 {
 	struct ota_header header;
@@ -91,6 +99,7 @@ static void upload(struct ota_download *download)
 	assert(ota_end(&flash, download) == OTA_OK);
 }
 
+/* 校验分帧、CRC 和损坏后的重新同步。 */
 static void test_frames(void)
 {
 	struct ota_frame sent = { .command = OTA_DATA, .sequence = 123, .length = OTA_PAYLOAD_MAX };
@@ -120,6 +129,7 @@ static void test_frames(void)
 		assert(ota_parse(&parser, bytes[i], &got) == (i == size - 1));
 }
 
+/* 检查正常、重复或越界下载命令的结果。 */
 static void test_transfer(void)
 {
 	struct ota_download download = { 0 };
@@ -145,7 +155,7 @@ static void test_transfer(void)
 	assert(ota_data(&flash, &download, 0, old_image, OTA_CHUNK) == OTA_BAD_OFFSET);
 	assert(ota_image_valid(&flash, OTA_APP_ADDR, OTA_APP_META, &check));
 	assert(check.crc == ota_crc(old_image, IMAGE_SIZE));
-	/* Reset discards only volatile progress; beginning again erases the staging slot. */
+	/* 复位只丢弃易失进度，重新 BEGIN 才擦除暂存区。 */
 	memset(&download, 0, sizeof(download));
 	upload(&download);
 	before = writes;
@@ -155,6 +165,7 @@ static void test_transfer(void)
 	assert(ota_image_valid(&flash, OTA_APP_ADDR, OTA_APP_META, &check));
 }
 
+/* 遍历各写入点模拟掉电，并验证恢复可用镜像。 */
 static void test_power_cuts(void)
 {
 	struct ota_download download = { 0 };
@@ -182,7 +193,7 @@ static void test_power_cuts(void)
 		assert(!ota_image_valid(&flash, OTA_STAGE_ADDR, OTA_STAGE_META, &check));
 	}
 	printf("PASS: recovery after %u installation interruption points\n", install_writes);
-	/* Interrupt every download write, including the final commit header. */
+	/* 逐次中断每个下载写操作，包括最后提交的镜像头。 */
 	for (unsigned int cut = 0; cut <= download_writes; cut++) {
 		struct ota_header header;
 		enum ota_status status;
@@ -207,6 +218,7 @@ static void test_power_cuts(void)
 	}
 }
 
+/* 运行引导传输和安装恢复回归。 */
 int main(void)
 {
 	for (unsigned int i = 0; i < IMAGE_SIZE; i++) {

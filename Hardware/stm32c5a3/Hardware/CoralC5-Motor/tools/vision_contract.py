@@ -1,10 +1,10 @@
-"""Bounded M2.5 vision changes; intended connectivity is independent of exports."""
+"""按 M2.5 已确认的视觉接口改动建立预期连接，独立于导出的网表。"""
 import copy,json
 from sexpr import node,nodes,prop
 from schematic_semantic import canonical
 
 def partitions(parts, record):
-    """Apply only the pin removals, rail additions and new nets in the design brief."""
+    """只应用设计要求中指定的引脚删除、电源扩展和新增网络。"""
     if not record:return set(parts)
     edit=record['net_edit'];removed=set(edit['remove_pins'])
     result={frozenset(':'.join(p) if isinstance(p,tuple) else p for p in part)-removed for part in parts}
@@ -19,7 +19,7 @@ def partitions(parts, record):
     return {frozenset(tuple(p.split(':',1)) for p in part) for part in result}
 
 def library(old,new,record,cache=False):
-    """Normalize only authored additions and two header names, then compare fully."""
+    """只规范新增项与两个排针名称，再逐项比较全部网络。"""
     if not record:return
     prefix='Motor:' if cache else ''
     if cache:
@@ -43,10 +43,13 @@ def library(old,new,record,cache=False):
         desired={z[1]:z for z in nodes(definition,'symbol')}
         for sub in nodes(old[key],'symbol'):sub[:]=copy.deepcopy(desired[sub[1]])
 
+# 核对视觉接口的电源、引脚与资源。
 def checks(root, actual, schemas, record, m26=None):
     if not record:return []
     result=[]
+    # 记录逐项结果与差异。
     def ck(name,ok,detail=None):result.append({'name':'vision: '+name,'pass':bool(ok),'detail':detail})
+    # 对照预期的端点集合检查指定网络。
     def group(pin):return actual.get(pin,frozenset())
     byref={prop(z,'Reference')[2]:z for d in schemas.values() for z in nodes(d,'symbol')}
     removed=set((m26 or {}).get('removed_references',[]))

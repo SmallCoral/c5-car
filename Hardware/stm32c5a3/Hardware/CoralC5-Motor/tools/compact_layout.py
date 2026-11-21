@@ -1,5 +1,5 @@
-"""Explicit compact A4 schematic layout; symbols and notes retain normal size."""
-# Compress only the custom socket symbol's row pitch, keeping normal-sized text.
+"""将各页整理为紧凑的 A4 布局，保持器件与注释的正常大小。"""
+# 仅缩小定制插座符号的行距，文字尺寸维持原值。
 for sub in nodes(edge,'symbol'):
     if sub[1].endswith(('_1_1','_2_1')):
         for pin in nodes(sub,'pin'):
@@ -9,7 +9,7 @@ for sub in nodes(edge,'symbol'):
                 pos=node(rect,tag);pos[2]=num(float(pos[2])*.5)
 LIB['Motor:CoralC5_Streamline_Socket']=edge
 
-# Rebuild the interface page around its compact connector representation.
+# 按紧凑连接器的位置重新排布接口页。
 oldcore=core
 PARTS[:]=[part for part in PARTS if part['page']!=3]
 core=Page('03_Core_Interface.kicad_sch','C5-EDGE-3 核心板接口与调试',3,paper='A4')
@@ -42,12 +42,14 @@ core.note('J10装短路帽，或接常闭停机开关\n开路、复位时默认�
 core.note('严格沿用C5-EDGE-3针序\n空闲触点明确标记不连接\n该母座不能插计算机PCIe',176,137)
 core.note('编码器及三伏三外接负载\n合计不得超过100mA',176,158)
 
-# Rebuild the power and motor modules on explicit compact grids. The connector
-# page above keeps the full finger contract; no physical component is omitted.
+# 按明确的网格重新排列电源和电机模块。
+# 上一页仍保留完整金手指接口约定和全部实物器件。
+# 从旧页信息建立重排用的新页，同时移除旧实例清单。
 def fresh(old):
     PARTS[:]=[part for part in PARTS if part['page']!=old.pageno]
     page=Page(old.file,old.title,old.pageno,'A4');PAGES.remove(old);PAGES.remove(page);PAGES.insert(old.pageno-1,page);return page
 qrev=copy.deepcopy(LIB[PMOS]);qrev[1]='AO4407A_Mirrored'
+# 递归镜像指定图形节点的坐标。
 def reflect(obj):
     if not isinstance(obj,list):return
     if obj and obj[0] in ['at','start','end','mid','center'] and len(obj)>=3:
@@ -93,6 +95,7 @@ rl=res(p,'R5','2.2k',266.7,143.51);led=p.place(LED,'D4','LED_GREEN',266.7,153.67
 p.note('五伏负载预算0.75A，核心板入口约4.6～4.9V\n按原厂配置4.7uH及两颗22uF，D3隔离USB反向供电',18,169.55)
 
 ENC=chip('ENCODER_4P','J','ENCODER / XH2.50',[(1,'GND',7.62,3.81,180,'passive'),(2,'3V3',7.62,1.27,180,'passive'),(3,'A',7.62,-1.27,180,'passive'),(4,'B',7.62,-3.81,180,'passive')],FP['XH4'],rect=(-2.54,6.35,2.54,-6.35))
+# 在紧凑网格中重新安排电机页元件及其接线。
 def compact_motor(old,side,drvref,bufref,mj,ej,base):
     page=fresh(old);page.frame('全桥驱动与电流检测',12,14,285,114)
     u=page.place(DRV,drvref,'DRV8874PWPR',139.7,55.88,FP['DRV'],mpn='DRV8874PWPR',refpos=pt(139.7,18.9),valpos=pt(139.7,22.86))

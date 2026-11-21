@@ -1,4 +1,4 @@
-"""Update Coral-C5 over HC-08 BLE; no J-Link is used by this tool."""
+"""通过 HC-08 蓝牙更新 Coral-C5 的应用固件。"""
 
 import argparse
 import asyncio
@@ -15,11 +15,13 @@ DEFAULT_BLE = "F8:2E:0C:F3:68:37"
 DEFAULT_UUID = "0000ffe1-0000-1000-8000-00805f9b34fb"
 BLE_FRAGMENT = 20
 PACED_GAP = 0.020
-DATA_ACK_TIMEOUT = 1.3  # longer than the bootloader's partial-frame expiry
+DATA_ACK_TIMEOUT = 1.3  # 等待时间须长于引导程序丢弃残帧的期限。
 PACED_RECOVERY_BLOCKS = 32
 
 
+# 维护一次 HC-08 连接上的文本回报、二进制应答、序号和重试节拍。
 class Link:
+    # 为当前特征建立独立的帧解析器与通知队列。
     def __init__(self, client, characteristic):
         self.client = client
         self.characteristic = characteristic
@@ -33,12 +35,14 @@ class Link:
         self.consecutive_data_retries = 0
         self.paced_remaining = 0
 
+    # 队列满时先移除最旧元素，将最新通知留给等待方。
     @staticmethod
     def enqueue(queue, value):
         if queue.full():
             queue.get_nowait()
         queue.put_nowait(value)
 
+    # 同时解析升级帧与换行文本，把两种格式送到各自的等待队列。
     def notify(self, _sender, data):
         for frame in self.parser.feed(data):
             self.enqueue(self.responses, frame)
@@ -53,6 +57,7 @@ class Link:
             else:
                 self.text.clear()
 
+    # 把数据拆为 GATT 写入片段，按链路策略决定片间等待。
     async def write(self, data, *, paced=True):
         for offset in range(0, len(data), BLE_FRAGMENT):
             await self.client.write_gatt_char(self.characteristic, data[offset:offset + BLE_FRAGMENT],
@@ -60,6 +65,7 @@ class Link:
             if paced:
                 await asyncio.sleep(PACED_GAP)
 
+    # 固定一份命令的序号和数据，等待匹配应答，超时按策略重试。
     async def request(self, command, payload=b"", timeout=3, attempts=4):
         self.sequence += 1
         frame = Frame(command, self.sequence, payload)
@@ -70,7 +76,7 @@ class Link:
                 print(f"Retry command {command}, sequence {frame.sequence}", flush=True)
             burst = command == DATA and attempt == 0 and not self.paced_remaining
             await self.write(packet, paced=not burst)
-            # A partial frame expires in the bootloader after 1 s of UART silence.
+            # 引导程序在 UART 静默 1 s 后清除未收完的帧。
             deadline = time.monotonic() + (min(timeout, DATA_ACK_TIMEOUT) if command == DATA else timeout)
             while time.monotonic() < deadline:
                 try:
@@ -100,6 +106,7 @@ class Link:
         raise TimeoutError(f"No reply to command {command}; keep power on and retry, "
                            "or hold TASK while powering on to enter recovery")
 
+    # 通知应用停车并请求进入引导程序，识别步进仍在托管的回报。
     async def request_update_mode(self):
         await self.write(b"!\nC5:OTA\n")
         await asyncio.sleep(2)
@@ -109,8 +116,9 @@ class Link:
                 held = True
         return not held
 
+    # 经操作者确认托稳后请求解除抱持，轮询实物反馈确认已失能。
     async def release_supported_pipe(self):
-        # FREE is honored only after stopping, on the parked BALANCE controller.
+        # 步进已停车并在 BALANCE 页抱持时才会处理 FREE。
         await self.write(b"\nC5:BAL\n")
         for _ in range(10):
             await self.write(b"C5:FREE\nC5:BAL?\n")
@@ -124,6 +132,7 @@ class Link:
                     return
         raise RuntimeError("No confirmation that the stepper is disabled and the wheels are stopped")
 
+    # 协调应用与引导程序之间的切换，取得已安装版本及可续传进度。
     async def enter(self, pipe_supported=False):
         if not await self.request_update_mode():
             if not pipe_supported:
@@ -143,6 +152,7 @@ class Link:
               f"received={offset}", flush=True)
         return old_size, old_crc
 
+    # 启动后反复查询应用身份，直到收到预期的字节数与 CRC。
     async def verify_app(self, size, crc, timeout=20):
         deadline = time.monotonic() + timeout
         while time.monotonic() < deadline:
@@ -165,6 +175,7 @@ class Link:
         raise TimeoutError("Application confirmation missing; image may already be installed. "
                            "Reconnect and use --info before retrying.")
 
+    # 发送只读身份查询并提取板上应用的版本信息。
     async def info(self):
         await self.write(b"\nC5:INFO\n")
         deadline = time.monotonic() + 4
@@ -179,6 +190,7 @@ class Link:
         reply = await self.request(HELLO, attempts=2)
         print("Bootloader: " + ",".join(f"{word:08X}" for word in struct.unpack("<8I", reply)))
 
+    # 按 BEGIN、DATA、END 顺序传输，依确认偏移继续，最后核对运行版本。
     async def upload(self, image, header, pipe_supported=False):
         started = time.monotonic()
         old_size, old_crc = await self.enter(pipe_supported)
@@ -214,7 +226,7 @@ class Link:
         try:
             await self.request(RUN, attempts=1)
         except TimeoutError:
-            # Reset may have reached the module before its final ACK was delivered.
+            # 最终应答尚未送达电脑时，模块可能已经收到复位命令。
             pass
         await asyncio.sleep(2)
         await self.verify_app(len(image), zlib.crc32(image))
@@ -222,6 +234,7 @@ class Link:
               f"retries={self.retries}; motors remain stopped", flush=True)
 
 
+# 查找蓝牙模块、订阅通知并在连接中断后按限定次数重新连接。
 async def run(args):
     try:
         from bleak import BleakClient, BleakScanner
@@ -240,7 +253,7 @@ async def run(args):
                     raise RuntimeError("HC-08 FFE1 characteristic not found")
                 link = Link(client, characteristic)
                 await client.start_notify(characteristic, link.notify)
-                # Give the UART bridge time to settle after establishing the BLE connection.
+                # 建立蓝牙连接后给 UART 桥接器留出稳定时间。
                 await asyncio.sleep(0.5)
                 if args.info:
                     await link.info()
@@ -262,6 +275,7 @@ async def run(args):
             await asyncio.sleep(2)
 
 
+# 解析镜像、蓝牙地址和只读查询等参数，启动异步任务。
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("image", nargs="?", type=Path, help="coral_c5.ota or coral_c5.bin")

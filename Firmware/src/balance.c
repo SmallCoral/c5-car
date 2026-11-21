@@ -1,3 +1,5 @@
+/* 设备调试页的稳球控制。从编码器建立水平参考，通过转轴寻找可信滚动轨迹，再由旧 F407 的外环球位和内环轴角控制回中。 */
+
 #include <limits.h>
 #include <stdlib.h>
 #include "balance.h"
@@ -8,28 +10,32 @@ struct f407_site site;
 float Now_Angle;
 static int requested_rpm;
 
-/* Partical/balance.c calls this with dir=1 for CCW, including zero speed. */
+/* 把旧接口的方向位和转速合成有符号的步进请求。dir=1 表示逆时针，即使零速也可能保留这个方向位。 */
 void Contron_X_Speed(uint8_t dir, uint16_t rpm)
 {
 	requested_rpm = dir ? (int)rpm : -(int)rpm;
 }
 
+/* 检查参考轴位是否留有足够数值空间，避免后续叠加行程时溢出。 */
 static bool valid_reference(int32_t raw)
 {
 	return raw >= INT32_MIN + 65536 + 273 && raw <= INT32_MAX - 65536 - 273;
 }
 
+/* 将多圈编码器相对水平的差值换算为百分之一度并限幅。 */
 int balance_shaft(const struct balance *b, int32_t actual)
 {
 	int64_t cd = ((int64_t)actual - b->zero) * 36000 / 65536;
 	return cd < -36000 ? -36000 : cd > 36000 ? 36000 : (int)cd;
 }
 
+/* 把控制器目标轴角折算回驱动的绝对编码器位置。 */
 int32_t balance_goal(const struct balance *b)
 {
 	return b->zero + b->command * 65536 / 36000;
 }
 
+/* 在停止时以当前读数建立水平参考。 */
 bool balance_level(struct balance *b, int32_t actual)
 {
 	if (b->active || !valid_reference(actual))
@@ -42,20 +48,22 @@ bool balance_level(struct balance *b, int32_t actual)
 	return true;
 }
 
+/* 清空旧 PID 的输入、误差历史及积分，避免不同轮次相互影响。 */
 static void reset_pid_history(PID_BALANCE *p)
 {
 	p->Actual = p->Actual1 = p->Target = p->Last_Target = 0.0f;
 	p->Out = p->FeedForward = p->Error0 = p->Error1 = p->ErrorInt = 0.0f;
 }
 
+/* 将实测球位映射到旧 F407 控制器要求的方向与像素尺度。 */
 static int f407_site_x(const struct balance *b, const struct ball_view *ball)
 {
-	/* Bearing-side clockwise raises the right end. On this drive this is
-	 * F6 direction 1, the archive's positive speed. */
+	/* 从轴承侧看，顺时针会抬高水管右端。此驱动对应 F6 方向 1，即旧控制器的正转速。 */
 	int x = BAL_F407_O + (b->reverse ? ball->offset_px : -ball->offset_px);
-	return x < 1 ? 1 : x > 319 ? 319 : x; /* The archive reserves site 0 for loss. */
+	return x < 1 ? 1 : x > 319 ? 319 : x; /* 旧控制器用坐标 0 表示丢球。 */
 }
 
+/* 根据真实首帧和参考轴位初始化旧控制器的回中闭环。 */
 bool balance_f407_start(struct balance *b, int32_t reference, int32_t actual,
 			const struct ball_view *ball, uint32_t now)
 {
@@ -74,11 +82,10 @@ bool balance_f407_start(struct balance *b, int32_t reference, int32_t actual,
 	reset_pid_history(&keep_out);
 	reset_pid_history(&keep_inter);
 	balance_state = 1;
-	chose_TI = 4; /* The archive's fixed-center profile, target 160. */
+	chose_TI = 4; /* 选用旧控制器的固定中点方案，目标坐标为 160。 */
 	best_hard();
 	site.X_0 = (int16_t)b->last_site;
-	/* A fresh run has no previous image. Seed the original derivative with
-	 * the real first observation so an unmoved ball produces no startup kick. */
+	/* 新一轮没有上一帧图像，用第一次实测初始化差分历史，防止静止球在起步时引出突变。 */
 	keep_out.Actual1 = (float)site.X_0;
 	Now_Angle = (float)((int64_t)actual - reference) / 65535.0f * 360.0f;
 	keep_inter.Actual1 = -(Now_Angle / 360.0f * 3200.0f * 0.039f);
@@ -86,6 +93,7 @@ bool balance_f407_start(struct balance *b, int32_t reference, int32_t actual,
 	return true;
 }
 
+/* 从已标定水平开始试抬，检查当前轴位在允许的试探行程内。 */
 bool balance_probe(struct balance *b, int32_t actual, uint32_t now)
 {
 	if (b->active || !b->leveled || llabs((int64_t)actual - b->zero) > BAL_LIMIT_RAW)
@@ -96,6 +104,7 @@ bool balance_probe(struct balance *b, int32_t actual, uint32_t now)
 	return true;
 }
 
+/* 以给定原点为目的地开始返回，先确认当前位置在允许范围内。 */
 bool balance_park(struct balance *b, int32_t origin, int32_t actual, uint32_t now)
 {
 	if (b->active || !valid_reference(origin) ||
@@ -106,6 +115,7 @@ bool balance_park(struct balance *b, int32_t origin, int32_t actual, uint32_t no
 	return true;
 }
 
+/* 结束寻球或稳球，清零转速请求并保存正常或故障结束状态。 */
 void balance_stop(struct balance *b, bool fault)
 {
 	balance_state = 0;
@@ -116,11 +126,13 @@ void balance_stop(struct balance *b, bool fault)
 	b->state = fault ? BAL_FAULT : b->leveled ? BAL_READY : BAL_NEED_LEVEL;
 }
 
+/* 将有符号值限制在给定范围。 */
 static int clamp_int(int value, int lo, int hi)
 {
 	return value < lo ? lo : value > hi ? hi : value;
 }
 
+/* 把偏置后的工作中心与原始机械行程求交，得到跟踪限位。 */
 static void tracking_limits(struct balance *b)
 {
 	int32_t lo = b->origin - BAL_ROLL_CCW_RAW;
@@ -130,6 +142,7 @@ static void tracking_limits(struct balance *b)
 	b->upper = clamp_int(center + BAL_LIMIT_RAW, lo, hi);
 }
 
+/* 对新的直接观测求位移与速度，更新静止判断和倾角补偿。 */
 static void observe_ball(struct balance *b, const struct ball_view *ball, uint16_t seq, uint32_t now)
 {
 	if (ball->status != BALL_TRACKED || (b->have_sample && b->sequence == seq))
@@ -147,9 +160,7 @@ static void observe_ball(struct balance *b, const struct ball_view *ball, uint16
 	b->last_position = ball->permille;
 	b->last_site = f407_site_x(b, ball);
 	b->sequence = seq;
-	/* Near O, a stationary ball can sit in the F407 tilt deadband. Learn a
-	 * bounded offset from direct observations. Far from O, adjust the
-	 * rolling-onset estimate only after the actuator has reached its tilt. */
+	/* O 附近的静止球可能落在旧控制器的倾角死区。用直接观测缓慢修正偏置并限幅；远处则等执行器到达倾角后才更新起滚估计。 */
 	int error = b->last_site - BAL_F407_O;
 	bool far = abs(error) > 48;
 	if (!dt || dt >= BAL_VISION_TIMEOUT_MS || abs(error) <= BALL_CENTER_RADIUS_PX ||
@@ -178,6 +189,7 @@ static void observe_ball(struct balance *b, const struct ball_view *ball, uint16
 	}
 }
 
+/* 用无符号时间差判断控制周期，并推进对应的周期时间戳。 */
 static bool due(uint32_t *at, unsigned int period, uint32_t now)
 {
 	uint32_t elapsed = now - *at;
@@ -187,13 +199,14 @@ static bool due(uint32_t *at, unsigned int period, uint32_t now)
 	return true;
 }
 
+/* 在允许的搜索范围内开始转轴寻球，记录起点及初始观测。 */
 bool balance_roll_start(struct balance *b, int32_t origin, int32_t actual,
 			const struct ball_view *ball, uint32_t now)
 {
 	if (b->active || !valid_reference(origin) || actual < origin - BAL_ROLL_CCW_RAW - 273 ||
 	    actual > origin + BAL_ROLL_CW_RAW + 273)
 		return false;
-	/* An endpoint can choose which way to tilt first. It cannot certify a track. */
+	/* 挡杆附近的观测可用于选首次倾斜方向，锁定轨迹仍需连续的运动证据。 */
 	int dir = ball->status == BALL_TRACKED && ball->offset_px < -80 ? 1 : -1;
 	*b = (struct balance){ .active = true, .f407 = true, .reverse = b->reverse,
 		.manual_level = b->manual_level, .level_hint = b->level_hint,
@@ -205,14 +218,14 @@ bool balance_roll_start(struct balance *b, int32_t origin, int32_t actual,
 	return true;
 }
 
+/* 以一帧可信球位建立候选运动轨迹的起点。 */
 static void seed_motion(struct ball_motion *m, uint16_t seq, int x, int32_t shaft, uint32_t now)
 {
 	*m = (struct ball_motion){ .since = now, .last_at = now, .seq = seq, .first = x,
 		.last = x, .frames = 1, .first_shaft = shaft };
 }
 
-/* A static false detection, one jump between features, duplicate packets and
- * extrapolated positions cannot qualify as a moving ball. */
+/* 仅用连续实测的序号、滚动方向和净位移确认滚动。这样可排除静态反光、单次跳点、重复包和预测坐标。 */
 static bool rolling_track(struct ball_motion *m, const struct ball_view *ball, uint16_t seq,
 			  int32_t shaft, uint32_t now)
 {
@@ -225,8 +238,7 @@ static bool rolling_track(struct ball_motion *m, const struct ball_view *ball, u
 		return false;
 	int x = ball->offset_px, dx = x - m->last;
 	uint32_t dt = now - m->last_at;
-	/* A single missed image may sit between two measured positions. It
-	 * contributes neither a frame nor a step to the lock criteria. */
+	/* 两次实测间允许漏一帧。漏帧不计入锁定所需的帧数或位移步数。 */
 	if (!m->frames || (uint16_t)(seq - m->seq) > 2 || !dt || dt > 100 ||
 	    now - m->since > 450 || abs(dx) > 7 + (int)dt ||
 	    (!m->direction && abs(dx) < 2) || (m->direction && dx * m->direction < -2)) {
@@ -246,6 +258,7 @@ static bool rolling_track(struct ball_motion *m, const struct ball_view *ball, u
 	return m->frames >= 5 && m->steps >= 3 && now - m->since >= 95 && abs(x - m->first) >= 40;
 }
 
+/* 按照内环节拍更新搜索转速，制动请求可立即发出。 */
 static void sweep_rpm(struct balance *b, int rpm, uint32_t now)
 {
 	bool brake = b->native_rpm && !rpm;
@@ -253,6 +266,7 @@ static void sweep_rpm(struct balance *b, int rpm, uint32_t now)
 	b->speed_due = due(&b->inner_at, BAL_F407_INNER_MS, now) || brake;
 }
 
+/* 把搜索到的轴位与球位交给回中控制，保留已核对的限位。 */
 static void take_control(struct balance *b, const struct ball_view *ball, uint16_t seq,
 			 int32_t actual, uint32_t now)
 {
@@ -261,8 +275,7 @@ static void take_control(struct balance *b, const struct ball_view *ball, uint16
 	uint32_t started = b->started;
 	unsigned int legs = b->legs;
 	bool manual = b->manual_level;
-	/* The shaft at first observed roll is a working estimate. Back off 2 deg
-	 * against the roll; keep all control within the original sweep envelope. */
+	/* 首次观察到滚动时的轴位仅是起滚估计。逆着滚动方向退 2°，并沿用原来的搜索行程。 */
 	int32_t zero = manual ? hint : m.first_shaft - (b->reverse ? -1 : 1) * m.direction * 364;
 	zero = clamp_int(clamp_int(zero, lower, upper), actual - BAL_LIMIT_RAW, actual + BAL_LIMIT_RAW);
 	b->active = false;
@@ -289,13 +302,13 @@ static void take_control(struct balance *b, const struct ball_view *ball, uint16
 	b->inner_at = now - BAL_F407_INNER_MS;
 }
 
+/* 转轴制动后再次看球的位移方向，确认轨迹后接管闭环。 */
 static void verify_roll(struct balance *b, const struct ball_view *ball, uint16_t seq,
 			int32_t actual, uint32_t now)
 {
 	struct ball_motion *m = &b->motion;
 	sweep_rpm(b, 0, now);
-	/* Keep the acquisition limits until the F6 stop has actually settled.
-	 * A moving image of the pipe end cannot finish this test on its own. */
+	/* 保持寻球限位，直到 F6 零速指令使转轴稳定。管端随动形成的影像不能单独确认成功。 */
 	if (llabs((int64_t)actual - b->brake_raw) > 18) {
 		b->brake_raw = actual;
 		b->still_at = now;
@@ -328,6 +341,7 @@ resume:
 	b->state = BAL_FIND_BALL;
 }
 
+/* 让转轴在行程内试探，结合相机状态决定等待、换向或验证滚动。 */
 static void sweep_for_ball(struct balance *b, const struct ball_view *ball, uint16_t seq,
 			   int32_t actual, uint32_t now)
 {
@@ -376,11 +390,12 @@ static void sweep_for_ball(struct balance *b, const struct ball_view *ball, uint
 		}
 	}
 	b->command = b->demand = goal;
-	/* Positive shaft travel is the drive's CW direction (negative signed F6). */
+	/* 轴向正行程对应驱动顺时针，按带符号的 F6 转速表示为负。 */
 	int rpm = clamp_int(abs(error) / 50, 3, 30);
 	sweep_rpm(b, abs(error) <= 65 ? 0 : error > 0 ? -rpm : rpm, now);
 }
 
+/* 按当前状态驱动试抬、寻球和回中，并按不同周期更新位置和转速环。 */
 void balance_update(struct balance *b, const struct ball_view *ball, uint16_t sequence,
 		    int32_t actual, uint32_t now)
 {
@@ -425,8 +440,7 @@ void balance_update(struct balance *b, const struct ball_view *ball, uint16_t se
 	uint32_t gap = now - b->sample_at;
 	if (b->have_sample && ball->status == BALL_TRACKED && sequence != b->sequence) {
 		int distance = abs(f407_site_x(b, ball) - b->last_site);
-		/* A sudden jump after lock can be a different shiny object. A coherent
-		 * moving track may rejoin after a gap, or a new frame near the last site. */
+		/* 锁定后的跳点可能来自另一个反光物。遮挡后可用一致的运动轨迹或上一位置附近的新帧恢复跟踪。 */
 		if ((b->vision_paused || gap >= BAL_VISION_TIMEOUT_MS ? distance > 8 : distance > 7 + (int)gap) &&
 		    !rolling_track(&b->motion, ball, sequence, actual, now))
 			accepted.status = BALL_UNCERTAIN;
@@ -470,13 +484,13 @@ void balance_update(struct balance *b, const struct ball_view *ball, uint16_t se
 		Keep_Blance_out();
 		b->outer_started = true;
 		b->target_beam_cd = (int)(keep_inter.Target * 100.0f);
-		/* Equivalent shaft target for the existing diagnostic display only. */
+		/* 折算成轴角只为沿用现有调试页的显示单位。 */
 		b->demand = b->command = b->trim_mdeg / 10 -
 			(int)(keep_inter.Target * 36000.0f / (3200.0f * 0.039f));
 		b->state = b->centered && now - b->centered_at >= 1000 ? BAL_STABLE : BAL_FOLLOW;
 	}
 	if (due(&b->inner_at, BAL_F407_INNER_MS, now)) {
-		/* motor_X.c decodes signed Emm 0x36 using 65535.0f. */
+		/* 旧 motor_X.c 用 65535.0f 将 Emm 0x36 返回的带符号位置换算为角度。 */
 		Now_Angle = (float)((int64_t)actual - b->zero) / 65535.0f * 360.0f -
 			    (float)b->trim_mdeg / 1000.0f;
 		trace_balance_inter();
@@ -486,11 +500,13 @@ void balance_update(struct balance *b, const struct ball_view *ball, uint16_t se
 	}
 }
 
+/* 从操作被接受的时刻开始计时，清除前一次的分段成绩。 */
 void balance_time_start(struct balance_timer *timer, unsigned int op, uint32_t now)
 {
 	*timer = (struct balance_timer){ .operation = op, .counting = true, .started = now };
 }
 
+/* 随控制状态更新跟踪、居中和结束时刻，保留实测耗时。 */
 void balance_time_update(struct balance_timer *timer, const struct balance *b, bool running,
 			 uint32_t now)
 {
@@ -504,6 +520,7 @@ void balance_time_update(struct balance_timer *timer, const struct balance *b, b
 	timer->counting = running;
 }
 
+/* 把稳球阶段转换成调试页可显示的名字。 */
 const char *balance_name(enum balance_state state)
 {
 	static const char *const names[] = {

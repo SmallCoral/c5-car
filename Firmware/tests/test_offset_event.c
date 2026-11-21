@@ -1,5 +1,6 @@
-/* Exercise the real foreground loop with physical key timings, camera packets,
- * drive replies and independent wheel encoders. Ball positions are scripted. */
+/* 把比赛前台放到主机上，用虚拟按键、相机、步进和两只轮编码器跑完整的发挥一流程。 */
+
+/* 用按键时序、相机包、驱动应答和独立编码器运行真实主循环，球位按脚本输入。 */
 #include <assert.h>
 #include "ota.h"
 static uint32_t handover_words[2];
@@ -18,31 +19,47 @@ static int shaft_raw, locked_target;
 static uint8_t drive_rx[33], camera_rx[BALL_FRAME_SIZE];
 static size_t drive_pos, drive_len, camera_pos = BALL_FRAME_SIZE;
 
+/* 提供主机端板级初始化替身。 */
 bool board_init(void) { return true; }
+/* 提供主机端步进和蓝牙串口初始化替身。 */
 bool serial_init(void) { return true; }
+/* 提供相机串口初始化替身。 */
 bool serial_camera_init(void) { return true; }
+/* 模拟串口发送结束的查询接口。 */
 bool serial_tx_idle(enum serial_port port) { (void)port; return true; }
+/* 向真实主循环提供测试用串口统计。 */
 struct serial_stats serial_stats(enum serial_port port) { (void)port; return (struct serial_stats){0}; }
+/* 返回脚本推进的主控毫秒时钟。 */
 uint32_t board_millis(void) { return ms; }
+/* 模拟轮驱动轮询接口。 */
 void board_wheels_poll(void) {}
+/* 提供测试用 A/B 引脚电平。 */
 uint8_t board_encoder_pins(void) { return 0; }
+/* 返回模拟板级故障输入。 */
 uint8_t board_faults(void) { return 0; }
+/* 返回模拟轮驱动故障位。 */
 uint8_t board_wheels_faults(void) { return 0; }
+/* 返回场景设定的驱动保护原因。 */
 enum wheel_trip board_wheels_trip(void) { return WHEEL_OK; }
+/* 遇到真实主循环的不可恢复异常时终止测试。 */
 _Noreturn void board_panic(void) { abort(); }
+/* 模拟屏幕初始化。 */
 bool display_init(void) { return true; }
+/* 提供屏幕最近观测的测试快照。 */
 uint32_t display_last_ball(struct ball_view *view) { *view = (struct ball_view){0}; return 0; }
 
+/* 根据当前时钟判断模拟按键是否处于指定按住窗口。 */
 static bool held(uint32_t start, uint32_t duration)
 {
 	return ms >= start && ms - start < duration;
 }
 
+/* 用时序合成实物四键输入。 */
 uint8_t board_keys(void)
 {
 	if (scenario == COMPLETE && stopped_at && held(stopped_at + 1200, 100))
 		return 1U << KEY_MODE;
-	/* Visit offset from home by going up twice, then enter and select +1. */
+	/* 从首页向上两次选中发挥一，再进入并将目标调至 +1 mm。 */
 	if (held(100, 60) || held(220, 60))
 		return 1U << KEY_OK;
 	if (held(350, 600) || held(1900, 700) || held(5400, 100) || held(6000, 700))
@@ -56,6 +73,7 @@ uint8_t board_keys(void)
 	return 0;
 }
 
+/* 实现测试用心跳接口。 */
 void board_heartbeat(void)
 {
 	if (scenario == WHEEL_TRIP && ms == 7500)
@@ -63,7 +81,7 @@ void board_heartbeat(void)
 	if (ms % 25)
 		return;
 	unsigned int seq = ms / 25;
-	/* A persistent displaced ball during travel must change the shaft command. */
+	/* 行驶中球位持续偏离目标时，目标轴角也应变化。 */
 	int x = RULER_X_O;
 	if (ms >= 6600) {
 		int frames = (int)(ms - 6600) / 25;
@@ -86,6 +104,7 @@ void board_heartbeat(void)
 	camera_pos = 0;
 }
 
+/* 向主循环提供脚本生成的相机和驱动应答字节。 */
 bool serial_read(enum serial_port port, uint8_t *byte)
 {
 	if (port == SERIAL_CAMERA && camera_pos < sizeof(camera_rx))
@@ -97,6 +116,7 @@ bool serial_read(enum serial_port port, uint8_t *byte)
 	return true;
 }
 
+/* 截获主控输出的协议字节供测试应答或断言。 */
 bool serial_write(enum serial_port port, const uint8_t *data, size_t size)
 {
 	if (port == SERIAL_BT && dump_uart)
@@ -153,8 +173,11 @@ bool serial_write(enum serial_port port, const uint8_t *data, size_t size)
 	return true;
 }
 
+/* 按当前场景提供有线或丢线的灰度掩码。 */
 uint8_t board_gray(void) { return scenario == LINE_LOSS && ms >= 7500 ? 0xff : 0xe7; }
+/* 按轮号返回独立的模拟编码器读数。 */
 uint32_t board_encoder(unsigned int side) { (void)side; return encoder; }
+/* 记录并模拟两轮使能结果。 */
 bool board_wheels_start(int left, int right, bool continuous)
 {
 	assert(continuous && left == 1 && right == -1);
@@ -167,14 +190,18 @@ bool board_wheels_start(int left, int right, bool continuous)
 	wheels_on = true;
 	return true;
 }
+/* 捕获真实循线器下发的两轮 PWM。 */
 bool board_lap_set_wheels(int left, int right)
 {
 	assert(wheels_on && left >= 0 && right <= 0);
 	return true;
 }
+/* 将模拟车轮切换到停止状态。 */
 void board_wheels_stop(void) { wheels_on = false; }
+/* 报告模拟车轮是否仍在运行。 */
 bool board_wheels_active(void) { return wheels_on; }
 
+/* 观察当前屏幕状态以驱动阶段断言。 */
 bool display_poll(const struct ui_state *s, uint32_t now)
 {
 	if (now == 950)
@@ -203,12 +230,11 @@ bool display_poll(const struct ui_state *s, uint32_t now)
 			assert(lap.base_target <= 460);
 	}
 	if (s->menu.page == MENU_RESULT || (lap_at && s->menu.page == MENU_DETAIL)) {
-		/* Leave the result page on screen long enough to capture post-stop telemetry. */
+		/* 结果页停留足够久，以便采到停车后的遥测。 */
 		if (!stopped_at)
 			stopped_at = now;
 		if (scenario == COMPLETE || scenario == FINISH_VISION_LOSS) {
-			/* The 25 ms synthetic camera continues after stopping. Those frames
-			 * must never change the lap extrema or the exact travel sample count. */
+			/* 模拟相机停车后仍每 25 ms 发包。整圈极值和行驶采样数在完圈时应已冻结。 */
 			assert(offset_range.start == lap_at && offset_range.target_mm == locked_target);
 			assert(offset_range.samples == (stopped_at - 1) / 25 - (lap_at - 1) / 25);
 			assert(!offset_range.missing && offset_range.max_gap <= 25);
@@ -248,6 +274,7 @@ bool display_poll(const struct ui_state *s, uint32_t now)
 	return true;
 }
 
+/* 提供无需真实 LED 的板级替身。 */
 void board_led(bool on)
 {
 	(void)on;
@@ -256,6 +283,7 @@ void board_led(bool on)
 	assert(++ms < 50000);
 }
 
+/* 选择正常完圈或单项故障场景，运行真实主循环并核对输出。 */
 int main(int argc, char **argv)
 {
 	const char *names[] = { "complete", "vision_loss", "wheel_trip", "line_loss", "shaft_fault", "manual_stop",

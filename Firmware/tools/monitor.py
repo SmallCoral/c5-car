@@ -1,4 +1,4 @@
-"""Receive Coral-C5 version 1 through 7 telemetry over HC-08 BLE or a wired UART."""
+"""通过 HC-08 蓝牙或有线 UART 接收 Coral-C5 的 v1～v7 遥测。"""
 
 import argparse
 import asyncio
@@ -40,12 +40,14 @@ DEFAULT_UUID = "0000ffe1-0000-1000-8000-00805f9b34fb"
 
 
 class Decoder:
-    """BLE notifications are arbitrary fragments, not complete CSV records."""
+    """蓝牙通知可能截断或合并 CSV 行，需先拼接再解析。"""
 
+    # 初始化跨通知保留的接收缓冲和解析计数。
     def __init__(self):
         self.buffer = bytearray()
         self.invalid = 0
 
+    # 拼接字节、按行拆包，按版本校验字段并产出有效记录。
     def feed(self, data):
         self.buffer.extend(data)
         records = []
@@ -70,8 +72,8 @@ class Decoder:
                     raise ValueError("invalid grayscale status")
                 if not 0 <= record["lap_status"] < len(LAP_STATUS):
                     raise ValueError("invalid lap status")
-                # Lost BLE fragments can splice two rows into a valid column
-                # count. Reject impossible flags instead of charting them.
+                # 蓝牙丢片可能把两行拼成列数恰好正确的一行。
+                # 绘图前还要检查标志字段的合法范围。
                 if any(record[field] not in (0, 1) for field in BOOLEAN_FIELDS):
                     raise ValueError("invalid boolean field")
                 records.append(record)
@@ -83,7 +85,9 @@ class Decoder:
         return records
 
 
+# 将有效遥测输出到终端与文件，并关联相邻轮速采样。
 class Sink:
+    # 创建采样输出并初始化序号及轮速历史。
     def __init__(self, output):
         self.decoder = Decoder()
         self.output = output
@@ -95,6 +99,7 @@ class Sink:
         self.count = 0
         self.bytes_received = 0
 
+    # 核对序号连续性，计算有符号球位偏差及轮速变化后保存一行。
     def accept(self, data):
         self.bytes_received += len(data)
         for record in self.decoder.feed(data):
@@ -154,6 +159,7 @@ class Sink:
             )
 
 
+# 订阅 HC-08 通知并将各分片送入同一解析器。
 async def receive_ble(args, sink):
     try:
         from bleak import BleakClient, BleakScanner
@@ -190,6 +196,7 @@ async def receive_ble(args, sink):
             raise RuntimeError("Connected but no valid C5 frames received; check MCU firmware and UART baud")
 
 
+# 从有线串口分批读取并复用同一套遥测解析。
 def receive_serial(args, sink):
     try:
         import serial
@@ -207,6 +214,7 @@ def receive_serial(args, sink):
         raise RuntimeError("No valid C5 frames received")
 
 
+# 处理扫描、实时采集或离线回放参数，选择对应的数据源。
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     mode = parser.add_mutually_exclusive_group(required=True)
@@ -229,7 +237,7 @@ def main():
         asyncio.run(receive_ble(args, None))
         return
     output = args.out or Path(datetime.now().strftime("c5-%Y%m%d-%H%M%S.csv"))
-    # Exclusive creation prevents an accidental overwrite of a prior capture.
+    # 以独占创建模式打开采样文件，避免覆盖先前的实车数据。
     with output.open("x", newline="", encoding="utf-8") as stream:
         sink = Sink(stream)
         try:

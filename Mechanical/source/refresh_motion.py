@@ -1,4 +1,4 @@
-"""Refresh signed motion coordinates and placements without remeshing fixed geometry."""
+"""重新计算带符号的运动坐标及摆放，固定件沿用已有网格。"""
 from pathlib import Path
 import json
 import math

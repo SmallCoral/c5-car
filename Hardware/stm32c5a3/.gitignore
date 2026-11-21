@@ -1,4 +1,4 @@
-# Local editor and operating-system state
+# 操作系统和编辑器生成的本地文件。
 .DS_Store
 Thumbs.db
 desktop.ini
@@ -8,7 +8,7 @@ desktop.ini
 __pycache__/
 *.py[cod]
 
-# KiCad local state, locks and automatic backups
+# KiCad 本地状态、文件锁与自动备份。
 *.kicad_prl
 *.lck
 *.bak
@@ -17,7 +17,7 @@ __pycache__/
 _autosave-*
 ~*.kicad_*
 
-# Firmware build output and local tool overrides
+# 固件构建产物和这台电脑专用的工具设置。
 build/
 Debug/
 Release/
@@ -35,14 +35,14 @@ compile_commands.json
 *.d
 *.log
 
-# Credentials and machine-local settings
+# 凭据与本机配置。
 .env
 .env.*
 !.env.example
 *.pem
 *.key
 
-# Rendered review intermediates; deliverable PDFs and board previews are retained
+# 评审渲染的中间文件。交付用 PDF 和电路板预览纳入版本管理。
 Hardware/*/docs/previews/
 Hardware/Shared/sources/*_drawing.png
 

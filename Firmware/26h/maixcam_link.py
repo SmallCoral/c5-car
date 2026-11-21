@@ -1,3 +1,5 @@
+# 相机端的网络预览入口。读取本地 Wi-Fi 设置，在局域网公布地址后逐帧发送视频。
+
 from maix import app, camera, err, image, network, time
 import json
 from pathlib import Path
@@ -18,8 +20,9 @@ MAGIC = b"MCJ1"
 HEADER = struct.Struct("!4sIHH")
 
 
+# 优先复用设备已有的 Wi-Fi 地址，必要时读取本地热点配置。
 def ensure_wifi():
-    # Keep this object alive for the entire application lifetime.
+    # 在整个应用运行期间保留无线接口对象。
     wifi = network.wifi.Wifi()
     ip = wifi.get_ip()
 
@@ -50,6 +53,7 @@ def ensure_wifi():
     return wifi, ip
 
 
+# 建立用于局域网发现的广播套接字。
 def make_discovery_socket(local_ip):
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     sock.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
@@ -57,6 +61,7 @@ def make_discovery_socket(local_ip):
     return sock
 
 
+# 广播可供电脑连接的视频地址。
 def announce(discovery, local_ip):
     message = "MCJ1|{}|{}|{}|{}".format(
         local_ip,
@@ -70,6 +75,7 @@ def announce(discovery, local_ip):
     )
 
 
+# 等待并接入电脑端图传连接。
 def accept_client(server):
     try:
         conn, address = server.accept()
@@ -83,6 +89,7 @@ def accept_client(server):
     return conn
 
 
+# 封装并送出一帧图像的头部和像素数据。
 def send_frame(conn, header, payload):
     try:
         conn.sendall(header)
@@ -97,6 +104,7 @@ def send_frame(conn, header, payload):
         return False
 
 
+# 初始化相机与网络服务，向已连接电脑持续发送图像。
 def main():
     wifi, local_ip = ensure_wifi()
 

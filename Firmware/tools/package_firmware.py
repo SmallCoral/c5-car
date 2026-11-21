@@ -1,4 +1,4 @@
-"""Build a validated OTA file and a combined bootloader/application first-install HEX."""
+"""校验应用后生成 OTA 包，再合并引导程序生成首次安装用 HEX。"""
 
 import argparse
 from pathlib import Path
@@ -7,11 +7,13 @@ import struct
 from ota_protocol import APP_ADDR, APP_META, STAGE_META, image_header
 
 
+# 为 Intel HEX 记录生成长度、地址、类型和校验和。
 def hex_record(address, kind, data):
     record = bytes((len(data), address >> 8, address & 255, kind)) + data
     return ":" + (record + bytes((-sum(record) & 255,))).hex().upper()
 
 
+# 将指定地址的多个二进制区段编码为 HEX，跨高位地址时切换扩展记录。
 def make_hex(segments):
     lines = []
     upper = None
@@ -25,6 +27,7 @@ def make_hex(segments):
     return "\n".join(lines + [hex_record(0, 1, b"")]) + "\n"
 
 
+# 打包应用 OTA 以及包含引导程序、元数据和应用的首次安装 HEX。
 def package(app_path, boot_path, out):
     app = app_path.read_bytes()
     boot = boot_path.read_bytes()

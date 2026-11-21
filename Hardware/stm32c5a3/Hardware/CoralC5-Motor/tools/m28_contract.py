@@ -1,17 +1,14 @@
-"""Independent M2.8 connectivity intent applied to the saved M2.7 live netlist.
-
-The lists below come from the handoff requirements and manufacturer pinouts.
-They deliberately do not read the current schematic or its exported netlist.
-"""
+"""将独立定义的 M2.8 连接要求应用于保存的 M2.7 网表。预期连接来自交接要求与厂家引脚定义，独立于本次待检查的网表。"""
 
 PIN_MAP = {'U1:1':'U1:3','U1:2':'U1:5','U1:3':'U1:7','U1:6':'U1:8',
            'U1:7':'U1:1','U1:8':'U1:2','U1:9':'U1:9','U1:10':'U1:4'}
-REMOVED_PINS = {'U1:4','U1:5'}  # old unused PG/SS; no corresponding AP64500 pins
+REMOVED_PINS = {'U1:4','U1:5'}  # 旧 PG、SS 已闲置，AP64500 没有对应引脚。
 DETACH = {'C63:1','C63:2','J14:B26','J14:B27'}
 B_LOADS = {'C72:1','C78:1','C81:1','C82:1','J27:1','R70:1','U10:4',
            'U16:2','U16:3','U16:4','U16:5','U16:6','U16:7','U16:8'}
 ADDED_PHYSICAL = set('C74 C75 C84 C85 C86 C87 C88 C89 C90 C91 C92 C93 C94 J18 J25 L2 Q3 R61 R62 R63 R64 R65 R66 R67 R73 R74 R75 R79 R93 U6 U8 U11 U12'.split())
 
+# 在历史网表分组上施加 M2.8 已确认的连线变化，生成独立预期值。
 def intended(before):
     parts=set()
     old_pins={p for group in before for p in group}
@@ -20,13 +17,15 @@ def intended(before):
     for group in before:
         retained=frozenset(PIN_MAP.get(p,p) for p in group if p not in REMOVED_PINS|DETACH)
         if retained:parts.add(retained)
+    # 按器件引脚查找并取出原先的网络组。
     def take(anchor):
         matches=[g for g in parts if anchor in g]
         if len(matches)!=1:raise ValueError('Missing/duplicate intent anchor '+anchor)
         parts.remove(matches[0]);return set(matches[0])
+    # 在已有网络组内加入指定新增端点。
     def augment(anchor,add):parts.add(frozenset(take(anchor)|set(add.split())))
-    # Split existing raw 5V: retain Lichee/Core/gray/LDO on A; move only the
-    # reviewed Maix and Action4 input nodes to the new B converter.
+    # 拆分原始 5 V 电源，A 路保留荔枝派、Core、灰度和 LDO。
+    # 仅将已核对的 Maix 和 Action 4 输入节点移到 B 路变换器。
     rail_a=take('L1:2')
     if not B_LOADS <= rail_a:raise ValueError('B consumers do not originate on old raw 5V')
     rail_a-=B_LOADS

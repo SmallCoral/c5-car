@@ -1,3 +1,5 @@
+// 电脑端镜像解析、身份检查和打包逻辑，可独立于 BLE 使用。
+
 use coral_core::ota::{self, Header};
 pub mod exchange;
 use std::{fs, path::Path};
@@ -10,6 +12,7 @@ pub struct Hello {
     pub crc: u32,
 }
 impl Hello {
+    // 从应答数据读取协议字段并检查其有效性。
     pub fn decode(p: &[u8]) -> Result<Self> {
         if p.len() != 32 || ota::get32(p) != 0 {
             return Err("invalid HELLO reply".into());
@@ -34,6 +37,7 @@ impl Hello {
         })
     }
 }
+// 检查设备返回的续传偏移是否与当前镜像相容。
 pub fn resume_offset(p: &[u8], length: usize) -> Result<usize> {
     if p.len() < 8 || ota::get32(p) != 0 {
         return Err("invalid BEGIN reply".into());
@@ -44,6 +48,7 @@ pub fn resume_offset(p: &[u8], length: usize) -> Result<usize> {
     }
     Ok(n)
 }
+// 将设备身份与预期的长度和 CRC 对照。
 pub fn verify_identity(line: &str, length: u32, crc: u32) -> Result<()> {
     let fields: Vec<_> = line.trim().split(',').collect();
     if fields.len() != 4
@@ -57,6 +62,7 @@ pub fn verify_identity(line: &str, length: u32, crc: u32) -> Result<()> {
     Ok(())
 }
 
+// 读取应用文件，校验包头及向量后取得载荷。
 pub fn read_image(path: &Path) -> Result<(Vec<u8>, Header)> {
     let mut data = fs::read(path)?;
     match path
@@ -83,6 +89,7 @@ pub fn read_image(path: &Path) -> Result<(Vec<u8>, Header)> {
         _ => Err("use an application .ota or .bin file".into()),
     }
 }
+// 生成一条带校验和的 Intel HEX 记录。
 fn hex_record(address: u16, kind: u8, data: &[u8]) -> String {
     use std::fmt::Write;
     let mut bytes = vec![data.len() as u8, (address >> 8) as u8, address as u8, kind];
@@ -96,6 +103,7 @@ fn hex_record(address: u16, kind: u8, data: &[u8]) -> String {
     line.push('\n');
     line
 }
+// 合并带地址的区域并输出正确的扩展地址与结束记录。
 pub fn make_hex(segments: &[(u32, &[u8])]) -> Result<String> {
     let mut sorted = segments.to_vec();
     sorted.sort_by_key(|(address, _)| *address);
@@ -125,6 +133,7 @@ pub fn make_hex(segments: &[(u32, &[u8])]) -> Result<String> {
     output += &hex_record(0, 1, &[]);
     Ok(output)
 }
+// 组装 OTA 和首次安装镜像文件。
 pub fn package(app: &Path, boot: &Path, out: &Path) -> Result<Header> {
     let (image, header) = read_image(app)?;
     let boot = fs::read(boot)?;

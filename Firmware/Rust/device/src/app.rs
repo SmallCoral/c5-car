@@ -1,3 +1,5 @@
+// Rust 裸机应用前台，采集按键与反馈，协调电机状态、遥测与显示。
+
 use crate::{
     board,
     display::Display,
@@ -25,6 +27,7 @@ pub static debug_key_request: AtomicU32 = AtomicU32::new(0);
 #[allow(non_upper_case_globals)]
 #[unsafe(no_mangle)]
 pub static debug_stop_reason: AtomicU32 = AtomicU32::new(0);
+// 在启用调试时记录停止原因。
 fn trace(reason: u32) {
     #[cfg(debug_assertions)]
     debug_stop_reason.store(reason, Ordering::Relaxed);
@@ -50,6 +53,7 @@ struct App {
     remote_overflow: bool,
 }
 impl App {
+    // 结束本次任务并停止相关驱动。
     fn stop(&mut self, now: u32) {
         board::wheels_stop();
         if self.step.running() {
@@ -58,6 +62,7 @@ impl App {
         self.controls.running = false;
         self.wheels_started = false;
     }
+    // 将当前任务、档位与方向映射到轮输出。
     fn start_wheels(&mut self) -> bool {
         let c = &self.controls;
         let duty = c.duty();
@@ -68,6 +73,7 @@ impl App {
         );
         self.wheels_started
     }
+    // 消抖并分发实物或调试按键。
     fn keys(&mut self, now: u32) {
         let raw = board::keys();
         let mut event = None;
@@ -115,6 +121,7 @@ impl App {
             self.stop(now);
         }
     }
+    // 推进驱动的启动、检查、停止和故障处理。
     fn motors(&mut self, now: u32) {
         if !self.controls.running {
             return;
@@ -138,6 +145,7 @@ impl App {
             self.stop(now);
         }
     }
+    // 消费蓝牙输入，分发停止和升级等命令。
     fn remote(&mut self, b: u8, now: u32) {
         if b == b'!' {
             if self.controls.running {
@@ -185,6 +193,7 @@ impl App {
             }
         }
     }
+    // 刷新供屏幕显示的应用状态。
     fn update(&mut self, now: u32) {
         let interval = now.wrapping_sub(self.sampled_at);
         if interval >= 100 {
@@ -222,6 +231,7 @@ impl App {
         self.ui.step_rpm = self.step.rpm;
         self.ui.step_rpm_valid = self.step.rpm_valid && self.ui.step_online;
     }
+    // 把当前传感器和执行器状态编码到蓝牙串口。
     fn telemetry(&mut self, now: u32, lcd: bool) {
         if !elapsed(now, self.telemetry_at, 500) {
             return;
@@ -277,6 +287,7 @@ impl App {
         self.ui.bt_tx = serial::send(Id::Bt, r.csv().as_bytes());
     }
 }
+// 初始化板级资源后循环执行按键、控制和通信任务。
 pub fn run() -> ! {
     if !board::init() || !serial::init() {
         board::panic_stop();

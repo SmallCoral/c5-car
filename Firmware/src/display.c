@@ -1,3 +1,5 @@
+/* LCD 传输调度。先由 UI 生成一小段像素，再写屏幕窗口，避免整屏传输占满主循环；长度条还可独立刷新。 */
+
 #include "board.h"
 #include "config.h"
 #include "display.h"
@@ -14,17 +16,17 @@ static unsigned int pipe_y = UI_PIPE_END;
 static uint32_t pipe_time, pipe_updates;
 static bool pipe_valid;
 
+/* 向 LCD 发送一个命令及其随附的参数字节。 */
 static bool command(uint8_t cmd, const uint8_t *data, size_t length)
 {
 	return board_lcd_write(false, &cmd, 1) &&
 	       (!length || board_lcd_write(true, data, length));
 }
 
+/* 按厂家时序复位屏幕并配置扫描方向、像素格式和显示窗口。 */
 bool display_init(void)
 {
-	/* ZJY180S0800TG01 supplier initialization, portrait.
-	 * User verified that 0xc0 was upside down in this mounting orientation.
-	 */
+	/* 按厂家竖屏序列初始化 ZJY180S0800TG01。实车确认当前安装方向使用 0xc0 会倒置。 */
 	static const uint8_t init[] = {
 		0xb1, 3, 0x05, 0x3c, 0x3c,
 		0xb2, 3, 0x05, 0x3c, 0x3c,
@@ -66,6 +68,7 @@ bool display_init(void)
 	return true;
 }
 
+/* 设置行窗口并将对应的 RGB565 像素传给 LCD。 */
 static bool write_rows(unsigned int y)
 {
 	uint8_t columns[] = { 0, 2, 0, 129 };
@@ -80,12 +83,14 @@ static bool write_rows(unsigned int y)
 	return false;
 }
 
+/* 读取最近实际绘到长度条上的球位快照和更新计数。 */
 uint32_t display_last_ball(struct ball_view *shown)
 {
 	*shown = pipe_shown;
 	return pipe_valid ? pipe_updates : 0;
 }
 
+/* 优先刷新实时长度条所在的行，减少球位显示延迟。 */
 static bool poll_pipe(const struct ball_view *ball, uint32_t now)
 {
 	if (!elapsed(now, pipe_time, 2))
@@ -110,12 +115,14 @@ static bool poll_pipe(const struct ball_view *ball, uint32_t now)
 	return true;
 }
 
+/* 判断当前页面是否有需要单独更新的长度条。 */
 static bool shows_pipe(const struct ui_state *ui)
 {
 	return ui->menu.page == MENU_DIAGNOSTIC && !ui->updating && !ui->calibrating &&
 	       (ui->task == TASK_LAP || ui->task == TASK_BALANCE);
 }
 
+/* 分次取两行进行绘制和传输，完成当前快照后再换到新状态。 */
 bool display_poll(const struct ui_state *state, uint32_t now)
 {
 	bool lap_page;
@@ -126,7 +133,7 @@ bool display_poll(const struct ui_state *state, uint32_t now)
 			   state->menu.item != frame_state.menu.item || state->menu.tool != frame_state.menu.tool ||
 			   state->menu.notice != frame_state.menu.notice ||
 			   state->menu.offset_driving != frame_state.menu.offset_driving;
-	/* Complete each scan even when a held key moves the target every 50 ms. */
+	/* 即使长按每 50 ms 改一次目标，也要把当前轮的屏幕扫描画完。 */
 	if (menu_change || (next_y == UI_HEIGHT && (state->menu.target_mm != frame_state.menu.target_mm ||
 						    elapsed(now, frame_time, 200)))) {
 		frame_state = *state;
@@ -137,9 +144,7 @@ bool display_poll(const struct ui_state *state, uint32_t now)
 			pipe_valid = false;
 		}
 	}
-	/* The live pipe owns these rows for the whole LAP page. A slower full
-	 * scan must never repaint the ball from an older snapshot.
-	 */
+	/* LAP 页的这些行由实时球位条独占，慢速整页扫描须避开，防止用旧快照覆盖球位。 */
 	lap_page = shows_pipe(&frame_state);
 	if (lap_page && next_y == UI_PIPE_TOP)
 		next_y = UI_PIPE_END;
@@ -149,7 +154,7 @@ bool display_poll(const struct ui_state *state, uint32_t now)
 		return true;
 	}
 	stripe_time = now;
-	/* Two rows bound LCD work so a short A marker can be sampled repeatedly. */
+	/* 每次只传两行，主循环才能在短暂经过 A 横线时多次采样。 */
 	ui_render_rows(framebuffer, &frame_state, next_y, 2);
 	if (!write_rows(next_y))
 		return false;

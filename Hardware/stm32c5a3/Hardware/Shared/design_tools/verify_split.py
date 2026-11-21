@@ -1,8 +1,4 @@
-"""Audit both native KiCad boards, their fresh netlists, and the mating contract.
-
-Run with KiCad 10's Python after ERC, netlist export, board placement and DRC.
-This is a connectivity and work-in-progress audit, not a fabrication release gate.
-"""
+"""在两块原生板、最新网表和插接约定间核对连接。使用 KiCad 10 的 Python，在 ERC、网表导出、摆件和 DRC 后运行，记录在制工程状态。"""
 from pathlib import Path
 from collections import Counter
 import json, csv, re, sys, xml.etree.ElementTree as ET
@@ -13,6 +9,7 @@ from sexpr import parse, node, nodes, prop
 from pin_functions import parse_alternate_functions
 
 checks=[];failures=[]
+# 记录已通过项或对应的异常。
 def check(title,condition):
     if condition:checks.append(title)
     else:failures.append(title)
@@ -59,8 +56,8 @@ for key,name in [('C','CoralC5-Core'),('E','CoralC5-Expansion')]:
     check(name+' ERC clean',not any(s['violations'] for s in erc['sheets']))
     drc=json.loads((folder/'docs/drc.json').read_text(encoding='utf-8'))
     check(name+' schematic parity clean',not drc['schematic_parity'])
-    # Dangling ends are reported by native DRC while routing is incomplete.
-    # Keep them in remaining_drc without treating them as placement collisions.
+    # 未布完线时，原生 DRC 会报告悬空端点。
+    # 将其保留在 remaining_drc 中，与器件摆放碰撞分开记录。
     check(name+' no placement shorts, overlaps or silk errors',all(v['type'] in ['hole_clearance','track_dangling'] for v in drc['violations']))
     tracks=list(board.GetTracks());zones=list(board.Zones())
     copper_zones=[z for z in zones if not z.GetIsRuleArea()]
@@ -75,9 +72,13 @@ for key,name in [('C','CoralC5-Core'),('E','CoralC5-Expansion')]:
     with (folder/'docs/BOM.csv').open('w',encoding='utf-8-sig',newline='') as out:
         w=csv.writer(out);w.writerow(['Reference','Value','Footprint','DNP','3D_model']);w.writerows(bom)
 
+# 构造 Core 侧的位号与针号键。
 def C(ref,pin):return ('C',ref,str(pin))
+# 构造扩展板侧的位号与针号键。
 def E(ref,pin):return ('E',ref,str(pin))
+# 要求指定引脚解析到同一网络。
 def same(title,*pins):check(title,len({netpin[p] for p in pins})==1)
+# 确认不同信号未被合并到同一网络。
 def distinct(title,*pins):check(title,len({netpin[p] for p in pins})==len(pins))
 
 interface=projects['C']['manifest']['interface']
@@ -102,8 +103,8 @@ for contact,d in interface.items():
     elif d['mcu_pin']:
         same(contact+' MCU special signal pad',C('U1',d['mcu_pin']),C('J13',contact))
 
-# Use actual placed pad coordinates and copper-layer membership. PAD.GetLayer()
-# reports a base layer for edge-connector pads and does not identify their face.
+# 读取已放置焊盘的实际坐标及所属铜层。金手指焊盘的 PAD.GetLayer()
+# 只返回一个基准层，单靠它无法判断触点在哪一面。
 edge=projects['C']['fps']['J13'];mcu=projects['C']['fps']['U1']
 edgepads={p.GetNumber():p for p in edge.Pads() if p.GetNumber()}
 mcupads={p.GetNumber():p for p in mcu.Pads()}
@@ -208,7 +209,7 @@ for k,refs in [('C',['SW1','SW2','SW5']),('E',['SW3','SW4'])]:
     for ref in refs:
         check(ref+' SMT two-terminal 2.5mm switch',projects[k]['fps'][ref].GetFPID().GetLibItemName()=='SW_SD1107_2P_6x3_H2.5' and len(list(projects[k]['fps'][ref].Pads()))==2)
 
-# Compare every contact with the pinned upstream template, including side A/B.
+# 逐一比对固定版本的原模板，检查每个触点及其 A/B 面。
 original=pcb.FootprintLoad(str(H/'Shared/Streamline/sl.pretty'),'SL_BOARD')
 edge=projects['C']['fps']['J13'];anchor=edge.GetPosition()
 for p in original.Pads():

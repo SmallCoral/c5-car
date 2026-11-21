@@ -1,28 +1,35 @@
+/* 两轮循线。灰度位置决定左右速度差，轮编码器反馈决定 PWM；比赛用双轮平均里程减速停车，调试模式也可识别 A 横线。 */
+
 #include <string.h>
 #include "config.h"
 #include "lap.h"
 #include "logic.h"
 
+/* 将整数限制在给定上下界内。 */
 static int clamp(int value, int low, int high)
 {
 	return value < low ? low : value > high ? high : value;
 }
 
+/* 取两个整数中较小的一个，用于叠加多个速度上限。 */
 static int min_int(int a, int b)
 {
 	return a < b ? a : b;
 }
 
+/* 取幅值，便于对左右两侧使用同一阈值。 */
 static int magnitude(int value)
 {
 	return value < 0 ? -value : value;
 }
 
+/* 判断是否为没有 A 点行程参考的高速循线。 */
 static bool unmapped_race(const struct lap *lap)
 {
 	return lap->level == LAP_RACE_LEVEL && !lap->from_a;
 }
 
+/* 按覆盖的探头数和黑线段数判断宽横线。 */
 static bool wide_marker(const struct gray_reading *gray)
 {
 	return gray->status != GRAY_WARMUP && gray->groups >= 1 &&
@@ -30,30 +37,29 @@ static bool wide_marker(const struct gray_reading *gray)
 	       gray->count >= LAP_MARKER_CHANNELS;
 }
 
+/* 识别起步时探头压在窄线、A 横线或其他表面，选择驶离方式。 */
 enum lap_start_surface lap_start_surface(const struct gray_reading *gray)
 {
-	/* Measured A entry: 0x28/0x0d/0x3d (split), then a broad crossbar.
-	 * A central line plus a side marking may be split before full coverage.
-	 */
+	/* 实车进入 A 线时先出现分段的 0x28、0x0d、0x3d，随后宽线覆盖。中央纵线与侧标记可能同时出现。 */
 	if (wide_marker(gray) || (gray->status == GRAY_SPLIT &&
 	    gray->groups == 2 && gray->count >= 2 && (gray->line & 0x3c)))
 		return LAP_START_MARKER;
 	return gray->status == GRAY_LINE ? LAP_START_NARROW : LAP_START_UNALIGNED;
 }
 
+/* 在终点里程窗口内识别仅覆盖三个探头的 A 标记。 */
 static bool partial_marker(const struct lap *lap, const struct gray_reading *gray)
 {
 	uint32_t progress = lap_progress(lap);
 
-	/* Three black probes can also occur on a curve. Accept a partial A only
-	 * inside the measured lap's finish window, with a longer hold time.
-	 */
+	/* 弯道也可能同时压黑三个探头。部分覆盖只在实测终点窗口内有效，并要求更长的持续时间。 */
 	return progress >= LAP_PARTIAL_MIN_COUNTS &&
 	       progress <= LAP_PARTIAL_MAX_COUNTS &&
 	       gray->status != GRAY_WARMUP && gray->groups >= 1 &&
 	       gray->groups <= 2 && gray->count >= LAP_PARTIAL_CHANNELS;
 }
 
+/* 将速度档位转换为以编码器计数/秒表示的巡航速度。 */
 int lap_speed(unsigned int level)
 {
 	static const int speeds[LAP_SPEED_LEVELS] = {
@@ -64,12 +70,14 @@ int lap_speed(unsigned int level)
 	return speeds[level % LAP_SPEED_LEVELS];
 }
 
+/* 取两轮累计行程的平均值作为圈内里程，求和时加宽以免溢出。 */
 uint32_t lap_progress(const struct lap *lap)
 {
 	return (uint32_t)(((uint64_t)lap->wheel[0].progress +
 			   lap->wheel[1].progress) / 2);
 }
 
+/* 锁存结束原因并清零目标和驱动输出，供结果页读取。 */
 void lap_stop(struct lap *lap, enum lap_status status)
 {
 	lap->status = status;
@@ -85,6 +93,7 @@ void lap_stop(struct lap *lap, enum lap_status status)
 	}
 }
 
+/* 清零圈内控制状态，记录起点编码器与首次控制时刻。 */
 static void initialize(struct lap *lap, uint32_t now, uint32_t left,
 		       uint32_t right, unsigned int level, bool reverse)
 {
@@ -97,6 +106,7 @@ static void initialize(struct lap *lap, uint32_t now, uint32_t left,
 	lap->wheel[0].moved_at = lap->wheel[1].moved_at = now;
 }
 
+/* 根据起步灰度选择横线驶离或窄线跟踪，启动调试循线。 */
 bool lap_start(struct lap *lap, const struct gray_reading *gray, uint32_t now,
 	       uint32_t left, uint32_t right, unsigned int level, bool reverse)
 {
@@ -113,6 +123,7 @@ bool lap_start(struct lap *lap, const struct gray_reading *gray, uint32_t now,
 	return true;
 }
 
+/* 从按键处建立圈内里程零点，使用传入的终点门槛启动比赛。 */
 bool lap_start_distance(struct lap *lap, const struct gray_reading *gray, uint32_t now,
 			uint32_t left, uint32_t right, unsigned int level, uint32_t finish_counts)
 {
@@ -130,6 +141,7 @@ bool lap_start_distance(struct lap *lap, const struct gray_reading *gray, uint32
 	return true;
 }
 
+/* 启动限时的架空双轮方向检查。 */
 void lap_check_start(struct lap *lap, uint32_t now, uint32_t left,
 		     uint32_t right, bool reverse)
 {
@@ -138,6 +150,7 @@ void lap_check_start(struct lap *lap, uint32_t now, uint32_t left,
 	lap->wheel[0].pwm = lap->wheel[1].pwm = LAP_CHECK_PERMILLE;
 }
 
+/* 对单轮计数求差，按采样周期估计速度，同时检查异常跳变和停转。 */
 static bool sample_wheel(struct lap *lap, unsigned int side, uint32_t count,
 			 uint32_t now, uint32_t dt)
 {
@@ -146,7 +159,7 @@ static bool sample_wheel(struct lap *lap, unsigned int side, uint32_t count,
 	int32_t delta = encoder_delta(count, wheel->previous);
 
 	wheel->previous = count;
-	/* Reject discontinuities before multiplying or negating a signed delta. */
+	/* 计算乘积或对带符号增量取负前，先排除异常跳变。 */
 	if (delta < -10000 || delta > 10000) {
 		lap_stop(lap, LAP_ENCODER);
 		return false;
@@ -172,6 +185,7 @@ static bool sample_wheel(struct lap *lap, unsigned int side, uint32_t count,
 	return true;
 }
 
+/* 按目标轮速计算前馈，再用 PI 补偿实测速度误差并限制 PWM。 */
 static void speed_control(struct lap_wheel *wheel, int target, uint32_t dt, int pwm_limit)
 {
 	int error;
@@ -179,10 +193,7 @@ static void speed_control(struct lap_wheel *wheel, int target, uint32_t dt, int 
 	int drive;
 	int pwm;
 
-	/* Forward acceleration and differential slew were limited separately.
-	 * Limiting each wheel again would delay countersteering and erase turns
-	 * during startup when both wheels hit the same acceleration limit.
-	 */
+	/* 共同前进加速度与差速变化已分别限幅。再逐轮限幅会拖慢反打，甚至让起步时两轮目标相同而失去转向。 */
 	wheel->target = target;
 	error = wheel->target - wheel->cps;
 	integral = clamp(wheel->integral + error * (int)dt, -400000, 800000);
@@ -199,7 +210,7 @@ struct course_target {
 	int bend_permille;
 };
 
-/* 两段弯道从 A 点起跑实测。两段入口都较平，第一弯中段比第二弯需要更大差速。表中数值为半轮速差占平均轮速的千分比。 */
+/* 从 A 点起跑，按轮程在两段弯道的实测点间插值。两处入口较平，第一弯中段需要更大差速。表值是半轮速差占平均轮速的千分比。 */
 static int race_bend_ratio(int counts, unsigned int arc)
 {
 	static const struct {
@@ -228,6 +239,7 @@ static int race_bend_ratio(int counts, unsigned int arc)
 	return 0;
 }
 
+/* 把当前轮程映射到直道或两段圆弧，给出巡航上限和转弯差速。 */
 static struct course_target course_target(const struct lap *lap)
 {
 	struct course_target target = {
@@ -260,6 +272,7 @@ static struct course_target course_target(const struct lap *lap)
 	return target;
 }
 
+/* 结合灰度误差与实际轮速差，累积弯道所需的持续差速。 */
 static void update_bend_ratio(struct lap *lap, int error, int dt)
 {
 	int sign = error < 0 ? -1 : 1;
@@ -270,22 +283,19 @@ static void update_bend_ratio(struct lap *lap, int error, int dt)
 
 	if (unmapped_race(lap))
 		gain = LAP_RACE_BEND_KI;
-	/* Let small corrections decay near center. Hold an established bend
-	 * through centered samples so it does not require a permanent offset.
-	 */
+	/* 靠近中线时逐步消退小修正。已建立的弯道差速在短暂居中时继续保持，避免靠持续偏离中线才能转弯。 */
 	if (magnitude(lap->last_position) <= LAP_CENTER_POSITION + LAP_POSITION_DEADBAND &&
 	    magnitude(ratio) < 100000)
 		ratio -= ratio * dt / (LAP_TRIM_DECAY_MS + dt);
 
-	/* Grow the integral only when the encoders confirm a turn in this
-	 * direction and the wheels are keeping up. Always allow unwinding.
-	 */
+	/* 编码器确认实际转向且两轮跟得上指令时才继续积分。反向消除积累量始终允许。 */
 	if (sign * ratio < 0 ||
 	    (sign * lap->differential > lap->base_target / 16 && lag < LAP_TURN_LAG_CPS))
 		ratio += error * dt * gain / 1000;
 	lap->bend_ratio_ppm = clamp(ratio, -limit, limit);
 }
 
+/* 将探头偏差、偏移速度和弯道前馈合成两轮所需的半速度差。 */
 static int line_steering(struct lap *lap, int dt, bool tracking, int bend_permille)
 {
 	int position = lap->last_position;
@@ -303,14 +313,12 @@ static int line_steering(struct lap *lap, int dt, bool tracking, int bend_permil
 	int bend;
 	int steer;
 
-	/* With no A reference all turn entry and release come from the probes. */
+	/* 没有 A 点里程参考时，入弯和回正都依据灰度探头。 */
 	if (unmapped_race(lap))
 		step += step / 2;
 	if (tracking)
 		update_bend_ratio(lap, error, dt);
-	/* Scale the learned turn with forward speed, including on approach to A.
-	 * Damp wheel-speed differences about that turn rather than about zero.
-	 */
+	/* 学到的差速按当前前进速度缩放，接近 A 时也如此。阻尼以该差速为基准。 */
 	bend = (bend_permille + lap->bend_ratio_ppm / 1000) * lap->base_target / 1000;
 	steer = error * LAP_LINE_KP / 1000 + outer * outer_gain / 1000;
 	if (lap->from_a && lap->level == LAP_RACE_LEVEL)
@@ -323,6 +331,7 @@ static int line_steering(struct lap *lap, int dt, bool tracking, int bend_permil
 	return lap->steering + clamp(steer - lap->steering, -step, step);
 }
 
+/* 用剩余计数平滑地从巡航速度过渡到停车前的末速。 */
 static int distance_finish_speed(const struct lap *lap, int cruise, uint32_t remaining)
 {
 	uint32_t distance = lap->carry_ball ? LAP_OFFSET_FINISH_COUNTS : LAP_FINISH_BLEND_COUNTS;
@@ -338,6 +347,7 @@ static int distance_finish_speed(const struct lap *lap, int cruise, uint32_t rem
 	return finish + (cruise - finish) * (int)blend / 1000;
 }
 
+/* 结合探头偏差、转向余量和剩余里程，求此刻允许的前进速度。 */
 static int forward_speed(const struct lap *lap, int steer, int cruise, bool narrow,
 			 int pwm_limit)
 {
@@ -353,8 +363,7 @@ static int forward_speed(const struct lap *lap, int steer, int cruise, bool narr
 	if (projected > offset)
 		offset = projected;
 	offset = clamp(offset - LAP_CENTER_POSITION, 0, 3000);
-	/* The extra cruise speed is available at center and tapers to zero
-	 * over the next probe interval, including predicted outward drift. */
+	/* 灰度阵列测得黑线居中时允许提速。取当前偏差和预测偏差中较大的一项，超出居中区域一个探头间距时扣完额外速度。 */
 	base = ceiling - offset * LAP_CORNER_SLOWDOWN / 1000 -
 		(ceiling - LAP_SPEED_FAST_CPS) * min_int(offset, 1000) / 1000;
 	if (magnitude(lap->differential) > turn)
@@ -379,6 +388,7 @@ static int forward_speed(const struct lap *lap, int steer, int cruise, bool narr
 	return clamp(base, LAP_SPEED_SLOW_CPS / 2, ceiling);
 }
 
+/* 分别限制共同轮速和差速的变化，再给左右轮下发各自目标。 */
 static void steer_control(struct lap *lap, uint32_t dt, bool narrow, bool lost_line)
 {
 	struct course_target course = course_target(lap);
@@ -401,10 +411,7 @@ static void steer_control(struct lap *lap, uint32_t dt, bool narrow, bool lost_l
 	/* 外轮接近速度上限时先留出转向差速，再决定共同前进速度。起步时两轮沿同一加速斜坡提升。 */
 	lap->base_target = min_int(lap->base_target, wheel_limit - magnitude(steer));
 	limit = clamp(lap->base_target - LAP_TARGET_MIN_CPS, 0, LAP_STEER_MAX_CPS);
-	/* On the measured course the fast run reached an 87% half-difference
-	 * on a bend that normally needs about 20%, then crossed the line twice.
-	 * Keep both wheels moving and leave room for gray feedback.
-	 */
+	/* 一次高速实跑在通常只需约 20% 半差速比的弯道达到 87%，随后两次越线。约束差速可保持两轮前进并留出灰度修正余量。 */
 	if (lap->from_a)
 		limit = min_int(limit, lap->base_target * LAP_COURSE_TURN_PERMILLE / 1000);
 	lap->steering = clamp(steer, -limit, limit);
@@ -412,6 +419,7 @@ static void steer_control(struct lap *lap, uint32_t dt, bool narrow, bool lost_l
 	speed_control(&lap->wheel[1], lap->base_target - lap->steering, dt, pwm_limit);
 }
 
+/* 从起点驶离、圈内里程与横线持续时间判断是否回到 A。 */
 static bool marker_finish(struct lap *lap, const struct gray_reading *gray,
 			  bool wide, uint32_t now)
 {
@@ -441,6 +449,7 @@ static bool marker_finish(struct lap *lap, const struct gray_reading *gray,
 	return false;
 }
 
+/* 按控制周期读轮速与灰度，检查保护条件，更新转向或锁存停车状态。 */
 bool lap_update(struct lap *lap, const struct gray_reading *gray, uint32_t now,
 		uint32_t left, uint32_t right)
 {
@@ -491,9 +500,7 @@ bool lap_update(struct lap *lap, const struct gray_reading *gray, uint32_t now,
 			lap->departing = false;
 		}
 		lap->line_at = now;
-		/* Binary probes move in whole-channel steps. Smooth the measurement
-		 * before differentiating so adjacent-probe changes do not kick yaw.
-		 */
+		/* 二值探头的位置按整通道跳变。先平滑位置再求导，避免跨探头瞬间产生过大转向。 */
 		position = lap->last_position +
 			(gray->position - lap->last_position) * (int)dt /
 			(int)(LAP_POSITION_FILTER_MS + dt);
@@ -505,24 +512,18 @@ bool lap_update(struct lap *lap, const struct gray_reading *gray, uint32_t now,
 			lap->position_rate = 0;
 		lap->last_position = position;
 	} else {
-		/* A gap/marker is not a measured derivative. Reacquisition must not
-		 * turn its accumulated position change into a one-period D kick.
-		 */
+		/* 横线或空白区间没有可靠的位置导数。重获线时重新建立差分基准，防止把整个缺口位移算在一个周期内。 */
 		lap->position_rate = 0;
 	}
 	if (lap->departing) {
-		/* Drive straight and slowly until the probes acquire the course.
-		 * A changing centroid across a start mark is not a curve.
-		 */
+		/* 刚起步时低速直行直到找到纵向窄线，避免把越过起点横线时的重心变化误作弯道。 */
 		lap->last_position = 0;
 		lap->position_rate = 0;
 	}
 	lap->narrow = narrow;
 	if (!lap->finish_counts && marker_finish(lap, gray, wide, now))
 		return true;
-	/* Brief gaps use the last line position at reduced speed; never drive blind
-	 * indefinitely. A starting crossbar gets a bounded departure allowance.
-	 */
+	/* 短时丢线以最近位置低速纠偏，持续丢线则停车。从起点横线驶离也设有独立的时间和里程上限。 */
 	if (!lap->departing && !narrow && elapsed(now, lap->line_at,
 		!lap->finish_counts && wide && !lap->departed ? 800U :
 		gray->status == GRAY_LOST ? LAP_LINE_LOST_MS : LAP_AMBIGUOUS_MS)) {
@@ -533,6 +534,7 @@ bool lap_update(struct lap *lap, const struct gray_reading *gray, uint32_t now,
 	return true;
 }
 
+/* 将循线状态编号转换为屏幕和遥测使用的名字。 */
 const char *lap_status_name(enum lap_status status)
 {
 	static const char *const names[] = {

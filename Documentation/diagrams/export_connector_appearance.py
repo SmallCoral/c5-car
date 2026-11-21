@@ -1,8 +1,4 @@
-"""Read-only STEP mesh export for diagram thumbnails. Run with FreeCAD Python.
-
-No PCB or schematic is loaded or modified. Missing exact models are represented
-by explicitly illustrative connector geometry, never manufacturing resources.
-"""
+"""用 FreeCAD 的 Python 读取 STEP 并导出缩略图网格。缺少精确模型时只生成示意几何体，原理图与 PCB 均无需加载。"""
 from pathlib import Path
 import json,hashlib
 import FreeCAD as App
@@ -25,6 +21,7 @@ native={
  'core98':('C5_EDGE_3_Socket__Streamline_Socket.step','black'),
 }
 models={}
+# 将 CAD 形状离散为三角网格并保存颜色信息。
 def mesh(shape):
     verts,faces=shape.tessellate(.10)
     return {'v':[[round(a.x,5),round(a.y,5),round(a.z,5)] for a in verts],'f':[list(t) for t in faces]}
@@ -41,11 +38,13 @@ for key,(file,kind) in native.items():
     models[key]={'status':'project STEP model; illustrative material colors','source':str(path.relative_to(ROOT)),'sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'parts':items}
     print(key,len(solids),'solids',sum(len(p['f']) for p in items),'triangles',flush=True)
 
+# 按包络尺寸创建示意盒体。
 def box(x,y,z,dx,dy,dz):return Part.makeBox(dx,dy,dz,V(x,y,z))
+# 为缺少精确模型的接头构建单独标明的示意几何。
 def custom(key,parts,note):models[key]={'status':'illustrative geometry, not exact manufacturer model','note':note,'parts':[{**mesh(s),'color':c} for s,c in parts]}
 cream=[.94,.91,.81];silver=[.70,.73,.77];gold=[.83,.67,.29];black=[.11,.14,.18]
-# MX1.25: only a body envelope exists in the project. Show side-entry cavity and
-# six contacts as an explanatory illustration, based on the connector drawing.
+# 项目中的 MX1.25 只有外壳包络。按连接器图纸补画侧插开口，
+# 以及内部六个触点，方便辨认插入方向。
 housing=box(-5.25,-2.15,0,10.5,4.3,3.6).cut(box(-4.55,-2.2,.65,9.1,3.35,2.25))
 parts=[(housing,cream)]
 for x in [-3.125+i*1.25 for i in range(6)]:
@@ -53,8 +52,8 @@ for x in [-3.125+i*1.25 for i in range(6)]:
     parts.append((box(x-.15,1.35,.05,.30,1.5,.30),silver))
 for x in [-6.125,4.325]:parts.append((box(x,-1.3,0,1.8,2.5,.28),silver))
 custom('mx6',parts,'MX1.25 six-contact low-profile side-entry appearance only; source dimensions from ZX-MX1.25-6PWT drawing Rev2.0.')
-# XT60: exact right-angle project model is absent. This yellow two-pole sketch
-# conveys connector family only; polarity and keyed shape follow the actual part.
+# 项目缺少直角 XT60 的精确模型。黄色双极轮廓仅用于辨认系列，
+# 极性和防呆结构以实物为准。
 housing=box(-8,-6,0,16,12,8)
 for x in [-3.6,3.6]:housing=housing.cut(Part.makeCylinder(2.35,9,V(x,-6.1,4),V(0,1,0)))
 parts=[(housing,[.98,.70,.08])]

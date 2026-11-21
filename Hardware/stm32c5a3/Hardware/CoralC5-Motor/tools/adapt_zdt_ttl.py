@@ -1,8 +1,4 @@
-"""One-time, guarded M2.2 edit for the user's confirmed ZDT_XS TTL kit.
-
-Edits the saved live schematics and the one affected local symbol only.
-No PCB operations, no earlier design generators.
-"""
+"""基于保存的 M2.2 版本适配已确认的 ZDT_XS TTL 套件。仅处理原理图和相应本地符号，独立于 PCB 与早期生成器。"""
 from pathlib import Path
 import copy,csv,hashlib,json,sys,uuid
 ROOT=Path(__file__).resolve().parents[1]
@@ -11,15 +7,22 @@ sys.path.insert(0,str(ROOT.parent/'Shared/design_tools'))
 from sexpr import parse,dump,node,nodes,prop,Atom
 from schematic_primitives import n,num,xy,effects
 
+# 计算文件指纹。
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+# 按对象键生成可重复的原理图 UUID。
 def uid(s):return str(uuid.uuid5(uuid.NAMESPACE_URL,'CoralC5-ZDT-TTL-20261106/'+s))
+# 从符号的 at 节点读取二维位置。
 def at(z):return tuple(map(float,node(z,'at')[1:3]))
+# 改写节点的原理图位置。
 def put(z,x,y):node(z,'at')[1:3]=[num(x),num(y)]
+# 将修改后的表达式保存成 KiCad 文件。
 def save(path,d):path.write_text(dump(d)+'\n',encoding='utf-8')
+# 按两个端点增加水平或竖直导线。
 def wire(d,a,b):
  assert a[0]==b[0] or a[1]==b[1]
  d.append(n('wire',n('pts',xy('xy',*a),xy('xy',*b)),n('stroke',n('width',num(0)),n('type',Atom('default'))),n('uuid',uid(str((a,b))))))
 
+# 依据原图中的 J23 修改步进接口及连接定义。
 def main():
  if '--apply-saved-baseline' not in sys.argv:raise SystemExit('Historical edit only; explicit --apply-saved-baseline required.')
  files=[p.name for p in BASE.glob('*.kicad_sch')]+['Motor.kicad_sym']
@@ -28,6 +31,7 @@ def main():
  if (ROOT/'docs/zdt_ttl_design.json').exists():raise SystemExit('ZDT edit already recorded; use KiCad for later edits.')
  fp='Motor:Connector_PinHeader_2.54mm__PinHeader_1x03_P2.54mm_Vertical'
  source='${KIPRJMOD}/../../../../Documentation/ZDT_XS系列第二代闭环步进电机资料/3. 说明书/ZDT_X42S第二代闭环步进电机用户手册V1.0.5_260527.pdf'
+ # 同步本地符号库的接口属性与引脚。
  def modify_lib(lib):
   prop(lib,'Value')[2]='ZDT_XS_TTL_3P';prop(lib,'Footprint')[2]=fp;prop(lib,'Datasheet')[2]=source
   rect=node(next(z for z in nodes(lib,'symbol') if z[1].endswith('_0_1')),'rectangle')
@@ -50,7 +54,7 @@ def main():
    for p in list(nodes(j,'pin')):
     if p[1]=='1':j.remove(p)
     else:p[1]=str(int(p[1])-1)
-   # Remove only the old J23 3V3 branch and its four pin stubs.
+   # 仅移除旧 J23 的 3.3 V 分支以及四个引脚短线。
    for w in list(nodes(d,'wire')):
     pts=[tuple(map(float,p[1:3])) for p in node(w,'pts')[1:]]
     if all(150<=p[0]<=180.34 and 110<=p[1]<=134 for p in pts):d.remove(w)
@@ -58,7 +62,7 @@ def main():
     if z[1]=='GND' and at(z)==(162.56,128.27):put(z,162.56,127)
     if z[1]=='V3V3' and at(z)==(55.88,123.19):d.remove(z)
    port=next(z for z in nodes(d,'hierarchical_label') if z[1]=='V3V3');put(port,20.32,109.22)
-   # Keep Core 3V3 on the pulse reference only, completely absent from J23.
+   # Core 的 3.3 V 仅保留为脉冲参考，J23 上不接该电源。
    wire(d,(20.32,109.22),(55.88,109.22));wire(d,(55.88,109.22),(55.88,123.19))
    d.append(n('label','V3V3',xy('at',55.88,109.22,num(0)),effects(1.016,'left bottom'),n('uuid',uid('pulse-3v3-label'))))
    for sig,y in [('STEP_UART_TX',129.54),('STEP_UART_RX',132.08)]:
@@ -69,7 +73,7 @@ def main():
    z[1]='J22 脉冲备用；PLC 版 COM 不接，\n光耦版 COM 接三伏三，按共阳配置。\nEn=L 时上拉失能，默认 Hold 不受引脚控制。';put(z,17.78,171.45)
    d.append(n('text','TTL：TX 接 R/A/H，RX 接 T/B/L。\nJ24 接 V+、GND，输入最低十伏。\n厂商建议电源能力三安以上，\n本板四安总保护未提高。',xy('at',121.92,139.7,num(0)),effects(2.54,'left top'),n('uuid',uid('ttl-wiring-note'))))
   save(path,d)
- # This is a current interface contract, unlike the frozen initial M2 manifest.
+ # 此处记录当前接口约定，初版 M2 清单另作历史基线。
  table=ROOT/'docs/m2_pin_assignment.csv';rows=list(csv.DictReader(table.open(encoding='utf-8-sig')))
  for row in rows:
   if row['signal']=='STEP_UART_TX':row['endpoint']='J23:2'
@@ -90,7 +94,7 @@ def main():
  (ROOT/'docs/zdt_ttl_design.json').write_text(json.dumps(record,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
  print('M2.2 saved; regenerate native netlist/ERC and verify before delivery.')
 def upgrade_8p():
- """User's final request: one 8P connector, only VM/GND/TX/RX wired."""
+ """实物要求为一个 8 针接头，只连接 VM、GND、TX、RX。"""
  recordpath=ROOT/'docs/zdt_ttl_design.json';record=json.loads(recordpath.read_text(encoding='utf-8'))
  if record['J23']['pins']!={'1':'GND','2':'STEP_UART_TX','3':'STEP_UART_RX'}:raise SystemExit('Expected the recorded temporary 3P edit only.')
  for f,h in record['source_sha256'].items():
@@ -99,6 +103,7 @@ def upgrade_8p():
  for f in ['09_Bluetooth_Stepper.kicad_sch','Motor.kicad_sym','docs/zdt_ttl_design.json','docs/m2_pin_assignment.csv','docs/BOM_M2_SCHEMATIC_DRAFT.csv','docs/erc.json']:
   (snapshot/Path(f).name).write_bytes((ROOT/f).read_bytes())
  fp='Motor:Connector_PinHeader_2.54mm__PinHeader_1x08_P2.54mm_Vertical'
+ # 生成八针版在本地符号库中的对应定义。
  def library_8p(lib):
   prop(lib,'Value')[2]='ZDT_XS_TTL_8P';prop(lib,'Footprint')[2]=fp
   rect=node(next(z for z in nodes(lib,'symbol') if z[1].endswith('_0_1')),'rectangle')

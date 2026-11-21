@@ -1,4 +1,4 @@
-"""Read-only component/net synchronization and preservation audit, not routing QA."""
+"""核对器件、网络同步及对象保留情况，布线质量另行检查。"""
 from pathlib import Path
 from datetime import datetime
 import sys,json,hashlib,xml.etree.ElementTree as ET
@@ -6,15 +6,18 @@ ROOT=Path(__file__).resolve().parents[1];DOC=ROOT/'docs'
 sys.path.insert(0,str(ROOT.parent/'Shared/design_tools'))
 from sexpr import parse,node,nodes,prop
 from m28_contract import ADDED_PHYSICAL
+# 对照已保存基线检查 PCB 封装同步和保留的几何对象。
 def main():
     record=json.loads((DOC/'pcb_sync_m28.json').read_text(encoding='utf8'))
     baseline=ROOT/record['baseline_file'];old=parse(baseline.read_text(encoding='utf8'));now=parse((ROOT/'CoralC5-Motor.kicad_pcb').read_text(encoding='utf8'))
     before={prop(f,'Reference')[2]:f for f in nodes(old,'footprint')};parts={prop(f,'Reference')[2]:f for f in nodes(now,'footprint')}
     tree=ET.parse(DOC/'netlist.xml');components={c.get('ref'):c for c in tree.findall('.//components/comp')}
+    # 读取封装的板上名称。
     def board_name(name):
         return name.replace('/','{slash}') if name.startswith(('Net-(','unconnected-(')) else name
     pins={(p.get('ref'),p.get('pin')):board_name(n.get('name')) for n in tree.findall('.//nets/net') for p in n.findall('node')}
     checks=[]
+    # 登记单项检查及差异。
     def ck(name,ok,detail=None):checks.append({'name':name,'pass':bool(ok),'detail':detail})
     ck('input PCB baseline SHA',hashlib.sha256(baseline.read_bytes()).hexdigest()==record['input_pcb_sha256'])
     ck('180 exact physical references',set(parts)==set(components) and len(parts)==180)
@@ -35,6 +38,7 @@ def main():
             if ref!='U1':
                 ignored={'property','path','sheetname','sheetfile','units','pad'}
                 ck(ref+' full package geometry/model/constraints retained',[x for x in f if not isinstance(x,list) or x[0] not in ignored]==[x for x in b if not isinstance(x,list) or x[0] not in ignored])
+                # 提取各脚号及所属网络信息。
                 def pads(shape):return [[x for x in p if not isinstance(x,list) or x[0] not in ['net','pinfunction','pintype']] for p in nodes(shape,'pad')]
                 ck(ref+' all pad geometries and UUIDs retained',pads(f)==pads(b))
         else:ck(ref+' outside original component envelope',float(node(f,'at')[1])>=330)
@@ -42,6 +46,7 @@ def main():
         ck(kind+' all original objects exactly retained',nodes(old,kind)==nodes(now,kind))
     for ref in ['U1','U6']:
         f=parts[ref];lib=parse((ROOT/'Motor.pretty/Diodes_SO8EP_AP64500.kicad_mod').read_text(encoding='utf8'))
+        # 提取封装焊盘的编号、中心和尺寸，排序后对照几何是否发生变化。
         def geom(obj):return sorted((p[1],*map(float,node(p,'at')[1:3]),*map(float,node(p,'size')[1:3])) for p in nodes(obj,'pad'))
         ck(ref+' new primary package land pattern',geom(f)==geom(lib))
         angle=float(node(f,'at')[3]) if len(node(f,'at'))>3 else 0

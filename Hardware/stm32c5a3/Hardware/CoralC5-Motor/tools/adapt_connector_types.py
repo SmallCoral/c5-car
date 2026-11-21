@@ -1,11 +1,13 @@
-"""Apply the user's female-header / ordinary XH connector choices, schematic only."""
+"""按用户选定的排母和普通 XH 接头调整原理图。"""
 from pathlib import Path
 import csv,hashlib,json,sys,shutil
 ROOT=Path(__file__).resolve().parents[1];BASE=ROOT/'docs/baseline-2026-11-06-connector-types'
 sys.path.insert(0,str(ROOT.parent/'Shared/design_tools'))
 from sexpr import parse,dump,node,nodes,prop
 
+# 计算设计文件的 SHA-256，供改动前后比对。
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+# 按接头选型更新原理图与库中对应的属性并记录结果。
 def main():
  if '--apply-saved-baseline' not in sys.argv:raise SystemExit('Historical edit only; explicit --apply-saved-baseline required.')
  if (ROOT/'docs/connector_revision.json').exists():raise SystemExit('Connector edit already applied; use KiCad for later edits.')
@@ -45,7 +47,7 @@ def main():
    z=next(z for z in nodes(d,'text') if z[1].startswith('默认 1—2 跳帽'))
    z[1]='J15 为 2.54mm 四位排母。\n默认 1—2 跳帽选择三伏三。\n确认稳压载板后才可选五伏。\n四脚线束按本板针序制作。'
   path.write_text(dump(d)+'\n',encoding='utf-8')
- # Keep the library and all its schematic caches synchronized for these defaults.
+ # 同步维护本地符号库和各张原理图的嵌入符号定义。
  libpath=ROOT/'Motor.kicad_sym';d=parse(libpath.read_text(encoding='utf-8'))
  for z in nodes(d,'symbol'):
   name='Motor:'+z[1]

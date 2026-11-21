@@ -1,12 +1,14 @@
-"""Reproduce M2.8 first-order sizing; does not certify loop stability or thermals."""
+"""复算 M2.8 的一阶选型参数，环路稳定性与温升需要实测。"""
 from pathlib import Path
 import json,math,cmath,itertools
 DOC=Path(__file__).resolve().parents[1]/'docs'
+# 按电源元件与负载假设计算 M2.8 的补偿、纹波和余量。
 def main():
  v=.8*(1+53.6/10);fs=500e3;rc=15800;cc=10e-9;ch=470e-12
  cases=[]
- # Lumped C/ESR envelope is an explicit sizing assumption, not a measured model.
+ # 集中电容和 ESR 范围是估算假设，未做实测建模。
  for cap,esr,load in itertools.product([130e-6,180e-6,220e-6],[.001,.03],[.5,4,4.2]):
+  # 在指定频率下建立复数阻抗，评估电源环路响应。
   def loop(f):
    s=2j*math.pi*f;zc=1/(1/(rc+1/(s*cc))+s*ch)
    zo=1/(load/v+1/(esr+1/(s*cap)))

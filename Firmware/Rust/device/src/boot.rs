@@ -1,3 +1,5 @@
+// Rust 引导程序的命令循环、步进停机和向已验证应用的跳转。
+
 use crate::{
     board,
     display::Display,
@@ -12,8 +14,10 @@ use coral_core::{
     ui::State,
 };
 unsafe extern "C" {
+    // 汇编实现，接收已经校验的栈顶和复位入口地址，切换到应用后不再返回。
     fn enter_application(sp: u32, entry: u32) -> !;
 }
+// 从已验证的向量表恢复应用栈和执行入口。
 fn jump() -> ! {
     let _interrupts = runtime::InterruptGuard::lock();
     board::write(0xe000_e010, 0);
@@ -27,13 +31,15 @@ fn jump() -> ! {
     board::write(0xe000_ed08, APP_ADDR);
     runtime::dsb();
     runtime::isb();
-    // SAFETY: caller verified the application CRC/vectors; assembly restores MSP and CONTROL before branch.
+    // SAFETY: 调用方已经校验应用 CRC 和向量表，汇编在跳转前恢复 MSP 和 CONTROL。
     unsafe { enter_application(board::read(APP_ADDR), board::read(APP_ADDR + 4)) }
 }
+// 先停轴再失能，使机构退出运动。
 fn stop_stepper() {
     serial::send(Id::Step, &emm::stop());
     serial::send(Id::Step, &emm::enable(false));
 }
+// 根据收到的 OTA 命令推进查询、下载和启动。
 fn command(
     frame: &Frame,
     download: &mut Download,
@@ -110,6 +116,7 @@ fn command(
     }
     reboot
 }
+// 初始化升级串口，验证或安装镜像，再决定启动应用或等待下载。
 pub fn run() -> ! {
     let requested = board::read(REQUEST_ADDR) == REQUEST_MAGIC
         && board::read(REQUEST_ADDR + 4) == !REQUEST_MAGIC;

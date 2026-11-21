@@ -1,3 +1,5 @@
+/* 相机串口接收与钢球跟踪。分别维护控制用实测和屏幕用观测，让反光、预测、重复帧或断流不会被当成新的实测。 */
+
 #include <stdlib.h>
 #include <string.h>
 #include "ball.h"
@@ -5,23 +7,27 @@
 _Static_assert(BALL_LEFT_SPAN > BALL_CENTER_RADIUS_PX && BALL_RIGHT_SPAN > BALL_CENTER_RADIUS_PX,
 	       "The marked center must lie between the two pipe ends");
 
+/* 从两字节小端字段还原无符号数。 */
 static uint16_t le16(const uint8_t *p)
 {
 	return (uint16_t)(p[0] | p[1] << 8);
 }
 
+/* 按小端顺序读取有符号的协议字段。 */
 static int16_t signed_le16(const uint8_t *p)
 {
 	int value = le16(p);
 	return (int16_t)(value >= 32768 ? value - 65536 : value);
 }
 
+/* 检查 V2 的实测标志与数据年龄，判断能否用作本次直接观测。 */
 bool ball_v2_measured(const struct ball_receiver *rx, uint32_t now)
 {
 	return rx->received && now - rx->last_ms < BALL_TIMEOUT_MS &&
 	       (rx->flags & 15U) == 3U && rx->age <= 150 && rx->x <= 639;
 }
 
+/* 计算相机帧的 CRC-8 校验值。 */
 static uint8_t frame_crc(const uint8_t *frame)
 {
 	uint8_t crc = 0;
@@ -34,6 +40,7 @@ static uint8_t frame_crc(const uint8_t *frame)
 	return crc;
 }
 
+/* 收包失败后在已有字节中搜索下一帧的起点。 */
 static unsigned int resync(uint8_t *window)
 {
 	for (unsigned int i = 1; i < BALL_FRAME_SIZE; i++) {
@@ -46,6 +53,7 @@ static unsigned int resync(uint8_t *window)
 	return 0;
 }
 
+/* 按实物右侧挡杆建立接下来的球位确认条件。 */
 void ball_expect_right(struct ball_receiver *rx, uint32_t now)
 {
 	rx->have_anchor = true;
@@ -56,6 +64,7 @@ void ball_expect_right(struct ball_receiver *rx, uint32_t now)
 	rx->candidate_frames = 0;
 }
 
+/* 对显示用球位单独做边界和连续帧确认。 */
 static void observe_lcd(struct ball_receiver *rx, uint32_t now)
 {
 	rx->lcd_direct = false;
@@ -81,8 +90,7 @@ static void observe_lcd(struct ball_receiver *rx, uint32_t now)
 	rx->lcd_candidate_frames = 0;
 }
 
-/* A rolling ball may slow or stop while occluded. Confirm a local cluster
- * only ahead of a recent measured roll, within its plausible travel. */
+/* 球受遮挡后可能减速或停止。按上次滚动方向和经过的时间限制候选位移，再用聚集的观测确认同一颗球。 */
 static bool follows_roll(const struct ball_receiver *rx, int dx, uint32_t gap, uint32_t now)
 {
 	if (gap <= 100 || gap > 450 || rx->candidate_frames < 3 ||
@@ -94,13 +102,14 @@ static bool follows_roll(const struct ball_receiver *rx, int dx, uint32_t gap, u
 	       abs((int)rx->x - rx->candidate_start) <= 20;
 }
 
+/* 用连续的直接观测更新控制用球位并过滤反光跳点。 */
 static void observe_x(struct ball_receiver *rx, uint32_t now)
 {
 	if (!ball_v2_measured(rx, now))
 		return;
 	uint32_t gap = now - rx->anchor_at;
 	int displacement = (int)rx->x - rx->anchor_x;
-	/* Missing frames do not make a static reflection on the far side plausible. */
+	/* 漏帧期间也应限制位移，避免对侧静态反光被当作钢球。 */
 	int reach = gap <= 100 ? 16 + 2 * (int)gap : 36;
 	if (reach > 110)
 		reach = 110;
@@ -134,6 +143,7 @@ static void observe_x(struct ball_receiver *rx, uint32_t now)
 	rx->candidate_frames = 0;
 }
 
+/* 逐字节寻找帧头、验证长度和校验，再解析球位及其状态。 */
 void ball_feed(struct ball_receiver *rx, uint8_t byte, uint32_t now)
 {
 	uint8_t *frame = rx->window;
@@ -170,6 +180,7 @@ void ball_feed(struct ball_receiver *rx, uint8_t byte, uint32_t now)
 	observe_x(rx, now);
 }
 
+/* 从相机坐标构造含状态与相对位置的球位视图。 */
 static struct ball_view position_view(enum ball_status status, uint16_t x)
 {
 	struct ball_view view = {
@@ -186,6 +197,7 @@ static struct ball_view position_view(enum ball_status status, uint16_t x)
 	return view;
 }
 
+/* 根据最后收包及观测时间，返回闭环可使用的球位状态。 */
 struct ball_view ball_view_at(const struct ball_receiver *rx, uint32_t now)
 {
 	if (!rx->received || now - rx->last_ms >= BALL_TIMEOUT_MS)
@@ -198,6 +210,7 @@ struct ball_view ball_view_at(const struct ball_receiver *rx, uint32_t now)
 	return position_view(BALL_TRACKED, rx->x);
 }
 
+/* 返回屏幕使用的球位与可见性，供绘制最后观测标记。 */
 struct ball_view ball_display_at(const struct ball_receiver *rx, uint32_t now)
 {
 	if (!rx->received || now - rx->last_ms >= BALL_TIMEOUT_MS)

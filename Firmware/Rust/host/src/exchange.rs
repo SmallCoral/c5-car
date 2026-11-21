@@ -1,4 +1,4 @@
-//! Stop-and-wait OTA exchange, independent of the operating system BLE backend.
+//! OTA 每次发一包、等一次应答，收发逻辑独立于操作系统的蓝牙后端。
 use crate::Result;
 use coral_core::ota::{self, FRAME_MAX, Frame};
 use std::{
@@ -8,12 +8,16 @@ use std::{
 };
 
 pub trait Transport {
+    // 异步发送同一条已编码请求，便于重试时保持字节不变。
     fn send(&mut self, bytes: &[u8]) -> impl Future<Output = Result<()>>;
+    // 在给定期限前取回应答帧，超时或断连时交回错误。
     fn response(&mut self, deadline: Instant) -> impl Future<Output = Result<Frame>>;
 }
+// 选择当前报文应答的等待期限。
 fn timeout() -> Box<dyn std::error::Error + Send + Sync> {
     io::Error::new(io::ErrorKind::TimedOut, "no matching OTA acknowledgement").into()
 }
+// 对同一帧重试，按命令与序号匹配确认或拒绝。
 pub async fn request(
     io: &mut impl Transport,
     command: u8,
@@ -29,7 +33,7 @@ pub async fn request(
         if attempt != 0 {
             eprintln!("Retry command {command}, sequence {sequence}");
         }
-        // Keep the same sequence and bytes: the device can acknowledge a duplicate safely.
+        // 重试沿用同一序号和内容，设备收到重复包可直接再次确认。
         io.send(&bytes[..length]).await?;
         let deadline = Instant::now()
             .checked_add(wait)

@@ -1,3 +1,5 @@
+/* 将引导程序放在 Flash 起始的 64 KiB，擦写例程运行在 SRAM。栈顶留出交接邮箱。 */
+
 ENTRY(Reset_Handler)
 MEMORY
 {

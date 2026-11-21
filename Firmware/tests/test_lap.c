@@ -1,3 +1,5 @@
+/* 模拟轮编码器和灰度轨迹，核验两道行驶题的转向、减速、里程停车及故障保护。 */
+
 #include <assert.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -8,6 +10,7 @@
 #include "wheel_map.h"
 #include "gray_map.h"
 
+/* 构造普通窄线的灰度读数。 */
 static struct gray_reading line(int position)
 {
 	return (struct gray_reading) {
@@ -16,6 +19,7 @@ static struct gray_reading line(int position)
 	};
 }
 
+/* 构造横向标记的灰度读数。 */
 static struct gray_reading marker(void)
 {
 	return (struct gray_reading) {
@@ -24,6 +28,7 @@ static struct gray_reading marker(void)
 	};
 }
 
+/* 按一个控制节拍推进模拟编码器和循线器。 */
 static void tick(struct lap *lap, struct gray_reading gray, int left, int right)
 {
 	int left_sign = lap->reverse ? -LAP_LEFT_ENCODER_SIGN : LAP_LEFT_ENCODER_SIGN;
@@ -34,6 +39,7 @@ static void tick(struct lap *lap, struct gray_reading gray, int left, int right)
 	assert(lap_update(lap, &gray, lap->updated_at + 10, lc, rc));
 }
 
+/* 模拟驶离起点再经过终点，验证横线判停。 */
 static void test_lap_and_marker(void)
 {
 	struct lap lap;
@@ -47,14 +53,14 @@ static void test_lap_and_marker(void)
 	for (int i = 0; i < 210; i++)
 		tick(&lap, line(0), 10, 10);
 	assert(!lap.armed && lap_progress(&lap) == 2200);
-	/* Even a real crossbar early in the lap must not finish the task. */
+	/* 圈初即使出现真实横线，也不得提前完圈。 */
 	for (int i = 0; i < 5; i++)
 		tick(&lap, gray, 10, 10);
 	assert(lap.status == LAP_RUNNING);
 	for (int i = 0; i < 2800; i++)
 		tick(&lap, line(0), 10, 10);
 	assert(lap.armed);
-	/* Crossbar noise cannot finish until it stays present for the hold time. */
+	/* 横线连续可见达到规定时间才能停车，短暂噪声不能触发。 */
 	tick(&lap, gray, 10, 10);
 	tick(&lap, line(0), 10, 10);
 	assert(lap.status == LAP_RUNNING);
@@ -76,6 +82,7 @@ static void test_lap_and_marker(void)
 	assert(!lap.wheel[0].pwm && !lap.wheel[1].target);
 }
 
+/* 从任意计数起点模拟一圈，核对按平均里程停车。 */
 static void test_distance_lap(void)
 {
 	struct lap lap;
@@ -85,7 +92,7 @@ static void test_distance_lap(void)
 	partial.count = 3;
 	partial.line = partial.black = 0x1c;
 
-	/* SW2 samples the two starting counts independently, including near wrap. */
+	/* SW2 分别记录左右轮起点，覆盖计数器即将回绕的情况。 */
 	assert(lap_start_distance(&lap, &lost, 2000, UINT32_MAX - 100U, 513U, LAP_RACE_LEVEL, LAP_DISTANCE_COUNTS));
 	assert(lap.status == LAP_RUNNING && lap.from_a && lap.departing && !lap_progress(&lap));
 	for (int i = 0; i < 8; i++)
@@ -95,7 +102,7 @@ static void test_distance_lap(void)
 	assert(!lap.departing);
 	while (lap.status == LAP_RUNNING) {
 		uint32_t progress = lap_progress(&lap);
-		/* Both legacy stop markers occur well inside their recognition windows. */
+		/* 旧方案的两个停车标记均落在对应识别窗口内。 */
 		struct gray_reading input = progress >= 35000 && progress < 35120 ? marker() :
 			progress >= 41100 && progress < 41250 ? partial : gray;
 
@@ -108,7 +115,7 @@ static void test_distance_lap(void)
 	assert(!lap.wheel[0].target && !lap.wheel[1].target && !lap.wheel[0].pwm && !lap.wheel[1].pwm);
 	assert(!lap_update(&lap, &gray, lap.updated_at + 10, 0, 0));
 
-	/* A new start anywhere on the encoder counters has a new origin. */
+	/* 重新起跑时按当前编码器读数设置新零点。 */
 	gray = marker();
 	assert(lap_start_distance(&lap, &gray, 17000, 55000, 38000, LAP_FAST_LEVEL, LAP_DISTANCE_COUNTS));
 	assert(lap.departing && lap.from_a && !lap_progress(&lap));
@@ -125,6 +132,7 @@ static void test_distance_lap(void)
 	assert(lap.status == LAP_NO_LINE && !lap.wheel[0].pwm);
 }
 
+/* 检查剩余里程减少时的末段轮速曲线。 */
 static void test_distance_finish_speed(void)
 {
 	struct lap lap;
@@ -156,6 +164,7 @@ static void test_distance_finish_speed(void)
 	assert(lap.status == LAP_DONE && normal && blending && cutoff);
 }
 
+/* 给定左右偏差与轮速，检查前进速度和纠偏方向。 */
 static void test_steering_and_speed(void)
 {
 	struct lap left, right;
@@ -173,9 +182,7 @@ static void test_steering_and_speed(void)
 	assert(right.wheel[0].target > right.wheel[1].target);
 	assert(left.wheel[0].target == right.wheel[1].target);
 
-	/* Simulated unequal wheel plants: PWM gives 7/5 counts/s per permille.
-	 * The feedback loop should settle at the same requested forward speed.
-	 */
+	/* 模拟两轮每千分之一 PWM 分别产生 7 和 5 计数/秒，验证闭环能将两侧调到同一速度。 */
 	struct lap balanced;
 	int fraction[2] = { 0, 0 };
 	assert(lap_start(&balanced, &gray, 0, 0, 0, 0, false));
@@ -195,6 +202,7 @@ static void test_steering_and_speed(void)
 	assert(balanced.wheel[1].pwm > balanced.wheel[0].pwm);
 }
 
+/* 注入失线、异常计数与超时，核对停止原因。 */
 static void test_failures(void)
 {
 	struct lap lap;
@@ -240,6 +248,7 @@ static void test_failures(void)
 	assert(lap.status == LAP_ENCODER);
 }
 
+/* 模拟编码器回绕及调试按键。 */
 static void test_wrap_and_controls(void)
 {
 	struct lap lap;
@@ -264,6 +273,7 @@ static void test_wrap_and_controls(void)
 	assert(!ctl.running && ctl.task == TASK_LAP);
 }
 
+/* 校验架空测向的输出和时间上限。 */
 static void test_direction_check(void)
 {
 	struct lap lap;
@@ -280,6 +290,7 @@ static void test_direction_check(void)
 	assert(lap.elapsed_ms == 1500);
 }
 
+/* 让探头在相邻通道间跳变，检查微分滤波。 */
 static void test_binary_edge_smoothing(void)
 {
 	struct lap lap;
@@ -290,7 +301,7 @@ static void test_binary_edge_smoothing(void)
 	assert(lap_speed(LAP_FAST_LEVEL) == 3300);
 	tick(&lap, line(500), 15, 15);
 	assert(lap.last_position > 0 && lap.last_position < 500);
-	/* A one-sample reversal cannot instantly command the opposite full turn. */
+	/* 只有一次反向观测时，不能立即输出反方向的最大差速。 */
 	tick(&lap, line(-500), 15, 15);
 	assert(lap.last_position > -500 && lap.last_position < 500);
 	previous_steering = lap.steering;
@@ -305,12 +316,13 @@ static void test_binary_edge_smoothing(void)
 		assert(lap.steering < 250 && lap.steering > -250);
 		previous_steering = lap.steering;
 	}
-	/* Sustained large errors retain enough turn authority after filtering. */
+	/* 持续大偏差经过滤波后，仍应保留足够的纠偏能力。 */
 	for (int i = 0; i < 100; i++)
 		tick(&lap, line(3000), 15, 15);
 	assert(lap.wheel[0].target > lap.wheel[1].target + 1000);
 }
 
+/* 验证共同加速时仍能建立转向差速。 */
 static void test_turn_during_acceleration(void)
 {
 	struct lap lap;
@@ -323,13 +335,14 @@ static void test_turn_during_acceleration(void)
 		tick(&lap, gray, 5, 5);
 		assert(lap.base_target - previous <= LAP_ACCEL_CPS_S / 100);
 	}
-	/* Both wheels used to ramp identically for ~0.6 s despite a left error. */
+	/* 旧版起步时即使探头已偏左，两轮仍曾同速爬升约 0.6 s。 */
 	assert(lap.wheel[1].target - lap.wheel[0].target >= 400);
 	assert(lap.wheel[0].target >= LAP_TARGET_MIN_CPS);
 	assert(lap.base_target >= 500);
 	assert((lap.wheel[0].target + lap.wheel[1].target) / 2 == lap.base_target);
 }
 
+/* 检查轮速反馈能抑制过度转弯并平顺接回黑线。 */
 static void test_encoder_damping_and_reacquisition(void)
 {
 	struct lap clockwise, counterclockwise;
@@ -342,7 +355,7 @@ static void test_encoder_damping_and_reacquisition(void)
 		tick(&clockwise, gray, 20, 10);
 		tick(&counterclockwise, gray, 10, 20);
 	}
-	/* Even with unchanged gray input, oppose the measured ongoing turn. */
+	/* 即便灰度输入不变，也应根据轮速反馈抑制仍在持续的转向。 */
 	assert(clockwise.wheel[0].target < clockwise.wheel[1].target);
 	assert(counterclockwise.wheel[0].target > counterclockwise.wheel[1].target);
 	assert(clockwise.steering == -counterclockwise.steering);
@@ -357,6 +370,7 @@ static void test_encoder_damping_and_reacquisition(void)
 	assert(!clockwise.wheel[0].integral && !clockwise.wheel[1].pwm);
 }
 
+/* 模拟回中与反向，检查差速释放和边界。 */
 static void test_turn_release_and_bounds(void)
 {
 	struct lap lap;
@@ -367,7 +381,7 @@ static void test_turn_release_and_bounds(void)
 		tick(&lap, line(3000), 15, 15);
 	assert(lap.wheel[0].target > lap.wheel[1].target);
 	assert(lap.base_target < 1800);
-	/* A return to center must release the old turn within 100 ms. */
+	/* 线回到中央后，应在 100 ms 内释放上一次转向量。 */
 	for (int i = 0; i < 10; i++)
 		tick(&lap, line(0), 15, 15);
 	assert(lap.wheel[0].target <= lap.wheel[1].target + 100);
@@ -382,9 +396,10 @@ static void test_turn_release_and_bounds(void)
 	}
 }
 
+/* 用实测的分段横线掩码复现驶离 A 点。 */
 static void test_a_marker_departure(void)
 {
-	/* Actual entry captured on the fitted A mark: split 0x0d -> all black. */
+	/* 实车进入 A 横线时采到从分段的 0x0d 转为全黑。 */
 	struct gray_reading entry = {
 		.line = 0x0d, .black = 0x0d, .count = 3, .groups = 2,
 		.status = GRAY_SPLIT,
@@ -419,6 +434,7 @@ static void test_a_marker_departure(void)
 	assert(!lap_start(&lap, &entry, 0, 0, 0, 2, false));
 }
 
+/* 分别在终点窗口内外注入部分覆盖标记。 */
 static void test_partial_marker_window(void)
 {
 	struct lap lap;
@@ -432,13 +448,13 @@ static void test_partial_marker_window(void)
 	for (int i = 0; i < 4000; i++)
 		tick(&lap, gray, 10, 10);
 	assert(lap.base_target <= LAP_APPROACH_CPS);
-	/* Normal three-probe curves before the finish window cannot stop us. */
+	/* 终点窗口前，普通弯道的三个黑探头不能触发停车。 */
 	for (int i = 0; i < 90; i++)
 		tick(&lap, partial, 10, 10);
 	assert(lap.status == LAP_RUNNING && !lap.marker_hits);
 	for (int i = 0; i < 20; i++)
 		tick(&lap, gray, 10, 10);
-	/* An isolated sample is not a marker, even in the A window. */
+	/* 即使进入 A 窗口，孤立的一次观测也不能判作标记。 */
 	tick(&lap, partial, 10, 10);
 	tick(&lap, gray, 10, 10);
 	for (int i = 0; i < 3; i++)
@@ -457,6 +473,7 @@ static void test_partial_marker_window(void)
 	assert(lap.status == LAP_RUNNING && !lap.marker_hits);
 }
 
+/* 用短标记与遗漏标记核对两种停车路径。 */
 static void test_short_a_marker_and_missed_marker(void)
 {
 	struct lap lap;
@@ -470,9 +487,7 @@ static void test_short_a_marker_and_missed_marker(void)
 	assert(lap.armed);
 	count = lap.wheel[0].previous;
 	uint32_t start = lap.updated_at;
-	/* A four-probe partial bar lasting 30 ms, sampled every 2 ms, must stop.
-	 * This covers the 0x3c mask observed on the real crossbar edge.
-	 */
+	/* 每 2 ms 采样一次，四探头横线持续 30 ms 后应停车。掩码 0x3c 来自实车横线边缘。 */
 	for (uint32_t ms = 2; ms <= 30 && lap.status == LAP_RUNNING; ms += 2) {
 		gray_update(&sensor, 0xc3, start + ms, false);
 		count += 2;
@@ -487,6 +502,7 @@ static void test_short_a_marker_and_missed_marker(void)
 	assert(lap.status == LAP_NO_MARKER && !lap.wheel[1].pwm);
 }
 
+/* 从高速巡航进入终点减速范围，核对速度目标。 */
 static void test_fast_cruise_and_finish_approach(void)
 {
 	struct gray_reading gray = line(0);
@@ -509,13 +525,14 @@ static void test_fast_cruise_and_finish_approach(void)
 		assert(corner.wheel[sign > 0 ? 1 : 0].target <= 2300);
 	}
 
-	/* Cross the actual approach threshold at full cruise with wheel inertia. */
+	/* 模拟以巡航速度跨过真实减速门槛并保留两轮惯性。 */
 	lap.wheel[0].progress = lap.wheel[1].progress = LAP_APPROACH_COUNTS - 33;
 	for (int i = 0; i < 40; i++)
 		tick(&lap, gray, 33, 33);
 	assert(lap.base_target == LAP_APPROACH_CPS && lap.status == LAP_RUNNING);
 }
 
+/* 模拟持续弯道，检查转向积分的保留与消退。 */
 static void test_bend_memory(void)
 {
 	struct gray_reading gray = line(0);
@@ -525,7 +542,7 @@ static void test_bend_memory(void)
 	for (int sign = -1; sign <= 1; sign += 2) {
 		assert(lap_start(&lap, &gray, 0, 0, 0, LAP_DEFAULT_LEVEL, false));
 		assert(!lap.bend_ratio_ppm);
-		/* Return the delivered turn through both encoder inputs. */
+		/* 把已输出的转向通过两轮编码器反馈给闭环。 */
 		for (int i = 0; i < 160; i++)
 			tick(&lap, line(sign * 1500), (lap.wheel[0].target + 50) / 100,
 			     (lap.wheel[1].target + 50) / 100);
@@ -546,6 +563,7 @@ static void test_bend_memory(void)
 	}
 }
 
+/* 从 A 点起跑，对照轮程检查两段弯的预设控制。 */
 static void test_course_from_a(void)
 {
 	struct gray_reading bar = marker();
@@ -570,10 +588,7 @@ static void test_course_from_a(void)
 			tick(&lap, center, 26, 18);
 		assert(lap.steering >= 300 && lap.steering <= 600);
 
-		/* Seen on the first fast run: right error held for 0.4 s, then
-		 * the line crossed to the left. The old targets reached 2800/200
-		 * and still requested a right turn with the line on the left.
-		 */
+		/* 首次高速实跑中，偏右 0.4 s 后黑线移到左侧，旧版仍以 2800/200 的目标速度继续右转。 */
 		for (int i = 0; i < 40; i++) {
 			tick(&lap, line(2000), 28, 12);
 			assert(lap.steering * 1000 <= lap.base_target * LAP_COURSE_TURN_PERMILLE);
@@ -581,7 +596,7 @@ static void test_course_from_a(void)
 		for (int i = 0; i < 10; i++)
 			tick(&lap, line(-1500), 28, 12);
 		assert(lap.steering <= 0);
-		/* Confirm that the intervening straight can regain full speed. */
+		/* 核对两弯之间的直道能否恢复巡航速度。 */
 		if (arc == 0) {
 			lap.wheel[0].progress = lap.wheel[1].progress = LAP_BEND_END_COUNTS;
 			for (int i = 0; i < 120; i++)
@@ -595,6 +610,7 @@ static void test_course_from_a(void)
 	assert(!lap.from_a);
 }
 
+/* 检查比赛档的速度上限及回中能力。 */
 static void test_race_speed_and_centering(void)
 {
 	struct gray_reading bar = marker();
@@ -628,7 +644,7 @@ static void test_race_speed_and_centering(void)
 		for (int i = 0; i < 35; i++)
 			tick(&lap, center, 38, 24);
 		assert(lap.base_target == 3100 && lap.steering >= 600 && lap.steering <= 800);
-		/* A sustained inside error must override the scheduled right turn. */
+		/* 持续的内侧偏差须能覆盖里程表预设的右转量。 */
 		for (int i = 0; i < 22; i++) {
 			tick(&lap, line(-2000), 38, 24);
 			assert(lap.wheel[0].target <= LAP_RACE_WHEEL_MAX_CPS);
@@ -644,6 +660,7 @@ static void test_race_speed_and_centering(void)
 	assert(ctl.lap_level == 0);
 }
 
+/* 在载球直道制造短时丢线，验证受限减速度。 */
 static void test_carried_ball_brakes_on_centered_gap(void)
 {
 	struct gray_reading center = line(0);
@@ -671,6 +688,7 @@ static void test_carried_ball_brakes_on_centered_gap(void)
 	assert(lap.status == LAP_NO_LINE && !lap.wheel[0].pwm && !lap.wheel[1].pwm);
 }
 
+/* 核对轮组交换后实物 J6、J4 与编码器的映射。 */
 static void test_fitted_wheel_mapping(void)
 {
 	struct wheel_channels right_turn = wheel_to_channels(
@@ -678,7 +696,7 @@ static void test_fitted_wheel_mapping(void)
 	struct wheel_channels left_only = wheel_to_channels(123, 0);
 	struct wheel_channels right_only = wheel_to_channels(0, -234);
 
-	/* Harness observations are the oracle: J6 left, J4 right; no sign change. */
+	/* 按实物线束核对左右，J6 左轮、J4 右轮，此处只换通道。 */
 	assert(left_only.j6 == 123 && left_only.j4 == 0);
 	assert(right_only.j4 == -234 && right_only.j6 == 0);
 	assert(right_turn.j6 == 220 && right_turn.j4 == -80);
@@ -689,6 +707,7 @@ static void test_fitted_wheel_mapping(void)
 	assert(wheel_phases_to_physical(3) == 12);
 }
 
+/* 让载球状态经过两段弯道，检查巡航目标连续性。 */
 static void test_carried_ball_speed_in_both_arcs(void)
 {
 	struct gray_reading center = line(0);
@@ -717,6 +736,7 @@ static void test_carried_ball_speed_in_both_arcs(void)
 	}
 }
 
+/* 分别触发最左和最右探头，核对实际加速的一侧车轮。 */
 static void test_probe_to_motor_direction(void)
 {
 	const uint8_t electrical[] = { 0x7f, 0xfe };
@@ -739,17 +759,18 @@ static void test_probe_to_motor_direction(void)
 					    lap.wheel[1].pwm * LAP_RIGHT_DRIVE_SIGN);
 		assert(command.j6 >= 0 && command.j4 <= 0);
 		if (side) {
-			/* Black at PE7 = physical right: speed up physical left J6. */
+			/* PE7 压黑表示黑线在实物右侧，应提高左轮 J6 的速度。 */
 			assert(lap.wheel[0].target > lap.wheel[1].target);
 			assert(command.j6 > -command.j4);
 		} else {
-			/* Black at PE14 = physical left: speed up physical right J4. */
+			/* PE14 压黑表示黑线在实物左侧，应提高右轮 J4 的速度。 */
 			assert(lap.wheel[1].target > lap.wheel[0].target);
 			assert(-command.j4 > command.j6);
 		}
 	}
 }
 
+/* 执行循线、停车、映射和保护条件的所有回归。 */
 int main(void)
 {
 	test_lap_and_marker();

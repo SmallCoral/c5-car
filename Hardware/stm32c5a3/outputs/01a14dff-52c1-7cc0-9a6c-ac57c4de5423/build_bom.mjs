@@ -1,3 +1,4 @@
+// 从原理图位号和已选器件生成立创采购工作簿，保留模板的导入列。
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
@@ -14,11 +15,13 @@ if(process.argv.includes('--api-help')){
 const parts=JSON.parse(await fs.readFile(path.join(outputDir,'selected-parts.json'),'utf8'));
 const source=JSON.parse(await fs.readFile(path.join(outputDir,'source-components.json'),'utf8'));
 const excluded=new Map([['D3','按要求排除 LED0603 本体'],['D4','按要求排除 LED0603 本体'],['SW1','按要求排除按钮'],['SW2','按要求排除按钮'],['SW5','按要求排除按钮'],['U1','按要求排除 STM32 芯片'],['J2','按确认，仅排除 USB 连接器'],['J13','PCB 自带 98P 金手指，无需另购器件']]);
+// 检查每个原理图位号恰好属于采购或排除清单，并核对归并前后的数量。
 const refs=parts.flatMap(p=>p.refs);
 if(source.length!==43||parts.length!==18||refs.length!==35||new Set(refs).size!==35)throw new Error('BOM counts mismatch');
 for(const s of source)if(!refs.includes(s.ref)&&!excluded.has(s.ref))throw new Error(`Unaccounted ${s.ref}`);
 for(const ref of refs)if(!source.some(s=>s.ref===ref)||excluded.has(ref))throw new Error(`Invalid selected ${ref}`);
 
+// 第一张表按采购料号归并用量，后两张表解释采购数量、价格和选型依据。
 const bom=workbook.worksheets.getItem('Sheet1');
 const buying=workbook.worksheets.getItem('Sheet2');
 const scope=workbook.worksheets.getItem('Sheet3');
@@ -36,10 +39,15 @@ bom.getRange('C2:C14').setNumberFormat('0000');
 bom.freezePanes.freezeRows(1);bom.showGridLines=false;bom.tabColor='#2877A0';
 
 const navy='#173D59',pale='#E7F1F7',light='#F5F9FC',text='#17384F',amber='#FFF0CA';
+// 统一指定范围的字体与对齐方式，使长规格能在单元格内换行。
 function base(sheet,range){sheet.showGridLines=false;sheet.getRange(range).format.font={name:'Microsoft YaHei',size:11,color:text};sheet.getRange(range).format.verticalAlignment='center';sheet.getRange(range).format.wrapText=true;}
+// 合并标题行，写入工作表名称并设置行高。
 function title(sheet,range,label){sheet.mergeCells(range);sheet.getRange(range).values=[[label]];sheet.getRange(range).format.fill=navy;sheet.getRange(range).format.font={name:'Microsoft YaHei',size:17,bold:true,color:'#FFFFFF'};sheet.getRange(range).format.rowHeight=36;}
+// 将一行合并成浅色分区标题。
 function band(sheet,range,label){sheet.mergeCells(range);sheet.getRange(range).values=[[label]];sheet.getRange(range).format.fill=pale;sheet.getRange(range).format.font={name:'Microsoft YaHei',size:11,bold:true,color:navy};sheet.getRange(range).format.rowHeight=32;}
+// 设置列标题的深色底纹、字体和行高。
 function header(sheet,range){sheet.getRange(range).format.fill=navy;sheet.getRange(range).format.font={name:'Microsoft YaHei',size:11,bold:true,color:'#FFFFFF'};sheet.getRange(range).format.rowHeight=36;}
+// 将采购备注写入合并单元格，用指定行高容纳长文本。
 function note(sheet,range,value,height=34){sheet.mergeCells(range);sheet.getRange(range).values=[[value]];sheet.getRange(range).format.rowHeight=height;}
 
 base(buying,'A1:M32');title(buying,'A1:M1','CoralC5-Core｜国内渠道采购核验');
@@ -48,6 +56,7 @@ note(buying,'A3:M3','“近期成交”为商城页面展示的订单数，不�
 note(buying,'A4:M4','注意 U2：自营缺货，下表采用国内合作渠道报价，详情及直达链接见第 28–31 行。注意 C7：已选 10V，ESR 仍需核实。',32);buying.getRange('A4:M4').format.fill=amber;
 buying.getRange('A6:M6').values=[['序号','商品编号','位号','单板用量','起售数量','1板采购量','国内库存','起售单价/元','采购小计/元','近期成交','渠道 / 交期','选型与采购说明','商品参数与自营页']];header(buying,'A6:M6');
 buying.getRange('A7:M24').values=parts.map((p,i)=>[i+1,p.code,p.refs.join(','),p.refs.length,p.moq,null,p.stock,p.price,null,p.recent,p.channel||'国内自营现货\n最快 4 小时发货',p.note,p.url]);
+// 每种物料取单板用量和起售数量中的较大者，再按采购量计算小计。
 buying.getRange('F7:F24').formulas=parts.map((_,i)=>[`=MAX(D${i+7},E${i+7})`]);
 buying.getRange('I7:I24').formulas=parts.map((_,i)=>[`=F${i+7}*H${i+7}`]);
 buying.getRange('A7:M24').format.rowHeight=72;
@@ -97,6 +106,7 @@ note(scope,'A32:F32','https://www.bourns.com/docs/Product-Datasheets/SRN6045TA.p
 note(scope,'A33:F33','“物料编码”为用户自定义字段，工程未提供编码规则，留空；“商品编号”已填立创 C 码。主 BOM 保留模板原十列表头。',40);
 [29,40,48,8,16,80].forEach((w,i)=>scope.getRangeByIndexes(0,i,33,1).format.columnWidth=w);scope.freezePanes.freezeRows(6);scope.tabColor='#B98925';
 
+// 导出前重算工作簿，逐表查找公式错误，再生成预览和最终采购文件。
 workbook.recalculate();
 console.log((await workbook.inspect({kind:'region',sheetId:buying.name,range:'D25:I25',maxChars:1800,tableMaxRows:2,tableMaxCols:6})).ndjson);
 const errors=[];

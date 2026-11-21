@@ -1,9 +1,4 @@
-"""Build the self-designed, articulated Coral-C5 mechanical framework.
-
-Run with the portable FreeCAD Python. Parameters use the JSON subset of YAML.
-All reference shapes are copied into this document; original boards and source
-assemblies are never opened for writing.
-"""
+"""使用便携版 FreeCAD Python 构建可活动的 Coral-C5 机械框架。参数遵循 YAML 的 JSON 子集，参考形状复制到新文档，原始板与总装只读使用。"""
 from pathlib import Path
 import json
 import math
@@ -24,6 +19,7 @@ doc=App.newDocument('CoralC5_Framework')
 parts=[]; groups={}; repairs=[]
 
 
+# 建立文档中的装配分组。
 def group(name,label,parent=None):
     o=doc.addObject('App::Part',name);o.Label=label
     if parent: parent.addObject(o)
@@ -31,6 +27,7 @@ def group(name,label,parent=None):
     return o
 
 
+# 把已有形状、名称和外观加入装配。
 def add(parent,name,label,shape,color='silver',role='concept',opacity=1):
     o=doc.addObject('Part::Feature',name);o.Label=label;o.Shape=shape
     parent.addObject(o)
@@ -40,23 +37,29 @@ def add(parent,name,label,shape,color='silver',role='concept',opacity=1):
     return o
 
 
+# 按起点和三个边长生成盒体。
 def box(x,y,z,dx,dy,dz): return Part.makeBox(dx,dy,dz,V(x,y,z))
+# 按尺寸和轴向生成圆柱体。
 def cyl(x,y,z,r,h,axis=(0,0,1)): return Part.makeCylinder(r,h,V(x,y,z),V(*axis))
 
 
+# 用轮廓点构造截面后拉伸成实体。
 def poly(points,z,h):
     pts=[V(x,y,z) for x,y in points];pts.append(pts[0])
     return Part.Face(Part.makePolygon(pts)).extrude(V(0,0,h))
 
 
+# 从参考件创建可独立放置的形状。
 def link_shape(a,b,r):
     a,b=V(*a),V(*b);delta=b-a
     return Part.makeCylinder(r,delta.Length,a,delta.normalize())
 
 
+# 从随项目保存的 BRep 资源读取几何。
 def read(name): return Part.read(str(M/'reference/reused-hardware'/(name+'.brep')))
 
 
+# 复制形状并应用装配变换。
 def transformed(s,rotation,translation):
     s=s.copy();s.Placement=App.Placement(V(*translation),rotation).multiply(s.Placement)
     return s
@@ -81,19 +84,19 @@ hx=C['length']/2;hy=C['width']/2
 outline=[(-hx,-60),(-110,-80),(-88,-hy),(88,-hy),(112,-72),(hx,-45),
          (hx,45),(112,72),(88,hy),(-88,hy),(-110,80),(-hx,60)]
 base=poly(outline,z,t)
-# Four paired diagonal openings keep the center load paths intact.
+# 四组成对斜开口保留中央承载路径。
 for sign in (-1,1):
     for x in (-74,-48,-22):
-        if sign==1 and x==-22:continue  # Solid load path under the camera mast foot.
+        if sign==1 and x==-22:continue  # 相机立柱底部预留实体承载区。
         cut=box(x,sign*72-2,z-1,20,4,t+2)
         cut.rotate(V(x,sign*72,z),V(0,0,1),sign*24)
         base=base.cut(cut)
-# Provisional motor fixing slots; verify the physical bracket before fabrication.
+# 电机安装槽为暂定尺寸，加工前须核对实物支架。
 for x in (52,102):
     for y in (-79,79): base=base.cut(cyl(x,y,z-1,1.8,t+2))
 for x in (-104,104):
     for y in (-57,57): base=base.cut(cyl(x,y,z-1,1.8,t+2))
-# The original caster has four mounting axes; the rebuilt posts end below this plate.
+# 原万向轮含四条安装轴线，重建的支柱终止于底板下方。
 for x in (-105.5,-81.5):
     for y in (-63,-33,33,63): base=base.cut(cyl(x,y,z-1,1.7,t+2))
 for x in (-9,9):
@@ -116,7 +119,7 @@ for sign in (-1,1):
 for y in (-70,70):
     add(chassis,'RearRib'+str(y).replace('-','N'),'底板下加强筋',box(-109,y-2,z-6,70,4,6),'panel')
 
-# Original R3X assemblies, rotated from front=-Y to front=+X and translated only.
+# 原 R3X 总成从前方为 −Y 转为前方为 +X，再平移到安装位置。
 rot=App.Rotation(V(0,0,1),90)
 manifest=json.loads((M/'reference/reused-hardware/manifest.json').read_text(encoding='utf-8'))
 refmeta={r['name']:r for r in manifest['parts']}
@@ -132,13 +135,13 @@ for side,source_side in (('L','R'),('R','L')):
         s=transformed(read(name),rot,shift)
         if name.startswith('MotorBracket'):
             oldvol=s.Volume
-            # Flat mounting face: no peg, screw tip or extra segment above the support plane.
+            # 安装面保持平整，支撑面上方不增加定位销、螺钉尖或多余轴段。
             s=s.common(box(-200,-200,-10,400,400,z+10))
             mount_trim.append({'name':name,'removed_mm3':oldvol-s.Volume,'top_limit_mm':z})
         color='black' if name.endswith('Wheel') else ('panel' if name.endswith('Hub') else 'silver')
         add(drive,side+name,'参考轮组 '+side+' / '+name,s,color,'reference_geometry_1to1')
 
-# Two original caster mechanisms. Their spacers are rebuilt as flat-ended hollow posts.
+# 复用两套原万向轮机构，将隔柱重建为平端空心柱。
 for side,ty in (('L',48),('R',-48)):
     cr=App.Rotation(V(0,0,1),-90)
     shift=(-3.5,ty-57,0)
@@ -146,12 +149,12 @@ for side,ty in (('L',48),('R',-48)):
         add(caster,side+n,'参考万向轮 '+side+' / '+n,transformed(read(n),cr,shift),
             'black' if n.endswith('Wheel') else 'silver','reference_geometry_1to1')
     for i,(px,py) in enumerate([(-102,-72),(-78,-72),(-102,-42),(-78,-42)]):
-        # Same four mounting axes as the reference caster, mapped by Rz(-90).
+        # 使用参考万向轮的四条安装轴线，绕 Z 轴旋转 −90° 后放置。
         x,y=px-3.5,ty-57-py
         post=cyl(x,y,34,3,z-34).cut(cyl(x,y,33,1.6,z-32))
         add(caster,side+'CasterPost'+str(i),'万向轮齐平隔柱 / 无顶部短凸段',post,'gold','flat_top_mount')
 
-# Exact 91 x 53 battery locating rim identified by the user in EdgeMind_Assembly.step.
+# 91 × 53 mm 电池定位边框取自用户在 EdgeMind_Assembly.step 中指定的位置。
 bat=P['battery'];bx,by=bat['center_xy']
 bay=transformed(read('BatteryBay'),App.Rotation(V(0,0,1),90),(bx,by,top))
 add(power,'BatteryRim','原装配电池定位凸框 / 91×53×3',bay,'coral','supplied_assembly_geometry')
@@ -161,7 +164,7 @@ for px in (bx-28,bx+28):
     band=box(px-2,by-26,top+24.8,4,52,1)
     add(power,'BatteryStrap'+str(int(px)).replace('-','N'),'电池固定带参考',band,'black')
 
-# Carrier has external clamp pads: no fictional PCB mounting holes are introduced.
+# 支架使用外侧夹紧面，保留 PCB 原有安装孔设计。
 ex,ey=E['motor_board_center_xy'];ez=E['board_bottom']
 tray=box(ex-54.5,ey-54.5,ez-2,109,109,2).cut(box(ex-43,ey-43,ez-3,86,86,4))
 add(electronics,'BoardCarrier','Motor99 外夹托架 / 孔位未分配到PCB',tray,'panel')
@@ -198,7 +201,7 @@ for p in json.loads((M/'reference/core-edge-pads.json').read_text(encoding='utf-
 add(electronics,'CoreGoldContacts','98触点金手指 / 实际焊盘位置',
     transformed(Part.makeCompound(gold),core_rot,core_origin),'gold','current_core_pad_geometry')
 
-# A tilted 1.8-inch display console, four button spaces, and an HC-08 volume.
+# 倾斜面板为 1.8 英寸屏、四个按键及 HC-08 预留空间。
 tx,ty=E['tft_center_xy'];console=group('DisplayConsole','任务操作台 / 屏幕参考外形',hmi)
 console.Placement=App.Placement(V(tx,ty,top+29),App.Rotation(V(0,1,0),-17))
 add(console,'DisplayTray','TFT托盘参考',box(-30,-19,-2,60,38,2),'panel')
@@ -215,7 +218,7 @@ add(hmi,'HC08Space','四脚HC-08安装空间 / 40×25×12待核',box(-63,59,top+
 hinge_x=B['hinge_x'];hinge_z=top+B['hinge_height_above_plate']
 for side in (-1,1):
     points=[(hinge_x-7,top),(hinge_x+11,top),(hinge_x+4,hinge_z+5),(hinge_x-4,hinge_z+5)]
-    # Cross section in XZ, extruded across Y.
+    # 在 XZ 面建立截面，再沿 Y 方向拉伸。
     wire=Part.makePolygon([V(x,side*21-3,zv) for x,zv in points]+[V(points[0][0],side*21-3,points[0][1])])
     tower=Part.Face(wire).extrude(V(0,6,0)).cut(cyl(hinge_x,side*21-4,hinge_z,2.6,9,(0,1,0)))
     add(gantry,'HingeTower'+str(side).replace('-','N'),'端铰支架 / 青色加劲',tower,'panel')
@@ -223,7 +226,7 @@ for side in (-1,1):
         link_shape((hinge_x+6,side*24,top+8),(hinge_x,side*24,hinge_z-8),1.2),'cyan')
 add(gantry,'HingePin','摆杆铰轴参考',cyl(hinge_x,-27,hinge_z,2.5,54,(0,1,0)),'silver')
 
-# All beam shapes are local to the actual hinge and driven by native expressions.
+# 摆杆几何以真实铰轴为局部原点，由原生表达式驱动。
 track=box(0,-13,0,B['length'],26,3)
 track=track.fuse(box(0,-13,3,B['length'],3,13)).fuse(box(0,10,3,B['length'],3,13))
 lug=box(-5,-10,-6,13,20,9).cut(cyl(0,-11,0,2.6,22,(0,1,0)))
@@ -240,7 +243,7 @@ add(beam,'BeamLinkPin','摆杆连杆连接销',cyl(B['link_position'],-41,0,1.5,
 ball=add(beam,'SteelBall','钢球 / 18mm候选',Part.makeSphere(B['display_ball_diameter']/2,V(0,0,0)),'silver','contest_size_candidate')
 ball.Placement.Base=V(140,0,3+B['display_ball_diameter']/2)
 
-# Reference stepper package: model dimension is not a measured manufacturer part.
+# 步进电机参考包络使用建模尺寸，实际型号仍需量测。
 sx,sz=B['stepper_center_xz'];fy=B['stepper_face_y']
 add(actuator,'StepperHousing','42BYGH34-401A 参考包络 / 待实测',box(sx-21,fy-34,sz-21,42,34,42),'black','unmeasured_envelope')
 add(actuator,'StepperFront','42步进前盖参考',box(sx-21,fy-3,sz-21,42,3,42),'silver','unmeasured_envelope')
@@ -330,14 +333,14 @@ for meta in parts:
     bb=s.optimalBoundingBox();meta['local_bounds']=[bb.XMin,bb.YMin,bb.ZMin,bb.XMax,bb.YMax,bb.ZMax]
     meta['placement']=list(o.getGlobalPlacement().Matrix.A)
     if not all(math.isfinite(x) for x in meta['placement']):raise RuntimeError('Nonfinite placement '+o.Name)
-    # Preview meshes use local shape coordinates and the full occurrence transform.
+    # 预览网格使用零件局部坐标，放置时再用完整的装配变换。
     local=s.copy();local.Placement=App.Placement()
     verts,triangles=local.tessellate(.28)
     meta['vertices']=[[round(v.x,5),round(v.y,5),round(v.z,5)] for v in verts]
     meta['triangles']=[list(x) for x in triangles]
 
 doc.saveAs(str(M/'source/CoralC5_Framework.FCStd'))
-# Global BRep compound avoids exporter ambiguity about nested component placements.
+# 以全局 BRep 组合导出，消除多级嵌套摆放的歧义。
 world=[]
 for meta in parts:
     o=doc.getObject(meta['name']);s=o.Shape.copy();s.Placement=o.getGlobalPlacement();world.append(s)

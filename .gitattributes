@@ -1,6 +1,6 @@
-# Keep the copy deployed to MaixCAM2 identical to the recorded source hash.
+# 相机脚本统一使用 LF 换行，使部署文件与记录的源码哈希可以直接核对。
 Firmware/26h/**/*.py text eol=lf
 
-# Application checksums and the matching debug symbols depend on exact bytes.
+# 固件包按原始字节校验，配套的调试符号也按二进制保存。
 Firmware/releases/**/*.ota binary
 Firmware/releases/**/*.elf binary

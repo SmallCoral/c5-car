@@ -1,7 +1,9 @@
+/* F407 回中算法在 C5 上的移植接口，保留原有符号名，方便与旧工程和实车轨迹对照。 */
+
 #include "balance.h"
 #include "bsp_system.h"
 
-//now
+// 旧版稳球控制的运行状态与参数。
 
 uint8_t balance_state = 0;
 
@@ -29,6 +31,7 @@ float bias_Kd = 0.0f;
 float bias_X = 160.0f;  //由专家指定位置, 对于我们的结构 1cm -> 10个像素点
 
 //第三题, 先不写死
+/* 按旧题号选择位置环目标和增益。调试回中使用第 4 组参数，目标为控制坐标 160。 */
  void best_hard(void) {
 
 	 static uint16_t tim = 0;
@@ -112,6 +115,7 @@ int16_t aim_position = 0;  //水管需要倾斜的角度
 
 //当balance_state == 1的时候进入该PID计算
 //1向下运动， 0向上运动
+/* 位置外环将钢球坐标误差换算成所需管角，再交给内环。短时丢球时沿用最近实测。 */
 void Keep_Blance_out(void) {
 
 	static int16_t last_site = 0;  //存储上一次正确的坐标
@@ -147,6 +151,7 @@ void Keep_Blance_out(void) {
 
 }
 
+/* 按位置误差与球位差分计算倾角，用输出限幅约束外环请求。 */
 void PID_Keep_Blance_out(PID_BALANCE* p) {
 
 	p->Error1 = p->Error0;
@@ -199,6 +204,7 @@ PID_BALANCE keep_inter = {
 //向下运动时候水管实际角度值减减
 //0向下运动电机实际角度值加加， 1向上运动实际角度值减减
 
+/* 按旧机构的传动比例把轴角换成估计管角，再将内环结果拆成方向和转速。 */
 void trace_balance_inter(void) {
 
 	//keep_inter.Target = 2.0f;
@@ -219,6 +225,7 @@ void trace_balance_inter(void) {
 
 }
 
+/* 将管角偏差换成电机转速，在小角差死区内给零速，其余情况按增益和上下限计算。 */
 void PID_Keep_Blance_inter(PID_BALANCE* p) {
 
 	p->Error1 = p->Error0;

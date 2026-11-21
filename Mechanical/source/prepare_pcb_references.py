@@ -1,4 +1,4 @@
-"""Read-only KiCad inputs; a temporary Motor copy gets a virtual 99 mm outline."""
+"""只读打开 KiCad 输入，在 Motor 的临时副本上添加 99 mm 的规划轮廓。"""
 import hashlib
 import json
 import subprocess
@@ -13,10 +13,12 @@ HW = ROOT / 'Hardware/stm32c5a3/Hardware'
 CLI = Path(r'C:/Program Files/KiCad/10.0/bin/kicad-cli.exe')
 
 
+# 计算输入 PCB 或输出模型的内容指纹。
 def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+# 调用导出程序生成 STEP 并记录输出。
 def export(board_path, output, origin, component_filter=None):
     cmd = [str(CLI), 'pcb', 'export', 'step', '--force', '--subst-models',
            '--user-origin', origin, '--output', str(output)]
@@ -33,6 +35,7 @@ def export(board_path, output, origin, component_filter=None):
             'output': output.relative_to(ROOT).as_posix(), 'sha256': sha(output)}
 
 
+# 准备 Core 与 Motor 的机械参考副本及导出记录。
 def main():
     for d in ('reference', 'validation'):
         (MECH / d).mkdir(exist_ok=True)

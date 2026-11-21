@@ -1,8 +1,4 @@
-"""Audit the exported native netlist against the electrical design contract.
-
-Checks shorts as well as omissions, every physical pin/footprint mapping,
-portable model paths, A4 hierarchy, 100mil notes, and native ERC. No PCB access.
-"""
+"""按电气设计合同审查原生网表，检查短接、漏接、物理引脚与封装对应关系、模型相对路径、A4 层次图、100 mil 注释和原生 ERC。"""
 from pathlib import Path
 import sys, json, csv, xml.etree.ElementTree as ET, hashlib, re
 ROOT=Path(__file__).resolve().parents[1]
@@ -37,8 +33,10 @@ for net in tree.findall('.//nets/net'):
         assert pin not in pin_net,pin
         pin_net[pin]=pins
 checks=[]
+# 记录连接或资源核对的名称、结果及差异。
 def check(name,condition,detail=''):
     checks.append({'name':name,'pass':bool(condition),'detail':detail})
+# 根据给定端点集合检查整组网络有无短接或漏接。
 def group(name,parts):
     expected=frozenset(parts.split())
     found=next((pin_net[p] for p in sorted(expected) if p in pin_net),frozenset())

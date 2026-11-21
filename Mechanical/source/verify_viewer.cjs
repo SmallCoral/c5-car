@@ -1,8 +1,10 @@
+// 在无界面的 Chrome 中操作装配预览，保存各视角截图和机构闭合误差。
 const fs=require('fs'),path=require('path');
 const {pathToFileURL}=require('url');
 const {chromium}=require('C:/Users/sc/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
 const base=path.resolve(__dirname,'..');
 const expected=JSON.parse(fs.readFileSync(path.join(base,'preview','assembly-meshes.json'),'utf8')).parts.length;
+// 打开与交付件相同的本地页面，等模型加载完成后再操作控件。
 (async()=>{
  const browser=await chromium.launch({headless:true,executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe'});
  try{
@@ -19,20 +21,24 @@ const expected=JSON.parse(fs.readFileSync(path.join(base,'preview','assembly-mes
   await page.getByRole('button',{name:'侧视',exact:true}).click();
   await page.waitForTimeout(250);
   await page.locator('#viewport').screenshot({path:path.join(base,'preview','preview-side.png')});
+  // 在 −6°、0°、6° 三个位姿比较拉杆端部与销中心，检查整个行程的连接。
   const poses=[];
   for(const angle of [-6,0,6]){
    await page.locator('#angle').fill(String(angle));
    const state=await page.evaluate(()=>{
     const eye=meshes.find(m=>m.userData.name==='RodEye60');
     const pin=meshes.find(m=>m.userData.name==='BeamLinkPin');
+    // 先取网格自身包围盒的中心，再用零件矩阵转换到装配坐标。
     const center=m=>{m.geometry.computeBoundingBox();return m.geometry.boundingBox.getCenter(new THREE.Vector3()).applyMatrix4(m.matrix)};
     const rodEnd=center(eye),attach=center(pin);
+    // 将销中心换到拉杆所在的横向平面，然后计算两端的三维间隙。
     attach.y+=(B.link_plane_y+B.rod_lateral_offset)-(-41+16/2);
     return {angle:window.currentBeamAngle,closure:rodEnd.distanceTo(attach)};
    });
    poses.push({requested:angle,displayed:state.angle,rod_closure_error_mm:state.closure,
     pass:Math.abs(state.angle-angle)<1e-6&&state.closure<0.02});
   }
+  // 切换电子件显隐，随后让动画前进两次采样，核对角度是否真的变化。
   await page.locator('input[data-group="electronics"]').uncheck();
   const toggleOff=await page.evaluate(()=>meshes.filter(m=>m.userData.family==='electronics'&&m.visible).length===0);
   await page.locator('input[data-group="electronics"]').check();
@@ -47,6 +53,7 @@ const expected=JSON.parse(fs.readFileSync(path.join(base,'preview','assembly-mes
   await page.getByRole('button',{name:'复位',exact:true}).click();
   const count=await page.evaluate(()=>window.modelPartCount);
   const animationPass=Number.isFinite(animatedAngle)&&Math.abs(animatedAngle-animatedStart)>1e-5;
+  // 汇总零件数、三个姿态、显隐和动画结果；任一检查失败就设置退出码。
   const report={date:'2026-11-05',browser_version:browser.version(),node_version:process.version,
    parts:count,poses,toggle_pass:toggleOff,animation_moves:animationPass,javascript_errors:errors,
    screenshots:['preview-isometric.png','preview-interface.png','preview-top.png','preview-side.png','preview-exploded.png'],

@@ -1,3 +1,5 @@
+/* 把物理按键的点动或长按转换为步进位置请求，保存目标、限位和到位状态。 */
+
 #ifndef CORAL_JOG_H
 #define CORAL_JOG_H
 
@@ -20,10 +22,15 @@ struct shaft_jog {
 	uint32_t since;
 };
 
+/* 区分点动按键的按下、释放和连续长按，给出请求步数。 */
 enum jog_action jog_key_update(struct jog_keys *keys, uint8_t down, bool enabled, uint32_t now);
+/* 标定页单按中间键产生左右点动，按住 450 ms 后每 120 ms 重复，组合键不触发点动。 */
 enum jog_action jog_cal_key(struct jog_keys *keys, uint8_t down, uint32_t now);
+/* 判断点动器是否仍在等待抱持或执行定位。 */
 bool jog_busy(const struct shaft_jog *jog);
+/* 将本次点击叠加到已确认的轴位上并发起点动。 */
 bool jog_press(struct shaft_jog *jog, struct stepper *step, int direction, uint32_t now);
+/* 等待新鲜的轴位与到位反馈，按阶段完成抱持、定位及收尾。 */
 void jog_poll(struct shaft_jog *jog, struct stepper *step, uint32_t now);
 
 #endif

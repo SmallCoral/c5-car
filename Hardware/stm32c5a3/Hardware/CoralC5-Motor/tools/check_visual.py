@@ -1,4 +1,4 @@
-"""Inspect native PDF wire/text intersections on every schematic page."""
+"""逐页检查原生 PDF 中导线与文字的相交情况。"""
 from pathlib import Path
 import json
 import hashlib

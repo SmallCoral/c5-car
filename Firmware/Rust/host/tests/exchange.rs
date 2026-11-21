@@ -1,3 +1,5 @@
+// 用预先安排的应答与超时测试蓝牙逐包确认，避免真实电台与等待。
+
 use coral_core::ota::{self, DATA, Frame, Parser};
 use coral_host::{
     Result,
@@ -12,7 +14,8 @@ use std::{
     time::{Duration, Instant},
 };
 
-// Scripted I/O is always ready; tests never create a Bluetooth adapter or wait on time.
+// 模拟传输立即就绪，测试无需蓝牙适配器，也无需等待真实超时。
+// 在主机执行异步模拟交换。
 fn run<T>(f: impl Future<Output = T>) -> T {
     let mut cx = Context::from_waker(Waker::noop());
     let mut f = pin!(f);
@@ -27,16 +30,19 @@ struct Wire {
     replies: VecDeque<Result<Frame>>,
 }
 impl Transport for Wire {
+    // 记录模拟后端发出的协议包。
     async fn send(&mut self, b: &[u8]) -> Result<()> {
         self.sent.push(b.to_vec());
         Ok(())
     }
+    // 从脚本队列返回应答或传输错误。
     async fn response(&mut self, _: Instant) -> Result<Frame> {
         self.replies.pop_front().unwrap_or_else(|| {
             Err(io::Error::new(io::ErrorKind::TimedOut, "injected lost ACK").into())
         })
     }
 }
+// 为指定命令与序号构造 ACK。
 fn ack(command: u8, sequence: u32, status: u32) -> Result<Frame> {
     let mut b = [0; 8];
     ota::put32(&mut b, status);
@@ -44,6 +50,7 @@ fn ack(command: u8, sequence: u32, status: u32) -> Result<Frame> {
     Ok(Frame::new(command, sequence, &b).unwrap())
 }
 #[test]
+// 丢失一次 ACK，检查原包重发及迟到匹配应答。
 fn lost_ack_retries_same_packet_and_accepts_matching_late_response() {
     let mut w = Wire::default();
     w.replies
@@ -67,6 +74,7 @@ fn lost_ack_retries_same_packet_and_accepts_matching_late_response() {
     assert_eq!(packet.sequence, 77);
 }
 #[test]
+// 耗尽所有重试后应向调用者返回错误。
 fn bounded_retries_return_error_after_all_acks_lost() {
     let mut w = Wire::default();
     let result = run(exchange::request(
@@ -86,6 +94,7 @@ fn bounded_retries_return_error_after_all_acks_lost() {
     assert_eq!(w.sent.len(), 4);
 }
 #[test]
+// 对显式拒绝、残缺应答及断连应停止盲目重试。
 fn explicit_rejection_truncated_ack_and_disconnect_do_not_blindly_retry() {
     for reply in [
         ack(DATA | 0x80, 1, 3),

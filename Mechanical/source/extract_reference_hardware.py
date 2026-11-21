@@ -1,4 +1,4 @@
-"""Extract selected reference shapes, retaining source metadata and originals."""
+"""提取选定的参考形状，同时保留来源信息和原文件。"""
 from pathlib import Path
 import hashlib
 import json
@@ -11,10 +11,12 @@ SOURCE = REF/'chassis/v4-lidar-imu/EdgeMind_Chassis.FCStd'
 OUT = MECH/'reference/reused-hardware'
 
 
+# 计算参考总装指纹。
 def sha(p):
     return hashlib.sha256(p.read_bytes()).hexdigest()
 
 
+# 从指定装配提取轮、支架等参考形状，保存尺寸与来源。
 def main():
     OUT.mkdir(exist_ok=True)
     before = sha(SOURCE)
@@ -40,7 +42,7 @@ def main():
           'battery_geometry_found':False,
           'note':'Reference geometry reused at 1:1 scale; battery remains an explicitly unmeasured envelope.'}
     (OUT/'manifest.json').write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-    # Save the precise reference wheel size and existing mount plane in parameters.
+    # 把参考轮的精确尺寸和现有安装平面写入参数。
     p=MECH/'parameters.yaml';params=json.loads(p.read_text(encoding='utf-8'))
     wheel=next(r for r in rows if r['name']=='RearLWheel')['bbox_mm']
     bracket=next(r for r in rows if r['name']=='MotorBracketL')['bbox_mm']

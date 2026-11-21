@@ -1,4 +1,4 @@
-"""Guarded schematic-only power revision from the saved live design."""
+"""以保存的原理图为基线修改电源，按预设条件检查输入。"""
 from pathlib import Path
 import copy,csv,hashlib,json,sys,uuid,shutil
 ROOT=Path(__file__).resolve().parents[1];BASE=ROOT/'docs/baseline-2026-11-06-power-revision'
@@ -6,32 +6,41 @@ sys.path.insert(0,str(ROOT.parent/'Shared/design_tools'))
 from sexpr import parse,dump,node,nodes,prop,Atom
 from schematic_primitives import n,num,xy,effects
 
+# 根据对象键生成稳定的 UUID。
 def uid(s):return str(uuid.uuid5(uuid.NAMESPACE_URL,'CoralC5-Power-20261106/'+s))
+# 计算文件指纹供版本核对。
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+# 读取图元放置坐标。
 def at(z):return tuple(map(float,node(z,'at')[1:3]))
+# 更新图元的目标位置。
 def put(z,x,y):node(z,'at')[1:3]=[num(x),num(y)]
+# 序列化修改后的原理图或符号库。
 def save(p,d):p.write_text(dump(d)+'\n',encoding='utf-8')
+# 在两个端点间创建导线。
 def wire(d,a,b):d.append(n('wire',n('pts',xy('xy',*a),xy('xy',*b)),n('stroke',n('width',num(0)),n('type',Atom('default'))),n('uuid',uid(str((a,b))))))
+# 设置指定器件字段的值和显示属性。
 def field(z,key,value):
  p=prop(z,key)
  if p:p[2]=value
  else:
   p=copy.deepcopy(prop(z,'Datasheet'));p[1:3]=[key,value];z.append(p)
 
+# 按电源修订要求更新接线及相应的本地资源。
 def main():
  if '--apply-saved-baseline' not in sys.argv:raise SystemExit('Historical edit only; explicit --apply-saved-baseline required.')
  if (ROOT/'docs/power_revision.json').exists():raise SystemExit('Power edit already applied; use KiCad for later changes.')
  for p in [*BASE.glob('*.kicad_sch'),BASE/'Motor.kicad_sym']:
   if sha(ROOT/p.name)!=sha(p):raise SystemExit('Refusing later manual edits in '+p.name)
  stock=Path('C:/Program Files/KiCad/10.0/share/kicad')
+ # 定位并复制所需的封装或模型到工程。
  def resource(cat,name,localname=None):
   localname=localname or cat+'__'+name;dst=ROOT/'Motor.pretty'/(localname+'.kicad_mod')
   d=parse((stock/'footprints'/(cat+'.pretty')/(name+'.kicad_mod')).read_text(encoding='utf-8'));d[1]=localname
   for m in nodes(d,'model'):
    rel=m[1].replace('${KICAD10_3DMODEL_DIR}/','');src=stock/'3dmodels'/rel;modelname=cat+'__'+Path(rel).name
    if not src.is_file() and cat=='Fuse':
-    # No 454/451 stock model is installed: bind an explicitly generic,
-    # dimensioned 454 envelope instead of a wrong small-chip fuse model.
+    # 本机没有 454/451 的现成模型，采用按尺寸建立的 454 通用包络，
+    # 避免误用小型贴片保险丝模型。
     generic=['#VRML V2.0 utf8','# Generic 454 envelope 6.10x2.69x2.69mm; not an exact manufacturer assembly.']
     for x,dx,color in [(0,6.1,'.9 .9 .85'),(-2.325,1.45,'.7 .7 .7'),(2.325,1.45,'.7 .7 .7')]:
      generic.append('Transform { translation '+str(x/2.54)+' 0 '+str(1.345/2.54)+' children [ Shape { appearance Appearance { material Material { diffuseColor '+color+' } } geometry Box { size '+str(dx/2.54)+' '+str(2.69/2.54)+' '+str(2.69/2.54)+' } } ] }')
@@ -46,8 +55,8 @@ def main():
   dst.write_text(expected,encoding='utf-8');return 'Motor:'+localname
  mosfp=resource('Package_TO_SOT_SMD','TO-252-2')
  fusefp=resource('Fuse','Fuse_Littelfuse-NANO2-451_453','Fuse_NANO2_454_6.10x2.69mm')
- # The 454 and 451/453 use the same 6.10 x 2.69 x 2.69 mm envelope.
- # Pads are 1.96 x 3.15 mm, centers +/-2.455 mm per the 454 drawing.
+ # 454 与 451/453 共用 6.10 × 2.69 × 2.69 mm 的外形包络。
+ # 按 454 图纸取 1.96 × 3.15 mm 焊盘，中心距原点各 2.455 mm。
  swfp='Motor:SS12D10G5_SHOUHAN_3P_P4.80mm'
  fp=n('footprint',swfp.split(':')[1],n('version',num(20260206)),n('generator',Atom('pcbnew')),n('layer','F.Cu'),n('descr','SHOU HAN SS12D10G5 C7431054, 3P SPDT, 4.8mm pitch, 12.7x6.7mm; generic envelope model'),n('attr',Atom('through_hole')))
  for label,value,y,layer in [('Reference','REF**',-5.08,'F.SilkS'),('Value','SS12D10G5',5.08,'F.Fab')]:fp.append(n('property',label,value,xy('at',4.8,y),n('layer',layer),effects(1)))
@@ -58,6 +67,7 @@ def main():
  fp.append(n('model','${KIPRJMOD}/Models/SS12D10G5_generic.wrl',n('offset',n('xyz',num(0),num(0),num(0))),n('scale',n('xyz',num(1),num(1),num(1))),n('rotate',n('xyz',num(0),num(0),num(0)))))
  save(ROOT/'Motor.pretty'/(swfp.split(':')[1]+'.kicad_mod'),fp)
  model=['#VRML V2.0 utf8','# Generic envelope from SHOU HAN C7431054, not an exact manufacturer assembly.']
+ # 将指定位置、尺寸及颜色写成 VRML 盒体。
  def box(x,y,z,dx,dy,dz,color):model.append('Transform { translation '+' '.join(str(round(v/2.54,6)) for v in [x,y,z])+' children [ Shape { appearance Appearance { material Material { diffuseColor '+color+' } } geometry Box { size '+' '.join(str(round(v/2.54,6)) for v in [dx,dy,dz])+' } } ] }')
  box(4.8,0,3.2,12.7,6.7,6.4,'.5 .5 .5');box(3.7,0,8.9,3.9,3.9,5,'.08 .08 .08')
  for x in [0,4.8,9.6]:box(x,0,-3.5,1.3,.8,7,'.75 .75 .7')
@@ -115,7 +125,7 @@ def main():
    for p in nodes(fuse,'pin'):node(p,'uuid')[1]=uid('F2/pin/'+p[1])
    for p in nodes(fuse,'property'):put(p,228.6,109.22)
    put(prop(fuse,'Reference'),228.6,100.33);put(prop(fuse,'Value'),228.6,102.87)
-   project=node(node(fuse,'instances'),'project');path=node(project,'path');path[1]='/'+node(d,'uuid')[1] # replaced below with the actual root/sheet path
+   project=node(node(fuse,'instances'),'project');path=node(project,'path');path[1]='/'+node(d,'uuid')[1] # 随后用实际根页与图页路径替换此值。
    peer=next(z for z in nodes(d,'symbol') if prop(z,'Reference')[2]=='J24');path[1]=node(node(node(peer,'instances'),'project'),'path')[1];node(path,'reference')[1]='F2'
    d.append(fuse)
    fcache=next(z for z in nodes(node(parse((ROOT/'02_Power.kicad_sch').read_text(encoding='utf-8')),'lib_symbols'),'symbol') if z[1]==node(fuse,'lib_id')[1]);node(d,'lib_symbols').append(copy.deepcopy(fcache))
@@ -133,7 +143,7 @@ def main():
  libpath=ROOT/'Motor.kicad_sym';lib=parse(libpath.read_text(encoding='utf-8'))
  for old,new in libnew.items():lib.remove(next(z for z in nodes(lib,'symbol') if z[1]==old));lib.append(new)
  save(libpath,lib)
- # Refresh the schematic draft directly from actual instantiated properties.
+ # 从已放置器件的实际属性更新原理图用料草表。
  parts={}
  for p in ROOT.glob('*.kicad_sch'):
   for z in nodes(parse(p.read_text(encoding='utf-8')),'symbol'):

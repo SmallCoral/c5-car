@@ -1,3 +1,5 @@
+/* 截取 LCD 像素传输，核验实时长度条、目标和失测标记的显示。 */
+
 #include <assert.h>
 #include <string.h>
 #include "board.h"
@@ -9,10 +11,14 @@ static unsigned int row;
 static unsigned int transfers;
 static uint32_t now;
 
+/* 记录背光控制以代替实物引脚。 */
 void board_lcd_backlight(bool on) { (void)on; }
+/* 模拟屏幕复位时序。 */
 void board_lcd_reset(bool high) { (void)high; }
+/* 在主机测试中代替实际延时。 */
 void board_delay(uint32_t ms) { now += ms; }
 
+/* 捕获发给 LCD 的命令和像素以还原屏幕。 */
 bool board_lcd_write(bool data, const uint8_t *bytes, size_t size)
 {
 	if (!data) {
@@ -31,6 +37,7 @@ bool board_lcd_write(bool data, const uint8_t *bytes, size_t size)
 	return true;
 }
 
+/* 按模拟时钟推进局部刷新。 */
 static void advance(const struct ui_state *ui, unsigned int ms)
 {
 	for (unsigned int i = 0; i < ms; i++) {
@@ -41,6 +48,7 @@ static void advance(const struct ui_state *ui, unsigned int ms)
 	}
 }
 
+/* 将捕获的像素与预期屏幕对照。 */
 static void expect_screen(const struct ui_state *ui, bool whole)
 {
 	static uint8_t reference[UI_BYTES];
@@ -51,6 +59,7 @@ static void expect_screen(const struct ui_state *ui, bool whole)
 	assert(!memcmp(lcd + start, reference + start, end - start));
 }
 
+/* 检查球位、目标和失测标记能在慢速整页扫描间及时更新。 */
 int main(void)
 {
 	struct ui_state ui = { .task = TASK_LAP, .ball = { .status = BALL_MISSING } };
@@ -59,7 +68,7 @@ int main(void)
 	assert(display_init());
 	advance(&ui, 700);
 	expect_screen(&ui, true);
-	/* Move several times during one slow sweep of the static instruments. */
+	/* 在静态仪表完成一次慢扫描之前，让球位移动多次。 */
 	for (unsigned int i = 0; i <= 20; i++) {
 		ui.ball = (struct ball_view){ .status = BALL_TRACKED, .permille = i * 50 };
 		advance(&ui, 33);
@@ -78,7 +87,7 @@ int main(void)
 	ui.ball = (struct ball_view){ .status = BALL_TRACKED, .permille = 500 };
 	advance(&ui, 900);
 	expect_screen(&ui, true);
-	/* Operator's five observed medians, independent of firmware constants. */
+	/* 五个位置取自操作者的观测中位数，独立于固件内的标定常量。 */
 	struct ball_receiver rx = { .received = true, .flags = 3, .lcd_seen = true };
 	const int raw[] = { 531, 400, 282, 160, 49 }, columns[] = { 8, 37, 64, 93, 120 };
 	for (int page = 0; page < 2; page++) {
@@ -105,8 +114,7 @@ int main(void)
 				assert(label);
 			}
 		}
-		/* A missed detection after a right-end sighting leaves a hollow
-		 * amber ring at that end in the bytes transferred to the LCD. */
+		/* 右端失测后，传到 LCD 的像素应在上次位置显示琥珀色空心圆。 */
 		rx.lcd_direct = false;
 		rx.lcd_at = rx.last_ms = now;
 		rx.flags = 5;
@@ -119,7 +127,7 @@ int main(void)
 		assert(right[8] == 0xfd && right[9] == 0x48);
 		rx.flags = 3;
 	}
-	/* A held selection key advances 1 mm per repeat, including while balancing. */
+	/* 长按选点每次重复移动 1 mm，原地稳球时也适用。 */
 	ui.menu = (struct contest_menu){ .page = MENU_RUN, .item = EVENT_OFFSET };
 	advance(&ui, 250);
 	for (int mm = 1; mm <= 50; mm++) {

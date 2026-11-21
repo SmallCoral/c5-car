@@ -189,6 +189,7 @@ def steel_center(rgb, obj):
     return min(choices, key=lambda x: abs(x - cx)) if choices else None
 
 
+# 从检测结果生成可用于跟踪的绝对坐标候选。
 def candidates_from(objs, tile, origin):
     candidates, boxes = [], []
     if len(objs):
@@ -218,6 +219,7 @@ class BallTracker:
         self.last_measure_t = None  # 最近真实测量时间；预测不会刷新它
         self.search_index = 0
 
+    # 依据待确认位置或已锁定位置计算下一次局部视野的起点。
     def tile_origin(self, t):
         if self.pending is not None and t - self.pending[3] <= CONFIRM_MAX_GAP_S:
             x = self.pending[2]
@@ -347,12 +349,15 @@ def send_v2(serial, sequence, status, x, v, age_ms):
     serial.write(b'\xaa\x55' + payload + bytes((crc8(payload), 0x17)))
 
 
+# 将视觉跟踪的更新节拍与 UART 的定期发送分开。
 class BallUart:
+    # 清空发送序号、定时基准和上次实测标记。
     def __init__(self):
         self.sequence = 0
         self.next_tx = None
         self.last_sent_measure = None
 
+    # 到发送时刻才打包，区分新实测与沿旧状态外推的数据。
     def poll(self, serial, tracker, now, outlier):
         if self.next_tx is None:
             self.next_tx = now

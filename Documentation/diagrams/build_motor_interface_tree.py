@@ -1,4 +1,4 @@
-"""Render the reviewed M2.7 interface tree as one PNG and editable SVG."""
+"""按已核对的 M2.7 接口清单绘制 PNG，同时导出可编辑的 SVG。"""
 from pathlib import Path
 import html, json, hashlib, base64, xml.etree.ElementTree as ET
 from PIL import Image, ImageDraw, ImageFont
@@ -13,19 +13,24 @@ svg=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox=
      '<desc>依据当前原生网表和接口合同。树线表示功能归属，不表示实际布线；针号按扩展板端编号。</desc>',
      f'<rect width="{W}" height="{H}" fill="#F4F7FB"/>']
 fonts={};text_boxes=[]
+# 按字号取得绘图使用的字体。
 def font(size,bold=False):
     key=(size,bold)
     if key not in fonts:fonts[key]=ImageFont.truetype('C:/Windows/Fonts/msyhbd.ttc' if bold else 'C:/Windows/Fonts/msyh.ttc',size)
     return fonts[key]
+# 绘制接口框与背景矩形。
 def rect(box,fill,outline=None,r=18,width=2):
     x,y,x2,y2=box;draw.rounded_rectangle(box,radius=r,fill=fill,outline=outline,width=width)
     svg.append(f'<rect x="{x}" y="{y}" width="{x2-x}" height="{y2-y}" rx="{r}" fill="{fill}" stroke="{outline or "none"}" stroke-width="{width}"/>')
+# 沿端点绘制连接线。
 def line(points,color='#C2CCD9',width=4):
     draw.line(points,fill=color,width=width,joint='curve')
     svg.append('<polyline points="'+' '.join(f'{x},{y}' for x,y in points)+f'" fill="none" stroke="{color}" stroke-width="{width}" stroke-linecap="round" stroke-linejoin="round"/>')
+# 绘制支路或端点上的圆点。
 def dot(x,y,color,r=6):
     draw.ellipse((x-r,y-r,x+r,y+r),fill=color)
     svg.append(f'<circle cx="{x}" cy="{y}" r="{r}" fill="{color}"/>')
+# 在指定位置排版标签。
 def text(x,y,s,size=26,color='#24364B',bold=False,center=False,maxw=None):
     f=font(size,bold);width=draw.textlength(s,font=f)
     if maxw is not None and width>maxw:raise ValueError(f'Text too wide {width:.1f}>{maxw}: {s}')
@@ -33,10 +38,12 @@ def text(x,y,s,size=26,color='#24364B',bold=False,center=False,maxw=None):
     draw.text((x,y),s,font=f,fill=color,anchor='lt')
     svg.append(f'<text x="{x:.2f}" y="{y}" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="{size}" font-weight="{700 if bold else 400}" fill="{color}" dominant-baseline="text-before-edge">{html.escape(s)}</text>')
     text_boxes.append((x,y,width,size,s))
+# 绘制带底色的简短标记。
 def badge(right,y,s,color):
     width=draw.textlength(s,font=font(25,True))+36
     rect((right-width,y,right,y+44),color,r=11)
     text(right-width/2,y+7,s,25,'#FFFFFF',True,True)
+# 逐行排版端子针号和用途。
 def pinrow(x,y,labels,color,width=988,height=64):
     gap=8;cell=(width-gap*(len(labels)-1))/len(labels)
     for i,label in enumerate(labels):
@@ -46,7 +53,7 @@ def pinrow(x,y,labels,color,width=988,height=64):
         text(a+cell/2,y+31,label,21,'#24364B',False,True,maxw=cell-6)
 
 def appearance(x,y,h,items):
-    """Embed a CAD thumbnail and a caption for each connector on this card."""
+    """在卡片上为每个接头嵌入 CAD 缩略图并标注名称。"""
     panelx=x+1043;panelw=274;top=y+73;available=h-89
     rect((panelx,top,panelx+panelw,top+available),'#F7F9FC',r=13)
     slot=available/len(items)
@@ -63,7 +70,7 @@ def appearance(x,y,h,items):
         svg.append(f'<image x="{px:.2f}" y="{py:.2f}" width="{iw}" height="{ih}" href="data:image/png;base64,{encoded}"/>')
         text(panelx+panelw/2,top+(i+1)*slot-26,label,18,'#63758C',center=True,maxw=panelw-10)
 
-# Card content is intentionally explicit; no interfaces are inferred from graphics.
+# 按明确的接口清单绘图，图形的外观不能用来推断电气连接。
 groups=[
  dict(id='01',title='电源与核心板',sub='电池 / 总降压 / 核心板',color='#C77B18',soft='#FFF3DE',side='L',cy=500,cards=[
   dict(y=250,h=250,title='电池输入与总电源',tag='J1 · SW1',refs=['J1'],lines=[
@@ -122,7 +129,7 @@ groups=[
    ('SW4 确认 PB2；SW5 启动 PE7',27),
    ('6×6×4.3mm 贴片；低有效，10k 上拉、软件消抖',26)])])]
 
-# Match all actual connectors, including auxiliary control and debug headers.
+# 列出所有实物接头，包括辅助控制和调试排针。
 tree=ET.parse(MOTOR/'docs/netlist.xml')
 actual={c.get('ref') for c in tree.findall('.//components/comp') if c.get('ref').startswith('J')}
 listed={r for g in groups for c in g['cards'] for r in c['refs']}
@@ -147,7 +154,7 @@ text(64,145,'功能分支 · 板端针序 · 接口外观参考',29,'#63758C')
 badge(4180,70,'M2.7  /  2026-11-07','#244564')
 text(3740,143,'14 个连接器全部列入',26,'#63758C',maxw=440)
 
-# Shared trunk: a rooted tree, intentionally without arrows or electrical cross-links.
+# 各分支共用一条主干。这里画的是层级关系，因此省略箭头和电气跨接线。
 line([(1960,1200),(1870,1200)],'#B4C4D8',6)
 line([(1870,500),(1870,1820)],'#B4C4D8',6)
 line([(2340,1200),(2385,1200)],'#B4C4D8',6)
@@ -167,13 +174,13 @@ for g in groups:
     rect((cx,cy-68,cx+320,cy+68),g['soft'],None,23)
     text(cx+22,cy-46,g['id'],21,col,True)
     text(cx+22,cy-17,g['title'],33,col,True,maxw=280)
-    # The subtitle is a technical cue; use two lines if it exceeds the node width.
+    # 副标题提示接口的技术要点，超出节点宽度时分成两行。
     sub=g['sub'];parts=sub.split(' / ')
     if draw.textlength(sub,font=font(20))>280:
         sub='MaixCAM2 / Action 4' if g['id']=='04' else '感为 8 路 + MSPM0 辅助板'
     text(cx+22,cy+30,sub,20,'#66778B',maxw=282)
 
-# Root card.
+# 整棵树的根节点。
 rect((1963,1047,2343,1367),'#E1E9F2',r=32)
 rect((1960,1040,2340,1360),'#173653',r=30)
 text(2150,1070,'CoralC5-Motor',36,'#FFFFFF',True,True,maxw=350)

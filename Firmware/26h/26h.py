@@ -1,3 +1,5 @@
+# 相机端图传服务。通过 UDP 广播地址，再向一个或多个 TCP 客户端发送带帧头的图像。
+
 from maix import app, camera, err, image, network, time
 import json
 from pathlib import Path
@@ -20,6 +22,7 @@ MAGIC = b"MCJ1"
 HEADER = struct.Struct("!4sIHH")
 
 
+# 检查字符串是否为可用于图传的 IPv4 地址。
 def valid_ipv4(ip):
     return bool(
         ip
@@ -30,7 +33,7 @@ def valid_ipv4(ip):
 
 
 def wlan_ipv4(wifi):
-    """Read wlan0 only, so a USB virtual-network IP is never selected."""
+    """只读取 wlan0 的 IPv4 地址，避免误用 USB 虚拟网卡。"""
     try:
         output = subprocess.check_output(
             ["ip", "-4", "-o", "addr", "show", "dev", "wlan0"]
@@ -53,8 +56,9 @@ def wlan_ipv4(wifi):
     return ""
 
 
+# 复用已连接的无线网络，需要时从本地配置连接热点。
 def ensure_wifi():
-    # Keep this object alive for the entire application lifetime.
+    # 在整个应用运行期间保留无线接口对象。
     wifi = network.wifi.Wifi()
     ip = wlan_ipv4(wifi)
     if ip:
@@ -70,7 +74,7 @@ def ensure_wifi():
         result = wifi.connect(ssid, password, wait=False, timeout=60)
         err.check_raise(result, "start WiFi connection failed")
     except Exception as exc:
-        # Settings may already have started an asynchronous connection.
+        # 系统设置可能已在后台发起连接，先检查连接状态。
         print("WiFi connect request:", exc)
 
     for second in range(60):
@@ -84,6 +88,7 @@ def ensure_wifi():
     raise RuntimeError("MaixCAM2 did not obtain a wlan0 IPv4 address")
 
 
+# 创建用于局域网发现广播的 UDP 套接字。
 def make_discovery_socket(local_ip):
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     sock.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
@@ -91,6 +96,7 @@ def make_discovery_socket(local_ip):
     return sock
 
 
+# 广播当前发送端的地址和视频监听端口。
 def announce(sock, local_ip):
     message = "MCJ1|{}|{}|{}|{}".format(
         local_ip,
@@ -104,6 +110,7 @@ def announce(sock, local_ip):
     )
 
 
+# 非阻塞接入等待中的图传客户端并加入连接列表。
 def accept_clients(server, clients):
     while len(clients) < MAX_CLIENTS:
         try:
@@ -118,6 +125,7 @@ def accept_clients(server, clients):
         print("Client connected:", address, "total:", len(clients))
 
 
+# 向各连接发送同一帧头和图像载荷，剔除已经断开的客户端。
 def send_frame(clients, header, payload):
     failed = []
 
@@ -137,6 +145,7 @@ def send_frame(clients, header, payload):
         clients.remove(conn)
 
 
+# 初始化相机、网络与服务端，循环广播并发送图像。
 def main():
     wifi, local_ip = ensure_wifi()
 

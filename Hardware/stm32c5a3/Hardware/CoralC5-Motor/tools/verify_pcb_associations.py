@@ -1,26 +1,23 @@
-"""Read-only F8 UUID matching preflight, including all units of each symbol.
-
-KiCad10 BOARD_NETLIST_UPDATER matches footprint.path against component.sheetpath
-plus each symbol UUID. A reference-based netlist DRC does not establish this.
-This simulates that matching step; it does not drive the GUI update dialog.
-"""
+"""模拟 KiCad 10 按图页路径与符号 UUID 匹配封装的步骤，包含多单元符号。用此项检查 F8 同步前的关联，按位号核对的 DRC 无法替代它。"""
 from pathlib import Path
 from datetime import datetime
 import argparse,collections,hashlib,json,sys,subprocess,shutil,xml.etree.ElementTree as ET
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT.parent/'Shared/design_tools'))
 from sexpr import parse,node,nodes,prop
+# 按图页路径及每个符号的 UUID 匹配 PCB 封装，列出缺失、重复和替换。
 def audit(board_path,netlist_path):
     board=parse(board_path.read_text(encoding='utf8'));fps=nodes(board,'footprint')
     tree=ET.parse(netlist_path);components=[c for c in tree.findall('.//components/comp') if not any(p.get('name')=='exclude_from_board' for p in c.findall('property'))]
     refs=collections.Counter(prop(f,'Reference')[2] for f in fps)
-    # KiCad deliberately keeps board-only artwork without a schematic symbol.
+    # KiCad 允许纯板面图形没有对应的原理图符号。
     board_only={node(f,'uuid')[1] for f in fps if 'board_only' in (node(f,'attr') or [])}
     paths=collections.defaultdict(list)
     for f in fps:
         p=node(f,'path')
         if p:paths[p[1]].append(f)
     matches=[];additions=[];ambiguous=[];wrong_ref=[];replacements=[];used=set();pin_errors=[];value_errors=[]
+    # 提取板文件使用的封装标识。
     def board_name(n):return n.replace('/','{slash}') if n.startswith(('Net-(','unconnected-(')) else n
     pin_nets={(p.get('ref'),p.get('pin')):board_name(n.get('name')) for n in tree.findall('.//nets/net') for p in n.findall('node')}
     for c in components:
@@ -41,6 +38,7 @@ def audit(board_path,netlist_path):
     result={'checked_at':datetime.now().astimezone().isoformat(timespec='seconds'),'method':'KiCad10 UUID path lookup: component sheetpath + each component UUID; no reference fallback','source':'https://github.com/KiCad/kicad-source-mirror/blob/10.0/pcbnew/netlist_reader/board_netlist_updater.cpp','schematic_components':len(components),'pcb_footprints':len(fps),'board_only_footprints':[prop(f,'Reference')[2] for f in fps if node(f,'uuid')[1] in board_only],'duplicate_pcb_references':{k:v for k,v in refs.items() if v>1},'missing_pcb_paths':[prop(f,'Reference')[2] for f in fps if node(f,'path') is None and node(f,'uuid')[1] not in board_only],'predicted_additions_by_uuid':sorted(additions),'ambiguous_symbol_matches':ambiguous,'unmatched_pcb_footprints':[prop(f,'Reference')[2] for f in fps if node(f,'uuid')[1] not in used|board_only],'reference_mismatches':wrong_ref,'predicted_footprint_type_replacements':sorted(replacements),'value_mismatches':value_errors,'pad_net_mismatches':pin_errors,'pcb_sha256':hashlib.sha256(board_path.read_bytes()).hexdigest(),'native_netlist_sha256':hashlib.sha256(netlist_path.read_bytes()).hexdigest(),'matches':matches,'limitation':'Exact UUID matching preflight only; GUI memory, update options, library/field refresh, copper DRC and physical hardware are separate.'}
     result['pass']=len(components)==len(fps)-len(board_only-used) and not any(result[k] for k in ['duplicate_pcb_references','missing_pcb_paths','predicted_additions_by_uuid','ambiguous_symbol_matches','unmatched_pcb_footprints','reference_mismatches','predicted_footprint_type_replacements','value_mismatches','pad_net_mismatches'])
     return result
+# 导出或读取输入网表，对照板文件写出关联核验结果。
 def main():
     record_path=ROOT/'docs/f8_association_repair.json'
     repair=json.loads(record_path.read_text(encoding='utf8')) if record_path.exists() else None
@@ -48,6 +46,7 @@ def main():
     source_hashes={}
     if args.netlist is None:
         args.netlist=ROOT/'docs/f8_current_netlist.xml'
+        # 为输入文件集合建立内容指纹。
         def hashes():return {p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in ROOT.glob('*.kicad_sch')}
         for attempt in range(3):
             source_hashes=hashes()
@@ -60,8 +59,10 @@ def main():
         baseline=ROOT/repair['baseline'];saved=baseline/'CoralC5-Motor.kicad_pcb'
         old=parse(saved.read_text(encoding='utf8'));now=parse(args.board.read_text(encoding='utf8'))
         prior={prop(f,'Reference')[2]:f for f in nodes(old,'footprint')};current={prop(f,'Reference')[2]:f for f in nodes(now,'footprint')}
+        # 提取忽略路径后的比较表示。
         def no_path(f):return [x for x in f if not isinstance(x,list) or x[0]!='path']
         checks=[]
+        # 保存布尔核验及说明。
         def ck(name,ok):checks.append({'name':name,'pass':bool(ok)})
         ck('latest user baseline hash',hashlib.sha256(saved.read_bytes()).hexdigest()==repair['baseline_pcb_sha256'])
         ck('all latest user footprint references retained',set(prior)==set(current))
@@ -73,9 +74,9 @@ def main():
             if f.endswith(('.kicad_sch','.kicad_pro','.kicad_prl','.kicad_sym')) or f.startswith('.history/') or f.endswith('-lib-table'):
                 actual=hashlib.sha256((ROOT/f).read_bytes()).hexdigest()
                 if actual!=want:observed.append({'file':f,'baseline_sha256':want,'current_sha256':actual})
-        # Other files can be saved in the user's open editor while we work.
-        # Never roll those back or call them our PCB edit: use a fresh, stable
-        # native export above and report the observed source changes separately.
+        # 检查期间用户可能在编辑器中保存其他文件。
+        # 保留这些改动，基于上面重新导出的稳定网表执行核验，
+        # 将观察到的源文件变化单独记录。
         result['other_source_saves_observed_since_baseline']=observed
         result['preservation_checks']=checks;result['preservation_pass']=all(c['pass'] for c in checks)
         result['retained_segments']=len(nodes(now,'segment'));result['retained_vias']=len(nodes(now,'via'))

@@ -1,4 +1,4 @@
-"""Verify the two placed XT60 connectors and their local resources; no board access."""
+"""检查两只已放置的 XT60 及其本地资源，无需编辑板图。"""
 from pathlib import Path
 import hashlib
 import json
@@ -10,6 +10,7 @@ sys.path.insert(0, str(ROOT.parent / 'Shared/design_tools'))
 from sexpr import parse, node, nodes, prop
 
 
+# 检查两只 XT60 的连通、极性和本地资源，写出核对结果。
 def main():
     sch = parse((ROOT / 'Transfer.kicad_sch').read_text(encoding='utf-8'))
     library = parse((ROOT / 'Transfer.kicad_sym').read_text(encoding='utf-8'))
@@ -18,6 +19,7 @@ def main():
     erc = json.loads((ROOT / 'docs/Transfer.erc.json').read_text(encoding='utf-8'))
     checks = []
 
+    # 登记每项核对的名称和是否通过。
     def check(name, passed):
         checks.append({'name': name, 'passed': bool(passed)})
 

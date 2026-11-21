@@ -1,8 +1,11 @@
+/* 第一题实车轨迹回放。逐样本检查水平确认、三段移球与完成后保持。 */
+
 /* 按实车采集时间逐帧回放，核对控制阶段与目标轴角。 */
 #include <stdio.h>
 #include <stdlib.h>
 #include "contest.h"
 
+/* 读取指定实车轨迹，按主控时钟回放并逐行对照阶段、目标轴角和完成时刻。 */
 int main(int argc, char **argv)
 {
 	if (argc != 3)

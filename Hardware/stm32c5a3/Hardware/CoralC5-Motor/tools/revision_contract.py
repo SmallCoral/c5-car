@@ -1,11 +1,14 @@
-"""Explicit, bounded changes authorized after the M2.1 presentation baseline."""
+"""修改范围限于 M2.1 展示基线之后确认的变更。"""
 import copy,csv,json,hashlib,xml.etree.ElementTree as ET
 from sexpr import node,nodes,prop,parse
 from schematic_semantic import canonical
 
+# 集中保存各版硬件的差异及其对应检查规则。
 class Revisions:
+ # 从文档目录读取该版存在的变更记录。
  def __init__(self,root):
   self.root=root;doc=root/'docs'
+  # 按文件名读取 JSON，缺失时使用空记录。
   def read(name):
    p=doc/name;return json.loads(p.read_text(encoding='utf-8')) if p.exists() else {}
   self.zdt=read('zdt_ttl_design.json');self.connectors=read('connector_revision.json');self.power=read('power_revision.json');self.passives=read('passive_0603_revision.json');self.jumpers=read('jumpers_revision.json');self.bt_pinout=read('bluetooth_pinout_revision.json')
@@ -18,7 +21,9 @@ class Revisions:
   self.pinmap.update(self.zdt.get('intentional_pin_map',{}));self.pinmap.update(self.power.get('pin_map_from_m2',{}))
   if self.jumpers:self.pinmap.update({f'J16:{k}':None for k in range(1,4)})
   self.pinmap.update(self.gray.get('pin_map_from_prior',{}))
+ # 将基线的引脚映射到待审版本的接头针号。
  def map_pin(self,p):return self.pinmap.get(p,p)
+ # 构造当前位号应有的属性值。
  def expected_fields(self,z):
   values={p[1]:p[2] for p in nodes(z,'property')};ref=values['Reference']
   if ref=='J23' and self.zdt:values.update(Value='ZDT_XS_TTL_8P',Footprint=self.zdt['J23']['footprint'],Datasheet=self.zdt['manual'])
@@ -31,7 +36,9 @@ class Revisions:
   values.update({k:v for k,v in self.vision.get('changes',{}).get(ref,{}).items() if k!='lib_id'})
   values.update({k:v for k,v in self.m26.get('changes',{}).get(ref,{}).items() if k!='lib_id'})
   return values
+ # 根据版本修订得到应使用的符号库标识。
  def expected_libid(self,z):return self.m26.get('changes',{}).get(prop(z,'Reference')[2],{}).get('lib_id',self.vision.get('changes',{}).get(prop(z,'Reference')[2],{}).get('lib_id',self.power.get('changes',{}).get(prop(z,'Reference')[2],{}).get('lib_id',node(z,'lib_id')[1])))
+ # 提取可稳定比较的引脚身份。
  def pin_identity(self,old,new):
   ref=prop(old,'Reference')[2];oo={p[1]:node(p,'uuid')[1] for p in nodes(old,'pin')};nn={p[1]:node(p,'uuid')[1] for p in nodes(new,'pin')}
   if self.zdt and ref=='J23':return set(nn)==set(map(str,range(1,9))) and all(nn[b]==oo[a] for a,b in [('2','2'),('3','7'),('4','8')])
@@ -40,6 +47,7 @@ class Revisions:
   if self.gray and ref=='J20':return nn=={str(int(p)-2):u for p,u in oo.items() if int(p)>2}
   if self.gray and ref=='J21':return nn=={'1':oo['2'],'2':oo['1']}
   return canonical(oo)==canonical(nn)
+ # 从基线连接分组推导修订后的预期网络。
  def expected_partitions(self,parts):
   result=set()
   for part in parts:
@@ -63,7 +71,9 @@ class Revisions:
    from vision_contract import partitions
    result=partitions(result,self.m26)
   return result
+ # 比较两份符号库定义是否符合授权的差异范围。
  def library_compatible(self,old,new,cache=False,extra_fuse=None,file=None):
+  # 按名称整理图页中嵌入的符号。
   def symbols(d):return {z[1]:copy.deepcopy(z) for z in nodes(d,'symbol')}
   oo,nn=symbols(old),symbols(new);prefix='Motor:' if cache else ''
   if self.vision:
@@ -96,9 +106,12 @@ class Revisions:
   if extra_fuse is not None and self.power:oo[prefix+'Device__Fuse']=copy.deepcopy(extra_fuse)
   return oo==nn
 
+# 执行本版的电气及身份约束检查。
 def checks(root,actual,schemas):
  r=Revisions(root);out=[]
+ # 记录检查结果和上下文。
  def ck(name,ok,detail=None):out.append({'name':'revision: '+name,'pass':bool(ok),'detail':detail})
+ # 按引脚集合核对指定网络。
  def group(pin):return actual.get(pin,frozenset())
  if r.zdt:
   ck('ZDT TTL variant explicitly confirmed',r.zdt['user_confirmed'].endswith('TTL variant'))

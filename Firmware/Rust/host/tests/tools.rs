@@ -1,3 +1,5 @@
+// 在临时目录内测试电脑端工具的离线打包、镜像检查与遥测回放。
+
 use coral_core::{ota::*, telemetry::Record};
 use coral_host::*;
 use std::{
@@ -10,6 +12,7 @@ use std::{
 static NEXT: AtomicU32 = AtomicU32::new(0);
 struct Temp(PathBuf);
 impl Temp {
+    // 为每个 CLI 场景创建独立临时目录。
     fn new() -> Self {
         let p = std::env::temp_dir().join(format!(
             "coral-rust-test-{}-{}",
@@ -21,8 +24,9 @@ impl Temp {
     }
 }
 impl Drop for Temp {
+    // 测试对象退出时清理本次临时目录。
     fn drop(&mut self) {
-        // The only recursive removal is the absolute temporary directory created by this test.
+        // 仅递归清理由本测试创建并已解析绝对路径的临时目录。
         let root = std::env::temp_dir().canonicalize().unwrap();
         let path = self.0.canonicalize().unwrap();
         assert_eq!(path.parent(), Some(root.as_path()));
@@ -36,12 +40,14 @@ impl Drop for Temp {
         fs::remove_dir_all(path).unwrap();
     }
 }
+// 构造带有效向量表的应用字节。
 fn binary(base: u32) -> Vec<u8> {
     let mut b = vec![0xa5; 777];
     put32(&mut b, REQUEST_ADDR);
     put32(&mut b[4..], base + 0x241);
     b
 }
+// 解析 Intel HEX 行并验证校验和与地址。
 fn parse_hex(hex: &str) -> BTreeMap<u32, u8> {
     let mut upper = 0;
     let mut map = BTreeMap::new();
@@ -81,6 +87,7 @@ fn parse_hex(hex: &str) -> BTreeMap<u32, u8> {
     map
 }
 #[test]
+// 覆盖跨区 HEX 以及重叠区段的拒绝条件。
 fn hex_checksums_cross_bank_and_overlap_rejection() {
     let b = [0xab; 33];
     let map = parse_hex(&make_hex(&[(0x0800fff8, &b)]).unwrap());
@@ -91,6 +98,7 @@ fn hex_checksums_cross_bank_and_overlap_rejection() {
     assert!(make_hex(&[(u32::MAX, &b)]).is_err());
 }
 #[test]
+// 将应用打包再解析，核对分区元数据和载荷。
 fn packager_roundtrip_and_partition_metadata() {
     let t = Temp::new();
     let app = binary(APP_ADDR);
@@ -133,6 +141,7 @@ fn packager_roundtrip_and_partition_metadata() {
     );
 }
 #[test]
+// 输入错误板型、无效续传偏移或错误身份，确认工具拒绝。
 fn wrong_board_and_bad_resume_offsets_fail_closed() {
     let mut p = [0; 32];
     for (i, n) in [
@@ -169,6 +178,7 @@ fn wrong_board_and_bad_resume_offsets_fail_closed() {
     assert!(verify_identity("C5APP,1,12345678,778", 777, 0x12345678).is_err());
 }
 #[test]
+// 用离线 CLI 回放检查遥测与坏行诊断。
 fn offline_cli_replay_preserves_rows_and_reports_invalid_input() {
     let t = Temp::new();
     let mut r = Record {
@@ -207,6 +217,7 @@ fn offline_cli_replay_preserves_rows_and_reports_invalid_input() {
     );
 }
 #[test]
+// 离线检查镜像和渲染不依赖蓝牙硬件。
 fn offline_cli_never_needs_radio_to_inspect_or_render() {
     let t = Temp::new();
     fs::write(t.0.join("app.bin"), binary(APP_ADDR)).unwrap();

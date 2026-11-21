@@ -1,4 +1,7 @@
+// Cargo 构建入口，为嵌入式应用与引导程序设置链接参数。
+
 use std::{env, fs, path::PathBuf};
+// 为 MCU 目标选用对应的链接脚本，生成正确的内存布局。
 fn main() {
     println!("cargo:rerun-if-changed=link.x");
     if env::var("CARGO_CFG_TARGET_ARCH").as_deref() != Ok("arm") {

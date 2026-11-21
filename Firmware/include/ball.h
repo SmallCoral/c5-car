@@ -1,3 +1,5 @@
+/* MaixCAM2 的接收状态、实测年龄和长度尺标定。控制器与显示各有专门的球位读取入口。 */
+
 #ifndef CORAL_BALL_H
 #define CORAL_BALL_H
 
@@ -10,7 +12,7 @@
 
 enum ball_status { BALL_OFFLINE, BALL_MISSING, BALL_TRACKED, BALL_UNCERTAIN, BALL_LAST_SEEN };
 enum {
-	/* Position-loop offsets retain the 320-pixel controller scale. */
+	/* 位置闭环偏移沿用宽 320 像素的控制坐标。 */
 	BALL_X_LEFT = 531, BALL_X_CENTER = 282, BALL_X_RIGHT = 49, BALL_CENTER_RADIUS_PX = 1,
 	BALL_RIGHT_SIGN = BALL_X_RIGHT > BALL_X_LEFT ? 1 : -1,
 	BALL_LEFT_SPAN = BALL_RIGHT_SIGN * (BALL_X_CENTER - BALL_X_LEFT) / 2,
@@ -22,7 +24,8 @@ enum {
 	RULER_X_PLUS_5 = 160, RULER_X_RIGHT = BALL_X_RIGHT,
 };
 
-/* Each half ends at its measured stop, with O at the center of the LCD. */
+/* 标尺左右半边各以实测挡杆为端点，O 位于屏幕中央。 */
+/* 按 O 和两侧实测挡杆分段，将原始像素映射为长度条的相对位置。 */
 static inline int ball_ruler_position(int x)
 {
 	if (x >= RULER_X_LEFT)
@@ -40,7 +43,7 @@ static inline int ball_ruler_position(int x)
 struct ball_view {
 	enum ball_status status;
 	uint16_t permille;
-	int16_t offset_px; /* Relative to the observed midpoint, positive toward the physical right. */
+	int16_t offset_px; /* 以实测中点为零，向实物右侧为正。 */
 };
 
 struct ball_receiver {
@@ -66,10 +69,15 @@ struct ball_receiver {
 	uint32_t lcd_at, lcd_candidate_at;
 };
 
+/* 逐字节寻找帧头、验证长度和校验，再解析球位及其状态。 */
 void ball_feed(struct ball_receiver *rx, uint8_t byte, uint32_t now);
+/* 按实物右侧挡杆建立接下来的球位确认条件。 */
 void ball_expect_right(struct ball_receiver *rx, uint32_t now);
+/* 检查 V2 的实测标志与数据年龄，判断能否用作本次直接观测。 */
 bool ball_v2_measured(const struct ball_receiver *rx, uint32_t now);
+/* 根据最后收包及观测时间，返回闭环可使用的球位状态。 */
 struct ball_view ball_view_at(const struct ball_receiver *rx, uint32_t now);
+/* 返回屏幕使用的球位与可见性，供绘制最后观测标记。 */
 struct ball_view ball_display_at(const struct ball_receiver *rx, uint32_t now);
 
 #endif

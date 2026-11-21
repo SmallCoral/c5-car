@@ -1,4 +1,4 @@
-"""Native-netlist audit of M2; preserves the real pre-edit contract. No PCB access."""
+"""按编辑前的实际连接约定检查 M2 原生网表，只读访问原理图资料。"""
 from pathlib import Path
 import sys,csv,json,hashlib,re,copy,subprocess,xml.etree.ElementTree as ET
 ROOT=Path(__file__).resolve().parents[1];DOC=ROOT/'docs';BASE=DOC/'baseline-2026-11-06-m2'
@@ -7,6 +7,7 @@ from sexpr import parse,node,nodes,prop
 from pin_functions import parse_alternate_functions
 from revision_contract import Revisions,checks as revision_checks
 
+# 读取 KiCad 原生网表并建立网络与引脚索引。
 def netlist(path):
  tree=ET.parse(path);by_pin={};by_name={}
  for nn in tree.findall('.//nets/net'):
@@ -17,17 +18,22 @@ def netlist(path):
    by_pin[pin]=pins
  return by_pin,by_name
 
+# 在保存的 M2 基线上逐项核对电路连接、器件身份和资源。
 def main():
  checks=[]
  rev=Revisions(ROOT)
+ # 登记核对结果和差异。
  def check(name,ok,detail=None):checks.append(dict(name=name,pass_=bool(ok),detail=detail))
  actual,names=netlist(DOC/'netlist.xml');old,_=netlist(BASE/'motor.net.xml');core,_=netlist(DOC/'core_netlist.xml')
+ # 比较完整的预期引脚集合是否在同一网络。
  def group(name,pins):
   expected=frozenset(pins.split());found=actual.get(next(iter(expected)),frozenset())
   check(name,found==expected,dict(missing=sorted(expected-found),unexpected=sorted(found-expected)))
+ # 检查指定端点是否已真实连通。
  def joined(name,*pins):check(name,all(p in actual.get(pins[0],()) for p in pins),pins)
- # Compare all original physical circuits, permitting only the connector's sleeve
- # renumbering and additions to existing rails. This detects merges and omissions.
+ # 逐一对照原电路，仅允许插座外套筒改号和向原电源轨添加负载，
+ # 用这种对照查出误并网络或遗漏节点。
+ # 将旧引脚编号对应到此次修订后的针号。
  def map_old(pin):return None if pin=='J1:2' else rev.map_pin('J1:2' if pin=='J1:3' else pin)
  old_pins={p for p in map(map_old,old) if p and not p.startswith('#')}
  seen=set()
@@ -57,7 +63,7 @@ def main():
    if ref.startswith('#'):continue
    key=(ref,int(node(z,'unit')[1]));components[key]=(file,z)
    allpins.update(ref+':'+p[1] for p in nodes(z,'pin'))
- # Position/reference/UUID audit against the user's saved design, not a generator.
+ # 将位置、位号和 UUID 与用户保存的设计核对。
  for file in ['02_Power.kicad_sch','03_Core_Interface.kicad_sch','04_Left_Motor.kicad_sch','05_Right_Motor.kicad_sch']:
   for z in nodes(parse((BASE/file).read_text(encoding='utf-8')),'symbol'):
    ref=prop(z,'Reference')[2]
@@ -95,7 +101,7 @@ def main():
   value=r.get('af');value=None if value in [None,'','None'] else int(value)
   if value is not None:check(r['signal']+' datasheet AF',functions.get((r['gpio'],r['function']))==value)
   joined(r['signal']+' reaches endpoint','J14:'+r['contact'],r['endpoint'])
- # Independently specified connector pin contracts.
+ # 用独立列出的接头针序检查引脚。
  for ref,power,tx,rx in [('J15','V3V3_EXT' if rev.jumpers else 'VBT','BT_TX','BT_RX')]+([] if rev.vision else [('J18','V5_EXT','MAIX_TX','MAIX_RX'),('J19','V5_EXT','VIDEO_TX','VIDEO_RX')])+([] if rev.zdt else [('J23','V3V3','STEP_UART_TX','STEP_UART_RX')]):
   for pin,net in enumerate([power,'GND',tx,rx],1):check(ref+':'+str(pin)+' expected net',ref+':'+str(pin) in next((p for name,p in names.items() if name.split('/')[-1]==net),frozenset()),net)
  extra={'TFT_CS':['R55:2'],'TFT_RES':['R56:2'],'STEP_PUL':['R57:1'],'STEP_DIR':['R58:1'],'STEP_nEN':['R54:2']}

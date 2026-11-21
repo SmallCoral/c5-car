@@ -1,3 +1,5 @@
+/* 步进驱动状态机。每条命令登记待收的应答，按驱动反馈推进使能、运动、抱持与失能，并在失联或接近限位时收住动作。 */
+
 #include <limits.h>
 #include <string.h>
 #include "config.h"
@@ -7,12 +9,14 @@
 
 static size_t encode_goal(const struct stepper *step, int32_t target, uint16_t rpm, uint8_t *frame);
 
+/* 依据标定水平与允许轴向行程判断编码器位置是否可用。 */
 static bool within_travel(const struct stepper *step, int32_t raw)
 {
 	return step->travel_valid && raw >= step->shaft_level + SHAFT_HIGH_OFFSET &&
 	       raw <= step->shaft_level + SHAFT_LOW_OFFSET;
 }
 
+/* 经串口发送命令并登记待确认的命令和时间。 */
 static bool send_command(struct stepper *step, const uint8_t *data,
 			 size_t length, uint32_t now)
 {
@@ -26,6 +30,7 @@ static bool send_command(struct stepper *step, const uint8_t *data,
 	return true;
 }
 
+/* 发送失能命令并转入等待驱动确认的阶段。 */
 static void send_disable(struct stepper *step, uint32_t now)
 {
 	uint8_t frame[6];
@@ -38,6 +43,7 @@ static void send_disable(struct stepper *step, uint32_t now)
 	}
 }
 
+/* 取消待办运动，按停止流程清除驱动输出。 */
 void stepper_stop(struct stepper *step, uint32_t now)
 {
 	uint8_t frame[5];
@@ -48,18 +54,20 @@ void stepper_stop(struct stepper *step, uint32_t now)
 	step->phase = STEP_STOP;
 	step->direction_probe = DIR_NONE;
 	step->hold = false;
-	/* Override pending reads/enables so a late ACK cannot trigger a move. */
+	/* 覆盖尚未完成的读取或使能请求，避免迟到的应答重新触发运动。 */
 	step->pending = 0;
 	if (!send_command(step, frame, length, now))
 		send_disable(step, now);
 }
 
+/* 初始化状态机，使上电与重连从检查驱动状态开始。 */
 void stepper_init(struct stepper *step)
 {
 	memset(step, 0, sizeof(*step));
 	step->phase = STEP_BOOT;
 }
 
+/* 发送停轴命令，在抱持模式中保留使能以托住水管。 */
 void stepper_brake(struct stepper *step, uint32_t now)
 {
 	uint8_t frame[5];
@@ -78,11 +86,13 @@ void stepper_brake(struct stepper *step, uint32_t now)
 	send_command(step, frame, length, now);
 }
 
+/* 根据最近一次有效应答判断驱动是否在线。 */
 bool stepper_online(const struct stepper *step, uint32_t now)
 {
 	return step->seen && !elapsed(now, step->last_reply, 1000);
 }
 
+/* 接手已上电的机构，先停住残余运动再核对使能状态。 */
 void stepper_resume_hold(struct stepper *step, uint32_t now)
 {
 	/* 重新接管时先发 FE 消除残余转动，再用 3A 应答确认驱动是否仍处于使能状态。 */
@@ -91,12 +101,14 @@ void stepper_resume_hold(struct stepper *step, uint32_t now)
 	stepper_brake(step, now);
 }
 
+/* 判断驱动状态是否正处于使能、移动或闭环控制阶段。 */
 bool stepper_running(const struct stepper *step)
 {
 	return step->phase == STEP_ENABLE || step->phase == STEP_SPEED ||
 	       step->phase == STEP_MOVING || step->phase == STEP_POSITION || step->phase == STEP_BAL_SPEED;
 }
 
+/* 限频查询驱动配置，取得电机及细分信息供定位换算。 */
 void stepper_request_config(struct stepper *step, uint32_t now)
 {
 	const uint8_t cmd[] = { STEP_ADDRESS, 0x42, 0x6c, 0x6b };
@@ -109,6 +121,7 @@ void stepper_request_config(struct stepper *step, uint32_t now)
 	}
 }
 
+/* 核对驱动状态和目标转速，发出使能后等待应答。 */
 static bool start(struct stepper *step, bool reverse, uint16_t rpm, bool hold,
 		  uint32_t now)
 {
@@ -133,6 +146,7 @@ static bool start(struct stepper *step, bool reverse, uint16_t rpm, bool hold,
 	return true;
 }
 
+/* 在轴位、细分及反馈有效时建立受限行程并启动转动。 */
 bool stepper_start(struct stepper *step, bool reverse, uint16_t rpm, uint32_t now)
 {
 	if (!within_travel(step, step->position) || !step->pulses_per_rev ||
@@ -143,6 +157,7 @@ bool stepper_start(struct stepper *step, bool reverse, uint16_t rpm, uint32_t no
 	return start(step, reverse, rpm, false, now);
 }
 
+/* 请求在当前轴位使能抱持。 */
 bool stepper_latch(struct stepper *step, uint32_t now)
 {
 	if (!step->pulses_per_rev || !stepper_online(step, now) || (step->flags & 4U))
@@ -155,11 +170,12 @@ bool stepper_latch(struct stepper *step, uint32_t now)
 	}
 	if (!start(step, false, 15, true, now))
 		return false;
-	/* Enable at the present shaft position without issuing a motion target. */
+	/* 在当前轴位使能驱动并抱持，无需下发运动目标。 */
 	step->phase = STEP_LATCH;
 	return true;
 }
 
+/* 设置允许行程并启动位置保持控制。 */
 bool stepper_hold(struct stepper *step, int32_t lower, int32_t upper, uint32_t now)
 {
 	if (!within_travel(step, step->position))
@@ -186,6 +202,7 @@ bool stepper_hold(struct stepper *step, int32_t lower, int32_t upper, uint32_t n
 	return true;
 }
 
+/* 在给定轴位上下界内建立速度控制。 */
 bool stepper_speed_loop(struct stepper *step, int32_t lower, int32_t upper, uint32_t now)
 {
 	if (step->pending || elapsed(now, step->position_at, 15) ||
@@ -198,15 +215,17 @@ bool stepper_speed_loop(struct stepper *step, int32_t lower, int32_t upper, uint
 	return true;
 }
 
+/* 将稳球环的带符号转速交给驱动状态机。 */
 void stepper_balance_rpm(struct stepper *step, int rpm)
 {
 	if (step->phase != STEP_BAL_SPEED)
 		return;
-	step->reverse = rpm >= 0; /* F407 Contron_X_Speed: positive is direction 1 (CCW). */
+	step->reverse = rpm >= 0; /* F407 的 Contron_X_Speed 约定正转速对应方向 1，即逆时针。 */
 	step->target_rpm = (uint16_t)(rpm < -50 || rpm > 50 ? 0 : rpm < 0 ? -rpm : rpm);
 	step->speed_due = true;
 }
 
+/* 记录原点和方向，启动受控测向流程。 */
 bool stepper_measure_direction(struct stepper *step, int32_t origin, bool ccw, uint32_t now)
 {
 	if (origin < INT32_MIN + 65536 || origin > INT32_MAX - 65536 ||
@@ -222,6 +241,7 @@ bool stepper_measure_direction(struct stepper *step, int32_t origin, bool ccw, u
 	return true;
 }
 
+/* 根据当前等待的命令解码应答，更新位置、速度、故障位并推进状态。 */
 static void handle_reply(struct stepper *step, const struct emm_reply *reply,
 			 uint32_t now)
 {
@@ -229,7 +249,7 @@ static void handle_reply(struct stepper *step, const struct emm_reply *reply,
 	size_t length;
 
 	step->replies++;
-	/* Only the outstanding command proves that this exchange succeeded. */
+	/* 只接受当前等待命令的应答作为本次操作成功的依据。 */
 	if (!step->pending || reply->command != step->pending ||
 	    (reply->command == 0xfd && reply->status == 0x9f))
 		return;
@@ -258,7 +278,7 @@ static void handle_reply(struct stepper *step, const struct emm_reply *reply,
 			step->error = 0xe2;
 			stepper_brake(step, now);
 		}
-		/* Position-reached is not a completion condition in velocity mode. */
+		/* 速度模式可以持续运转，到位标志不能表示该模式完成。 */
 		return;
 	}
 	if (reply->command == 0x35) {
@@ -267,8 +287,7 @@ static void handle_reply(struct stepper *step, const struct emm_reply *reply,
 		return;
 	}
 	if (reply->command == 0x43) {
-		/* Both fields are from one Emm snapshot. A drive restart can change the
-		 * multi-turn origin while the absolute shaft orientation stays the same. */
+		/* 两个位置字段来自同一份 Emm 快照。驱动重启可能改变多圈原点，绝对轴向仍保持原值。 */
 		int offset = (uint16_t)(reply->absolute - SHAFT_LEVEL_ABS);
 		if (offset >= 32768)
 			offset -= 65536;
@@ -310,7 +329,7 @@ static void handle_reply(struct stepper *step, const struct emm_reply *reply,
 			step->phase = STEP_OFFLINE;
 			step->sent_at = now;
 		} else if (step->phase == STEP_BRAKE) {
-			/* No automatic enable on a drive fault. Verify flags while parked. */
+			/* 驱动故障后禁止自动使能，转入驻车轮询核对状态标志。 */
 			step->phase = STEP_PARKED;
 			step->flags_at = now - 220;
 		} else {
@@ -351,10 +370,7 @@ static void handle_reply(struct stepper *step, const struct emm_reply *reply,
 	case STEP_DISABLE:
 		step->phase = STEP_IDLE;
 		step->flags &= (uint8_t)~1U;
-		/* A successful disable establishes the startup/reconnect safe state,
-		 * even if the preceding stop was rejected while already disabled.
-		 * Errors during an actual movement remain visible until the next start.
-		 */
+		/* 成功失能即可确定启动或重连后的状态，即便此前因已经失能而拒绝停止命令。实际运动中的错误保留到下次启动。 */
 		if (step->cleanup_only)
 			step->error = 0;
 		break;
@@ -363,6 +379,7 @@ static void handle_reply(struct stepper *step, const struct emm_reply *reply,
 	}
 }
 
+/* 按超时的命令类型决定补读、核验轴位或进入停机流程。 */
 static void reply_timeout(struct stepper *step, uint32_t now)
 {
 	uint8_t pending = step->pending;
@@ -380,7 +397,7 @@ static void reply_timeout(struct stepper *step, uint32_t now)
 	step->cw_sign = 0;
 	step->position_valid = false;
 	if (step->phase == STEP_STOP) {
-		/* Still try disable when the stop reply is missing. */
+		/* 即使停止命令未收到应答，仍尝试发送失能命令。 */
 		send_disable(step, now);
 	} else if (step->phase == STEP_DISABLE || step->phase == STEP_IDLE) {
 		step->phase = STEP_OFFLINE;
@@ -390,13 +407,13 @@ static void reply_timeout(struct stepper *step, uint32_t now)
 	}
 }
 
+/* 将目标轴位编码成驱动能接受的整数微步，并检查两端余量。 */
 static size_t encode_goal(const struct stepper *step, int32_t target, uint16_t rpm, uint8_t *frame)
 {
 	if (!within_travel(step, target) || !step->pulses_per_rev ||
 	    target < step->lower || target > step->upper)
 		return 0;
-	/* The drive rounds to a whole microstep. Keep the transmitted endpoint inside
-	 * both encoder limits even when level falls between adjacent microsteps. */
+	/* 驱动只接受整数微步。水平位落在两个微步之间时，也要把发出的端点限制在编码器上下限以内。 */
 	int64_t margin = (32768U + step->pulses_per_rev - 1U) / step->pulses_per_rev;
 	int64_t lo = (int64_t)step->lower + margin, hi = (int64_t)step->upper - margin;
 	int32_t safe_lo = step->shaft_level + SHAFT_HIGH_OFFSET + (int32_t)margin + 24;
@@ -415,6 +432,7 @@ static size_t encode_goal(const struct stepper *step, int32_t target, uint16_t r
 	return emm_position(frame, STEP_ADDRESS, target, step->pulses_per_rev, rpm);
 }
 
+/* 轮询定位所需的反馈，再按已确认轴位发出或核验目标。 */
 static void position_poll(struct stepper *step, uint32_t now)
 {
 	uint8_t frame[13] = { STEP_ADDRESS, 0x43, 0x7a, 0x6b };
@@ -427,8 +445,7 @@ static void position_poll(struct stepper *step, uint32_t now)
 	    now - step->position_at < now - step->direction_at &&
 	    (int64_t)step->position - step->direction_origin >= -80 &&
 	    (int64_t)step->position - step->direction_origin <= 80) {
-		/* The last accepted absolute target is the present shaft position.
-		 * Both Emm generations accept explicit CW/CCW in relative mode 00. */
+		/* 已接受的上一个绝对目标对应当前轴位。两代 Emm 均可在相对模式 00 中显式指定顺、逆时针。 */
 		size = emm_position(frame, STEP_ADDRESS, step->probing_ccw ? -728 : 728,
 				    step->pulses_per_rev, 2);
 		frame[10] = 0;
@@ -461,6 +478,7 @@ static void position_poll(struct stepper *step, uint32_t now)
 		stepper_brake(step, now);
 }
 
+/* 对可安全重试的命令沿用原请求，避免重复执行相对位移。 */
 static void retry_pending_command(struct stepper *step, uint32_t now)
 {
 	uint8_t frame[13] = { STEP_ADDRESS, step->pending, 0x6b };
@@ -489,10 +507,11 @@ static void retry_pending_command(struct stepper *step, uint32_t now)
 		step->retried = true;
 }
 
+/* 在速度环中交替更新位置与速度反馈，根据剩余行程限速。 */
 static void speed_loop_poll(struct stepper *step, uint32_t now)
 {
 	uint32_t age = now - step->position_at;
-	/* Continuous F6 needs live feedback even while waiting for its ACK. */
+	/* 持续 F6 转速模式即使还在等应答，也要检查新的位置反馈。 */
 	if (age >= 40 || (step->pending && elapsed(now, step->sent_at, 24))) {
 		step->error = 0xe0;
 		step->timeouts++;
@@ -509,7 +528,7 @@ static void speed_loop_poll(struct stepper *step, uint32_t now)
 		return;
 	uint8_t frame[13] = { STEP_ADDRESS, 0x43, 0x7a, 0x6b };
 	size_t size = 4;
-	/* Reserve enough stroke to stop on the next encoder/velocity cycle. */
+	/* 根据下一次读位置和速度的周期预留制动行程。 */
 	int64_t remain = step->reverse ? (int64_t)step->position - step->lower :
 					 (int64_t)step->upper - step->position;
 	int64_t runout = (int64_t)step->target_rpm * 65536 * (age + 25) / 60000;
@@ -525,7 +544,7 @@ static void speed_loop_poll(struct stepper *step, uint32_t now)
 		size = 3;
 		step->flags_at = now;
 	} else if (step->speed_due) {
-		/* A lost link must not let the last speed request run past a stop. */
+		/* 链路丢失时限制最后一次转速指令的有效范围，避免越过机械挡杆。 */
 		int32_t goal = step->reverse ? step->lower : step->upper;
 		if (step->sent_rpm == rpm && step->sent_goal == goal) {
 			step->speed_due = false;
@@ -545,6 +564,7 @@ static void speed_loop_poll(struct stepper *step, uint32_t now)
 		stepper_brake(step, now);
 }
 
+/* 主循环定期调用，负责收应答、超时、停车和下一次驱动命令的调度。 */
 void stepper_poll(struct stepper *step, uint32_t now)
 {
 	struct serial_stats stats = serial_stats(SERIAL_STEP);
@@ -556,7 +576,7 @@ void stepper_poll(struct stepper *step, uint32_t now)
 		step->last_bad_phase = (uint8_t)step->phase;
 		step->last_bad_command = step->pending;
 		step->parser.used = 0;
-		/* A gap may turn a partial frame into a different valid-looking one. */
+		/* 字节中断后丢弃残帧，防止后续数据拼成另一条看似有效的指令。 */
 		while (serial_read(SERIAL_STEP, &byte))
 			;
 		if (stepper_running(step) || step->phase == STEP_LATCH) {
@@ -572,14 +592,13 @@ void stepper_poll(struct stepper *step, uint32_t now)
 		speed_loop_poll(step, now);
 		return;
 	}
-	/* A lost ACK must never replay a relative movement. Verify the encoder instead. */
+	/* 相对位移应答丢失后重新核对编码器，禁止重发位移使机构多走一次。 */
 	if (step->direction_probe == DIR_MEASURE && step->pending == 0xfd) {
 		if (elapsed(now, step->sent_at, 65))
 			step->pending = 0;
 	} else if ((step->hold || step->phase == STEP_IDLE) && step->pending &&
 		   !step->retried && elapsed(now, step->sent_at, 45)) {
-		/* IDLE only polls the drive. Recover one damaged read before dropping
-		 * its configuration and declaring it offline. */
+		/* 空闲阶段只轮询驱动。先补读一次受损报文，再决定是否清除配置并判为离线。 */
 		retry_pending_command(step, now);
 	}
 	if (step->direction_probe != DIR_NONE && elapsed(now, step->direction_started, 2200)) {
@@ -589,8 +608,7 @@ void stepper_poll(struct stepper *step, uint32_t now)
 	if (step->pending && elapsed(now, step->sent_at, STEP_REPLY_TIMEOUT_MS))
 		reply_timeout(step, now);
 	if (step->phase == STEP_BOOT && now >= STEP_BOOT_MS) {
-		/* Stop residual motion and read the enable flag. An energized
-		 * drive may already be supporting the pipe at power-up. */
+		/* 先停止残余运动，再读取使能标志。上电时驱动可能已经在托住水管。 */
 		stepper_resume_hold(step, now);
 		step->boot_parked = true;
 	}
@@ -622,6 +640,7 @@ void stepper_poll(struct stepper *step, uint32_t now)
 	}
 }
 
+/* 返回当前步进阶段的显示名。 */
 const char *stepper_name(const struct stepper *step, uint32_t now)
 {
 	if (step->phase == STEP_BOOT)

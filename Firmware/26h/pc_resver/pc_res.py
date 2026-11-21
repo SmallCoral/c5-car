@@ -1,3 +1,5 @@
+# 电脑端图传接收和录像。先发现设备，再从 TCP 数据流还原图像帧并显示或保存。
+
 import argparse
 import socket
 import struct
@@ -17,6 +19,7 @@ HEADER = struct.Struct("!4sIHH")
 MAX_FRAME_SIZE = 2 * 1024 * 1024
 
 
+# 循环读取直到收到指定字节数，断连时结束本次连接。
 def recv_exact(sock, size):
     data = bytearray()
 
@@ -29,6 +32,7 @@ def recv_exact(sock, size):
     return bytes(data)
 
 
+# 监听 UDP 广播发现可用的视频发送端。
 def discover_sender():
     discovery = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     discovery.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
@@ -63,12 +67,14 @@ def discover_sender():
         discovery.close()
 
 
+# 按当前时间生成本次录像的基础文件名。
 def new_file_stem():
     return datetime.now().strftime(
         "maixcam_%Y%m%d_%H%M%S_%f"
     )
 
 
+# 接收帧头及图像载荷，解码后显示并按配置录像。
 def show_stream(host, port):
     stream = socket.create_connection(
         (host, port),
@@ -208,6 +214,7 @@ def show_stream(host, port):
         cv2.destroyAllWindows()
 
 
+# 解析连接与录像参数，发现发送端后启动预览。
 def main():
     parser = argparse.ArgumentParser(
         description=(

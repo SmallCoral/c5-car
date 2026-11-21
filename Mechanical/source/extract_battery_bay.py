@@ -1,4 +1,4 @@
-"""Reuse the lower-layer protrusion identified in the supplied assembly."""
+"""复用用户在总装下层指出的凸起部件。"""
 from pathlib import Path
 import hashlib
 import json
@@ -8,6 +8,7 @@ import Part
 M=Path(__file__).resolve().parents[1]
 given=Path(r'C:/Users/sc/Downloads/EdgeMind_Assembly.step')
 source=Path(r'C:/Users/sc/Documents/Dev/Hardware/EdgeMind-Robot/model/chassis/v5-rgb-touch-display')
+# 计算电池托盘来源文件的 SHA-256 以便追溯。
 def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()
 assert sha(given)==sha(source/'EdgeMind_Assembly.step')
 doc=App.openDocument(str(source/'EdgeMind_Chassis.FCStd'))

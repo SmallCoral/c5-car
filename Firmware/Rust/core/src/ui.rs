@@ -1,3 +1,5 @@
+// 纯软件界面渲染，在给定缓冲区绘制设备、驱动和升级状态。
+
 use crate::{controls::Task, text::Text};
 use core::fmt::Write;
 mod font {
@@ -44,6 +46,7 @@ pub struct State {
     pub update_total: u32,
 }
 impl Default for State {
+    // 建立界面的初始显示状态。
     fn default() -> Self {
         Self {
             task: Task::All,
@@ -75,6 +78,7 @@ impl Default for State {
 }
 struct Canvas<'a>(&'a mut [u8; BYTES]);
 impl Canvas<'_> {
+    // 裁剪到屏幕范围后填充矩形。
     fn rect(&mut self, x: i32, y: i32, w: i32, h: i32, c: u16) {
         for row in y.max(0)..(y + h).min(HEIGHT as i32) {
             for col in x.max(0)..(x + w).min(WIDTH as i32) {
@@ -83,10 +87,12 @@ impl Canvas<'_> {
             }
         }
     }
+    // 在指定区域绘制卡片背景与边界。
     fn card(&mut self, x: i32, y: i32, w: i32, h: i32, c: u16) {
         self.rect(x + 2, y, w - 4, h, c);
         self.rect(x, y + 2, w, h - 4, c);
     }
+    // 读取点阵字形绘制文字。
     fn text(&mut self, mut x: i32, y: i32, s: &str, scale: i32, c: u16) {
         for byte in s.bytes() {
             if x >= WIDTH as i32 {
@@ -106,12 +112,14 @@ impl Canvas<'_> {
             x += 6 * scale;
         }
     }
+    // 先在定长缓冲中格式化数值，再绘制成文字。
     fn formatted(&mut self, x: i32, y: i32, args: core::fmt::Arguments<'_>, scale: i32, c: u16) {
         let mut text = Text::<48>::new();
         if text.write_fmt(args).is_ok() {
             self.text(x, y, text.as_str(), scale, c);
         }
     }
+    // 显示单个车轮的驱动及编码器状态。
     fn wheel(&mut self, s: &State, side: usize) {
         let x = if side == 0 { 4 } else { 66 };
         let color = if s.faults & (1 << side) != 0 {
@@ -170,6 +178,7 @@ impl Canvas<'_> {
         );
     }
 }
+// 按当前任务状态生成整幅 RGB565 像素。
 pub fn render(pixels: &mut [u8; BYTES], s: &State) {
     let mut p = Canvas(pixels);
     p.rect(0, 0, WIDTH as i32, HEIGHT as i32, BG);

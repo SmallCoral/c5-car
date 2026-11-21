@@ -1,3 +1,5 @@
+// 驱动 SPI 彩屏，按时序初始化并逐步传输界面像素。
+
 use crate::board;
 use coral_core::{
     elapsed,
@@ -13,15 +15,17 @@ pub struct Display {
     next_y: usize,
     pub ready: bool,
 }
+// 把 LCD 命令字和后续参数分开发出。
 fn command(cmd: u8, data: &[u8]) -> bool {
     board::lcd_write(false, &[cmd]) && (data.is_empty() || board::lcd_write(true, data))
 }
 impl Display {
+    // 建立分行刷新状态与绘制缓冲。
     pub fn new() -> Self {
         if TAKEN.swap(true, Ordering::Relaxed) {
             board::panic_stop();
         }
-        // SAFETY: the framebuffer is taken once, only used by the thread, never by interrupts.
+        // SAFETY: 帧缓冲只取用一次，归主线程独占，中断不会访问它。
         Self {
             pixels: unsafe { &mut *core::ptr::addr_of_mut!(PIXELS) },
             frame_time: 0,
@@ -30,6 +34,7 @@ impl Display {
             ready: false,
         }
     }
+    // 按屏幕时序完成复位和像素格式初始化。
     pub fn init(&mut self) -> bool {
         const INIT: &[u8] = &[
             0xb1, 3, 5, 0x3c, 0x3c, 0xb2, 3, 5, 0x3c, 0x3c, 0xb3, 6, 5, 0x3c, 0x3c, 5, 0x3c, 0x3c,
@@ -60,6 +65,7 @@ impl Display {
         self.ready = true;
         true
     }
+    // 每次传输局部行，腾出时间处理通信和控制。
     pub fn poll(&mut self, state: &State, now: u32) -> bool {
         if !self.ready {
             return false;

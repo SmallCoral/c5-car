@@ -1,9 +1,12 @@
+/* 在主机渲染 RGB565 界面，以像素对照检查分行刷新和整页是否一致。 */
+
 #include <assert.h>
 #include <limits.h>
 #include <stdio.h>
 #include <string.h>
 #include "ui.h"
 
+/* 在主机生成界面快照，并将整页与分行绘制的像素逐一核对。 */
 int main(int argc, char **argv)
 {
 	static uint8_t buffer[UI_BYTES + 32];
@@ -117,7 +120,7 @@ int main(int argc, char **argv)
 		ui_render(buffer + 16, &state);
 	}
 	state.task = TASK_LAP;
-	/* The marker follows the track and disappears from its last position. */
+	/* 标记随球位移动，确认旧位置的像素已经擦除。 */
 	for (unsigned int i = 0; i <= 2; i++) {
 		unsigned int x = 8 + 56 * i;
 		unsigned int dot = 16 + (50 * UI_WIDTH + x) * 2;
@@ -140,7 +143,7 @@ int main(int argc, char **argv)
 		state.lap_reverse = !!(status & 1U);
 		ui_render(buffer + 16, &state);
 	}
-	/* Every page, including LEAVE A, must be identical in two-row slices. */
+	/* 逐两行渲染的结果须与整页相同，包括驶离 A 的界面。 */
 	for (unsigned int task = TASK_MONITOR; task <= TASK_LAP; task++) {
 		state.task = (enum task_id)task;
 		state.lap_departing = true;
@@ -180,8 +183,7 @@ int main(int argc, char **argv)
 		assert(buffer[ball] == 0x2e && buffer[ball + 1] == 0x7d);
 		assert(buffer[marker] == 0x47 && buffer[marker + 1] == 0xb2);
 	}
-	/* Both events show the same scale, including the hollow last sighting.
-	 * Compare every pixel of the strip after each Task 1 stage change. */
+	/* 两题共用标尺和失测空心标记。第一题每次换段后逐像素比较标尺。 */
 	const enum position_leg legs[] = { LEVEL_SHAFT, LEVEL_SHAFT, MOVE_CENTER, MOVE_RIGHT, MOVE_LEFT, HOLD_LEFT };
 	const int route_mm[] = { 0, 0, 0, 50, -50, -50 };
 	for (unsigned int i = 0; i < sizeof(legs) / sizeof(legs[0]); i++) {
@@ -194,7 +196,7 @@ int main(int argc, char **argv)
 		state.leg = legs[i];
 		ui_render(buffer + 16, &state);
 		int y = i ? 118 : 125;
-		/* Status and timing text above the ruler have their own layout. */
+		/* 标尺上方为状态与计时文字预留独立布局。 */
 		size_t strip = 23 * UI_WIDTH * 2;
 		assert(!memcmp(buffer + 16 + (y - 11) * UI_WIDTH * 2,
 			       sliced + (103 - 11) * UI_WIDTH * 2, strip));

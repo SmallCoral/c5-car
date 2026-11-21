@@ -1,8 +1,11 @@
+/* Emm 串口协议。发送侧生成驱动可识别的字节序列，接收侧在字节流中识别完整回复；运动状态机见 stepper.c。 */
+
 #include <limits.h>
 #include <string.h>
 #include "emm.h"
 #include "logic.h"
 
+/* 按驱动地址和使能状态组装 Emm 使能指令，返回帧长。 */
 size_t emm_enable(uint8_t *out, uint8_t address, bool enable)
 {
 	const uint8_t frame[] = { address, 0xf3, 0xab, enable, 0, 0x6b };
@@ -11,6 +14,7 @@ size_t emm_enable(uint8_t *out, uint8_t address, bool enable)
 	return sizeof(frame);
 }
 
+/* 组装 FE 停止帧以请求当前轴停转。 */
 size_t emm_stop(uint8_t *out, uint8_t address)
 {
 	const uint8_t frame[] = { address, 0xfe, 0x98, 0, 0x6b };
@@ -19,6 +23,7 @@ size_t emm_stop(uint8_t *out, uint8_t address)
 	return sizeof(frame);
 }
 
+/* 将方向、转速及加速度写入 F6 速度帧。 */
 size_t emm_velocity(uint8_t *out, uint8_t address, bool reverse,
 		    uint16_t rpm, uint8_t accel)
 {
@@ -31,6 +36,7 @@ size_t emm_velocity(uint8_t *out, uint8_t address, bool reverse,
 	return sizeof(frame);
 }
 
+/* 将方向、脉冲数及定位模式写入 FD 位移帧。 */
 size_t emm_position(uint8_t *out, uint8_t address, int32_t raw,
 		    uint32_t pulses_per_rev, uint16_t rpm)
 {
@@ -48,6 +54,7 @@ size_t emm_position(uint8_t *out, uint8_t address, int32_t raw,
 	return sizeof(frame);
 }
 
+/* 根据应答命令确定需要接收的字节数。 */
 static unsigned int reply_size(uint8_t command)
 {
 	switch (command) {
@@ -71,6 +78,7 @@ static unsigned int reply_size(uint8_t command)
 	}
 }
 
+/* 逐字节组装应答，校验地址、命令和结束字节后交回上层。 */
 bool emm_feed(struct emm_parser *parser, uint8_t address, uint8_t byte,
 	      uint32_t now, struct emm_reply *reply)
 {
@@ -112,7 +120,7 @@ bool emm_feed(struct emm_parser *parser, uint8_t address, uint8_t byte,
 			parser->used = 0;
 			return true;
 		} else if (parser->bytes[1] == 0x42) {
-			/* X42S Emm configuration: motor type and configured microsteps. */
+			/* 读取 X42S 的 Emm 配置，取得电机类型与驱动设置的细分数。 */
 			uint8_t type = parser->bytes[4], micro = parser->bytes[9];
 
 			if (parser->bytes[2] != 33 || parser->bytes[3] != 21 ||

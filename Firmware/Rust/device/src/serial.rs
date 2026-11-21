@@ -1,3 +1,5 @@
+// 以中断与环形缓冲解耦 USART 和前台，分别向蓝牙与步进协议提供字节流。
+
 use crate::{
     board::{self, modify, read, write, write8},
     registers::*,
@@ -18,6 +20,7 @@ struct Ring {
     tail: usize,
 }
 impl Ring {
+    // 初始化读写索引以建立空环形缓冲。
     const fn new() -> Self {
         Self {
             bytes: [0; 512],
@@ -25,9 +28,11 @@ impl Ring {
             tail: 0,
         }
     }
+    // 计算当前剩余可写容量。
     fn free(&self) -> usize {
         self.tail.wrapping_sub(self.head).wrapping_sub(1) & 511
     }
+    // 从队首取出一个字节。
     fn pop(&mut self) -> Option<u8> {
         if self.head == self.tail {
             None
@@ -37,6 +42,7 @@ impl Ring {
             Some(b)
         }
     }
+    // 将一个字节追加到队尾。
     fn push(&mut self, b: u8) -> bool {
         if self.free() == 0 {
             false
@@ -54,6 +60,7 @@ struct Port {
     stats: Stats,
 }
 impl Port {
+    // 初始化串口通道的软件队列与统计。
     const fn new(base: u32) -> Self {
         Self {
             base,
@@ -76,12 +83,14 @@ pub enum Id {
     Bt,
     Step,
 }
+// 按端口编号选择相应的串口状态。
 fn port(id: Id) -> &'static Shared<Port> {
     match id {
         Id::Bt => &BT,
         Id::Step => &STEP,
     }
 }
+// 设置串口波特率、中断和引脚。
 pub fn init() -> bool {
     for (base, baud, irq) in [(USART1_BASE, BT_BAUD, 51), (USART6_BASE, STEP_BAUD, 96)] {
         write(base + USART_CR1, 0);
@@ -104,6 +113,7 @@ pub fn init() -> bool {
     }
     true
 }
+// 将字节放入发送队列并开启发送中断。
 pub fn send(id: Id, bytes: &[u8]) -> bool {
     port(id).with(|p| {
         if bytes.len() > p.tx.free() {
@@ -117,15 +127,19 @@ pub fn send(id: Id, bytes: &[u8]) -> bool {
         true
     })
 }
+// 从接收队列弹出一个可用字节。
 pub fn receive(id: Id) -> Option<u8> {
     port(id).with(|p| p.rx.pop())
 }
+// 读取接收错误和队列溢出统计。
 pub fn stats(id: Id) -> Stats {
     port(id).with(|p| p.stats)
 }
+// 检查软件队列及硬件发送是否已结束。
 pub fn idle(id: Id) -> bool {
     port(id).with(|p| p.tx.head == p.tx.tail && read(p.base + USART_ISR) & USART_ISR_TC != 0)
 }
+// 处理中断标志，收发字节并累计错误计数。
 fn irq(p: &mut Port) {
     let status = read(p.base + USART_ISR);
     let errors = status & (USART_ISR_ORE | USART_ISR_FE | USART_ISR_NE | USART_ISR_PE);
@@ -152,21 +166,26 @@ fn irq(p: &mut Port) {
     }
 }
 #[unsafe(no_mangle)]
+// 分发蓝牙串口的中断。
 extern "C" fn USART1() {
     BT.with(irq);
 }
 #[unsafe(no_mangle)]
+// 分发步进串口的中断。
 extern "C" fn USART6() {
     STEP.with(irq);
 }
 pub struct StepSerial;
 impl emm::Serial for StepSerial {
+    // 把步进协议帧交给对应串口。
     fn write(&mut self, b: &[u8]) -> bool {
         send(Id::Step, b)
     }
+    // 从步进接收队列取一个字节。
     fn read(&mut self) -> Option<u8> {
         receive(Id::Step)
     }
+    // 提供步进链路的累计接收错误。
     fn rx_errors(&self) -> u32 {
         let s = stats(Id::Step);
         s.errors.wrapping_add(s.rx_drops)

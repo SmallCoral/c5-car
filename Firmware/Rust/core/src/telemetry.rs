@@ -1,3 +1,5 @@
+// 兼容既有版本的遥测解析及 CSV 表示，从串口分片恢复完整记录。
+
 use crate::{controls::Task, text::Text};
 use core::fmt::Write;
 pub const FIELDS: &str = "tag,version,ms,seq,task,running,duty_permille,left_count,right_count,left_cps,right_cps,gray_raw,encoder_ab,fault_mask,enable_request,step_online,step_phase,step_flags,step_position_raw,step_error,uart_errors,rx_drops,tx_drops,lcd_ok,wheel_trip,step_timeouts,step_position_valid,step_target_rpm,step_rpm,step_rpm_valid";
@@ -7,6 +9,7 @@ pub struct Record {
     pub values: [i64; 28],
 }
 impl Record {
+    // 将遥测行拆为字段并校验版本与长度。
     pub fn parse(line: &str) -> Option<Self> {
         let mut fields = line.trim().split(',');
         if fields.next() != Some("C5") {
@@ -27,6 +30,7 @@ impl Record {
         }
         Some(Self { version, values })
     }
+    // 把解析后的遥测记录输出成统一 CSV 列。
     pub fn csv(&self) -> Text<640> {
         let mut line = Text::new();
         let _ = write!(line, "C5,{}", self.version);
@@ -37,6 +41,7 @@ impl Record {
         let _ = write!(line, "\r\n");
         line
     }
+    // 将本行任务编号解释为任务枚举。
     pub fn task(&self) -> Task {
         Task::from_id(self.values[2] as u8).unwrap_or_default()
     }
@@ -48,6 +53,7 @@ pub struct Decoder {
     pub invalid: u32,
 }
 impl Default for Decoder {
+    // 初始化空的逐行解析状态。
     fn default() -> Self {
         Self {
             bytes: [0; 1024],
@@ -58,6 +64,7 @@ impl Default for Decoder {
     }
 }
 impl Decoder {
+    // 逐次接收一个字节，遇到换行才交出解析结果；超长行丢弃至下一个换行。
     pub fn feed(&mut self, b: u8) -> Option<Record> {
         if b == b'\n' {
             let record = if self.discarding {

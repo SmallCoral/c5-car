@@ -1,3 +1,5 @@
+// Rust 移植的公共任务逻辑，含按键消抖、档位换算和独立轮驱动保护。
+
 use crate::{TEST_MS, WHEEL_LIMIT, elapsed};
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Default)]
@@ -12,6 +14,7 @@ pub enum Task {
     All,
 }
 impl Task {
+    // 将协议任务编号映射为已知任务，未知编号返回空值。
     pub fn from_id(id: u8) -> Option<Self> {
         Some(match id {
             0 => Self::Monitor,
@@ -23,6 +26,7 @@ impl Task {
             _ => return None,
         })
     }
+    // 取得任务的显示名。
     pub const fn name(self) -> &'static str {
         match self {
             Self::Monitor => "MONITOR",
@@ -33,12 +37,15 @@ impl Task {
             Self::All => "ALL",
         }
     }
+    // 判断任务是否启用车轮。
     pub const fn wheels(self) -> bool {
         matches!(self, Self::Left | Self::Right | Self::Both | Self::All)
     }
+    // 判断任务是否启用步进。
     pub const fn stepper(self) -> bool {
         matches!(self, Self::Stepper | Self::All)
     }
+    // 判断任务是否持续运行。
     pub const fn continuous(self) -> bool {
         self.stepper()
     }
@@ -52,6 +59,7 @@ pub enum Key {
     Run,
 }
 impl Key {
+    // 将按键编号转换为类型化的按键。
     pub fn from_id(id: u8) -> Option<Self> {
         Some(match id {
             0 => Self::Task,
@@ -70,6 +78,7 @@ pub struct Debounce {
     pub stable: bool,
 }
 impl Debounce {
+    // 建立按键已经按住时的初始消抖状态。
     pub fn held(down: bool, now: u32) -> Self {
         Self {
             changed_at: now,
@@ -77,6 +86,7 @@ impl Debounce {
             stable: down,
         }
     }
+    // 用稳定时间过滤按键抖动，输出一次有效按下。
     pub fn update(&mut self, down: bool, now: u32) -> bool {
         if down != self.candidate {
             self.candidate = down;
@@ -98,6 +108,7 @@ pub struct Controls {
     pub started_at: u32,
 }
 impl Default for Controls {
+    // 建立默认任务、方向和档位。
     fn default() -> Self {
         Self {
             task: Task::All,
@@ -109,6 +120,7 @@ impl Default for Controls {
     }
 }
 impl Controls {
+    // 按键触发选项切换、启动或停止。
     pub fn key(&mut self, key: Key, now: u32) {
         if self.running {
             self.running = false;
@@ -127,19 +139,23 @@ impl Controls {
             Key::Run => {}
         }
     }
+    // 结合当前时间与故障反馈决定是否结束任务。
     pub fn tick(&mut self, now: u32, fault: bool) {
         if fault || (!self.task.continuous() && elapsed(now, self.started_at, TEST_MS)) {
             self.running = false;
         }
     }
+    // 将档位映射成 PWM 千分比。
     pub fn duty(&self) -> i32 {
         let d = [100, 200, 300, WHEEL_LIMIT][usize::from(self.level % 4)];
         if self.reverse { -d } else { d }
     }
+    // 将档位映射为步进目标转速。
     pub fn rpm(&self) -> u16 {
         u16::from(self.level % 3 + 1) * 30
     }
 }
+// 按环形计数求两次读数间的带符号位移。
 pub fn encoder_delta(current: u32, previous: u32) -> i32 {
     current.wrapping_sub(previous) as i32
 }
@@ -164,6 +180,7 @@ pub struct WheelGuard {
     pub faults: u8,
 }
 impl WheelGuard {
+    // 初始化轮驱动保护状态。
     pub const fn new() -> Self {
         Self {
             active: false,
@@ -174,6 +191,7 @@ impl WheelGuard {
             faults: 0,
         }
     }
+    // 记录开始、唤醒以及期限信息。
     pub fn start(&mut self, now: u32, faults: u8, continuous: bool) -> bool {
         *self = Self {
             active: faults == 0,
@@ -185,6 +203,7 @@ impl WheelGuard {
         };
         self.active
     }
+    // 核对唤醒时序、故障和截止时间，返回驱动判定。
     pub fn check(&mut self, now: u32, faults: u8, enable: bool) {
         if !self.active {
             return;

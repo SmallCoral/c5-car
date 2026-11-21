@@ -1,3 +1,5 @@
+// 可在 MCU 与电脑共用的控制、显示、传输和升级模块入口。
+
 #![no_std]
 #![forbid(unsafe_code)]
 
@@ -16,6 +18,7 @@ pub const STEP_ADDRESS: u8 = 1;
 pub const WHEEL_LIMIT: i32 = 450;
 pub const TEST_MS: u32 = 3000;
 
+// 通过回绕减法比较毫秒时间间隔。
 pub const fn elapsed(now: u32, then: u32, interval: u32) -> bool {
     now.wrapping_sub(then) >= interval
 }

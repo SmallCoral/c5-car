@@ -1,10 +1,12 @@
+/* 把当前任务的状态快照绘成 RGB565 像素。比赛长度条、设备调试页和升级进度均可整页或按行渲染。 */
+
 #include <stdio.h>
 #include <string.h>
 #include "config.h"
 #include "ui.h"
 #include "menu_font.h"
 
-/* Compact original 5x7 glyph table, rows encoded from bit 4 to bit 0. */
+/* 原始 5×7 字形按行存储，每行从第 4 位读到第 0 位。 */
 static const char glyph_chars[] = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ-+:/%.? >";
 static const uint8_t glyphs[][7] = {
 	{14,17,19,21,25,17,14}, {4,12,4,4,4,4,14},
@@ -37,10 +39,11 @@ enum color {
 	RED = 0xfacc, DARK_GREEN = 0x1249
 };
 
-/* Rendering is main-loop owned. Slice clipping bounds each LCD service call. */
+/* 绘制只由主循环调用，按行裁切限制每次 LCD 刷新的工作量。 */
 static int clip_top;
 static int clip_bottom = UI_HEIGHT;
 
+/* 在帧缓冲或当前行切片中填充指定颜色的矩形。 */
 static void rect(uint8_t *pixels, int x, int y, int w, int h, uint16_t color)
 {
 	int row;
@@ -60,16 +63,18 @@ static void rect(uint8_t *pixels, int x, int y, int w, int h, uint16_t color)
 	}
 }
 
+/* 绘制带底色和边界的界面卡片。 */
 static void card(uint8_t *pixels, int x, int y, int w, int h, uint16_t color)
 {
 	rect(pixels, x + 2, y, w - 4, h, color);
 	rect(pixels, x, y + 2, w, h - 4, color);
 }
 
+/* 将字符点阵裁剪到可见区域并绘入缓冲。 */
 static void text(uint8_t *pixels, int x, int y, const char *label,
 		 unsigned int scale, uint16_t color)
 {
-	/* Entire off-slice labels used to traverse every glyph on every stripe. */
+	/* 整段文字在当前切片之外时直接跳过，避免逐字查表。 */
 	if (y >= clip_bottom || y + 7 * (int)scale <= clip_top)
 		return;
 	for (; *label && x < UI_WIDTH; label++, x += 6 * (int)scale) {
@@ -90,6 +95,7 @@ static void text(uint8_t *pixels, int x, int y, const char *label,
 	}
 }
 
+/* 绘制单个车轮的速度、方向及反馈。 */
 static void wheel_card(uint8_t *pixels, const struct ui_state *state,
 		       unsigned int side)
 {
@@ -101,13 +107,13 @@ static void wheel_card(uint8_t *pixels, const struct ui_state *state,
 	card(pixels, x, 66, 58, 44, PANEL);
 	rect(pixels, x + 6, 72, 2, 6, color);
 	text(pixels, x + 12, 72, side ? "RIGHT" : "LEFT", 1, MUTED);
-	/* A/B input dots help distinguish a static input from a counter issue. */
+	/* 显示 A/B 两相电平，方便区分静止输入与计数器故障。 */
 	for (unsigned int phase = 0; phase < 2; phase++)
 		rect(pixels, x + 49 + (int)phase * 4, 73, 3, 3,
 		     state->phases & (1U << (side * 2 + phase)) ? CYAN : EDGE);
 	snprintf(line, sizeof(line), "%ld", (long)state->encoder[side]);
 	scale = strlen(line) <= 4 ? 2 : 1;
-	/* Full signed counts remain available in telemetry when > 8 characters. */
+	/* 超出屏幕八字符的带符号计数仍完整保存在遥测中。 */
 	if (strlen(line) > 8)
 		strcpy(line, "SEE PC");
 	text(pixels, x + 6, 83, line, scale, WHITE);
@@ -117,6 +123,7 @@ static void wheel_card(uint8_t *pixels, const struct ui_state *state,
 	text(pixels, x + 6, 101, line, 1, color);
 }
 
+/* 按更新阶段绘制升级进度和状态。 */
 static void update_page(uint8_t *pixels, const struct ui_state *state)
 {
 	unsigned int percent = state->update_total ?
@@ -138,6 +145,7 @@ static void update_page(uint8_t *pixels, const struct ui_state *state)
 	text(pixels, 6, 145, "KEEP POWER ON", 1, AMBER);
 }
 
+/* 显示八路灰度的原始电平、滤波结果及位置。 */
 static void gray_page(uint8_t *pixels, const struct ui_state *state)
 {
 	static const char *const keys[] = { "BACK", "-", "B/W", "-" };
@@ -179,11 +187,13 @@ static void gray_page(uint8_t *pixels, const struct ui_state *state)
 	text(pixels, 5, 151, "B/W: TARGET COLOR", 1, CYAN);
 }
 
+/* 将管内相对位置映射到长度条上的像素列。 */
 static int pipe_column(int permille)
 {
 	return 8 + (permille * 112 + 500) / 1000;
 }
 
+/* 在管道区域绘制背景和实时球位。 */
 static void pipe_strip(uint8_t *pixels, const struct ball_view *ball)
 {
 	static const struct {
@@ -195,7 +205,7 @@ static void pipe_strip(uint8_t *pixels, const struct ball_view *ball)
 	};
 	const int left = pipe_column(0), right = pipe_column(1000), y = 50;
 
-	/* The fixed labels below the live strip belong to the normal page scan. */
+	/* 实时长度条下方的固定标签由普通页面刷新绘制。 */
 	if (clip_bottom <= (int)UI_PIPE_TOP || clip_top >= 64)
 		return;
 	rect(pixels, 0, UI_PIPE_TOP, UI_WIDTH, UI_PIPE_END - UI_PIPE_TOP, BG);
@@ -224,6 +234,7 @@ static void pipe_strip(uint8_t *pixels, const struct ball_view *ball)
 	}
 }
 
+/* 仅重画给定行范围内的实时球位条。 */
 void ui_render_pipe_rows(uint8_t *pixels, const struct ball_view *ball,
 			 unsigned int first, unsigned int rows)
 {
@@ -236,6 +247,7 @@ void ui_render_pipe_rows(uint8_t *pixels, const struct ball_view *ball,
 	clip_bottom = UI_HEIGHT;
 }
 
+/* 绘制稳球调试页的轴角、球位和控制状态。 */
 static void balance_page(uint8_t *pixels, const struct ui_state *state)
 {
 	static const char *const keys[] = { "BACK", "LEFT", "RIGHT", "RUN" };
@@ -303,6 +315,7 @@ static void balance_page(uint8_t *pixels, const struct ui_state *state)
 	     "HOLD L MAP  R ZERO", 1, MUTED);
 }
 
+/* 按车身左右顺序显示灰度探头状态。 */
 static void lap_probes(uint8_t *pixels, const struct gray_reading *gray, int y)
 {
 	text(pixels, 5, y + 3, "GRAY", 1, MUTED);
@@ -315,6 +328,7 @@ static void lap_probes(uint8_t *pixels, const struct gray_reading *gray, int y)
 	}
 }
 
+/* 绘制循线里程、轮速和运行提示。 */
 static void lap_page(uint8_t *pixels, const struct ui_state *state)
 {
 	static const char *const keys[] = { "BACK", "MAP", "SPD", "RUN" };
@@ -358,6 +372,7 @@ static void lap_page(uint8_t *pixels, const struct ui_state *state)
 	text(pixels, 5, 150, line, 1, MUTED);
 }
 
+/* 用菜单点阵字形输出中英文标签。 */
 static void menu_text(uint8_t *pixels, int x, int y, const char *label, uint16_t color)
 {
 	if (y >= clip_bottom || y + 14 <= clip_top)
@@ -370,7 +385,7 @@ static void menu_text(uint8_t *pixels, int x, int y, const char *label, uint16_t
 			x += 6;
 			continue;
 		}
-		/* All non-ASCII literals on these pages are three-byte Chinese glyphs. */
+		/* 这些页面的非 ASCII 字符均为占三个 UTF-8 字节的汉字。 */
 		unsigned int code = (p[0] & 15U) << 12 | (p[1] & 63U) << 6 | (p[2] & 63U);
 		p += 3;
 		unsigned int lo = 0, hi = sizeof(menu_glyphs) / sizeof(menu_glyphs[0]);
@@ -411,6 +426,7 @@ static const char *const notices[] = {
 	"已停止", "已完成", "检查赛道和灰度", "待接入", "SHAFT LIMIT",
 };
 
+/* 把带符号毫米值映射为比赛长度条上的列坐标。 */
 static int ruler_mm_column(int mm)
 {
 	int span = mm < 0 ? RULER_X_MINUS_5 - RULER_X_O : RULER_X_O - RULER_X_PLUS_5;
@@ -418,6 +434,7 @@ static int ruler_mm_column(int mm)
 	return pipe_column(ball_ruler_position(RULER_X_O - dx));
 }
 
+/* 在同一标尺上绘出刻度、目标和最新球位。 */
 static void contest_ruler(uint8_t *pixels, const struct ball_view *ball, int y, int target_mm)
 {
 	const int marks[] = { RULER_X_LEFT, RULER_X_MINUS_5, RULER_X_O, RULER_X_PLUS_5, RULER_X_RIGHT };
@@ -443,13 +460,14 @@ static void contest_ruler(uint8_t *pixels, const struct ball_view *ball, int y, 
 		if (ball->status == BALL_LAST_SEEN)
 			rect(pixels, x - 1, y - 2, 3, 3, BG);
 	}
-	/* Keep both marks visible when the ball reaches the target. */
+	/* 球到达目标时仍让球位和目标两个标记都可辨认。 */
 	int col = ruler_mm_column(target_mm);
 	for (int row = 0; row < 5; row++)
 		rect(pixels, col - 4 + row, y - 11 + row, 9 - 2 * row, 1, GREEN);
 	text(pixels, 109, y - 18, "CM", 1, MUTED);
 }
 
+/* 根据比赛菜单页选择准备、运行或结果布局。 */
 static void contest_page(uint8_t *pixels, const struct ui_state *s)
 {
 	const struct contest_menu *m = &s->menu;
@@ -587,6 +605,7 @@ static void contest_page(uint8_t *pixels, const struct ui_state *s)
 }
 
 
+/* 根据当前任务选择页面，并绘制完整界面。 */
 void ui_render(uint8_t *pixels, const struct ui_state *state)
 {
 	static const char *const keys[] = { "BACK", "DIR", "PWR", "RUN" };
@@ -618,7 +637,7 @@ void ui_render(uint8_t *pixels, const struct ui_state *state)
 		return;
 	}
 	rect(pixels, 0, 0, UI_WIDTH, UI_HEIGHT, BG);
-	/* Photo orientation: left-to-right SW5, SW4, SW3, SW2, above the LCD. */
+	/* 按实物照片确定按键在 LCD 上方，从左至右为 SW5、SW4、SW3、SW2。 */
 	for (index = 0; index < 4; index++) {
 		const char *label = keys[index];
 
@@ -702,6 +721,7 @@ void ui_render(uint8_t *pixels, const struct ui_state *state)
 	text(pixels, 5, 150, line, 1, fault ? RED : MUTED);
 }
 
+/* 将页面裁切到指定行，供屏幕按小块传输。 */
 void ui_render_rows(uint8_t *pixels, const struct ui_state *state,
 		    unsigned int first, unsigned int rows)
 {

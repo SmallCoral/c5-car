@@ -1,4 +1,4 @@
-"""Coral-C5 v1 image and wire format (little endian, CRC-32/ISO-HDLC)."""
+"""Coral-C5 v1 镜像与传输格式，整数按小端排列，校验使用 CRC-32/ISO-HDLC。"""
 
 import struct
 import zlib
@@ -19,6 +19,7 @@ HEADER = struct.Struct("<8I")
 STATUS = ("OK", "BAD_ARGUMENT", "BAD_STATE", "BAD_OFFSET", "FLASH_ERROR", "BAD_IMAGE")
 
 
+# 检查应用长度、初始栈顶与复位入口是否适用于本板。
 def validate_image(image):
     if not 512 <= len(image) <= IMAGE_MAX:
         raise ValueError(f"Application must be 512..{IMAGE_MAX} bytes")
@@ -29,6 +30,7 @@ def validate_image(image):
         raise ValueError("Application must be linked at 0x08010000, not 0x08000000")
 
 
+# 为已验证应用生成含目标地址、长度和 CRC 的镜像头。
 def image_header(image):
     validate_image(image)
     first = struct.pack("<7I", HEADER_MAGIC, 1, BOARD_ID, APP_ADDR,
@@ -36,6 +38,7 @@ def image_header(image):
     return first + struct.pack("<I", zlib.crc32(first))
 
 
+# 识别裸应用或 OTA 包并验证后返回应用数据和元数据。
 def read_image(path):
     data = path.read_bytes()
     if path.suffix.lower() == ".ota":
@@ -50,12 +53,14 @@ def read_image(path):
     return data, image_header(data)
 
 
+# 保存一帧升级命令的操作码、序号及载荷。
 @dataclass(frozen=True)
 class Frame:
     command: int
     sequence: int
     payload: bytes = b""
 
+    # 按协议拼接帧头、命令、数据及 CRC。
     def encode(self):
         if len(self.payload) > PAYLOAD_MAX:
             raise ValueError("Oversized payload")
@@ -64,10 +69,13 @@ class Frame:
         return packet + struct.pack("<I", zlib.crc32(packet))
 
 
+# 从可跨通知分片的字节流中寻找完整升级帧。
 class Parser:
+    # 初始化跨次接收共用的字节缓冲。
     def __init__(self):
         self.buffer = bytearray()
 
+    # 累积数据并跳过坏帧，收齐且 CRC 正确才返回一帧。
     def feed(self, data):
         self.buffer.extend(data)
         while len(self.buffer) >= 4:

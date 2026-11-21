@@ -1,4 +1,4 @@
-"""Guarded live edit: J10 jumper header and fixed-3V3 Bluetooth, no PCB access."""
+"""在已有原理图上调整 J10 跳线和蓝牙固定 3.3 V 电源，仅操作原理图。"""
 from pathlib import Path
 import copy,csv,hashlib,json,sys
 ROOT=Path(__file__).resolve().parents[1];BASE=ROOT/'docs/baseline-2026-11-06-jumpers'
@@ -6,9 +6,13 @@ sys.path.insert(0,str(ROOT.parent/'Shared/design_tools'))
 from sexpr import parse,dump,node,nodes,prop
 from schematic_primitives import n,num,xy,effects
 
+# 计算文件指纹，记录修改基线。
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+# 从原理图节点取出实际位置。
 def at(z):return tuple(map(float,node(z,'at')[1:3]))
+# 将修改后的 KiCad 表达式写回指定文件。
 def save(p,d):p.write_text(dump(d)+'\n',encoding='utf-8')
+# 核对基线后更新 J10 跳线与蓝牙固定供电连接。
 def main():
  if '--apply-saved-baseline' not in sys.argv:raise SystemExit('Historical edit only; explicit --apply-saved-baseline required.')
  if (ROOT/'docs/jumpers_revision.json').exists():raise SystemExit('Already applied; use KiCad for further edits.')
@@ -24,14 +28,14 @@ def main():
    z=next(z for z in nodes(d,'text') if z[1].startswith('J10装短路帽'));z[1]='J10 两针跳帽，也可接常闭停机开关。\n拔帽或复位时默认停止左右轮。'
   if p.name=='09_Bluetooth_Stepper.kicad_sch':
    j=next(z for z in nodes(d,'symbol') if prop(z,'Reference')[2]=='J16');removed_uuid=node(j,'uuid')[1];d.remove(j)
-   # Preserve the user's current placement. Only replace the Bluetooth power
-   # selection circuit; all its ground and TX/RX stubs keep their objects.
+   # 保留用户当前摆放，只替换蓝牙电源选择电路。
+   # 地线与 TX、RX 的原接线短段继续复用。
    vbt=next(z for z in nodes(d,'label') if z[1]=='VBT');vbtat=at(vbt);d.remove(vbt)
    port=next(z for z in nodes(d,'hierarchical_label') if z[1]=='V3V3_EXT')
    node(port,'at')[1:3]=[num(vbtat[0]),num(vbtat[1])]
    p5=next(z for z in nodes(d,'hierarchical_label') if z[1]=='V5_EXT');removed_port_uuid=node(p5,'uuid')[1];d.remove(p5)
-   # Live J15 and its four unchanged pin wire endpoints are identified by the
-   # actual symbol position, not the earlier generated layout coordinates.
+   # 根据 J15 的实际符号位置定位它和原有四个接线端点，
+   # 避免依赖早期生成布局中的坐标。
    j15=next(z for z in nodes(d,'symbol') if prop(z,'Reference')[2]=='J15');x,y=at(j15)
    assert float(node(j15,'at')[3])==0 and not node(j15,'mirror')
    lib=next(z for z in nodes(node(d,'lib_symbols'),'symbol') if z[1]==node(j15,'lib_id')[1])
@@ -43,8 +47,8 @@ def main():
    for w in list(nodes(d,'wire')):
     pp=[tuple(map(float,q[1:3])) for q in node(w,'pts')[1:]]
     if all(q[1]<90 for q in pp) and not keep.intersection(pp):
-     # Keep the existing two-segment VBT->J15 route. The hierarchical 3V3
-     # port now terminates on it, and the J16 branch is removed.
+     # 保留 VBT 至 J15 的两段原有线路，将层次 3.3 V 端口接到这条路上，
+     # 并移除 J16 支路。
      allowed=[(vbtat,(vbtat[0],pins['1'][1])),((vbtat[0],pins['1'][1]),pins['1'])]
      if not any(set(pp)==set(pair) for pair in allowed):d.remove(w)
    for z in nodes(d,'text'):
@@ -61,14 +65,14 @@ def main():
     if z[1]=='V5_EXT' and at(z) in ends:d.remove(z)
    sh.remove(pin)
   save(p,d)
- # Synchronize cached defaults even on pages where this generic connector is
- # only an unused cached definition; do not move any live components.
+ # 各页缓存的通用接头定义同步更新，包括未放入该页的定义。
+ # 同步缓存期间保留实际器件的位置。
  for p in ROOT.glob('*.kicad_sch'):
   d=parse(p.read_text(encoding='utf-8'));dirty=False
   for z in nodes(node(d,'lib_symbols'),'symbol'):
    if z[1]==j10lib and prop(z,'Footprint')[2]!=header:prop(z,'Footprint')[2]=header;dirty=True
   if dirty:save(p,d)
- # Synchronize only the two affected library definitions.
+ # 只同步这次涉及的两个库定义。
  p=ROOT/'Motor.kicad_sym';d=parse(p.read_text(encoding='utf-8'))
  z=next(z for z in nodes(d,'symbol') if z[1]==j10lib.split(':')[1]);prop(z,'Footprint')[2]=header
  z=next(z for z in nodes(d,'symbol') if z[1]=='M2_J15')

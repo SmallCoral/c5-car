@@ -1,9 +1,4 @@
-"""Audit the current simplified design; historical revision checks stay intact.
-
-Electrical intent is an immutable older native export + explicit reviewed edits
-in simplified_contract. Preservation uses this task's saved live-user baseline.
-PCB association and object-preservation checks are read-only and separate.
-"""
+"""核对当前精简电路。预期取不可变旧网表和 simplified_contract 的明确修改，器件保留情况与用户基线比较。PCB 关联及对象保留另作只读检查。"""
 from pathlib import Path
 import sys,json,csv,hashlib,subprocess,xml.etree.ElementTree as ET
 ROOT=Path(__file__).resolve().parents[1];DOC=ROOT/'docs';OUT=DOC/'finalize-2026-11-08';BASE=OUT/'baseline'
@@ -16,14 +11,18 @@ from simplified_contract import intended,REMOVED
 from m28_contract import PRIMARY_PINOUTS
 from verify_pcb_associations import audit
 
+# 将当前精简设计与独立的预期电路和用户基线逐项对照。
 def main():
     checks=[]
+    # 登记检查结果与说明。
     def ck(name,ok,detail=None):checks.append(dict(name=name,pass_=bool(ok),detail=detail))
+    # 为现有设计文件计算指纹。
     def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
     record=json.loads((OUT/'current-revision.json').read_text(encoding='utf8'))
     manifest=json.loads((BASE/'baseline.json').read_text(encoding='utf8'))
     for f,want in manifest['files'].items():ck('immutable task baseline '+f,sha(BASE/f)==want)
     pages=[];schemas={}
+    # 沿图页引用递归搜集参与检查的原理图。
     def visit(f):
         if f in schemas:return
         pages.append(f);schemas[f]=parse((ROOT/f).read_text(encoding='utf-8-sig'))
@@ -87,6 +86,7 @@ def main():
         rows.append(dict(contact=c,gpio=r['gpio'],mcu_pin=r['mcu_pin'],core_native_pins=' '.join(sorted(cn)),motor_native_pins=' '.join(sorted(mn)),role=a['signal'] if a else ('connected' if len(mn)>1 else 'unused NC')))
     for a in assignments:
         if a.get('af') not in [None,'','None']:ck(a['signal']+' verified alternate function',functions.get((a['gpio'],a['function']))==int(a['af']))
+    # 核对一个网络的完整端点集合。
     def group(anchor,text):ck(anchor+' exact interface net',pins.get(anchor,set())==set(text.split()))
     group('J19:2','U10:5 C62:1 J19:2');group('J19:5','J19:5 J14:B35');group('J19:6','J19:6 J14:B34')
     group('J23:7','J23:7 J14:A30');group('J23:8','J23:8 J14:A29');group('J14:B30','J14:B30')

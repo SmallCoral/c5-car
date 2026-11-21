@@ -1,3 +1,5 @@
+/* 由构建脚本为应用或引导程序填入 Flash 起点和容量。运行时从加载地址搬运数据与 RAM 例程。 */
+
 ENTRY(Reset)
 MEMORY {
   FLASH (rx) : ORIGIN = @ORIGIN@, LENGTH = @LENGTH@

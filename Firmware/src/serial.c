@@ -1,3 +1,5 @@
+/* 蓝牙、相机与步进各有独立串口队列。中断搬运硬件 FIFO，主循环按自己的时序消费字节。 */
+
 #include <string.h>
 #include "stm32c5xx.h"
 #include "stm32c5xx_ll_usart.h"
@@ -20,13 +22,14 @@ struct uart_port {
 	struct serial_stats stats;
 };
 
-/* Every thread-context access is protected by PRIMASK; ISRs never nest. */
+/* 主线程访问队列时用 PRIMASK 屏蔽中断，各串口中断之间不嵌套。 */
 static struct uart_port ports[SERIAL_COUNT] = {
 	[SERIAL_BT] = { .uart = USART1 },
 	[SERIAL_STEP] = { .uart = USART6 },
 	[SERIAL_CAMERA] = { .uart = UART5 },
 };
 
+/* 按串口用途设置波特率、收发中断和硬件队列。 */
 static bool uart_init(USART_TypeDef *uart, uint32_t baud, bool receive_only)
 {
 	uint32_t start = board_millis();
@@ -37,8 +40,7 @@ static bool uart_init(USART_TypeDef *uart, uint32_t baud, bool receive_only)
 	LL_USART_SetDataWidth(uart, LL_USART_DATAWIDTH_8_BIT);
 	LL_USART_SetParity(uart, LL_USART_PARITY_NONE);
 	LL_USART_SetStopBitsLength(uart, LL_USART_STOP_BIT_1);
-	/* The 115200-baud encoder and camera can reply while the display and BLE
-	 * are active. Keep a hardware RX queue in front of both software rings. */
+	/* 屏幕与蓝牙忙时，编码器和相机仍会以 115200 波特应答。在软件环形队列之前启用硬件接收队列。 */
 	if (receive_only || uart == USART6)
 		LL_USART_EnableFIFO(uart);
 	LL_USART_SetTransferDirection(uart, receive_only ? LL_USART_DIRECTION_RX :
@@ -56,6 +58,7 @@ static bool uart_init(USART_TypeDef *uart, uint32_t baud, bool receive_only)
 	return true;
 }
 
+/* 启用蓝牙与步进串口，并初始化各自的软件环形队列。 */
 bool serial_init(void)
 {
 	if (!uart_init(USART1, BT_BAUD, false) ||
@@ -68,6 +71,7 @@ bool serial_init(void)
 	return true;
 }
 
+/* 单独初始化相机接收通道。 */
 bool serial_camera_init(void)
 {
 	board_camera_uart_init();
@@ -78,6 +82,7 @@ bool serial_camera_init(void)
 	return true;
 }
 
+/* 在临界区向发送队列排入数据，再交给中断逐字节发出。 */
 bool serial_write(enum serial_port port, const uint8_t *data, size_t size)
 {
 	struct uart_port *p = &ports[port];
@@ -99,6 +104,7 @@ bool serial_write(enum serial_port port, const uint8_t *data, size_t size)
 	return true;
 }
 
+/* 从指定串口的接收队列取出下一个可用字节。 */
 bool serial_read(enum serial_port port, uint8_t *byte)
 {
 	struct uart_port *p = &ports[port];
@@ -115,6 +121,7 @@ bool serial_read(enum serial_port port, uint8_t *byte)
 	return available;
 }
 
+/* 检查发送队列及硬件是否已将最后一字节发完。 */
 bool serial_tx_idle(enum serial_port port)
 {
 	struct uart_port *p = &ports[port];
@@ -127,6 +134,7 @@ bool serial_tx_idle(enum serial_port port)
 	return idle;
 }
 
+/* 读取当前串口累计的错误、丢字节和发送拥塞计数。 */
 struct serial_stats serial_stats(enum serial_port port)
 {
 	uint32_t irq = __get_PRIMASK();
@@ -138,6 +146,7 @@ struct serial_stats serial_stats(enum serial_port port)
 	return stats;
 }
 
+/* 处理中断中的接收、发送和错误位，并推进对应串口的环形队列。 */
 static void uart_irq(struct uart_port *p)
 {
 	USART_TypeDef *uart = p->uart;
@@ -145,7 +154,7 @@ static void uart_irq(struct uart_port *p)
 				     USART_ISR_NE | USART_ISR_PE);
 
 	if (errors) {
-		/* Error bit positions match the corresponding write-one-clear bits. */
+		/* 错误状态位与相应的写 1 清除位同位。 */
 		uart->ICR = errors;
 		p->stats.errors++;
 		p->stats.framing += (errors & USART_ISR_FE) != 0U;
@@ -177,16 +186,19 @@ static void uart_irq(struct uart_port *p)
 	p->stats.tx_bytes++;
 }
 
+/* 处理 USART1 的蓝牙串口中断。 */
 void USART1_IRQHandler(void)
 {
 	uart_irq(&ports[SERIAL_BT]);
 }
 
+/* 处理 USART6 的步进驱动串口中断。 */
 void USART6_IRQHandler(void)
 {
 	uart_irq(&ports[SERIAL_STEP]);
 }
 
+/* 处理 UART5 的相机接收中断。 */
 void UART5_IRQHandler(void)
 {
 	uart_irq(&ports[SERIAL_CAMERA]);

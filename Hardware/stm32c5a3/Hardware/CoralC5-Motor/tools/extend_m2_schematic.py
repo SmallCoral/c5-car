@@ -1,9 +1,4 @@
-"""Apply the M2 extension to an explicitly saved pre-edit schematic baseline.
-
-Never imports/runs build_schematic.py, never accesses a PCB. Existing component
-UUIDs and positions are retained; only the A4 overview is reflowed.
-Re-execution deliberately rebuilds from the saved baseline, not a live design.
-"""
+"""在显式保存的旧版原理图上应用 M2 扩展。保留现有器件 UUID 和位置，仅重新排布 A4 总览页。重复运行从保存的基线重建，不调用早期生成器，也不操作 PCB。"""
 from pathlib import Path
 import sys,copy,json,csv,math,hashlib
 ROOT=Path(__file__).resolve().parents[1]
@@ -36,8 +31,8 @@ for count in [3,4,6,8,10]:
  FP['PH'+str(count)]=h.local_fp(f'Connector_PinHeader_2.54mm:PinHeader_1x{count:02}_P2.54mm_Vertical')
 FP['LDO']=h.local_fp('Package_TO_SOT_SMD:SOT-23-5')
 FP['BUTTON']=h.local_fp('Button_Switch_THT:SW_PUSH_6mm_H4.3mm')
-# XT60PW library geometry. Its exact model is absent from this KiCad installation;
-# retain a truthful missing-model exception instead of attaching a vertical XT60.
+# XT60PW 采用本地库几何定义，此 KiCad 安装缺少精确模型。
+# 保留缺失模型的记录，避免错绑成立式 XT60。
 xtname='AMASS_XT60PW-M_1x02_P7.20mm_Horizontal'
 xf=parse((h.K/'footprints/Connector_AMASS.pretty'/f'{xtname}.kicad_mod').read_text(encoding='utf-8'))
 for z in nodes(xf,'model'):xf.remove(z)
@@ -50,6 +45,7 @@ SW=std('Switch','SW_Push');HOLE=std('Mechanical','MountingHole')
 contract=list(csv.DictReader((ROOT.parent/'Shared/interface.csv').open(encoding='utf-8-sig')))
 af=parse_alternate_functions((ROOT.parent/'Shared/sources/DS15137_STM32C5Axxx_Datasheet_Rev3.pdf.txt').read_text(encoding='utf-8-sig'))
 roles=[]
+# 从触点合同取 GPIO 对应行，登记信号用途、方向和端点。
 def role(signal,gpio,function,direction,endpoint):
  row=next(x for x in contract if x['gpio']==gpio)
  a=af.get((gpio,function)) if function!='GPIO' else None
@@ -63,7 +59,7 @@ for sig,gpio,func,pin in [('TFT_SCK','PA5','SPI1_SCK',3),('TFT_MOSI','PA7','SPI1
 for i,gpio in enumerate(['PE10','PE11','PE12','PE13','PE14','PE15','PD10','PD11'],1):role(f'GRAY_CH{i}',gpio,'GPIO','input',f'J20:{i+2}')
 role('GRAY_CLK','PD12','GPIO','output','J21:3');role('GRAY_DAT','PD13','GPIO','input','J21:4')
 for sig,gpio,func,pin in [('STEP_PUL','PE9','TIM1_CH1',3),('STEP_DIR','PD14','GPIO',4),('STEP_nEN','PD15','GPIO',5)]:role(sig,gpio,func,'output',f'J22:{pin}')
-# UART header is independent from the pulse header.
+# UART 排针和脉冲输入排针各自独立。
 next(x for x in roles if x['signal']=='STEP_UART_TX')['endpoint']='J23:3'
 next(x for x in roles if x['signal']=='STEP_UART_RX')['endpoint']='J23:4'
 for i,gpio in enumerate(['PC4','PC5','PB2','PE7'],2):role(['KEY_MODE','KEY_NEXT','KEY_OK','KEY_START'][i-2],gpio,'GPIO','input',f'SW{i}:1')
@@ -73,23 +69,29 @@ assert not {r['gpio'] for r in roles}&{'PA9','PA11','PA12','PA13','PA14','PH2','
 with (ROOT/'docs/m2_pin_assignment.csv').open('w',encoding='utf-8-sig',newline='') as f:
  w=csv.DictWriter(f,fieldnames=list(roles[0]));w.writeheader();w.writerows(roles)
 
+# 创建 M2 扩展需要的原理图页。
 def page(file,title,pageno):
  p=Page(file,title,pageno,paper='A4')
  node(node(p.data,'title_block'),'date')[1]='2026-11-06';node(node(p.data,'title_block'),'rev')[1]='M2'
  return p
+# 按指定型号建立外接端子并返回可接线引脚。
 def conn(p,ref,names,x,y,fp=None,value=None):
  key=chip('M2_'+ref,'J',value or ref,[(i,name,-10.16,(len(names)-1)*1.27-(i-1)*2.54,0,'passive') for i,name in enumerate(names,1)],fp or FP['PH'+str(len(names))],rect=(-5.08,len(names)*1.27,5.08,-len(names)*1.27))
  placed=p.place(key,ref,value or ref,x,y,fp or FP['PH'+str(len(names))],refpos=(x,y-len(names)*1.27-6.35),valpos=(x,y-len(names)*1.27-3.81))
  return {int(k):v for k,v in placed.items()}
+# 将器件端点接入指定的命名网络。
 def end(p,pin,name,dx=-12.7):
  q=pt(pin[0]+dx,pin[1]);p.wire(pin,q)
  p.label(name,q,0 if dx<0 else 180)
+# 在图页上创建相应层次端口。
 def port(p,name,where,shape='bidirectional'):
  if name in {r['signal'] for r in roles}:return
  p.port(name,where,shape,angle=180)
- # Put the local alias at a separate endpoint, clear of the port text.
+ # 把本地别名放在独立端点，使其避开端口文字。
  q=pt(where[0]-60.96,where[1]);p.wire(q,where);p.label(name,q)
+# 为图页放置标题与说明。
 def title(p,t):p.note(t,15.24,13.97)
+# 完成当前图页并保存其局部连接信息。
 def finish(p):
  for z in nodes(p.data,'label'):
   if z[1] in {r['signal'] for r in roles}:
@@ -98,7 +100,7 @@ def finish(p):
    node(z,'effects')[1:]=effects(1.016,'left' if float(node(z,'at')[3])==0 else 'right')[1:]
  p.gnd((20.32,190.5));p.label('GND',(20.32,190.5));p.save();return p
 
-# External power: separate from the Core 3V3 and USB-powered Core rail.
+# 外部供电与 Core 的 3.3 V 以及 USB 供电支路分开。
 p=page('06_Module_Power.kicad_sch','外设独立五伏与三伏三供电',6);title(p,'外设电源：摄像头、灰度与人机界面')
 port(p,'VM',(76.2,25.4),'input');p.label('VM',(20.32,40.64))
 u=p.place(AP,'U6','AP63205WU-7',106.68,63.5,FP['TSOT'],refpos=(106.68,50.8),valpos=(106.68,53.34))
@@ -174,8 +176,8 @@ j=conn(p,'J23',['3V3_REF','GND','MCU_TX','MCU_RX'],172.72,124.46,value='步进_U
 for i,net in enumerate(['V3V3','GND','STEP_UART_TX','STEP_UART_RX'],1):end(p,j[i],net)
 j=conn(p,'J24',['VM','GND'],250.19,127,fp=FP['M2'],value='步进驱动电源')
 end(p,j[1],'VM');end(p,j[2],'GND')
-# Boot default disables an active-low-enable external driver. Adapter must match
-# the external driver; this port does not directly drive an optocoupler input.
+# 上电默认关闭低有效使能的外部驱动。转接板须与驱动匹配，
+# 此接口不能直接驱动光耦输入。
 rr=p.place(R,'R54','10k',99.06,130.81,FP['R']);end(p,rr['1'],'V3V3');end(p,rr['2'],'STEP_nEN')
 for ref,net,x in [('R57','STEP_PUL',99.06),('R58','STEP_DIR',130.81)]:
  rr=p.place(R,ref,'10k',x,104.14,FP['R']);end(p,rr['1'],net);end(p,rr['2'],'GND')
@@ -183,12 +185,16 @@ p.note('预留外接驱动板，不能直接接电机六针线圈。\n脉冲或�
 for i,name in enumerate(['V5_EXT','V3V3_EXT','V3V3','VM','BT_TX','BT_RX','STEP_UART_TX','STEP_UART_RX','STEP_PUL','STEP_DIR','STEP_nEN']):port(p,name,(275.59,25.4+i*5.08))
 finish(p)
 
+# 将处理后的表达式写成原生设计文件。
 def write(file,d): (ROOT/file).write_text(dump(d)+'\n',encoding='utf-8')
+# 更新图签与图纸版本属性。
 def update_title(d):
  node(node(d,'title_block'),'date')[1]='2026-11-06';node(node(d,'title_block'),'rev')[1]='M2'
+# 按坐标建立可复现标识的导线段。
 def wire(d,a,b,key):d.append(n('wire',n('pts',xy('xy',*a),xy('xy',*b)),n('stroke',n('width',num(0)),n('type',Atom('default'))),n('uuid',uid(key))))
+# 在端点创建网络标签。
 def label(d,name,at,angle=0):d.append(n('label',name,xy('at',*at,num(angle)),effects(1.016,'left bottom' if angle==0 else 'right bottom'),n('uuid',uid(str(at)+name))))
-# Replace J1 alone. The new symbol keeps the two existing wire endpoints.
+# 只替换 J1 的符号，保留两个原接线端点。
 d=parse((BASE/'02_Power.kicad_sch').read_text(encoding='utf-8'));update_title(d)
 key=chip('XT60PW_M_Power','J','XT60PW-M',[(1,'BAT+',7.62,2.54,180,'passive'),(2,'GND',7.62,-2.54,180,'passive')],FP['XT60'],rect=(-5.08,5.08,2.54,-5.08),datasheet='https://www.china-amass.com/biao/289.html')
 j=next(z for z in nodes(d,'symbol') if prop(z,'Reference')[2]=='J1');node(j,'lib_id')[1]=key
@@ -205,8 +211,8 @@ for z in nodes(d,'text'):
  if 'DC' in z[1] or '插座' in z[1]:z[1]=z[1].replace('DC005','XT60PW-M').replace('DC-005','XT60PW-M')
 write('02_Power.kicad_sch',d)
 
-# Extend J14 by removing NC marks only on newly allocated contacts. Existing
-# motor routing, all reference numbers and symbol positions remain untouched.
+# J14 只移除新启用触点的空接标记。
+# 保留原电机接线、位号及各符号位置。
 d=parse((BASE/'03_Core_Interface.kicad_sch').read_text(encoding='utf-8'));update_title(d)
 lib=next(z for z in nodes(node(d,'lib_symbols'),'symbol') if z[1].endswith('CoralC5_Streamline_Socket'))
 pins={}
@@ -226,14 +232,14 @@ for r in roles:
   if tuple(map(float,node(z,'at')[1:3]))==pos:d.remove(z)
  if r['contact'] not in ['A2','B2','B3','B4','A30','A29']:
   q=pt(pos[0]+(-8.89 if angle==0 else 8.89),pos[1]);wire(d,pos,q,'j14-'+r['contact']);label(d,r['signal'],q,0 if angle==0 else 180)
-# New nets use global names at J14 and overview sheet pins. This keeps the
-# manually placed stop circuit and all existing component positions untouched.
+# 新网络在 J14 与总览页端口处使用全局名称，
+# 以保留人工放置的停止电路及现有器件位置。
 for z in nodes(d,'label'):
  if z[1] in {r['signal'] for r in roles}:
   z[0]=Atom('global_label');z.insert(2,n('shape',Atom('bidirectional')))
   node(z,'at')[3]=num((float(node(z,'at')[3])+180)%360)
   node(z,'effects')[1:]=effects(1.016,'left' if float(node(z,'at')[3])==0 else 'right')[1:]
-# J9 was manually deleted before M2; reset has no expansion-board load.
+# 用户在 M2 之前已删除 J9，此版复位线没有扩展板负载。
 for z in list(nodes(d,'label')):
  if z[1]=='NRST':d.remove(z)
 nrpos=pins['A12'][0]
@@ -242,7 +248,7 @@ for w in list(nodes(d,'wire')):
 d.append(n('no_connect',xy('at',*nrpos),n('uuid',uid('unused-reset'))))
 write('03_Core_Interface.kicad_sch',d)
 
-# Reflow overview only; preserve original sheet and sheet-pin UUIDs.
+# 只重排总览，保留原图页与图页引脚的 UUID。
 update_title(root);node(root,'paper')[1]='A4'
 for z in list(root[1:]):
  if isinstance(z,list) and z[0] in ['wire','label','junction','text','rectangle','polyline']:root.remove(z)
@@ -254,7 +260,7 @@ positions={'03_Core_Interface.kicad_sch':(20.32,40.64,60.96,92.71),'02_Power.kic
 for p in h.PAGES:
  sh=n('sheet',xy('at',0,0),xy('size',70,50),n('stroke',n('width',num(.254)),n('type',Atom('default'))),n('fill',n('color',num(0),num(0),num(0),num(0))),n('uuid',p.sheetuuid),property_('Sheetname',p.title,0,0),property_('Sheetfile',p.file,0,0))
  root.append(sh);sheet_by_file[p.file]=sh
- # Root names are readable, sheet pin names encode the actual electrical ports.
+ # 根页名称面向读者，图页引脚名称对应实际电气端口。
  for z in nodes(p.data,'hierarchical_label'):
   sh.append(n('pin',z[1],Atom('bidirectional'),xy('at',0,0,num(180)),effects(1.016,'right'),n('uuid',uid(p.file+'/sheetpin/'+z[1]))))
 for file,sh in sheet_by_file.items():
@@ -270,7 +276,7 @@ for file,sh in sheet_by_file.items():
 for z in nodes(root,'label'):
  if z[1] in {r['signal'] for r in roles}:
   z[0]=Atom('global_label');z.insert(2,n('shape',Atom('bidirectional')))
-# Seven short real connections between adjacent Core and left motor blocks.
+# 相邻的 Core 与左电机模块之间有七条短连线。
 direct={p[1] for p in nodes(sheet_by_file['04_Left_Motor.kicad_sch'],'pin')[:7]}
 for z in list(nodes(root,'label')):
  if z[1] in direct:root.remove(z)
@@ -280,7 +286,7 @@ for sig in direct:
  a=next(p for p in nodes(sheet_by_file['03_Core_Interface.kicad_sch'],'pin') if p[1]==sig)
  b=next(p for p in nodes(sheet_by_file['04_Left_Motor.kicad_sch'],'pin') if p[1]==sig)
  wire(root,tuple(map(float,node(a,'at')[1:3])),tuple(map(float,node(b,'at')[1:3])),'direct/'+sig)
-# MOTOR_RUN also serves the right channel.
+# 右轮通道也使用 MOTOR_RUN。
 at=tuple(map(float,node(next(p for p in nodes(sheet_by_file['05_Right_Motor.kicad_sch'],'pin') if p[1]=='MOTOR_RUN'),'at')[1:3]))
 label(root,'MOTOR_RUN',(at[0]-5.08,at[1]),180)
 mid=tuple(map(float,node(next(p for p in nodes(sheet_by_file['03_Core_Interface.kicad_sch'],'pin') if p[1]=='MOTOR_RUN'),'at')[1:3]))
@@ -288,7 +294,7 @@ label(root,'MOTOR_RUN',mid)
 for text,x,y in [('98 触点\n13 路电机\n31 路新增',27.94,60.96),('MG513＋编码器',148.59,58.42),('MG513＋编码器',243.84,58.42),('XT60 入口',149.86,111.76),('五伏 / 三伏三',242.57,111.76),('SPI1＋四键',60.96,165.1),('八路灰度＋双摄',125.73,154.94),('蓝牙串口\n步进脉冲 / 串口',241.3,147.32)]:
  root.append(n('text',text,xy('at',x,y,num(0)),effects(2.54,'left top'),n('uuid',uid('overview/'+text+str(x)))))
 write('CoralC5-Motor.kicad_sch',root)
-# Save local symbol library without altering pre-existing definitions.
+# 保存本地符号库时保留已有符号定义。
 alllib=n('kicad_symbol_lib',n('version',num(20241209)),n('generator','kicad_symbol_editor'))
 alllib += [copy.deepcopy(v) for v in h.LIB.values()]
 (ROOT/'Motor.kicad_sym').write_text(dump(alllib)+'\n',encoding='utf-8')

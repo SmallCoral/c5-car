@@ -1,15 +1,18 @@
-"""Check an intentional schematic relayout against its complete live baseline."""
+"""将重排后的原理图与保存的完整基线比较。"""
 from pathlib import Path
 import csv,json,hashlib,xml.etree.ElementTree as ET
 from sexpr import parse,node,nodes,prop
 from revision_contract import Revisions
 
+# 从原生网表提取可逐组比较的端点集合。
 def net_partitions(path):
  return {frozenset((p.attrib['ref'],p.attrib['pin']) for p in n.findall('node')) for n in ET.parse(path).findall('.//nets/net')}
 
+# 将重排后的电路、身份和可见图线逐项与基线对照。
 def run(root):
  doc=root/'docs';base=doc/'baseline-2026-11-06-layout';checks=[]
  rev=Revisions(root)
+ # 保存每条判定及差异。
  def check(name,ok,detail=None):checks.append({'name':name,'pass':bool(ok),'detail':detail})
  before=net_partitions(base/'netlist.xml');after=net_partitions(doc/'netlist.xml')
  if rev.active:before=rev.expected_partitions(before)
@@ -26,6 +29,7 @@ def run(root):
    continue
   old=parse((base/path.name).read_text(encoding='utf-8'));new=parse(path.read_text(encoding='utf-8'))
   schemas[path.name]=new;oldschemas[path.name]=old
+  # 按类型提取图页中要比较的对象。
   def objects(d):return {node(z,'uuid')[1]:z for z in nodes(d,'symbol')}
   oo,nn=objects(old),objects(new)
   removed={prop(oo[k],'Reference')[2] for k in oo.keys()-nn.keys()};added={prop(nn[k],'Reference')[2] for k in nn.keys()-oo.keys()}
@@ -42,7 +46,7 @@ def run(root):
    if zz is None:continue
    ref=prop(z,'Reference')[2]
    if node(z,'at')!=node(zz,'at'):moved.append(ref)
-   # Coordinates and label positions may change; electrical identity may not.
+   # 允许坐标和标签位置变化，电气身份应一致。
    fields=lambda a:{p[1]:p[2] for p in nodes(a,'property')}
    pins=lambda a:sorted((p[1],node(p,'uuid')[1]) for p in nodes(a,'pin'))
    tags=['unit','in_bom','on_board','dnp','instances']
@@ -66,13 +70,13 @@ def run(root):
   if rev.m26 and path.name in ['03_Core_Interface.kicad_sch','09_Bluetooth_Stepper.kicad_sch']:authorized.add('STEP_PWR_EN')
   check('layout: '+path.name+' explicit extra power ports',len([z for z in extra if z[0] in authorized])==len(authorized))
   extra={z for z in extra if z[0] not in authorized}
-  # Redundant bias-resistor global aliases were replaced by actual wires in
-  # this relayout. Retain one existing label UUID for each signal, not two
-  # identical hierarchical ports on the same sheet.
+  # 此次重排以真实导线替换了冗余的偏置电阻全局别名。
+  # 每路信号保留一个已有的标签 UUID，
+  # 避免在同页重复创建同名的层次端口。
   check('layout: '+path.name+' original ports retained and unique GPIO ports retain existing label UUIDs',a<=b and {z[0] for z in extra}==converted.keys() and len(extra)==len(converted) and all(z in converted.get(z[0],set()) for z in extra))
   check('layout: '+path.name+' new GPIO signals use hierarchy, not global bypass',not signals&{z[1] for z in nodes(new,'global_label')})
- # Verify the overview's visible wires themselves, independently of native
- # connectivity, so globals cannot conceal a disconnected diagram again.
+ # 单独检查总览图上可见的实际导线，
+ # 避免相同全局标签掩盖图面上的断线。
  overview=schemas['CoralC5-Motor.kicad_sch'];oldview=oldschemas['CoralC5-Motor.kicad_sch']
  sheets={prop(z,'Sheetfile')[2]:z for z in nodes(overview,'sheet')}
  old_sheets={prop(z,'Sheetfile')[2]:z for z in nodes(oldview,'sheet')}
@@ -85,6 +89,7 @@ def run(root):
  for a,b in wirepts:
   pp=sorted(p for p in cuts if (a[0]==b[0]==p[0] and min(a[1],b[1])<=p[1]<=max(a[1],b[1])) or (a[1]==b[1]==p[1] and min(a[0],b[0])<=p[0]<=max(a[0],b[0])))
   for p,q in zip(pp,pp[1:]):graph[p].add(q);graph[q].add(p)
+ # 沿可见线段遍历，判断两个端点是否相通。
  def reachable(p,q):
   todo=[p];seen=set()
   while todo:

@@ -1,4 +1,4 @@
-# Local Python and Node tooling.
+# 本机 Python 和 Node 工具环境。
 __pycache__/
 *.py[cod]
 .venv/
@@ -7,18 +7,18 @@ node_modules/
 /.workbuddy-ai/
 /.agent/diagnostics/
 
-# Firmware build products and local editor state.
+# 固件编译产物与编辑器产生的本地状态。
 Firmware/**/build/
 .vscode/
 .idea/
 CMakeUserPresets.json
 
-# Device-specific hotspot configuration and local preview captures.
+# 设备热点配置与本机调试截屏。
 /Firmware/26h/*.wifi.json
 /Firmware/26h/*.lnk
 /Firmware/26h/pc_resver/maixcam_*.mp4
 
-# KiCad local state; keep source, libraries, BOMs and reports.
+# 忽略 KiCad 本地状态，保留设计源文件、元件库、物料表和报告。
 *.kicad_prl
 *.lck
 *-backups/

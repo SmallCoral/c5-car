@@ -1,3 +1,5 @@
+# 为裸机目标选择 Arm GNU 编译器；配置阶段仅编译静态库以检查工具链。
+
 set(CMAKE_SYSTEM_NAME Generic)
 set(CMAKE_SYSTEM_PROCESSOR arm)
 set(CMAKE_TRY_COMPILE_TARGET_TYPE STATIC_LIBRARY)

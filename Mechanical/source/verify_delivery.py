@@ -1,4 +1,4 @@
-"""Check delivered formats, local documentation links and the saved input baseline."""
+"""检查交付格式、本地文档链接和保存的输入基线。"""
 from pathlib import Path
 import argparse
 import hashlib
@@ -55,7 +55,7 @@ for name in docs:
         target=unquote(target.strip('<>').split('#')[0])
         if not target or '://' in target or re.match(r'^[A-Za-z]:',target):continue
         resolved=(file.parent/target).resolve()
-        if resolved==M/'validation/delivery-check.json':continue  # This invocation writes it below.
+        if resolved==M/'validation/delivery-check.json':continue  # 本次运行会在后面的步骤写出该文件。
         if not resolved.exists():missing.append({'file':name,'target':target})
 
 artifacts=['source/CoralC5_Framework.FCStd','step/CoralC5_Framework.step',

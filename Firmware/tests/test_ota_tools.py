@@ -1,3 +1,5 @@
+# 通过模拟蓝牙会话核对打包格式、快速分片、丢包重试及步进抱持处理。
+
 import asyncio
 from pathlib import Path
 import struct
@@ -14,11 +16,14 @@ from package_firmware import make_hex
 from wireless_flash import DEFAULT_BLE, DEFAULT_UUID, PACED_RECOVERY_BLOCKS, Link, run
 
 
+# 检查镜像与传输帧的静态格式。
 class ImageTests(unittest.TestCase):
+    # 建立本次测试的模拟应用数据。
     def setUp(self):
         self.image = bytearray(range(256)) * 4
         struct.pack_into("<II", self.image, 0, 0x2003FFE0, APP_ADDR + 513)
 
+    # 对照载荷与校验检查打包完整性。
     def test_package_integrity(self):
         header = image_header(self.image)
         self.assertEqual(struct.unpack_from("<I", header, 8)[0], BOARD_ID)
@@ -32,11 +37,13 @@ class ImageTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 read_image(path)
 
+    # 输入旧链接地址，验证打包器拒绝错误应用。
     def test_old_link_address_rejected(self):
         struct.pack_into("<I", self.image, 4, 0x08000201)
         with self.assertRaises(ValueError):
             image_header(self.image)
 
+    # 逐条核对 Intel HEX 的地址与校验和。
     def test_hex_addresses_and_checksum(self):
         segments = [(APP_ADDR, self.image), (0x080FC000, image_header(self.image))]
         decoded = {}
@@ -53,6 +60,7 @@ class ImageTests(unittest.TestCase):
         for address, data in segments:
             self.assertEqual(bytes(decoded[address + i] for i in range(len(data))), data)
 
+    # 拆分并损坏帧，检查解析器恢复。
     def test_fragmented_frames_and_resync(self):
         frame = Frame(DATA, 0x12345678, bytes(range(132)))
         encoded = frame.encode()
@@ -67,10 +75,13 @@ class ImageTests(unittest.TestCase):
         self.assertEqual(list(parser.feed(corrupt + encoded + encoded)), [frame, frame])
 
 
+# 模拟蓝牙异步链路中的超时、重试和抱持处理。
 class RetryTests(unittest.IsolatedAsyncioTestCase):
+    # 连续丢包后核对上传器是否降低发送节拍。
     async def test_data_burst_falls_back_on_repeated_loss(self):
         link = Link(None, None)
         sends = []
+        # 模拟发包并按场景记录重试与应答。
         async def send(data, *, paced):
             frame, = Parser().feed(data)
             sends.append((frame.sequence, paced))
@@ -87,6 +98,7 @@ class RetryTests(unittest.IsolatedAsyncioTestCase):
         await link.request(DATA, bytes(132), timeout=0.01)
         self.assertEqual([paced for _, paced in sends[-2:]], [False, True])
 
+    # 确认快速写仍逐片等待系统，不额外插入片间延时。
     async def test_burst_awaits_all_eight_writes_without_extra_sleep(self):
         client = SimpleNamespace(write_gatt_char=AsyncMock())
         link = Link(client, "ffe1")
@@ -99,6 +111,7 @@ class RetryTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(b"".join(call.args[1] for call in writes), packet)
         self.assertTrue(all(call.kwargs == {"response": False} for call in writes))
 
+    # 检测到水管正在托管时，应在进入引导前停止流程。
     async def test_holding_pipe_stops_before_bootloader_exchange(self):
         link = Link(None, None)
         link.write = AsyncMock(side_effect=lambda _: link.notify(None, b"C5OTA,BEAM HELD\r\n"))
@@ -109,9 +122,11 @@ class RetryTests(unittest.IsolatedAsyncioTestCase):
         link.request.assert_not_awaited()
         link.write.assert_awaited_once_with(b"!\nC5:OTA\n")
 
+    # 已确认外部支撑时，先解除抱持再进入升级。
     async def test_supported_pipe_is_released_before_requesting_bootloader(self):
         link = Link(None, None)
         messages = []
+        # 模拟设备按命令返回驱动状态。
         def write(data):
             messages.append(data)
             if len(messages) == 1:
@@ -126,8 +141,10 @@ class RetryTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(messages, [b"!\nC5:OTA\n", b"\nC5:BAL\n", b"C5:FREE\nC5:BAL?\n", b"!\nC5:OTA\n"])
         link.request.assert_awaited_once_with(HELLO)
 
+    # 缺少驱动失能确认时不得继续升级。
     async def test_supported_pipe_requires_drive_confirmation(self):
         link = Link(None, None)
+        # 模拟请求已发出但驱动尚未确认释放。
         def write(data):
             if b"C5:OTA" in data:
                 link.notify(None, b"C5OTA,BEAM HELD\r\n")
@@ -139,6 +156,7 @@ class RetryTests(unittest.IsolatedAsyncioTestCase):
             await link.enter(pipe_supported=True)
         link.request.assert_not_awaited()
 
+    # 当前运行镜像已匹配时应直接返回，避免擦写。
     async def test_already_installed_does_not_erase_or_upload(self):
         image = b"verified image"
         link = Link(None, None)
@@ -150,22 +168,29 @@ class RetryTests(unittest.IsolatedAsyncioTestCase):
         link.request.assert_awaited_once_with(5, attempts=1)
         link.verify_app.assert_awaited_once_with(len(image), zlib.crc32(image))
 
+    # 模拟断连后重新发现设备并续传。
     async def test_connection_drop_reconnects(self):
+        # 提供测试用蓝牙异常类型。
         class BleakError(Exception):
             pass
 
+        # 代替实际 Bleak 客户端控制连接结果。
         class Client:
             attempts = 0
 
+            # 建立该次模拟连接的状态。
             def __init__(self, *_args, **_kwargs):
                 self.services = SimpleNamespace(get_characteristic=lambda _uuid: "ffe1")
 
+            # 进入测试连接并记录连接尝试。
             async def __aenter__(self):
                 return self
 
+            # 退出上下文时释放模拟连接。
             async def __aexit__(self, *_args):
                 return False
 
+            # 记录订阅回调，供测试注入设备通知。
             async def start_notify(self, *_args):
                 Client.attempts += 1
                 if Client.attempts == 1:
@@ -185,6 +210,7 @@ class RetryTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(Client.attempts, 2)
         info.assert_awaited_once()
 
+    # 镜像匹配但存在暂存下载时，核对升级器仍按会话状态处理。
     async def test_matching_app_with_staged_data_does_not_blindly_run(self):
         image = b"current application"
         link = Link(None, None)
@@ -195,12 +221,16 @@ class RetryTests(unittest.IsolatedAsyncioTestCase):
             await link.upload(image, b"new header")
         link.request.assert_awaited_once_with(2, b"new header")
 
+    # 丢 ACK 时须重用序号，迟到的旧应答不得推进传输。
     async def test_lost_ack_reuses_sequence_and_ignores_stale(self):
+        # 用假的 GATT 后端注入超时与旧应答。
         class Client:
+            # 建立写入记录及默认通知状态。
             def __init__(self):
                 self.parser = Parser()
                 self.requests = []
 
+            # 捕获 GATT 分片并按测试计划返回通知。
             async def write_gatt_char(self, _char, data, response):
                 self.assert_no_response = not response
                 for frame in self.parser.feed(data):

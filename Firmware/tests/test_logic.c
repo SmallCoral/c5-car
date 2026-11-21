@@ -1,3 +1,5 @@
+/* 以串口替身和虚拟毫秒时钟测试按键、步进命令、故障处理与比赛状态机。 */
+
 #include <assert.h>
 #include <limits.h>
 #include <stdio.h>
@@ -18,6 +20,7 @@ static size_t rx_pos;
 static struct serial_stats stats;
 static unsigned int disable_count;
 
+/* 模拟向驱动写一帧，保存字节供断言。 */
 bool serial_write(enum serial_port port, const uint8_t *data, size_t size)
 {
 	assert(port == SERIAL_STEP);
@@ -29,6 +32,7 @@ bool serial_write(enum serial_port port, const uint8_t *data, size_t size)
 	return true;
 }
 
+/* 从模拟串口取出下一字节。 */
 bool serial_read(enum serial_port port, uint8_t *byte)
 {
 	assert(port == SERIAL_STEP);
@@ -38,12 +42,14 @@ bool serial_read(enum serial_port port, uint8_t *byte)
 	return true;
 }
 
+/* 提供模拟的串口故障及丢字节计数。 */
 struct serial_stats serial_stats(enum serial_port port)
 {
 	assert(port == SERIAL_STEP);
 	return stats;
 }
 
+/* 把指定应答放入模拟接收队列。 */
 static void inject(const uint8_t *frame, size_t length)
 {
 	memcpy(received, frame, length);
@@ -51,6 +57,7 @@ static void inject(const uint8_t *frame, size_t length)
 	rx_size = length;
 }
 
+/* 构造同一时刻的多圈轴位与绝对角快照。 */
 static void shaft_snapshot(int raw, uint16_t absolute)
 {
 	uint32_t mag = (uint32_t)(raw < 0 ? -raw : raw);
@@ -59,6 +66,7 @@ static void shaft_snapshot(int raw, uint16_t absolute)
 	inject(reply, sizeof(reply));
 }
 
+/* 构造与命令匹配的驱动应答。 */
 static void ack(struct stepper *step, uint8_t command, uint32_t now)
 {
 	const uint8_t frame[] = { 1, command, 2, 0x6b };
@@ -67,6 +75,7 @@ static void ack(struct stepper *step, uint8_t command, uint32_t now)
 	stepper_poll(step, now);
 }
 
+/* 核验时钟回绕与按键消抖时序。 */
 static void test_time_keys(void)
 {
 	struct debounce key = { 0 };
@@ -110,6 +119,7 @@ static void test_time_keys(void)
 	assert(encoder_delta(0x80000000U, 0) == INT32_MIN);
 }
 
+/* 核对 Emm 编码和受损数据的重新同步。 */
 static void test_protocol(void)
 {
 	uint8_t out[8];
@@ -137,12 +147,13 @@ static void test_protocol(void)
 		assert(emm_feed(&parser, 1, success[i], 60 + i, &reply) ==
 		       (i == sizeof(success) - 1));
 	assert(reply.status == 2);
-	/* Corrupt stream cannot overrun the fixed parser buffer. */
+	/* 损坏字节流不得写出定长解析缓冲区。 */
 	for (i = 0; i < 10000; i++)
 		(void)emm_feed(&parser, 1, (uint8_t)(i * 37), 100 + i, &reply);
 	assert(parser.used < sizeof(parser.bytes));
 }
 
+/* 核对联合运行任务的启停切换。 */
 static void test_all_toggle(void)
 {
 	struct controls ctl = {
@@ -187,6 +198,7 @@ static void test_all_toggle(void)
 	assert(ctl.task == TASK_MONITOR);
 }
 
+/* 将模拟驱动推进至启动所需的就绪状态。 */
 static void make_ready(struct stepper *step)
 {
 	const uint8_t disabled[] = { 1, 0x3a, 2, 0x6b };
@@ -204,6 +216,7 @@ static void make_ready(struct stepper *step)
 	assert(step->phase == STEP_IDLE);
 }
 
+/* 模拟步进使能、应答、取消及超时。 */
 static void test_step_state(void)
 {
 	struct stepper step;
@@ -253,9 +266,7 @@ static void test_step_state(void)
 	inject(reached, sizeof(reached));
 	stepper_poll(&step, 1330);
 	assert(step.phase == STEP_MOVING);
-	/* The old 3-second test deadline and position-reached flag cannot stop
-	 * continuous velocity mode. Speed replies retain their direction sign.
-	 */
+	/* 持续速度模式不应被旧 3 s 期限或位置到位标志停止，速度反馈还须保留方向。 */
 	stepper_poll(&step, 10000);
 	assert(step.phase == STEP_MOVING && transmitted[1] == 0x35);
 	inject(rpm, sizeof(rpm));
@@ -266,7 +277,7 @@ static void test_step_state(void)
 	ack(&step, 0xf3, 10040);
 	assert(!stepper_running(&step));
 
-	/* Cancellation while enable is in flight must never queue velocity. */
+	/* 使能应答尚未收到时取消操作，随后到达的应答也不能排入速度指令。 */
 	make_ready(&step);
 	assert(!stepper_start(&step, true, 30, 1050));
 	step.travel_valid = true;
@@ -281,7 +292,7 @@ static void test_step_state(void)
 	stepper_poll(&step, 1501);
 	assert(step.phase == STEP_OFFLINE && !stepper_running(&step));
 
-	/* Missing move ACK and damaged serial reception both request a stop. */
+	/* 运动应答丢失或串口接收损坏都应触发停机。 */
 	make_ready(&step);
 	assert(!stepper_start(&step, true, 30, 1050));
 	step.travel_valid = true;
@@ -302,6 +313,7 @@ static void test_step_state(void)
 	assert(step.phase == STEP_STOP && step.error == 0xe3);
 }
 
+/* 在位置模式下核对定位、反馈及抱持状态。 */
 static void test_position_mode(void)
 {
 	struct stepper step;
@@ -375,12 +387,13 @@ static void test_position_mode(void)
 	stepper_poll(&step, 1516);
 	assert(step.phase == STEP_BRAKE && transmitted[1] == 0xfe && disable_count == before);
 	ack(&step, 0xfe, 1520);
-	/* Only an explicit release drops holding torque. */
+	/* 只有显式释放命令才撤去抱持力矩。 */
 	stepper_stop(&step, 1530);
 	ack(&step, 0xfe, 1540);
 	assert(!step.hold && transmitted[1] == 0xf3 && disable_count == before + 1);
 }
 
+/* 模拟给定方向的轴位变化并检查测向结果。 */
 static void test_direction_measurement(int sign, bool ccw)
 {
 	struct stepper step = {
@@ -402,7 +415,7 @@ static void test_direction_measurement(int sign, bool ccw)
 			nudges++;
 			moved_at = t;
 			raw += (ccw ? -sign : sign) * 730;
-			continue; /* Drop the relative ACK on purpose. */
+			continue; /* 故意丢弃相对运动的确认应答。 */
 		}
 		if (transmitted[1] == 0x43) {
 			shaft_snapshot(raw, SHAFT_LEVEL_ABS + raw);
@@ -414,6 +427,7 @@ static void test_direction_measurement(int sign, bool ccw)
 	assert(nudges == 1 && moved_at && step.cw_sign == sign && step.phase == STEP_BRAKE);
 }
 
+/* 检查已接受目标和限速变化时的指令重发。 */
 static void test_position_speed_update(void)
 {
 	struct stepper step = {
@@ -425,13 +439,13 @@ static void test_position_speed_update(void)
 	step.rx_errors = stats.errors + stats.rx_drops;
 	stepper_poll(&step, 1008);
 	assert(step.pending == 0xfd && step.sent_rpm == 8 && transmitted[4] == 8);
-	/* A lost ACK repeats the same absolute goal and speed, including when the
-	 * encoder loop has meanwhile requested a slower approach. */
+	/* ACK 丢失时重发原绝对目标与速度，即使编码器环已要求减速接近终点。 */
 	step.target_rpm = 3;
 	stepper_poll(&step, 1055);
 	assert(step.retried && transmitted[4] == 8);
 }
 
+/* 丢弃一次读取应答，核对空闲状态下能否补读。 */
 static void test_idle_read_retry(void)
 {
 	struct stepper step;
@@ -459,6 +473,7 @@ static void test_idle_read_retry(void)
 	assert(step.phase == STEP_OFFLINE && step.error == 0xe0 && !step.pulses_per_rev);
 }
 
+/* 对照旧稳球控制器的正负转速检查线上报文。 */
 static void test_f407_wire_speed(void)
 {
 	struct stepper step = { .phase = STEP_PARKED, .hold = true, .flags = 3, .seen = true,
@@ -489,7 +504,7 @@ static void test_f407_wire_speed(void)
 	assert(emm_position(cw, 1, 1445, 3200, 16) == 13);
 	assert(tx_size == sizeof(cw) && !memcmp(transmitted, cw, sizeof(cw)));
 	ack(&step, 0xfd, 1008);
-	step.position = 1440; /* Near the positive limit, CW must go to zero. */
+	step.position = 1440; /* 接近正向限位时，顺时针目标转速必须降至零。 */
 	stepper_poll(&step, 1009);
 	assert(step.pending == 0xf6 && !transmitted[4]);
 	ack(&step, 0xf6, 1010);
@@ -502,6 +517,7 @@ static void test_f407_wire_speed(void)
 	assert(step.phase == STEP_PARKED);
 }
 
+/* 模拟点动按键的短按、长按及释放。 */
 static void test_jog_buttons(void)
 {
 	struct jog_keys keys = {0};
@@ -519,7 +535,7 @@ static void test_jog_buttons(void)
 	assert(jog_key_update(&keys, left | right, true, 3000) == JOG_NONE);
 	assert(jog_key_update(&keys, right, true, 3200) == JOG_NONE);
 	assert(jog_key_update(&keys, 0, true, 3260) == JOG_NONE);
-	/* A press that stopped automatic control cannot turn into a jog on release. */
+	/* 用于停止自动控制的按键，在松开时不能变成点动命令。 */
 	assert(jog_key_update(&keys, left, false, 4000) == JOG_NONE);
 	assert(jog_key_update(&keys, 0, true, 4050) == JOG_NONE);
 	assert(jog_cal_key(&keys, left, 4100) == JOG_LEFT);
@@ -533,6 +549,7 @@ static void test_jog_buttons(void)
 	assert(jog_cal_key(&keys, 0, 4950) == JOG_NONE);
 }
 
+/* 核对一次点击到最终抱持的轴位变化。 */
 static void test_jog_motion(void)
 {
 	struct shaft_jog jog = {0};
@@ -542,7 +559,7 @@ static void test_jog_motion(void)
 	memset(&stats, 0, sizeof(stats));
 	rx_size = rx_pos = 0;
 	int actual = step.position;
-	int expected_pulses = 61; /* Nearest microstep to the observed horizontal mark. */
+	int expected_pulses = 61; /* 取距离实测水平位置最近的微步。 */
 	unsigned int disables = disable_count;
 	uint32_t now = 1050;
 	const int directions[] = { -1, 1, 1, -1 };
@@ -585,6 +602,7 @@ static void test_jog_motion(void)
 	assert(jog.state == JOG_FAILED && !jog.referenced && step.hold);
 }
 
+/* 模拟 ACK 丢失与外力移轴，检查重试及重新建立参考。 */
 static void test_jog_retry_and_rebase(void)
 {
 	struct shaft_jog jog = { .state = JOG_MOVING, .referenced = true, .origin = -1024,
@@ -600,7 +618,7 @@ static void test_jog_retry_and_rebase(void)
 	assert(step.pending == 0xfd && transmitted[2] == 1 && transmitted[9] == 34 && transmitted[10] == 1);
 	assert(jog_press(&jog, &step, 1, 1020));
 	assert(jog.steps == 2 && step.goal != step.sent_goal);
-	stepper_poll(&step, 1055); /* Lost ACK for -34. Reissue that same absolute target. */
+	stepper_poll(&step, 1055); /* 模拟 −34 目标的 ACK 丢失，只允许重发同一绝对目标。 */
 	assert(step.retried && transmitted[2] == 1 && transmitted[9] == 34 && transmitted[10] == 1);
 	ack(&step, 0xfd, 1056);
 	assert(jog_press(&jog, &step, 1, 1057) && jog_press(&jog, &step, 1, 1058));
@@ -609,7 +627,7 @@ static void test_jog_retry_and_rebase(void)
 	assert(jog_press(&jog, &step, -1, 1059));
 	assert(emm_position(move, 1, step.goal, 3200, 15) == 13 && move[2] && move[9] == 2);
 
-	/* Only the latest click is applied if an external load has moved a parked shaft. */
+	/* 已抱停的轴被外力移动后，仅将最新一次点击加到新位置上。 */
 	jog.state = JOG_HELD;
 	step.phase = STEP_PARKED;
 	step.position = jog.target;
@@ -621,9 +639,10 @@ static void test_jog_retry_and_rebase(void)
 	assert(emm_position(move, 1, step.goal, 3200, 15) == 13 && !move[2] && move[9] == 184);
 }
 
+/* 在两个驱动原点下核验相同的实物行程。 */
 static void test_calibrated_travel(void)
 {
-	/* The same physical left/right shaft stops under two different Emm origins. */
+	/* 模拟 Emm 使用不同多圈原点，实际两端限位应一致。 */
 	const int levels[] = { -80313, 0, 795 };
 	const int offsets[] = { SHAFT_HIGH_OFFSET, SHAFT_LOW_OFFSET, 0 };
 	for (unsigned int i = 0; i < 3; i++) {
@@ -643,7 +662,7 @@ static void test_calibrated_travel(void)
 			int pulses = transmitted[8] * 256 + transmitted[9];
 			int target = (transmitted[2] ? -pulses : pulses) * 65536 / 3200;
 			assert(target > s.lower && target < s.upper);
-			/* Changed boot origin in mid-move: brake before another position command. */
+			/* 运动途中检测到驱动原点变化时，先制动再考虑下一次定位。 */
 			s.pending = 0x43;
 			shaft_snapshot(raw + 7500, SHAFT_LEVEL_ABS + offsets[j]);
 			stepper_poll(&s, 1010);
@@ -661,10 +680,11 @@ static void test_calibrated_travel(void)
 	assert(!stepper_start(&s, false, 30, 1000));
 }
 
+/* 按菜单与实测序列验证第一题的三次停稳及左点保持。 */
 static void test_contest(void)
 {
 	struct contest_menu m = { .page = MENU_HOME };
-	enum key_id back = KEY_START, confirm = KEY_MODE; /* board_keys: PH3/SW5, PD15/SW2 */
+	enum key_id back = KEY_START, confirm = KEY_MODE; /* 板级按键映射中 PH3 接 SW5，PD15 接 SW2。 */
 	for (unsigned int i = 0; i < EVENT_COUNT; i++) {
 		assert(contest_key(&m, back) == MENU_NONE && m.page == MENU_HOME);
 		assert((unsigned int)m.item == i);
@@ -732,7 +752,7 @@ static void test_contest(void)
 	}
 	r = (struct position_run){ .leg = MOVE_RIGHT, .mm = 47, .have_sample = true };
 	for (int ms = 50; ms <= 650; ms += 50) {
-		int x = ms <= 100 ? 167 : ms <= 350 ? 160 : 155; /* +47, +50, +52 mm */
+		int x = ms <= 100 ? 167 : ms <= 350 ? 160 : 155; /* 模拟右侧 +47、+50、+52 mm 三个位置。 */
 		assert(position_update(&r, BALL_TRACKED, x, ms / 50, ms, ms) == NOTICE_NONE);
 		if (ms < 650)
 			assert(r.leg == MOVE_RIGHT);
@@ -740,7 +760,7 @@ static void test_contest(void)
 	assert(r.leg == MOVE_LEFT && r.steady_at == 250);
 	r = (struct position_run){ .leg = MOVE_LEFT, .mm = -50, .have_sample = true };
 	for (int ms = 25; ms < 775; ms += 25) {
-		/* A 6 mm excursion stays in the target band but restarts the dwell. */
+		/* 移动 6 mm 虽仍在目标容差内，但已超出停稳窄带，须重新计时。 */
 		int x = ms == 350 ? 386 : 400;
 		assert(position_update(&r, BALL_TRACKED, x, ms / 25, ms, ms) == NOTICE_NONE && r.leg == MOVE_LEFT);
 	}
@@ -793,8 +813,7 @@ static void test_contest(void)
 	assert(position_update(&r, BALL_TRACKED, 238, 14, 834, 834) == NOTICE_NONE && !r.waiting_vision);
 	assert(r.mm == contest_ball_mm(238) && r.velocity > 0 && r.leg == MOVE_CENTER);
 	assert(position_update(&r, BALL_OFFLINE, 238, 14, 834, 1400) == NOTICE_VISION);
-	/* A slow attempt keeps all three dwell requirements and the original
-	 * start time. Completing past 8 s still enters sustained left hold. */
+	/* 超 8 s 的慢速运行仍执行三段完整停留，保留原起点时间并进入持续左点保持。 */
 	position_begin(&r, 282, 0, 0);
 	position_check_level(&r, true, 0);
 	position_check_level(&r, true, 100);
@@ -805,8 +824,7 @@ static void test_contest(void)
 			assert(r.leg == MOVE_CENTER && !r.finished_ms);
 	}
 	assert(r.leg == HOLD_LEFT && r.finished_ms > 8000 && r.finished_ms < 12500);
-	/* Field trial 45682: all direct observations stayed at -44 mm during
-	 * the move to O. Extra tilt must clear as soon as the ball rolls. */
+	/* 实车记录 45682 中，向 O 移动时实测一直为 −44 mm。一旦观测到球滚动，应撤掉额外的起动倾角。 */
 	r = (struct position_run){ .leg = MOVE_CENTER, .mm = -44, .have_sample = true };
 	for (int i = 1; i <= 90; i++) {
 		assert(position_update(&r, BALL_TRACKED, 386, i, i * 30, i * 30) == NOTICE_NONE);
@@ -834,6 +852,7 @@ static void test_contest(void)
 	assert(position_update(&r, BALL_MISSING, 355, 71, 1900, 1900) == NOTICE_NONE && !r.goal_cd && !r.trim_milli_cd);
 }
 
+/* 在原地稳球期间改变目标，检查定点阶段与再次获取球位。 */
 static void test_offset_positions(void)
 {
 	const int left = contest_ball_mm(RULER_X_LEFT), right = contest_ball_mm(RULER_X_RIGHT);
@@ -867,7 +886,7 @@ static void test_offset_positions(void)
 		}
 		assert(r.leg == HOLD_TARGET && r.mm == target && r.target_mm == target && !r.start);
 	}
-	/* Accept a displaced ball after a gap and keep the original fixed target. */
+	/* 失测后允许确认球已移动，同时保留原先选定的固定目标。 */
 	now += 600;
 	assert(position_update(&r, BALL_MISSING, 0, ++seq, now, now) == NOTICE_NONE && r.waiting_vision);
 	now += 25;
@@ -882,6 +901,7 @@ static void test_offset_positions(void)
 	assert(r.leg == MOVE_TARGET && r.target_mm == left && r.goal_cd < 0);
 }
 
+/* 依次执行协议、控制及题目状态机回归。 */
 int main(void)
 {
 	test_contest();

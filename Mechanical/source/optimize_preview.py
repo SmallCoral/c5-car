@@ -1,4 +1,4 @@
-"""Simplify only preview meshes; native CAD and STEP geometry stay unchanged."""
+"""只简化预览网格，CAD 与 STEP 的原生几何保留精度。"""
 from pathlib import Path
 import json
 import FreeCAD as App

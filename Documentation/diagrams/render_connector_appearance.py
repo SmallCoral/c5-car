@@ -1,4 +1,4 @@
-"""Render existing CAD meshes into transparent connector thumbnails, without GUI."""
+"""在后台把已有 CAD 网格渲染为透明背景的连接器缩略图。"""
 from pathlib import Path
 import json
 import numpy as np
@@ -25,8 +25,8 @@ for key,model in models.items():
         depth=tri.mean(axis=1)@eye
         base=np.tile(np.array(part['color']),(len(tri),1))
         if key.startswith(('xh','female','header')):
-            # Standard KiCad STEP files can be one solid with face-level colors.
-            # Distinguish exposed through-hole tails with illustrative metal color.
+            # KiCad 的标准 STEP 可能只有一个实体，颜色分别附着在各个面上。
+            # 用金属色标出外露的通孔引脚，方便识别。
             metal=tri.mean(axis=1)[:,2]<-.05
             base[metal]=[.72,.67,.48]
         intensity=.64+.36*np.maximum(norm@light,0)
@@ -49,7 +49,7 @@ for key,model in models.items():
 
 record={k:{field:value for field,value in m.items() if field!='parts'} for k,m in models.items()}
 (OUT/'sources.json').write_text(json.dumps(record,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
-# A contact sheet is only a review artifact, not an additional user deliverable.
+# 缩略图总览供开发时检查各接头的渲染效果。
 sheet=Image.new('RGB',(1200,1040),'#F3F6FA');d=ImageDraw.Draw(sheet)
 f=ImageFont.truetype('C:/Windows/Fonts/msyh.ttc',20)
 for i,key in enumerate(models):

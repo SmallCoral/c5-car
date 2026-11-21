@@ -1,3 +1,5 @@
+// 把 Flash 擦页与写入替换为可注入断电的内存模型，验证下载、提交与恢复。
+
 use coral_core::{
     ota::*,
     store::{self, Download, Flash},
@@ -13,6 +15,7 @@ struct Memory {
     torn: bool,
 }
 impl Memory {
+    // 创建模拟 Flash 及掉电注入状态。
     fn new() -> Self {
         Self {
             bytes: vec![0xff; 1024 * 1024],
@@ -22,16 +25,19 @@ impl Memory {
             torn: false,
         }
     }
+    // 在指定擦写步骤触发模拟掉电。
     fn event(&mut self) -> bool {
         let cut = self.cut == Some(self.operations);
         self.operations += 1;
         cut
     }
+    // 重置易失控制状态以模拟设备重新上电。
     fn recover(&mut self) {
         self.cut = None;
         self.operations = 0;
         self.torn = false;
     }
+    // 把 Flash 物理地址换成模拟数组偏移。
     fn offset(address: u32, len: usize) -> Result<usize> {
         if !store::writable(address, len) {
             return Err(Status::FlashError);
@@ -40,11 +46,13 @@ impl Memory {
     }
 }
 impl Flash for Memory {
+    // 从模拟存储中读取字节。
     fn read(&mut self, address: u32, data: &mut [u8]) -> Result<()> {
         let n = Self::offset(address, data.len())?;
         data.copy_from_slice(&self.bytes[n..n + data.len()]);
         Ok(())
     }
+    // 模拟擦页及其中断。
     fn erase(&mut self, address: u32) -> Result<()> {
         let n = Self::offset(address, 16)?;
         assert!(address.is_multiple_of(PAGE_SIZE));
@@ -62,6 +70,7 @@ impl Flash for Memory {
             Ok(())
         }
     }
+    // 模拟四字编程及其中断。
     fn program(&mut self, address: u32, data: &[u8]) -> Result<()> {
         let base = Self::offset(address, data.len())?;
         assert!(address.is_multiple_of(16) && data.len().is_multiple_of(16));
@@ -91,12 +100,14 @@ impl Flash for Memory {
         Ok(())
     }
 }
+// 构造向量和内容有效的测试应用。
 fn firmware(size: usize, pattern: u8) -> Vec<u8> {
     let mut b = vec![pattern; size];
     put32(&mut b, REQUEST_ADDR);
     put32(&mut b[4..], APP_ADDR + 0x241);
     b
 }
+// 通过真实下载状态机分块安装到暂存槽。
 fn download(memory: &mut Memory, bytes: &[u8]) -> Result<Download> {
     let mut d = Download::default();
     d.begin(memory, Header::for_image(bytes)?)?;
@@ -106,6 +117,7 @@ fn download(memory: &mut Memory, bytes: &[u8]) -> Result<Download> {
     d.end(memory)?;
     Ok(d)
 }
+// 准备包含旧应用的测试基线。
 fn baseline() -> Memory {
     let mut m = Memory::new();
     download(&mut m, &firmware(1024, 0x55)).unwrap();
@@ -114,6 +126,7 @@ fn baseline() -> Memory {
     m
 }
 #[test]
+// 验证重复包幂等，且已提交暂存区不会被新数据改写。
 fn duplicate_packets_are_idempotent_and_committed_stage_is_immutable() {
     let mut m = baseline();
     let b = firmware(777, 0x33);
@@ -153,6 +166,7 @@ fn duplicate_packets_are_idempotent_and_committed_stage_is_immutable() {
     assert_eq!(store::image(&mut m, STAGE_ADDR, STAGE_META), Ok(h));
 }
 #[test]
+// 损坏镜像不能获得有效提交头。
 fn invalid_image_never_publishes_metadata() {
     let mut m = baseline();
     let b = firmware(1024, 0x23);
@@ -171,6 +185,7 @@ fn invalid_image_never_publishes_metadata() {
     );
 }
 #[test]
+// 遍历下载期间各个擦写断点，旧应用仍可用。
 fn every_download_write_and_erase_can_lose_power_without_losing_old_app() {
     let base = baseline();
     let bytes = firmware(PAGE_SIZE as usize + 1157, 0x79);
@@ -198,6 +213,7 @@ fn every_download_write_and_erase_can_lose_power_without_losing_old_app() {
     }
 }
 #[test]
+// 逐个中断安装写操作，检查已提交暂存镜像可以恢复。
 fn every_install_cut_recovers_from_committed_stage() {
     let bytes = firmware(PAGE_SIZE as usize + 1157, 0x79);
     let h = Header::for_image(&bytes).unwrap();
@@ -228,6 +244,7 @@ fn every_install_cut_recovers_from_committed_stage() {
     }
 }
 #[test]
+// 尝试越界写引导区、保留间隙和请求邮箱，确认后端拒绝。
 fn boot_partition_gap_and_request_ram_are_not_flash_write_targets() {
     for (address, len) in [
         (BASE, 16),

@@ -1,6 +1,9 @@
+/* 八路灰度数字滤波和线位识别。按实物从左到右统计目标通道和连续段，为循线器提供带符号偏差。 */
+
 #include "config.h"
 #include "grayscale.h"
 
+/* 从八位目标掩码统计探头数、连续段数和位置重心。 */
 static void evaluate(struct grayscale *gray, bool white_line)
 {
 	struct gray_reading *reading = &gray->reading;
@@ -37,6 +40,7 @@ static void evaluate(struct grayscale *gray, bool white_line)
 	}
 }
 
+/* 对多次采样做时间滤波，再按黑白极性识别线并计算偏差。 */
 bool gray_update(struct grayscale *gray, uint8_t raw, uint32_t now,
 		 bool white_line)
 {
@@ -45,7 +49,7 @@ bool gray_update(struct grayscale *gray, uint8_t raw, uint32_t now,
 	if (gray->started && now - gray->sampled_at < GRAY_SAMPLE_MS)
 		return false;
 	if (!gray->started) {
-		/* Do not present the zero-initialized filter as eight black probes. */
+		/* 滤波器初值全为零，等待采满后才判黑线，避免显示八路全黑。 */
 		gray->stable = 0xff;
 		gray->started = true;
 	}
@@ -69,6 +73,7 @@ bool gray_update(struct grayscale *gray, uint8_t raw, uint32_t now,
 	return true;
 }
 
+/* 将识别结果转为屏幕和遥测共用的文字。 */
 const char *gray_status_name(enum gray_status status)
 {
 	static const char *const names[] = {

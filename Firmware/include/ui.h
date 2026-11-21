@@ -1,3 +1,5 @@
+/* 界面快照及绘制接口，采样、控制、绘图之间通过此结构传递同一时刻的显示值。 */
+
 #ifndef CORAL_UI_H
 #define CORAL_UI_H
 
@@ -72,9 +74,12 @@ struct ui_state {
 	uint32_t update_total;
 };
 
+/* 根据当前任务选择页面，并绘制完整界面。 */
 void ui_render(uint8_t *pixels, const struct ui_state *state);
+/* 将页面裁切到指定行，供屏幕按小块传输。 */
 void ui_render_rows(uint8_t *pixels, const struct ui_state *state,
 		    unsigned int first, unsigned int rows);
+/* 仅重画给定行范围内的实时球位条。 */
 void ui_render_pipe_rows(uint8_t *pixels, const struct ball_view *ball,
 			 unsigned int first, unsigned int rows);
 

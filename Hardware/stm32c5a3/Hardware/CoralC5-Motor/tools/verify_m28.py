@@ -1,8 +1,4 @@
-"""M2.8 independent electrical, identity, resource and 98-contact audit.
-
-Historical verifiers are retained. Input intent is the old M2.7 native netlist
-plus static reviewed edits in m28_contract, never the current observed nets.
-"""
+"""独立核对 M2.8 的电气、器件身份、资源和 98 触点。预期值取自 M2.7 原生网表与 m28_contract 的指定修改。"""
 from pathlib import Path
 from datetime import datetime
 import sys,json,csv,hashlib,subprocess,xml.etree.ElementTree as ET
@@ -14,11 +10,14 @@ from pin_functions import parse_alternate_functions
 from verify_m27 import native
 from m28_contract import intended,PRIMARY_PINOUTS,ADDED_PHYSICAL,PIN_MAP,REMOVED_PINS
 
+# 用 M2.7 导出和静态修订要求核对 M2.8 的全板电气连接。
 def main():
     record=json.loads((DOC/'m28_revision.json').read_text(encoding='utf8'))
     base=DOC/record['resume_baseline'];baseline=json.loads((base/'baseline.json').read_text(encoding='utf8'))
     checks=[]
+    # 把判定及差异加入核验表。
     def ck(name,ok,detail=None):checks.append({'name':name,'pass':bool(ok),'detail':detail})
+    # 取得设计文件的原始字节指纹。
     def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
     _,before,_=native(DOC/'baseline-2026-11-07-m28/live-netlist.xml')
     tree,observed,pins=native(DOC/'netlist.xml');expected=intended(before)
@@ -45,10 +44,10 @@ def main():
         prev={x[1]:x for x in nodes(node(oldschemas[f],'lib_symbols'),'symbol')}
         defs={x[1]:x for x in nodes(node(d,'lib_symbols'),'symbol')}
         ck(f+' cached definitions retained',prev==defs)
-    # Preserve M2.7 physical identities through the explicit AP64500 pin map.
+    # 通过显式的 AP64500 引脚映射保留 M2.7 实物器件身份。
     original=DOC/'baseline-2026-11-07-m28'
-    # This historical snapshot was committed with LF conversion; its manifest
-    # hashes were created from CRLF files. Record that distinction explicitly.
+    # 历史快照入库时行尾被转为 LF，
+    # 清单的哈希却取自 CRLF 文件，比较时分别记录。
     historical=json.loads((original/'baseline.json').read_text(encoding='utf8'))
     historical_normalized=[]
     for f,want in historical['sha256'].items():
@@ -69,7 +68,7 @@ def main():
             target=PIN_MAP.get(key,key).split(':')[1]
             ck(key+' prior pin UUID retained',np.get(target)==node(p,'uuid')[1])
     ck('local symbol library byte preserved since resume',sha(ROOT/'Motor.kicad_sym')==baseline['files']['Motor.kicad_sym']['sha256'])
-    # 98-contact power and GPIO contract against a fresh Core native export.
+    # 以新导出的 Core 原生网表核对 98 触点的电源及 GPIO。
     _,_,core=native(DOC/'core_netlist.xml')
     contract=list(csv.DictReader((ROOT.parent/'Shared/interface.csv').open(encoding='utf-8-sig')))
     ck('98 unique Core contacts',len(contract)==98 and len({r['contact'] for r in contract})==98)
@@ -94,12 +93,13 @@ def main():
     for a in assignments:
         af=a.get('af')
         if af not in [None,'','None']:ck(a['signal']+' datasheet alternate function',functions.get((a['gpio'],a['function']))==int(af))
-    # The independent counters and PWM channels must not share timer instances.
+    # 独立编码器计数和 PWM 输出不能共用同一定时器实例。
     wheel={a['signal']:a for a in assignments if a['signal'].startswith(('L_','R_'))}
     ck('encoder timers independent of PWM and TFT timers',all(wheel[s]['function'].startswith(t) for s,t in [('L_ENC_A','TIM5_'),('L_ENC_B','TIM5_'),('R_ENC_A','TIM2_'),('R_ENC_B','TIM2_'),('L_PWM','TIM4_'),('R_PWM','TIM4_')]) and next(a for a in assignments if a['signal']=='TFT_BL')['function']=='TIM3_CH1')
     primary_text=(ROOT.parent/'Shared/sources/DS15137_STM32C5Axxx_Datasheet_Rev3.pdf.txt').read_text(encoding='utf-8-sig')
     import re
     for gpio,adc in [('PH5','ADC2_IN13'),('PC0','ADC1_IN8')]:ck(gpio+' primary ADC pin-table row',bool(re.search(r'\b'+gpio+r'\b[^\n]*\b'+adc+r'\b',primary_text)))
+    # 将预期端点与实际连通分组比对。
     def group(anchor,expected):ck(anchor+' exact net',pins.get(anchor,set())==set(expected.split()))
     group('J14:A48','D3:1 J14:A48 J14:B48 R5:1')
     ck('Core USB diode cathode on Core system rail',{'D2:1','U2:2','U2:3','J13:A48','J13:B48'}<=core['J13:A48'])
@@ -129,6 +129,7 @@ def main():
             pp={p[1]:p for p in nodes(part,'pad')};gap=abs(float(node(pp['2'],'at')[1])-float(node(pp['1'],'at')[1]))-(float(node(pp['1'],'size')[1])+float(node(pp['2'],'size')[1]))/2
             ck(ref+' largest selected 0603 gap',abs(gap-.85)<1e-8)
     ck('only exact XT60 model missing',missing==['J1'])
+    # 从指定封装提取焊盘信息。
     def lands(name):
         f=parse((ROOT/'Motor.pretty'/(name+'.kicad_mod')).read_text(encoding='utf8'))
         return sorted((p[1],*map(float,node(p,'at')[1:3]),*map(float,node(p,'size')[1:3])) for p in nodes(f,'pad'))

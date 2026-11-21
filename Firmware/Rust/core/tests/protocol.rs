@@ -1,3 +1,5 @@
+// 用固定字节与 C 版像素 CRC 校验 Rust 遥测、OTA 和屏幕输出的兼容性。
+
 use coral_core::{
     ota::*,
     telemetry::{Decoder, Record},
@@ -6,6 +8,7 @@ use coral_core::{
 };
 use std::fmt::Write;
 
+// 构造字段齐全的测试遥测样本。
 fn sample() -> Vec<u8> {
     let mut v = vec![0x55; 777];
     put32(&mut v, REQUEST_ADDR);
@@ -13,6 +16,7 @@ fn sample() -> Vec<u8> {
     v
 }
 #[test]
+// 损坏向量和 CRC，验证包头与向量检查。
 fn crc_and_header_reject_corruption_and_wrong_vectors() {
     assert_eq!(crc(b"123456789"), 0xcbf43926);
     let mut b = sample();
@@ -38,6 +42,7 @@ fn crc_and_header_reject_corruption_and_wrong_vectors() {
     assert!(Header::for_image(&[0; 511]).is_err());
 }
 #[test]
+// 跨边界分割帧，并混入噪声、坏 CRC 及超长字段。
 fn frames_survive_fragmentation_noise_crc_and_oversized_lengths() {
     let f = Frame::new(DATA, 0x89abcdef, &[0xaa; PAYLOAD_MAX]).unwrap();
     let mut b = [0; FRAME_MAX];
@@ -67,6 +72,7 @@ fn frames_survive_fragmentation_noise_crc_and_oversized_lengths() {
     assert!(Frame::new(DATA, 0, &[0; PAYLOAD_MAX + 1]).is_err());
 }
 #[test]
+// 用多种版本、分片以及超长行检验逐行遥测解析。
 fn telemetry_versions_fragmented_and_overlong_lines() {
     let mut r = Record {
         version: 2,
@@ -100,6 +106,7 @@ fn telemetry_versions_fragmented_and_overlong_lines() {
     assert!(Record::parse(r.csv().as_str()).is_none());
 }
 #[test]
+// 在容量边界测试 UTF-8 写入仍保持字符完整。
 fn bounded_text_preserves_utf8_on_capacity_error() {
     let mut s = Text::<6>::new();
     write!(s, "中文").unwrap();
@@ -110,6 +117,7 @@ fn bounded_text_preserves_utf8_on_capacity_error() {
 }
 
 #[test]
+// 对照旧 Python 生成的固定字节验证协议兼容。
 fn wire_format_matches_legacy_python_golden_bytes() {
     let h = Header::for_image(&sample()).unwrap();
     assert_eq!(&h.encode(), include_bytes!("fixtures/v1_header.bin"));
@@ -120,6 +128,7 @@ fn wire_format_matches_legacy_python_golden_bytes() {
 }
 
 #[test]
+// 覆盖字段数值极限，确认定长行缓冲容量。
 fn all_numeric_telemetry_values_fit_without_truncation() {
     let mut r = Record {
         version: 2,
@@ -130,6 +139,7 @@ fn all_numeric_telemetry_values_fit_without_truncation() {
 }
 
 #[test]
+// 将 Rust 画面与已归档的 27 个 C 版画面 CRC 对照。
 fn ui_matches_27_legacy_c_renderings() {
     let expected: Vec<_> = include_str!("fixtures/ui_crc32.txt")
         .lines()
@@ -179,6 +189,7 @@ fn ui_matches_27_legacy_c_renderings() {
     assert_eq!(actual, expected);
 }
 #[test]
+// 用极端计数和升级进度覆盖各任务的绘制边界。
 fn ui_handles_extreme_counters_progress_and_all_tasks() {
     let mut pixels = [0; ui::BYTES];
     let mut s = ui::State {

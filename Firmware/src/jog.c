@@ -1,3 +1,5 @@
+/* 步进点动和标定。按键产生离散步数，编码器提供轴位，组合成受上下限约束的绝对目标，并在反馈到位后保持。 */
+
 #include <limits.h>
 #include <stdlib.h>
 #include "balance.h"
@@ -6,6 +8,7 @@
 
 enum { JOG_PER_TURN = 200, JOG_LONG_MS = 700 };
 
+/* 区分点动按键的按下、释放和连续长按，给出请求步数。 */
 enum jog_action jog_key_update(struct jog_keys *keys, uint8_t down, bool enabled, uint32_t now)
 {
 	const uint8_t left = 1U << KEY_OK, right = 1U << KEY_NEXT;
@@ -29,11 +32,13 @@ enum jog_action jog_key_update(struct jog_keys *keys, uint8_t down, bool enabled
 	return pressed == left ? JOG_MAP : JOG_ZERO;
 }
 
+/* 判断点动器是否仍在等待抱持或执行定位。 */
 bool jog_busy(const struct shaft_jog *jog)
 {
 	return jog->state == JOG_LOCKING || jog->state == JOG_MOVING;
 }
 
+/* 标定页单按中间键产生左右点动，按住 450 ms 后每 120 ms 重复，组合键不触发点动。 */
 enum jog_action jog_cal_key(struct jog_keys *keys, uint8_t down, uint32_t now)
 {
 	const uint8_t up = 1U << KEY_OK, lower = 1U << KEY_NEXT;
@@ -55,13 +60,13 @@ enum jog_action jog_cal_key(struct jog_keys *keys, uint8_t down, uint32_t now)
 	return down == up ? JOG_LEFT : JOG_RIGHT;
 }
 
+/* 将轴位换算时取最接近的整数格点。 */
 static int64_t nearest(int64_t value, int32_t divisor)
 {
 	return (value + (value < 0 ? -divisor / 2 : divisor / 2)) / divisor;
 }
 
-/* Anchor the button grid to an actual drive microstep. Each click adds exactly
- * 1/200 turn in pulse space; retries resend the same absolute FD target. */
+/* 从实测微步位置计算下一个绝对目标，每步为 1/200 圈，并检查机械边界。重试时沿用同一个 FD 目标。 */
 static bool set_target(struct shaft_jog *jog, uint32_t ppr, int steps)
 {
 	int64_t pulses = nearest((int64_t)jog->origin * ppr, 65536) +
@@ -74,6 +79,7 @@ static bool set_target(struct shaft_jog *jog, uint32_t ppr, int steps)
 	return true;
 }
 
+/* 将本次点击叠加到已确认的轴位上并发起点动。 */
 bool jog_press(struct shaft_jog *jog, struct stepper *step, int direction, uint32_t now)
 {
 	if ((direction != -1 && direction != 1) || !step->pulses_per_rev ||
@@ -106,6 +112,7 @@ bool jog_press(struct shaft_jog *jog, struct stepper *step, int direction, uint3
 	return true;
 }
 
+/* 标记点动失败并停止继续发出定位请求。 */
 static void jog_fault(struct shaft_jog *jog, struct stepper *step, uint32_t now)
 {
 	jog->state = JOG_FAILED;
@@ -114,6 +121,7 @@ static void jog_fault(struct shaft_jog *jog, struct stepper *step, uint32_t now)
 		stepper_brake(step, now);
 }
 
+/* 等待新鲜的轴位与到位反馈，按阶段完成抱持、定位及收尾。 */
 void jog_poll(struct shaft_jog *jog, struct stepper *step, uint32_t now)
 {
 	if (!jog_busy(jog))
@@ -134,8 +142,7 @@ void jog_poll(struct shaft_jog *jog, struct stepper *step, uint32_t now)
 		    now - step->position_at >= now - jog->since)
 			return;
 		if (jog->referenced && llabs((int64_t)step->position - jog->held_at) > 40) {
-			/* The linkage was displaced between presses. Apply only the new
-			 * clicks to the fresh shaft position and keep the travel limits. */
+			/* 两次按键之间机构已被移动，在最新轴位上仅叠加本次点击量，继续执行行程限位。 */
 			jog->steps -= jog->held_steps;
 			jog->referenced = false;
 		}
@@ -171,8 +178,7 @@ void jog_poll(struct shaft_jog *jog, struct stepper *step, uint32_t now)
 		jog_fault(jog, step, now);
 		return;
 	}
-	/* Wait for fresh position and reached-bit replies for this particular FD.
-	 * Keep the completed target energized when returning to parked polling. */
+	/* 等待本次 FD 的新位置应答和到位标志。转入驻车轮询后让驱动继续使能。 */
 	if (step->goal_sent && step->sent_goal == jog->target && !step->pending &&
 	    now - step->position_at < now - step->goal_at && now - step->flags_at < now - step->goal_at &&
 	    (step->flags & 3U) == 3U && llabs((int64_t)step->position - jog->target) <= 24) {

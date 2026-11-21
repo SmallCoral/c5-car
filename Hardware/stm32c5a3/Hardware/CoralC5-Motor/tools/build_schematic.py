@@ -1,8 +1,4 @@
-"""Reproducible KiCad schematic and component-library authoring only.
-
-Never reads, creates or modifies any board file. Rebuild only before editing
-this new schematic manually; subsequent edits belong in KiCad.
-"""
+"""生成可复现的 KiCad 原理图和元件库。手工编辑前可由基线重建，后续修改在 KiCad 中进行。此脚本只处理原理图资源。"""
 from pathlib import Path
 import sys, math, copy, json, uuid, re, shutil, csv
 ROOT=Path(__file__).resolve().parents[1]
@@ -10,23 +6,32 @@ sys.path.insert(0,str(ROOT.parent/'Shared/design_tools'))
 from sexpr import parse,dump,node,nodes,prop,Atom
 K=Path('D:/KiCad/10.0/share/kicad')
 A=Atom
+# 将标签和子项组成 KiCad S 表达式节点。
 def n(tag,*items): return [A(tag),*items]
+# 把数值转换为去掉冗余小数位的原子。
 def num(v): return A(f'{float(v):.5f}'.rstrip('0').rstrip('.') or '0')
+# 将坐标吸附到 1.27 mm 原理图网格。
 def s(v): return round(round(float(v)/1.27)*1.27,5)
+# 将二维端点的两个坐标都吸附到网格。
 def pt(x,y): return s(x),s(y)
+# 按项目命名空间和对象键生成可复现的 UUID。
 def uid(key): return str(uuid.uuid5(uuid.NAMESPACE_URL,'CoralC5-Motor-R1/'+str(key)))
+# 构造带坐标的表达式节点。
 def xy(tag,x,y,*extra): return n(tag,num(x),num(y),*extra)
+# 构造文字大小、对齐和可见性属性。
 def effects(size=1.27,justify=None,hide=False):
     e=n('effects',n('font',xy('size',size,size)))
     if justify: e.append(n('justify',*[A(z) for z in justify.split()]))
     if hide: e.append(n('hide',A('yes')))
     return e
+# 生成器件属性的文字、位置与显示设置。
 def property_(name,value,x=0,y=0,hide=False,justify=None):
     return n('property',name,value,xy('at',x,y,num(0)),effects(1.27,justify,hide))
 
 LIB={}; FPMETA={}; PARTS=[]; PAGES=[]
 fpdir=ROOT/'Motor.pretty'; md=ROOT/'Models'
 fpdir.mkdir(exist_ok=True);md.mkdir(exist_ok=True)
+# 复制厂家封装到本地库并解析模型引用。
 def local_fp(source, name=None, source_root=K/'footprints', model_root=K/'3dmodels', kind='KiCad package geometry'):
     lib,filename=source.split(':'); name=name or lib+'__'+filename
     src=source_root/(lib+'.pretty')/(filename+'.kicad_mod')
@@ -64,7 +69,7 @@ for key,src in {
 }.items(): FP[key]=local_fp(src)
 FP['EDGE']=local_fp('DevBoard:Streamline_Socket','C5_EDGE_3_Socket',ROOT.parent/'CoralC5-Expansion',kind='existing project vendor model')
 
-# TI PWP0016 PowerPAD: manufacturer drawing pages 39-41, no board file.
+# TI PWP0016 裸露散热焊盘尺寸来自厂家图纸第 39～41 页。
 FP['DRV']=local_fp('Package_SO:HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.78x3.37mm','DRV8874_PWP0016',kind='generic HTSSOP body; manufacturer pad geometry in footprint')
 drvfp=parse((fpdir/'DRV8874_PWP0016.kicad_mod').read_text(encoding='utf-8'))
 for pad in nodes(drvfp,'pad'):
@@ -78,14 +83,16 @@ for pad in nodes(drvfp,'pad'):
         node(pad,'size')[1:]=[num(1.5),num(.45)]
 (fpdir/'DRV8874_PWP0016.kicad_mod').write_text(dump(drvfp)+'\n',encoding='utf-8')
 
+# 以盒体几何和颜色生成 VRML 模型描述。
 def box_wrl(name,boxes):
-    # VRML uses 0.1 inch units in KiCad.
+    # KiCad 中 VRML 的长度单位为 0.1 英寸。
     text=['#VRML V2.0 utf8','# Generic external envelope, not a manufacturer assembly model.']
     for center,size,color in boxes:
         c=' '.join(str(round(v/2.54,6)) for v in center);z=' '.join(str(round(v/2.54,6)) for v in size)
         text.append(f'Transform {{ translation {c} children [ Shape {{ appearance Appearance {{ material Material {{ diffuseColor {color} }} }} geometry Box {{ size {z} }} }} ] }}')
     (md/(name+'.wrl')).write_text('\n'.join(text)+'\n',encoding='utf-8')
 
+# 建立定制的项目封装及其资源记录。
 def custom_fp(name,body,pads,boxes,descr):
     data=n('footprint',name,n('version',num(20241229)),n('generator','pcbnew'),n('layer','F.Cu'),n('descr',descr),n('attr',A('through_hole')))
     data += [property_('Reference','REF**',0,-4),property_('Value',name,0,5)]
@@ -111,10 +118,12 @@ FP['SW']=custom_fp('SS12D07VG4',(-4.4,-2.3,4.4,2.3),[
  [((0,0,2.35),(8.8,4.6,4.7),'0.5 0.5 0.5'),((-1,0,6.7),(2,2.2,4),'0.08 0.08 0.08')],
  'SHOU HAN SS12D07VG4: 2=common, 1/3=throws; 4/5=shell mounting. Local generic model; see source drawing.')
 
+# 从标准符号库取得指定器件定义。
 def std(lib,name):
     key=lib+':'+name
     if key in LIB:return key
     data=parse((K/'symbols'/(lib+'.kicad_sym')).read_text(encoding='utf-8'))
+    # 解析符号及继承关系以取得可嵌入定义。
     def resolve(name):
         x=copy.deepcopy(next(x for x in nodes(data,'symbol') if x[1]==name));e=node(x,'extends')
         if e:
@@ -131,6 +140,7 @@ def std(lib,name):
     LIB['Motor:'+localname]=x
     return 'Motor:'+localname
 
+# 按给定封装、字段与引脚建立芯片符号。
 def chip(name,ref,value,pins,fp,rect=(-12.7,20.32,12.7,-20.32),datasheet=''):
     x=n('symbol',name,n('pin_names',n('offset',num(.5))),n('in_bom',A('yes')),n('on_board',A('yes')),
         property_('Reference',ref,0,25.4),property_('Value',value,0,22.86),property_('Footprint',fp,hide=True),property_('Datasheet',datasheet,hide=True))
@@ -167,18 +177,22 @@ for sub in nodes(q,'symbol'):
 prop(q,'Value')[2]='AO4407A';prop(q,'Footprint')[2]=FP['SO8'];prop(q,'Datasheet')[2]='https://aosmd.com/sites/default/files/res/datasheets/AO4407A.pdf'
 LIB['Motor:AO4407A']=q;PMOS='Motor:AO4407A'
 
-# Existing connector symbol and exact C5-EDGE-3 footprint/model.
+# 复用现有连接器符号及配套的 C5-EDGE-3 封装和模型。
 existing=parse((ROOT.parent/'CoralC5-Expansion/02_Interface.kicad_sch').read_text(encoding='utf-8'))
 edge=copy.deepcopy(next(x for x in nodes(node(existing,'lib_symbols'),'symbol') if x[1]=='DevBoard:CoralC5_Streamline_Socket'))
 edge[1]='CoralC5_Streamline_Socket';prop(edge,'Footprint')[2]=FP['EDGE'];LIB['Motor:CoralC5_Streamline_Socket']=edge
 
+# 保存一张原理图的对象、网络端点和实例信息。
 class Page:
+    # 建立图页标识及绘图时使用的集合。
     def __init__(self,file,title,pageno,paper='A3'):
         self.file=file;self.title=title;self.pageno=pageno;self.uuid=uid(file);self.sheetuuid=uid('sheet/'+file)
         self.data=n('kicad_sch',n('version',num(20260306)),n('generator','eeschema'),n('generator_version','10.0'),n('uuid',self.uuid),n('paper',paper),
           n('title_block',n('title',title),n('date','2026-10-27'),n('rev','M1'),n('company','SmallCoral / CoralC5-Motor'),n('comment',num(1),'原理图设计；实板电流、温升与线束待验证'))),
         self.data=self.data[0];self.used={};self.components={};self.wires=[];self.labels=[];self.ncpoints=[];self.count=0;PAGES.append(self)
+    # 将新的图元加入当前页。
     def add(self,obj):self.data.append(obj);return obj
+    # 按网格端点连接导线并记录分支位置。
     def wire(self,*points):
         pp=[pt(*p) for p in points]
         for a,b in zip(pp,pp[1:]):
@@ -186,16 +200,21 @@ class Page:
             if a[0]!=b[0] and a[1]!=b[1]:
                 corner=(b[0],a[1]);self.wires.extend([(a,corner),(corner,b)])
             else:self.wires.append((a,b))
+    # 在指定端点放置网络标签。
     def label(self,name,at,angle=0):
         p=pt(*at);self.labels.append((name,p))
         self.add(n('label',name,xy('at',*p,num(angle)),effects(1.27,'left bottom' if angle==0 else 'right bottom'),n('uuid',uid(f'{self.file}/label/{name}/{p}'))))
+    # 创建层次端口并设置方向与朝向。
     def port(self,name,at,shape='input',angle=0):
-        # The endpoint faces the wire. Put the label body on the opposite side.
+        # 让端点朝向导线，标签文字置于另一侧。
         p=pt(*at);angle=(angle+180)%360
         self.add(n('hierarchical_label',name,n('shape',A(shape)),xy('at',*p,num(angle)),effects(1.27,'left' if angle==0 else 'right'),n('uuid',uid(f'{self.file}/port/{name}'))))
+    # 为未连接引脚放置空接标记。
     def nc(self,p):
         p=pt(*p);self.ncpoints.append(p);self.add(n('no_connect',xy('at',*p),n('uuid',uid(f'{self.file}/NC/{p}'))))
+    # 按字号和坐标写入图纸说明。
     def note(self,text,x,y):self.add(n('text',text,xy('at',*pt(x,y),num(0)),effects(2.54,'left top'),n('uuid',uid(f'{self.file}/note/{text}'))))
+    # 绘制用于分组的图框。
     def frame(self,title,x1,y1,x2,y2):
         stroke=n('stroke',n('width',num(.254)),n('type',A('dash')))
         if node(self.data,'paper')[1]=='A4' and x2>175.26 and y2>165.1:
@@ -203,6 +222,7 @@ class Page:
             self.add(n('polyline',n('pts',*[xy('xy',*q) for q in points]),stroke,n('fill',n('type',A('none'))),n('uuid',uid(f'{self.file}/frame/{title}'))))
         else:self.add(n('rectangle',xy('start',*pt(x1,y1)),xy('end',*pt(x2,y2)),stroke,n('fill',n('type',A('none'))),n('uuid',uid(f'{self.file}/frame/{title}'))))
         self.note(title,x1+3,y1+2)
+    # 放置器件实例，形成位号、字段和可接线引脚坐标。
     def place(self,key,ref,value,x,y,fp='',rot=0,unit=1,mpn='',datasheet='',fields=None,refpos=None,valpos=None):
         x,y=pt(x,y);lib=LIB[key];self.used[key]=lib;self.count+=1
         z=n('symbol',n('lib_id',key),xy('at',x,y,num(rot)),n('unit',num(unit)),n('in_bom',A('no' if ref.startswith('#') else 'yes')),n('on_board',A('no' if ref.startswith('#') else 'yes')),n('dnp',A('no')),n('uuid',uid(f'{self.file}/{ref}/{unit}')))
@@ -232,16 +252,20 @@ class Page:
         self.add(z);self.components[(ref,unit)]={'pins':pins,'key':key,'symbol':z}
         if not ref.startswith('#') and unit==1:PARTS.append({'reference':ref,'value':value,'mpn':mpn,'footprint':fp,'page':self.pageno,'datasheet':prop(z,'Datasheet')[2]})
         return pins
+    # 放置接地符号并连接指定端点。
     def gnd(self,p):
         global POWERCOUNT
         POWERCOUNT+=1;return self.place(std('power','GND'),f'#PWR{POWERCOUNT:03}','GND',*p,refpos=(s(p[0]),s(p[1])),valpos=(s(p[0]),s(p[1]+3.81)))
+    # 放置电源标志，供电气规则检查识别供电来源。
     def flag(self,p):
         global FLAGCOUNT
         FLAGCOUNT+=1;return self.place(std('power','PWR_FLAG'),f'#FLG{FLAGCOUNT:03}','PWR_FLAG',*p,refpos=pt(*p),valpos=pt(*p))
+    # 将指定引脚接入命名网络。
     def netpin(self,p,name,dx=-7.62):
         end=(s(p[0]+dx),p[1]);self.wire(p,end);self.label(name,end,0 if dx<0 else 180)
+    # 序列化图页及本地库定义并输出原理图。
     def save(self):
-        # Split T junctions at endpoints; do not connect unrelated wire crossings.
+        # 在 T 形分支的端点拆分线段，避免无关交叉处形成连接。
         endpoints=set(p for a,b in self.wires for p in [a,b]);segs=set()
         for a,b in self.wires:
             cuts=[p for p in endpoints if (a[0]==b[0]==p[0] and min(a[1],b[1])<=p[1]<=max(a[1],b[1])) or (a[1]==b[1]==p[1] and min(a[0],b[0])<=p[0]<=max(a[0],b[0]))]
@@ -269,7 +293,7 @@ for pn in ['4','5']:
     pp=n('pin',A('passive'),A('line'),xy('at',0,-12.7,num(90)),n('length',num(2.54)),n('name','CASE',effects(1.016)),n('number',pn,effects(1.016)))
     if pn=='5':pp.append(n('hide',A('yes')))
     swunit.append(pp)
-# Jack contact numbering differs from KiCad generic: XKB 2=switch, 3=sleeve.
+# XKB 插座的 2 脚为开关，3 脚为外套筒，与 KiCad 通用符号编号不同。
 jack=copy.deepcopy(LIB[std('Connector','Barrel_Jack_Switch')]);old=jack[1];jack[1]='DC005_XKB'
 for sub in nodes(jack,'symbol'):
     sub[1]=sub[1].replace(old+'_','DC005_XKB_')
@@ -285,8 +309,11 @@ core=Page('03_Core_Interface.kicad_sch','C5-EDGE-3 核心板接口与调试',3)
 left=Page('04_Left_Motor.kicad_sch','左电机驱动与霍尔编码器',4)
 right=Page('05_Right_Motor.kicad_sch','右电机驱动与霍尔编码器',5)
 
+# 放置电阻并为两端生成连接。
 def res(page,ref,value,x,y,rot=0,**kw):return page.place(R,ref,value,x,y,FP['R'],rot=rot,mpn=kw.pop('mpn',''),**kw)
+# 放置电容并为两端生成连接。
 def cap(page,ref,value,x,y,fp='C',rot=0,**kw):return page.place(C,ref,value,x,y,FP[fp],rot=rot,**kw)
+# 按针号表逐一把端子分配到网络。
 def terminal(page,pins,netmap):
     for pn,name in netmap.items():page.netpin(pins[pn],name)
 
@@ -301,6 +328,7 @@ rows=list(csv.DictReader((ROOT.parent/'Shared/interface.csv').open(encoding='utf
 contactmap={x['contact']:x['net'] for x in rows}
 ports=['V5_SYS','V3V3','L_PWM','L_DIR','L_nFAULT','L_ISENSE','L_ENC_A','L_ENC_B','R_PWM','R_DIR','R_nFAULT','R_ISENSE','R_ENC_A','R_ENC_B','MOTOR_RUN']
 
+# 在总览页创建子图页、图框及对应层次引脚。
 def sheet(page,title,x,y,w,h,pindefs):
     endx,endy=pt(x+w,y+h);x,y=pt(x,y);pins={}
     z=n('sheet',xy('at',x,y),xy('size',endx-x,endy-y),n('stroke',n('width',num(.254)),n('type',A('default'))),n('fill',n('color',num(0),num(0),num(0),num(0))),n('uuid',page.sheetuuid),

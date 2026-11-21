@@ -1,3 +1,5 @@
+# 旧相机方案使用空管背景、视觉检测和运动跟踪估算球位，可用来对照现行局部视野方案。
+
 from maix import camera, display, image, nn, app, uart
 from struct import pack
 import cv2
@@ -108,12 +110,13 @@ STATUS_OUTLIER = 0x08
 STATUS_CV_FALLBACK = 0x10
 
 
+# 将数值限制在可编码或可观测的范围内。
 def clamp(value, low, high):
     return max(low, min(high, value))
 
 
 def crc8(data):
-    """CRC-8/ATM, polynomial=0x07, init=0x00."""
+    """计算 CRC-8/ATM，多项式 0x07，初值 0x00。"""
     crc = 0
     for byte in data:
         crc ^= byte
@@ -145,7 +148,7 @@ def send_legacy(valid, position_px):
 
 def send_v2(sequence, status, position_px, speed_cm_s, age_ms):
     """
-    V2 frame, little-endian, total 16 bytes:
+    V2 帧采用小端字节序，共 16 字节。字段从左到右排列。
       AA 55 | version:u8 | status:u8 | sequence:u16 |
       ball_x_px:i16 | position:i16 | speed:i16 | age_ms:u16 | crc8:u8 | 17
 
@@ -351,7 +354,9 @@ def wait_for_ball_after_background(cam, dis, background, background_mean):
 # ==========================
 # alpha-beta 跟踪器
 # ==========================
+# 旧版跟踪器维护球位、速度、上次实测及丢失后的搜索窗口。
 class BallTracker:
+    # 建立尚未锁定的初态，等待首次可靠观测。
     def __init__(self):
         self.initialized = False
         self.ever_measured = False
@@ -364,6 +369,7 @@ class BallTracker:
         self.recovery_x_px = 0.0
         self.recovery_v_px_s = 0.0
 
+    # 根据当前锁定状态和经过的时间取得候选匹配的参考位置。
     def reference(self, now):
         if not self.initialized:
             return None
@@ -372,6 +378,7 @@ class BallTracker:
         dt = clamp(now - self.last_time, 0.0, 0.10)
         return self.x_px + self.v_px_s * dt
 
+    # 按跟踪状态确定本次观测可偏离预测位置的范围。
     def association_gate(self, now):
         if not self.initialized:
             return ASSOCIATION_GATE_MAX_PX
@@ -411,6 +418,7 @@ class BallTracker:
             RECOVERY_GATE_MIN_PX, RECOVERY_GATE_MAX_PX)
         return reference_px, gate_px
 
+    # 根据测量可用性更新位置和速度，无法确认时保留丢失状态。
     def update(self, measurement_px, now):
         measured = False
 

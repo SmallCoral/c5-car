@@ -1,3 +1,5 @@
+// 固定容量的 OTA 编解码与镜像校验，使用与 C 工程相同的帧格式、小端字段和 CRC。
+
 pub const BOARD_ID: u32 = 0xc5a3_0001;
 pub const APP_ADDR: u32 = 0x0801_0000;
 pub const STAGE_ADDR: u32 = 0x0808_0000;
@@ -28,6 +30,7 @@ pub enum Status {
     BadImage = 5,
 }
 pub type Result<T> = core::result::Result<T, Status>;
+// 将当前字节段加入 CRC32 累计值。
 pub fn crc_update(mut crc: u32, data: &[u8]) -> u32 {
     for &byte in data {
         crc ^= u32::from(byte);
@@ -37,12 +40,15 @@ pub fn crc_update(mut crc: u32, data: &[u8]) -> u32 {
     }
     crc
 }
+// 为整段字节计算 CRC32。
 pub fn crc(data: &[u8]) -> u32 {
     !crc_update(u32::MAX, data)
 }
+// 读取小端序的 32 位整数。
 pub fn get32(bytes: &[u8]) -> u32 {
     u32::from_le_bytes([bytes[0], bytes[1], bytes[2], bytes[3]])
 }
+// 按小端序写回 32 位整数。
 pub fn put32(bytes: &mut [u8], n: u32) {
     bytes[..4].copy_from_slice(&n.to_le_bytes());
 }
@@ -52,6 +58,7 @@ pub struct Header {
     pub crc: u32,
 }
 impl Header {
+    // 将镜像元数据编码为固定长度包头。
     pub fn encode(self) -> [u8; 32] {
         let mut b = [0; 32];
         for (i, n) in [
@@ -72,6 +79,7 @@ impl Header {
         put32(&mut b[28..], check);
         b
     }
+    // 解析并校验收到的镜像头。
     pub fn decode(b: &[u8]) -> Result<Self> {
         if b.len() != 32
             || get32(b) != HEADER_MAGIC
@@ -89,6 +97,7 @@ impl Header {
             crc: get32(&b[20..]),
         })
     }
+    // 根据应用内容和目标板信息构造包头。
     pub fn for_image(image: &[u8]) -> Result<Self> {
         if image.len() < 512
             || image.len() > IMAGE_MAX as usize
@@ -102,6 +111,7 @@ impl Header {
         })
     }
 }
+// 核对应用栈顶、复位入口与地址范围。
 pub fn vectors_valid(b: &[u8], length: u32) -> bool {
     if b.len() < 8 {
         return false;
@@ -122,6 +132,7 @@ pub struct Frame {
     len: usize,
 }
 impl Frame {
+    // 根据命令、序号和载荷构造一帧。
     pub fn new(command: u8, sequence: u32, payload: &[u8]) -> Result<Self> {
         if payload.len() > PAYLOAD_MAX {
             return Err(Status::BadArgument);
@@ -135,9 +146,11 @@ impl Frame {
         value.bytes[..payload.len()].copy_from_slice(payload);
         Ok(value)
     }
+    // 取得帧内有效载荷切片。
     pub fn payload(&self) -> &[u8] {
         &self.bytes[..self.len]
     }
+    // 把二进制帧写到调用方的缓冲区。
     pub fn encode(&self, b: &mut [u8; FRAME_MAX]) -> usize {
         b[..4].copy_from_slice(&MAGIC);
         b[4] = 1;
@@ -155,27 +168,33 @@ pub struct Parser {
     used: usize,
 }
 impl Default for Parser {
+    // 建立默认的空帧解析器。
     fn default() -> Self {
         Self::new()
     }
 }
 impl Parser {
+    // 分配固定大小的接收缓冲并清零游标。
     pub const fn new() -> Self {
         Self {
             bytes: [0; FRAME_MAX],
             used: 0,
         }
     }
+    // 舍弃已缓存的残帧。
     pub fn clear(&mut self) {
         self.used = 0;
     }
+    // 判断是否还存有未消费的接收字节。
     pub fn is_empty(&self) -> bool {
         self.used == 0
     }
+    // 移除失步的头部字节以重新对齐。
     fn discard(&mut self, n: usize) {
         self.bytes.copy_within(n..self.used, 0);
         self.used -= n;
     }
+    // 逐字节接收并验证帧头、长度与 CRC。
     pub fn feed(&mut self, byte: u8) -> Option<Frame> {
         if self.used == FRAME_MAX {
             self.discard(1);

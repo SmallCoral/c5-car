@@ -1,7 +1,6 @@
-/* Synthetic differential-drive regression, not a calibrated vehicle model.
- * Units/geometry below are explicit test assumptions. The controller is fed
- * quantized GPIO patterns and integer encoder counts, never desired speeds.
- */
+/* 差速小车的主机仿真。量化探头、轮惯性和编码器后驱动真实循线算法。 */
+
+/* 差速车回归使用下列假设的单位与几何尺寸。控制器输入为量化的 GPIO 和整数编码器计数，模型参数未经实车标定。 */
 #include <math.h>
 #include <stdbool.h>
 #include <stdint.h>
@@ -14,26 +13,27 @@
 
 enum path { STRAIGHT, RIGHT_BEND, LEFT_BEND, REVERSE_BENDS, A_COURSE, UNMARKED_COURSE };
 
-/* Track geometry in mm, independent of the firmware's encoder windows. */
+/* 赛道几何尺寸按毫米定义，独立于固件的编码器窗口。 */
 static const double half_lap_mm = 1500.0 + 500.0 * 3.141592653589793;
 
+/* 判断当前测试里程是否在圆弧区间。 */
 static bool on_arc(double distance)
 {
 	return (distance >= 1500 && distance < half_lap_mm) ||
 	       (distance >= half_lap_mm + 1500 && distance < 2 * half_lap_mm);
 }
 
+/* 根据赛道几何求圆弧上的相对偏移。 */
 static double arc_offset(double axle, double ahead, double start, double end)
 {
-	/* Integrate the bend over the portion actually in front of the axle.
-	 * The probe bar crosses the tangent before the axle does.
-	 */
+	/* 只对实际位于轮轴前方的圆弧积分，前置探头比轮轴更早跨过切点。 */
 	double a = fmin(ahead, fmax(0, start - axle));
 	double b = fmin(ahead, fmax(0, end - axle));
 
 	return ((ahead - a) * (ahead - a) - (ahead - b) * (ahead - b)) / 1000.0;
 }
 
+/* 由模拟赛道位置求前视段的曲率。 */
 static double path_curvature(enum path path, uint32_t now)
 {
 	const double bend = 1.0 / 500.0;
@@ -44,7 +44,7 @@ static double path_curvature(enum path path, uint32_t now)
 		return bend;
 	if (path == LEFT_BEND)
 		return -bend;
-	/* A right arc, a short straight, a left arc and a straight exit. */
+	/* 测试路线由右弧、短直道、左弧和出口直道组成。 */
 	if (now < 6500)
 		return bend;
 	if (now >= 7200 && now < 9700)
@@ -52,6 +52,7 @@ static double path_curvature(enum path path, uint32_t now)
 	return 0;
 }
 
+/* 步进模拟差速底盘，将量化后的灰度和编码器反馈给真实控制算法。 */
 static bool simulate(double lookahead, double motor_ms, enum path path, bool jitter,
 		     bool weak_motors, unsigned int level, double counts_per_mm, uint32_t *a_counts)
 {
@@ -59,9 +60,7 @@ static bool simulate(double lookahead, double motor_ms, enum path path, bool jit
 	const double track_mm = 210.0;
 	const bool course = path == A_COURSE || path == UNMARKED_COURSE;
 	const double pitch = course ? 12.0 : 10.0;
-	/* The original low-gain plant cannot reach 3300 CPS at 45% PWM.
-	 * The second plant can; both have unequal left/right wheel gains.
-	 */
+	/* 低增益模型在 45% PWM 下达不到 3300 计数/秒，第二个模型可以；两种模型均保留两轮增益差异。 */
 	const double gain[2] = { weak_motors ? 6.5 : 8.2, weak_motors ? 5.5 : 7.7 };
 	struct grayscale gray = { 0 };
 	struct lap lap;
@@ -96,7 +95,7 @@ static bool simulate(double lookahead, double motor_ms, enum path path, bool jit
 				raw &= (uint8_t)~(1U << probe);
 		}
 		if (path == A_COURSE && (traveled < 35 || fabs(traveled - 2 * half_lap_mm) < 15))
-			raw = 0;	/* the physical transverse mark */
+			raw = 0;	/* 实物横向标记。 */
 		gray_update(&gray, raw, now, false);
 		if (now == 4) {
 			if (path == UNMARKED_COURSE) {
@@ -141,9 +140,7 @@ static bool simulate(double lookahead, double motor_ms, enum path path, bool jit
 		}
 		if (now >= 4000 && gray.reading.status == GRAY_LOST)
 			gaps++;
-		/* Include every entry, reversal and exit on the alternating course.
-		 * A short white gap counts even if it never trips the stop timeout.
-		 */
+		/* 统计交替弯道的每次入弯、反向和出弯。短暂丢线也计入统计，即使尚未触发超时停车。 */
 		if (course ? traveled > 300 && traveled < 6000 :
 		    now >= (path == REVERSE_BENDS ? 4000U : 8000U)) {
 			sum += lateral;
@@ -161,17 +158,14 @@ static bool simulate(double lookahead, double motor_ms, enum path path, bool jit
 	double mean = measured ? sum / measured : 999;
 	double variance = measured ? squared / measured - mean * mean : 999;
 	double rms = sqrt(fmax(0, variance));
-	/* The centered two-probe mask cannot resolve +/-5 mm: distinguish bias
-	 * from oscillation. Require convergence within one probe interval.
-	 * Curved-path bias also depends on the synthetic sensor lookahead.
-	 */
+	/* 中央双探头无法分辨 ±5 mm，分别统计持续偏差和振荡，要求收敛到一个探头间距内。弯道偏差也受前视距离影响。 */
 	double center_pct = measured ? 100.0 * centered / measured : 0;
 	double cruise_cps = cruise_samples ? straight_speed / cruise_samples : 0;
 	double bend_cps = bend_samples ? bend_speed / bend_samples : 0;
 	bool race = level == LAP_RACE_LEVEL;
 	bool axle_stable = path == REVERSE_BENDS ||
 		(fabs(mean) < (path == STRAIGHT ? 5.0 : 40.0) && high - low < 10.0);
-	/* A controller that only slows down must fail on a capable straight. */
+	/* 在具备目标速度能力的直道模型上，仅靠持续减速不能通过测试。 */
 	bool passed = running && !gaps && axle_stable &&
 		(weak_motors || cruise_cps >= (race ? 4000.0 : 3000.0)) &&
 		center_pct >= (path == REVERSE_BENDS ? 65.0 : 90.0);
@@ -194,6 +188,7 @@ static bool simulate(double lookahead, double motor_ms, enum path path, bool jit
 	return passed;
 }
 
+/* 组合不同档位、轮增益、偏差和起点运行模拟。 */
 static bool test_gears(double lookahead, double motor_ms, enum path path, bool jitter,
 		       bool weak)
 {
@@ -204,8 +199,7 @@ static bool test_gears(double lookahead, double motor_ms, enum path path, bool j
 	if (path == A_COURSE) {
 		passed &= simulate(lookahead, motor_ms, path, jitter, weak, LAP_RACE_LEVEL, 6.86, NULL);
 		passed &= simulate(lookahead, motor_ms, path, jitter, weak, LAP_RACE_LEVEL, 7.14, NULL);
-		/* Use the distance measured on this chassis, as on the real cart.
-		 * Remove both marks, then check against the independent track geometry. */
+		/* 使用此底盘实测的终点计数。移除两个横向标记后，与独立赛道几何比较停车位置。 */
 		passed &= simulate(lookahead, motor_ms, UNMARKED_COURSE, jitter, weak,
 				   LAP_FAST_LEVEL, 7.0, &fast_counts);
 		passed &= simulate(lookahead, motor_ms, UNMARKED_COURSE, jitter, weak,
@@ -214,6 +208,7 @@ static bool test_gears(double lookahead, double motor_ms, enum path path, bool j
 	return passed;
 }
 
+/* 执行动力学场景并检查居中及停车结果。 */
 int main(int argc, char **argv)
 {
 	bool passed = true;

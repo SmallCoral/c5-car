@@ -1,8 +1,9 @@
-"""Dual camera mast and adjustable head geometry, with explicitly assumed envelopes."""
+"""构建双相机立柱及可调云台，外形尺寸按明确的包络假设建立。"""
 import FreeCAD as App
 import Part
 
 
+# 组合立柱、横梁、双相机支臂与安装包络，保持镜头光路畅通。
 def build_cameras(P,parent,group,add,box,cyl,link):
     V=App.Vector
     cfg=P['camera'];top=P['chassis']['plate_bottom']+P['chassis']['thickness']
@@ -22,7 +23,7 @@ def build_cameras(P,parent,group,add,box,cyl,link):
     add(parent,'CameraMastCollar','升降锁紧环',collar,'coral')
     add(parent,'CameraHeightKnob','升降锁紧旋钮',cyl(mx,my+12,top+251,5,9,(0,1,0)),'black')
     add(parent,'CameraBaseBrace','立柱斜撑',link((mx+12,my,top+4),(mx+10,my,top+50),2),'cyan')
-    # The horizontal bridge sits above both cameras; neither lens looks through it.
+    # 横梁位于两台相机上方，镜头光路均绕开横梁。
     boom_z=hz+38
     arm_x=box(mx-10,my-8,boom_z-8,cx-mx+20,16,16)
     arm_x=arm_x.cut(box(mx-11,my-6.5,boom_z-6.5,cx-mx+22,13,13))
@@ -50,7 +51,7 @@ def build_cameras(P,parent,group,add,box,cyl,link):
         clamp=box(x-1.5,-18,-h-2,3,36,h+5)
         clamp=clamp.fuse(box(x-4,-18,-h-2,8,36,2))
         add(detect,'MaixcamClamp'+str(sign).replace('-','N'),'MaixCAM可调侧夹 / 软垫待定',clamp,'panel')
-        # Two short trunnions leave the camera body and screen free.
+        # 采用两侧短耳轴，为相机本体和屏幕留出空间。
         add(detect,'MaixcamPivot'+str(sign).replace('-','N'),'MaixCAM俯仰短轴',cyl(sign*36 if sign>0 else -46,0,1.5,2.5,10,(1,0,0)),'silver')
         cheek=box(cx+sign*42-2,cy-9,hz,4,18,30)
         cheek=cheek.cut(cyl(cx+sign*42-3,cy,hz+1.5,2.6,6,(1,0,0)))
@@ -71,11 +72,11 @@ def build_cameras(P,parent,group,add,box,cyl,link):
     add(stream,'StreamCameraOptic','图传镜头光学面参考',cyl(0,0,-14.2,4,.2),'glass','unmeasured_camera_envelope')
     for sign in (-1,1):
         add(stream,'StreamClamp'+str(sign).replace('-','N'),'图传组件边夹',box(sign*19-1,-12,-3,2,24,5),'panel')
-    # Side arms connect the small head to the overhead bridge, leaving its optical path open.
+    # 侧臂将小云台接至上方横梁，保持镜头前方畅通。
     for sign in (-1,1):
         add(parent,'StreamYoke'+str(sign).replace('-','N'),'图传相机调角支耳',box(sx+sign*25-2,sy-5,sh,4,10,hz+30-sh),'panel')
     add(parent,'StreamYokeBridge','图传端支架横梁',box(sx-27,sy-5,hz+26,54,10,4),'panel')
     for x in (-29,22):add(stream,'StreamPitchPin'+str(x).replace('-','N'),'图传相机俯仰短轴参考',cyl(x,0,1,2.5,7,(1,0,0)),'silver')
-    # An electronics space close to the image sensor avoids assuming a long raw DVP cable.
+    # 传感器附近预留电子舱，避免假定原始 DVP 信号可使用长线缆。
     add(parent,'StreamProcessorTray','图传处理板近端托盘',box(mx-26,my+8,hz-49,52,36,3),'panel')
     add(parent,'StreamProcessorSpace','图传处理板就近安装空间 / 自研板未定',box(mx-24,my+15,hz-45,48,28,3),'green','unmeasured_electronics_envelope')

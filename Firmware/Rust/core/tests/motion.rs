@@ -1,3 +1,5 @@
+// 以模拟时钟、驱动应答和编码器核对 Rust 设备控制的启停与故障保护。
+
 use coral_core::{
     controls::*,
     emm::{self, Phase, Serial, Stepper},
@@ -5,6 +7,7 @@ use coral_core::{
 use std::collections::VecDeque;
 
 #[test]
+// 检查上电默认状态和按键启动、停止的约定。
 fn power_on_and_toggle_contract() {
     let mut c = Controls::default();
     assert_eq!(
@@ -26,6 +29,7 @@ fn power_on_and_toggle_contract() {
     }
 }
 #[test]
+// 核对任务选择、档位方向及限时运行。
 fn tasks_levels_direction_and_timed_tests() {
     let mut c = Controls::default();
     c.key(Key::Task, 0);
@@ -57,6 +61,7 @@ fn tasks_levels_direction_and_timed_tests() {
     assert!(!c.running);
 }
 #[test]
+// 模拟上电按住和触点抖动，确认不会误启动。
 fn held_and_bouncing_key_does_not_start() {
     let mut d = Debounce::held(true, 0);
     assert!(!d.update(true, 1000));
@@ -73,12 +78,14 @@ fn held_and_bouncing_key_does_not_start() {
     assert!(wrap.update(true, 14));
 }
 #[test]
+// 覆盖编码器越界回绕时的带符号增量。
 fn encoder_wrap_is_signed_modular_difference() {
     assert_eq!(encoder_delta(3, u32::MAX - 2), 6);
     assert_eq!(encoder_delta(u32::MAX - 2, 3), -6);
     assert_eq!(encoder_delta(0x80000000, 0x7fffffff), 1);
 }
 #[test]
+// 检查唤醒等待、故障锁存和运行期限。
 fn wheel_wake_fault_latching_and_deadlines() {
     let mut w = WheelGuard::new();
     assert!(w.start(0, 0, true));
@@ -116,6 +123,7 @@ struct Wire {
     fail: bool,
 }
 impl Serial for Wire {
+    // 捕获驱动向模拟串口写出的字节。
     fn write(&mut self, b: &[u8]) -> bool {
         if self.fail {
             return false;
@@ -123,19 +131,23 @@ impl Serial for Wire {
         self.tx.push(b.to_vec());
         true
     }
+    // 从模拟接收队列弹出应答。
     fn read(&mut self) -> Option<u8> {
         self.rx.pop_front()
     }
+    // 返回测试指定的串口错误计数。
     fn rx_errors(&self) -> u32 {
         self.errors
     }
 }
 impl Wire {
+    // 注入指定命令的匹配 ACK。
     fn ack(&mut self, s: &mut Stepper, command: u8, status: u8, time: u32) {
         self.rx.extend([1, command, status, 0x6b]);
         s.poll(self, time);
     }
 }
+// 将模拟步进推进到可启动状态。
 fn ready() -> (Stepper, Wire) {
     let mut s = Stepper::default();
     let mut w = Wire::default();
@@ -151,6 +163,7 @@ fn ready() -> (Stepper, Wire) {
     (s, w)
 }
 #[test]
+// 在有效 Emm 帧前后插入噪声，检查解析恢复。
 fn emm_wire_and_noise_recovery() {
     assert_eq!(emm::velocity(true, 30), [1, 0xf6, 1, 0, 30, 10, 0, 0x6b]);
     let mut p = emm::Parser::default();
@@ -175,6 +188,7 @@ fn emm_wire_and_noise_recovery() {
     }
 }
 #[test]
+// 检查持续速度模式启停均等待对应应答。
 fn stepper_continuous_start_stop_requires_acks() {
     let (mut s, mut w) = ready();
     assert!(s.start(&mut w, false, 30, 1010));
@@ -195,6 +209,7 @@ fn stepper_continuous_start_stop_requires_acks() {
     assert!(!s.running());
 }
 #[test]
+// 在取消后送入迟到使能 ACK，确认机构不会重启。
 fn delayed_enable_ack_cannot_restart_after_stop() {
     let (mut s, mut w) = ready();
     s.start(&mut w, false, 30, 1010);
@@ -204,6 +219,7 @@ fn delayed_enable_ack_cannot_restart_after_stop() {
     assert!(!w.tx.iter().any(|b| b[1] == 0xf6));
 }
 #[test]
+// 注入超时、接收中断和停转反馈，检查保护停止。
 fn stepper_timeout_rx_gap_and_stall_force_stop() {
     let (mut s, mut w) = ready();
     assert!(!s.start(&mut w, false, 91, 1010));

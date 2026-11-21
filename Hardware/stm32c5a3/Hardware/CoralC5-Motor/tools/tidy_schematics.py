@@ -1,9 +1,4 @@
-"""2026-11-06 schematic layout edit from the saved live-design baseline.
-
-Only schematic coordinates, wires, labels and notes are edited. References,
-symbol UUIDs, pin UUIDs, fields, footprint assignments and libraries are kept.
-No board access; never invokes the earlier circuit-generation scripts.
-"""
+"""基于 2026-11-06 保存的设计重排原理图，只改布局、导线、标签和注释。保留位号、符号和引脚 UUID、字段、封装及库，不运行旧电路生成器。"""
 from pathlib import Path
 import sys,copy,math,uuid,json,hashlib,csv
 ROOT=Path(__file__).resolve().parents[1]
@@ -12,19 +7,26 @@ sys.path.insert(0,str(ROOT.parent/'Shared/design_tools'))
 from sexpr import parse,dump,node,nodes,prop,Atom
 from schematic_primitives import n,num,pt,xy,effects
 
+# 按键生成可重复的图元 UUID。
 def uid(key):return str(uuid.uuid5(uuid.NAMESPACE_URL,'CoralC5-Motor-Tidy-20261106/'+key))
+# 将坐标转换为统一的精度。
 def coord(obj):return tuple(map(float,node(obj,'at')[1:3]))
+# 更新 at 节点的位置和角度。
 def setat(obj,x,y,angle=None):
  a=node(obj,'at');a[1:3]=[num(x),num(y)]
  if angle is not None:
   if len(a)<4:a.append(num(angle))
   else:a[3]=num(angle)
+# 写出修改后的 KiCad 表达式。
 def write(file,data):(ROOT/file).write_text(dump(data)+'\n',encoding='utf-8')
+# 更新图签文字。
 def title(data):
  node(node(data,'title_block'),'rev')[1]='M2.1'
  node(node(data,'title_block'),'date')[1]='2026-11-06'
 
+# 记录重排前图元并管理可复用的身份与连接。
 class Layout:
+ # 加载基线页并按类型索引器件与图元。
  def __init__(self,file):
   self.file=file;self.d=parse((BASE/file).read_text(encoding='utf-8'));self.original=copy.deepcopy(self.d);title(self.d)
   self.lib={z[1]:z for z in nodes(node(self.d,'lib_symbols'),'symbol')}
@@ -35,11 +37,13 @@ class Layout:
     self.pool.setdefault((z[0],z[1]),[]).append(z)
   for z in list(self.d[1:]):
    if isinstance(z,list) and z[0] in ['wire','junction','label','global_label','hierarchical_label','text','rectangle','polyline','no_connect']:self.d.remove(z)
+ # 按几何与标识寻找可复用的原对象。
  def reuse(self,tag,name):
   for z in self.pool.get((tag,name),[]):
    if node(z,'uuid')[1] not in self.used:
     self.used.add(node(z,'uuid')[1]);return copy.deepcopy(z)
   return None
+ # 移动器件并更新关联的位置数据。
  def move(self,ref,x,y,rot=None):
   z=self.symbols[ref];oldx,oldy=coord(z);x,y=pt(x,y)
   setat(z,x,y,rot)
@@ -47,9 +51,11 @@ class Layout:
    if node(fld,'at'):
     xx,yy=coord(fld);setat(fld,xx+x-oldx,yy+y-oldy)
   return self.pins(ref)
+ # 为放置后的器件调整字段位置。
  def fields(self,ref,refat,valat):
   z=self.symbols[ref]
   for name,where in [('Reference',refat),('Value',valat)]:setat(prop(z,name),*pt(*where),0)
+ # 从实例及库定义取得各引脚的实际坐标。
  def pins(self,ref):
   z=self.symbols[ref];x,y=coord(z);ang=float(node(z,'at')[3]);a=math.radians(ang);unit=int(node(z,'unit')[1]);result={}
   assert node(z,'mirror') is None,(self.file,ref)
@@ -59,12 +65,14 @@ class Layout:
    for p in nodes(sub,'pin'):
     px,py=map(float,node(p,'at')[1:3]);result[node(p,'number')[1]]=pt(x+px*math.cos(a)-py*math.sin(a),y-px*math.sin(a)-py*math.cos(a))
   return result
+ # 沿点列创建导线，尽量复用原有 UUID。
  def wire(self,*points):
   pp=[pt(*p) for p in points]
   for a,b in zip(pp,pp[1:]):
    if a==b:continue
    assert a[0]==b[0] or a[1]==b[1],(self.file,a,b)
    self.wires.append((a,b))
+ # 在指定坐标放置网络名。
  def label(self,name,where,global_=False,angle=None):
   tag='global_label' if global_ else 'label';angle=(180 if global_ else 0) if angle is None else angle
   z=self.reuse(tag,name)
@@ -74,16 +82,20 @@ class Layout:
   setat(z,*pt(*where),angle)
   node(z,'effects')[1:]=effects(1.016,('left' if angle==0 else 'right') if global_ else ('left bottom' if angle==0 else 'right bottom'))[1:]
   self.d.append(z);self.attach.add(pt(*where));return z
+ # 把端点接到对应命名网络。
  def net(self,pin,name,dx=-17.78,global_=False):
   q=pt(pin[0]+dx,pin[1]);self.wire(pin,q);self.label(name,q,global_,0 if dx>0 and global_ else 180 if global_ else 0)
+ # 创建层次端口并设置朝向。
  def port(self,name,where,angle=180):
   z=self.reuse('hierarchical_label',name);assert z is not None,name
   setat(z,*pt(*where),angle);node(z,'effects')[1:]=effects(1.27,'left' if angle==0 else 'right')[1:]
   self.d.append(z);self.attach.add(pt(*where));return pt(*where)
+ # 放置图纸说明文字。
  def note(self,text,x,y,source=None):
   z=self.reuse('text',source or text)
   if z is None:z=n('text',text,xy('at',*pt(x,y),num(0)),effects(2.54,'left top'),n('uuid',uid(self.file+'/note/'+text)))
   z[1]=text;setat(z,*pt(x,y),0);node(z,'effects')[1:]=effects(2.54,'left top')[1:];self.d.append(z)
+ # 绘制模块分组边框。
  def frame(self,name,x1,y1,x2,y2):
   stroke=n('stroke',n('width',num(.254)),n('type',Atom('dash')))
   if x2>175.26 and y2>165.1:
@@ -91,8 +103,9 @@ class Layout:
    z=n('polyline',n('pts',*[xy('xy',*pt(*p)) for p in pp]),stroke,n('fill',n('type',Atom('none'))),n('uuid',uid(self.file+'/frame/'+name)))
   else:z=n('rectangle',xy('start',*pt(x1,y1)),xy('end',*pt(x2,y2)),stroke,n('fill',n('type',Atom('none'))),n('uuid',uid(self.file+'/frame/'+name)))
   self.d.append(z);self.note(name,x1+3.81,y1+3.81)
+ # 将整理后的图页写回。
  def save(self):
-  # Retain existing wire/junction UUIDs whenever the geometric segment survives.
+  # 原线段几何仍存在时复用其导线或结点 UUID。
   old={tuple(sorted(tuple(map(float,p[1:])) for p in node(w,'pts')[1:])):node(w,'uuid')[1] for w in nodes(self.original,'wire')}
   oldj={coord(j):node(j,'uuid')[1] for j in nodes(self.original,'junction')}
   cuts={p for w in self.wires for p in w}|self.attach
@@ -109,6 +122,7 @@ class Layout:
    if deg>2:self.d.append(n('junction',xy('at',*p),n('diameter',num(0)),n('color',num(0),num(0),num(0),num(0)),n('uuid',oldj.get(p,uid(self.file+'/junction/'+str(p))))))
   write(self.file,self.d)
 
+# 重排显示屏和按键图页。
 def screen_keys():
  p=Layout('07_TFT_Buttons.kicad_sch')
  p.frame('屏幕接口、去耦与安装孔',12.7,19.05,281.94,96.52)
@@ -134,6 +148,7 @@ def screen_keys():
  p.note('十千欧上拉与约一毫秒滤波，软件仍须消抖。\n安装孔在原理图中仅作约束，实际孔位由用户定位。',17.78,173.99)
  p.save()
 
+# 重排灰度与相机接口及其连接。
 def gray_cameras():
  p=Layout('08_Grayscale_Cameras.kicad_sch')
  p.frame('感为八路灰度与辅助板',12.7,19.05,281.94,97.79)
@@ -155,6 +170,7 @@ def gray_cameras():
  p.note('相机口连接处理模块；裸 OV2640 不能直接接此串口。\n线束针序与模块版本须按实物核对。',17.78,173.99)
  p.save()
 
+# 重排蓝牙与步进接口图页。
 def bluetooth_stepper():
  p=Layout('09_Bluetooth_Stepper.kicad_sch')
  p.frame('HC-08 蓝牙与供电选择',12.7,19.05,281.94,87.63)
@@ -182,9 +198,10 @@ def bluetooth_stepper():
  p.note('电机须接外置驱动板，不能接控制排针。\n光耦型输入须适配电平与有效极性。\nCore 三伏三仅供电平参考与小负载。',17.78,171.45)
  p.save()
 
+# 整理外设供电支路的布局。
 def auxiliary_power():
- # Preserve the existing power circuit geometry; eliminate the floating alias
- # stub and group the two fully wired regulator circuits with the same frames.
+ # 保留电源电路几何，移除悬空的别名短线，
+ # 用相同图框分组显示两个已完整布线的稳压电路。
  p=Layout('06_Module_Power.kicad_sch')
  p.d=copy.deepcopy(p.original);title(p.d)
  for z in list(nodes(p.d,'text')):p.d.remove(z)
@@ -203,6 +220,7 @@ def auxiliary_power():
  p.note('外设预算 0.15A，与 Core 电源分开。\n原四安保护保留，上游总容量须核算。',17.78,173.99)
  write(p.file,p.d)
 
+# 复用未变电路并统一其图框和标签。
 def consistent_existing():
  for file in ['CoralC5-Motor.kicad_sch','02_Power.kicad_sch','03_Core_Interface.kicad_sch','04_Left_Motor.kicad_sch','05_Right_Motor.kicad_sch']:
   d=parse((BASE/file).read_text(encoding='utf-8'));title(d)
@@ -211,6 +229,7 @@ def consistent_existing():
    if st:node(st,'width')[1]=num(.254)
   write(file,d)
 
+# 把总览页信号按模块分组。
 def overview_signal_groups():
  return {
   '07_TFT_Buttons.kicad_sch':['TFT_SCK','TFT_MOSI','TFT_RES','TFT_DC','TFT_CS','TFT_BL','KEY_MODE','KEY_NEXT','KEY_OK','KEY_START'],
@@ -218,30 +237,37 @@ def overview_signal_groups():
   '09_Bluetooth_Stepper.kicad_sch':['BT_TX','BT_RX','STEP_PUL','STEP_DIR','STEP_nEN','STEP_UART_TX','STEP_UART_RX'],
  }
 
+# 在总览图上显示主要供电路径。
 def overview_power_flow():
- # One actual wire per signal: the overview must show every module connection.
- # A3 accommodates all 44 GPIO roles without shrinking text or inventing buses.
+ # 每个信号都用真实连线表示，总览显示所有跨模块连接。
+ # 采用 A3 页面容纳 44 路 GPIO，保持字号和真实的逐线表示。
  file='CoralC5-Motor.kicad_sch';d=parse((ROOT/file).read_text(encoding='utf-8'));node(d,'paper')[1]='A3'
  sheets={prop(z,'Sheetfile')[2]:z for z in nodes(d,'sheet')}
  oldtexts=list(nodes(d,'text'))
  for z in list(d[1:]):
   if isinstance(z,list) and z[0] in ['wire','junction','label','text']:d.remove(z)
  core=sheets['03_Core_Interface.kicad_sch'];left=sheets['04_Left_Motor.kicad_sch'];right=sheets['05_Right_Motor.kicad_sch'];power=sheets['02_Power.kicad_sch'];aux=sheets['06_Module_Power.kicad_sch']
+ # 更新图页框的位置与宽高。
  def box(sh,x,y,w,h):
   setat(sh,x,y);node(sh,'size')[1:]=[num(w),num(h)]
   setat(prop(sh,'Sheetname'),x,y-2.54,0);setat(prop(sh,'Sheetfile'),x,y+h+2.54,0)
+ # 设置指定层次引脚的端点。
  def pin(sh,name,x,y,side):
   z=next((p for p in nodes(sh,'pin') if p[1]==name),None)
   if z is None:
    z=n('pin',name,Atom('bidirectional'),xy('at',x,y,num(side)),n('uuid',uid('overview/pin/'+prop(sh,'Sheetfile')[2]+'/'+name)),effects(1.016));sh.append(z)
   setat(z,x,y,side);node(z,'effects')[1:]=effects(1.016,'right' if side==0 else 'left')[1:];return coord(z)
+ # 按序连接总览上的端点。
  def wire(*points):
   for a,b in zip(points,points[1:]):
    assert a!=b and (a[0]==b[0] or a[1]==b[1]),(a,b)
    d.append(n('wire',n('pts',xy('xy',*a),xy('xy',*b)),n('stroke',n('width',num(0)),n('type',Atom('default'))),n('uuid',uid('overview/wire/'+str((a,b))))))
+ # 给总览线段添加网络名。
  def label(name,where):d.append(n('label',name,xy('at',*where,num(0)),effects(1.016,'left bottom'),n('uuid',uid('overview/label/'+name+'/'+str(where)))))
+ # 从引脚引出一段带名短线。
  def stub(sh,name,x,y):
   p=pin(sh,name,x,y,180);q=pt(x-25.4,y);wire(q,p);label(name,q)
+ # 在总览上放置说明。
  def note(text,x,y):
   z=copy.deepcopy(oldtexts.pop(0));z[1]=text;setat(z,x,y,0);node(z,'effects')[1:]=effects(2.54,'left top')[1:];d.append(z)
  box(core,165.1,40.64,86.36,205.74)
@@ -282,10 +308,11 @@ def overview_power_flow():
  note('独立外设电源\n五伏 / 三伏三',340.36,226.06)
  write(file,d)
 
+# 将新增跨页信号变成可见的层次端口与导线。
 def hierarchical_new_signals():
- # Convert existing GPIO global-label objects in place: same attachment and UUID.
- # Their new sheet pins are actually wired on the overview, so these signals no
- # longer rely on an invisible global connection between Core and peripherals.
+ # 原位转换现有 GPIO 全局标签，保留连接点和 UUID。
+ # 在总览中真实连接新图页端口，方便沿线追踪
+ # Core 与外设之间原先靠全局标签连接的信号。
  groups=overview_signal_groups();groups['03_Core_Interface.kicad_sch']=[r['signal'] for r in csv.DictReader((ROOT/'docs/m2_pin_assignment.csv').open(encoding='utf-8-sig'))]
  for file,signals in groups.items():
   d=parse((ROOT/file).read_text(encoding='utf-8'));found=[]
@@ -296,6 +323,7 @@ def hierarchical_new_signals():
   assert sorted(found)==sorted(signals),(file,found)
   write(file,d)
 
+# 从保存的各页加载布局，依次整理后保存。
 def main():
  if '--apply-current-baseline' not in sys.argv:raise SystemExit('Historical layout edit only; explicit --apply-current-baseline required. Use KiCad for subsequent edits.')
  previous=ROOT/'docs/layout_edit.json'

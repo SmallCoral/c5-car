@@ -1,3 +1,5 @@
+// Rust 镜像存储的实物后端，集中约束可访问地址、对齐、擦写及 ECC 错误处理。
+
 use crate::{
     board::{self, read, write},
     display::Display,
@@ -13,13 +15,14 @@ use core::{
     sync::atomic::{AtomicBool, Ordering},
 };
 static ECC_ERROR: AtomicBool = AtomicBool::new(false);
+// 在允许的槽内逐字节读 Flash，并报告 ECC 读取故障。
 pub fn read_bytes(address: u32, bytes: &mut [u8]) -> Result<()> {
     if !store::writable(address, bytes.len()) {
         return Err(Status::FlashError);
     }
     ECC_ERROR.store(false, Ordering::Relaxed);
     for (i, b) in bytes.iter_mut().enumerate() {
-        // SAFETY: bounds checked against flash slots; byte loads do not require alignment.
+        // SAFETY: 已按 Flash 分区校验范围，逐字节读取允许地址不对齐。
         *b = unsafe { core::ptr::read_volatile((address + i as u32) as *const u8) };
     }
     runtime::dsb();
@@ -30,6 +33,7 @@ pub fn read_bytes(address: u32, bytes: &mut [u8]) -> Result<()> {
     }
 }
 #[unsafe(no_mangle)]
+// 处理 Flash 读出 ECC 错误或进入不可恢复停机。
 extern "C" fn NMI() {
     let status = read(FLASH_R_BASE + FLASH_ECCDETR);
     if status & FLASH_ECCDETR_ECCD != 0 {
@@ -39,10 +43,11 @@ extern "C" fn NMI() {
         board::panic_stop();
     }
 }
-// The complete operation and literal pool execute from SRAM. No Rust panics,
-// bounds checks, libc calls or flash-bank instruction fetches are permitted here.
+// 整个擦写过程及其常量池均从 SRAM 执行。此处须避免 panic、
+// 边界检查、库函数调用，以及从正在擦写的 Flash 存储区取指。
 #[unsafe(naked)]
 #[unsafe(link_section = ".ramfunc")]
+// 从 SRAM 发起 Flash 擦除或编程，等待完成并核对错误位。
 unsafe extern "C" fn operation(_address: u32, _words: *const u32) -> u32 {
     naked_asm!(
         "push {{r4-r8, lr}}", "mov r6, r0", "mov r7, r1", "mrs r5, PRIMASK", "cpsid i",
@@ -64,8 +69,9 @@ unsafe extern "C" fn operation(_address: u32, _words: *const u32) -> u32 {
         erase=const (FLASH_CR_PER|FLASH_CR_STRT),busy=const LL_FLASH_FLAG_STATUS_ALL,sr=const FLASH_SR,errors=const LL_FLASH_FLAG_ERRORS_ALL,
     );
 }
+// 检查 Flash 实际条件能否支持固定分区。
 fn ready() -> bool {
-    // SAFETY: read-only STM32 factory flash-size register, naturally aligned.
+    // SAFETY: STM32 出厂容量寄存器只读，并按自然边界对齐。
     let size = unsafe { core::ptr::read_volatile(FLASHSIZE_BASE as *const u16) };
     (size == 1024 || size == 0xffff)
         && read(FLASH_R_BASE + FLASH_OPTSR_CUR) & FLASH_OPTSR_PRG_SWAP_BANK == 0
@@ -77,20 +83,23 @@ pub struct Storage<'a> {
     pub screen: &'a mut coral_core::ui::State,
 }
 impl Flash for Storage<'_> {
+    // 按存储后端接口把指定地址读入缓冲。
     fn read(&mut self, address: u32, bytes: &mut [u8]) -> Result<()> {
         read_bytes(address, bytes)
     }
+    // 校验地址和页对齐后擦除目标页。
     fn erase(&mut self, page: u32) -> Result<()> {
         if !page.is_multiple_of(PAGE_SIZE) || !store::writable(page, 16) || !ready() {
             return Err(Status::FlashError);
         }
-        // SAFETY: aligned permitted page, no bank swap/cache, operation lives in SRAM.
+        // SAFETY: 页地址已对齐且在许可区域内，已确认存储区映射未交换且指令缓存已关闭，擦写过程位于 SRAM。
         if unsafe { operation(page, core::ptr::null()) } == 0 {
             Err(Status::FlashError)
         } else {
             Ok(())
         }
     }
+    // 检查地址与长度均为 16 字节对齐后，将数据分为 16 字节一组写入允许的 Flash 区域。
     fn program(&mut self, address: u32, bytes: &[u8]) -> Result<()> {
         if bytes.is_empty()
             || !address.is_multiple_of(16)
@@ -108,7 +117,7 @@ impl Flash for Storage<'_> {
                 get32(&quad[12..]),
             ];
             let dest = address + index as u32 * 16;
-            // SAFETY: four aligned SRAM words and a range-checked flash quadword.
+            // SAFETY: 源是 SRAM 中四个对齐的字，目标是已检查范围的 Flash 四字。
             if unsafe { operation(dest, words.as_ptr()) } == 0 {
                 return Err(Status::FlashError);
             }
@@ -120,6 +129,7 @@ impl Flash for Storage<'_> {
         }
         Ok(())
     }
+    // 向升级界面或上层回调报告已处理字节数。
     fn progress(&mut self, done: u32, total: u32) {
         self.screen.update_bytes = done;
         self.screen.update_total = total;

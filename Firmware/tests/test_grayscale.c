@@ -1,3 +1,5 @@
+/* 遍历灰度位图与黑白极性，检验独立滤波及实物探头顺序。 */
+
 #include <assert.h>
 #include <limits.h>
 #include <stdio.h>
@@ -6,15 +8,17 @@
 #include "logic.h"
 #include "gray_map.h"
 
+/* 连续送入同一输入使滤波达到稳定状态。 */
 static void settle(struct grayscale *gray, uint8_t raw, bool white)
 {
 	for (unsigned int i = 0; i < GRAY_FILTER_SAMPLES; i++)
 		assert(gray_update(gray, raw, gray->sampled_at + GRAY_SAMPLE_MS, white));
 }
 
+/* 遍历探头掩码和极性，对照独立参考算法。 */
 static void test_patterns(void)
 {
-	/* Independent reference: find each contiguous run, then use its endpoints. */
+	/* 独立参考算法先找连续的黑线段，再由两端计算位置。 */
 	for (unsigned int mask = 0; mask < 256; mask++) {
 		for (unsigned int white = 0; white < 2; white++) {
 			struct grayscale gray = { 0 };
@@ -54,6 +58,7 @@ static void test_patterns(void)
 	}
 }
 
+/* 注入短毛刺、抖动与丢线，检查滤波和恢复。 */
 static void test_filter(void)
 {
 	struct grayscale gray = { 0 };
@@ -66,18 +71,18 @@ static void test_filter(void)
 	assert(gray.reading.status == GRAY_WARMUP);
 	assert(gray_update(&gray, 0xff, 1, false));
 	assert(gray.reading.status == GRAY_LOST);
-	/* A one-sample black glitch must not move the filtered line. */
+	/* 只持续一个样本的黑色毛刺不应移动滤波后的线位。 */
 	assert(gray_update(&gray, 0xfe, 3, false));
 	assert(gray.reading.raw == 0xfe && gray.reading.black == 0);
 	settle(&gray, 0xff, false);
 	assert(gray.reading.status == GRAY_LOST);
-	/* CH1 chatter must not prevent stable CH4/5 from being accepted. */
+	/* CH1 抖动时仍应确认稳定的 CH4、CH5。 */
 	assert(gray_update(&gray, 0xe6, 11, false));
 	assert(gray_update(&gray, 0xe7, 13, false));
 	assert(gray_update(&gray, 0xe6, 15, false));
 	assert(gray.reading.black == 0x18);
 	assert(gray.reading.status == GRAY_LINE && gray.reading.position == 0);
-	/* A confirmed line loss clears its position instead of reusing an old turn. */
+	/* 确认丢线后清除旧位置，避免一直按上一弯道转向。 */
 	settle(&gray, 0xfe, false);
 	assert(gray.reading.position == -3500);
 	settle(&gray, 0xff, false);
@@ -86,6 +91,7 @@ static void test_filter(void)
 	assert(gray.reading.status == GRAY_FULL);
 }
 
+/* 核对调试按键、黑白选择和实物通道方向。 */
 static void test_gray_controls(void)
 {
 	struct controls ctl = { .task = TASK_ALL, .level = WHEEL_DEFAULT_LEVEL };
@@ -108,9 +114,10 @@ static void test_gray_controls(void)
 	assert(ctl.task == TASK_MONITOR);
 }
 
+/* 运行灰度识别和滤波回归。 */
 int main(void)
 {
-	/* User measured PE14 as physical left and PE7 as physical right. */
+	/* 操作者确认 PE14 对应实物最左，PE7 对应最右。 */
 	assert(gray_input_order(0x7f) == 0xfe);
 	assert(gray_input_order(0xfe) == 0x7f);
 	assert(gray_input_order(0xe7) == 0xe7);

@@ -1,3 +1,5 @@
+# 构建 STM32 应用、引导程序或主机回归。实车版默认在同一应用中保留已接入的比赛题目。
+
 cmake_minimum_required(VERSION 3.22)
 project(coral_c5 C)
 
@@ -6,6 +8,7 @@ set(CMAKE_C_STANDARD_REQUIRED ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 option(HOST_TESTS "Build portable logic tests instead of firmware" OFF)
+# 主机测试链接可移植控制器及硬件替身，包含实车轨迹回放，不连接板子。
 if(HOST_TESTS)
   enable_testing()
   add_executable(test_logic tests/test_logic.c src/logic.c src/emm.c src/stepper.c src/jog.c src/contest.c)
@@ -110,6 +113,7 @@ if(NOT Python3_EXECUTABLE AND EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/../.scratch/fi
   set(Python3_EXECUTABLE "${CMAKE_CURRENT_SOURCE_DIR}/../.scratch/firmware-tools/Scripts/python.exe")
 endif()
 find_package(Python3 3.10 REQUIRED COMPONENTS Interpreter)
+# 检查链接后的题目入口，再生成 OTA、应用更新包和首次安装镜像。
 add_custom_target(firmware_package ALL
   COMMAND ${CMAKE_COMMAND} -DNM=${CMAKE_NM} -DELF=$<TARGET_FILE:coral_c5>
     -P ${CMAKE_CURRENT_SOURCE_DIR}/cmake/check-contest-image.cmake
@@ -122,6 +126,7 @@ add_custom_target(firmware_package ALL
   VERBATIM
   COMMENT "Packaging wireless image and first-install HEX")
 set(host_build ${CMAKE_CURRENT_SOURCE_DIR}/build/host)
+# 烧录目标依赖比赛镜像，必须先构建主机测试并跑完回归。
 add_custom_target(competition_image
   COMMAND ${CMAKE_COMMAND} -S ${CMAKE_CURRENT_SOURCE_DIR} -B ${host_build} -G Ninja
     -DHOST_TESTS=ON -DCMAKE_BUILD_TYPE=Debug
@@ -129,6 +134,7 @@ add_custom_target(competition_image
   COMMAND ${CMAKE_CTEST_COMMAND} --test-dir ${host_build} --output-on-failure --no-tests=error
   DEPENDS firmware_package USES_TERMINAL VERBATIM
   COMMENT "Running competition regressions before programming")
+# 共用同一上传入口，由目标参数区分水管已独立托稳的场景。
 function(add_wireless_flash_target target)
   add_custom_target(${target}
     COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/tools/wireless_flash.py

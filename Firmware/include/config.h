@@ -1,3 +1,5 @@
+/* 实车调参入口。波特率属于各串口，轮速用编码器计数/秒，行程用计数；两题各自的终点和载球速度在这里设定。 */
+
 #ifndef CORAL_CONFIG_H
 #define CORAL_CONFIG_H
 
@@ -39,7 +41,7 @@
 #define LAP_DEPART_TIMEOUT_MS	1500U
 #define LAP_DEPART_MAX_COUNTS	1000U
 #define LAP_ARM_MS		2000U
-/* Provisional window for the 6.142 m course (~43k counts/lap), not mm. */
+/* 按 6.142 m 赛道暂定的计数窗口，整圈约 4.3 万编码器计数。 */
 #define LAP_ARM_COUNTS		30000U
 #define LAP_MAX_COUNTS		60000U
 /* 第二题终点取默认档四次经过 A 线的里程中位数，单位为编码器计数。 */
@@ -48,14 +50,14 @@
 #define LAP_OFFSET_DISTANCE_COUNTS	42000U
 #define LAP_FINISH_BLEND_COUNTS	900U
 #define LAP_FINISH_CPS		1100
-/* Optical-marker diagnostic: approach slowly to sample the crossbar. */
+/* 横线识别调试在接近终点时降速，以便多次采到 A 线。 */
 #define LAP_APPROACH_COUNTS	39000U
 #define LAP_APPROACH_CPS		1100
 #define LAP_PARTIAL_MIN_COUNTS	41000U
 #define LAP_PARTIAL_MAX_COUNTS	47000U
 #define LAP_PARTIAL_CHANNELS	3U
 #define LAP_PARTIAL_HOLD_MS	30U
-/* Two clockwise R=0.5 m arcs. Counts are referenced to the start at A. */
+/* 顺时针赛道含两段半径 0.5 m 的圆弧，里程从 A 点起算。 */
 #define LAP_HALF_COURSE_COUNTS	21500
 #define LAP_BEND_BRAKE_COUNTS	9800
 #define LAP_BEND_ENTRY_COUNTS	10500
@@ -63,7 +65,7 @@
 #define LAP_BEND_BLEND_COUNTS	1000
 #define LAP_COURSE_BEND_CPS	2200
 #define LAP_COURSE_BEND_PERMILLE	200
-/* Both measured bends need more braking distance on the high gear. */
+/* 实测两段弯在高速档均需更长的提前制动距离。 */
 #define LAP_RACE_BRAKE_COUNTS	9300
 #define LAP_RACE_BEND_CPS	3100
 #define LAP_COURSE_TRIM_PERMILLE	70
@@ -97,14 +99,14 @@
 #define LAP_ACCEL_CPS_S		3200
 #define LAP_RACE_ACCEL_CPS_S	4300
 #define LAP_DECEL_CPS_S		8000
-/* Position uses 1000 units/probe; rate uses position units/second. */
-#define LAP_CENTER_POSITION	500	/* CH4 and CH5 */
+/* 相邻灰度探头相差 1000 个位置单位，位置变化率按每秒计算。 */
+#define LAP_CENTER_POSITION	500	/* 中间两个探头 CH4 和 CH5。 */
 #define LAP_LINE_KP		220
-#define LAP_OUTER_KP		850	/* additional gain beyond CH4/5 */
+#define LAP_OUTER_KP		850	/* 偏出 CH4、CH5 后增加的纠偏增益。 */
 #define LAP_LINE_KD		48
-#define LAP_BEND_KI		700	/* permille per probe interval per second */
-#define LAP_RACE_BEND_KI		775	/* unmarked start, gray-guided turns */
-#define LAP_BEND_MAX_PERMILLE	420	/* half wheel-speed difference / mean */
+#define LAP_BEND_KI		700	/* 每偏一个探头间距时，每秒增加的千分比。 */
+#define LAP_RACE_BEND_KI		775	/* 无 A 点参考时由灰度引导转弯。 */
+#define LAP_BEND_MAX_PERMILLE	420	/* 两轮速度差的一半除以平均轮速。 */
 #define LAP_TRIM_DECAY_MS	120
 #define LAP_TURN_LAG_CPS		270
 #define LAP_POSITION_DEADBAND	150
@@ -113,12 +115,12 @@
 #define LAP_CENTER_RATE_CPS	130
 #define LAP_RATE_LIMIT_CPS	650
 #define LAP_ENCODER_FILTER_MS	30U
-/* Feedback is half the forward wheel-speed difference, not an IMU yaw rate. */
+/* 反馈取两轮前向速度差的一半，单位仍为编码器计数/秒。 */
 #define LAP_TURN_DAMPING		800
-#define LAP_CORNER_SLOWDOWN	750	/* CPS per probe beyond the middle pair */
+#define LAP_CORNER_SLOWDOWN	750	/* 每偏离中间探头一个间距所扣的计数/秒。 */
 #define LAP_BRAKE_LOOKAHEAD_MS	60
-#define LAP_PWM_RESERVE		20	/* permille of PWM reserved for steering */
-#define LAP_CPS_PER_PERMILLE	7	/* wheel feedforward slope */
+#define LAP_PWM_RESERVE		20	/* 为转向预留的 PWM 千分比。 */
+#define LAP_CPS_PER_PERMILLE	7	/* 从 PWM 估算轮速的前馈斜率。 */
 #define LAP_STEER_SLEW_CPS_S	6000U
 #define LAP_EDGE_SLEW_CPS_S	14000U
 #define LAP_STEER_MAX_CPS		1400
@@ -129,7 +131,7 @@
 /* 两只编码器都已换算成前进为正。 */
 #define LAP_LEFT_ENCODER_SIGN	1
 #define LAP_RIGHT_ENCODER_SIGN	1
-/* Confirmed against the user's photo: keys above, LCD pins below. */
+/* 按实物照片确定屏幕方向，按键在上，LCD 引脚在下。 */
 #define LCD_MADCTL		0x00U
 
 #endif

@@ -1,10 +1,11 @@
-"""Read-only component/net/identity audit; does not validate routing or edit PCB."""
+"""只读核对器件、网络和对象身份，布线质量另行验收。"""
 from pathlib import Path
 import sys,json,hashlib,xml.etree.ElementTree as ET
 ROOT=Path(__file__).resolve().parents[1];DOC=ROOT/'docs'
 sys.path.insert(0,str(ROOT.parent/'Shared/design_tools'))
 from sexpr import parse,node,nodes,prop
 
+# 按原生网表检查封装、引脚网络和对象身份，汇总不同步项。
 def main():
     if (DOC/'f8_association_repair.json').exists():
         from verify_pcb_associations import main as verify_associations
@@ -22,7 +23,9 @@ def main():
     for n in tree.findall('.//nets/net'):
         for p in n.findall('node'):pins[(p.get('ref'),p.get('pin'))]=n.get('name')
     checks=[]
+    # 登记一项核验结果。
     def ck(name,ok,detail=None):checks.append(dict(name=name,pass_=bool(ok),detail=detail))
+    # 将 KiCad 网络名中的 {slash} 转回斜杠，统一名称表示。
     def normalized(name):return name.replace('{slash}','/')
     ck('exact component reference set',set(now)==set(components))
     ck('latest user PCB reference set preserved',set(now)==set(oldparts))
@@ -46,6 +49,7 @@ def main():
         ck(kind+' user objects unchanged',nodes(old,kind)==nodes(current,kind))
     for ref in ['U1','J19']:
         f=now[ref];lib=parse((ROOT/'Motor.pretty'/(f[1].split(':')[1]+'.kicad_mod')).read_text(encoding='utf8'))
+        # 提取封装各焊盘的编号、中心与尺寸，排序后与基线逐项比较。
         def geometry(part):
             return sorted((p[1],*map(float,node(p,'at')[1:3]),*map(float,node(p,'size')[1:3])) for p in nodes(part,'pad'))
         ck(ref+' board lands match corrected local footprint',geometry(f)==geometry(lib))

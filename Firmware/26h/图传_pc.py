@@ -1,3 +1,5 @@
+# 电脑端实时图传预览。监听发现消息并通过 TCP 获取压缩帧，再交给 OpenCV 解码。
+
 import argparse
 import socket
 import struct
@@ -14,6 +16,7 @@ HEADER = struct.Struct("!4sIHH")
 MAX_FRAME_SIZE = 2 * 1024 * 1024
 
 
+# 按给定长度读完整段 TCP 数据，区分正常帧与断连。
 def recv_exact(sock, size):
     data = bytearray()
     while len(data) < size:
@@ -24,6 +27,7 @@ def recv_exact(sock, size):
     return bytes(data)
 
 
+# 从 UDP 发现广播取得发送端地址。
 def discover_sender():
     discovery = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     discovery.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
@@ -53,6 +57,7 @@ def discover_sender():
         discovery.close()
 
 
+# 从 TCP 连接读取完整视频帧并解码显示。
 def show_stream(host, port):
     stream = socket.create_connection((host, port), timeout=5)
     stream.settimeout(5)
@@ -92,6 +97,7 @@ def show_stream(host, port):
         cv2.destroyAllWindows()
 
 
+# 解析地址与显示参数，启动发现和视频接收。
 def main():
     parser = argparse.ArgumentParser(
         description="Receive the MaixCAM2 framed-JPEG stream"

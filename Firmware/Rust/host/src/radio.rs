@@ -1,3 +1,5 @@
+// 电脑端 BLE 传输，负责发现 HC-08、订阅通知、连接恢复和分包确认。
+
 use crate::{Options, Sink};
 use btleplug::{
     api::{
@@ -15,6 +17,7 @@ use std::{
     time::{Duration, Instant},
 };
 const DEFAULT_ADDRESS: &str = "F8:2E:0C:F3:68:37";
+// 构造蓝牙断连错误供重试层识别。
 fn disconnected() -> Box<dyn std::error::Error + Send + Sync> {
     io::Error::new(io::ErrorKind::ConnectionReset, "BLE disconnected").into()
 }
@@ -30,6 +33,7 @@ struct Link {
     received: u32,
 }
 impl Link {
+    // 扫描并连接目标设备，定位适用特征并订阅通知。
     async fn connect(options: &Options) -> Result<Self> {
         let manager = Manager::new().await?;
         let adapter = manager
@@ -95,6 +99,7 @@ impl Link {
             received: 0,
         })
     }
+    // 按特征允许的片段写入数据。
     async fn write(&self, bytes: &[u8]) -> Result<()> {
         for part in bytes.chunks(20) {
             self.device
@@ -104,6 +109,7 @@ impl Link {
         }
         Ok(())
     }
+    // 把通知送入二进制帧和文本行解析。
     fn accept(&mut self, data: &[u8]) {
         for &b in data {
             if let Some(frame) = self.parser.feed(b) {
@@ -129,6 +135,7 @@ impl Link {
             }
         }
     }
+    // 等待下一条通知或对应的截止时间。
     async fn next(&mut self, deadline: Instant) -> Result<()> {
         if Instant::now() >= deadline {
             return Err(
@@ -144,6 +151,7 @@ impl Link {
         }
         Ok(())
     }
+    // 通过命令应答机制发出一次协议请求。
     async fn request(&mut self, command: u8, payload: &[u8], attempts: u32) -> Result<Vec<u8>> {
         self.sequence = self.sequence.wrapping_add(1);
         let sequence = self.sequence;
@@ -157,6 +165,7 @@ impl Link {
         )
         .await
     }
+    // 请求设备进入引导程序并读取其下载状态。
     async fn enter(&mut self) -> Result<(u32, u32)> {
         self.write(b"!\nC5:OTA\n").await?;
         tokio::time::sleep(Duration::from_secs(2)).await;
@@ -169,9 +178,10 @@ impl Link {
         );
         Ok((hello.length, hello.crc))
     }
+    // 查询已运行应用的长度和校验值。
     async fn verify(&mut self, length: u32, crc: u32) -> Result<()> {
         let deadline = Instant::now() + Duration::from_secs(20);
-        // Discard stale identity notifications from before installing this image.
+        // 丢弃安装前残留的旧身份通知，随后核对新应用。
         self.lines.clear();
         while Instant::now() < deadline {
             self.write(b"\nC5:INFO\n").await?;
@@ -198,6 +208,7 @@ impl Link {
         )
         .into())
     }
+    // 读取并显示目标设备的身份。
     async fn info(&mut self) -> Result<()> {
         self.write(b"\nC5:INFO\n").await?;
         let deadline = Instant::now() + Duration::from_secs(4);
@@ -222,6 +233,7 @@ impl Link {
         );
         Ok(())
     }
+    // 按暂存进度分块上传镜像，确认提交与启动。
     async fn upload(&mut self, image: &[u8], header: Header) -> Result<()> {
         let (size, crc) = self.enter().await?;
         if self.received == 0 && (size, crc) == (header.length, header.crc) {
@@ -257,16 +269,19 @@ impl Link {
         self.verify(header.length, header.crc).await
     }
 }
+// 检查错误是否由等待超时引起。
 fn is_timeout(e: &(dyn std::error::Error + Send + Sync + 'static)) -> bool {
     e.is::<tokio::time::error::Elapsed>()
         || e.downcast_ref::<io::Error>()
             .is_some_and(|e| e.kind() == io::ErrorKind::TimedOut)
 }
 impl coral_host::exchange::Transport for Link {
+    // 把预编码的命令写入蓝牙特征。
     async fn send(&mut self, bytes: &[u8]) -> Result<()> {
         tokio::time::timeout(Duration::from_secs(10), self.write(bytes)).await??;
         Ok(())
     }
+    // 读取并匹配引导程序回包。
     async fn response(&mut self, deadline: Instant) -> Result<Frame> {
         loop {
             if let Some(frame) = self.frames.pop_front() {
@@ -282,6 +297,7 @@ impl coral_host::exchange::Transport for Link {
         }
     }
 }
+// 从命令行选项取得以秒为单位的时限。
 fn seconds(options: &Options) -> Result<Option<Duration>> {
     let n = options.get("--seconds").unwrap_or("0").parse::<f64>()?;
     if !n.is_finite() || n < 0.0 {
@@ -293,6 +309,7 @@ fn seconds(options: &Options) -> Result<Option<Duration>> {
         Ok(Some(Duration::try_from_secs_f64(n)?))
     }
 }
+// 持续订阅、解码和输出蓝牙遥测。
 async fn monitor(link: &mut Link, options: &Options) -> Result<()> {
     let duration = seconds(options)?;
     let deadline = duration.map(|d| Instant::now() + d);
@@ -319,6 +336,7 @@ async fn monitor(link: &mut Link, options: &Options) -> Result<()> {
     }
     Ok(())
 }
+// 按用户所选子命令执行查询或更新。
 async fn execute(options: Options) -> Result<()> {
     if options.command == "scan" {
         let manager = Manager::new().await?;
@@ -422,6 +440,7 @@ async fn execute(options: Options) -> Result<()> {
     }
     Err("reconnection attempts exhausted".into())
 }
+// 建立异步运行环境并执行蓝牙操作。
 pub fn run(options: Options) -> Result<()> {
     tokio::runtime::Runtime::new()?.block_on(execute(options))
 }

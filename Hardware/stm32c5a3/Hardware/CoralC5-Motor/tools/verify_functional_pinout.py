@@ -1,4 +1,4 @@
-"""Trace every module signal through Core to the LQFP100 pin and ST AF cell."""
+"""把模块信号沿 Core 接口追踪到 LQFP100 物理引脚和 ST 复用功能格。"""
 from pathlib import Path
 import csv
 import json
@@ -11,6 +11,7 @@ SHARED = ROOT.parent / 'Shared'
 RESERVED = {'PA9', 'PA11', 'PA12', 'PA13', 'PA14', 'PH2', 'PE3', 'PD2'}
 
 
+# 从网表建立引脚到网络分组的索引。
 def pin_groups(path):
     result = {}
     for net in ET.parse(path).findall('.//nets/net'):
@@ -20,6 +21,7 @@ def pin_groups(path):
     return result
 
 
+# 沿板间接口追踪 GPIO 和复用功能并生成逐项结果。
 def audit():
     plan = json.loads((DOC / 'layout-pinplan.json').read_text(encoding='utf8'))['plan']
     primary = json.loads((DOC / 'sources/pinplan-st-table14.json').read_text(encoding='utf8'))
@@ -30,6 +32,7 @@ def audit():
     checks = []
     rows = []
 
+    # 登记功能核对结果及其证据。
     def ck(name, ok, detail=None):
         checks.append({'name': name, 'pass': bool(ok), 'detail': detail})
 
@@ -44,7 +47,7 @@ def audit():
         prefix = r['signal'] + ': '
         ck(prefix + 'contact maps to selected GPIO', c['gpio'] == r['gpio'])
         ck(prefix + 'native Motor net reaches module endpoint', r['endpoint'] in motor.get('J14:' + r['contact'], set()))
-        # Detect a GPIO already loaded by a Core circuit, beyond just the printed contact label.
+        # 除触点名称外，还要检查该 GPIO 是否已被 Core 板上电路占用。
         ck(prefix + 'Core GPIO is a dedicated passthrough', core.get('J13:' + r['contact']) == {'J13:' + r['contact'], 'U1:' + c['mcu_pin']})
         cell = ''
         if r['af'] is not None:
@@ -83,6 +86,7 @@ def audit():
     return report
 
 
+# 读取输入文件并写出引脚功能核验报告。
 def main():
     report = audit()
     (DOC / 'functional-pinout-verification.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf8')

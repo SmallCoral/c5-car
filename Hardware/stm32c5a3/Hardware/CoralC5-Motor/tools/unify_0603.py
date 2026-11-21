@@ -1,10 +1,12 @@
-"""Unify Motor's 0603 inner pad gap, retaining typed models and LED polarity."""
+"""统一 Motor 上 0603 器件的内侧焊盘间距，并保留对应模型及 LED 极性。"""
 from pathlib import Path
 import copy,csv,hashlib,json,sys
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT.parent/'Shared/design_tools'))
 from sexpr import parse,dump,node,nodes,prop,Atom
+# 计算封装文件 SHA-256。
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+# 统一 0603 封装的焊盘间距，并核对模型和极性。
 def main():
  if '--apply-live-baseline' not in sys.argv:raise SystemExit('Historical edit only; explicit --apply-live-baseline required.')
  record=ROOT/'docs/passive_0603_revision.json'

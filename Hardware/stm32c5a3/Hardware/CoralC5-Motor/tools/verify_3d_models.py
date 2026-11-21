@@ -1,4 +1,4 @@
-"""Check local PCB model resources and downloaded-file provenance, without editing CAD."""
+"""核对本地 PCB 模型资源和下载文件来源，只读访问 CAD。"""
 from pathlib import Path
 import argparse
 import hashlib
@@ -10,10 +10,12 @@ sys.path.insert(0, str(ROOT.parent / 'Shared/design_tools'))
 from sexpr import parse, node, nodes, prop
 
 
+# 计算模型资源的文件指纹。
 def sha(data):
     return hashlib.sha256(data).hexdigest()
 
 
+# 去除模型绑定以便对照其余封装几何。
 def without_models(tree):
     if not isinstance(tree, list):
         return tree
@@ -21,10 +23,12 @@ def without_models(tree):
             if not (isinstance(v, list) and v and v[0] == 'model')]
 
 
+# 归一化表达式以忽略无关的保存格式差异。
 def canonical(tree):
     return json.dumps(tree, ensure_ascii=False, separators=(',', ':')).encode('utf8')
 
 
+# 遍历封装及模型资源，检查路径、来源和设计差异。
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--baseline', type=Path, help='Saved pre-edit PCB; checks every non-model field')
@@ -37,6 +41,7 @@ def main():
     catalog = json.loads((ROOT / 'docs/models-2026-11-09.json').read_text(encoding='utf8'))
     checks = []
 
+    # 把结果及差异写入模型检查清单。
     def check(name, passed, detail=None):
         checks.append(dict(name=name, passed=bool(passed), detail=detail))
 

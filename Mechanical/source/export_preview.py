@@ -1,4 +1,4 @@
-"""Create a colored GLB, native appearance records, and a self-contained viewer."""
+"""导出带颜色的 GLB、原生外观记录及可独立打开的查看器。"""
 from pathlib import Path
 import json
 import struct
@@ -19,6 +19,7 @@ gltf={'asset':{'version':'2.0','generator':'Coral-C5 FreeCAD framework exporter'
 binary=bytearray()
 
 
+# 为顶点或索引数据建立 glTF 访问器并记录其缓冲位置。
 def accessor(array,kind,component,target,bounds=False):
     while len(binary)%4:binary.append(0)
     a=np.ascontiguousarray(array)
@@ -54,7 +55,7 @@ js+=b' '*((-len(js))%4);binary.extend(b'\0'*((-len(binary))%4))
 glb=struct.pack('<4sII',b'glTF',2,12+8+len(js)+8+len(binary))+struct.pack('<I4s',len(js),b'JSON')+js+struct.pack('<I4s',len(binary),b'BIN\0')+binary
 (M/'step/CoralC5_Framework.glb').write_bytes(glb)
 
-# Native appearance only; BRep files and expression-based placements are unchanged.
+# 仅修改原生外观，BRep 文件和由表达式驱动的安装位置保持原值。
 native=M/'source/CoralC5_Framework.FCStd';tmp=native.with_suffix('.styled.FCStd')
 gui=ET.Element('Document',{'SchemaVersion':'1','HasExpansion':'1'});providers=ET.SubElement(gui,'ViewProviderData',{'Count':str(len(parts))})
 for p in parts:

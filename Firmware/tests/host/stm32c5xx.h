@@ -1,3 +1,5 @@
+/* 主机测试用的芯片头文件替身，仅提供真实前台代码在模拟环境中需要的定义。 */
+
 #ifndef TEST_STM32C5XX_H
 #define TEST_STM32C5XX_H
 

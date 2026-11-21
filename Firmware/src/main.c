@@ -1,3 +1,5 @@
+/* 比赛应用入口。主循环接收按键、相机与驱动反馈，调用 contest.c 和 lap.c 计算目标，再把输出送往步进和轮驱动，同时维护屏幕和蓝牙遥测。 */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -62,12 +64,9 @@ static uint32_t max_display_ms;
 static uint32_t max_telemetry_ms;
 
 #ifdef CORAL_DEBUG_KEYS
-/* SWD mailbox: write 0xc5000001 + key_id to simulate one debounced press.
- * The main loop consumes it once; physical keys take priority. Release builds
- * have no mailbox. Power-up opens the event menu.
- */
+/* Debug 的 SWD 邮箱接受 0xc5000001 + key_id，模拟一次已消抖按键。主循环消费一次，实物按键优先。上电进入比赛菜单。 */
 volatile uint32_t debug_key_request;
-/* Read over SWD while the CPU runs. Times share the SW2 acceptance epoch. */
+/* 可在 CPU 运行时通过 SWD 读取，所有计时均以接受 SW2 的时刻为起点。 */
 struct position_sample {
 	uint16_t ms, frame_seq, rx_age, camera_age;
 	int16_t x, shaft_cd, goal_cd, velocity;
@@ -77,6 +76,7 @@ static volatile struct position_sample position_trace[1024];
 static volatile unsigned int position_count;
 static bool position_recording;
 
+/* 在 Debug 定长数组中记录球位、轴角和比赛阶段。达到容量或超过 14 秒就停止采集，以便完整保留起步轨迹。 */
 static void record_position(uint32_t now)
 {
 	if (!position_recording)
@@ -103,20 +103,20 @@ static void record_position(uint32_t now)
 	};
 	position_count++;
 }
-/* Last stop: 1 key, 2 BLE, 3 nFAULT, 4 deadline, 5 wheel trip, 6 stepper, 7 lap.
- * High byte holds the fault mask or wheel_trip at the stopping decision.
- */
+/* 停车原因低字节依次为按键、蓝牙、nFAULT、超时、轮驱动、步进和循线（1～7）。高字节保留判定时的故障掩码或 wheel_trip。 */
 volatile uint32_t debug_stop_reason;
 #define TRACE_STOP(reason) (debug_stop_reason = (reason))
 #else
 #define TRACE_STOP(reason) ((void)0)
 #endif
 
+/* 结束当前点动，同时保留已标定的行程上下界及标定模式。 */
 static void reset_jog(void)
 {
 	jog = (struct shaft_jog){ .lower = jog.lower, .upper = jog.upper, .calibrating = jog.calibrating };
 }
 
+/* 统一结束当前任务，关闭轮输出并按机构状态处理步进，清理可能再次触发运动的请求。 */
 static void stop_test(uint32_t now)
 {
 	preparing_shaft = false;
@@ -139,6 +139,7 @@ static void stop_test(uint32_t now)
 	wheels_started = false;
 }
 
+/* 根据调试页任务及方向配置启动对应车轮。 */
 static bool start_wheels(void)
 {
 	int duty = controls_duty(&controls);
@@ -150,6 +151,7 @@ static bool start_wheels(void)
 	return wheels_started;
 }
 
+/* 停止当前任务并切换步进标定状态，使后续按键按标定方式解释。 */
 static void set_calibration(bool enable, uint32_t now)
 {
 	stop_test(now);
@@ -159,6 +161,7 @@ static void set_calibration(bool enable, uint32_t now)
 	trim_keys = (struct jog_keys){ .consumed = true };
 }
 
+/* 将控制器看到的球位与最近一次屏幕球位通过蓝牙回报。 */
 static void report_ball(uint32_t now)
 {
 	struct ball_view current = ball_view_at(&camera, now);
@@ -180,6 +183,7 @@ static void report_ball(uint32_t now)
 		serial_write(SERIAL_BT, (const uint8_t *)line, (size_t)length);
 }
 
+/* 检查车辆静止及驱动状态后请求原位抱持，可同时标记水平参考。 */
 static bool latch_beam(bool mark_horizontal, uint32_t now)
 {
 	if (jog.calibrating || controls.task != TASK_BALANCE || controls.running || level_pending ||
@@ -196,6 +200,7 @@ static bool latch_beam(bool mark_horizontal, uint32_t now)
 	return true;
 }
 
+/* 检查相机和执行器条件，设置寻球或试抬请求，等待主循环接管。 */
 static bool start_beam(bool probe, bool trial, uint32_t now)
 {
 	if (jog.calibrating || controls.task != TASK_BALANCE || level_pending || beam.active || board_wheels_active() ||
@@ -237,6 +242,7 @@ static bool start_beam(bool probe, bool trial, uint32_t now)
 	return true;
 }
 
+/* 按协议报告稳球控制、轴位和驱动诊断，供上位机核对。 */
 static void report_balance(uint32_t now)
 {
 	struct ball_view ball = ball_view_at(&camera, now);
@@ -255,6 +261,7 @@ static void report_balance(uint32_t now)
 		serial_write(SERIAL_BT, (const uint8_t *)line, (size_t)n);
 }
 
+/* 推进调试页的寻球、回中和返回流程，并将输出交给步进驱动。 */
 static void poll_balance(uint32_t now)
 {
 	stepper_request_config(&step, now);
@@ -367,6 +374,7 @@ static void poll_balance(uint32_t now)
 
 static void finish_event(enum contest_notice notice, uint32_t now);
 
+/* 每个新相机序号只记一次，累计行驶中的偏差极值、超差次数和最长观测间隔。 */
 static void record_offset_sample(uint32_t now)
 {
 	uint32_t t = now - offset_range.start;
@@ -374,6 +382,7 @@ static void record_offset_sample(uint32_t now)
 		offset_range.missing++;
 		return;
 	}
+	/* 整圈统计以实测减目标为误差，正值表示偏右。调用方按相机序号去重，不受蓝牙发包周期影响。 */
 	int error = contest_ball_mm(camera.x) - offset_range.target_mm;
 	if (!offset_range.samples || error < offset_range.min_mm) {
 		offset_range.min_mm = error;
@@ -391,6 +400,7 @@ static void record_offset_sample(uint32_t now)
 		offset_range.outside++;
 }
 
+/* 解析蓝牙收到的文本命令，将只读查询、停止、标定和升级请求分发到相应处理逻辑。 */
 static void handle_remote(uint8_t byte, uint32_t now)
 {
 	if (byte == '!') {
@@ -587,8 +597,7 @@ static void handle_remote(uint8_t byte, uint32_t now)
 		stepper_stop(&step, now);
 	} else if (!strcmp(remote_line, "C5:RAISE") && menu.page == MENU_DIAGNOSTIC && controls.task == TASK_BALANCE &&
 		   !upgrade_requested && !controls.running && !level_pending && !board_wheels_active()) {
-		/* Operator identified the bearing-side stop. A static return from the
-		 * other side must not choose the first direction or appear on the LCD. */
+		/* 操作者确认钢球在轴承侧挡杆。忽略对侧静态反光，避免据此选择起始方向或显示错误球位。 */
 		ball_expect_right(&camera, now);
 		beam.reverse = false;
 		start_beam(false, false, now);
@@ -644,6 +653,7 @@ static void handle_remote(uint8_t byte, uint32_t now)
 	}
 }
 
+/* 等待回复发送完毕，将升级标记写入约定的 RAM 邮箱后复位进入引导程序。 */
 static void upgrade_poll(uint32_t now)
 {
 	volatile uint32_t *request = (volatile uint32_t *)OTA_REQUEST_ADDR;
@@ -657,6 +667,7 @@ static void upgrade_poll(uint32_t now)
 	NVIC_SystemReset();
 }
 
+/* 按题目选择速度与停车计数，用当前编码器作起点，确认车轮驱动已启动。 */
 static void start_lap(uint32_t now, bool competition)
 {
 	uint32_t left = board_encoder(0), right = board_encoder(1);
@@ -686,6 +697,7 @@ static void start_lap(uint32_t now, bool competition)
 	}
 }
 
+/* 锁存比赛用时及结果。发挥一正常完圈后继续稳球，使车辆滑停时仍有纠偏。 */
 static void finish_event(enum contest_notice notice, uint32_t now)
 {
 	if (!holding_finish)
@@ -702,12 +714,13 @@ static void finish_event(enum contest_notice notice, uint32_t now)
 	menu.notice = notice;
 }
 
+/* 从近期直接观测建立起跑球位，过滤陈旧或仅由预测得到的坐标。 */
 static bool observe_start_ball(uint32_t now)
 {
 	if (!ball_v2_measured(&camera, now) || (ball_display_at(&camera, now).status != BALL_TRACKED &&
 	    ball_view_at(&camera, now).status != BALL_TRACKED))
 		return false;
-	/* A stationary ball may have been placed anywhere between runs. */
+	/* 两次运行之间操作者可能把静止的钢球挪到管中任意位置。 */
 	camera.have_anchor = true;
 	camera.uncertain = false;
 	camera.anchor_x = camera.x;
@@ -717,6 +730,7 @@ static bool observe_start_ball(uint32_t now)
 	return true;
 }
 
+/* 把步进和位置控制的异常转换为比赛页面可显示的结束原因。 */
 static enum contest_notice position_drive_notice(uint32_t now)
 {
 	if (!step.travel_valid && step.position_valid && now - step.position_at < 750 &&
@@ -725,6 +739,7 @@ static enum contest_notice position_drive_notice(uint32_t now)
 	return NOTICE_DRIVE;
 }
 
+/* 进入准备流程时确定水平目标，开始处理步进回水平。 */
 static void prepare_position(uint32_t now)
 {
 	menu.notice = NOTICE_NONE;
@@ -732,6 +747,7 @@ static void prepare_position(uint32_t now)
 	preparing_shaft = true;
 }
 
+/* 按当前菜单题目建立计时、轮控或位置闭环，并切换到运行页。 */
 static void start_event(uint32_t now)
 {
 	menu.notice = NOTICE_NONE;
@@ -773,17 +789,20 @@ static void start_event(uint32_t now)
 		start_lap(now, true);
 }
 
+/* 判断发挥一是否已从原地选点切换为行驶稳球。 */
 static bool offset_lap_running(void)
 {
 	return menu.page == MENU_RUN && menu.item == EVENT_OFFSET && menu.offset_driving;
 }
 
+/* 核对驱动在线、行程有效和故障位。仅发挥一已起跑时允许轮驱动与稳球同时工作。 */
 static bool position_drive_ok(uint32_t now)
 {
 	return !step.error && step.travel_valid && stepper_online(&step, now) &&
 		!(step.flags & 0x0cU) && (!board_wheels_active() || offset_lap_running());
 }
 
+/* 按标定水平与当前轴位的容差判断是否已回水平。 */
 static bool shaft_at_level(uint32_t now)
 {
 	return step.phase == STEP_POSITION && step.goal_sent && step.position_valid &&
@@ -792,6 +811,7 @@ static bool shaft_at_level(uint32_t now)
 		abs(step.position - step.shaft_level) <= 90;
 }
 
+/* 将稳球目标轴角转换为受行程限制的步进目标。 */
 static bool command_position(const struct position_run *run, uint32_t now, uint32_t latch_timeout_ms)
 {
 	if (step.phase == STEP_PARKED && !step.pending && (step.flags & 1U) &&
@@ -801,6 +821,7 @@ static bool command_position(const struct position_run *run, uint32_t now, uint3
 	}
 	if (step.phase == STEP_POSITION) {
 		step.target_rpm = 30;
+		/* 轴每圈 65536 计数、36000 个百分之一度。先换算角差，再加实测水平轴位。 */
 		step.goal = step.shaft_level + run->goal_cd * 65536 / 36000;
 		return true;
 	}
@@ -808,6 +829,7 @@ static bool command_position(const struct position_run *run, uint32_t now, uint3
 	       now - run->start <= latch_timeout_ms;
 }
 
+/* 在准备页轮询水平反馈，稳定后更新可启动提示。 */
 static void poll_prepare_level(uint32_t now)
 {
 	stepper_request_config(&step, now);
@@ -827,6 +849,7 @@ static void poll_prepare_level(uint32_t now)
 	position_check_level(&prepare_level, shaft_at_level(now), step.position_at);
 }
 
+/* 根据最新球位和步进反馈推进移球、定点保持与故障处理。 */
 static void poll_position_event(uint32_t now)
 {
 	position.driving = offset_lap_running();
@@ -852,12 +875,14 @@ static void poll_position_event(uint32_t now)
 		finish_event(NOTICE_DRIVE, now);
 }
 
+/* 已回水平并进入位置控制、驱动正常且 120 ms 内有可信球位时才允许起跑。球稳到何种程度由操作者判断。 */
 static bool offset_ready(uint32_t now)
 {
 	return step.phase == STEP_POSITION && position.leg != LEVEL_SHAFT && position.have_sample &&
 	       !position.waiting_vision && now - position.sample_at < 120 && position_drive_ok(now);
 }
 
+/* 锁住当前选点，初始化整圈误差统计并启动发挥一的车轮。 */
 static void start_offset_lap(uint32_t now)
 {
 	if (!offset_ready(now))
@@ -869,6 +894,7 @@ static void start_offset_lap(uint32_t now)
 	start_lap(now, true);
 }
 
+/* 消抖后按页面区分单击、长按和组合键，处理选题、调点、启动及退出。 */
 static void handle_keys(uint32_t now)
 {
 	uint8_t raw = board_keys();
@@ -945,7 +971,7 @@ static void handle_keys(uint32_t now)
 			menu_release = true;
 		return;
 	}
-	if (event == KEY_START) { /* Physical SW5 backs out of diagnostics. */
+	if (event == KEY_START) { /* 实物 SW5 退出设备调试。 */
 		level_pending = false;
 		stop_test(now);
 		if (jog.calibrating)
@@ -969,7 +995,7 @@ static void handle_keys(uint32_t now)
 			return;
 		}
 		enum jog_action move = jog_cal_key(&trim_keys, down, now);
-		/* Do not queue targets ahead of the mechanism during a held press. */
+		/* 长按时依据机构的反馈推进目标，避免将后续动作排在机械运动前面。 */
 		if (move != JOG_NONE && !jog_busy(&jog) && !board_wheels_active() &&
 		    jog_press(&jog, &step, move == JOG_LEFT ? -1 : 1, now)) {
 			controls.running = true;
@@ -978,8 +1004,7 @@ static void handle_keys(uint32_t now)
 		return;
 	}
 	enum jog_action action = jog_key_update(&trim_keys, down, manual, now);
-	/* Defer the two middle keys until a tap or a long press is known. While
-	 * auto-balancing their press edge remains the normal immediate stop. */
+	/* 两个中间键等到能区分短按与长按再处理。自动稳球时按下的边沿仍立即触发停机。 */
 	if (manual && (event == KEY_OK || event == KEY_NEXT)) {
 		if (simulated)
 			action = event == KEY_OK ? JOG_LEFT : JOG_RIGHT;
@@ -1003,7 +1028,7 @@ static void handle_keys(uint32_t now)
 	if (event < 0)
 		return;
 	if (event == KEY_MODE)
-		event = KEY_START; /* Physical SW2 confirms the selected diagnostic. */
+		event = KEY_START; /* 实物 SW2 确认所选调试项目。 */
 	controls_key(&controls, (enum key_id)event, now);
 	if (was_running) {
 		TRACE_STOP(1);
@@ -1033,6 +1058,7 @@ static void handle_keys(uint32_t now)
 	}
 }
 
+/* 核对轮驱动与步进状态，遇到保护或超时结束正在执行的调试。 */
 static void check_motors(uint32_t now)
 {
 	if (!controls.running)
@@ -1043,9 +1069,7 @@ static void check_motors(uint32_t now)
 		stop_test(now);
 		return;
 	}
-	/* ALL waits for the Emm velocity ACK before starting the wheels.
-	 * A wheel trip ends the run; it must never trigger an automatic restart.
-	 */
+	/* ALL 先等 Emm 确认转速，再启动车轮。轮驱动保护结束本次运行，等待人工重新启动。 */
 	if (controls.task == TASK_ALL && !wheels_started &&
 	    step.phase == STEP_MOVING && !start_wheels()) {
 		TRACE_STOP(5U | (uint32_t)board_wheels_trip() << 8);
@@ -1060,6 +1084,7 @@ static void check_motors(uint32_t now)
 	}
 }
 
+/* 按巡线器计算的状态和 PWM 更新双轮，并把停车原因反馈给比赛流程。 */
 static void follow_line(uint32_t now)
 {
 	int direction = lap.reverse ? -1 : 1;
@@ -1082,6 +1107,7 @@ static void follow_line(uint32_t now)
 	}
 }
 
+/* 每隔至少 100 ms 分别读取两轮编码器，将计数差除以实际间隔，更新界面的轮速和累计行程。 */
 static void sample_inputs(uint32_t now)
 {
 	uint32_t interval = now - sampled_at;
@@ -1100,6 +1126,7 @@ static void sample_inputs(uint32_t now)
 	sampled_at = now;
 }
 
+/* 根据当前任务决定灰度识别使用黑线还是白线极性。 */
 static bool gray_white_selected(void)
 {
 	if (menu.item == EVENT_OFFSET && (menu.page == MENU_DETAIL || menu.page == MENU_RUN))
@@ -1107,6 +1134,7 @@ static bool gray_white_selected(void)
 	return controls.task != TASK_LAP && controls.gray_white;
 }
 
+/* 把控制器状态整理成统一的界面快照，供分行绘制读取。 */
 static void update_ui(uint32_t now)
 {
 	int duty = controls_duty(&controls);
@@ -1178,6 +1206,7 @@ static void update_ui(uint32_t now)
 	ui.step_rpm_valid = step.rpm_valid && ui.step_online;
 }
 
+/* 按当前任务生成相应版本的遥测行，关联主控时间、轮速和有效球位。 */
 static void send_telemetry(uint32_t now)
 {
 	struct serial_stats bt = serial_stats(SERIAL_BT);
@@ -1192,7 +1221,7 @@ static void send_telemetry(uint32_t now)
 	if (!elapsed(now, telemetry_at, period))
 		return;
 	telemetry_at = now;
-	/* Versioned CSV; J10 is intentionally not represented as a measured bit. */
+	/* CSV 带版本号。J10 缺少直接测量反馈，因此不为它构造状态位。 */
 	length = snprintf(line, sizeof(line),
 		"C5,%u,%lu,%lu,%u,%u,%d,%ld,%ld,%ld,%ld,%u,%u,%u,%u,%u,%u,%u,%ld,%u,%lu,%lu,%lu,%u,%u,%lu,%u,%d,%ld,%u,%u,%u,%u,%u,%d,%u,%u,%u,%d,%d,%d,%d,%ld,%ld,%lu,%lu,%u,%d,%d,%d,%d,%d,%lu,%u,%u,%u\r\n",
 		offset ? 7U : 6U, (unsigned long)now, (unsigned long)sequence++,
@@ -1223,7 +1252,7 @@ static void send_telemetry(uint32_t now)
 		lap.marker_hits, lap.marker_peak);
 	if (offset && length >= 2 && (size_t)length < sizeof(line)) {
 		/* 用同一个主控时钟对齐轮速与相机观测，便于从蓝牙轨迹核对惯性偏移。 */
-		size_t used = (size_t)length - 2; /* replace the v6 line ending */
+		size_t used = (size_t)length - 2; /* 替换 v6 报文末尾的换行符。 */
 		unsigned int phase = menu.page == MENU_DETAIL ? 1U : menu.page == MENU_RESULT ? 4U :
 				     menu.offset_driving ? 3U : 2U;
 		int n = snprintf(line + used, sizeof(line) - used,
@@ -1246,6 +1275,7 @@ static void send_telemetry(uint32_t now)
 		   serial_write(SERIAL_BT, (const uint8_t *)line, (size_t)length);
 }
 
+/* 先初始化板级驱动，再循环处理串口、按键、控制、屏幕切片和遥测，各任务按自己的周期运行。 */
 int main(void)
 {
 	volatile uint32_t *handover = (volatile uint32_t *)JLINK_HOLD_ADDR;
@@ -1260,7 +1290,7 @@ int main(void)
 		stepper_resume_hold(&step, board_millis());
 	lcd_ok = display_init();
 	camera_ready = serial_camera_init();
-	/* A held key during power-up must be released before it can start a test. */
+	/* 上电时已经按住的键，必须先松开才能启动测试。 */
 	for (unsigned int index = 0; index < KEY_COUNT; index++) {
 		keys[index].stable = !!(board_keys() & (1U << index));
 		if (keys[index].stable)
@@ -1268,7 +1298,7 @@ int main(void)
 		keys[index].candidate = keys[index].stable;
 		keys[index].changed_at = board_millis();
 	}
-	trim_keys.consumed = true; /* A key already held at power-up cannot issue a jog on release. */
+	trim_keys.consumed = true; /* 上电时按住的键在第一次松开时也不触发点动。 */
 	for (;;) {
 		uint32_t now = board_millis();
 		uint8_t byte;
@@ -1296,7 +1326,7 @@ int main(void)
 				stop_test(now);
 			}
 			if (menu.page == MENU_DETAIL && menu.item == EVENT_LAP) {
-				/* Select black-line sensing before the confirming press. */
+				/* 确认启动前先切换到黑线识别。 */
 				controls.task = TASK_LAP;
 				controls.lap_reverse = false;
 				menu.notice = NOTICE_NONE;
@@ -1309,14 +1339,14 @@ int main(void)
 		board_wheels_poll();
 		faults = board_faults();
 		was_running = controls.running;
-		/* Wheel faults are checked by the board after its PWM-off wake delay. */
+		/* 轮驱动的故障检查安排在零 PWM 唤醒延时结束后。 */
 		fault_stop = controls.task == TASK_STEPPER && faults != 0;
 		controls_tick(&controls, now, fault_stop);
 		if (was_running && !controls.running)
 			TRACE_STOP(fault_stop ? 3U | (uint32_t)faults << 8 : 4U);
 		check_motors(now);
 		follow_line(now);
-		/* Bound a noisy camera's share of each pass through the control loop. */
+		/* 限制每轮处理相机输入的字节数，给其余控制任务留出执行时间。 */
 		if (camera_ready) {
 			for (unsigned int i = 0; i < 64 && serial_read(SERIAL_CAMERA, &byte); i++) {
 				uint16_t previous = camera.sequence;

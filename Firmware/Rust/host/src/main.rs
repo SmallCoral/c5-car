@@ -1,3 +1,5 @@
+// 电脑端命令行入口，分发打包、检查、回放、监视及无线升级。
+
 use coral_core::{
     ota,
     telemetry::{Decoder, FIELDS},
@@ -21,6 +23,7 @@ pub struct Options {
     pub stop: bool,
 }
 impl Options {
+    // 解析命令行参数并保留选择的子命令。
     fn parse() -> Result<Self> {
         let mut args = std::env::args().skip(1);
         let command = args.next().unwrap_or_else(|| "help".into());
@@ -58,12 +61,15 @@ impl Options {
         }
         Ok(options)
     }
+    // 取得选项的参数值。
     pub fn get(&self, key: &str) -> Option<&str> {
         self.values.get(key).map(String::as_str)
     }
+    // 读取必需参数，缺失时返回错误。
     fn required(&self, key: &str) -> Result<&str> {
         self.get(key).ok_or_else(|| format!("missing {key}").into())
     }
+    // 要求恰有一个位置参数，将它作为输入镜像路径返回。
     fn image(&self) -> Result<&Path> {
         if self.positional.len() != 1 {
             return Err("provide exactly one .ota/.bin image path".into());
@@ -78,6 +84,7 @@ pub struct Sink {
     last: Option<(u32, u32)>,
 }
 impl Sink {
+    // 建立输出与逐行解析所需状态。
     fn new(path: Option<&str>) -> Result<Self> {
         let mut output: Box<dyn Write> = match path {
             Some(p) => Box::new(fs::File::create(p)?),
@@ -91,6 +98,7 @@ impl Sink {
             last: None,
         })
     }
+    // 处理一条或一段接收数据并写入选定输出。
     pub fn accept(&mut self, bytes: &[u8]) -> Result<()> {
         for &b in bytes {
             if let Some(mut record) = self.decoder.feed(b) {
@@ -107,7 +115,7 @@ impl Sink {
                 self.last = Some((ms, seq));
                 self.count += 1;
                 let stamp = SystemTime::now().duration_since(UNIX_EPOCH)?.as_millis();
-                // Normalize v1's missing velocity fields to the same 30-column CSV schema.
+                // v1 缺少速度字段，补齐后按统一的 30 列 CSV 输出。
                 let version = record.version;
                 record.version = 2;
                 let csv = record.csv();
@@ -118,6 +126,7 @@ impl Sink {
         Ok(())
     }
 }
+// 分派离线解析、打包和蓝牙子命令。
 fn run(options: Options) -> Result<()> {
     match options.command.as_str() {
         "package" => {
@@ -199,6 +208,7 @@ fn run(options: Options) -> Result<()> {
     }
     Ok(())
 }
+// 运行命令行程序，向终端报告失败原因。
 fn main() {
     if let Err(e) = Options::parse().and_then(run) {
         eprintln!("Error: {e}");

@@ -1,6 +1,4 @@
-"""Schematic/library primitives only. No generation at import, no PCB access.
-Selected definitions extracted once from the pre-M2 authoring utility.
-"""
+"""从 M2 之前的绘图工具提取原理图与符号库基础操作。导入本模块只提供工具函数。"""
 from pathlib import Path
 import math,copy,re,shutil,uuid
 from sexpr import parse,dump,node,nodes,prop,Atom
@@ -8,22 +6,29 @@ A=Atom
 K=Path('C:/Program Files/KiCad/10.0/share/kicad')
 LIB={}; FPMETA={}; PARTS=[]; PAGES=[]
 POWERCOUNT=200; FLAGCOUNT=200
+# 按工程命名空间和对象键生成稳定 UUID。
 def uid(key): return str(uuid.uuid5(uuid.NAMESPACE_URL,'CoralC5-Motor-M2/'+str(key)))
+# 将标签及内容构成 S 表达式节点。
 def n(tag, *items):
     return [A(tag), *items]
 
+# 将数值输出为精简十进制字面量。
 def num(v):
     return A(f'{float(v):.5f}'.rstrip('0').rstrip('.') or '0')
 
+# 对齐到 1.27 mm 网格。
 def s(v):
     return round(round(float(v) / 1.27) * 1.27, 5)
 
+# 将二维坐标对齐到绘图网格。
 def pt(x, y):
     return (s(x), s(y))
 
+# 生成带标签的坐标节点。
 def xy(tag, x, y, *extra):
     return n(tag, num(x), num(y), *extra)
 
+# 构造文字字体、对齐及可见性设置。
 def effects(size=1.27, justify=None, hide=False):
     e = n('effects', n('font', xy('size', size, size)))
     if justify:
@@ -32,9 +37,11 @@ def effects(size=1.27, justify=None, hide=False):
         e.append(n('hide', A('yes')))
     return e
 
+# 构造图纸属性字段。
 def property_(name, value, x=0, y=0, hide=False, justify=None):
     return n('property', name, value, xy('at', x, y, num(0)), effects(1.27, justify, hide))
 
+# 把封装和模型引用转换为工程内可用的资源。
 def local_fp(source, name=None, source_root=K / 'footprints', model_root=K / '3dmodels', kind='KiCad package geometry'):
     lib, filename = source.split(':')
     name = name or lib + '__' + filename
@@ -60,12 +67,14 @@ def local_fp(source, name=None, source_root=K / 'footprints', model_root=K / '3d
     FPMETA['Motor:' + name] = {'source': str(src), 'models': models, 'model_status': kind}
     return 'Motor:' + name
 
+# 读取标准库符号定义。
 def std(lib, name):
     key = lib + ':' + name
     if key in LIB:
         return key
     data = parse((K / 'symbols' / (lib + '.kicad_sym')).read_text(encoding='utf-8'))
 
+    # 按符号名解析完整库定义。
     def resolve(name):
         x = copy.deepcopy(next((x for x in nodes(data, 'symbol') if x[1] == name)))
         e = node(x, 'extends')
@@ -91,6 +100,7 @@ def std(lib, name):
     LIB['Motor:' + localname] = x
     return 'Motor:' + localname
 
+# 构造带引脚和字段的芯片符号。
 def chip(name, ref, value, pins, fp, rect=(-12.7, 20.32, 12.7, -20.32), datasheet=''):
     x = n('symbol', name, n('pin_names', n('offset', num(0.5))), n('in_bom', A('yes')), n('on_board', A('yes')), property_('Reference', ref, 0, 25.4), property_('Value', value, 0, 22.86), property_('Footprint', fp, hide=True), property_('Datasheet', datasheet, hide=True))
     b = n('symbol', name + '_0_1', n('rectangle', xy('start', rect[0], rect[1]), xy('end', rect[2], rect[3]), n('stroke', n('width', num(0.254)), n('type', A('default'))), n('fill', n('type', A('background')))))
@@ -101,8 +111,10 @@ def chip(name, ref, value, pins, fp, rect=(-12.7, 20.32, 12.7, -20.32), datashee
     LIB['Motor:' + name] = x
     return 'Motor:' + name
 
+# 管理一张原生图页的元件、导线和标签。
 class Page:
 
+    # 初始化页码、局部库和图元集合。
     def __init__(self, file, title, pageno, paper='A3'):
         self.file = file
         self.title = title
@@ -119,10 +131,12 @@ class Page:
         self.count = 0
         PAGES.append(self)
 
+    # 将一个图元登记到页中。
     def add(self, obj):
         self.data.append(obj)
         return obj
 
+    # 沿给定端点依次创建线段。
     def wire(self, *points):
         pp = [pt(*p) for p in points]
         for a, b in zip(pp, pp[1:]):
@@ -134,24 +148,29 @@ class Page:
             else:
                 self.wires.append((a, b))
 
+    # 给端点标上网络名。
     def label(self, name, at, angle=0):
         p = pt(*at)
         self.labels.append((name, p))
         self.add(n('label', name, xy('at', *p, num(angle)), effects(1.27, 'left bottom' if angle == 0 else 'right bottom'), n('uuid', uid(f'{self.file}/label/{name}/{p}'))))
 
+    # 创建指定方向的层次端口。
     def port(self, name, at, shape='input', angle=0):
         p = pt(*at)
         angle = (angle + 180) % 360
         self.add(n('hierarchical_label', name, n('shape', A(shape)), xy('at', *p, num(angle)), effects(1.27, 'left' if angle == 0 else 'right'), n('uuid', uid(f'{self.file}/port/{name}'))))
 
+    # 在引脚位置登记空接标记。
     def nc(self, p):
         p = pt(*p)
         self.ncpoints.append(p)
         self.add(n('no_connect', xy('at', *p), n('uuid', uid(f'{self.file}/NC/{p}'))))
 
+    # 放置带坐标和字号的说明文字。
     def note(self, text, x, y):
         self.add(n('text', text, xy('at', *pt(x, y), num(0)), effects(2.54, 'left top'), n('uuid', uid(f'{self.file}/note/{text}'))))
 
+    # 绘制电路分组的边框。
     def frame(self, title, x1, y1, x2, y2):
         stroke = n('stroke', n('width', num(0.254)), n('type', A('dash')))
         if node(self.data, 'paper')[1] == 'A4' and x2 > 175.26 and (y2 > 165.1):
@@ -161,6 +180,7 @@ class Page:
             self.add(n('rectangle', xy('start', *pt(x1, y1)), xy('end', *pt(x2, y2)), stroke, n('fill', n('type', A('none'))), n('uuid', uid(f'{self.file}/frame/{title}'))))
         self.note(title, x1 + 3, y1 + 2)
 
+    # 生成带稳定身份的实物器件实例并返回各引脚坐标。
     def place(self, key, ref, value, x, y, fp='', rot=0, unit=1, mpn='', datasheet='', fields=None, refpos=None, valpos=None):
         x, y = pt(x, y)
         lib = LIB[key]
@@ -201,21 +221,25 @@ class Page:
             PARTS.append({'reference': ref, 'value': value, 'mpn': mpn, 'footprint': fp, 'page': self.pageno, 'datasheet': prop(z, 'Datasheet')[2]})
         return pins
 
+    # 在指定位置连接地符号。
     def gnd(self, p):
         global POWERCOUNT
         POWERCOUNT += 1
         return self.place(std('power', 'GND'), f'#PWR{POWERCOUNT:03}', 'GND', *p, refpos=(s(p[0]), s(p[1])), valpos=(s(p[0]), s(p[1] + 3.81)))
 
+    # 创建电源标志。
     def flag(self, p):
         global FLAGCOUNT
         FLAGCOUNT += 1
         return self.place(std('power', 'PWR_FLAG'), f'#FLG{FLAGCOUNT:03}', 'PWR_FLAG', *p, refpos=pt(*p), valpos=pt(*p))
 
+    # 将引脚端点加入指定命名网络。
     def netpin(self, p, name, dx=-7.62):
         end = (s(p[0] + dx), p[1])
         self.wire(p, end)
         self.label(name, end, 0 if dx < 0 else 180)
 
+    # 序列化并保存当前图页。
     def save(self):
         endpoints = set((p for a, b in self.wires for p in [a, b]))
         segs = set()

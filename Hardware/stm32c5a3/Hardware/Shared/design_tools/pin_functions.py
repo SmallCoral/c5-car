@@ -1,6 +1,7 @@
-"""Extract function names and AF column numbers from DS15137 Rev3 Table 14."""
+"""从 DS15137 第 3 版表 14 提取功能名称与 AF 列号。"""
 import re
 
+# 从 ST 表格提取各引脚的 AF 列号和功能名，供接口追踪使用。
 def parse_alternate_functions(source):
  table=source.split('4.3                     Alternate functions',1)[1].split('===== PDF PAGE 62 =====',1)[0]
  functions={};centers={};port=None

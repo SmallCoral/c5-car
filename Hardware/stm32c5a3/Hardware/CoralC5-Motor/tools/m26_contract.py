@@ -1,9 +1,10 @@
-"""M2.6 intent, checked against native KiCad connectivity, without PCB access."""
+"""将 M2.6 的连接要求与 KiCad 原生网表比对，此处只检查原理图。"""
 import copy,json,hashlib,xml.etree.ElementTree as ET
 from sexpr import parse,node,nodes,prop
 from vision_contract import partitions
 from schematic_semantic import canonical
 
+# 统一库定义中与导出顺序相关的表示，以比较电气含义。
 def normalize_library(old,new,record,cache=False,file=None):
     prefix='Motor:' if cache else ''
     for name,definition in record['new_library_definitions'].items():
@@ -18,9 +19,12 @@ def normalize_library(old,new,record,cache=False,file=None):
                 if canonical(new[key])!=canonical(definition):raise ValueError('Copied source definition differs: '+key)
                 new.pop(key)
 
+# 按 M2.6 静态要求核对原生网表与器件属性。
 def checks(root,actual,schemas,record):
     result=[]
+    # 把判定和差异详情追加到检查结果。
     def ck(name,ok,detail=None):result.append({'name':'M2.6: '+name,'pass':bool(ok),'detail':detail})
+    # 检查给定端点是否组成完整的预期网络。
     def group(pin):return actual.get(pin,frozenset())
     base=root/'docs'/record['baseline']
     before={frozenset((p.attrib['ref'],p.attrib['pin']) for p in n.findall('node')) for n in ET.parse(base/'live-netlist.xml').findall('.//nets/net')}

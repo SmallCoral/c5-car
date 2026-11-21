@@ -1,4 +1,4 @@
-"""Read back the saved assembly; check poses, source identity and critical clearances."""
+"""回读已保存的总装，核对各姿态、来源和关键间隙。"""
 from pathlib import Path
 import hashlib
 import json
@@ -22,10 +22,12 @@ if any(not math.isfinite(v) for p in meta['parts'] for v in p['placement']):
     raise RuntimeError('Nonfinite placement in delivered assembly')
 
 
+# 按对象全局安装位置取得装配坐标系中的形状。
 def world(name):
     o=doc.getObject(name);s=o.Shape.copy();s.Placement=o.getGlobalPlacement();return s
 
 
+# 求两个形状在当前位置的重叠情况。
 def overlap(a,b,context):
     sa,sb=world(a),world(b)
     aa,bb=sa.optimalBoundingBox(),sb.optimalBoundingBox()
@@ -47,8 +49,8 @@ for angle in (-6,0,6):
     poses.append({'angle_deg':angle,'rod_closure_error_mm':closure,
                   'free_end_above_plate_mm':minimum_above_plate,
                   'pass':closure<1e-6 and minimum_above_plate>=50})
-    # Conditional only: image horizontal axis aligned with X, no sensor crop,
-    # using Sipeed's listed GC4653 lens; actual fitted lens is not confirmed.
+    # 此结果假设图像横轴与 X 对齐，传感器没有裁切，
+    # 并使用 Sipeed 标注的 GC4653 镜头。实际装上的镜头型号尚待核实。
     camera_inverse=doc.getObject('MaixcamHead').getGlobalPlacement().inverse()
     lens_z=-cfg['camera']['maixcam_body_envelope'][2]-11.1
     rays=[]

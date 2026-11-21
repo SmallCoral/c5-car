@@ -1,4 +1,5 @@
-"""Normalize native-save ordering and explicit defaults; retain electrical data."""
+"""统一原生保存顺序及显式默认值，以便比较电气内容。"""
+# 递归归一化节点顺序和默认属性，使保存格式的差异不影响电气比较。
 def canonical(value):
     if isinstance(value,dict):return {k:canonical(v) for k,v in value.items()}
     if not isinstance(value,list):return value

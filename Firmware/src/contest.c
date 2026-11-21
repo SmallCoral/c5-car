@@ -1,3 +1,5 @@
+/* 比赛菜单和钢球位置闭环。第一题按 O、右 50 mm、左 50 mm 顺序判稳；发挥一复用这套观测与轴角计算，目标改为按键选定的毫米位置。 */
+
 #include <stdlib.h>
 #include "contest.h"
 
@@ -5,11 +7,13 @@ static const enum task_id tools[] = {
 	TASK_BALANCE, TASK_LAP, TASK_GRAY, TASK_MONITOR, TASK_LEFT, TASK_RIGHT, TASK_BOTH, TASK_STEPPER, TASK_ALL
 };
 
+/* 从调试菜单索引取得对应设备任务。 */
 enum task_id contest_tool(unsigned int index)
 {
 	return tools[index % (sizeof(tools) / sizeof(tools[0]))];
 }
 
+/* 按 SW4 或 SW3 将毫米目标向左或向右移动一格，并检查两端标定范围。 */
 static void select_target(struct contest_menu *m, enum key_id key)
 {
 	int next = m->target_mm + (key == KEY_OK ? -1 : 1);
@@ -17,6 +21,7 @@ static void select_target(struct contest_menu *m, enum key_id key)
 		m->target_mm = next;
 }
 
+/* 按当前页面解释同一个按键，返回交给主循环执行的动作。发挥一起跑前允许改点，行驶时锁定目标。 */
 enum menu_action contest_key(struct contest_menu *m, enum key_id key)
 {
 	const unsigned int count = sizeof(tools) / sizeof(tools[0]);
@@ -75,6 +80,7 @@ enum menu_action contest_key(struct contest_menu *m, enum key_id key)
 	return MENU_NONE;
 }
 
+/* 把循线结束原因和圈时换成比赛结果页提示。 */
 enum contest_notice contest_lap_notice(enum lap_status status, uint32_t elapsed_ms, uint32_t limit_ms)
 {
 	switch (status) {
@@ -94,7 +100,7 @@ enum contest_notice contest_lap_notice(enum lap_status status, uint32_t elapsed_
 	}
 }
 
-/* 图像 x 向右侧挡杆减小。以 O 为零，按两侧各自的 50 mm 标尺分段换算。 */
+/* 相机 x 越小，钢球越靠右。以 O 为零，两侧分别按实测的 50 mm 标尺换算，球位向右为正。 */
 int contest_ball_mm(int raw_x)
 {
 	int dx = RULER_X_O - raw_x;
@@ -102,6 +108,7 @@ int contest_ball_mm(int raw_x)
 	return (dx * 50 + (dx >= 0 ? span / 2 : -span / 2)) / span;
 }
 
+/* 新一轮从水平确认开始，同时保存起始时间及首个相机序号。 */
 void position_begin(struct position_run *run, int x, uint16_t seq, uint32_t now)
 {
 	*run = (struct position_run){ .leg = LEVEL_SHAFT, .start = now, .sample_at = now,
@@ -109,6 +116,7 @@ void position_begin(struct position_run *run, int x, uint16_t seq, uint32_t now)
 				      .have_sample = x >= 0 };
 }
 
+/* 复用第一题的位置控制器，将三段目标切换为操作者选择的固定点。 */
 void position_begin_target(struct position_run *run, int target_mm, int x, uint16_t seq, uint32_t now)
 {
 	position_begin(run, x, seq, now);
@@ -116,6 +124,7 @@ void position_begin_target(struct position_run *run, int target_mm, int x, uint1
 	run->target_mm = target_mm;
 }
 
+/* 更换目标时清除旧点的停留时间和积分，避免带着上一个目标的偏置启动。 */
 void position_retarget(struct position_run *r, int target_mm)
 {
 	if (r->target_mm == target_mm)
@@ -128,6 +137,7 @@ void position_retarget(struct position_run *r, int target_mm)
 	r->trim_milli_cd = 0;
 }
 
+/* 按编码器反馈时间确认轴在水平位置连续稳定，再进入第一段移球。 */
 void position_check_level(struct position_run *r, bool at_level, uint32_t encoder_at)
 {
 	if (r->leg != LEVEL_SHAFT)
@@ -143,6 +153,7 @@ void position_check_level(struct position_run *r, bool at_level, uint32_t encode
 	}
 }
 
+/* 在目标附近维护多组重叠窄带，只累计有观测的低速停留时间。 */
 static bool position_settled(struct position_run *r, int error, uint32_t at, unsigned int unseen_ms)
 {
 	_Static_assert(POSITION_BANDS <= 32, "Dwell bands must fit in the active mask");
@@ -178,7 +189,7 @@ static bool position_settled(struct position_run *r, int error, uint32_t at, uns
 	return false;
 }
 
-/* 钢球静止时所需轴角随位置变化。左 50 mm 处实测约 −8°～−11°，O 点约 −3°～−5°，右 50 mm 处接近 0°。先按保守值给定，再由积分微调。 */
+/* 钢球静止所需的轴角随位置变化。左 50 mm 处实测约 −8°～−11°，O 点约 −3°～−5°，右 50 mm 处接近 0°。以保守值给定基础轴角，再由积分微调。 */
 static int position_bias_cd(int mm)
 {
 	if (mm <= -50)
@@ -188,8 +199,7 @@ static int position_bias_cd(int mm)
 	return -300 + mm * (mm < 0 ? 10 : 6);
 }
 
-/* Resume from two fresh measured packets. During travel the ball can move
- * appreciably between them. A completed hold only reacquires its left mark. */
+/* 长时间失测后，核对两帧新实测的序号、间隔与位移以恢复跟踪。途中允许球继续滚动，已完成的左点保持只在左标记附近重新接管。 */
 static bool reacquire_position(struct position_run *r, enum ball_status view, int x, uint16_t seq, uint32_t at)
 {
 	int mm = contest_ball_mm(x);
@@ -219,6 +229,7 @@ static bool reacquire_position(struct position_run *r, enum ball_status view, in
 	return false;
 }
 
+/* 每次新实测先估球速，再判定停稳及换段，最后将位置、速度和积分补偿合成为限幅的目标轴角。 */
 enum contest_notice position_update(struct position_run *r, enum ball_status view, int x, uint16_t seq,
 				    uint32_t sample_at, uint32_t now)
 {
@@ -245,6 +256,7 @@ enum contest_notice position_update(struct position_run *r, enum ball_status vie
 			return NOTICE_NONE;
 		r->waiting_vision = false;
 	}
+	/* 预测包和同一序号的重复包都不能提供新的位移或延长停稳时间。 */
 	if (view != BALL_TRACKED || seq == r->seq)
 		return NOTICE_NONE;
 	uint32_t dt = sample_at - r->sample_at;
@@ -278,6 +290,7 @@ enum contest_notice position_update(struct position_run *r, enum ball_status vie
 		if (r->leg == MOVE_TARGET) {
 			r->leg = HOLD_TARGET;
 		} else if (r->leg == MOVE_LEFT) {
+			/* 以最后一段满足条件的相机采样时刻锁存成绩，随后仍执行左点闭环。 */
 			r->finished_ms = sample_at - r->start;
 			r->leg = HOLD_LEFT;
 		} else {

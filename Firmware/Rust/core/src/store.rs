@@ -1,12 +1,19 @@
+// 通过 Flash 后端接口实现暂存、提交和恢复安装，便于模拟中途掉电。
+
 use crate::ota::*;
 
-/// Backends must enforce slot boundaries and report torn reads/writes as errors.
+/// 存储后端须校验分区边界，并将中断造成的不完整读写作为错误返回。
 pub trait Flash {
+    // 检查范围后把 Flash 内容读入调用方缓冲区。
     fn read(&mut self, address: u32, data: &mut [u8]) -> Result<()>;
+    // 按页擦除，断电或越界必须作为错误返回。
     fn erase(&mut self, page: u32) -> Result<()>;
+    // 在允许的分区内编程已对齐的数据。
     fn program(&mut self, address: u32, data: &[u8]) -> Result<()>;
+    // 向后端报告复制或校验进度。
     fn progress(&mut self, _done: u32, _total: u32) {}
 }
+// 从 Flash 分段读回并验证镜像。
 pub fn verify(flash: &mut impl Flash, address: u32, header: Header) -> Result<()> {
     Header::decode(&header.encode())?;
     let mut data = [0; CHUNK];
@@ -25,6 +32,7 @@ pub fn verify(flash: &mut impl Flash, address: u32, header: Header) -> Result<()
     }
     Ok(())
 }
+// 读取镜像元数据并验证可启动的应用。
 pub fn image(flash: &mut impl Flash, address: u32, meta: u32) -> Result<Header> {
     let mut b = [0; 32];
     flash.read(meta, &mut b)?;
@@ -40,6 +48,7 @@ pub struct Download {
     pub committed: bool,
 }
 impl Download {
+    // 核对镜像头和会话状态，准备暂存区。
     pub fn begin(&mut self, flash: &mut impl Flash, header: Header) -> Result<()> {
         Header::decode(&header.encode())?;
         if self.active && self.header == header {
@@ -58,6 +67,7 @@ impl Download {
         self.active = true;
         Ok(())
     }
+    // 按已确认偏移接收数据，重复包只返回已有进度。
     pub fn data(&mut self, flash: &mut impl Flash, offset: u32, data: &[u8]) -> Result<()> {
         if !self.active || self.committed {
             return Err(Status::BadState);
@@ -98,6 +108,7 @@ impl Download {
         self.received += len as u32;
         Ok(())
     }
+    // 完整校验后提交暂存镜像的元数据。
     pub fn end(&mut self, flash: &mut impl Flash) -> Result<()> {
         if self.committed {
             return Ok(());
@@ -113,6 +124,7 @@ impl Download {
         self.committed = true;
         Ok(())
     }
+    // 清除会话的下载状态。
     pub fn abort(&mut self) -> Result<()> {
         if self.committed {
             Err(Status::BadState)
@@ -122,6 +134,7 @@ impl Download {
         }
     }
 }
+// 将已提交的暂存镜像安装到应用区并校验。
 pub fn install(flash: &mut impl Flash) -> Result<()> {
     let staged = image(flash, STAGE_ADDR, STAGE_META)?;
     if image(flash, APP_ADDR, APP_META) == Ok(staged) {
@@ -144,9 +157,11 @@ pub fn install(flash: &mut impl Flash) -> Result<()> {
     flash.erase(STAGE_META)
 }
 
+// 检查地址加长度是否落在给定区间。
 pub fn within(address: u32, len: usize, base: u32, size: u32) -> bool {
     address >= base && address - base < size && len <= (size - (address - base)) as usize
 }
+// 检查访问是否只落在应用、暂存或元数据区域。
 pub fn writable(address: u32, len: usize) -> bool {
     within(address, len, APP_ADDR, IMAGE_MAX)
         || within(address, len, STAGE_ADDR, IMAGE_MAX)

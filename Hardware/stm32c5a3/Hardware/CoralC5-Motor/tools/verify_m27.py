@@ -1,10 +1,4 @@
-"""M2.7 audit against the saved live user design and independent circuit intent.
-
-Historical M2-M2.6 verifiers remain intact. This revision verifies the entire
-native net partition, not only changed nets; unchanged circuit files, identities,
-98 Core contacts, GPIO functions and local manufacturing resources are checked.
-PCB synchronization and DRC are separate reports.
-"""
+"""按保存的实物设计基线及独立电路要求检查 M2.7 的全部网络分组、器件身份、98 个触点、GPIO 功能和本地制造资源。PCB 同步与 DRC 独立核验。"""
 from pathlib import Path
 import sys,json,csv,copy,hashlib,subprocess,xml.etree.ElementTree as ET
 ROOT=Path(__file__).resolve().parents[1];DOC=ROOT/'docs'
@@ -13,6 +7,7 @@ from sexpr import parse,node,nodes,prop
 from schematic_semantic import canonical
 from pin_functions import parse_alternate_functions
 
+# 从原生 XML 提取网表树、端点分组与反查索引。
 def native(path):
     tree=ET.parse(path);groups=set();by_pin={}
     for n in tree.findall('.//nets/net'):
@@ -23,11 +18,13 @@ def native(path):
             by_pin[pin]=p
     return tree,groups,by_pin
 
+# 根据旧分组和已确认修改计算预期网络。
 def intended(before,edit):
     removed=set(edit['remove_references']);mapping=edit['pin_map'];parts=set()
     for group in before:
         part=frozenset(mapping.get(p,p) for p in group if p.split(':')[0] not in removed)
         if part:parts.add(part)
+    # 按指定端点取出所属分组。
     def take(anchor):
         found=[g for g in parts if anchor in g]
         if len(found)!=1:raise ValueError('Missing or duplicate intent anchor '+anchor)
@@ -42,11 +39,14 @@ def intended(before,edit):
     if len(flat)!=len(set(flat)):raise ValueError('Intent assigns a pin twice')
     return parts
 
+# 核验 M2.7 的完整网络、GPIO、器件及实际资源。
 def main():
     record=json.loads((DOC/'m27_revision.json').read_text(encoding='utf8'))
     base=DOC/record['baseline'];baseline=json.loads((base/'baseline.json').read_text(encoding='utf8'))
     checks=[]
+    # 记录逐项判定及差异。
     def ck(name,ok,detail=None):checks.append({'name':name,'pass':bool(ok),'detail':detail})
+    # 计算本地文件哈希。
     def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
     beforetree,before,_=native(base/'live-netlist.xml');tree,observed,pins=native(DOC/'netlist.xml')
     expected=intended(before,record['net_edit'])
@@ -95,7 +95,7 @@ def main():
         for k,z in old.items():ck(f+' existing cached '+k,canonical(z)==canonical(new.get(k)))
         for k,z in record['extra_cached_library_definitions'].get(f,{}).items():ck(f+' authorized cached '+k,canonical(z)==canonical(new.get(k)))
         ck(f+' cache addition set',set(new)-set(old)==set(record['extra_cached_library_definitions'].get(f,{})))
-    # 98-contact power and GPIO contract against a fresh Core native export.
+    # 以最新 Core 原生网表核对 98 个触点上的电源和 GPIO。
     _,_,core=native(DOC/'core_netlist.xml')
     contract=list(csv.DictReader((ROOT.parent/'Shared/interface.csv').open(encoding='utf-8-sig')))
     ck('98 unique Core contacts',len(contract)==98 and len({r['contact'] for r in contract})==98)
@@ -120,6 +120,7 @@ def main():
     for a in assignments:
         af=a.get('af')
         if af not in [None,'','None']:ck(a['signal']+' datasheet alternate function',functions.get((a['gpio'],a['function']))==int(af))
+    # 检查实际网络是否包含精确的预期端点集合。
     def group(anchor,expected):ck(anchor+' exact net',pins.get(anchor,set())==set(expected.split()))
     group('J14:A48','D3:1 J14:A48 J14:B48 R5:1')
     ck('Core USB diode cathode on Core system rail',{'D2:1','U2:2','U2:3','J13:A48','J13:B48'}<=core['J13:A48'])
@@ -149,6 +150,7 @@ def main():
             pp={p[1]:p for p in nodes(part,'pad')};gap=abs(float(node(pp['2'],'at')[1])-float(node(pp['1'],'at')[1]))-(float(node(pp['1'],'size')[1])+float(node(pp['2'],'size')[1]))/2
             ck(ref+' largest selected 0603 gap',abs(gap-.85)<1e-8)
     ck('only exact XT60 model missing',missing==['J1'])
+    # 从本地封装读取焊盘定义。
     def lands(name):
         f=parse((ROOT/'Motor.pretty'/(name+'.kicad_mod')).read_text(encoding='utf8'))
         return sorted((p[1],*map(float,node(p,'at')[1:3]),*map(float,node(p,'size')[1:3])) for p in nodes(f,'pad'))
@@ -157,7 +159,7 @@ def main():
     mx=[(str(i+1),-3.125+i*1.25,0,.7,1.7) for i in range(6)]+[('MP',-5.225,-2.5,1.8,2.5),('MP',5.225,-2.5,1.8,2.5)]
     ck('MX125 six-pin lands and 3mm side-pad outer offsets',lands('ZX_MX1.25_6PWT')==sorted(mx))
     ck('two TFT mounting holes retained',all(r in current and node(current[r][1],'in_bom')[1]=='no' for r in ['H1','H2']))
-    # Primary datasheet pin identities are deliberately specified here.
+    # 这些引脚身份独立取自原厂数据手册。
     for ref,identity in [('U1',{'1':'EN','2':'FB','3':'AGND','4':'PG','5':'SS','6':'SW','7':'BOOT','8':'VIN','9':'PGND','10':'MODE'}),('J19',{'1':'GND','2':'5V_IN','3':'SCL_NC','4':'SDA_NC','5':'UART4_TX','6':'UART4_RX','MP':'~'}),('U16',{'1':'nFAULT','2':'IN1','3':'IN1','4':'IN2','5':'AUX','6':'EN','7':'CHG','8':'CHG_HI','9':'REF_RTN','10':'REF','11':'CC1','12':'GND','13':'CC2','14':'OUT','15':'OUT','16':'nDEBUG','17':'nAUDIO','18':'nPOL','19':'nUFP','20':'nLD_DET','21':'EP_GND'})]:
         f,z=current[ref];definition=next(x for x in nodes(node(schemas[f],'lib_symbols'),'symbol') if x[1]==node(z,'lib_id')[1]);found={node(p,'number')[1]:node(p,'name')[1] for s in nodes(definition,'symbol') for p in nodes(s,'pin')}
         ck(ref+' primary manufacturer pinout',found==identity)

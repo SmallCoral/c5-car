@@ -1,3 +1,5 @@
+// STM32C5 板级寄存器操作，负责时钟、GPIO、编码器、PWM 和故障停车。
+
 use crate::{
     registers::*,
     runtime::{self, InterruptGuard, Shared},
@@ -9,31 +11,38 @@ use coral_core::{
 };
 use core::sync::atomic::{AtomicU32, Ordering};
 
-// Only internal driver modules may access MMIO. Addresses are pinned ST register constants.
+// 只有底层驱动可以访问内存映射寄存器，地址取自固定版本的 ST 定义。
 #[inline(always)]
+// 从指定内存映射地址执行易失读取。
 pub(crate) fn read(address: u32) -> u32 {
     unsafe { core::ptr::read_volatile(address as *const u32) }
 }
 #[inline(always)]
+// 向寄存器执行易失写入。
 pub(crate) fn write(address: u32, value: u32) {
     unsafe { core::ptr::write_volatile(address as *mut u32, value) }
 }
 #[inline(always)]
+// 按掩码修改寄存器的目标位。
 pub(crate) fn modify(address: u32, clear: u32, set: u32) {
     write(address, (read(address) & !clear) | set);
 }
+// 按字节写外设数据寄存器。
 pub(crate) fn write8(address: u32, value: u8) {
     unsafe { core::ptr::write_volatile(address as *mut u8, value) }
 }
+// 通过置位或复位寄存器设置单个 GPIO 电平。
 fn pin(port: u32, n: u32, high: bool) {
     write(port + GPIO_BSRR, 1 << (n + if high { 0 } else { 16 }));
 }
+// 配置指定引脚的输入、输出或复用模式。
 fn mode(port: u32, n: u32, mode: u32, pull: u32) {
     modify(port + GPIO_PUPDR, 3 << (n * 2), pull << (n * 2));
     modify(port + GPIO_OTYPER, 1 << n, 0);
     modify(port + GPIO_OSPEEDR, 3 << (n * 2), 0);
     modify(port + GPIO_MODER, 3 << (n * 2), mode << (n * 2));
 }
+// 为引脚选择目标外设的复用功能。
 fn alternate(port: u32, n: u32, af: u32, pull: u32) {
     modify(
         port + GPIO_AFR + (n / 8) * 4,
@@ -43,11 +52,12 @@ fn alternate(port: u32, n: u32, af: u32, pull: u32) {
     mode(port, n, 2, pull);
     modify(port + GPIO_OSPEEDR, 3 << (n * 2), 2 << (n * 2));
 }
+// 将定时器配置成两相正交编码器计数。
 fn encoder_init(base: u32) {
     write(base + TIM_PSC, 0);
     write(base + TIM_ARR, u32::MAX);
-    // Direct TI1/TI2, N8 digital filtering, rising polarity, quadrature x4.
-    // LL encodes IC configuration in the upper halfword; CCMR1 uses bits 7:4.
+    // TI1、TI2 直接输入，八点数字滤波、上升沿极性，正交四倍频计数。
+    // LL 将输入捕获配置编码在高半字，写 CCMR1 时取对应的第 7～4 位。
     let filter = LL_TIM_IC_FILTER_FDIV1_N8 >> 16;
     write(base + TIM_CCMR1, 1 | (1 << 8) | filter | (filter << 8));
     write(base + TIM_SMCR, LL_TIM_CLK_ENCODER_X4_TI12);
@@ -67,6 +77,7 @@ static WHEELS: Shared<Wheels> = Shared::new(Wheels {
     left: 0,
     right: 0,
 });
+// 初始化时钟、GPIO、编码器和轮 PWM。
 pub fn init() -> bool {
     modify(RCC_BASE + RCC_AHB2ENR, 0, GPIO_CLOCKS);
     let _ = read(RCC_BASE + RCC_AHB2ENR);
@@ -161,15 +172,18 @@ pub fn init() -> bool {
     runtime::enable_interrupts();
     true
 }
+// 读取毫秒滴答计数。
 pub fn millis() -> u32 {
     TICKS.load(Ordering::Relaxed)
 }
+// 用板级时钟等待指定毫秒数。
 pub fn delay(ms: u32) {
     let start = millis();
     while !elapsed(millis(), start, ms) {
         runtime::wait();
     }
 }
+// 把按键电平转换为按下状态位。
 pub fn keys() -> u8 {
     let low = |p: u32, n: u32| u8::from(read(p + GPIO_IDR) & (1u32 << n) == 0);
     low(GPIOD_BASE, 15)
@@ -177,43 +191,53 @@ pub fn keys() -> u8 {
         | (low(GPIOA_BASE, 10) << 2)
         | (low(GPIOH_BASE, 3) << 3)
 }
+// 读取轮驱动故障信号。
 pub fn faults() -> u8 {
     u8::from(read(GPIOH_BASE + GPIO_IDR) & (1 << 4) == 0)
         | (u8::from(read(GPIOC_BASE + GPIO_IDR) & (1 << 10) == 0) << 1)
 }
+// 读取灰度探头输入位。
 pub fn gray() -> u8 {
     (read(GPIOE_BASE + GPIO_IDR) >> 7) as u8
 }
+// 读取编码器 A/B 两相电平。
 pub fn phases() -> u8 {
     let a = read(GPIOA_BASE + GPIO_IDR);
     (a & 3) as u8
         | (u8::from(read(GPIOB_BASE + GPIO_IDR) & 8 != 0) << 2)
         | (u8::from(a & (1 << 15) != 0) << 3)
 }
+// 按轮号读取对应定时器计数。
 pub fn encoder(side: usize) -> u32 {
     let base = if side == 0 { TIM5_BASE } else { TIM2_BASE };
     read(base + TIM_CNT)
 }
+// 设置板载指示灯电平。
 pub fn led(on: bool) {
     pin(GPIOE_BASE, 3, on);
 }
+// 从硬件侧撤去轮输出。
 fn stop_outputs() {
     pin(GPIOA_BASE, 3, false);
     write(TIM4_BASE + TIM_CCR4, 0);
     write(TIM4_BASE + TIM_CCR1, 0);
 }
+// 结束当前轮驱动并关闭 PWM。
 pub fn wheels_stop() {
     WHEELS.with(|w| {
         stop_outputs();
         w.guard.active = false;
     });
 }
+// 更新主循环心跳供停机保护使用。
 pub fn heartbeat() {
     WHEELS.with(|w| w.guard.heartbeat = millis());
 }
+// 读取轮驱动运行状态快照。
 pub fn wheel_state() -> (bool, Trip, u8) {
     WHEELS.with(|w| (w.guard.active, w.guard.trip, w.guard.faults))
 }
+// 记录启动条件，并先以零 PWM 等待驱动唤醒。
 pub fn wheels_start(left: i32, right: i32, continuous: bool) -> bool {
     if !(-WHEEL_LIMIT..=WHEEL_LIMIT).contains(&left)
         || !(-WHEEL_LIMIT..=WHEEL_LIMIT).contains(&right)
@@ -233,6 +257,7 @@ pub fn wheels_start(left: i32, right: i32, continuous: bool) -> bool {
         true
     })
 }
+// 核对硬件故障、使能和主循环期限。
 fn check(w: &mut Wheels) {
     w.guard
         .check(millis(), faults(), read(GPIOA_BASE + GPIO_IDR) & 8 != 0);
@@ -240,6 +265,7 @@ fn check(w: &mut Wheels) {
         stop_outputs();
     }
 }
+// 由前台轮询推进轮驱动状态。
 pub fn wheels_poll() {
     WHEELS.with(|w| {
         check(w);
@@ -250,16 +276,20 @@ pub fn wheels_poll() {
     });
 }
 #[unsafe(no_mangle)]
+// 在毫秒中断中更新时钟并检查停机条件。
 extern "C" fn SysTick() {
     TICKS.fetch_add(1, Ordering::Relaxed);
     WHEELS.with(check);
 }
+// 控制 LCD 复位脚。
 pub fn lcd_reset(on: bool) {
     pin(GPIOB_BASE, 0, on);
 }
+// 设置背光开关。
 pub fn backlight(on: bool) {
     pin(GPIOA_BASE, 4, on);
 }
+// 通过 SPI 区分命令和像素数据后写 LCD。
 pub fn lcd_write(data: bool, bytes: &[u8]) -> bool {
     if bytes.is_empty() || bytes.len() > 65535 {
         return false;
@@ -286,6 +316,7 @@ pub fn lcd_write(data: bool, bytes: &[u8]) -> bool {
     pin(GPIOC_BASE, 4, true);
     ok
 }
+// 在不可恢复故障中关断运动并进入停止状态。
 pub fn panic_stop() -> ! {
     let _interrupts = InterruptGuard::lock();
     modify(RCC_BASE + RCC_AHB2ENR, 0, 1);

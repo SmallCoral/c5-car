@@ -1,4 +1,4 @@
-// Original Coral-C5 5x7 glyph data, shared with the C baseline.
+// Coral-C5 的 5×7 点阵，与 C 版基线共用同一份字形。
 pub const CHARS: &[u8] = b"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ-+:/%.? ";
 pub const GLYPHS: [[u8; 7]; 44] = [
     [14,17,19,21,25,17,14],

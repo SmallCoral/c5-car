@@ -1,16 +1,24 @@
+// Emm 帧与步进状态机，借助可替换串口接口在设备和主机测试间共用。
+
 use crate::{STEP_ADDRESS, elapsed};
 
 pub trait Serial {
+    // 串口后端接收一整条指令，返回能否送入发送队列。
     fn write(&mut self, bytes: &[u8]) -> bool;
+    // 尝试读取一个字节，暂时无数据时返回 None。
     fn read(&mut self) -> Option<u8>;
+    // 返回累计接收错误数，供状态机判断收到的应答是否可信。
     fn rx_errors(&self) -> u32;
 }
+// 生成带地址的使能或失能指令。
 pub fn enable(on: bool) -> [u8; 6] {
     [STEP_ADDRESS, 0xf3, 0xab, u8::from(on), 0, 0x6b]
 }
+// 生成 FE 停轴报文。
 pub fn stop() -> [u8; 5] {
     [STEP_ADDRESS, 0xfe, 0x98, 0, 0x6b]
 }
+// 按方向与目标转速组装 F6 报文。
 pub fn velocity(reverse: bool, rpm: u16) -> [u8; 8] {
     [
         STEP_ADDRESS,
@@ -37,9 +45,11 @@ pub struct Parser {
     pub rejected: u32,
 }
 impl Parser {
+    // 清空未完成的应答字节。
     pub fn clear(&mut self) {
         self.used = 0;
     }
+    // 逐字节判断驱动应答是否完整有效。
     pub fn feed(&mut self, byte: u8, now: u32) -> Option<Reply> {
         if self.used != 0 && elapsed(now, self.last_byte, 30) {
             self.clear();
@@ -129,12 +139,15 @@ pub struct Stepper {
     pub rpm_valid: bool,
 }
 impl Stepper {
+    // 根据最近有效通信时间判断驱动在线。
     pub fn online(&self, now: u32) -> bool {
         self.seen && !elapsed(now, self.last_reply, 1000)
     }
+    // 判断状态机是否涉及运动。
     pub fn running(&self) -> bool {
         matches!(self.phase, Phase::Enable | Phase::Speed | Phase::Moving)
     }
+    // 取得步进阶段的显示名。
     pub fn name(&self, now: u32) -> &'static str {
         if self.phase == Phase::Boot {
             "BOOT"
@@ -150,6 +163,7 @@ impl Stepper {
             "READY"
         }
     }
+    // 向传输后端写入命令并记录待确认项。
     fn send(&mut self, io: &mut impl Serial, bytes: &[u8], now: u32) -> bool {
         if !io.write(bytes) {
             self.error = 0xe1;
@@ -159,6 +173,7 @@ impl Stepper {
         self.sent_at = now;
         true
     }
+    // 请求撤去驱动使能。
     fn disable(&mut self, io: &mut impl Serial, now: u32) {
         self.phase = Phase::Disable;
         if !self.send(io, &enable(false), now) {
@@ -166,6 +181,7 @@ impl Stepper {
             self.sent_at = now;
         }
     }
+    // 取消旧命令并进入停止流程。
     pub fn stop(&mut self, io: &mut impl Serial, now: u32) {
         self.cleanup_only = matches!(self.phase, Phase::Boot | Phase::Offline);
         self.phase = Phase::Stop;
@@ -174,6 +190,7 @@ impl Stepper {
             self.disable(io, now);
         }
     }
+    // 检查当前状态后进入使能与运动请求流程。
     pub fn start(&mut self, io: &mut impl Serial, reverse: bool, rpm: u16, now: u32) -> bool {
         if self.phase != Phase::Idle
             || !self.online(now)
@@ -192,6 +209,7 @@ impl Stepper {
         self.phase = Phase::Enable;
         true
     }
+    // 按正在等待的命令处理驱动回复。
     fn reply(&mut self, io: &mut impl Serial, r: Reply, now: u32) {
         self.replies = self.replies.wrapping_add(1);
         if self.pending == 0 || r.command != self.pending {
@@ -256,6 +274,7 @@ impl Stepper {
             _ => {}
         }
     }
+    // 处理收包、超时与状态切换，维持驱动通信节拍。
     pub fn poll(&mut self, io: &mut impl Serial, now: u32) {
         let errors = io.rx_errors();
         if errors != self.rx_errors {
