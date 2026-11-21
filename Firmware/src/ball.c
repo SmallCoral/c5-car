@@ -61,14 +61,13 @@ static void observe_lcd(struct ball_receiver *rx, uint32_t now)
 	rx->lcd_direct = false;
 	if (!ball_v2_measured(rx, now))
 		return;
-	/* Allow endpoint jitter while rejecting detections beyond the tube. */
+	/* 挡杆附近允许少量像素抖动，落在管外的观测不进入候选。 */
 	if (rx->x < RULER_X_RIGHT - 16 || rx->x > RULER_X_LEFT + 8) {
 		rx->lcd_candidate_frames = 0;
 		return;
 	}
 	if (rx->lcd_seen && abs((int)rx->x - rx->lcd_x) > 56) {
-		/* The operator can relocate a stationary ball. Reacquire from
-		 * neighboring direct observations without requiring it to roll. */
+		/* 静止时操作者可能挪动钢球。用相邻的直接观测重新确认位置，无需先让球滚动。 */
 		if (now - rx->lcd_candidate_at > 750 || abs((int)rx->x - rx->lcd_candidate_x) > 32)
 			rx->lcd_candidate_frames = 0;
 		rx->lcd_candidate_x = rx->x;
@@ -191,7 +190,7 @@ struct ball_view ball_view_at(const struct ball_receiver *rx, uint32_t now)
 {
 	if (!rx->received || now - rx->last_ms >= BALL_TIMEOUT_MS)
 		return (struct ball_view){ .status = BALL_OFFLINE };
-	/* A removed ball can still produce predicted X values. */
+	/* 拿走钢球后相机仍可能发预测坐标。此处只接收新鲜的直接观测。 */
 	if (!ball_v2_measured(rx, now))
 		return (struct ball_view){ .status = BALL_MISSING };
 	if (rx->uncertain)

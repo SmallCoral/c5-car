@@ -1,43 +1,15 @@
-# 项目目录与提交范围
+# 目录与维护入口
 
-当前使用 Core + Motor 进行校赛 A 题实物联调。用途与状态从[根 README](../../README.md)进入，具体任务从[文档索引](../README.md)进入。
-
-| 目录 | 内容与维护入口 |
+| 目录 | 用途 |
 | --- | --- |
-| `Firmware` | 当前 LL 应用、无线引导程序、固定厂商依赖、主机测试和 BLE 工具；[固件说明](../../Firmware/README.md) |
-| `Firmware/Rust` | 独立 Rust 应用、引导程序、电脑端 CLI 与测试；[Rust 说明](../../Firmware/Rust/README.md) |
-| `Firmware/Rust/.run` | 可移植的 RustRover 检查和 ARM 构建配置，不包含机器环境或烧录步骤 |
-| `Firmware/validation` | 实物遥测、烧录输出、测试日志、源码/产物哈希；按日期保存，历史记录不改写成当前结果 |
-| `Firmware/releases` | [实车固件](../../Firmware/releases/README.md)、恢复命令和第一题的调试符号 |
-| `Firmware/26h` | [MaixCAM2 钢球识别](../../Firmware/26h/README.md)、V2 发送和图传辅助脚本。设备模型单独部署。 |
-| `Hardware/stm32c5a3/Hardware` | Core、Motor、Transfer 的 KiCad 原生工程、随板库和模型；[硬件说明](../../Hardware/stm32c5a3/README.md) |
-| `Hardware/.../Shared` | Core/Motor 的 98 触点合同、共用参考与设计工具 |
-| `Mechanical` | 机械参考总装、模型、参数、生成器及验证；[机械说明](../../Mechanical/README.md) |
-| `Documentation/how-to` | 编译、接线、联调、故障定位和无线升级操作步骤 |
-| `Documentation/reference` | 接口、GPIO、遥测、升级协议、采购和资料索引 |
-| `Documentation/explanation` | 比赛总体方案、机械与控制设计依据 |
-| `Documentation/validation` | 按日期记录工具、版本、检查结果与未验证项；[验证索引](../validation/README.md) |
-| `Documentation` 其他资料目录 | 赛题原件、厂家文档和同学参考代码；保留原始来源与历史边界 |
-| `Images` | 项目图片；[图片索引](../../Images/README.md) |
-| `.agent/main` | 当前交接和历史交接；[继续开发](../../.agent/main/handoff.md) |
+| [Firmware](../../Firmware/README.md) | 实车 C/LL 应用、引导程序、固定版本厂商库和编译配置 |
+| [Firmware/tests](../../Firmware/tests) | 自动回归和两条实车回放输入，比赛镜像构建会运行主机 C 测试 |
+| [Firmware/releases](../../Firmware/releases/README.md) | 三个已接入题目的实车恢复包及调试符号 |
+| [Firmware/26h](../../Firmware/26h/README.md) | MaixCAM2 识别与图传。设备模型单独部署 |
+| [Firmware/Rust](../../Firmware/Rust/README.md) | 独立 Cargo 工作区、离线测试和主机端工具 |
+| [Hardware](../../Hardware/stm32c5a3/README.md) | Core、Motor、Transfer 三个 KiCad 工程，板级库、设计检查输入、接口合同与采购表 |
+| [Mechanical](../../Mechanical/README.md) | 参数、FreeCAD 源模型、STEP 和装配预览 |
+| [Documentation](../README.md) | 赛题、接线、操作、协议及主要实车记录 |
+| [.agent/main](../../.agent/main/handoff.md) | 继续实车开发要用的标定与最新状态 |
 
-## 当前固件入口
-
-旧 MX2 生成工程已由 LL 工程取代，不再作为构建入口；旧版本仍可从 Git 历史恢复。不要重新生成 MX2 工程覆盖当前 `Firmware`。
-
-普通构建与测试不会连接板子；`flash-wireless.ps1` 和 CMake `wireless_flash` 才会进行无线烧录。首次安装和引导程序救援使用合并包，见[无线升级说明](../how-to/wireless-update.md)。
-
-Rust 使用自己的 Cargo workspace 和锁文件，按要求只修改代码、做离线验证。
-原 C/LL 源码、Python 工具和厂家参考资料继续保留；Rust 构建不依赖 `.scratch` 中的本机生成脚本。
-
-## 不纳入 Git 的本机文件
-
-`.gitignore` 排除构建目录、Python 环境、`.scratch`、IDE 会话、KiCad `.kicad_prl`/锁文件/自动历史，以及 `.agent/diagnostics` 中的原始 USB 扫描和 Flash 备份。这些本机文件仍保留在磁盘上。
-
-Rust 的 `target/`、`dist/` 和 `.idea/` 不提交；`Cargo.lock`、`.cargo/config.toml`、`.run/` 和测试用固定二进制样本需要提交。
-
-KiCad 自动历史、`.kicad_prl` 和两份 Python 字节码曾被跟踪，2026-11-16 起停止跟踪；旧提交中的历史不改写。正式设计、模型、BOM、厂家资料以及用于解释检查结论的日期记录继续提交。
-
-## 验证边界
-
-工程构建、主机测试、原理图 ERC、PCB DRC 和实物运行分别记录。整理文档或保存硬件文件不意味着完成新的硬件验证。采购表保留查询日期，历史快照不代表当前库存。
+本机虚拟环境、IDE 状态、构建产物、热点配置、一次性抓包和临时工作副本由 Git 忽略。新题在合并固件上开发，增加题目入口时同步补充回归。实车定版后保留恢复包，记录应用 CRC32、长度和实际测量条件。

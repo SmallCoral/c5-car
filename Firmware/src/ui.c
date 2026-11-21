@@ -402,7 +402,7 @@ static const struct event_description events[EVENT_COUNT] = {
 	{ "第二题", "循线停车", "A > A  顺时针一圈", "限时  30 S", "停车误差  3 CM" },
 	{ "第三题", "载球半圈", "A > B  保持中心", "限时  12 S", "球位误差  2 CM" },
 	{ "第四题", "载球整圈", "一圈  保持中心", "限时  40 S", "球位误差  2 CM" },
-	{ "发挥一", "定点稳球", "一圈  指定球位", "可调  -5 / +5 CM", "球位误差  2 CM" },
+	{ "发挥一", "定点稳球", "一圈  指定球位", "目标  -5 / +5 CM", "球位误差  2 CM" },
 	{ "发挥二", "图传回放", "实时显示钢球", "全程录像", "回放完整测试" },
 };
 
@@ -411,11 +411,27 @@ static const char *const notices[] = {
 	"已停止", "已完成", "检查赛道和灰度", "待接入", "SHAFT LIMIT",
 };
 
-static void contest_ruler(uint8_t *pixels, const struct ball_view *ball, int y)
+static int ruler_mm_column(int mm)
+{
+	int span = mm < 0 ? RULER_X_MINUS_5 - RULER_X_O : RULER_X_O - RULER_X_PLUS_5;
+	int dx = (mm * span + (mm < 0 ? -25 : 25)) / 50;
+	return pipe_column(ball_ruler_position(RULER_X_O - dx));
+}
+
+static void contest_ruler(uint8_t *pixels, const struct ball_view *ball, int y, int target_mm)
 {
 	const int marks[] = { RULER_X_LEFT, RULER_X_MINUS_5, RULER_X_O, RULER_X_PLUS_5, RULER_X_RIGHT };
 	const char *const labels[] = { "L", "-5", "O", "+5", "R" };
-	rect(pixels, 8, y, 113, 1, CYAN);
+	const int left = pipe_column(0), right = pipe_column(1000);
+	if (clip_top >= y + 12 || clip_bottom <= y - 18)
+		return;
+	rect(pixels, left, y - 3, right - left + 1, 7, MUTED);
+	rect(pixels, left + 1, y - 2, right - left - 1, 5, PANEL);
+	int first_cm = contest_ball_mm(RULER_X_LEFT) / 10;
+	int last_cm = contest_ball_mm(RULER_X_RIGHT) / 10;
+	for (int cm = first_cm; cm <= last_cm; cm++)
+		rect(pixels, ruler_mm_column(cm * 10), y - 2, 1, 2, CYAN);
+	rect(pixels, left, y, right - left + 1, 1, CYAN);
 	for (unsigned int i = 0; i < 5; i++) {
 		int x = pipe_column(ball_ruler_position(marks[i]));
 		rect(pixels, x, y, 1, 4, CYAN);
@@ -427,6 +443,11 @@ static void contest_ruler(uint8_t *pixels, const struct ball_view *ball, int y)
 		if (ball->status == BALL_LAST_SEEN)
 			rect(pixels, x - 1, y - 2, 3, 3, BG);
 	}
+	/* Keep both marks visible when the ball reaches the target. */
+	int col = ruler_mm_column(target_mm);
+	for (int row = 0; row < 5; row++)
+		rect(pixels, col - 4 + row, y - 11 + row, 9 - 2 * row, 1, GREEN);
+	text(pixels, 109, y - 18, "CM", 1, MUTED);
 }
 
 static void contest_page(uint8_t *pixels, const struct ui_state *s)
@@ -435,11 +456,13 @@ static void contest_page(uint8_t *pixels, const struct ui_state *s)
 	const struct event_description *e = &events[m->item];
 	bool home = m->page == MENU_HOME, tools_page = m->page == MENU_TOOLS;
 	bool list = home || tools_page;
-	bool tune = m->page == MENU_DETAIL && m->item == EVENT_OFFSET;
+	bool offset = m->item == EVENT_OFFSET;
+	bool tune = offset && (m->page == MENU_DETAIL || (m->page == MENU_RUN && !m->offset_driving));
 	bool lap_ready = m->page == MENU_DETAIL && m->item == EVENT_LAP;
-	const char *keys[] = { "返回", list ? "上项" : tune ? "+1" : "",
-			       list ? "下项" : tune ? "-1" : lap_ready ? "SPD" : "",
-			       list ? "进入" : m->page == MENU_DETAIL ?
+	const char *keys[] = { "返回", list ? "上项" : tune ? "-1" : "",
+			       list ? "下项" : tune ? "+1" : lap_ready ? "SPD" : "",
+			       list ? "进入" : tune ? (m->page == MENU_DETAIL ? "稳球" : "RUN") :
+			       m->page == MENU_DETAIL ?
 			       (m->item <= EVENT_LAP && m->notice != NOTICE_TRAVEL ? "启动" : "确认") :
 			       m->page == MENU_RUN ? "停止" : "重选" };
 	char buf[36];
@@ -478,6 +501,31 @@ static void contest_page(uint8_t *pixels, const struct ui_state *s)
 	menu_text(pixels, 6, 23, e->number, CYAN);
 	menu_text(pixels, 62, 23, e->title, WHITE);
 	rect(pixels, 4, 42, 120, 1, EDGE);
+	if (offset && (m->page == MENU_DETAIL || m->page == MENU_RUN)) {
+		snprintf(buf, sizeof(buf), "目标  %+d MM", m->target_mm);
+		menu_text(pixels, 6, 49, buf, GREEN);
+		if (s->position_seen)
+			snprintf(buf, sizeof(buf), "实测  %+d MM", s->ball_mm);
+		else
+			snprintf(buf, sizeof(buf), "等待球位");
+		menu_text(pixels, 6, 69, buf, s->position_seen ? AMBER : MUTED);
+		contest_ruler(pixels, &s->ball, 103, m->target_mm);
+		if (m->page == MENU_DETAIL) {
+			menu_text(pixels, 6, 121, "SW4 -   SW3 +", MUTED);
+			menu_text(pixels, 6, 141, m->notice ? notices[m->notice] : "SW2  稳球", m->notice ? AMBER : GREEN);
+		} else if (!m->offset_driving) {
+			menu_text(pixels, 6, 121, s->leg == LEVEL_SHAFT ? "LEVEL  0 DEG" :
+				  !s->offset_ready ? "WAIT VISION" : s->leg == HOLD_TARGET ? "保持" : "调节中", CYAN);
+			menu_text(pixels, 6, 141, s->offset_ready ? "SW2  RUN" : "SW4 -   SW3 +", GREEN);
+		} else {
+			snprintf(buf, sizeof(buf), "ENC %lu/%u", (unsigned long)s->lap_counts, LAP_OFFSET_DISTANCE_COUNTS);
+			text(pixels, 6, 124, buf, 1, MUTED);
+			snprintf(buf, sizeof(buf), "用时  %lu.%02lu S", (unsigned long)(s->event_ms / 1000),
+				 (unsigned long)(s->event_ms / 10 % 100));
+			menu_text(pixels, 6, 141, buf, WHITE);
+		}
+		return;
+	}
 	if (m->page == MENU_DETAIL) {
 		menu_text(pixels, 6, 52, e->route, WHITE);
 		menu_text(pixels, 6, lap_ready ? 70 : 78, e->limit, MUTED);
@@ -490,29 +538,27 @@ static void contest_page(uint8_t *pixels, const struct ui_state *s)
 			return;
 		}
 		if (m->item == EVENT_POSITION)
-			contest_ruler(pixels, &s->ball, 121);
-		if (tune) {
-			snprintf(buf, sizeof(buf), "目标 %+d CM", m->target_cm);
-			menu_text(pixels, 6, 118, buf, CYAN);
-		}
+			contest_ruler(pixels, &s->ball, 125, 0);
 		const char *hint = m->notice ? notices[m->notice] :
 				   m->item == EVENT_POSITION ? (s->level_ready ? "LEVEL OK" : "LEVEL  0 DEG") :
 				   "控制待接入";
 		menu_text(pixels, 6, 141, hint, m->notice || m->item > EVENT_LAP ? AMBER : CYAN);
 	} else if (m->page == MENU_RUN) {
 		if (m->item == EVENT_POSITION) {
+			int target_mm = s->leg == MOVE_RIGHT ? 50 :
+					(s->leg == MOVE_LEFT || s->leg == HOLD_LEFT) ? -50 : 0;
 			menu_text(pixels, 6, 50, s->leg == LEVEL_SHAFT ? "LEVEL  0 DEG" :
-				  s->leg == MOVE_CENTER ? "目标  O" :
-				  s->leg == MOVE_RIGHT ? "目标  +5 CM" : "目标  -5 CM", CYAN);
+				  target_mm == 0 ? "目标  O" :
+				  target_mm > 0 ? "目标  +5 CM" : "目标  -5 CM", GREEN);
 			if (s->position_seen)
 				snprintf(buf, sizeof(buf), "实测  %+d MM", s->ball_mm);
 			else
 				snprintf(buf, sizeof(buf), "等待球位");
-			menu_text(pixels, 6, 73, buf, WHITE);
+			menu_text(pixels, 6, 73, buf, s->position_seen ? AMBER : MUTED);
 			menu_text(pixels, 6, 90, s->waiting_vision ? "WAIT VISION" :
 				  s->leg == HOLD_LEFT ? "保持 -5 CM" : "调节中",
 				  s->leg == HOLD_LEFT && !s->waiting_vision ? GREEN : AMBER);
-			contest_ruler(pixels, &s->ball, 113);
+			contest_ruler(pixels, &s->ball, 118, target_mm);
 		} else {
 			menu_text(pixels, 6, 51, s->lap_departing ? "FIND LINE" : "FOLLOW", CYAN);
 			snprintf(buf, sizeof(buf), "L %d   R %d", s->lap_cps[0], s->lap_cps[1]);
@@ -535,7 +581,7 @@ static void contest_page(uint8_t *pixels, const struct ui_state *s)
 				 (unsigned long)(s->event_ms / 10 % 100));
 			menu_text(pixels, 6, 89, buf, WHITE);
 		}
-		if (m->item == EVENT_LAP && m->notice == NOTICE_FINISHED)
+		if ((m->item == EVENT_LAP || offset) && m->notice == NOTICE_FINISHED)
 			menu_text(pixels, 6, 118, "一圈停车", CYAN);
 	}
 }

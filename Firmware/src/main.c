@@ -24,15 +24,22 @@ static struct ui_state ui;
 static struct grayscale gray;
 static struct lap lap;
 static struct ball_receiver camera;
-static struct balance beam; /* Positive shaft travel rolled the ball toward physical right. */
+static struct balance beam; /* 实车轴角增大时，球滚向车身右侧。 */
 static struct balance_timer beam_time;
 static bool camera_ready;
 static struct contest_menu menu = { .page = MENU_HOME };
 static struct position_run position;
 static struct position_run prepare_level;
 static bool preparing_shaft;
+static bool holding_finish;
+/* 每个新的相机序号只统计一次，蓝牙发送抽样不影响整圈极值。 */
+static struct offset_range {
+	uint32_t start, samples, missing, outside, min_at, max_at, last_at, max_gap;
+	int target_mm, min_mm, max_mm;
+} offset_range;
 static uint32_t event_elapsed;
 static bool menu_release;
+static uint32_t target_repeat_at;
 static uint32_t reset_flags;
 static bool level_pending, mark_level;
 static bool trial_requested, f407_requested, have_lift_origin;
@@ -75,7 +82,7 @@ static void record_position(uint32_t now)
 	if (!position_recording)
 		return;
 	uint32_t elapsed_ms = now - position.start;
-	if (elapsed_ms > 14000 || position_count >= sizeof(position_trace) / sizeof(position_trace[0])) {
+	if (menu.item != EVENT_POSITION || elapsed_ms > 14000 || position_count >= sizeof(position_trace) / sizeof(position_trace[0])) {
 		position_recording = false;
 		return;
 	}
@@ -113,6 +120,7 @@ static void reset_jog(void)
 static void stop_test(uint32_t now)
 {
 	preparing_shaft = false;
+	holding_finish = false;
 	if (lap.status == LAP_RUNNING || lap.status == LAP_CHECK)
 		lap_stop(&lap, LAP_CANCELLED);
 	board_wheels_stop();
@@ -359,6 +367,30 @@ static void poll_balance(uint32_t now)
 
 static void finish_event(enum contest_notice notice, uint32_t now);
 
+static void record_offset_sample(uint32_t now)
+{
+	uint32_t t = now - offset_range.start;
+	if (ball_view_at(&camera, now).status != BALL_TRACKED) {
+		offset_range.missing++;
+		return;
+	}
+	int error = contest_ball_mm(camera.x) - offset_range.target_mm;
+	if (!offset_range.samples || error < offset_range.min_mm) {
+		offset_range.min_mm = error;
+		offset_range.min_at = t;
+	}
+	if (!offset_range.samples || error > offset_range.max_mm) {
+		offset_range.max_mm = error;
+		offset_range.max_at = t;
+	}
+	if (t - offset_range.last_at > offset_range.max_gap)
+		offset_range.max_gap = t - offset_range.last_at;
+	offset_range.last_at = t;
+	offset_range.samples++;
+	if (abs(error) > 20)
+		offset_range.outside++;
+}
+
 static void handle_remote(uint8_t byte, uint32_t now)
 {
 	if (byte == '!') {
@@ -383,6 +415,21 @@ static void handle_remote(uint8_t byte, uint32_t now)
 	}
 	remote_line[remote_used] = '\0';
 	remote_used = 0;
+	if (!strcmp(remote_line, "C5:RANGE?")) {
+		char line[160];
+		int n = snprintf(line, sizeof(line), "C5RANGE,1,%lu,%d,%lu,%lu,%d,%d,%lu,%lu,%lu,%lu,%lu",
+				 (unsigned long)offset_range.start, offset_range.target_mm,
+				 (unsigned long)offset_range.samples, (unsigned long)offset_range.missing,
+				 offset_range.min_mm, offset_range.max_mm, (unsigned long)offset_range.outside,
+				 (unsigned long)offset_range.min_at, (unsigned long)offset_range.max_at,
+				 (unsigned long)offset_range.max_gap, (unsigned long)offset_range.last_at);
+		if (n > 0 && (size_t)n + 12 <= sizeof(line)) {
+			unsigned long crc = ota_crc((const uint8_t *)line, (size_t)n);
+			snprintf(line + n, sizeof(line) - n, ",%08lX\r\n", crc);
+			serial_write(SERIAL_BT, (const uint8_t *)line, (size_t)n + 11);
+		}
+		return;
+	}
 	if (!strcmp(remote_line, "C5:MENU?")) {
 		char line[96];
 		int n = snprintf(line, sizeof(line), "C5MENU,1,%u,%u,%u,%u,%u,%u,%lu\r\n",
@@ -616,10 +663,14 @@ static void start_lap(uint32_t now, bool competition)
 	bool started;
 	int direction;
 
-	if (competition)
+	if (competition) {
+		bool carry_ball = menu.item == EVENT_OFFSET;
+		unsigned int level = carry_ball ? LAP_OFFSET_LEVEL : controls.lap_level;
+		uint32_t distance = carry_ball ? LAP_OFFSET_DISTANCE_COUNTS : LAP_DISTANCE_COUNTS;
 		started = lap_start_distance(&lap, &gray.reading, now, left, right,
-					     controls.lap_level, LAP_DISTANCE_COUNTS);
-	else
+					     level, distance);
+		lap.carry_ball = carry_ball;
+	} else
 		started = lap_start(&lap, &gray.reading, now, left, right,
 				    controls.lap_level, controls.lap_reverse);
 	if (!started) {
@@ -637,9 +688,16 @@ static void start_lap(uint32_t now, bool competition)
 
 static void finish_event(enum contest_notice notice, uint32_t now)
 {
-	event_elapsed = menu.item == EVENT_POSITION && position.leg == HOLD_LEFT ?
-			position.finished_ms : now - controls.started_at;
-	stop_test(now);
+	if (!holding_finish)
+		event_elapsed = menu.item == EVENT_POSITION && position.leg == HOLD_LEFT ?
+				position.finished_ms : now - controls.started_at;
+	if (menu.item == EVENT_OFFSET && menu.page == MENU_RUN && notice == NOTICE_FINISHED) {
+		/* 循线已切断轮驱动。车辆滑停期间及结果页继续按原目标稳球。 */
+		holding_finish = true;
+		controls.running = false;
+	} else {
+		stop_test(now);
+	}
 	menu.page = MENU_RESULT;
 	menu.notice = notice;
 }
@@ -678,23 +736,29 @@ static void start_event(uint32_t now)
 {
 	menu.notice = NOTICE_NONE;
 	event_elapsed = 0;
-	if (menu.item != EVENT_LAP && menu.item != EVENT_POSITION) {
+	if (menu.item != EVENT_LAP && menu.item != EVENT_POSITION && menu.item != EVENT_OFFSET) {
 		menu.page = MENU_RESULT;
 		menu.notice = NOTICE_PENDING;
 		return;
 	}
-	if (menu.item == EVENT_POSITION) {
+	if (menu.item == EVENT_POSITION || menu.item == EVENT_OFFSET) {
 		if (!step.travel_valid || (!preparing_shaft && !stepper_latch(&step, now))) {
 			menu.notice = position_drive_notice(now);
 			return;
 		}
 		controls.task = TASK_BALANCE;
 		preparing_shaft = false;
-		position_begin(&position, observe_start_ball(now) ? (int)camera.x : -1, camera.sequence, now);
+		int x = observe_start_ball(now) ? (int)camera.x : -1;
+		if (menu.item == EVENT_OFFSET) {
+			menu.offset_driving = false;
+			position_begin_target(&position, menu.target_mm, x, camera.sequence, now);
+		} else {
+			position_begin(&position, x, camera.sequence, now);
 #ifdef CORAL_DEBUG_KEYS
-		position_count = 0;
-		position_recording = true;
+			position_count = 0;
+			position_recording = true;
 #endif
+		}
 	} else {
 		controls.task = TASK_LAP;
 	}
@@ -709,10 +773,15 @@ static void start_event(uint32_t now)
 		start_lap(now, true);
 }
 
+static bool offset_lap_running(void)
+{
+	return menu.page == MENU_RUN && menu.item == EVENT_OFFSET && menu.offset_driving;
+}
+
 static bool position_drive_ok(uint32_t now)
 {
 	return !step.error && step.travel_valid && stepper_online(&step, now) &&
-		!(step.flags & 0x0cU) && !board_wheels_active();
+		!(step.flags & 0x0cU) && (!board_wheels_active() || offset_lap_running());
 }
 
 static bool shaft_at_level(uint32_t now)
@@ -760,20 +829,44 @@ static void poll_prepare_level(uint32_t now)
 
 static void poll_position_event(uint32_t now)
 {
+	position.driving = offset_lap_running();
 	if (!position_drive_ok(now)) {
 		finish_event(position_drive_notice(now), now);
 		return;
 	}
+	if (menu.item == EVENT_OFFSET && !menu.offset_driving)
+		position_retarget(&position, menu.target_mm);
 	if (!position.have_sample)
 		observe_start_ball(now);
 	if (position.leg == LEVEL_SHAFT)
 		position_check_level(&position, shaft_at_level(now), step.position_at);
 	enum ball_status view = ball_view_at(&camera, now).status;
 	enum contest_notice status = position_update(&position, view, camera.x, camera.sequence, camera.last_ms, now);
+	if ((offset_lap_running() || holding_finish) && position.waiting_vision)
+		status = NOTICE_VISION;
+	if (menu.item == EVENT_OFFSET && position.leg == LEVEL_SHAFT && now - position.start >= 3000)
+		status = NOTICE_DRIVE;
 	if (status != NOTICE_NONE)
 		finish_event(status, now);
 	else if (!command_position(&position, now, 1000))
 		finish_event(NOTICE_DRIVE, now);
+}
+
+static bool offset_ready(uint32_t now)
+{
+	return step.phase == STEP_POSITION && position.leg != LEVEL_SHAFT && position.have_sample &&
+	       !position.waiting_vision && now - position.sample_at < 120 && position_drive_ok(now);
+}
+
+static void start_offset_lap(uint32_t now)
+{
+	if (!offset_ready(now))
+		return;
+	menu.offset_driving = true;
+	offset_range = (struct offset_range){ .start = now, .target_mm = menu.target_mm };
+	controls.task = TASK_LAP;
+	controls.started_at = now;
+	start_lap(now, true);
 }
 
 static void handle_keys(uint32_t now)
@@ -800,7 +893,8 @@ static void handle_keys(uint32_t now)
 	}
 #endif
 	if (menu_release) {
-		if (menu.page == MENU_RUN && event >= 0 && event != KEY_MODE) {
+		if (menu.page == MENU_RUN && event >= 0 && event != KEY_MODE &&
+		    (menu.item != EVENT_OFFSET || event == KEY_START)) {
 			finish_event(NOTICE_STOPPED, now);
 			if (event == KEY_START)
 				menu.page = MENU_DETAIL;
@@ -815,11 +909,23 @@ static void handle_keys(uint32_t now)
 			menu_release = true;
 			return;
 		}
-		if (event < 0 || (!simulated && menu.page != MENU_RUN && down != (1U << event)))
+		bool offset = menu.item == EVENT_OFFSET;
+		bool selecting = offset && (menu.page == MENU_DETAIL || (menu.page == MENU_RUN && !menu.offset_driving));
+		if (!simulated && selecting && down == raw && (down == (1U << KEY_OK) || down == (1U << KEY_NEXT))) {
+			enum key_id key = down == (1U << KEY_OK) ? KEY_OK : KEY_NEXT;
+			if (event < 0 && now - keys[key].changed_at >= 400 && now - target_repeat_at >= 50)
+				event = key;
+			if (event == (int)key)
+				target_repeat_at = now;
+		}
+		if (event < 0 || (!simulated && (menu.page != MENU_RUN || (offset && event != KEY_START)) &&
+				  down != (1U << event)))
 			return;
 		enum menu_action selected = contest_key(&menu, (enum key_id)event);
 		if (selected == MENU_START_EVENT)
 			start_event(now);
+		else if (selected == MENU_START_LAP)
+			start_offset_lap(now);
 		else if (selected == MENU_RELEVEL)
 			prepare_position(now);
 		else if (selected == MENU_LAP_SPEED)
@@ -834,7 +940,7 @@ static void handle_keys(uint32_t now)
 			reset_jog();
 			trim_keys = (struct jog_keys){ .consumed = true };
 		}
-		/* Always require full release across Enter/Start and Stop/Back. */
+		/* 必须先松键才能从进入切到启动，或从停车切到返回，避免一次长按触发两步。 */
 		if (!simulated && (event == KEY_MODE || event == KEY_START))
 			menu_release = true;
 		return;
@@ -967,7 +1073,12 @@ static void follow_line(uint32_t now)
 		lap_stop(&lap, LAP_DRIVE);
 	if (lap.status != LAP_RUNNING && lap.status != LAP_CHECK) {
 		TRACE_STOP(7U | (uint32_t)lap.status << 8);
-		stop_test(now);
+		if (offset_lap_running() && lap.status == LAP_DONE) {
+			board_wheels_stop();
+			wheels_started = false;
+		} else {
+			stop_test(now);
+		}
 	}
 }
 
@@ -989,15 +1100,24 @@ static void sample_inputs(uint32_t now)
 	sampled_at = now;
 }
 
+static bool gray_white_selected(void)
+{
+	if (menu.item == EVENT_OFFSET && (menu.page == MENU_DETAIL || menu.page == MENU_RUN))
+		return false;
+	return controls.task != TASK_LAP && controls.gray_white;
+}
+
 static void update_ui(uint32_t now)
 {
 	int duty = controls_duty(&controls);
 
 	ui.menu = menu;
 	ui.leg = position.leg;
+	ui.offset_ready = menu.item == EVENT_OFFSET && menu.page == MENU_RUN && offset_ready(now);
 	ui.waiting_vision = position.waiting_vision;
 	ui.level_ready = preparing_shaft && prepare_level.leg != LEVEL_SHAFT && shaft_at_level(now);
-	ui.position_seen = ball_v2_measured(&camera, now);
+	ui.position_seen = menu.item == EVENT_OFFSET ? ball_view_at(&camera, now).status == BALL_TRACKED :
+			   ball_v2_measured(&camera, now);
 	ui.ball_mm = ui.position_seen ? contest_ball_mm(camera.x) : 0;
 	ui.event_ms = menu.page == MENU_RUN ? (menu.item == EVENT_POSITION && position.leg == HOLD_LEFT ?
 		      position.finished_ms : now - controls.started_at) : event_elapsed;
@@ -1032,10 +1152,10 @@ static void update_ui(uint32_t now)
 	}
 	ui.balance_time = beam_time.settled ? beam_time.settled : beam_time.elapsed;
 	ui.balance_timed = beam_time.settled != 0;
-	ui.gray_white = controls.task != TASK_LAP && controls.gray_white;
+	ui.gray_white = gray_white_selected();
 	ui.lap_status = lap.status;
 	ui.lap_reverse = controls.lap_reverse;
-	ui.lap_speed = (unsigned int)lap_speed(controls.lap_level);
+	ui.lap_speed = offset_lap_running() ? LAP_OFFSET_CRUISE_CPS : (unsigned int)lap_speed(controls.lap_level);
 	ui.lap_armed = lap.armed;
 	ui.lap_departing = lap.departing;
 	ui.lap_approach = lap.armed && lap_progress(&lap) >= LAP_APPROACH_COUNTS;
@@ -1064,16 +1184,18 @@ static void send_telemetry(uint32_t now)
 	struct serial_stats motor = serial_stats(SERIAL_STEP);
 	char line[480];
 	int length;
-	uint32_t period = controls.task == TASK_LAP && controls.running ?
-		LAP_TELEMETRY_MS : TELEMETRY_MS;
+	bool offset = menu.item == EVENT_OFFSET &&
+		      (menu.page == MENU_DETAIL || menu.page == MENU_RUN || menu.page == MENU_RESULT);
+	uint32_t period = offset || (controls.task == TASK_LAP && controls.running) ?
+			  LAP_TELEMETRY_MS : TELEMETRY_MS;
 
 	if (!elapsed(now, telemetry_at, period))
 		return;
 	telemetry_at = now;
 	/* Versioned CSV; J10 is intentionally not represented as a measured bit. */
 	length = snprintf(line, sizeof(line),
-		"C5,6,%lu,%lu,%u,%u,%d,%ld,%ld,%ld,%ld,%u,%u,%u,%u,%u,%u,%u,%ld,%u,%lu,%lu,%lu,%u,%u,%lu,%u,%d,%ld,%u,%u,%u,%u,%u,%d,%u,%u,%u,%d,%d,%d,%d,%ld,%ld,%lu,%lu,%u,%d,%d,%d,%d,%d,%lu,%u,%u,%u\r\n",
-		(unsigned long)now, (unsigned long)sequence++,
+		"C5,%u,%lu,%lu,%u,%u,%d,%ld,%ld,%ld,%ld,%u,%u,%u,%u,%u,%u,%u,%ld,%u,%lu,%lu,%lu,%u,%u,%lu,%u,%d,%ld,%u,%u,%u,%u,%u,%d,%u,%u,%u,%d,%d,%d,%d,%ld,%ld,%lu,%lu,%u,%d,%d,%d,%d,%d,%lu,%u,%u,%u\r\n",
+		offset ? 7U : 6U, (unsigned long)now, (unsigned long)sequence++,
 		(unsigned int)controls.task, controls.running,
 		controls.running && task_uses_wheels(controls.task) &&
 		controls.task != TASK_LAP ? controls_duty(&controls) : 0,
@@ -1099,6 +1221,27 @@ static void send_telemetry(uint32_t now)
 		lap.last_position, lap.position_rate, lap.steering, lap.differential,
 		lap.base_target, (unsigned long)lap.control_ms, lap.departing,
 		lap.marker_hits, lap.marker_peak);
+	if (offset && length >= 2 && (size_t)length < sizeof(line)) {
+		/* 用同一个主控时钟对齐轮速与相机观测，便于从蓝牙轨迹核对惯性偏移。 */
+		size_t used = (size_t)length - 2; /* replace the v6 line ending */
+		unsigned int phase = menu.page == MENU_DETAIL ? 1U : menu.page == MENU_RESULT ? 4U :
+				     menu.offset_driving ? 3U : 2U;
+		int n = snprintf(line + used, sizeof(line) - used,
+				 ",%u,%lu,%d,%u,%u,%lu,%u,%d,%lu,%d,%d,%u",
+				 phase, phase == 1 ? 0UL : (unsigned long)ui.event_ms, menu.target_mm,
+				 (unsigned)ball_view_at(&camera, now).status,
+				 camera.sequence, (unsigned long)camera.last_ms, camera.age, ui.ball_mm,
+				 (unsigned long)sampled_at, (menu.page == MENU_RUN || holding_finish) ? position.goal_cd : 0,
+				 ui.balance_shaft, (unsigned)menu.notice);
+		length = -1;
+		if (n > 0 && used + (size_t)n + 12 <= sizeof(line)) {
+			used += (size_t)n;
+			uint32_t crc = ota_crc((const uint8_t *)line, used);
+			n = snprintf(line + used, sizeof(line) - used, ",%08lX\r\n", (unsigned long)crc);
+			if (n == 11)
+				length = (int)used + n;
+		}
+	}
 	ui.bt_tx = length > 0 && (size_t)length < sizeof(line) &&
 		   serial_write(SERIAL_BT, (const uint8_t *)line, (size_t)length);
 }
@@ -1139,13 +1282,14 @@ int main(void)
 		if (last_loop_at && now - last_loop_at > max_loop_ms)
 			max_loop_ms = now - last_loop_at;
 		last_loop_at = now;
-		gray_update(&gray, board_gray(), now,
-			    controls.task != TASK_LAP && controls.gray_white);
+		gray_update(&gray, board_gray(), now, gray_white_selected());
 		stepper_poll(&step, now);
 		enum contest_page previous_page = menu.page;
 		if (!upgrade_requested)
 			handle_keys(now);
 		if (previous_page != menu.page) {
+			if (holding_finish)
+				stop_test(now);
 			if (menu.page == MENU_DETAIL && menu.item == EVENT_POSITION) {
 				prepare_position(now);
 			} else if (preparing_shaft) {
@@ -1174,10 +1318,25 @@ int main(void)
 		follow_line(now);
 		/* Bound a noisy camera's share of each pass through the control loop. */
 		if (camera_ready) {
-			for (unsigned int i = 0; i < 64 && serial_read(SERIAL_CAMERA, &byte); i++)
+			for (unsigned int i = 0; i < 64 && serial_read(SERIAL_CAMERA, &byte); i++) {
+				uint16_t previous = camera.sequence;
 				ball_feed(&camera, byte, now);
+				if (camera.sequence != previous && lap.status == LAP_RUNNING && offset_lap_running())
+					record_offset_sample(now);
+			}
 		}
-		if (menu.page == MENU_RUN && menu.item == EVENT_POSITION)
+		if ((menu.page == MENU_RUN && menu.item == EVENT_LAP) || offset_lap_running()) {
+			uint32_t duration = now - controls.started_at;
+			enum contest_notice notice = contest_lap_notice(lap.status, duration,
+				menu.item == EVENT_LAP ? CONTEST_LAP_LIMIT_MS : LAP_TIMEOUT_MS);
+			if (notice == NOTICE_TIMEOUT) {
+				lap.elapsed_ms = duration;
+				lap_stop(&lap, LAP_TIMEOUT);
+			}
+			if (notice != NOTICE_NONE)
+				finish_event(notice, now);
+		}
+		if (holding_finish || (menu.page == MENU_RUN && (menu.item == EVENT_POSITION || menu.item == EVENT_OFFSET)))
 			poll_position_event(now);
 		else if (preparing_shaft)
 			poll_prepare_level(now);
@@ -1186,17 +1345,7 @@ int main(void)
 #ifdef CORAL_DEBUG_KEYS
 		record_position(now);
 #endif
-		if (menu.page == MENU_RUN && menu.item == EVENT_LAP) {
-			uint32_t duration = now - controls.started_at;
-			enum contest_notice notice = contest_lap_notice(lap.status, duration);
-			if (notice == NOTICE_TIMEOUT) {
-				lap.elapsed_ms = duration;
-				lap_stop(&lap, LAP_TIMEOUT);
-			}
-			if (notice != NOTICE_NONE)
-				finish_event(notice, now);
-		}
-		if (!controls.running && !preparing_shaft)
+		if (!controls.running && !preparing_shaft && !holding_finish)
 			stop_test(now);
 		balance_time_update(&beam_time, &beam, controls.running, now);
 		sample_inputs(now);

@@ -1,7 +1,7 @@
 # Core + Motor 固件联调
 
 适用：STM32C5A3VGT6、ST7735S 128×160、HC-08、Emm 固件步进和双编码器电机。
-本轮实测及尚未通过项见[验证记录](../validation/2026-11-16-firmware-bringup.md)。
+本轮实测及尚未通过项见[验证记录](https://github.com/SmallCoral/c5-car/blob/e631797d99cd60486eccc874f66cc99cdf3f7496/Documentation/validation/2026-11-16-firmware-bringup.md)。
 
 ## 1. 构建与烧录
 

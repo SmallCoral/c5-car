@@ -34,6 +34,7 @@ def package(app_path, boot_path, out):
     if not 0x08000000 <= struct.unpack_from("<I", boot, 4)[0] < 0x08000000 + len(boot):
         raise ValueError("Invalid bootloader reset vector")
     out.mkdir(parents=True, exist_ok=True)
+    (out / "coral_c5.header").write_bytes(header)
     (out / "coral_c5.ota").write_bytes(header + app)
     update = [(APP_ADDR, app), (APP_META, header), (STAGE_META, b"\xff" * 32)]
     (out / "app_update.hex").write_text(make_hex(update), encoding="ascii")

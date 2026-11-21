@@ -22,5 +22,5 @@ Core 经 C5-EDGE-3 的 98 触点与底板连接；这是自定义 GPIO/电源接
 网络 Expansion 属于历史方案，当前仓库不含其 KiCad 工程。
 历史 Core/Expansion 的检查结果保留在 Shared 和 Core 的记录中，不能代替当前 Motor 的 PCB 检查。
 2026-11-16 本轮整理原样纳入手工保存的 7 个 Core 原理图/PCB、Motor 接口和 Transfer 文件。
-三板新导出网表并运行 ERC，均为 0 错误、0 警告；Motor/Transfer 的历史检查合同仍有失败项，PCB DRC 未运行，见[快照检查与交接](../../Documentation/validation/2026-11-16-rust-handoff.md)。
+三板新导出网表并运行 ERC，均为 0 错误、0 警告；Motor/Transfer 的历史检查合同仍有失败项，PCB DRC 未运行，见[快照检查与交接](https://github.com/SmallCoral/c5-car/blob/e631797d99cd60486eccc874f66cc99cdf3f7496/Documentation/validation/2026-11-16-rust-handoff.md)。
 整理本身未修改电路、PCB 布局布线或机械模型，也未重跑硬件生成器。

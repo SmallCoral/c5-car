@@ -17,7 +17,7 @@
 
 现有 `tools/verify_schematic.py` 仍检查“只放置、不连线、恰好四个未连接引脚”的初稿合同，因此本轮返回 1。
 28 项中 4 项失败：不应有导线、J1/J2 嵌入符号与本地库不一致、应恰有四个未连接引脚。
-其中符号一致性仍需核对，不能因 ERC 通过而忽略；[本轮记录](../../../../Documentation/validation/2026-11-16-rust-handoff.md)保留检查范围。
+其中符号一致性仍需核对，不能因 ERC 通过而忽略；[本轮记录](https://github.com/SmallCoral/c5-car/blob/e631797d99cd60486eccc874f66cc99cdf3f7496/Documentation/validation/2026-11-16-rust-handoff.md)保留检查范围。
 
 J1 为 XT60PW-M（C98732），J2 为 XT60PW-F（C428722）；1 脚负极、2 脚正极是本地 KiCad 库编号约定。
 采购库存尚未确认，不列为已落实生产选型。

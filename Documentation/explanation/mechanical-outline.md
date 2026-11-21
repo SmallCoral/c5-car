@@ -1,7 +1,7 @@
 # A 题机械与3D模型大纲
 
 方案初稿：2026-11-03；模型进度更新：2026-11-05。
-首版原生总装、STEP 和交互预览已生成，入口见 [Mechanical](../../Mechanical/README.md)，检查范围见 [本轮记录](../validation/2026-11-05-mechanical-framework.md)。
+首版原生总装、STEP 和交互预览已生成，入口见 [Mechanical](../../Mechanical/README.md)，检查范围见 [本轮记录](https://github.com/SmallCoral/c5-car/blob/e631797d99cd60486eccc874f66cc99cdf3f7496/Documentation/validation/2026-11-05-mechanical-framework.md)。
 下文保留完整机械要求清单，其中光栅、角度传感器、相机、标准件及加工文件仍未完成；不能把框架交付视为整车验证通过。
 
 ## 机构总方案

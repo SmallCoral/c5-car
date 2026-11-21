@@ -21,6 +21,7 @@ struct ui_state {
 	bool position_seen;
 	bool waiting_vision;
 	bool level_ready;
+	bool offset_ready;
 	enum task_id task;
 	bool running;
 	bool reverse;

@@ -1,4 +1,4 @@
-"""Receive Coral-C5 version 1 through 6 telemetry over HC-08 BLE or a wired UART."""
+"""Receive Coral-C5 version 1 through 7 telemetry over HC-08 BLE or a wired UART."""
 
 import argparse
 import asyncio
@@ -6,6 +6,7 @@ import csv
 from datetime import datetime, timezone
 from pathlib import Path
 import sys
+import zlib
 
 
 FIELDS = (
@@ -22,12 +23,15 @@ FIELDS = (
     "lap_position", "lap_position_rate", "lap_steering", "lap_differential",
     "lap_base_target", "lap_control_ms",
     "lap_departing", "lap_marker_hits", "lap_marker_peak",
+    "offset_phase", "phase_ms", "target_mm", "ball_status", "camera_seq", "camera_rx_ms",
+    "camera_age_ms", "ball_mm", "wheel_sample_ms", "shaft_goal_cd", "shaft_actual_cd",
+    "event_notice", "frame_crc32",
 )
 TASKS = ("MONITOR", "LEFT", "RIGHT", "BOTH", "STEPPER", "ALL", "GRAY", "LAP", "BALANCE")
 GRAY_STATUS = ("WAIT", "NO LINE", "LINE", "ALL", "MULTI")
 LAP_STATUS = ("READY", "FOLLOW", "DONE", "STOPPED", "LOST LINE", "BAD LINE",
               "ENC ERROR", "TIMEOUT", "DRIVE ERR", "ALIGN LINE", "LOOP LATE", "DIR CHECK", "NO A MARK")
-VERSION_LENGTHS = {1: 27, 2: 30, 3: 37, 4: 47, 5: 53, 6: len(FIELDS)}
+VERSION_LENGTHS = {1: 27, 2: 30, 3: 37, 4: 47, 5: 53, 6: 56, 7: len(FIELDS)}
 BOOLEAN_FIELDS = (
     "running", "enable_request", "step_online", "lcd_ok",
     "step_position_valid", "step_rpm_valid", "gray_white", "lap_armed", "lap_departing",
@@ -52,6 +56,11 @@ class Decoder:
                 version = int(values[1]) if len(values) > 1 else 0
                 if values[0] != "C5" or len(values) != VERSION_LENGTHS.get(version):
                     raise ValueError("invalid record header")
+                if version == 7:
+                    payload, checksum = line.rstrip(b"\r").rsplit(b",", 1)
+                    if len(checksum) != 8 or zlib.crc32(payload) != int(checksum, 16):
+                        raise ValueError("invalid offset telemetry CRC")
+                    values[-1] = str(int(checksum, 16))
                 values.extend("0" for _ in range(len(FIELDS) - len(values)))
                 record = dict(zip(FIELDS[2:], map(int, values[2:])))
                 record["version"] = int(values[1])
@@ -79,7 +88,8 @@ class Sink:
         self.decoder = Decoder()
         self.output = output
         self.writer = csv.writer(output)
-        self.writer.writerow(("received_utc", *FIELDS))
+        self.writer.writerow(("received_utc", *FIELDS, "mean_accel_cps2", "ball_error_mm"))
+        self.last_wheel = None
         self.last_seq = None
         self.last_ms = None
         self.count = 0
@@ -95,12 +105,36 @@ class Sink:
                     print("MCU restarted or counters wrapped", file=sys.stderr)
                 elif gap:
                     print(f"Telemetry gap: {gap} frame(s)", file=sys.stderr)
+            acceleration = error = None
+            offset_summary = ""
+            if record["version"] == 7:
+                speed = (record["left_cps"] + record["right_cps"]) / 2
+                at = record["wheel_sample_ms"]
+                if self.last_wheel is not None and ((sequence - self.last_seq) & 0xffffffff) == 1:
+                    prev_at, prev_speed = self.last_wheel
+                    dt = (at - prev_at) & 0xffffffff
+                    if 0 < dt <= 250:
+                        acceleration = round((speed - prev_speed) * 1000 / dt)
+                self.last_wheel = at, speed
+                if record["ball_status"] == 2:
+                    error = record["ball_mm"] - record["target_mm"]
+                else:
+                    record["ball_mm"] = None
+                offset_summary = (
+                    f'  phase={record["offset_phase"]} target={record["target_mm"]:+}mm'
+                    f' ball_err={error if error is not None else "--"}mm'
+                    f' accel={acceleration if acceleration is not None else "--"}cps/s'
+                )
+            else:
+                self.last_wheel = None
             self.last_seq = sequence
             self.last_ms = record["ms"]
             self.count += 1
             self.writer.writerow((
                 datetime.now(timezone.utc).isoformat(), "C5", record["version"],
-                *(record[field] for field in FIELDS[2:]),
+                *(record[field] for field in FIELDS[2:56]),
+                *(record[field] if record["version"] == 7 else None for field in FIELDS[56:]),
+                acceleration, error,
             ))
             self.output.flush()
             print(
@@ -115,7 +149,8 @@ class Sink:
                 f'pwm={record["lap_left_pwm"]}/{record["lap_right_pwm"]} '
                 f'fault={record["fault_mask"]} '
                 f'emm={record["step_online"]}/{record["step_error"]:02X} '
-                f'rpm={record["step_rpm"] if record["step_rpm_valid"] else "?"}'
+                f'rpm={record["step_rpm"] if record["step_rpm_valid"] else "?"}{offset_summary}',
+                flush=True,
             )
 
 

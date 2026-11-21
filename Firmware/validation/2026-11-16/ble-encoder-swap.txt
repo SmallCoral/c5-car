@@ -1,2 +1,0 @@
-Saved 0 frame(s) to Firmware\validation\2026-11-16\ble-encoder-swap.csv; received 0 byte(s); rejected 0
-Error: BLE device not found; check power and close other BLE clients

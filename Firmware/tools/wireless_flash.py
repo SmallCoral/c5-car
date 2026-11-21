@@ -13,6 +13,10 @@ from ota_protocol import (ABORT, APP_ADDR, BEGIN, BOARD_ID, CHUNK, DATA, END,
 
 DEFAULT_BLE = "F8:2E:0C:F3:68:37"
 DEFAULT_UUID = "0000ffe1-0000-1000-8000-00805f9b34fb"
+BLE_FRAGMENT = 20
+PACED_GAP = 0.020
+DATA_ACK_TIMEOUT = 1.3  # longer than the bootloader's partial-frame expiry
+PACED_RECOVERY_BLOCKS = 32
 
 
 class Link:
@@ -26,6 +30,8 @@ class Link:
         self.sequence = 0
         self.retries = 0
         self.received = 0
+        self.consecutive_data_retries = 0
+        self.paced_remaining = 0
 
     @staticmethod
     def enqueue(queue, value):
@@ -47,22 +53,25 @@ class Link:
             else:
                 self.text.clear()
 
-    async def write(self, data):
-        # HC-08 firmware uses a 20-byte BLE payload and a 57600-baud UART bridge.
-        for offset in range(0, len(data), 20):
-            await self.client.write_gatt_char(self.characteristic, data[offset:offset + 20],
+    async def write(self, data, *, paced=True):
+        for offset in range(0, len(data), BLE_FRAGMENT):
+            await self.client.write_gatt_char(self.characteristic, data[offset:offset + BLE_FRAGMENT],
                                               response=False)
-            await asyncio.sleep(0.020)
+            if paced:
+                await asyncio.sleep(PACED_GAP)
 
     async def request(self, command, payload=b"", timeout=3, attempts=4):
         self.sequence += 1
         frame = Frame(command, self.sequence, payload)
+        packet = frame.encode()
         for attempt in range(attempts):
             if attempt:
                 self.retries += 1
                 print(f"Retry command {command}, sequence {frame.sequence}", flush=True)
-            await self.write(frame.encode())
-            deadline = time.monotonic() + timeout
+            burst = command == DATA and attempt == 0 and not self.paced_remaining
+            await self.write(packet, paced=not burst)
+            # A partial frame expires in the bootloader after 1 s of UART silence.
+            deadline = time.monotonic() + (min(timeout, DATA_ACK_TIMEOUT) if command == DATA else timeout)
             while time.monotonic() < deadline:
                 try:
                     response = await asyncio.wait_for(self.responses.get(), deadline - time.monotonic())
@@ -76,6 +85,17 @@ class Link:
                 if status:
                     name = STATUS[status] if status < len(STATUS) else str(status)
                     raise RuntimeError(f"Bootloader rejected command {command}: {name}")
+                if command == DATA:
+                    if self.paced_remaining:
+                        self.paced_remaining = PACED_RECOVERY_BLOCKS if attempt else self.paced_remaining - 1
+                        if not self.paced_remaining:
+                            print("Link stable; resuming fast DATA writes", flush=True)
+                    else:
+                        self.consecutive_data_retries = self.consecutive_data_retries + 1 if attempt else 0
+                        if self.consecutive_data_retries >= 2:
+                            self.consecutive_data_retries = 0
+                            self.paced_remaining = PACED_RECOVERY_BLOCKS
+                            print("Repeated DATA retry; temporarily pacing writes", flush=True)
                 return response.payload
         raise TimeoutError(f"No reply to command {command}; keep power on and retry, "
                            "or hold TASK while powering on to enter recovery")
@@ -173,6 +193,7 @@ class Link:
         if offset > len(image) or (offset % CHUNK and offset != len(image)):
             raise RuntimeError("Invalid resume offset")
         report = -1
+        transfer_start, resume_offset = time.monotonic(), offset
         while offset < len(image):
             chunk = image[offset:offset + CHUNK]
             reply = await self.request(DATA, struct.pack("<I", offset) + chunk)
@@ -184,6 +205,10 @@ class Link:
             if percent // 10 != report:
                 report = percent // 10
                 print(f"{percent:3d}%  {offset}/{len(image)} bytes", flush=True)
+        duration = time.monotonic() - transfer_start
+        if offset > resume_offset and duration > 0:
+            rate = (offset - resume_offset) / duration
+            print(f"DATA acknowledged: {offset - resume_offset} bytes, {rate:.0f} B/s", flush=True)
         await self.request(END)
         print("Image verified in staging; installing...", flush=True)
         try:

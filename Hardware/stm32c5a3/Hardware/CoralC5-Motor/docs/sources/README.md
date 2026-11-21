@@ -1,6 +1,6 @@
 # 原厂依据和资源记录
 
-2026-11-07 M2.6 当前增量：荔枝派供电与接线已删除。U10 改为 [SGM2531C RevA.2](SGM2531C_RevA2.pdf)，第 3～5 页针序/电气参数、第 11～14 页保护/限流、第 15 页 SOIC EP 焊盘；U14 采用 [LTC4412](LTC4412_4412fb.pdf)，第 6～8 页针序、P-MOS 方向和工作原理。Q8 依据 [MMBT3904 DS30036 Rev27](MMBT3904_DS30036.pdf) 第 1～3 页。D5 依据 [Nexperia BZT52 原厂 PDF](https://assets.nexperia.com/documents/data-sheet/BZT52_SER.pdf) Rev2 的 1K/2A 及 C12 参数，在线已读，本地下载 HTTP403。Q5/Q6/Q7 复用 DMP3007；U15 复用 SN74LVC2G125DCTR。完整计算与限制见 [M2.6 验证](../../../../../../Documentation/validation/2026-11-07-m26-stepper-power.md)。以下旧轮次记录留作追溯，不是当前 BOM。
+2026-11-07 M2.6 当前增量：荔枝派供电与接线已删除。U10 改为 [SGM2531C RevA.2](SGM2531C_RevA2.pdf)，第 3～5 页针序/电气参数、第 11～14 页保护/限流、第 15 页 SOIC EP 焊盘；U14 采用 [LTC4412](LTC4412_4412fb.pdf)，第 6～8 页针序、P-MOS 方向和工作原理。Q8 依据 [MMBT3904 DS30036 Rev27](MMBT3904_DS30036.pdf) 第 1～3 页。D5 依据 [Nexperia BZT52 原厂 PDF](https://assets.nexperia.com/documents/data-sheet/BZT52_SER.pdf) Rev2 的 1K/2A 及 C12 参数，在线已读，本地下载 HTTP403。Q5/Q6/Q7 复用 DMP3007；U15 复用 SN74LVC2G125DCTR。完整计算与限制见 [M2.6 验证](https://github.com/SmallCoral/c5-car/blob/e631797d99cd60486eccc874f66cc99cdf3f7496/Documentation/validation/2026-11-07-m26-stepper-power.md)。以下旧轮次记录留作追溯，不是当前 BOM。
 
 日期2026-10-27，资料版权归原权利人。库存和价格未作为本次交付结论。
 
@@ -39,7 +39,7 @@
 ## 2026-11-06 M2.3 后续修改
 
 此前四安入口及普通排针描述属于初始 M2，当前方案已更新。
-实际记录见 [M2.3 验证](../../../../../../Documentation/validation/2026-11-06-m23-power-connectors.md)。
+实际记录见 [M2.3 验证](https://github.com/SmallCoral/c5-car/blob/e631797d99cd60486eccc874f66cc99cdf3f7496/Documentation/validation/2026-11-06-m23-power-connectors.md)。
 
 | 资料 | 当前用途 |
 | --- | --- |

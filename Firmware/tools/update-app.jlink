@@ -2,6 +2,7 @@ ExitOnError 1
 h
 LoadFile Firmware/build/debug/app_update.hex
 VerifyBin Firmware/build/debug/coral_c5.bin,0x08010000
+VerifyBin Firmware/build/debug/coral_c5.header,0x080FC000
 Mem32 0x080FC010,2
 Mem32 0x080FE000,2
 r

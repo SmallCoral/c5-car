@@ -24,6 +24,12 @@ int main(int argc, char **argv)
 		if (!strcmp(argv[2], "home") || !strcmp(argv[2], "detail")) {
 			state.menu.page = !strcmp(argv[2], "home") ? MENU_HOME : MENU_DETAIL;
 			state.ball = (struct ball_view){ .status = BALL_TRACKED, .permille = 500 };
+		} else if (!strcmp(argv[2], "offset")) {
+			state.menu = (struct contest_menu){ .page = MENU_RUN, .item = EVENT_OFFSET, .target_mm = 50 };
+			state.leg = MOVE_TARGET;
+			state.offset_ready = state.position_seen = true;
+			state.ball_mm = contest_ball_mm(233);
+			state.ball = (struct ball_view){ .status = BALL_TRACKED, .permille = ball_ruler_position(233) };
 		} else if (!strcmp(argv[2], "lap")) {
 			state.task = TASK_LAP;
 			state.lap_status = LAP_RUNNING;
@@ -148,6 +154,50 @@ int main(int argc, char **argv)
 	for (index = 0; index < 16; index++) {
 		assert(buffer[index] == 0xa5);
 		assert(buffer[UI_BYTES + 16 + index] == 0xa5);
+	}
+	const int targets[] = { -106, -50, 0, 50, 95 };
+	const int raw_x[] = { 531, 400, 282, 160, 49 };
+	const int columns[] = { 8, 37, 64, 93, 120 };
+	for (unsigned int i = 0; i < 5; i++) {
+		state.menu = (struct contest_menu){ .item = EVENT_OFFSET, .target_mm = targets[i],
+			.page = i ? MENU_RUN : MENU_DETAIL, .offset_driving = i >= 3 };
+		state.ball = (struct ball_view){ .status = BALL_TRACKED,
+			.permille = ball_ruler_position(raw_x[i]) };
+		ui_render(buffer + 16, &state);
+		size_t marker = 16 + 2 * (96 * UI_WIDTH + columns[i]);
+		size_t ball = 16 + 2 * (103 * UI_WIDTH + columns[i]);
+		assert(buffer[marker] == 0x47 && buffer[marker + 1] == 0xb2);
+		assert(buffer[ball] == 0xfd && buffer[ball + 1] == 0x48);
+		for (unsigned int row = 0; row < UI_HEIGHT; row += 2)
+			ui_render_rows(sliced, &state, row, 2);
+		assert(!memcmp(sliced, buffer + 16, UI_BYTES));
+		state.ball.status = BALL_LAST_SEEN;
+		ui_render(buffer + 16, &state);
+		assert(buffer[ball] == 0x08 && buffer[ball + 1] == 0x62);
+		assert(buffer[ball + 4] == 0xfd && buffer[ball + 5] == 0x48);
+		state.ball.status = BALL_MISSING;
+		ui_render(buffer + 16, &state);
+		assert(buffer[ball] == 0x2e && buffer[ball + 1] == 0x7d);
+		assert(buffer[marker] == 0x47 && buffer[marker + 1] == 0xb2);
+	}
+	/* Both events show the same scale, including the hollow last sighting.
+	 * Compare every pixel of the strip after each Task 1 stage change. */
+	const enum position_leg legs[] = { LEVEL_SHAFT, LEVEL_SHAFT, MOVE_CENTER, MOVE_RIGHT, MOVE_LEFT, HOLD_LEFT };
+	const int route_mm[] = { 0, 0, 0, 50, -50, -50 };
+	for (unsigned int i = 0; i < sizeof(legs) / sizeof(legs[0]); i++) {
+		state.menu = (struct contest_menu){ .page = MENU_RUN, .item = EVENT_OFFSET, .target_mm = route_mm[i] };
+		state.ball = (struct ball_view){ .status = i == 5 ? BALL_LAST_SEEN : BALL_TRACKED,
+			.permille = ball_ruler_position(i == 5 ? RULER_X_MINUS_5 : RULER_X_O) };
+		ui_render(sliced, &state);
+		state.menu.item = EVENT_POSITION;
+		state.menu.page = i ? MENU_RUN : MENU_DETAIL;
+		state.leg = legs[i];
+		ui_render(buffer + 16, &state);
+		int y = i ? 118 : 125;
+		/* Status and timing text above the ruler have their own layout. */
+		size_t strip = 23 * UI_WIDTH * 2;
+		assert(!memcmp(buffer + 16 + (y - 11) * UI_WIDTH * 2,
+			       sliced + (103 - 11) * UI_WIDTH * 2, strip));
 	}
 	puts("PASS: UI rendering and framebuffer guards");
 	return 0;

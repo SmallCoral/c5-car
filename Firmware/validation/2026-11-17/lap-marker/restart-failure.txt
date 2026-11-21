@@ -1,3 +1,0 @@
-BLE connected; receiving. Ctrl+C exits. J10 state is not sensed.
-Saved 0 frame(s) to Firmware\validation\2026-11-17\lap-marker\restart-failure.csv; received 160 byte(s); rejected 0
-Error: BLE disconnected

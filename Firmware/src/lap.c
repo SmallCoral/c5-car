@@ -121,7 +121,7 @@ bool lap_start_distance(struct lap *lap, const struct gray_reading *gray, uint32
 		lap_stop(lap, LAP_NOT_READY);
 		return false;
 	}
-	/* The operator places the car at A and SW2 establishes the encoder origin. */
+	/* 车身对齐 A 线后按 SW2，记录两轮编码器起点。此后用双轮平均行程判定终点。 */
 	lap->from_a = true;
 	lap->finish_counts = finish_counts;
 	lap->departing = gray->status != GRAY_LINE || wide_marker(gray);
@@ -186,9 +186,7 @@ static void speed_control(struct lap_wheel *wheel, int target, uint32_t dt, int 
 	wheel->target = target;
 	error = wheel->target - wheel->cps;
 	integral = clamp(wheel->integral + error * (int)dt, -400000, 800000);
-	/* Feedforward from the previous 10% wheel test; PI removes wheel mismatch.
-	 * Integral units are count/s * ms. Reject windup at either PWM limit.
-	 */
+	/* 前馈来自 10% 轮驱动实测，PI 修正两轮差异。积分单位为（计数/秒）× 毫秒，到 PWM 限幅时停止同向累积。 */
 	drive = target / LAP_CPS_PER_PERMILLE + error / 6;
 	pwm = drive + integral / 3200;
 	if (!((pwm > pwm_limit && error > 0) || (pwm < 0 && error < 0)))
@@ -201,11 +199,7 @@ struct course_target {
 	int bend_permille;
 };
 
-/* Measured at A starts on the fitted track. Both arc entries flatten;
- * the middle of the first arc needs more wheel difference than the second.
- * Values are half the wheel-speed difference / mean, in permille.
- * Interpolate in encoder distance so a change of speed preserves the shape.
- */
+/* 两段弯道从 A 点起跑实测。两段入口都较平，第一弯中段比第二弯需要更大差速。表中数值为半轮速差占平均轮速的千分比。 */
 static int race_bend_ratio(int counts, unsigned int arc)
 {
 	static const struct {
@@ -236,7 +230,9 @@ static int race_bend_ratio(int counts, unsigned int arc)
 
 static struct course_target course_target(const struct lap *lap)
 {
-	struct course_target target = { .speed = lap_speed(lap->level) };
+	struct course_target target = {
+		.speed = lap->carry_ball ? LAP_OFFSET_CRUISE_CPS : lap_speed(lap->level)
+	};
 	bool race = lap->level == LAP_RACE_LEVEL;
 	int brake = race ? LAP_RACE_BRAKE_COUNTS : LAP_BEND_BRAKE_COUNTS;
 	int counts = (int)lap_progress(lap);
@@ -327,18 +323,19 @@ static int line_steering(struct lap *lap, int dt, bool tracking, int bend_permil
 	return lap->steering + clamp(steer - lap->steering, -step, step);
 }
 
-static int distance_finish_speed(int cruise, uint32_t remaining)
+static int distance_finish_speed(const struct lap *lap, int cruise, uint32_t remaining)
 {
+	uint32_t distance = lap->carry_ball ? LAP_OFFSET_FINISH_COUNTS : LAP_FINISH_BLEND_COUNTS;
+	int finish = lap->carry_ball ? LAP_OFFSET_FINISH_CPS : LAP_FINISH_CPS;
 	uint32_t t, blend;
 
-	if (remaining >= LAP_FINISH_BLEND_COUNTS || cruise <= LAP_FINISH_CPS)
+	if (remaining >= distance || cruise <= finish)
 		return cruise;
-	/* Smoothstep in remaining distance: flat at both ends of the blend.
-	 * Retain the measured cut-off speed so the subsequent coast is comparable. */
-	t = remaining * 1000U / LAP_FINISH_BLEND_COUNTS;
+	/* 按剩余编码器计数平滑降低目标轮速。曲线在减速区首尾的斜率均为零，减少球在速度突变时的偏移。 */
+	t = remaining * 1000U / distance;
 	blend = t * t * (3000U - 2U * t) / 1000000U;
 
-	return LAP_FINISH_CPS + (cruise - LAP_FINISH_CPS) * (int)blend / 1000;
+	return finish + (cruise - finish) * (int)blend / 1000;
 }
 
 static int forward_speed(const struct lap *lap, int steer, int cruise, bool narrow,
@@ -365,9 +362,7 @@ static int forward_speed(const struct lap *lap, int steer, int cruise, bool narr
 	turn_cap = clamp(ceiling - turn_cost * turn, 1500, ceiling);
 	base = min_int(base, min_int(turn_cap, cruise));
 
-	/* Estimate remaining wheel-speed headroom from measured speed and PWM.
-	 * Under load, give up forward speed before the PI loses the differential.
-	 */
+	/* 用实测轮速和 PWM 余量估算还能提多少速。负载较大时先降低共同前进速度，保留纠偏需要的轮速差。 */
 	for (unsigned int side = 0; side < 2; side++) {
 		const struct lap_wheel *wheel = &lap->wheel[side];
 		int headroom = pwm_limit - LAP_PWM_RESERVE - wheel->pwm;
@@ -376,7 +371,7 @@ static int forward_speed(const struct lap *lap, int steer, int cruise, bool narr
 		base = min_int(base, available - (side ? -steer : steer));
 	}
 	if (lap->finish_counts)
-		base = min_int(base, distance_finish_speed(cruise, lap->finish_counts - progress));
+		base = min_int(base, distance_finish_speed(lap, cruise, lap->finish_counts - progress));
 	else if (progress >= LAP_APPROACH_COUNTS)
 		base = min_int(base, LAP_APPROACH_CPS);
 	if (!narrow || lap->departing)
@@ -384,23 +379,26 @@ static int forward_speed(const struct lap *lap, int steer, int cruise, bool narr
 	return clamp(base, LAP_SPEED_SLOW_CPS / 2, ceiling);
 }
 
-static void steer_control(struct lap *lap, uint32_t dt, bool narrow)
+static void steer_control(struct lap *lap, uint32_t dt, bool narrow, bool lost_line)
 {
 	struct course_target course = course_target(lap);
 	bool race = lap->level == LAP_RACE_LEVEL;
 	int pwm_limit = race ? LAP_RACE_MAX_PERMILLE : LAP_MAX_PERMILLE;
 	int wheel_limit = race ? LAP_RACE_WHEEL_MAX_CPS : LAP_TARGET_MAX_CPS;
-	int accel = race ? LAP_RACE_ACCEL_CPS_S : LAP_ACCEL_CPS_S;
+	int accel = lap->carry_ball ? LAP_OFFSET_ACCEL_CPS_S :
+		    race ? LAP_RACE_ACCEL_CPS_S : LAP_ACCEL_CPS_S;
 	int steer = line_steering(lap, (int)dt, narrow && !lap->departing, course.bend_permille);
 	int base = forward_speed(lap, steer, course.speed, narrow, pwm_limit);
-	int step = (base < lap->base_target ? LAP_DECEL_CPS_S : accel) * (int)dt / 1000;
+	/* 实车直道居中时短暂丢线，急减速曾让球偏移 30 mm。仅在这种短缺口放缓减速，靠边纠偏和持续丢线停车仍按原条件执行。 */
+	bool centered_gap = lap->carry_ball && lost_line && !lap->departing &&
+			    magnitude(lap->last_position) <= LAP_CENTER_POSITION;
+	int decel = centered_gap ? LAP_OFFSET_GAP_DECEL_CPS_S : LAP_DECEL_CPS_S;
+	int step = (base < lap->base_target ? decel : accel) * (int)dt / 1000;
 	int limit;
 
 	lap->base_target += clamp(base - lap->base_target, -step, step);
 
-	/* Give a turn priority over cruise speed at the outer wheel ceiling.
-	 * During launch keep both targets on the common forward ramp.
-	 */
+	/* 外轮接近速度上限时先留出转向差速，再决定共同前进速度。起步时两轮沿同一加速斜坡提升。 */
 	lap->base_target = min_int(lap->base_target, wheel_limit - magnitude(steer));
 	limit = clamp(lap->base_target - LAP_TARGET_MIN_CPS, 0, LAP_STEER_MAX_CPS);
 	/* On the measured course the fast run reached an 87% half-difference
@@ -531,7 +529,7 @@ bool lap_update(struct lap *lap, const struct gray_reading *gray, uint32_t now,
 		lap_stop(lap, gray->status == GRAY_LOST ? LAP_NO_LINE : LAP_AMBIGUOUS);
 		return true;
 	}
-	steer_control(lap, dt, narrow);
+	steer_control(lap, dt, narrow, gray->status == GRAY_LOST);
 	return true;
 }
 

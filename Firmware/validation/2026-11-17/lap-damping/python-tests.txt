@@ -1,8 +1,0 @@
-Requested image is already installed; returning to application
-BLE connection interrupted (test disconnect); reconnecting 1/2...
-Retry command 3, sequence 1
-...............
-----------------------------------------------------------------------
-Ran 15 tests in 0.126s
-
-OK

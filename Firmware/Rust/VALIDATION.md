@@ -1,6 +1,6 @@
 # Rust 迁移验证记录
 
-日期：2026-11-16。原工程基线：`b9aaa695109ca046874f67017f2174d682bed09d`。本记录对应独立 `Firmware/Rust` 工作区的迁移代码；交付源码版本以包含本记录的 Git 提交为准，提交前复核见[交接整理记录](../../Documentation/validation/2026-11-16-rust-handoff.md)。
+日期：2026-11-16。原工程基线：`b9aaa695109ca046874f67017f2174d682bed09d`。本记录对应独立 `Firmware/Rust` 工作区的迁移代码；交付源码版本以包含本记录的 Git 提交为准，提交前复核见[交接整理记录](https://github.com/SmallCoral/c5-car/blob/e631797d99cd60486eccc874f66cc99cdf3f7496/Documentation/validation/2026-11-16-rust-handoff.md)。
 
 ## 环境与命令
 

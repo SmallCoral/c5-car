@@ -119,5 +119,22 @@ int main(void)
 		assert(right[8] == 0xfd && right[9] == 0x48);
 		rx.flags = 3;
 	}
+	/* A held selection key advances 1 mm per repeat, including while balancing. */
+	ui.menu = (struct contest_menu){ .page = MENU_RUN, .item = EVENT_OFFSET };
+	advance(&ui, 250);
+	for (int mm = 1; mm <= 50; mm++) {
+		ui.menu.target_mm = mm;
+		advance(&ui, 50);
+		int tip = -1;
+		for (int x = 8; x <= 120; x++) {
+			const uint8_t *p = &lcd[(96 * UI_WIDTH + x) * 2];
+			if (p[0] == 0x47 && p[1] == 0xb2)
+				tip = x;
+		}
+		int expected = 64 + (29 * mm + 25) / 50;
+		assert(tip >= expected - 2 && tip <= expected + 1);
+	}
+	advance(&ui, 250);
+	expect_screen(&ui, true);
 	return 0;
 }

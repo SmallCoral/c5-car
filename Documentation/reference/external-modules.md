@@ -16,14 +16,14 @@
 
 ## 参考代码能证明的内容
 
-同学 `26H` ZIP 的公共路径为 `26H 平衡球装置 F407/26H_F4 _Speed_now/`，原件保留在 [归档](<../26电赛/26H 平衡球装置 天空星F4.zip>) 中。
+同学 `26H` ZIP 的公共路径为 `26H 平衡球装置 F407/26H_F4 _Speed_now/`，原件保留在 [归档](https://github.com/SmallCoral/c5-car/blob/e631797d99cd60486eccc874f66cc99cdf3f7496/Documentation/26%E7%94%B5%E8%B5%9B/26H%20%E5%B9%B3%E8%A1%A1%E7%90%83%E8%A3%85%E7%BD%AE%20%E5%A4%A9%E7%A9%BA%E6%98%9FF4.zip) 中。
 
 - `Maxicam/maxicam.c` 第 76～77 行解析 X/Y 坐标；`Core/Src/usart.c` 的 USART2 为 115200、8N1，这是旧 F407 工程配置。
-- `step_motor/motor_X.c` 有Emm位置、速度、回零及反馈处理，使用旧工程USART3。当前套件已由用户确认带驱动，当前C5使用USART6，不能照搬旧串口配置；Emm/X固件类型仍应按套件菜单确认。
+- 历史例程 `step_motor/motor_X.c` 有Emm位置、速度、回零及反馈处理，使用旧工程USART3。当前套件已由用户确认带驱动，当前C5使用USART6，不能照搬旧串口配置；Emm/X固件类型仍应按套件菜单确认。
 - `XunJi/Xunji.c` 第 310～317、356～367 行读取 8 路 GPIO，并将黑线低电平作为有效检测。它与八路数字接口相符，但不能据此推定辅助板插座针序或电压。
 
 五个电赛归档中未找到可识别为相机端视觉应用的 Python 文件；其中 M0 SDK 的 `mcuboot` 脚本属于构建工具。此前未找到图传包；本轮已补官方 MaixCAM2 与荔枝派底板资料。灰度厂商包由用户提供。
 
-资料核对阶段未编译、烧录或实测参考代码，记录见 [资料核对](../validation/2026-11-06-external-modules.md)。
+资料核对阶段未编译、烧录或实测参考代码，记录见 [资料核对](https://github.com/SmallCoral/c5-car/blob/e631797d99cd60486eccc874f66cc99cdf3f7496/Documentation/validation/2026-11-06-external-modules.md)。
 随后已完成模块电源与控制接口原理图，具体见 [M2 接线表](m2-interfaces.md)。
 当前 PCB 已完成主要布线并核对网络；固件和整车 CAD 仍待接入当前模块。

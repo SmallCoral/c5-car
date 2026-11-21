@@ -37,4 +37,4 @@ PCB 的另外 6 个封装是安装孔，不采购。
 采购时按项目约定重新核对立创商城自营现货，排除代购、询价和需订货型号。
 旧的 [BOM.csv](../../Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/BOM.csv) 和 [M2.8 采购记录](../../Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/procurement_m28.json)保留作设计及历史来源，不能覆盖新表中的采购限制。
 
-结构与覆盖检查见[项目整理记录](../validation/2026-11-11-project-cleanup.md)。
+结构与覆盖检查见[项目整理记录](https://github.com/SmallCoral/c5-car/blob/e631797d99cd60486eccc874f66cc99cdf3f7496/Documentation/validation/2026-11-11-project-cleanup.md)。

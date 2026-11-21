@@ -10,7 +10,7 @@ Motor 的完整 BOM、精简 RC 表和降本候选见[采购表说明](motor-bom
 
 2026-11-07 M2.8，保留荔枝派 4A、MaixCAM2 与 Action 4。扩展板 U1/U6 为双路 AP64500SP-13，标称 5.088V、500kHz；U7 单独供 TFT/蓝牙三伏三。Core 仍由 D3 后 A48/B48 供电并由本板 AP63203 降压，三伏三不并联。
 
-22 种新增或修订 SKU 已取得立创国内直接商品页、明确型号和本地仓现货记录，覆盖全部 33 个新增器件及修订的旧器件。该范围之外的旧料尚未逐项重新核价；178 位号草表不是生产采购清单。见 [草表](../../Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/BOM_M2_SCHEMATIC_DRAFT.csv)、[原始记录](../../Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/procurement_m28.json)、[M2.8 验证](../validation/2026-11-07-m28-resume.md)。
+22 种新增或修订 SKU 已取得立创国内直接商品页、明确型号和本地仓现货记录，覆盖全部 33 个新增器件及修订的旧器件。该范围之外的旧料尚未逐项重新核价；178 位号草表不是生产采购清单。见 [草表](../../Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/BOM_M2_SCHEMATIC_DRAFT.csv)、[原始记录](../../Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/procurement_m28.json)、[M2.8 验证](https://github.com/SmallCoral/c5-car/blob/e631797d99cd60486eccc874f66cc99cdf3f7496/Documentation/validation/2026-11-07-m28-resume.md)。
 
 ## 新增与修订器件快照
 
@@ -43,7 +43,7 @@ Motor 的完整 BOM、精简 RC 表和降本候选见[采购表说明](motor-bom
 
 L1/L2 的 744325330 仅余 15 个快照、J25 Type-C 仅 31 个，16SVP150M 为 NRND 且仅 62 个，适合作原型备料依据，长期生产应重新评估。C63/C89 改 470pF/50V C0G，R59/R64 与 R60/R65 均锁定 0.1% 分压电阻；补偿 15.8k+10nF 仍是待实测初值。J18 按厂家图核对 2.54mm 双排、1.0mm 推荐孔和 0.64mm 方针，选择直针型号，不以弯针或简牛代替。
 
-U11 是 SN74LV1T125DBVR，不能把 SN74LVC1G125 当成等价的 1.8V 升压接收器；后者仅用于 U12 的三伏三路径。U8/U16 为 TPS25810RVCR，固定五伏源端与 3A 通告，无 PD/PPS。芯片电流额定、连接器额定与板级实测分别报告，详见 [本轮电源核算](../validation/2026-11-07-m28-resume.md#电源核算与原厂条件)。
+U11 是 SN74LV1T125DBVR，不能把 SN74LVC1G125 当成等价的 1.8V 升压接收器；后者仅用于 U12 的三伏三路径。U8/U16 为 TPS25810RVCR，固定五伏源端与 3A 通告，无 PD/PPS。芯片电流额定、连接器额定与板级实测分别报告，详见 [本轮电源核算](https://github.com/SmallCoral/c5-car/blob/e631797d99cd60486eccc874f66cc99cdf3f7496/Documentation/validation/2026-11-07-m28-resume.md#电源核算与原厂条件)。
 
 ### C1、C13、C33 的必要性
 
@@ -85,7 +85,7 @@ LCSC社区查询API本轮返回403，供货依据改用销售商商品页。
 | 摄像头和存储 | OV2640成像组件×1、microSD插座×1、正规卡×1 | 只用镜头/传感器组件，主板自做处理、存储与供电；最终FPC针序按具体货源锁定 | [乐鑫相机驱动](https://github.com/espressif/esp32-camera)支持OV2640；本轮未锁定镜头组件商家，价格不作为已核报价 |
 
 AP63205、SN74LVC2G17 保留；M2.3 按当前负载将主功率 MOS 改为 DMP3007LK3-13、开关改为 SS12D10G5，并重新选择主保险和步进支路保险。
-当前器件与电流预算以[本轮验证](../validation/2026-11-06-m23-power-connectors.md)和原生原理图为准，以上历史候选及报价不自动转为当前生产 BOM。
+当前器件与电流预算以[本轮验证](https://github.com/SmallCoral/c5-car/blob/e631797d99cd60486eccc874f66cc99cdf3f7496/Documentation/validation/2026-11-06-m23-power-connectors.md)和原生原理图为准，以上历史候选及报价不自动转为当前生产 BOM。
 2026-11-06 原理图实际新增 AP63205WU-7 五伏外设支路与 AP2112K-3.3 三伏三支路，分别按 1.5A 和 150mA 设计预算；此前 AP63203 为候选，未采用。完整已绘制接口与边界见 [M2 接线表](m2-interfaces.md)。
 光栅、循迹与图传不从Core的100mA外接预算取电。
 

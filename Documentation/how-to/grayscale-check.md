@@ -45,4 +45,4 @@ POS 是通道坐标：左侧 CH1=-3500，右侧 CH8=+3500，相邻通道相差 1
 `--gray` 先停止电机并切换页面，再保存遥测；本机解释器路径见[无线升级说明](wireless-update.md#上传已有文件或换电脑)。
 终端的 `gray(CH1..8)` 按通道顺序显示原始电平。CSV 掩码按十进制存储，bit0 对应 CH1；状态码见[遥测参考](../reference/firmware-telemetry.md)。
 
-构建并无线更新使用 `./Firmware/flash-wireless.ps1`。本轮验证和未完成项见[2026-11-17 记录](../validation/2026-11-17-grayscale.md)。
+构建并无线更新使用 `./Firmware/flash-wireless.ps1`。本轮验证和未完成项见[2026-11-17 记录](https://github.com/SmallCoral/c5-car/blob/e631797d99cd60486eccc874f66cc99cdf3f7496/Documentation/validation/2026-11-17-grayscale.md)。

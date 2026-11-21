@@ -644,6 +644,33 @@ static void test_race_speed_and_centering(void)
 	assert(ctl.lap_level == 0);
 }
 
+static void test_carried_ball_brakes_on_centered_gap(void)
+{
+	struct gray_reading center = line(0);
+	struct gray_reading lost = { .status = GRAY_LOST };
+	struct lap lap;
+	assert(lap_start_distance(&lap, &center, 0, 0, 0, LAP_OFFSET_LEVEL, LAP_DISTANCE_COUNTS));
+	lap.carry_ball = true;
+	for (int i = 0; i < 250; i++)
+		tick(&lap, center, 14, 14);
+	assert(lap.base_target == 1400);
+	struct lap ordinary = lap, edge = lap;
+	ordinary.carry_ball = false;
+	edge.last_position = 1500;
+	tick(&ordinary, lost, 18, 18);
+	tick(&edge, lost, 18, 18);
+	assert(ordinary.base_target == 1320 && edge.base_target == 1320);
+	for (int i = 0; i < 10; i++)
+		tick(&lap, lost, 18, 18);
+	assert(lap.status == LAP_RUNNING && lap.base_target == 1220);
+	struct lap recovered = lap;
+	tick(&recovered, center, 16, 16);
+	assert(recovered.status == LAP_RUNNING && recovered.base_target > lap.base_target);
+	for (int i = 0; i < 5; i++)
+		tick(&lap, lost, 16, 16);
+	assert(lap.status == LAP_NO_LINE && !lap.wheel[0].pwm && !lap.wheel[1].pwm);
+}
+
 static void test_fitted_wheel_mapping(void)
 {
 	struct wheel_channels right_turn = wheel_to_channels(
@@ -660,6 +687,34 @@ static void test_fitted_wheel_mapping(void)
 	assert(wheel_faults_to_physical(2) == 1);
 	assert(wheel_phases_to_physical(12) == 3);
 	assert(wheel_phases_to_physical(3) == 12);
+}
+
+static void test_carried_ball_speed_in_both_arcs(void)
+{
+	struct gray_reading center = line(0);
+	struct lap lap;
+	assert(lap_start_distance(&lap, &center, 0, 0, 0, LAP_OFFSET_LEVEL, LAP_DISTANCE_COUNTS));
+	lap.carry_ball = true;
+	for (int i = 0; i < 260; i++)
+		tick(&lap, center, 18, 18);
+	assert(lap.base_target == LAP_OFFSET_CRUISE_CPS);
+	for (int arc = 0; arc < 2; arc++) {
+		int brake = arc * LAP_HALF_COURSE_COUNTS + LAP_BEND_BRAKE_COUNTS;
+		lap.wheel[0].progress = lap.wheel[1].progress = brake;
+		for (int i = 0; i < 40; i++) {
+			tick(&lap, center, 14, 14);
+			assert(lap.base_target == LAP_OFFSET_CRUISE_CPS);
+		}
+		for (int i = 0; i < 120; i++)
+			tick(&lap, center, 17, 11);
+		assert(lap.base_target == LAP_OFFSET_CRUISE_CPS);
+		if (!arc) {
+			lap.wheel[0].progress = lap.wheel[1].progress = LAP_BEND_END_COUNTS;
+			for (int i = 0; i < 80; i++)
+				tick(&lap, center, 18, 18);
+			assert(lap.base_target == LAP_OFFSET_CRUISE_CPS);
+		}
+	}
 }
 
 static void test_probe_to_motor_direction(void)
@@ -715,6 +770,8 @@ int main(void)
 	test_bend_memory();
 	test_course_from_a();
 	test_race_speed_and_centering();
+	test_carried_ball_brakes_on_centered_gap();
+	test_carried_ball_speed_in_both_arcs();
 	test_fitted_wheel_mapping();
 	test_probe_to_motor_direction();
 	puts("PASS: distance and marker finishes, terminal speed, PD, PI, loss/stall/timeout, wrap and controls");

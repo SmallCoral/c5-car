@@ -11,7 +11,7 @@ import zlib
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools"))
 from ota_protocol import APP_ADDR, BOARD_ID, CHUNK, DATA, HELLO, IMAGE_MAX, Frame, Parser, image_header, read_image
 from package_firmware import make_hex
-from wireless_flash import DEFAULT_BLE, DEFAULT_UUID, Link, run
+from wireless_flash import DEFAULT_BLE, DEFAULT_UUID, PACED_RECOVERY_BLOCKS, Link, run
 
 
 class ImageTests(unittest.TestCase):
@@ -68,6 +68,37 @@ class ImageTests(unittest.TestCase):
 
 
 class RetryTests(unittest.IsolatedAsyncioTestCase):
+    async def test_data_burst_falls_back_on_repeated_loss(self):
+        link = Link(None, None)
+        sends = []
+        async def send(data, *, paced):
+            frame, = Parser().feed(data)
+            sends.append((frame.sequence, paced))
+            if paced:
+                ack = Frame(DATA | 0x80, frame.sequence, struct.pack("<II", 0, 128))
+                link.notify(None, ack.encode())
+        link.write = send
+        for _ in range(3):
+            await link.request(DATA, bytes(132), timeout=0.01)
+        self.assertEqual(sends, [(1, False), (1, True), (2, False), (2, True), (3, True)])
+        for _ in range(PACED_RECOVERY_BLOCKS - 1):
+            await link.request(DATA, bytes(132), timeout=0.01)
+        self.assertTrue(all(paced for _, paced in sends[4:]))
+        await link.request(DATA, bytes(132), timeout=0.01)
+        self.assertEqual([paced for _, paced in sends[-2:]], [False, True])
+
+    async def test_burst_awaits_all_eight_writes_without_extra_sleep(self):
+        client = SimpleNamespace(write_gatt_char=AsyncMock())
+        link = Link(client, "ffe1")
+        packet = Frame(DATA, 7, bytes(132)).encode()
+        with patch("wireless_flash.asyncio.sleep", new=AsyncMock()) as sleep:
+            await link.write(packet, paced=False)
+            sleep.assert_not_awaited()
+        writes = client.write_gatt_char.await_args_list
+        self.assertEqual([len(call.args[1]) for call in writes], [20] * 7 + [8])
+        self.assertEqual(b"".join(call.args[1] for call in writes), packet)
+        self.assertTrue(all(call.kwargs == {"response": False} for call in writes))
+
     async def test_holding_pipe_stops_before_bootloader_exchange(self):
         link = Link(None, None)
         link.write = AsyncMock(side_effect=lambda _: link.notify(None, b"C5OTA,BEAM HELD\r\n"))

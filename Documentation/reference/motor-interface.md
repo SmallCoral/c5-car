@@ -33,7 +33,7 @@ M+/M−是电机端标识，H桥两端均为受控输出，不能把M−当作�
 现在左右电机统一使用J4、J6六针口，动力与编码器共用同一插座。
 2026-11-03按要求删除J3、J5的原理图器件、PCB封装及仅通向这些端子的PCB支线。
 当前PCB的J4、J6已经是六针封装，本次保留其位置、旋转及网络。
-当前检查见[端子删除记录](../validation/2026-11-03-remove-j3-j5.md)。
+当前检查见[端子删除记录](https://github.com/SmallCoral/c5-car/blob/e631797d99cd60486eccc874f66cc99cdf3f7496/Documentation/validation/2026-11-03-remove-j3-j5.md)。
 
 库封装采用 JST XH `B6B-XH-A(LF)(SN)` 的2.50mm垂直六针外形。
 同类国产 XH2.54 或 PH2.0 不能只凭商品名称判定兼容。

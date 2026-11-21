@@ -17,7 +17,7 @@
 | CAD 交换模型 | [CoralC5_Framework.step](step/CoralC5_Framework.step)，毫米制、零倾角静态快照 |
 | 带颜色的网格总装 | [CoralC5_Framework.glb](step/CoralC5_Framework.glb)，米制、零倾角静态快照 |
 | 俯视、侧视和分解图 | [俯视](preview/preview-top.png)、[侧视](preview/preview-side.png)、[分解](preview/preview-exploded.png) |
-| 参数与检查记录 | [parameters.yaml](parameters.yaml)、[本轮验证记录](../Documentation/validation/2026-11-05-mechanical-framework.md) |
+| 参数与检查记录 | [parameters.yaml](parameters.yaml)、[本轮验证记录](https://github.com/SmallCoral/c5-car/blob/e631797d99cd60486eccc874f66cc99cdf3f7496/Documentation/validation/2026-11-05-mechanical-framework.md) |
 
 ## 当前尺寸与布局
 

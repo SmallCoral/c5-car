@@ -676,14 +676,14 @@ static void test_contest(void)
 		contest_key(&m, KEY_NEXT);
 	}
 	assert(m.item == EVENT_POSITION);
-	assert(contest_lap_notice(LAP_RUNNING, 29999) == NOTICE_NONE);
-	assert(contest_lap_notice(LAP_RUNNING, 30000) == NOTICE_TIMEOUT);
-	assert(contest_lap_notice(LAP_DONE, 30000) == NOTICE_FINISHED);
-	assert(contest_lap_notice(LAP_DONE, 30001) == NOTICE_TIMEOUT);
-	assert(contest_lap_notice(LAP_ENCODER, 4000) == NOTICE_DRIVE);
-	assert(contest_lap_notice(LAP_DRIVE, 10) == NOTICE_DRIVE);
-	assert(contest_lap_notice(LAP_NO_MARKER, 20000) == NOTICE_LINE);
-	assert(contest_lap_notice(LAP_CANCELLED, 2000) == NOTICE_STOPPED);
+	assert(contest_lap_notice(LAP_RUNNING, 29999, CONTEST_LAP_LIMIT_MS) == NOTICE_NONE);
+	assert(contest_lap_notice(LAP_RUNNING, 30000, CONTEST_LAP_LIMIT_MS) == NOTICE_TIMEOUT);
+	assert(contest_lap_notice(LAP_DONE, 30000, CONTEST_LAP_LIMIT_MS) == NOTICE_FINISHED);
+	assert(contest_lap_notice(LAP_DONE, 30001, CONTEST_LAP_LIMIT_MS) == NOTICE_TIMEOUT);
+	assert(contest_lap_notice(LAP_ENCODER, 4000, CONTEST_LAP_LIMIT_MS) == NOTICE_DRIVE);
+	assert(contest_lap_notice(LAP_DRIVE, 10, CONTEST_LAP_LIMIT_MS) == NOTICE_DRIVE);
+	assert(contest_lap_notice(LAP_NO_MARKER, 20000, CONTEST_LAP_LIMIT_MS) == NOTICE_LINE);
+	assert(contest_lap_notice(LAP_CANCELLED, 2000, CONTEST_LAP_LIMIT_MS) == NOTICE_STOPPED);
 	m.page = MENU_DETAIL;
 	m.notice = NOTICE_TRAVEL;
 	assert(contest_key(&m, confirm) == MENU_RELEVEL && m.page == MENU_DETAIL);
@@ -834,9 +834,58 @@ static void test_contest(void)
 	assert(position_update(&r, BALL_MISSING, 355, 71, 1900, 1900) == NOTICE_NONE && !r.goal_cd && !r.trim_milli_cd);
 }
 
+static void test_offset_positions(void)
+{
+	const int left = contest_ball_mm(RULER_X_LEFT), right = contest_ball_mm(RULER_X_RIGHT);
+	assert(left == -106 && right == 95);
+	struct contest_menu m = { .page = MENU_DETAIL, .item = EVENT_OFFSET };
+	for (int i = 0; i >= left; i--)
+		contest_key(&m, KEY_OK);
+	assert(m.target_mm == left);
+	m.page = MENU_RUN;
+	for (int mm = left; mm <= right; mm++) {
+		assert(m.target_mm == mm);
+		contest_key(&m, KEY_NEXT);
+	}
+	assert(m.target_mm == right);
+	m.offset_driving = true;
+	assert(contest_key(&m, KEY_OK) == MENU_NONE && m.target_mm == right);
+
+	const int locations[] = { RULER_X_LEFT, 385, RULER_X_O, 203, RULER_X_RIGHT };
+	struct position_run r;
+	position_begin_target(&r, left, RULER_X_LEFT, 0, 0);
+	position_check_level(&r, true, 1);
+	position_check_level(&r, true, 76);
+	uint16_t seq = 0;
+	uint32_t now = 100;
+	for (unsigned int i = 0; i < sizeof(locations) / sizeof(locations[0]); i++) {
+		int x = locations[i], target = contest_ball_mm(x);
+		position_retarget(&r, target);
+		for (int sample = 0; sample < 70; sample++) {
+			now += 25;
+			assert(position_update(&r, BALL_TRACKED, x, ++seq, now, now) == NOTICE_NONE);
+		}
+		assert(r.leg == HOLD_TARGET && r.mm == target && r.target_mm == target && !r.start);
+	}
+	/* Accept a displaced ball after a gap and keep the original fixed target. */
+	now += 600;
+	assert(position_update(&r, BALL_MISSING, 0, ++seq, now, now) == NOTICE_NONE && r.waiting_vision);
+	now += 25;
+	position_update(&r, BALL_TRACKED, RULER_X_LEFT, ++seq, now, now);
+	assert(r.waiting_vision);
+	now += 25;
+	position_update(&r, BALL_TRACKED, RULER_X_LEFT, ++seq, now, now);
+	assert(!r.waiting_vision && r.leg == MOVE_TARGET && r.target_mm == right && r.goal_cd > 0);
+	position_retarget(&r, left);
+	now += 25;
+	position_update(&r, BALL_TRACKED, RULER_X_O, ++seq, now, now);
+	assert(r.leg == MOVE_TARGET && r.target_mm == left && r.goal_cd < 0);
+}
+
 int main(void)
 {
 	test_contest();
+	test_offset_positions();
 	test_calibrated_travel();
 	test_jog_buttons();
 	test_jog_motion();

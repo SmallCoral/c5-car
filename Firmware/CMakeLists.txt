@@ -12,6 +12,22 @@ if(HOST_TESTS)
   target_include_directories(test_logic PRIVATE include)
   target_compile_options(test_logic PRIVATE -Wall -Wextra -Werror)
   add_test(NAME logic COMMAND test_logic)
+  add_executable(test_position_trace tests/test_position_trace.c src/contest.c)
+  target_include_directories(test_position_trace PRIVATE include)
+  target_compile_options(test_position_trace PRIVATE -Wall -Wextra -Werror)
+  set(field_traces ${CMAKE_CURRENT_SOURCE_DIR}/tests/fixtures)
+  add_test(NAME task1_measured_start COMMAND test_position_trace
+    ${field_traces}/task1-measured-start.csv 5441)
+  add_test(NAME task1_missing_start COMMAND test_position_trace
+    ${field_traces}/task1-missing-start.csv 7512)
+  add_executable(test_offset_event tests/test_offset_event.c src/contest.c src/lap.c
+    src/logic.c src/grayscale.c src/stepper.c src/emm.c src/jog.c src/ball.c src/balance.c
+    ports/classmate_26h/balance.c src/ota.c)
+  target_include_directories(test_offset_event PRIVATE tests/host include ports)
+  target_compile_options(test_offset_event PRIVATE -Wall -Wextra -Werror)
+  foreach(scenario IN ITEMS complete vision_loss wheel_trip line_loss shaft_fault manual_stop finish_vision_loss)
+    add_test(NAME offset_${scenario} COMMAND test_offset_event ${scenario})
+  endforeach()
   add_executable(test_grayscale tests/test_grayscale.c src/grayscale.c src/logic.c)
   target_include_directories(test_grayscale PRIVATE include)
   target_compile_options(test_grayscale PRIVATE -Wall -Wextra -Werror)
@@ -95,17 +111,29 @@ if(NOT Python3_EXECUTABLE AND EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/../.scratch/fi
 endif()
 find_package(Python3 3.10 REQUIRED COMPONENTS Interpreter)
 add_custom_target(firmware_package ALL
+  COMMAND ${CMAKE_COMMAND} -DNM=${CMAKE_NM} -DELF=$<TARGET_FILE:coral_c5>
+    -P ${CMAKE_CURRENT_SOURCE_DIR}/cmake/check-contest-image.cmake
+  COMMAND ${CMAKE_OBJCOPY} -O binary $<TARGET_FILE:coral_c5> ${CMAKE_CURRENT_BINARY_DIR}/coral_c5.bin
   COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/tools/package_firmware.py
     --app ${CMAKE_CURRENT_BINARY_DIR}/coral_c5.bin
     --boot ${CMAKE_CURRENT_BINARY_DIR}/coral_boot.bin
     --out ${CMAKE_CURRENT_BINARY_DIR}
   DEPENDS coral_c5 coral_boot tools/package_firmware.py tools/ota_protocol.py
+  VERBATIM
   COMMENT "Packaging wireless image and first-install HEX")
+set(host_build ${CMAKE_CURRENT_SOURCE_DIR}/build/host)
+add_custom_target(competition_image
+  COMMAND ${CMAKE_COMMAND} -S ${CMAKE_CURRENT_SOURCE_DIR} -B ${host_build} -G Ninja
+    -DHOST_TESTS=ON -DCMAKE_BUILD_TYPE=Debug
+  COMMAND ${CMAKE_COMMAND} --build ${host_build}
+  COMMAND ${CMAKE_CTEST_COMMAND} --test-dir ${host_build} --output-on-failure --no-tests=error
+  DEPENDS firmware_package USES_TERMINAL VERBATIM
+  COMMENT "Running competition regressions before programming")
 function(add_wireless_flash_target target)
   add_custom_target(${target}
     COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/tools/wireless_flash.py
       ${CMAKE_CURRENT_BINARY_DIR}/coral_c5.ota ${ARGN}
-    DEPENDS firmware_package USES_TERMINAL
+    DEPENDS competition_image USES_TERMINAL VERBATIM
     COMMENT "Updating Coral-C5 over HC-08 BLE")
 endfunction()
 add_wireless_flash_target(wireless_flash)

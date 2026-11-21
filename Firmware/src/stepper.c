@@ -69,7 +69,7 @@ void stepper_brake(struct stepper *step, uint32_t now)
 		stepper_stop(step, now);
 		return;
 	}
-	/* FE stops the shaft. Keep the drive energized to support the linkage. */
+	/* FE 停止转轴并保留驱动使能，让步进电机继续托住水管。 */
 	step->phase = STEP_BRAKE;
 	step->direction_probe = DIR_NONE;
 	step->pending = 0;
@@ -85,8 +85,7 @@ bool stepper_online(const struct stepper *step, uint32_t now)
 
 void stepper_resume_hold(struct stepper *step, uint32_t now)
 {
-	/* FE stops any residual motion while preserving the drive's enable
-	 * state. The subsequent 3A reply tells us whether it was energized. */
+	/* 重新接管时先发 FE 消除残余转动，再用 3A 应答确认驱动是否仍处于使能状态。 */
 	step->cleanup_only = true;
 	step->hold = true;
 	stepper_brake(step, now);

@@ -1,8 +1,8 @@
-# Coral-C5 遥测 v6
+# Coral-C5 蓝牙遥测
 
 USART1 向 HC-08 发送 ASCII CSV，以 CRLF 结尾。LAP 运行时约每 100 ms 一帧，其余状态每 500 ms 一帧。
-帧头为 `C5,6`，共 56 列；[monitor.py](../../Firmware/tools/monitor.py)接收 BLE 分片、校验并保存。
-v1 为前 27 列，v2 为前 30 列，v3 为前 37 列，v4 为前 47 列，v5 为前 53 列。接收工具兼容六个版本，旧版缺少字段填 0 并保留版本号；不能把旧版补零的控制诊断当作测量值。
+普通比赛与调试页帧头为 `C5,6`，共 56 列。发挥一选点、运行和结果页采用下文的 v7。[monitor.py](../../Firmware/tools/monitor.py)接收 BLE 分片、校验并保存。
+v1 为前 27 列，v2 为前 30 列，v3 为前 37 列，v4 为前 47 列，v5 为前 53 列。接收工具兼容七个版本，旧版缺少字段填 0 并保留版本号；不能把旧版补零的控制诊断当作测量值。
 独立 Rust 迁移版仍保留 v2，未同步本轮 C 版灰度、循线和实车左右映射；观察 C 版使用上述 Python 工具。
 
 | 字段 | 含义 |
@@ -74,6 +74,22 @@ LAP 的持续运行由独立 90 s 期限限制，步进离线不阻止单独轮�
 
 `C5:MENU` 停止运动并回到比赛主页。`C5:MENU?` 只读，返回 `C5MENU,1,page,item,notice,leg,running,wheels,elapsed_ms`。page 的 0～5 依次为设备调试页、比赛主页、题目详情、运行、结果、调试列表。item 的 1～6 对应四道基本题和两道发挥题。在第一题运行页，leg 按路线依次为 3（确认水平）、4（向 O）、0（向右 5 cm）、1（折返左 5 cm）、2（保持左点）。详情页确认启动时开始计时。兼容查询 `C5:ROLL?` 中的 boot_pending 为 0。[阶段枚举](../../Firmware/include/contest.h)
 
+## 发挥一定点稳球
+
+从 `855500CB` 起，可在起跑后或停车后只读查询 `C5:RANGE?`。返回 `C5RANGE,1,start_ms,target_mm,samples,missing,min_error_mm,max_error_mm,outside,min_at_ms,max_at_ms,max_gap_ms,last_at_ms,crc32`。主控按序号更新的相机包统计，仅计车轮循线阶段。可信球位进入样本数和有符号极值，绝对偏差严格大于 20 mm 才计一次超差。`missing` 计收到但无可信球位的包，断流由有效观测间隔反映。各时刻相对起跑，`max_gap_ms` 包含起跑至首样本，终点未覆盖时段用圈时减 `last_at_ms`。零样本时极值无效。查询行末 CRC32 的计算与 v7 相同，下次起跑重置统计。
+
+发挥一选点、原地稳球、循线和结果页每 100 ms 发送一帧 `C5,7`。前 56 列沿用 v6。新增的 13 列按下表顺序排列。每帧同时记录两轮目标和实际速度，可用 `lap_counts` 对齐一圈中的路段。停车后的实际轮速取 `left_cps`、`right_cps`，这些字段在静止和结果页继续采样。
+
+| 新增字段 | 含义 |
+| --- | --- |
+| `offset_phase`, `phase_ms` | 1 选点、2 原地稳球、3 循线稳球、4 结果。选点为 0 ms；开始稳球与起跑分别重置计时，结果页保留结束时长。 |
+| `target_mm` | O 为零，右正左负。 |
+| `ball_status`, `camera_seq`, `camera_rx_ms`, `camera_age_ms`, `ball_mm` | 主控判定 0 离线、1 漏检、2 可信实测、3 不确定。相机包序号、该包的主控接收时刻、包内年龄和标定球位。采集程序仅在状态 2 时写入球位和偏差。 |
+| `wheel_sample_ms`, `shaft_goal_cd`, `shaft_actual_cd`, `event_notice` | 编码器差分采样的主控毫秒时间、稳球目标轴角、实际轴角（相对标定水平，0.01°）、菜单提示码。目标轴角在运行页有效；从 `24978E6C` 起，正常完圈后仍在闭环的结果页也上报目标轴角。 |
+| `frame_crc32` | 从行首到提示码的 ASCII 字节计算 CRC32，线上发送 8 位十六进制，采集程序验证后存为十进制。 |
+
+CSV 另存 `mean_accel_cps2` 与 `ball_error_mm`。前者用相邻两帧的实际平均轮速差除以轮速采样时间差，单位为编码器计数/秒²。后者为实测球位减目标，正数表示偏右。缺失观测时偏差留空，遥测序号不连续时加速度留空。以主控时钟分析，相机每个遥测周期只记录最新一包，采样间的峰值可能更大。[实车抽样与逐帧统计](../validation/README.md)
+
 ## 步进状态
 
 | 值 | 名称 | 行为 |
@@ -98,7 +114,7 @@ LAP 的持续运行由独立 90 s 期限限制，步进离线不阻止单独轮�
 
 `C5:ROLL?` 返回 `C5ROLL,1,ms,reset_flags,boot_pending,state,leg,origin_raw,lower_raw,upper_raw,lock_frames,lock_dx,lock_px_s,lock_ms`。13 表示正在滚动寻球，14 表示到达本次搜索端点，等待球开始滚动，15 表示相机断流期间原位保持。相机恢复后继续判断钢球轨迹。锁定时间从本次寻球开始计，坐标差和速度按实物左负右正。总计时 `C5:TIME?` 还包括启动抱持。
 
-`C5:JOG?` 返回 `C5JOG,1,ms,state,steps,origin_raw,target_raw,actual_raw,limited,drive_flags,drive_error`。点动状态依次为 0 待机、1 等待抱持与新轴位、2 定位、3 抱持、4 故障。每一级为电机轴 1.8°，左键为负，右键为正。`limited=1` 表示最近一次按键的目标超出行程。物理水平和两端均由 0x43 同包的多圈位置和单圈绝对角恢复。[实物水平及上下限标定](../../Firmware/validation/2026-11-19/camera640-and-shaft.json)
+`C5:JOG?` 返回 `C5JOG,1,ms,state,steps,origin_raw,target_raw,actual_raw,limited,drive_flags,drive_error`。点动状态依次为 0 待机、1 等待抱持与新轴位、2 定位、3 抱持、4 故障。每一级为电机轴 1.8°，左键为负，右键为正。`limited=1` 表示最近一次按键的目标超出行程。物理水平和两端均由 0x43 同包的多圈位置和单圈绝对角恢复。[实物水平及上下限标定](../../Firmware/calibration/camera640-and-shaft.json)
 
 `C5:LIMIT?` 返回 `C5LIMIT,1,valid,level_raw,highest_raw,lowest_raw,actual_raw`。后三个标定位置与实测位置使用本次驱动上电的多圈计数。物理轴角为 `(actual_raw-level_raw)*360/65536`。仅 valid=1 时接受运动请求。`C5:BAL?` 的 zero_raw 是控制参考，active 和 leveled 都为零时使用 LIMIT 查询物理轴角。
 

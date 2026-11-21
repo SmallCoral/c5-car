@@ -2,7 +2,7 @@
 
 整理日期：2026-11-17。
 当前电路为 M2.8P2，Core/Motor 已完成焊接并进入实物联调。11 月 10 日的有效网络和 DRC 结论只对应当时文件；用户此后继续保存了 Motor PCB，尚未对该版本重新检查。
-历史问题见[PCB 复查](../validation/2026-11-10-motor-pcb-review.md)，已实现的固件与实物范围见[联调记录](../validation/2026-11-16-firmware-bringup.md)。
+历史问题见[PCB 复查](../validation/2026-11-10-motor-pcb-review.md)，已实现的固件与实物范围见[联调记录](https://github.com/SmallCoral/c5-car/blob/e631797d99cd60486eccc874f66cc99cdf3f7496/Documentation/validation/2026-11-16-firmware-bringup.md)。
 
 | 项目 | 当前实现 | 待完成 |
 | --- | --- | --- |
@@ -13,7 +13,7 @@
 | Action 4 / 荔枝派 | U16/U8 Type-C 固定五伏供电；荔枝派保留电平转换 | 电源通路加宽、带载压降、接口与上电时序验证 |
 | 步进 | J23 的 VM/UART 直连，Emm 连续旋转及停止已验证 | 浪涌、再生与负载验证；没有 MCU 独立断电功能 |
 | 轮驱动/编码器 | 两轮主动转动、反馈和实车左右方向已验证，LAP 使用计数/秒 PI；ALL 默认 PWM 45% | 轮径/每转计数标定、更多工况闭环整定与电流采样 |
-| TFT/四键/蓝牙/灰度 | 已接入 LL 固件；用户确认黑白及左右映射；LAP 连续两次回 A 自动停车，见[最新实测](../validation/2026-11-17-lap-repeat.md) | 停车位置误差、不同工况重复性及整车验收 |
+| TFT/四键/蓝牙/灰度 | 已接入 LL 固件；用户确认黑白及左右映射；LAP 连续两次回 A 自动停车，见[最新实测](https://github.com/SmallCoral/c5-car/blob/e631797d99cd60486eccc874f66cc99cdf3f7496/Documentation/validation/2026-11-17-lap-repeat.md) | 停车位置误差、不同工况重复性及整车验收 |
 | PCB | 用户当前手工保存版本已纳入仓库 | 对最新版本重跑 DRC，复核历史孔间距、微孔、边界、丝印与功率布局问题 |
 | 采购 | 完整表与两份精简表已保存 | 替代件引脚/封装/外围验证；采购时重新核库存 |
 

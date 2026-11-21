@@ -1,4 +1,8 @@
+import csv
 import importlib.util
+import io
+import zlib
+from contextlib import redirect_stdout
 from pathlib import Path
 import unittest
 
@@ -23,6 +27,31 @@ class MonitorTest(unittest.TestCase):
             self.assertEqual(record["lap_status"], 0)
             self.assertEqual(record["lap_control_ms"], 0)
             self.assertEqual(record["lap_marker_hits"], 0)
+
+    def test_offset_acceleration_and_signed_error(self):
+        def packet(seq, at, speed, tracked):
+            values = self.frame(7).decode().strip().split(",")
+            fields = {"seq": seq, "ms": at, "offset_phase": 3, "target_mm": -18, "ball_mm": -23,
+                      "ball_status": 2 if tracked else 1, "wheel_sample_ms": at,
+                      "left_cps": speed, "right_cps": speed}
+            for field, value in fields.items():
+                values[monitor.FIELDS.index(field)] = str(value)
+            payload = ",".join(values[:-1]).encode()
+            return payload + f",{zlib.crc32(payload):08X}\r\n".encode()
+
+        output = io.StringIO()
+        sink = monitor.Sink(output)
+        good = packet(1, 1000, 100, True)
+        with redirect_stdout(io.StringIO()):
+            sink.accept(good[:17])
+            sink.accept(good[17:] + packet(2, 1100, 130, False))
+            sink.accept(packet(3, 1200, 110, True).replace(b"-18", b"-19"))
+            sink.accept(packet(4, 1300, 90, True))
+        a, b, c = list(csv.DictReader(io.StringIO(output.getvalue())))
+        self.assertEqual((a["ball_error_mm"], a["mean_accel_cps2"]), ("-5", ""))
+        self.assertEqual((b["ball_mm"], b["ball_error_mm"], b["mean_accel_cps2"]), ("", "", "300"))
+        self.assertEqual(c["mean_accel_cps2"], "")
+        self.assertEqual(sink.decoder.invalid, 1)
 
     def test_gray_frame(self):
         values = self.frame().decode().strip().split(",")

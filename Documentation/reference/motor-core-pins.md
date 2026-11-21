@@ -4,7 +4,7 @@
 下表保留当时重新分配20路 GPIO 的结果，Core 的98触点合同不变。
 2026-11-10 复查已确认当前 Motor PCB 的有效焊盘网络与原理图匹配，未连接项为零；剩余孔间距、散热和功率布线问题见[PCB 复查](../validation/2026-11-10-motor-pcb-review.md)。
 
-机器表为 [13路轮控制](../../Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/core_pin_assignment.csv)和[26路外设](../../Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/m2_pin_assignment.csv)。固定触点依据[共享接口表](../../Hardware/stm32c5a3/Hardware/Shared/interface.csv)；逐路功能证据见[39路审计表](../../Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/functional-pinout.csv)，本轮范围和命令见[复核记录](../validation/2026-11-08-pinplan-rework.md)。
+机器表为 [13路轮控制](../../Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/core_pin_assignment.csv)和[26路外设](../../Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/m2_pin_assignment.csv)。固定触点依据[共享接口表](../../Hardware/stm32c5a3/Hardware/Shared/interface.csv)；逐路功能证据见[39路审计表](../../Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/functional-pinout.csv)，本轮范围和命令见[复核记录](https://github.com/SmallCoral/c5-car/blob/e631797d99cd60486eccc874f66cc99cdf3f7496/Documentation/validation/2026-11-08-pinplan-rework.md)。
 
 ## 当前分配
 

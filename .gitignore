@@ -26,3 +26,6 @@ CMakeUserPresets.json
 ~$*.xlsx
 ~$*.docx
 /Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/schematic-only-resume/raster-preview-profile/
+
+# 原始调车抓包留在本机，定版数据放入 Documentation/validation/data。
+/Firmware/validation/

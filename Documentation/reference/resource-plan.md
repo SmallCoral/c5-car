@@ -19,7 +19,7 @@ PD12仍空闲，已无STEP_PWR_EN、独立步进控电或U15；PD15改为模式�
 
 双路 AP64500 标称 5.088V：A 轨 4.2A 预算供荔枝派/Core/灰度/TFT蓝牙，B 轨 4.0A 预算供 Maix/Action 4。U7 LDO 与 Core 三伏三分开，D3 隔离不变。12V/12.5A 适配器共用，输入连续预算约 11.09A，启动与热仍需实测。
 
-[详细接线](m2-interfaces.md)、[原理图功能复核](../validation/2026-11-08-pinplan-rework.md)。
+[详细接线](m2-interfaces.md)、[原理图功能复核](https://github.com/SmallCoral/c5-car/blob/e631797d99cd60486eccc874f66cc99cdf3f7496/Documentation/validation/2026-11-08-pinplan-rework.md)。
 当前142个实体、184网络；原理图ERC0/0、956项及独立320项功能核对是此前原理图阶段记录。
 11 月 10 日 PCB 复查已确认有效电气焊盘网络匹配、未连接项为零，安装孔一致性和 DRC 仍未通过，见[PCB 记录](../validation/2026-11-10-motor-pcb-review.md)。
 2026-11-16 已接入轮 PWM/编码器、Emm 连续步进、TFT/四键、灰度和蓝牙遥测/无线升级，见[固件入口](../../Firmware/README.md)。背光当前使用 GPIO 开关，未实现 TIM3 调光；电流 ADC、UART4/UART5 应用尚未接入。机械重建、视觉标定、闭环控制与整车验收仍待完成。

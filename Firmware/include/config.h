@@ -2,7 +2,7 @@
 #define CORAL_CONFIG_H
 
 #define BOARD_CLOCK_HZ		48000000U
-/* Measured on the fitted HC-08, not the module manual's factory default. */
+/* 当前实车 HC-08 的串口实测速率。 */
 #define BT_BAUD			57600U
 #define STEP_BAUD		115200U
 #define CAMERA_BAUD		115200U
@@ -17,7 +17,7 @@
 #define WHEEL_MAX_PERMILLE	450
 #define WHEEL_LEVEL_COUNT	4U
 #define WHEEL_DEFAULT_LEVEL	3U
-/* User verified the fitted harness: J6 = physical left, J4 = physical right. */
+/* 实车线束已核对，J6 接左轮，J4 接右轮。驱动、编码器和故障位一起换边。 */
 #define WHEEL_SWAP_SIDES		1
 #define TEST_DURATION_MS		3000U
 #define MAIN_STALL_MS		100U
@@ -25,9 +25,9 @@
 #define KEY_DEBOUNCE_MS		25U
 #define GRAY_SAMPLE_MS		2U
 #define GRAY_FILTER_SAMPLES	3U
-/* Fitted cable: PE14 is physical left, PE7 is physical right. */
+/* 线束反序，PE14 对应实物最左探头，PE7 对应最右。转换后 CH1 到 CH8 从左向右。 */
 #define GRAY_REVERSE_CHANNELS	1
-/* LAP speeds are encoder counts/s (wheel scale uncalibrated). */
+/* 循线轮速用编码器计数/秒表示，轮径和每转计数尚未标定。 */
 #define LAP_CONTROL_MS		10U
 #define LAP_CONTROL_MAX_MS	50U
 #define LAP_TIMEOUT_MS		90000U
@@ -42,8 +42,10 @@
 /* Provisional window for the 6.142 m course (~43k counts/lap), not mm. */
 #define LAP_ARM_COUNTS		30000U
 #define LAP_MAX_COUNTS		60000U
-/* Competition: median of four measured A crossings at the default gear. */
+/* 第二题终点取默认档四次经过 A 线的里程中位数，单位为编码器计数。 */
 #define LAP_DISTANCE_COUNTS	41800U
+/* 发挥一按 450 计数/秒收尾时曾提前约 3 cm，因此单独将停车门槛向前补 200 计数。 */
+#define LAP_OFFSET_DISTANCE_COUNTS	42000U
 #define LAP_FINISH_BLEND_COUNTS	900U
 #define LAP_FINISH_CPS		1100
 /* Optical-marker diagnostic: approach slowly to sample the crossbar. */
@@ -76,6 +78,12 @@
 #define LAP_SPEED_TRACK_CPS	2200
 #define LAP_SPEED_FAST_CPS	3300
 #define LAP_SPEED_RACE_CPS	4600
+#define LAP_OFFSET_LEVEL	1U /* 发挥一复用普通档的转向控制 */
+#define LAP_OFFSET_ACCEL_CPS_S	800
+#define LAP_OFFSET_CRUISE_CPS	1400
+#define LAP_OFFSET_GAP_DECEL_CPS_S	1800
+#define LAP_OFFSET_FINISH_COUNTS	2500U
+#define LAP_OFFSET_FINISH_CPS	450
 #define LAP_FAST_LEVEL		3U
 #define LAP_RACE_LEVEL		4U
 #define LAP_SPEED_LEVELS		(LAP_RACE_LEVEL + 1U)
@@ -115,10 +123,10 @@
 #define LAP_EDGE_SLEW_CPS_S	14000U
 #define LAP_STEER_MAX_CPS		1400
 #define LAP_TELEMETRY_MS		100U
-/* Physical sides after WHEEL_SWAP_SIDES: forward left J6+, right J4-. */
+/* 轮组映射后，实车前进对应左轮 J6 正、右轮 J4 负。 */
 #define LAP_LEFT_DRIVE_SIGN	1
 #define LAP_RIGHT_DRIVE_SIGN	-1
-/* Forward wheel motion produces positive counts on both fitted encoders. */
+/* 两只编码器都已换算成前进为正。 */
 #define LAP_LEFT_ENCODER_SIGN	1
 #define LAP_RIGHT_ENCODER_SIGN	1
 /* Confirmed against the user's photo: keys above, LCD pins below. */

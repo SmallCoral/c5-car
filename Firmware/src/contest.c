@@ -10,6 +10,13 @@ enum task_id contest_tool(unsigned int index)
 	return tools[index % (sizeof(tools) / sizeof(tools[0]))];
 }
 
+static void select_target(struct contest_menu *m, enum key_id key)
+{
+	int next = m->target_mm + (key == KEY_OK ? -1 : 1);
+	if (next >= contest_ball_mm(RULER_X_LEFT) && next <= contest_ball_mm(RULER_X_RIGHT))
+		m->target_mm = next;
+}
+
 enum menu_action contest_key(struct contest_menu *m, enum key_id key)
 {
 	const unsigned int count = sizeof(tools) / sizeof(tools[0]);
@@ -32,13 +39,19 @@ enum menu_action contest_key(struct contest_menu *m, enum key_id key)
 			       MENU_RELEVEL : MENU_START_EVENT;
 		else if (m->item == EVENT_LAP && key == KEY_NEXT)
 			return MENU_LAP_SPEED;
-		else if (m->item == EVENT_OFFSET) {
-			int next = m->target_cm + (key == KEY_OK ? 1 : -1);
-			if (next >= -5 && next <= 5)
-				m->target_cm = next;
-		}
+		else if (m->item == EVENT_OFFSET)
+			select_target(m, key);
 		break;
 	case MENU_RUN:
+		if (m->item == EVENT_OFFSET) {
+			if (key == KEY_OK || key == KEY_NEXT) {
+				if (!m->offset_driving)
+					select_target(m, key);
+				return MENU_NONE;
+			}
+			if (!m->offset_driving && key == KEY_MODE)
+				return MENU_START_LAP;
+		}
 		return MENU_STOP_EVENT;
 	case MENU_RESULT:
 		if (key == KEY_START || key == KEY_MODE) {
@@ -62,13 +75,13 @@ enum menu_action contest_key(struct contest_menu *m, enum key_id key)
 	return MENU_NONE;
 }
 
-enum contest_notice contest_lap_notice(enum lap_status status, uint32_t elapsed_ms)
+enum contest_notice contest_lap_notice(enum lap_status status, uint32_t elapsed_ms, uint32_t limit_ms)
 {
 	switch (status) {
 	case LAP_RUNNING:
-		return elapsed_ms >= CONTEST_LAP_LIMIT_MS ? NOTICE_TIMEOUT : NOTICE_NONE;
+		return elapsed_ms >= limit_ms ? NOTICE_TIMEOUT : NOTICE_NONE;
 	case LAP_DONE:
-		return elapsed_ms <= CONTEST_LAP_LIMIT_MS ? NOTICE_FINISHED : NOTICE_TIMEOUT;
+		return elapsed_ms <= limit_ms ? NOTICE_FINISHED : NOTICE_TIMEOUT;
 	case LAP_TIMEOUT:
 		return NOTICE_TIMEOUT;
 	case LAP_CANCELLED:
@@ -81,6 +94,7 @@ enum contest_notice contest_lap_notice(enum lap_status status, uint32_t elapsed_
 	}
 }
 
+/* 图像 x 向右侧挡杆减小。以 O 为零，按两侧各自的 50 mm 标尺分段换算。 */
 int contest_ball_mm(int raw_x)
 {
 	int dx = RULER_X_O - raw_x;
@@ -95,6 +109,25 @@ void position_begin(struct position_run *run, int x, uint16_t seq, uint32_t now)
 				      .have_sample = x >= 0 };
 }
 
+void position_begin_target(struct position_run *run, int target_mm, int x, uint16_t seq, uint32_t now)
+{
+	position_begin(run, x, seq, now);
+	run->fixed_target = true;
+	run->target_mm = target_mm;
+}
+
+void position_retarget(struct position_run *r, int target_mm)
+{
+	if (r->target_mm == target_mm)
+		return;
+	r->target_mm = target_mm;
+	if (r->leg != LEVEL_SHAFT)
+		r->leg = MOVE_TARGET;
+	r->active_bands = 0;
+	r->still_ms = 0;
+	r->trim_milli_cd = 0;
+}
+
 void position_check_level(struct position_run *r, bool at_level, uint32_t encoder_at)
 {
 	if (r->leg != LEVEL_SHAFT)
@@ -105,7 +138,7 @@ void position_check_level(struct position_run *r, bool at_level, uint32_t encode
 		r->steady = true;
 		r->steady_at = encoder_at;
 	} else if (encoder_at - r->steady_at >= 75) {
-		r->leg = MOVE_CENTER;
+		r->leg = r->fixed_target ? MOVE_TARGET : MOVE_CENTER;
 		r->steady = false;
 	}
 }
@@ -116,8 +149,7 @@ static bool position_settled(struct position_run *r, int error, uint32_t at, uns
 	unsigned int dwell = r->leg == MOVE_CENTER ? POSITION_CENTER_DWELL_MS :
 			     r->leg == MOVE_RIGHT ? POSITION_RIGHT_DWELL_MS : POSITION_LEFT_DWELL_MS;
 	bool slow = abs(r->velocity) <= 12;
-	/* Every valid 4 mm interval fits one of these overlapping bands. Leaving
-	 * one band does not discard time already spent in an adjacent band. */
+	/* 停稳需要球位一直落在某个 4 mm 窄带内。各窄带分别计时，离开一个窄带时，相邻窄带内已经积累的时间仍有效。 */
 	for (int i = 0; i < POSITION_BANDS; i++) {
 		int low = i - POSITION_TOLERANCE_MM;
 		uint32_t bit = 1U << i;
@@ -146,9 +178,7 @@ static bool position_settled(struct position_run *r, int error, uint32_t at, uns
 	return false;
 }
 
-/* The shaft angles that held a slow ball varied along this tube: roughly
- * -8 to -11 degrees at -50 mm, -3 to -5 at O, and near zero at +50 mm.
- * Use the conservative end of those measurements and let trim correct it. */
+/* 钢球静止时所需轴角随位置变化。左 50 mm 处实测约 −8°～−11°，O 点约 −3°～−5°，右 50 mm 处接近 0°。先按保守值给定，再由积分微调。 */
 static int position_bias_cd(int mm)
 {
 	if (mm <= -50)
@@ -194,19 +224,20 @@ enum contest_notice position_update(struct position_run *r, enum ball_status vie
 {
 	uint32_t gap = now - r->sample_at;
 	bool preparing = r->leg == LEVEL_SHAFT;
-	bool quiet_left = (r->leg == MOVE_LEFT || r->leg == HOLD_LEFT) && r->have_sample &&
-		abs(r->mm + 50) <= POSITION_TOLERANCE_MM && abs(r->velocity) <= 12;
+	int target = r->fixed_target ? r->target_mm :
+		     r->leg == MOVE_CENTER ? 0 : r->leg == MOVE_RIGHT ? 50 : -50;
+	bool quiet = (r->leg == MOVE_LEFT || r->leg == HOLD_LEFT || r->fixed_target) &&
+		r->have_sample && abs(r->mm - target) <= POSITION_TOLERANCE_MM && abs(r->velocity) <= 12;
 	if (!preparing && gap >= 120) {
-		/* A quiet ball at the left mark needs its last holding angle;
-		 * commanding geometric level during a camera gap rolls it away. */
-		if (!quiet_left) {
+		/* 球已低速靠近目标时，漏帧期间保留上次抱持角度。此时回到几何水平可能让球重新滚动。 */
+		if (!quiet) {
 			r->goal_cd = 0;
 			r->trim_milli_cd = 0;
 		}
 		r->active_bands = 0;
 		r->still_ms = 0;
 	}
-	if (!preparing && (r->waiting_vision || gap >= (quiet_left && r->leg == HOLD_LEFT ? 900U : 500U))) {
+	if (!preparing && (r->waiting_vision || gap >= (quiet && r->leg == HOLD_LEFT ? 900U : 500U))) {
 		if (view == BALL_OFFLINE)
 			return NOTICE_VISION;
 		r->waiting_vision = true;
@@ -222,8 +253,7 @@ enum contest_notice position_update(struct position_run *r, enum ball_status vie
 	int mm = contest_ball_mm(x);
 	int movement = mm - r->mm;
 	uint16_t advance = (uint16_t)(seq - r->seq);
-	/* Bridge one missing frame only between nearby direct observations.
-	 * The entire interval between them is excluded from the dwell. */
+	/* 只允许在相邻两次直接观测位置接近时跨过一帧漏检。无观测的整段时间从停稳计时中扣除。 */
 	if (advance > 2 || dt > 85 || (advance == 2 && abs(mm - r->mm) > 3))
 		r->active_bands = 0;
 	if (dt < 120 && r->have_sample) {
@@ -240,10 +270,14 @@ enum contest_notice position_update(struct position_run *r, enum ball_status vie
 	r->have_sample = true;
 	if (r->leg == LEVEL_SHAFT)
 		return NOTICE_NONE;
-	int target = r->leg == MOVE_CENTER ? 0 : r->leg == MOVE_RIGHT ? 50 : -50;
 	int error = target - mm;
-	if (r->leg != HOLD_LEFT && position_settled(r, error, sample_at, advance == 2 ? dt : 0)) {
-		if (r->leg == MOVE_LEFT) {
+	if (r->leg == HOLD_TARGET && abs(error) > POSITION_TOLERANCE_MM)
+		r->leg = MOVE_TARGET;
+	if (r->leg != HOLD_LEFT && r->leg != HOLD_TARGET &&
+	    position_settled(r, error, sample_at, advance == 2 ? dt : 0)) {
+		if (r->leg == MOVE_TARGET) {
+			r->leg = HOLD_TARGET;
+		} else if (r->leg == MOVE_LEFT) {
 			r->finished_ms = sample_at - r->start;
 			r->leg = HOLD_LEFT;
 		} else {
@@ -254,12 +288,14 @@ enum contest_notice position_update(struct position_run *r, enum ball_status vie
 		r->active_bands = 0;
 		r->still_ms = 0;
 	}
-	/* Positive shaft travel accelerates the ball toward the right. */
-	bool holding = r->leg == HOLD_LEFT;
+	/* 实车轴角增大时球向右加速。位置误差给出纠偏量，球速项用于提前制动。角度单位为 0.01°。 */
+	bool holding = r->leg == HOLD_LEFT || r->leg == HOLD_TARGET;
 	int pd_cd = holding ? 30 * error - 22 * r->velocity : 35 * error - 18 * r->velocity;
+	/* 车辆行驶时加大位置与速度修正，在球越过目标前开始制动。 */
+	if (r->driving)
+		pd_cd += 10 * error - 2 * r->velocity;
 	int base_cd = position_bias_cd(mm) + pd_cd;
-	/* A stationary ball more than 3 cm from its target can need extra tilt
-	 * to start rolling. Count observed still time and drop the boost on motion. */
+	/* 球在目标 3 cm 外静止时，按直接观测的持续时间逐渐增加倾角。球开始滚动便清除这项补偿。 */
 	if (holding || abs(error) <= 30 || abs(r->velocity) > 8 || abs(movement) > 2 ||
 	    advance > 2 || dt > 85) {
 		r->still_ms = 0;
@@ -272,9 +308,9 @@ enum contest_notice position_update(struct position_run *r, enum ball_status vie
 		int boost_cd = (int)(r->still_ms - 350) / 2;
 		base_cd += error > 0 ? boost_cd : -boost_cd;
 	}
-	/* At rest a small position error can persist until the ball breaks
-	 * free. Limit the stored correction so it cannot launch the ball. */
-	int trim_limit = holding ? 250000 : 900000;
+	/* 球与管壁的静摩擦会留下小偏差，低速时用积分补偿。限制累积角度，避免脱离静摩擦后突然加速。 */
+	/* 车在行驶时进一步收紧积分限幅，避免上一路段积累的倾角带入下一段。 */
+	int trim_limit = r->driving ? 200000 : holding ? 250000 : 900000;
 	int demand_cd = base_cd + r->trim_milli_cd / 1000;
 	bool pushing_limit = (demand_cd <= -1600 && error < 0) || (demand_cd >= 1600 && error > 0);
 	if (!pushing_limit && dt < 120 && abs(error) <= 30 &&

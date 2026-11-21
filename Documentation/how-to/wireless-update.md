@@ -10,13 +10,13 @@
 ./Firmware/flash-wireless.ps1
 ```
 
-脚本默认编译并上传当前源码的 Debug 版本。Release 使用 `./Firmware/flash-wireless.ps1 -Preset release`。要恢复已在板上实测的版本，直接上传对应 OTA。第一题为 `8A10EDEE`，第二题里程停车版为 `D97DBD0E`。[选择存档及查询版本](../../Firmware/releases/README.md)
+脚本默认构建当前源码，检查比赛 ELF，运行主机回归，再上传 Debug 合并应用。新电脑先按固件说明配置本机 GCC 或 Clang 的主机测试目录。Release 使用 `./Firmware/flash-wireless.ps1 -Preset release`。实车合并版 `EC2ED1B4` 可在菜单直接选第一题、第二题或发挥一。`8A10EDEE` 用于复现旧第一题基线。[主机测试配置](../../Firmware/README.md#本机测试) · [存档与恢复](../../Firmware/releases/README.md)
 
 工具连接地址 `F8:2E:0C:F3:68:37`，先停车，再进入升级界面、分包上传、校验、安装和重启。完成后应看到 `Verified running application`，包含与上传文件一致的长度和 CRC。重启进入比赛首页，车轮停止。上场跑第二题，按 SW3 选题、SW2 进入，再按 SW2 启动。[第二题操作](line-following-lap.md)
 
 如果步进仍在托住水管，主控返回 `BEAM HELD`。先将水管独立托稳，再执行 `./Firmware/flash-wireless.ps1 -PipeSupported`。这个单次参数让工具通过蓝牙解除抱持，读回步进已失能、车轮已停，再进入原有引导程序。直接上传已有文件时，对应参数为 `--pipe-supported`。
 
-屏幕按“按钮在上、屏幕在下”显示 UPDATE、当前阶段和进度条。安装阶段保持供电。镜像大小随构建变化，上传时间取决于蓝牙重试。[第一题恢复实录](../../Firmware/validation/2026-11-20/task1-restore-flash.txt) · [引导程序与恢复测试](../validation/2026-11-16-wireless-update.md)
+屏幕按“按钮在上、屏幕在下”显示 UPDATE、阶段和进度，安装结束前保持供电。11 月 21 日实车更新 64500 B 的应用用时 88.6 s，DATA 吞吐 828 B/s，重试 13 次。安装结束后重连，核对应用 CRC 和长度。[实际传输与回读](../validation/README.md)
 
 ## CLion
 
@@ -68,4 +68,4 @@ STM32_Programmer_CLI -c port=JLINK sn=69730331 -w Firmware/build/debug/first_ins
 
 保持 `BOOTADD=0x08000000`、`BOOT_SEL=0`、`BOOT0=0`，让复位先进入自定义引导程序。当前 SRAM1/2 系统复位不擦除，用于一次性软件升级请求。不要为日常升级更改保护位或锁定位。
 
-实现细节见[布局和协议](../reference/wireless-update.md)，实测证据见[无线升级验证](../validation/2026-11-16-wireless-update.md)。
+实现细节见[布局和协议](../reference/wireless-update.md)，实测证据见[无线升级验证](https://github.com/SmallCoral/c5-car/blob/e631797d99cd60486eccc874f66cc99cdf3f7496/Documentation/validation/2026-11-16-wireless-update.md)。

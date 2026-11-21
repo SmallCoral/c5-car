@@ -68,7 +68,7 @@ Core 的当前摆放进一步参照 H562 实物照片，MCU 保持用户调整�
 
 Core 的 D3 为黄绿色电源灯，D4 为 PE3 驱动的红色用户灯，均使用 0603 英制封装和 1kΩ 电阻。按约 1.8 至 2.4V 的常见正向压降估算，电流约 0.9 至 1.5mA，实际亮度取决于手头 LED，未指定精确料号。RJ45 内置指示灯属于连接器自身，与这两颗分立 LED 分开。
 
-Motor 底板（2026-11-07 M2.7）从 12V 电池经本板总降压取得约 5V，D3 后通过 A48/B48 给 Core 的 +5V_SYS；Core U2 AP63203 产生本板 +3V3，A47/B47 是该三伏三网络。Core USB 的 D2 与 Motor D3 保持隔离，USB 不反供相机。Core 对外三伏三预算仍为 100mA，TFT/蓝牙由 Motor 自己的 LDO 供电；两个三伏三输出不能并联。详见 [M2.7](../../../../Documentation/validation/2026-11-07-m27-unified-power.md)。
+Motor 底板（2026-11-07 M2.7）从 12V 电池经本板总降压取得约 5V，D3 后通过 A48/B48 给 Core 的 +5V_SYS；Core U2 AP63203 产生本板 +3V3，A47/B47 是该三伏三网络。Core USB 的 D2 与 Motor D3 保持隔离，USB 不反供相机。Core 对外三伏三预算仍为 100mA，TFT/蓝牙由 Motor 自己的 LDO 供电；两个三伏三输出不能并联。详见 [M2.7](https://github.com/SmallCoral/c5-car/blob/e631797d99cd60486eccc874f66cc99cdf3f7496/Documentation/validation/2026-11-07-m27-unified-power.md)。
 
 以下段落描述另一款网络 Expansion 底板，不是当前 Motor 的电源数量：
 

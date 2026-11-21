@@ -1,4 +1,0 @@
--- Found Python3: C:/Users/sc/Documents/Dev/Hardware/c5-car/Firmware/../.scratch/firmware-tools/Scripts/python.exe (found suitable version "3.12.14", minimum required is "3.10") found components: Interpreter
--- Configuring done (0.3s)
--- Generating done (0.0s)
--- Build files have been written to: C:/Users/sc/Documents/Dev/Hardware/c5-car/Firmware/build/release

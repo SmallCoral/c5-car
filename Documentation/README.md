@@ -1,42 +1,13 @@
-# A 题项目文档
+# 赛题与工程文档
 
-整理于 2026-11-21。第一题和第二题的实车固件现已分别归档。
-用途、当前状态与工程入口从[项目首页](../README.md)开始。
-接口和采购以参考表为入口，检查结果按日期保留。
-
-| 类别 | 文档 |
+| 查找内容 | 入口 |
 | --- | --- |
-| 原始赛题 | [2026 校赛题目](2026校赛题目（小车·无人机·嵌入式AI）.pdf)、[AC 器材清单](AC题清单.doc) |
-| 总体方案 | [A 题大纲](explanation/a-system-outline.md) |
-| Motor 设计检查 | [11 月 21 日手工设计快照、ERC 和 DRC](validation/2026-11-21-handoff.md) · [11 月 10 日历史复查](validation/2026-11-10-motor-pcb-review.md) |
-| Motor 采购 | [完整 BOM、精简 RC、降本候选及使用限制](reference/motor-bom.md) |
-| 机械设计 | [总装与预览](../Mechanical/README.md)、[建模大纲](explanation/mechanical-outline.md)、[参数](../Mechanical/parameters.yaml) |
-| 外接模块 | [模块清单](reference/external-modules.md)、[板端针序与保护边界](reference/m2-interfaces.md) |
-| 电机接口 | [MG513 六针口](reference/motor-interface.md) |
-| GPIO | [Motor 核心板信号分配](reference/motor-core-pins.md)、[资源计划](reference/resource-plan.md) |
-| 待完成硬件 | [实现状态和未验证项](reference/pending-hardware-changes.md) |
-| PCB 元器件模型 | [模型来源及精确性限制](validation/2026-11-09-3d-models.md)、[M3 安装孔](validation/2026-11-09-m3-mounting-holes.md) |
-| 调试 | [分阶段上电与验收](how-to/bring-up.md) |
-| 实物固件 | [构建入口](../Firmware/README.md)、[按键与蓝牙联调](how-to/firmware-bringup.md)、[遥测字段](reference/firmware-telemetry.md) |
-| 第一题停车移球 | [五点和轴角标定](../Firmware/validation/2026-11-19/camera640-and-shaft.json)、[三轮计时及丢球恢复](../Firmware/validation/2026-11-20/task1-recovery.md)、[MaixCAM2 源码及空管对照](../Firmware/26h/README.md) |
-| 比赛版恢复 | [两份实车固件、第一题调试符号与恢复命令](../Firmware/releases/README.md) |
-| 灰度联调 | [校准、通道顺序与偏差显示](how-to/grayscale-check.md)、[无线烧录与板上采集记录](validation/2026-11-17-grayscale.md) |
-| 循线一圈 | [第二题操作](how-to/line-following-lap.md)、[按里程停车实测](../Firmware/validation/2026-11-20/task2-distance.md)、[4600 / 3100 CPS 高速档](validation/2026-11-18-lap-fast.md)、[3300 / 2200 CPS 稳定版](validation/2026-11-18-lap-centering.md) |
-| Rust 迁移 | [独立工程](../Firmware/Rust/README.md)、[RustRover 与工具链](how-to/rust-development.md)、[代码验证](../Firmware/Rust/VALIDATION.md) |
-| 接手项目 | [当前交接与后续步骤](../.agent/main/handoff.md) |
-| 无线升级 | [一键烧录与恢复](how-to/wireless-update.md)、[分区与协议](reference/wireless-update.md)、[实测结果](validation/2026-11-16-wireless-update.md) |
-| Transfer 电源输入转接 | [极性修正用途与设计快照状态](../Hardware/stm32c5a3/Hardware/Transfer/README.md) |
-| 轮电机排查 | [PA3/J10 使能线路测点](how-to/wheel-enable-check.md)、[当前实测记录](validation/2026-11-16-wheel-drive.md) |
-| 验证记录 | [按日期查看全部记录](validation/README.md) |
-| 器件历史依据 | [选型与采购快照](reference/parts-selection.md) |
-| 同学参考资料 | [总索引](reference/classmate-materials.md)、[电赛案例](26电赛/README.md)、[步进代码片段](step_motor/README.md) |
-| 控制方案参考 | [平衡球历史代码解读](explanation/classmate-balance-reference.md) |
-| 摄像头资料 | [模块与原始资料](摄像头与视觉板/README.md)、[摄像头参数](reference/cameras.md) |
-| 灰度资料 | [实物、MSPM0L1306 辅助板及原始源码](感为八路灰度资料/README.md) |
-| 附带网页归档 | [独立网页示例](archive/README.md) |
-| 仓库维护 | [目录与提交范围](reference/repository-layout.md)、[循线代码与交接整理](validation/2026-11-17-lap-handoff.md)、[前次 Rust 与硬件快照](validation/2026-11-16-rust-handoff.md) |
+| 赛题、器材与总体方案 | [2026 校赛原题 PDF](2026校赛题目（小车·无人机·嵌入式AI）.pdf) · [器材清单](AC题清单.doc) · [A 题总体方案](explanation/a-system-outline.md) |
+| 实车数据 | [三个已接入题目的基线、到达和停稳时间](validation/README.md) · [校准数据](../Firmware/calibration/camera640-and-shaft.json) |
+| 主控操作 | [按键与编译](../Firmware/README.md) · [板级联调](how-to/firmware-bringup.md) · [循线停车](how-to/line-following-lap.md) |
+| 蓝牙与相机 | [无线烧录](how-to/wireless-update.md) · [OTA 分区与协议](reference/wireless-update.md) · [遥测字段](reference/firmware-telemetry.md) · [相机 UART V2](摄像头与视觉板/MaixCAM2_UART_V2_2026-11-19.md) |
+| 外设与接线 | [电机六针口](reference/motor-interface.md) · [外接模块针序](reference/m2-interfaces.md) · [主控 GPIO](reference/motor-core-pins.md) · [灰度校准](how-to/grayscale-check.md) |
+| 硬件与机械 | [KiCad 工程](../Hardware/stm32c5a3/README.md) · [采购 BOM](reference/motor-bom.md) · [Motor 检查结果](validation/2026-11-21-handoff.md) · [FreeCAD 总装](../Mechanical/README.md) |
+| 继续开发 | [当前交接](../.agent/main/handoff.md) · [项目目录](reference/repository-layout.md) · [固件恢复](../Firmware/releases/README.md) |
 
-旧项目 `D:/dev/qrs/stm32/Coral-C5` 仅作为历史资料来源。
-厂家原文和旧项目记录按原样保留，其中部分外部资源未随本仓库收录；不能将这些资料的旧检查结果当作当前实现状态。
-模块精简已实施，其[原始需求](reference/module-power-simplification.md)只作追溯。
-文档整理采用 `mthines/agent-skills` 的 `docs update`，来源及本机支持树状态见[Skills 记录](reference/skills.md)。
+当前步进驱动的接线和参数可查 [ZDT X42S 手册](<ZDT_XS系列第二代闭环步进电机资料/3. 说明书/ZDT_X42S第二代闭环步进电机用户手册V1.0.5_260527.pdf>)，控制指令另见 [Emm V5 手册](Emm_V5.0闭环步进资料/说明书/Emm_V5.0步进闭环驱动说明书Rev1.3.pdf)。厂家手册保留在原来的相对路径，KiCad 器件属性也使用这些路径。

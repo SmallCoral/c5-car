@@ -124,8 +124,11 @@ bool display_poll(const struct ui_state *state, uint32_t now)
 		return false;
 	bool menu_change = state->menu.page != frame_state.menu.page ||
 			   state->menu.item != frame_state.menu.item || state->menu.tool != frame_state.menu.tool ||
-			   state->menu.notice != frame_state.menu.notice || state->menu.target_cm != frame_state.menu.target_cm;
-	if (menu_change || (next_y == UI_HEIGHT && elapsed(now, frame_time, 200))) {
+			   state->menu.notice != frame_state.menu.notice ||
+			   state->menu.offset_driving != frame_state.menu.offset_driving;
+	/* Complete each scan even when a held key moves the target every 50 ms. */
+	if (menu_change || (next_y == UI_HEIGHT && (state->menu.target_mm != frame_state.menu.target_mm ||
+						    elapsed(now, frame_time, 200)))) {
 		frame_state = *state;
 		frame_time = now;
 		next_y = 0;

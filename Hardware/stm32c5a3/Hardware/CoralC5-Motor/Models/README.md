@@ -17,5 +17,5 @@ Nichicon 来源：[官方 3D 模型库](https://www.nichicon.com/en-us/design-su
 KiCad 原有 STEP 文件中的版权及许可证头保持原样。
 
 逐文件下载链接、日期、SHA256、原始模型名称及绑定参数见 [来源清单](../docs/models-2026-11-09.json)。
-尺寸差异、未取得的精确模型及独立 DRC 结果见 [验证记录](../../../../../Documentation/validation/2026-11-09-3d-models.md)。
+尺寸差异、未取得的精确模型及独立 DRC 结果见 [验证记录](https://github.com/SmallCoral/c5-car/blob/e631797d99cd60486eccc874f66cc99cdf3f7496/Documentation/validation/2026-11-09-3d-models.md)。
 模型显示完整不能替代焊盘核验或实物装配验证；本轮没有改变 BOM 型号。

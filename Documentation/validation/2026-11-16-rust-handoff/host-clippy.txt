@@ -1,4 +1,0 @@
-    Checking coral-core v0.1.0 (C:\Users\sc\Documents\Dev\Hardware\c5-car\.scratch\rdsrc\Firmware\Rust\core)
-   Compiling coral-device v0.1.0 (C:\Users\sc\Documents\Dev\Hardware\c5-car\.scratch\rdsrc\Firmware\Rust\device)
-    Checking coral-host v0.1.0 (C:\Users\sc\Documents\Dev\Hardware\c5-car\.scratch\rdsrc\Firmware\Rust\host)
-    Finished `dev` profile [optimized + debuginfo] target(s) in 1.39s

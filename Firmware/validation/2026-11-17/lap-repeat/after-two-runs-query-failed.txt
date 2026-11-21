@@ -1,3 +1,0 @@
-Command: .scratch/firmware-tools/Scripts/python.exe .scratch/lap-query.py Firmware/validation/2026-11-17/lap-repeat/after-two-runs-query.txt 29D123B8
-Result: RuntimeError: HC-08 not found
-BLE scan returned no device; no query or motion command was sent. Previous post-upload identity and the completed two-run capture remain the evidence.

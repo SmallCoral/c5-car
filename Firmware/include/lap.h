@@ -51,6 +51,7 @@ struct lap {
 	int steering;
 	unsigned int level;
 	bool reverse;
+	bool carry_ball;
 	bool departed;
 	bool departing;
 	bool from_a;
