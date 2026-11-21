@@ -171,6 +171,16 @@ bool board_init(void)
 	return true;
 }
 
+void board_camera_uart_init(void)
+{
+	LL_APB1_GRP1_EnableClock(LL_APB1_GRP1_PERIPH_UART5);
+	LL_APB1_GRP1_ForceReset(LL_APB1_GRP1_PERIPH_UART5);
+	LL_APB1_GRP1_ReleaseReset(LL_APB1_GRP1_PERIPH_UART5);
+	LL_RCC_SetUARTClockSource(LL_RCC_UART5_CLKSOURCE_PCLK1);
+	/* J19 pin 5 is driven by MaixCAM2. Pin 6 stays high impedance. */
+	pin_af(GPIOB, 12, LL_GPIO_AF_14, LL_GPIO_PULL_UP);
+}
+
 uint32_t board_millis(void)
 {
 	return ticks;

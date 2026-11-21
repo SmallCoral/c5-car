@@ -9,6 +9,10 @@ static uint32_t frame_time;
 static uint32_t stripe_time;
 static unsigned int next_y = UI_HEIGHT;
 static bool ready;
+static struct ball_view pipe_frame, pipe_shown;
+static unsigned int pipe_y = UI_PIPE_END;
+static uint32_t pipe_time, pipe_updates;
+static bool pipe_valid;
 
 static bool command(uint8_t cmd, const uint8_t *data, size_t length)
 {
@@ -62,34 +66,90 @@ bool display_init(void)
 	return true;
 }
 
-bool display_poll(const struct ui_state *state, uint32_t now)
+static bool write_rows(unsigned int y)
 {
 	uint8_t columns[] = { 0, 2, 0, 129 };
-	uint8_t rows[] = { 0, 0, 0, 0 };
+	uint8_t rows[] = { 0, (uint8_t)(y + 1), 0, (uint8_t)(y + 2) };
+
+	if (command(0x2a, columns, sizeof(columns)) &&
+	    command(0x2b, rows, sizeof(rows)) &&
+	    command(0x2c, &framebuffer[y * UI_WIDTH * 2], UI_WIDTH * 2 * 2))
+		return true;
+	ready = false;
+	board_lcd_backlight(false);
+	return false;
+}
+
+uint32_t display_last_ball(struct ball_view *shown)
+{
+	*shown = pipe_shown;
+	return pipe_valid ? pipe_updates : 0;
+}
+
+static bool poll_pipe(const struct ball_view *ball, uint32_t now)
+{
+	if (!elapsed(now, pipe_time, 2))
+		return true;
+	if (pipe_y == UI_PIPE_END) {
+		if (pipe_valid && ball->status == pipe_shown.status &&
+		    ball->permille == pipe_shown.permille)
+			return true;
+		pipe_frame = *ball;
+		pipe_y = UI_PIPE_TOP;
+	}
+	pipe_time = now;
+	ui_render_pipe_rows(framebuffer, &pipe_frame, pipe_y, 2);
+	if (!write_rows(pipe_y))
+		return false;
+	pipe_y += 2;
+	if (pipe_y == UI_PIPE_END) {
+		pipe_shown = pipe_frame;
+		pipe_updates++;
+		pipe_valid = true;
+	}
+	return true;
+}
+
+static bool shows_pipe(const struct ui_state *ui)
+{
+	return ui->menu.page == MENU_DIAGNOSTIC && !ui->updating && !ui->calibrating &&
+	       (ui->task == TASK_LAP || ui->task == TASK_BALANCE);
+}
+
+bool display_poll(const struct ui_state *state, uint32_t now)
+{
+	bool lap_page;
 
 	if (!ready)
 		return false;
-	if (next_y == UI_HEIGHT) {
-		if (!elapsed(now, frame_time, 200))
-			return true;
+	bool menu_change = state->menu.page != frame_state.menu.page ||
+			   state->menu.item != frame_state.menu.item || state->menu.tool != frame_state.menu.tool ||
+			   state->menu.notice != frame_state.menu.notice || state->menu.target_cm != frame_state.menu.target_cm;
+	if (menu_change || (next_y == UI_HEIGHT && elapsed(now, frame_time, 200))) {
 		frame_state = *state;
 		frame_time = now;
 		next_y = 0;
+		if (!shows_pipe(state)) {
+			pipe_y = UI_PIPE_END;
+			pipe_valid = false;
+		}
 	}
-	if (!elapsed(now, stripe_time, 5))
+	/* The live pipe owns these rows for the whole LAP page. A slower full
+	 * scan must never repaint the ball from an older snapshot.
+	 */
+	lap_page = shows_pipe(&frame_state);
+	if (lap_page && next_y == UI_PIPE_TOP)
+		next_y = UI_PIPE_END;
+	if (next_y == UI_HEIGHT || !elapsed(now, stripe_time, frame_state.menu.page == MENU_DIAGNOSTIC ? 5 : 1)) {
+		if (lap_page && shows_pipe(state))
+			return poll_pipe(&state->ball, now);
 		return true;
+	}
 	stripe_time = now;
 	/* Two rows bound LCD work so a short A marker can be sampled repeatedly. */
 	ui_render_rows(framebuffer, &frame_state, next_y, 2);
-	rows[1] = (uint8_t)(next_y + 1);
-	rows[3] = (uint8_t)(next_y + 2);
-	if (!command(0x2a, columns, sizeof(columns)) ||
-	    !command(0x2b, rows, sizeof(rows)) ||
-	    !command(0x2c, &framebuffer[next_y * UI_WIDTH * 2], UI_WIDTH * 2 * 2)) {
-		ready = false;
-		board_lcd_backlight(false);
+	if (!write_rows(next_y))
 		return false;
-	}
 	next_y += 2;
 	if (next_y == UI_HEIGHT)
 		board_lcd_backlight(true);

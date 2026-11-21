@@ -1,12 +1,12 @@
 # 固件更新约定
 
-用户于 2026-11-16 要求日常改用无线烧录。
+用户于 2026-11-20 恢复实地测试使用的 HC-08 无线远程烧录。日常 C/LL 应用走蓝牙，保留遥测、状态查询与停车。板上版本与实车调试进度见[当前交接](../.agent/main/handoff.md)。
 
 - 以下烧录约定适用于已实测的 C/LL 工程。`Rust/` 为独立代码迁移版；用户要求仅修改代码，不进行实际烧录。Rust 工作只做主机测试、静态检查和 ARM 构建，后续实物验证需用户另行安排。
 
-- 普通应用修改后，构建并使用 HC-08 BLE 更新。项目根目录运行 `./Firmware/flash-wireless.ps1`；Release 加 `-Preset release`。
-- CMake 的 `wireless_flash` 目标执行同一流程。默认模块地址为 `F8:2E:0C:F3:68:37`，连接前关闭占用模块的遥测客户端。
+- 从项目根目录执行 `./Firmware/flash-wireless.ps1`，或构建 `wireless_flash`。上传后以应用返回的长度和 CRC 核对镜像。步进正在托管时，现场确认水管已独立托稳后，可在这次命令中加 `-PipeSupported`；传输期间步进失能。
+- 有线更新应用及匹配元数据使用 `./Firmware/flash-jlink.ps1`。按用户要求，直接调用 J-Link Commander 时也传 `-NoGui 1`，保留命令输出和错误退出码。PyLink 采集在每次 `open()` 前调用 `exec_command("SuppressGUI 1")`。[SEGGER 参数说明](https://kb.segger.com/J-Link_Commander)
 - `coral_c5.ota` 是无线更新文件；应用地址固定为 `0x08010000`。无线协议不得擦写引导区或修改 Option Bytes。
-- J-Link 用于首次安装 `first_install.hex`、引导程序更新、调试和失效救援；普通应用更新不依赖它。不要单独下载应用后忽略匹配的镜像元数据。
-- 保留“上电停止、按键启动”行为；升级入口先停止电机。Flash 与恢复相关修改需运行主机恢复测试并记录板上验证范围。
+- 首次安装包含引导程序的 `first_install.hex`、引导程序更新、调试和失效救援也使用 J-Link。
+- 按用户 2026-11-19 的最新要求，上电进入校赛 A 题主页。SW2 进入题目，松开后再按 SW2 确认启动；SW5 返回。BALANCE 的自动寻球流程从调试页手动启动。Flash 与恢复相关修改需运行主机恢复测试并记录板上验证范围。
 - 使用与恢复步骤见 `../Documentation/how-to/wireless-update.md`，布局和协议见 `../Documentation/reference/wireless-update.md`。

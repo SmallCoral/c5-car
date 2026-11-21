@@ -5,5 +5,6 @@
 
 bool display_init(void);
 bool display_poll(const struct ui_state *state, uint32_t now);
+uint32_t display_last_ball(struct ball_view *shown);
 
 #endif

@@ -8,7 +8,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 option(HOST_TESTS "Build portable logic tests instead of firmware" OFF)
 if(HOST_TESTS)
   enable_testing()
-  add_executable(test_logic tests/test_logic.c src/logic.c src/emm.c src/stepper.c)
+  add_executable(test_logic tests/test_logic.c src/logic.c src/emm.c src/stepper.c src/jog.c src/contest.c)
   target_include_directories(test_logic PRIVATE include)
   target_compile_options(test_logic PRIVATE -Wall -Wextra -Werror)
   add_test(NAME logic COMMAND test_logic)
@@ -25,10 +25,23 @@ if(HOST_TESTS)
   target_compile_options(test_lap_dynamics PRIVATE -Wall -Wextra -Werror)
   target_link_libraries(test_lap_dynamics PRIVATE m)
   add_test(NAME lap_dynamics COMMAND test_lap_dynamics)
-  add_executable(render_ui tests/render_ui.c src/ui.c src/logic.c src/grayscale.c src/lap.c)
+  add_executable(test_ball tests/test_ball.c src/ball.c)
+  target_include_directories(test_ball PRIVATE include)
+  target_compile_options(test_ball PRIVATE -Wall -Wextra -Werror)
+  add_test(NAME camera_ball COMMAND test_ball)
+  add_executable(test_balance tests/test_balance.c src/balance.c src/ball.c ports/classmate_26h/balance.c)
+  target_include_directories(test_balance PRIVATE include ports)
+  target_compile_options(test_balance PRIVATE -Wall -Wextra -Werror)
+  add_test(NAME stationary_balance COMMAND test_balance)
+  add_executable(render_ui tests/render_ui.c src/ui.c src/contest.c src/logic.c src/grayscale.c src/lap.c)
   target_include_directories(render_ui PRIVATE include)
   target_compile_options(render_ui PRIVATE -Wall -Wextra -Werror)
   add_test(NAME ui_bounds COMMAND render_ui ${CMAKE_CURRENT_BINARY_DIR}/ui.ppm)
+  add_executable(test_pipe_display tests/test_pipe_display.c src/display.c src/ui.c
+    src/logic.c src/contest.c src/grayscale.c src/lap.c src/ball.c)
+  target_include_directories(test_pipe_display PRIVATE include)
+  target_compile_options(test_pipe_display PRIVATE -Wall -Wextra -Werror)
+  add_test(NAME live_pipe_display COMMAND test_pipe_display)
   add_executable(test_ota tests/test_ota.c src/ota.c boot/ota_store.c)
   target_include_directories(test_ota PRIVATE include)
   target_compile_options(test_ota PRIVATE -Wall -Wextra -Werror)
@@ -38,12 +51,12 @@ endif()
 
 set(DFP ${CMAKE_CURRENT_SOURCE_DIR}/vendor/stm32c5xx_dfp)
 add_executable(coral_c5
-  src/main.c src/board.c src/serial.c src/logic.c src/emm.c
-  src/stepper.c src/display.c src/ui.c src/runtime.c src/ota.c src/grayscale.c src/lap.c
+  src/main.c src/contest.c src/board.c src/serial.c src/logic.c src/emm.c src/ball.c src/balance.c ports/classmate_26h/balance.c
+  src/stepper.c src/jog.c src/display.c src/ui.c src/runtime.c src/ota.c src/grayscale.c src/lap.c
   ${DFP}/Source/Templates/system_stm32c5xx.c
   ${DFP}/Source/startup_stm32c5a3xx.c)
 add_executable(coral_boot
-  boot/main.c boot/flash_port.c boot/ota_store.c src/ota.c
+  boot/main.c boot/flash_port.c boot/ota_store.c src/ota.c src/contest.c
   src/board.c src/serial.c src/logic.c src/emm.c src/display.c src/ui.c src/grayscale.c src/lap.c src/runtime.c
   ${DFP}/Source/Templates/system_stm32c5xx.c
   ${DFP}/Source/startup_stm32c5a3xx.c)
@@ -75,6 +88,7 @@ foreach(target coral_c5 coral_boot)
     COMMAND ${CMAKE_SIZE} $<TARGET_FILE:${target}>)
 endforeach()
 target_compile_definitions(coral_c5 PRIVATE $<$<CONFIG:Debug>:CORAL_DEBUG_KEYS>)
+target_include_directories(coral_c5 PRIVATE ports)
 
 if(NOT Python3_EXECUTABLE AND EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/../.scratch/firmware-tools/Scripts/python.exe")
   set(Python3_EXECUTABLE "${CMAKE_CURRENT_SOURCE_DIR}/../.scratch/firmware-tools/Scripts/python.exe")
@@ -87,8 +101,12 @@ add_custom_target(firmware_package ALL
     --out ${CMAKE_CURRENT_BINARY_DIR}
   DEPENDS coral_c5 coral_boot tools/package_firmware.py tools/ota_protocol.py
   COMMENT "Packaging wireless image and first-install HEX")
-add_custom_target(wireless_flash
-  COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/tools/wireless_flash.py
-    ${CMAKE_CURRENT_BINARY_DIR}/coral_c5.ota
-  DEPENDS firmware_package USES_TERMINAL
-  COMMENT "Updating Coral-C5 over HC-08 BLE")
+function(add_wireless_flash_target target)
+  add_custom_target(${target}
+    COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/tools/wireless_flash.py
+      ${CMAKE_CURRENT_BINARY_DIR}/coral_c5.ota ${ARGN}
+    DEPENDS firmware_package USES_TERMINAL
+    COMMENT "Updating Coral-C5 over HC-08 BLE")
+endfunction()
+add_wireless_flash_target(wireless_flash)
+add_wireless_flash_target(wireless_flash_supported --pipe-supported)

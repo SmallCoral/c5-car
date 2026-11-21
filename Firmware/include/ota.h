@@ -15,6 +15,10 @@
 #define OTA_PAGE_SIZE 8192U
 #define OTA_REQUEST_ADDR 0x2003ffe0U
 #define OTA_REQUEST_MAGIC 0xc5b00701U
+/* A wired update can hand an already energized, stationary drive to the
+ * application. The bootloader owns the first two words of this mailbox. */
+#define JLINK_HOLD_ADDR (OTA_REQUEST_ADDR + 8U)
+#define JLINK_HOLD_MAGIC 0x484f4c44U
 #define OTA_HEADER_MAGIC 0x3541544fU
 #define OTA_VERSION 1U
 #define OTA_CHUNK 128U

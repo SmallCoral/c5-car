@@ -14,6 +14,7 @@ enum wheel_trip {
 };
 
 bool board_init(void);
+void board_camera_uart_init(void);
 uint32_t board_millis(void);
 void board_delay(uint32_t ms);
 void board_heartbeat(void);

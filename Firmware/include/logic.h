@@ -13,6 +13,7 @@ enum task_id {
 	TASK_ALL,
 	TASK_GRAY,
 	TASK_LAP,
+	TASK_BALANCE,
 	TASK_COUNT
 };
 

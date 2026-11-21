@@ -3,7 +3,9 @@
 #include <stdio.h>
 #include <string.h>
 #include "config.h"
+#include "contest.h"
 #include "emm.h"
+#include "jog.h"
 #include "logic.h"
 #include "serial.h"
 #include "stepper.h"
@@ -14,11 +16,14 @@ static uint8_t received[128];
 static size_t rx_size;
 static size_t rx_pos;
 static struct serial_stats stats;
+static unsigned int disable_count;
 
 bool serial_write(enum serial_port port, const uint8_t *data, size_t size)
 {
 	assert(port == SERIAL_STEP);
 	assert(size <= sizeof(transmitted));
+	if (size == 6 && data[1] == 0xf3 && !data[3])
+		disable_count++;
 	memcpy(transmitted, data, size);
 	tx_size = size;
 	return true;
@@ -44,6 +49,14 @@ static void inject(const uint8_t *frame, size_t length)
 	memcpy(received, frame, length);
 	rx_pos = 0;
 	rx_size = length;
+}
+
+static void shaft_snapshot(int raw, uint16_t absolute)
+{
+	uint32_t mag = (uint32_t)(raw < 0 ? -raw : raw);
+	const uint8_t reply[31] = { 1, 0x43, 31, 9, [8] = absolute >> 8, absolute & 255,
+		[18] = raw < 0, mag >> 24, mag >> 16, mag >> 8, mag & 255, [29] = 3, 0x6b };
+	inject(reply, sizeof(reply));
 }
 
 static void ack(struct stepper *step, uint8_t command, uint32_t now)
@@ -169,11 +182,14 @@ static void test_all_toggle(void)
 	controls_key(&ctl, KEY_MODE, 900005);
 	assert(ctl.task == TASK_LAP);
 	controls_key(&ctl, KEY_MODE, 900006);
+	assert(ctl.task == TASK_BALANCE && !task_uses_wheels(ctl.task));
+	controls_key(&ctl, KEY_MODE, 900007);
 	assert(ctl.task == TASK_MONITOR);
 }
 
 static void make_ready(struct stepper *step)
 {
+	const uint8_t disabled[] = { 1, 0x3a, 2, 0x6b };
 	memset(&stats, 0, sizeof(stats));
 	rx_size = rx_pos = 0;
 	stepper_init(step);
@@ -181,8 +197,10 @@ static void make_ready(struct stepper *step)
 	stepper_poll(step, 1000);
 	assert(transmitted[1] == 0xfe);
 	ack(step, 0xfe, 1010);
-	assert(transmitted[1] == 0xf3 && transmitted[3] == 0);
-	ack(step, 0xf3, 1020);
+	stepper_poll(step, 1016);
+	assert(transmitted[1] == 0x3a);
+	inject(disabled, sizeof(disabled));
+	stepper_poll(step, 1020);
 	assert(step->phase == STEP_IDLE);
 }
 
@@ -194,20 +212,41 @@ static void test_step_state(void)
 	const uint8_t rpm[] = { 1, 0x35, 1, 0, 30, 0x6b };
 
 	stepper_init(&step);
+	unsigned int disables = disable_count;
 	stepper_poll(&step, 1000);
 	inject(stop_disabled, sizeof(stop_disabled));
 	stepper_poll(&step, 1010);
-	ack(&step, 0xf3, 1020);
-	assert(step.phase == STEP_IDLE && step.error == 0);
+	stepper_poll(&step, 1016);
+	const uint8_t disabled[] = { 1, 0x3a, 2, 0x6b };
+	inject(disabled, sizeof(disabled));
+	stepper_poll(&step, 1020);
+	assert(step.phase == STEP_IDLE && !step.hold && !step.error && disable_count == disables);
+
+	stepper_init(&step);
+	stepper_poll(&step, 1000);
+	ack(&step, 0xfe, 1010);
+	stepper_poll(&step, 1016);
+	inject(reached, sizeof(reached));
+	stepper_poll(&step, 1020);
+	assert(step.phase == STEP_PARKED && step.hold && step.boot_parked && disable_count == disables);
+	assert(!stepper_start(&step, false, 30, 1021));
+	step.travel_valid = true;
+	step.position_at = 1020;
+	step.pulses_per_rev = 3200;
+	assert(stepper_start(&step, false, 30, 1022) && !step.boot_parked);
 
 	make_ready(&step);
+	assert(!stepper_start(&step, true, 30, 1050));
+	step.travel_valid = true;
+	step.position_at = 1050;
+	step.pulses_per_rev = 3200;
 	assert(!stepper_start(&step, true, 0, 1100));
 	assert(!stepper_start(&step, true, 91, 1100));
 	assert(stepper_start(&step, true, 30, 1100));
 	assert(transmitted[1] == 0xf3 && transmitted[3] == 1);
 	ack(&step, 0xf3, 1110);
-	assert(tx_size == 8 && transmitted[1] == 0xf6 && transmitted[2] == 1);
-	ack(&step, 0xf6, 1120);
+	assert(tx_size == 13 && transmitted[1] == 0xfd && transmitted[2] == 1 && transmitted[10] == 1);
+	ack(&step, 0xfd, 1120);
 	assert(step.phase == STEP_MOVING);
 	stepper_poll(&step, 1320);
 	assert(transmitted[1] == 0x3a);
@@ -229,6 +268,10 @@ static void test_step_state(void)
 
 	/* Cancellation while enable is in flight must never queue velocity. */
 	make_ready(&step);
+	assert(!stepper_start(&step, true, 30, 1050));
+	step.travel_valid = true;
+	step.position_at = 1050;
+	step.pulses_per_rev = 3200;
 	assert(stepper_start(&step, false, 30, 1100));
 	stepper_stop(&step, 1101);
 	ack(&step, 0xf3, 1102);
@@ -240,23 +283,566 @@ static void test_step_state(void)
 
 	/* Missing move ACK and damaged serial reception both request a stop. */
 	make_ready(&step);
+	assert(!stepper_start(&step, true, 30, 1050));
+	step.travel_valid = true;
+	step.position_at = 1050;
+	step.pulses_per_rev = 3200;
 	assert(stepper_start(&step, false, 30, 1100));
 	ack(&step, 0xf3, 1110);
 	stepper_poll(&step, 1310);
 	assert(step.phase == STEP_STOP && step.error == 0xe0);
 	make_ready(&step);
+	assert(!stepper_start(&step, true, 30, 1050));
+	step.travel_valid = true;
+	step.position_at = 1050;
+	step.pulses_per_rev = 3200;
 	assert(stepper_start(&step, false, 30, 1100));
 	stats.errors++;
 	stepper_poll(&step, 1110);
 	assert(step.phase == STEP_STOP && step.error == 0xe3);
 }
 
+static void test_position_mode(void)
+{
+	struct stepper step;
+	uint8_t cfg[33] = { 1, 0x42, 33, 21, 25, 0, 2, 2, 0, 16 };
+	const uint8_t flags[] = { 1, 0x3a, 2, 0x6b };
+	const uint8_t held[] = { 1, 0x3a, 3, 0x6b };
+	uint8_t move[13];
+
+	make_ready(&step);
+	inject(flags, sizeof(flags));
+	stepper_poll(&step, 1025);
+	assert(!stepper_latch(&step, 1030));
+	stepper_request_config(&step, 1030);
+	assert(transmitted[1] == 0x42);
+	cfg[32] = 0x6b;
+	inject(cfg, sizeof(cfg));
+	stepper_poll(&step, 1040);
+	assert(step.pulses_per_rev == 3200);
+	unsigned int before = disable_count;
+	assert(stepper_latch(&step, 1050) && step.phase == STEP_LATCH);
+	assert(transmitted[1] == 0xf3 && transmitted[3] == 1);
+	ack(&step, 0xf3, 1060);
+	assert(step.phase == STEP_PARKED && !stepper_running(&step));
+	stepper_poll(&step, 1066);
+	assert(transmitted[1] == 0x3a);
+	inject(held, sizeof(held));
+	stepper_poll(&step, 1070);
+	stepper_poll(&step, 1076);
+	assert(transmitted[1] == 0x43);
+	stepper_poll(&step, 1121);
+	assert(step.retried && step.pending == 0x43);
+	shaft_snapshot(-2048, SHAFT_LEVEL_ABS - 2048);
+	stepper_poll(&step, 1130);
+	assert(step.position == -2048 && step.position_at == 1130);
+	assert(!stepper_hold(&step, -2000, -1000, 1140));
+	assert(stepper_hold(&step, -2490, -1000, 1140));
+	stepper_poll(&step, 1141);
+	assert(step.phase == STEP_POSITION && transmitted[1] == 0x43);
+	shaft_snapshot(-2048, SHAFT_LEVEL_ABS - 2048);
+	stepper_poll(&step, 1148);
+	stepper_poll(&step, 1154);
+	assert(emm_position(move, 1, -2048, 3200, 15) == sizeof(move));
+	assert(move[2] == 1 && move[9] == 100 && move[10] == 1);
+	assert(tx_size == 13 && !memcmp(move, transmitted, sizeof(move)));
+	ack(&step, 0xfd, 1162);
+	step.goal = -2490;
+	stepper_poll(&step, 1183);
+	shaft_snapshot(-2048, SHAFT_LEVEL_ABS - 2048);
+	stepper_poll(&step, 1186);
+	stepper_poll(&step, 1194);
+	assert(transmitted[1] == 0xfd && transmitted[9] == 121);
+	ack(&step, 0xfd, 1200);
+	step.goal--;
+	stepper_poll(&step, 1234);
+	shaft_snapshot(-2048, SHAFT_LEVEL_ABS - 2048);
+	stepper_poll(&step, 1240);
+	stepper_poll(&step, 1246);
+	assert(step.phase == STEP_BRAKE && step.error == 0xe4 && transmitted[1] == 0xfe);
+	ack(&step, 0xfd, 1248);
+	assert(step.phase == STEP_BRAKE);
+	ack(&step, 0xfe, 1250);
+	assert(step.phase == STEP_PARKED && step.hold);
+	assert(!stepper_start(&step, true, 30, 1251));
+	stepper_poll(&step, 1256);
+	inject(held, sizeof(held));
+	stepper_poll(&step, 1260);
+	assert(step.hold && disable_count == before);
+	assert(stepper_hold(&step, -2490, -1000, 1261));
+	stepper_poll(&step, 1270);
+	stepper_poll(&step, 1315);
+	stepper_poll(&step, 1516);
+	assert(step.phase == STEP_BRAKE && transmitted[1] == 0xfe && disable_count == before);
+	ack(&step, 0xfe, 1520);
+	/* Only an explicit release drops holding torque. */
+	stepper_stop(&step, 1530);
+	ack(&step, 0xfe, 1540);
+	assert(!step.hold && transmitted[1] == 0xf3 && disable_count == before + 1);
+}
+
+static void test_direction_measurement(int sign, bool ccw)
+{
+	struct stepper step = {
+		.phase = STEP_PARKED, .hold = true, .flags = 3, .seen = true,
+		.last_reply = 1000, .travel_valid = true, .pulses_per_rev = 3200, .position_valid = true,
+		.position = -2048, .position_at = 1000,
+	};
+	unsigned int nudges = 0;
+	uint32_t moved_at = 0;
+	int raw = -2048;
+	assert(stepper_measure_direction(&step, raw, ccw, 1001));
+	for (uint32_t t = 1002; t < 2000 && !step.cw_sign; t++) {
+		tx_size = 0;
+		stepper_poll(&step, t);
+		if (!tx_size)
+			continue;
+		if (transmitted[1] == 0xfd && !transmitted[10]) {
+			assert(transmitted[2] == ccw && transmitted[9] == 36);
+			nudges++;
+			moved_at = t;
+			raw += (ccw ? -sign : sign) * 730;
+			continue; /* Drop the relative ACK on purpose. */
+		}
+		if (transmitted[1] == 0x43) {
+			shaft_snapshot(raw, SHAFT_LEVEL_ABS + raw);
+		} else {
+			uint8_t response[] = { 1, transmitted[1], transmitted[1] == 0x3a ? 3 : 2, 0x6b };
+			inject(response, sizeof(response));
+		}
+	}
+	assert(nudges == 1 && moved_at && step.cw_sign == sign && step.phase == STEP_BRAKE);
+}
+
+static void test_position_speed_update(void)
+{
+	struct stepper step = {
+		.phase = STEP_POSITION, .hold = true, .flags = 3, .seen = true,
+		.travel_valid = true, .pulses_per_rev = 3200, .lower = -2000, .upper = 2000,
+		.goal_sent = true, .goal = 1000, .sent_goal = 1000, .sent_rpm = 30,
+		.target_rpm = 8, .last_poll = 1000, .flags_at = 1000, .last_reply = 1000,
+	};
+	step.rx_errors = stats.errors + stats.rx_drops;
+	stepper_poll(&step, 1008);
+	assert(step.pending == 0xfd && step.sent_rpm == 8 && transmitted[4] == 8);
+	/* A lost ACK repeats the same absolute goal and speed, including when the
+	 * encoder loop has meanwhile requested a slower approach. */
+	step.target_rpm = 3;
+	stepper_poll(&step, 1055);
+	assert(step.retried && transmitted[4] == 8);
+}
+
+static void test_idle_read_retry(void)
+{
+	struct stepper step;
+	uint8_t cfg[33] = { 1, 0x42, 33, 21, 25, 0, 0, 0, 0, 16 };
+	cfg[32] = 0x6b;
+	make_ready(&step);
+	const uint8_t flags[] = { 1, 0x3a, 2, 0x6b };
+	inject(flags, sizeof(flags));
+	stepper_poll(&step, 1025);
+	stepper_request_config(&step, 1030);
+	assert(step.pending == 0x42);
+	stats.errors++;
+	stepper_poll(&step, 1075);
+	const uint8_t config_read[] = { 1, 0x42, 0x6c, 0x6b };
+	assert(step.retried && tx_size == sizeof(config_read) &&
+	       !memcmp(transmitted, config_read, sizeof(config_read)));
+	inject(cfg, sizeof(cfg));
+	stepper_poll(&step, 1080);
+	assert(step.phase == STEP_IDLE && step.pulses_per_rev == 3200 && !step.error);
+	stepper_poll(&step, 1220);
+	assert(step.pending == 0x35);
+	stepper_poll(&step, 1265);
+	assert(step.retried && transmitted[1] == 0x35);
+	stepper_poll(&step, 1465);
+	assert(step.phase == STEP_OFFLINE && step.error == 0xe0 && !step.pulses_per_rev);
+}
+
+static void test_f407_wire_speed(void)
+{
+	struct stepper step = { .phase = STEP_PARKED, .hold = true, .flags = 3, .seen = true,
+		.travel_valid = true, .pulses_per_rev = 3200, .position_valid = true, .position_at = 1000, .last_reply = 1000 };
+	memset(&stats, 0, sizeof(stats));
+	rx_size = rx_pos = 0;
+	assert(!stepper_speed_loop(&step, -1456, 1456, 1040) && step.phase == STEP_PARKED);
+	step.pending = 0x3a;
+	assert(!stepper_speed_loop(&step, -1456, 1456, 1000) && step.phase == STEP_PARKED);
+	step.pending = 0;
+	assert(stepper_speed_loop(&step, -1456, 1456, 1000));
+	stepper_poll(&step, 1001);
+	assert(step.pending == 0xf6 && transmitted[4] == 0);
+	ack(&step, 0xf6, 1002);
+	stepper_balance_rpm(&step, 24);
+	stepper_poll(&step, 1003);
+	assert(step.pending == 0x43);
+	shaft_snapshot(0, SHAFT_LEVEL_ABS);
+	stepper_poll(&step, 1004);
+	stepper_poll(&step, 1005);
+	uint8_t ccw[13];
+	assert(emm_position(ccw, 1, -1445, 3200, 24) == 13);
+	assert(tx_size == sizeof(ccw) && !memcmp(transmitted, ccw, sizeof(ccw)));
+	ack(&step, 0xfd, 1006);
+	stepper_balance_rpm(&step, -16);
+	stepper_poll(&step, 1007);
+	uint8_t cw[13];
+	assert(emm_position(cw, 1, 1445, 3200, 16) == 13);
+	assert(tx_size == sizeof(cw) && !memcmp(transmitted, cw, sizeof(cw)));
+	ack(&step, 0xfd, 1008);
+	step.position = 1440; /* Near the positive limit, CW must go to zero. */
+	stepper_poll(&step, 1009);
+	assert(step.pending == 0xf6 && !transmitted[4]);
+	ack(&step, 0xf6, 1010);
+	step.position = 0;
+	stepper_poll(&step, 1014);
+	assert(step.pending == 0x43);
+	stepper_poll(&step, 1039);
+	assert(step.phase == STEP_BRAKE && transmitted[1] == 0xfe && step.hold);
+	ack(&step, 0xfe, 1040);
+	assert(step.phase == STEP_PARKED);
+}
+
+static void test_jog_buttons(void)
+{
+	struct jog_keys keys = {0};
+	const uint8_t left = 1U << KEY_OK, right = 1U << KEY_NEXT;
+	for (int side = 0; side < 2; side++) {
+		uint8_t button = side ? right : left;
+		assert(jog_key_update(&keys, button, true, UINT32_MAX - 35) == JOG_NONE);
+		assert(jog_key_update(&keys, 0, true, 40) == (side ? JOG_RIGHT : JOG_LEFT));
+		assert(jog_key_update(&keys, 0, true, 100) == JOG_NONE);
+		assert(jog_key_update(&keys, button, true, 150) == JOG_NONE);
+		assert(jog_key_update(&keys, button, true, 850) == (side ? JOG_ZERO : JOG_MAP));
+		assert(jog_key_update(&keys, button, true, 2000) == JOG_NONE);
+		assert(jog_key_update(&keys, 0, true, 2050) == JOG_NONE);
+	}
+	assert(jog_key_update(&keys, left | right, true, 3000) == JOG_NONE);
+	assert(jog_key_update(&keys, right, true, 3200) == JOG_NONE);
+	assert(jog_key_update(&keys, 0, true, 3260) == JOG_NONE);
+	/* A press that stopped automatic control cannot turn into a jog on release. */
+	assert(jog_key_update(&keys, left, false, 4000) == JOG_NONE);
+	assert(jog_key_update(&keys, 0, true, 4050) == JOG_NONE);
+	assert(jog_cal_key(&keys, left, 4100) == JOG_LEFT);
+	assert(jog_cal_key(&keys, left, 4549) == JOG_NONE);
+	assert(jog_cal_key(&keys, left, 4550) == JOG_LEFT);
+	assert(jog_cal_key(&keys, left, 4670) == JOG_LEFT);
+	assert(jog_cal_key(&keys, left | right, 4671) == JOG_NONE);
+	assert(jog_cal_key(&keys, right, 4900) == JOG_NONE);
+	assert(jog_cal_key(&keys, 0, 4901) == JOG_NONE);
+	assert(jog_cal_key(&keys, right, 4910) == JOG_RIGHT);
+	assert(jog_cal_key(&keys, 0, 4950) == JOG_NONE);
+}
+
+static void test_jog_motion(void)
+{
+	struct shaft_jog jog = {0};
+	struct stepper step = { .phase = STEP_IDLE, .seen = true, .flags = 2,
+		.travel_valid = true, .pulses_per_rev = 3200, .position_valid = true, .position = 1247,
+		.position_at = 1000, .last_reply = 1000 };
+	memset(&stats, 0, sizeof(stats));
+	rx_size = rx_pos = 0;
+	int actual = step.position;
+	int expected_pulses = 61; /* Nearest microstep to the observed horizontal mark. */
+	unsigned int disables = disable_count;
+	uint32_t now = 1050;
+	const int directions[] = { -1, 1, 1, -1 };
+	for (unsigned int i = 0; i < sizeof(directions) / sizeof(directions[0]); i++) {
+		assert(jog_press(&jog, &step, directions[i], now));
+		expected_pulses += directions[i] * 16;
+		bool sent_absolute = false;
+		for (uint32_t start = now; now - start <= 1600 && jog_busy(&jog); now++) {
+			if (step.pending == 0x43) {
+				shaft_snapshot(actual, SHAFT_LEVEL_ABS + actual);
+			} else if (step.pending == 0x3a) {
+				const uint8_t flags[] = { 1, 0x3a, 3, 0x6b };
+				inject(flags, sizeof(flags));
+			} else if (step.pending) {
+				uint8_t reply[] = { 1, step.pending, 2, 0x6b };
+				assert(step.pending == 0xf3 || step.pending == 0xfd);
+				if (step.pending == 0xfd) {
+					assert(transmitted[2] == 0 && transmitted[10] == 1 && tx_size == 13);
+					assert(!transmitted[6] && !transmitted[7] && !transmitted[8] &&
+					       transmitted[9] == expected_pulses);
+					sent_absolute = true;
+					actual = (expected_pulses * 65536 + 1600) / 3200;
+				}
+				inject(reply, sizeof(reply));
+			}
+			stepper_poll(&step, now);
+			jog_poll(&jog, &step, now);
+		}
+		assert(sent_absolute && jog.state == JOG_HELD && step.phase == STEP_PARKED);
+		assert(jog.origin == 1247 && step.position == jog.target && step.hold);
+	}
+	assert(!jog.steps && step.position == 1249 && disable_count == disables);
+	int32_t previous = jog.target;
+	jog.upper = previous + 100;
+	assert(!jog_press(&jog, &step, 1, now) && jog.limited);
+	assert(jog.steps == 0 && jog.target == previous && step.phase == STEP_PARKED);
+	assert(jog_press(&jog, &step, -1, now) && !jog.limited);
+	step.error = 0xe3;
+	jog_poll(&jog, &step, ++now);
+	assert(jog.state == JOG_FAILED && !jog.referenced && step.hold);
+}
+
+static void test_jog_retry_and_rebase(void)
+{
+	struct shaft_jog jog = { .state = JOG_MOVING, .referenced = true, .origin = -1024,
+		.lower = -8000, .upper = 8000 };
+	struct stepper step = { .phase = STEP_POSITION, .hold = true, .seen = true,
+		.travel_valid = true, .pulses_per_rev = 3200, .position_valid = true, .position = -1024, .flags = 3,
+		.last_reply = 1000, .last_poll = 1010, .flags_at = 1010, .position_at = 1000,
+		.lower = -8000, .upper = 8000, .target_rpm = 15 };
+	memset(&stats, 0, sizeof(stats));
+	rx_size = rx_pos = 0;
+	assert(jog_press(&jog, &step, 1, 1010));
+	stepper_poll(&step, 1010);
+	assert(step.pending == 0xfd && transmitted[2] == 1 && transmitted[9] == 34 && transmitted[10] == 1);
+	assert(jog_press(&jog, &step, 1, 1020));
+	assert(jog.steps == 2 && step.goal != step.sent_goal);
+	stepper_poll(&step, 1055); /* Lost ACK for -34. Reissue that same absolute target. */
+	assert(step.retried && transmitted[2] == 1 && transmitted[9] == 34 && transmitted[10] == 1);
+	ack(&step, 0xfd, 1056);
+	assert(jog_press(&jog, &step, 1, 1057) && jog_press(&jog, &step, 1, 1058));
+	uint8_t move[13];
+	assert(emm_position(move, 1, step.goal, 3200, 15) == 13 && !move[2] && move[9] == 14);
+	assert(jog_press(&jog, &step, -1, 1059));
+	assert(emm_position(move, 1, step.goal, 3200, 15) == 13 && move[2] && move[9] == 2);
+
+	/* Only the latest click is applied if an external load has moved a parked shaft. */
+	jog.state = JOG_HELD;
+	step.phase = STEP_PARKED;
+	step.position = jog.target;
+	assert(jog_press(&jog, &step, -1, 1100));
+	step.position = 4096;
+	step.position_at = 1105;
+	jog_poll(&jog, &step, 1106);
+	assert(jog.state == JOG_MOVING && jog.origin == 4096 && jog.steps == -1);
+	assert(emm_position(move, 1, step.goal, 3200, 15) == 13 && !move[2] && move[9] == 184);
+}
+
+static void test_calibrated_travel(void)
+{
+	/* The same physical left/right shaft stops under two different Emm origins. */
+	const int levels[] = { -80313, 0, 795 };
+	const int offsets[] = { SHAFT_HIGH_OFFSET, SHAFT_LOW_OFFSET, 0 };
+	for (unsigned int i = 0; i < 3; i++) {
+		for (unsigned int j = 0; j < 3; j++) {
+			const int raw = levels[i] + offsets[j];
+			struct stepper s = { .phase = STEP_PARKED, .hold = true, .seen = true,
+				.pending = 0x43, .pulses_per_rev = 3200, .rx_errors = stats.errors + stats.rx_drops };
+			shaft_snapshot(raw, SHAFT_LEVEL_ABS + offsets[j]);
+			stepper_poll(&s, 1000);
+			assert(s.travel_valid && s.shaft_level == levels[i] && s.position == raw);
+			assert(stepper_hold(&s, levels[i] - 65536, levels[i] + 65536, 1000));
+			assert(s.lower == levels[i] + SHAFT_HIGH_OFFSET && s.upper == levels[i] + SHAFT_LOW_OFFSET);
+			s.last_poll = s.flags_at = 1000;
+			s.goal = j == 1 ? s.upper : s.lower;
+			stepper_poll(&s, 1006);
+			assert(s.pending == 0xfd && transmitted[10] == 1);
+			int pulses = transmitted[8] * 256 + transmitted[9];
+			int target = (transmitted[2] ? -pulses : pulses) * 65536 / 3200;
+			assert(target > s.lower && target < s.upper);
+			/* Changed boot origin in mid-move: brake before another position command. */
+			s.pending = 0x43;
+			shaft_snapshot(raw + 7500, SHAFT_LEVEL_ABS + offsets[j]);
+			stepper_poll(&s, 1010);
+			assert(s.phase == STEP_BRAKE && s.pending == 0xfe);
+		}
+	}
+	struct stepper s = { .phase = STEP_PARKED, .hold = true, .pending = 0x43, .pulses_per_rev = 3200,
+		.rx_errors = stats.errors + stats.rx_drops };
+	shaft_snapshot(0, SHAFT_LEVEL_ABS + SHAFT_LOW_OFFSET + 1);
+	stepper_poll(&s, 1000);
+	assert(!s.travel_valid && !stepper_hold(&s, -1000, 1000, 1000));
+	assert(!stepper_speed_loop(&s, -1000, 1000, 1000));
+	assert(!stepper_measure_direction(&s, 0, false, 1000));
+	s.phase = STEP_IDLE;
+	assert(!stepper_start(&s, false, 30, 1000));
+}
+
+static void test_contest(void)
+{
+	struct contest_menu m = { .page = MENU_HOME };
+	enum key_id back = KEY_START, confirm = KEY_MODE; /* board_keys: PH3/SW5, PD15/SW2 */
+	for (unsigned int i = 0; i < EVENT_COUNT; i++) {
+		assert(contest_key(&m, back) == MENU_NONE && m.page == MENU_HOME);
+		assert((unsigned int)m.item == i);
+		assert(contest_key(&m, confirm) == MENU_NONE && m.page == MENU_DETAIL);
+		assert(contest_key(&m, confirm) == MENU_START_EVENT);
+		assert(contest_key(&m, back) == MENU_NONE && m.page == MENU_HOME);
+		contest_key(&m, KEY_NEXT);
+	}
+	assert(m.item == EVENT_POSITION);
+	m.page = MENU_DETAIL;
+	m.notice = NOTICE_TRAVEL;
+	assert(contest_key(&m, confirm) == MENU_RELEVEL && m.page == MENU_DETAIL);
+	assert(contest_ball_mm(160) == 50 && contest_ball_mm(400) == -50 && !contest_ball_mm(282));
+	struct position_run r;
+	uint32_t start = UINT32_MAX - 200;
+	position_begin(&r, 282, 65530, start);
+	assert(r.leg == LEVEL_SHAFT && !r.goal_cd);
+	assert(position_update(&r, BALL_TRACKED, 282, 65531, start + 10, start + 10) == NOTICE_NONE && !r.goal_cd);
+	position_check_level(&r, true, start + 12);
+	position_check_level(&r, true, start + 12);
+	position_check_level(&r, false, start + 17);
+	position_check_level(&r, true, start + 20);
+	position_check_level(&r, true, start + 94);
+	assert(r.leg == LEVEL_SHAFT);
+	for (unsigned int dt = 25; dt <= 6400; dt += 25) {
+		if (dt == 100)
+			position_check_level(&r, true, start + dt);
+		int x = r.leg == MOVE_RIGHT ? 160 : r.leg == MOVE_LEFT || r.leg == HOLD_LEFT ? 400 : 282;
+		enum position_leg before = r.leg;
+		assert(position_update(&r, BALL_TRACKED, x, (uint16_t)(65530 + dt / 25), start + dt, start + dt) == NOTICE_NONE);
+		if (r.leg != before) {
+			assert(start + dt - r.steady_at >= (before == MOVE_CENTER ? 300U : 400U));
+		}
+		if (dt == 25)
+			assert(r.leg == LEVEL_SHAFT && !r.goal_cd);
+		if (dt == 375)
+			assert(r.leg == MOVE_CENTER);
+	}
+	assert(r.leg == HOLD_LEFT && r.finished_ms >= 1000 && r.finished_ms <= 6400);
+	r = (struct position_run){ .leg = MOVE_RIGHT, .mm = 50 };
+	for (int ms = 25; ms < 475; ms += 25) {
+		assert(position_update(&r, ms != 275 ? BALL_TRACKED : BALL_MISSING, 160, ms / 25, ms, ms) == NOTICE_NONE);
+		assert(r.leg == MOVE_RIGHT);
+	}
+	assert(position_update(&r, BALL_TRACKED, 160, 19, 475, 475) == NOTICE_NONE && r.leg == MOVE_LEFT);
+	r = (struct position_run){ .leg = MOVE_RIGHT, .mm = 50 };
+	for (int ms = 25; ms <= 725; ms += 25) {
+		assert(position_update(&r, ms != 275 && ms != 300 ? BALL_TRACKED : BALL_MISSING, 160, ms / 25, ms, ms) == NOTICE_NONE);
+		assert(r.leg == (ms == 725 ? MOVE_LEFT : MOVE_RIGHT));
+	}
+	r = (struct position_run){ .leg = MOVE_RIGHT, .mm = 50 };
+	for (int i = 1; i <= 30; i++) {
+		assert(position_update(&r, i % 4 != 0 ? BALL_TRACKED : BALL_MISSING, 160, i, i * 33, i * 33) == NOTICE_NONE);
+		assert(r.leg == MOVE_RIGHT);
+	}
+	r = (struct position_run){ .leg = MOVE_RIGHT, .mm = 47, .have_sample = true };
+	for (int ms = 50; ms <= 650; ms += 50) {
+		int x = ms <= 100 ? 167 : ms <= 350 ? 160 : 155; /* +47, +50, +52 mm */
+		assert(position_update(&r, BALL_TRACKED, x, ms / 50, ms, ms) == NOTICE_NONE);
+		if (ms < 650)
+			assert(r.leg == MOVE_RIGHT);
+	}
+	assert(r.leg == MOVE_LEFT && r.steady_at == 250);
+	r = (struct position_run){ .leg = MOVE_LEFT, .mm = -50, .have_sample = true };
+	for (int ms = 25; ms < 775; ms += 25) {
+		/* A 6 mm excursion stays in the target band but restarts the dwell. */
+		int x = ms == 350 ? 386 : 400;
+		assert(position_update(&r, BALL_TRACKED, x, ms / 25, ms, ms) == NOTICE_NONE && r.leg == MOVE_LEFT);
+	}
+	for (int ms = 775; ms <= 1000; ms += 25)
+		assert(position_update(&r, BALL_TRACKED, 400, ms / 25, ms, ms) == NOTICE_NONE);
+	assert(r.leg == HOLD_LEFT && r.finished_ms >= 775);
+	r = (struct position_run){ .leg = HOLD_LEFT, .mm = -50, .have_sample = true, .goal_cd = -910,
+				   .trim_milli_cd = -110000, .sample_at = 1000 };
+	assert(position_update(&r, BALL_MISSING, 399, 2, 1550, 1550) == NOTICE_NONE && r.goal_cd == -910);
+	assert(position_update(&r, BALL_TRACKED, 400, 24, 1690, 1690) == NOTICE_NONE && r.goal_cd == -910);
+	assert(position_update(&r, BALL_MISSING, 400, 35, 2590, 2590) == NOTICE_NONE && r.waiting_vision);
+	assert(position_update(&r, BALL_MISSING, 402, 240, 9600, 9600) == NOTICE_NONE && r.goal_cd == -910);
+	assert(position_update(&r, BALL_TRACKED, 160, 241, 9633, 9633) == NOTICE_NONE && r.waiting_vision);
+	assert(position_update(&r, BALL_TRACKED, 387, 242, 9666, 9666) == NOTICE_NONE && r.waiting_vision);
+	assert(position_update(&r, BALL_TRACKED, 387, 242, 9666, 9670) == NOTICE_NONE && r.goal_cd == -910);
+	assert(position_update(&r, BALL_MISSING, 387, 243, 9700, 9700) == NOTICE_NONE && r.waiting_vision);
+	assert(position_update(&r, BALL_TRACKED, 386, 244, 9733, 9733) == NOTICE_NONE && r.waiting_vision);
+	assert(position_update(&r, BALL_TRACKED, 386, 245, 9766, 9766) == NOTICE_NONE && !r.waiting_vision);
+	assert(r.mm == -44 && r.goal_cd < -910 && r.leg == HOLD_LEFT);
+	assert(position_update(&r, BALL_OFFLINE, 386, 245, 9766, 10666) == NOTICE_VISION);
+	r = (struct position_run){ .leg = MOVE_LEFT, .mm = -47, .have_sample = true, .sample_at = 5300 };
+	for (int i = 1; i <= 8; i++)
+		assert(position_update(&r, BALL_TRACKED, 393, i, 5300 + 25*i, 5300 + 25*i) == NOTICE_NONE);
+	int parked_goal = r.goal_cd;
+	assert(position_update(&r, BALL_MISSING, 391, 24, 6015, 6015) == NOTICE_NONE && r.waiting_vision);
+	assert(position_update(&r, BALL_MISSING, 391, 200, 12500, 12500) == NOTICE_NONE);
+	assert(r.leg == MOVE_LEFT && !r.finished_ms && !r.active_bands && r.goal_cd == parked_goal);
+	for (int i = 1; i <= 17; i++) {
+		assert(position_update(&r, BALL_TRACKED, 393, 200+i, 12500+25*i, 12500+25*i) == NOTICE_NONE);
+		assert(!r.finished_ms && r.leg == MOVE_LEFT);
+	}
+	assert(position_update(&r, BALL_TRACKED, 393, 218, 12950, 12950) == NOTICE_NONE);
+	assert(r.finished_ms == 12950 && r.leg == HOLD_LEFT);
+	r = (struct position_run){ .leg = HOLD_LEFT, .mm = -58, .have_sample = true, .finished_ms = 5904 };
+	for (int i = 1; i <= 160; i++)
+		assert(position_update(&r, BALL_TRACKED, 419, i, 25 * i, 25 * i) == NOTICE_NONE);
+	assert(r.trim_milli_cd == 250000 && r.goal_cd == -310 && r.finished_ms == 5904);
+	assert(position_update(&r, BALL_TRACKED, 395, 161, 4025, 4025) == NOTICE_NONE);
+	assert(r.velocity > 0 && r.goal_cd == -1600);
+	position_begin(&r, 282, 4, 0);
+	assert(position_update(&r, BALL_TRACKED, 282, 5, 25, 25) == NOTICE_NONE && !r.goal_cd);
+	position_check_level(&r, true, 30);
+	position_check_level(&r, true, 110);
+	assert(position_update(&r, BALL_TRACKED, 282, 6, 110, 110) == NOTICE_NONE && r.leg == MOVE_CENTER && r.goal_cd == -300);
+	assert(position_update(&r, BALL_MISSING, 160, 7, 240, 240) == NOTICE_NONE && r.goal_cd == 0);
+	assert(position_update(&r, BALL_MISSING, 160, 8, 620, 620) == NOTICE_NONE && r.waiting_vision);
+	assert(!r.goal_cd && !r.active_bands);
+	assert(position_update(&r, BALL_UNCERTAIN, 270, 10, 700, 700) == NOTICE_NONE && r.waiting_vision);
+	assert(position_update(&r, BALL_TRACKED, 247, 13, 801, 801) == NOTICE_NONE && r.waiting_vision);
+	assert(position_update(&r, BALL_TRACKED, 238, 14, 834, 834) == NOTICE_NONE && !r.waiting_vision);
+	assert(r.mm == contest_ball_mm(238) && r.velocity > 0 && r.leg == MOVE_CENTER);
+	assert(position_update(&r, BALL_OFFLINE, 238, 14, 834, 1400) == NOTICE_VISION);
+	/* A slow attempt keeps all three dwell requirements and the original
+	 * start time. Completing past 8 s still enters sustained left hold. */
+	position_begin(&r, 282, 0, 0);
+	position_check_level(&r, true, 0);
+	position_check_level(&r, true, 100);
+	for (int i = 1; i <= 500; i++) {
+		int x = i < 325 ? 215 : r.leg == MOVE_CENTER ? 282 : r.leg == MOVE_RIGHT ? 160 : 400;
+		assert(position_update(&r, BALL_TRACKED, x, i, i * 25, i * 25) == NOTICE_NONE);
+		if (i == 321)
+			assert(r.leg == MOVE_CENTER && !r.finished_ms);
+	}
+	assert(r.leg == HOLD_LEFT && r.finished_ms > 8000 && r.finished_ms < 12500);
+	/* Field trial 45682: all direct observations stayed at -44 mm during
+	 * the move to O. Extra tilt must clear as soon as the ball rolls. */
+	r = (struct position_run){ .leg = MOVE_CENTER, .mm = -44, .have_sample = true };
+	for (int i = 1; i <= 90; i++) {
+		assert(position_update(&r, BALL_TRACKED, 386, i, i * 30, i * 30) == NOTICE_NONE);
+		if (i == 10)
+			assert(r.goal_cd == 800);
+	}
+	assert(r.goal_cd == 1600 && r.leg == MOVE_CENTER);
+	assert(position_update(&r, BALL_TRACKED, 377, 91, 2730, 2730) == NOTICE_NONE);
+	assert(!r.still_ms && r.goal_cd < 800);
+	position_begin(&r, -1, 1, 0);
+	position_check_level(&r, true, 120);
+	assert(position_update(&r, BALL_MISSING, 282, 2, 180, 180) == NOTICE_NONE);
+	position_check_level(&r, true, 200);
+	assert(position_update(&r, BALL_TRACKED, 400, 3, 250, 250) == NOTICE_NONE && r.leg == MOVE_CENTER && r.goal_cd > 0);
+	position_begin(&r, 49, 1, 0);
+	position_check_level(&r, true, 10);
+	position_check_level(&r, true, 85);
+	assert(position_update(&r, BALL_TRACKED, 49, 2, 100, 100) == NOTICE_NONE && r.leg == MOVE_CENTER && r.goal_cd < 0);
+	r = (struct position_run){ .leg = MOVE_LEFT, .mm = -31 };
+	for (int i = 1; i <= 70; i++)
+		assert(position_update(&r, BALL_TRACKED, 355, i, i * 25, i * 25) == NOTICE_NONE);
+	assert(r.leg == MOVE_LEFT && r.trim_milli_cd > -900000 && r.goal_cd == -1600);
+	int saturated_trim = r.trim_milli_cd;
+	assert(position_update(&r, BALL_TRACKED, 355, 71, 1775, 1775) == NOTICE_NONE && r.trim_milli_cd == saturated_trim);
+	assert(position_update(&r, BALL_MISSING, 355, 71, 1900, 1900) == NOTICE_NONE && !r.goal_cd && !r.trim_milli_cd);
+}
+
 int main(void)
 {
+	test_contest();
+	test_calibrated_travel();
+	test_jog_buttons();
+	test_jog_motion();
+	test_jog_retry_and_rebase();
+	test_idle_read_retry();
+	test_f407_wire_speed();
 	test_time_keys();
 	test_all_toggle();
 	test_protocol();
 	test_step_state();
+	test_position_mode();
+	test_position_speed_update();
+	test_direction_measurement(1, false);
+	test_direction_measurement(-1, false);
+	test_direction_measurement(1, true);
+	test_direction_measurement(-1, true);
 	puts("PASS: debounce, task stops, timer/encoder wrap, Emm framing and failure paths");
 	return 0;
 }

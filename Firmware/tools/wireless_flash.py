@@ -80,9 +80,38 @@ class Link:
         raise TimeoutError(f"No reply to command {command}; keep power on and retry, "
                            "or hold TASK while powering on to enter recovery")
 
-    async def enter(self):
+    async def request_update_mode(self):
         await self.write(b"!\nC5:OTA\n")
         await asyncio.sleep(2)
+        held = False
+        while not self.lines.empty():
+            if self.lines.get_nowait() == "C5OTA,BEAM HELD":
+                held = True
+        return not held
+
+    async def release_supported_pipe(self):
+        # FREE is honored only after stopping, on the parked BALANCE controller.
+        await self.write(b"\nC5:BAL\n")
+        for _ in range(10):
+            await self.write(b"C5:FREE\nC5:BAL?\n")
+            await asyncio.sleep(0.3)
+            while not self.lines.empty():
+                fields = self.lines.get_nowait().split(",")
+                if (len(fields) == 20 and fields[:2] == ["C5BAL", "1"] and
+                        fields[15:17] == ["1", "0"] and fields[17] in ("0", "2") and
+                        fields[18] == "0"):
+                    print("Confirmed stepper disabled and wheels stopped", flush=True)
+                    return
+        raise RuntimeError("No confirmation that the stepper is disabled and the wheels are stopped")
+
+    async def enter(self, pipe_supported=False):
+        if not await self.request_update_mode():
+            if not pipe_supported:
+                raise RuntimeError("Stepper is supporting the pipe. Support the linkage, "
+                                   "then use --pipe-supported (PowerShell: -PipeSupported).")
+            await self.release_supported_pipe()
+            if not await self.request_update_mode():
+                raise RuntimeError("Application still reports BEAM HELD")
         reply = await self.request(HELLO)
         if len(reply) != 32:
             raise RuntimeError("Unsupported bootloader HELLO reply")
@@ -130,9 +159,9 @@ class Link:
         reply = await self.request(HELLO, attempts=2)
         print("Bootloader: " + ",".join(f"{word:08X}" for word in struct.unpack("<8I", reply)))
 
-    async def upload(self, image, header):
+    async def upload(self, image, header, pipe_supported=False):
         started = time.monotonic()
-        old_size, old_crc = await self.enter()
+        old_size, old_crc = await self.enter(pipe_supported)
         if not self.received and (old_size, old_crc) == (len(image), zlib.crc32(image)):
             print("Requested image is already installed; returning to application", flush=True)
             await self.request(RUN, attempts=1)
@@ -199,7 +228,7 @@ async def run(args):
                     await asyncio.sleep(2)
                     await link.verify_app(size, crc)
                 else:
-                    await link.upload(image, header)
+                    await link.upload(image, header, args.pipe_supported)
                 return
         except (BleakError, OSError, TimeoutError) as exc:
             if attempt == 2:
@@ -213,6 +242,8 @@ def main():
     parser.add_argument("image", nargs="?", type=Path, help="coral_c5.ota or coral_c5.bin")
     parser.add_argument("--ble", default=DEFAULT_BLE, help="HC-08 MAC address")
     parser.add_argument("--uuid", default=DEFAULT_UUID)
+    parser.add_argument("--pipe-supported", action="store_true",
+                        help="release a holding stepper for this upload; pipe must be independently supported")
     mode = parser.add_mutually_exclusive_group()
     mode.add_argument("--info", action="store_true", help="read the installed image identity")
     mode.add_argument("--exit-recovery", action="store_true", help="abort an incomplete transfer and boot old app")
@@ -221,6 +252,8 @@ def main():
         parser.error("provide an application .ota/.bin file")
     if args.image and (args.info or args.exit_recovery):
         parser.error("image cannot be combined with --info/--exit-recovery")
+    if args.pipe_supported and not args.image:
+        parser.error("--pipe-supported is for image uploads")
     asyncio.run(run(args))
 
 

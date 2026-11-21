@@ -23,7 +23,7 @@ FIELDS = (
     "lap_base_target", "lap_control_ms",
     "lap_departing", "lap_marker_hits", "lap_marker_peak",
 )
-TASKS = ("MONITOR", "LEFT", "RIGHT", "BOTH", "STEPPER", "ALL", "GRAY", "LAP")
+TASKS = ("MONITOR", "LEFT", "RIGHT", "BOTH", "STEPPER", "ALL", "GRAY", "LAP", "BALANCE")
 GRAY_STATUS = ("WAIT", "NO LINE", "LINE", "ALL", "MULTI")
 LAP_STATUS = ("READY", "FOLLOW", "DONE", "STOPPED", "LOST LINE", "BAD LINE",
               "ENC ERROR", "TIMEOUT", "DRIVE ERR", "ALIGN LINE", "LOOP LATE", "DIR CHECK", "NO A MARK")

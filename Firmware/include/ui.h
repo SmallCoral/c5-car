@@ -2,14 +2,25 @@
 #define CORAL_UI_H
 
 #include "logic.h"
+#include "contest.h"
+#include "ball.h"
 #include "grayscale.h"
 #include "lap.h"
 
 #define UI_WIDTH 128
 #define UI_HEIGHT 160
 #define UI_BYTES (UI_WIDTH * UI_HEIGHT * 2)
+#define UI_PIPE_TOP 36U
+#define UI_PIPE_END 56U
 
 struct ui_state {
+	struct contest_menu menu;
+	enum position_leg leg;
+	uint32_t event_ms;
+	int ball_mm;
+	bool position_seen;
+	bool waiting_vision;
+	bool level_ready;
 	enum task_id task;
 	bool running;
 	bool reverse;
@@ -20,6 +31,18 @@ struct ui_state {
 	uint8_t phases;
 	uint8_t gray;
 	struct gray_reading grayscale;
+	struct ball_view ball;
+	const char *balance_status;
+	bool balance_reverse;
+	int balance_shaft, balance_target;
+	bool balance_speed_mode;
+	bool balance_jog;
+	bool calibrating, shaft_referenced;
+	int cal_camera_x;
+	int32_t cal_encoder;
+	int balance_rpm;
+	uint32_t balance_time;
+	bool balance_timed;
 	bool gray_white;
 	enum lap_status lap_status;
 	bool lap_reverse;
@@ -51,5 +74,7 @@ struct ui_state {
 void ui_render(uint8_t *pixels, const struct ui_state *state);
 void ui_render_rows(uint8_t *pixels, const struct ui_state *state,
 		    unsigned int first, unsigned int rows);
+void ui_render_pipe_rows(uint8_t *pixels, const struct ball_view *ball,
+			 unsigned int first, unsigned int rows);
 
 #endif

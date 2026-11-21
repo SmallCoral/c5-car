@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <string.h>
 #include "ui.h"
+#include "menu_font.h"
 
 /* Compact original 5x7 glyph table, rows encoded from bit 4 to bit 0. */
-static const char glyph_chars[] = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ-+:/%.? ";
+static const char glyph_chars[] = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ-+:/%.? >";
 static const uint8_t glyphs[][7] = {
 	{14,17,19,21,25,17,14}, {4,12,4,4,4,4,14},
 	{14,17,1,2,4,8,31}, {30,1,1,14,1,1,30},
@@ -26,7 +27,7 @@ static const uint8_t glyphs[][7] = {
 	{0,0,0,31,0,0,0}, {0,4,4,31,4,4,0},
 	{0,4,4,0,4,4,0}, {1,1,2,4,8,16,16},
 	{25,25,2,4,8,19,19}, {0,0,0,0,0,6,6},
-	{14,17,1,2,4,0,4}, {0,0,0,0,0,0,0}
+	{14,17,1,2,4,0,4}, {0,0,0,0,0,0,0}, {16,8,4,2,4,8,16}
 };
 
 enum color {
@@ -75,7 +76,7 @@ static void text(uint8_t *pixels, int x, int y, const char *label,
 		unsigned int row;
 		unsigned int col;
 		size_t index = glyph ? (size_t)(glyph - glyph_chars) :
-				      sizeof(glyph_chars) - 3;
+				      (size_t)(strchr(glyph_chars, '?') - glyph_chars);
 
 		for (row = 0; row < 7; row++) {
 			for (col = 0; col < 5; col++) {
@@ -138,7 +139,7 @@ static void update_page(uint8_t *pixels, const struct ui_state *state)
 
 static void gray_page(uint8_t *pixels, const struct ui_state *state)
 {
-	static const char *const keys[] = { "VIEW", "-", "B/W", "TASK" };
+	static const char *const keys[] = { "BACK", "-", "B/W", "-" };
 	const struct gray_reading *gray = &state->grayscale;
 	char line[24];
 	unsigned int index;
@@ -177,9 +178,133 @@ static void gray_page(uint8_t *pixels, const struct ui_state *state)
 	text(pixels, 5, 151, "B/W: TARGET COLOR", 1, CYAN);
 }
 
+static int pipe_column(int permille)
+{
+	return 8 + (permille * 112 + 500) / 1000;
+}
+
+static void pipe_strip(uint8_t *pixels, const struct ball_view *ball)
+{
+	static const struct {
+		int raw_x;
+		const char *label;
+	} marks[] = {
+		{ RULER_X_LEFT, "L" }, { RULER_X_MINUS_5, "-5" }, { RULER_X_O, "O" },
+		{ RULER_X_PLUS_5, "+5" }, { RULER_X_RIGHT, "R" },
+	};
+	const int left = pipe_column(0), right = pipe_column(1000), y = 50;
+
+	/* The fixed labels below the live strip belong to the normal page scan. */
+	if (clip_bottom <= (int)UI_PIPE_TOP || clip_top >= 64)
+		return;
+	rect(pixels, 0, UI_PIPE_TOP, UI_WIDTH, UI_PIPE_END - UI_PIPE_TOP, BG);
+	text(pixels, 5, UI_PIPE_TOP, ball->status == BALL_TRACKED ? "BALL" :
+	     ball->status == BALL_LAST_SEEN ? "LAST SEEN" :
+	     ball->status == BALL_UNCERTAIN ? "CHECK X" :
+	     ball->status == BALL_MISSING ? "NO BALL" : "CAM OFFLINE", 1,
+	     ball->status == BALL_TRACKED ? WHITE : MUTED);
+	text(pixels, 111, UI_PIPE_TOP, "CM", 1, MUTED);
+	rect(pixels, left, y, right - left + 1, 1, CYAN);
+	for (unsigned int i = 0; i < sizeof(marks) / sizeof(marks[0]); i++) {
+		int x = pipe_column(ball_ruler_position(marks[i].raw_x));
+		int width = (int)strlen(marks[i].label) * 6 - 1;
+		rect(pixels, x, y, 1, 6, CYAN);
+		text(pixels, x - width / 2, 57, marks[i].label, 1, WHITE);
+	}
+	if (ball->status == BALL_TRACKED || ball->status == BALL_LAST_SEEN) {
+		static const uint8_t widths[] = { 3, 5, 7, 9, 9, 9, 7, 5, 3 };
+		int x = pipe_column(ball->permille);
+
+		for (unsigned int i = 0; i < sizeof(widths); i++) {
+			rect(pixels, x - widths[i] / 2, y - 4 + (int)i, widths[i], 1, AMBER);
+			if (ball->status == BALL_LAST_SEEN && i >= 2 && i <= 6)
+				rect(pixels, x - widths[i] / 2 + 2, y - 4 + (int)i, widths[i] - 4, 1, BG);
+		}
+	}
+}
+
+void ui_render_pipe_rows(uint8_t *pixels, const struct ball_view *ball,
+			 unsigned int first, unsigned int rows)
+{
+	if (first < UI_PIPE_TOP || first >= UI_PIPE_END || !rows)
+		return;
+	clip_top = (int)first;
+	clip_bottom = rows >= UI_PIPE_END - first ? (int)UI_PIPE_END : (int)(first + rows);
+	pipe_strip(pixels, ball);
+	clip_top = 0;
+	clip_bottom = UI_HEIGHT;
+}
+
+static void balance_page(uint8_t *pixels, const struct ui_state *state)
+{
+	static const char *const keys[] = { "BACK", "LEFT", "RIGHT", "RUN" };
+	static const char *const cal_keys[] = { "BACK", "UP", "DOWN", "STOP" };
+	char line[23];
+
+	rect(pixels, 0, 0, UI_WIDTH, UI_HEIGHT, BG);
+	for (unsigned int i = 0; i < 4; i++) {
+		card(pixels, i * 32, 0, 30, 13, PANEL);
+		const char *label = state->running && (!state->balance_jog || i == 0 || i == 3) ?
+				    "STOP" : keys[i];
+		text(pixels, i * 32 + 1, 3, state->calibrating ? cal_keys[i] : label, 1, MUTED);
+	}
+	if (state->calibrating) {
+		text(pixels, 5, 19, "CALIBRATE", 2, WHITE);
+		if (state->cal_camera_x >= 0)
+			snprintf(line, sizeof(line), "BALL X %d PX", state->cal_camera_x);
+		else
+			snprintf(line, sizeof(line), "BALL X --");
+		text(pixels, 5, 48, line, 1, CYAN);
+		snprintf(line, sizeof(line), "ENC %ld", (long)state->cal_encoder);
+		text(pixels, 5, 67, line, 1, WHITE);
+		text(pixels, 5, 88, state->balance_jog ? state->balance_status : "READY", 1, AMBER);
+		if (state->shaft_referenced) {
+			int cd = state->balance_shaft;
+			unsigned mag = (unsigned)(cd < 0 ? -cd : cd);
+			snprintf(line, sizeof(line), "SHAFT %c%u.%02u DEG", cd < 0 ? '-' : '+', mag / 100, mag % 100);
+		} else {
+			snprintf(line, sizeof(line), "CHECK SHAFT RANGE");
+		}
+		text(pixels, 5, 101, line, 1, CYAN);
+		text(pixels, 5, 114, "TAP 1.8 DEG", 1, WHITE);
+		text(pixels, 5, 129, "HOLD TO REPEAT", 1, MUTED);
+		return;
+	}
+	text(pixels, 5, 19, "BALANCE", 2, WHITE);
+	pipe_strip(pixels, &state->ball);
+	text(pixels, 5, 65, state->balance_status ? state->balance_status : "SET LEVEL",
+	     1, state->running ? GREEN : AMBER);
+	if (state->balance_jog) {
+		int cd = state->balance_shaft;
+		unsigned int mag = cd < 0 ? (unsigned int)(-(int64_t)cd) : (unsigned int)cd;
+		snprintf(line, sizeof(line), "SHAFT %c%u.%02u DEG", cd < 0 ? '-' : '+', mag / 100, mag % 100);
+	} else {
+		snprintf(line, sizeof(line), "SHAFT %+d CD", state->balance_shaft);
+	}
+	text(pixels, 5, 85, line, 1, WHITE);
+	if (state->balance_jog) {
+		int cd = state->balance_target;
+		unsigned int mag = cd < 0 ? (unsigned int)(-(int64_t)cd) : (unsigned int)cd;
+		snprintf(line, sizeof(line), "GOAL  %c%u.%02u DEG", cd < 0 ? '-' : '+', mag / 100, mag % 100);
+	} else if (state->balance_speed_mode)
+		snprintf(line, sizeof(line), "%s %u RPM", state->balance_rpm < 0 ? "CW" :
+			 state->balance_rpm > 0 ? "CCW" : "HOLD",
+			 (unsigned)(state->balance_rpm < 0 ? -state->balance_rpm : state->balance_rpm));
+	else
+		snprintf(line, sizeof(line), "GOAL  %+d CD", state->balance_target);
+	text(pixels, 5, 99, line, 1, CYAN);
+	text(pixels, 5, 119, state->balance_reverse ? "MAP -  WHEELS OFF" : "MAP +  WHEELS OFF", 1, MUTED);
+	snprintf(line, sizeof(line), "%s %lu.%02lu S", state->balance_timed ? "O IN" : "TIME",
+		 (unsigned long)(state->balance_time / 1000), (unsigned long)(state->balance_time / 10 % 100));
+	text(pixels, 5, 131, state->balance_jog || (!state->running && !state->balance_time) ?
+	     "TAP L/R  1.8 DEG" : line, 1, state->balance_timed ? GREEN : WHITE);
+	text(pixels, 5, 143, state->running && !state->balance_jog ? "ANY KEY TO STOP" :
+	     "HOLD L MAP  R ZERO", 1, MUTED);
+}
+
 static void lap_page(uint8_t *pixels, const struct ui_state *state)
 {
-	static const char *const keys[] = { "RUN", "MAP", "SPD", "TASK" };
+	static const char *const keys[] = { "BACK", "MAP", "SPD", "RUN" };
 	char line[24];
 	unsigned int index;
 
@@ -187,21 +312,21 @@ static void lap_page(uint8_t *pixels, const struct ui_state *state)
 	for (index = 0; index < 4; index++) {
 		card(pixels, index * 32, 0, 30, 13, PANEL);
 		text(pixels, index * 32 + 3, 3,
-		     index == 0 && state->running ? "STOP" : keys[index], 1, MUTED);
+		     (index == 0 || index == 3) && state->running ? "STOP" : keys[index], 1, MUTED);
 	}
 	text(pixels, 5, 20, "LAP", 2, WHITE);
-	text(pixels, 53, 25, "1 TO 8 L-R", 1, CYAN);
-	text(pixels, 5, 43, state->lap_departing ? "LEAVE A" :
+	text(pixels, 47, 25, state->lap_departing ? "LEAVE A" :
 	     lap_status_name(state->lap_status), 1,
 	     state->lap_status == LAP_RUNNING || state->lap_status == LAP_DONE ? GREEN : AMBER);
+	pipe_strip(pixels, &state->ball);
 	snprintf(line, sizeof(line), "%u CPS / MAP %s", state->lap_speed,
 		 state->lap_reverse ? "B" : "A");
-	text(pixels, 5, 57, line, 1, MUTED);
+	text(pixels, 5, 65, line, 1, MUTED);
 	if (state->grayscale.status == GRAY_LINE)
 		snprintf(line, sizeof(line), "POS %+d", (int)state->grayscale.position);
 	else
 		snprintf(line, sizeof(line), "POS -- %s", gray_status_name(state->grayscale.status));
-	text(pixels, 5, 71, line, 1, CYAN);
+	text(pixels, 5, 75, line, 1, CYAN);
 	for (index = 0; index < 2; index++) {
 		int x = index ? 66 : 4;
 
@@ -229,9 +354,176 @@ static void lap_page(uint8_t *pixels, const struct ui_state *state)
 	text(pixels, 5, 150, line, 1, MUTED);
 }
 
+static void menu_text(uint8_t *pixels, int x, int y, const char *label, uint16_t color)
+{
+	if (y >= clip_bottom || y + 14 <= clip_top)
+		return;
+	const uint8_t *p = (const uint8_t *)label;
+	while (*p && x < UI_WIDTH) {
+		if (*p < 128) {
+			char letter[] = { (char)*p++, 0 };
+			text(pixels, x, y + 3, letter, 1, color);
+			x += 6;
+			continue;
+		}
+		/* All non-ASCII literals on these pages are three-byte Chinese glyphs. */
+		unsigned int code = (p[0] & 15U) << 12 | (p[1] & 63U) << 6 | (p[2] & 63U);
+		p += 3;
+		unsigned int lo = 0, hi = sizeof(menu_glyphs) / sizeof(menu_glyphs[0]);
+		while (lo < hi) {
+			unsigned int mid = lo + (hi - lo) / 2;
+			if (menu_glyphs[mid].code < code)
+				lo = mid + 1;
+			else
+				hi = mid;
+		}
+		if (lo < sizeof(menu_glyphs) / sizeof(menu_glyphs[0]) && menu_glyphs[lo].code == code) {
+			for (int row = y < clip_top ? clip_top - y : 0; row < 14 && y + row < clip_bottom; row++) {
+				uint16_t bits = menu_glyphs[lo].rows[row];
+				for (int col = 0; col < 14; col++)
+					if (bits & (1U << col))
+						rect(pixels, x + col, y + row, 1, 1, color);
+			}
+		}
+		x += 14;
+	}
+}
+
+struct event_description {
+	const char *number, *title, *route, *limit, *accuracy;
+};
+
+static const struct event_description events[EVENT_COUNT] = {
+	{ "第一题", "静止移球", "O > +5 > -5 CM", "目标用时  8 S", "0.3 / 0.4 / 0.4 S" },
+	{ "第二题", "循线停车", "A > A  顺时针一圈", "限时  30 S", "停车误差  3 CM" },
+	{ "第三题", "载球半圈", "A > B  保持中心", "限时  12 S", "球位误差  2 CM" },
+	{ "第四题", "载球整圈", "一圈  保持中心", "限时  40 S", "球位误差  2 CM" },
+	{ "发挥一", "定点稳球", "一圈  指定球位", "可调  -5 / +5 CM", "球位误差  2 CM" },
+	{ "发挥二", "图传回放", "实时显示钢球", "全程录像", "回放完整测试" },
+};
+
+static const char *const notices[] = {
+	"", "请将球放在 O 点", "检查步进或驱动", "相机丢球", "超过题目限时",
+	"已停止", "已完成", "检查赛道和灰度", "待接入", "SHAFT LIMIT",
+};
+
+static void contest_ruler(uint8_t *pixels, const struct ball_view *ball, int y)
+{
+	const int marks[] = { RULER_X_LEFT, RULER_X_MINUS_5, RULER_X_O, RULER_X_PLUS_5, RULER_X_RIGHT };
+	const char *const labels[] = { "L", "-5", "O", "+5", "R" };
+	rect(pixels, 8, y, 113, 1, CYAN);
+	for (unsigned int i = 0; i < 5; i++) {
+		int x = pipe_column(ball_ruler_position(marks[i]));
+		rect(pixels, x, y, 1, 4, CYAN);
+		text(pixels, x - (int)strlen(labels[i]) * 3 + 1, y + 5, labels[i], 1, MUTED);
+	}
+	if (ball->status == BALL_TRACKED || ball->status == BALL_LAST_SEEN) {
+		int x = pipe_column(ball->permille);
+		card(pixels, x - 3, y - 4, 7, 7, AMBER);
+		if (ball->status == BALL_LAST_SEEN)
+			rect(pixels, x - 1, y - 2, 3, 3, BG);
+	}
+}
+
+static void contest_page(uint8_t *pixels, const struct ui_state *s)
+{
+	const struct contest_menu *m = &s->menu;
+	const struct event_description *e = &events[m->item];
+	bool home = m->page == MENU_HOME, tools_page = m->page == MENU_TOOLS;
+	bool list = home || tools_page;
+	bool tune = m->page == MENU_DETAIL && m->item == EVENT_OFFSET;
+	const char *keys[] = { "返回", list ? "上项" : tune ? "+1" : "",
+			       list ? "下项" : tune ? "-1" : "",
+			       list ? "进入" : m->page == MENU_DETAIL ?
+			       (m->item <= EVENT_LAP && m->notice != NOTICE_TRAVEL ? "启动" : "确认") :
+			       m->page == MENU_RUN ? "停止" : "重选" };
+	char buf[36];
+	rect(pixels, 0, 0, UI_WIDTH, UI_HEIGHT, BG);
+	for (int i = 0; i < 4; i++) {
+		if (!*keys[i])
+			continue;
+		card(pixels, i * 32, 0, 31, 17, i == 3 ? DARK_GREEN : PANEL);
+		menu_text(pixels, i * 32 + 2, 1, keys[i], i == 3 ? GREEN : home && !i ? EDGE : MUTED);
+	}
+	if (list) {
+		menu_text(pixels, 5, 21, home ? "校赛 A 题" : "设备调试", WHITE);
+		rect(pixels, 4, 38, 120, 1, EDGE);
+		if (home) {
+			for (unsigned int i = 0; i < EVENT_COUNT; i++) {
+				int y = 41 + (int)i * 17;
+				if (i == (unsigned int)m->item) {
+					card(pixels, 2, y, 124, 17, PANEL);
+					rect(pixels, 2, y + 2, 3, 13, CYAN);
+				}
+				menu_text(pixels, 8, y + 1, events[i].number, i == (unsigned int)m->item ? CYAN : MUTED);
+				menu_text(pixels, 62, y + 1, events[i].title, WHITE);
+			}
+			menu_text(pixels, 7, 145, "双中键进调试", MUTED);
+		} else {
+			unsigned int first = m->tool < 6 ? 0 : TASK_COUNT - 6;
+			for (unsigned int i = first; i < first + 6; i++) {
+				int y = 43 + (int)(i - first) * 18;
+				if (i == m->tool)
+					card(pixels, 2, y, 124, 17, PANEL);
+				menu_text(pixels, 10, y + 1, task_name(contest_tool(i)), i == m->tool ? CYAN : WHITE);
+			}
+		}
+		return;
+	}
+	menu_text(pixels, 6, 23, e->number, CYAN);
+	menu_text(pixels, 62, 23, e->title, WHITE);
+	rect(pixels, 4, 42, 120, 1, EDGE);
+	if (m->page == MENU_DETAIL) {
+		menu_text(pixels, 6, 52, e->route, WHITE);
+		menu_text(pixels, 6, 78, e->limit, MUTED);
+		menu_text(pixels, 6, 98, e->accuracy, MUTED);
+		if (m->item == EVENT_POSITION)
+			contest_ruler(pixels, &s->ball, 121);
+		if (tune) {
+			snprintf(buf, sizeof(buf), "目标 %+d CM", m->target_cm);
+			menu_text(pixels, 6, 118, buf, CYAN);
+		}
+		const char *hint = m->notice ? notices[m->notice] :
+				   m->item == EVENT_POSITION ? (s->level_ready ? "LEVEL OK" : "LEVEL  0 DEG") :
+				   m->item == EVENT_LAP ? "起点  A 线" : "控制待接入";
+		menu_text(pixels, 6, 141, hint, m->notice || m->item > EVENT_LAP ? AMBER : CYAN);
+	} else if (m->page == MENU_RUN) {
+		if (m->item == EVENT_POSITION) {
+			menu_text(pixels, 6, 50, s->leg == LEVEL_SHAFT ? "LEVEL  0 DEG" :
+				  s->leg == MOVE_CENTER ? "目标  O" :
+				  s->leg == MOVE_RIGHT ? "目标  +5 CM" : "目标  -5 CM", CYAN);
+			if (s->position_seen)
+				snprintf(buf, sizeof(buf), "实测  %+d MM", s->ball_mm);
+			else
+				snprintf(buf, sizeof(buf), "等待球位");
+			menu_text(pixels, 6, 73, buf, WHITE);
+			menu_text(pixels, 6, 90, s->waiting_vision ? "WAIT VISION" :
+				  s->leg == HOLD_LEFT ? "保持 -5 CM" : "调节中",
+				  s->leg == HOLD_LEFT && !s->waiting_vision ? GREEN : AMBER);
+			contest_ruler(pixels, &s->ball, 113);
+		} else {
+			menu_text(pixels, 6, 52, "顺时针循线", CYAN);
+			menu_text(pixels, 6, 78, "终点  A 线", WHITE);
+		}
+		snprintf(buf, sizeof(buf), "用时  %lu.%02lu S", (unsigned long)(s->event_ms / 1000),
+			 (unsigned long)(s->event_ms / 10 % 100));
+		menu_text(pixels, 6, 137, buf, MUTED);
+	} else {
+		menu_text(pixels, 6, 60, notices[m->notice], m->notice == NOTICE_FINISHED ? GREEN : AMBER);
+		if (m->notice == NOTICE_PENDING) {
+			menu_text(pixels, 6, 87, e->route, WHITE);
+		} else {
+			snprintf(buf, sizeof(buf), "用时  %lu.%02lu S", (unsigned long)(s->event_ms / 1000),
+				 (unsigned long)(s->event_ms / 10 % 100));
+			menu_text(pixels, 6, 89, buf, WHITE);
+		}
+	}
+}
+
+
 void ui_render(uint8_t *pixels, const struct ui_state *state)
 {
-	static const char *const keys[] = { "RUN", "DIR", "PWR", "TASK" };
+	static const char *const keys[] = { "BACK", "DIR", "PWR", "RUN" };
 	uint8_t faults = state->faults | state->wheel_faults;
 	bool fault = faults || state->wheel_enable_fault;
 	const char *status = fault ? "ERR" : state->running ? "RUN" : "IDLE";
@@ -243,6 +535,10 @@ void ui_render(uint8_t *pixels, const struct ui_state *state)
 		update_page(pixels, state);
 		return;
 	}
+	if (state->menu.page != MENU_DIAGNOSTIC) {
+		contest_page(pixels, state);
+		return;
+	}
 	if (state->task == TASK_GRAY) {
 		gray_page(pixels, state);
 		return;
@@ -251,12 +547,16 @@ void ui_render(uint8_t *pixels, const struct ui_state *state)
 		lap_page(pixels, state);
 		return;
 	}
+	if (state->task == TASK_BALANCE) {
+		balance_page(pixels, state);
+		return;
+	}
 	rect(pixels, 0, 0, UI_WIDTH, UI_HEIGHT, BG);
 	/* Photo orientation: left-to-right SW5, SW4, SW3, SW2, above the LCD. */
 	for (index = 0; index < 4; index++) {
 		const char *label = keys[index];
 
-		if (index == 0 && state->running)
+		if ((index == 0 || index == 3) && state->running)
 			label = "STOP";
 		if (index == 2 && state->task == TASK_STEPPER)
 			label = "SPD";

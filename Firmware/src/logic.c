@@ -42,6 +42,8 @@ void controls_key(struct controls *ctl, enum key_id key, uint32_t now)
 		ctl->task = (ctl->task + 1) % TASK_COUNT;
 		break;
 	case KEY_NEXT:
+		if (ctl->task == TASK_BALANCE)
+			break;
 		if (ctl->task == TASK_LAP) {
 			ctl->lap_level = (ctl->lap_level + 1) % LAP_SPEED_LEVELS;
 			break;
@@ -56,7 +58,7 @@ void controls_key(struct controls *ctl, enum key_id key, uint32_t now)
 	case KEY_OK:
 		if (ctl->task == TASK_LAP)
 			ctl->lap_reverse = !ctl->lap_reverse;
-		else if (ctl->task != TASK_GRAY)
+		else if (ctl->task != TASK_GRAY && ctl->task != TASK_BALANCE)
 			ctl->reverse = !ctl->reverse;
 		break;
 	case KEY_START:
@@ -100,18 +102,19 @@ bool task_uses_wheels(enum task_id task)
 
 bool task_uses_stepper(enum task_id task)
 {
-	return task == TASK_STEPPER || task == TASK_ALL;
+	return task == TASK_STEPPER || task == TASK_ALL || task == TASK_BALANCE;
 }
 
 bool task_continuous(enum task_id task)
 {
-	return task == TASK_STEPPER || task == TASK_ALL || task == TASK_LAP;
+	return task == TASK_STEPPER || task == TASK_ALL || task == TASK_LAP ||
+	       task == TASK_BALANCE;
 }
 
 const char *task_name(enum task_id task)
 {
 	static const char *const names[] = {
-		"MONITOR", "LEFT", "RIGHT", "BOTH", "STEPPER", "ALL", "GRAY", "LAP"
+		"MONITOR", "LEFT", "RIGHT", "BOTH", "STEPPER", "ALL", "GRAY", "LAP", "BALANCE"
 	};
 
 	return (unsigned int)task < TASK_COUNT ? names[task] : "INVALID";

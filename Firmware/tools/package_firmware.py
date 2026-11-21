@@ -35,10 +35,9 @@ def package(app_path, boot_path, out):
         raise ValueError("Invalid bootloader reset vector")
     out.mkdir(parents=True, exist_ok=True)
     (out / "coral_c5.ota").write_bytes(header + app)
-    (out / "first_install.hex").write_text(make_hex([
-        (0x08000000, boot), (APP_ADDR, app), (APP_META, header),
-        (STAGE_META, b"\xff" * 32),
-    ]), encoding="ascii")
+    update = [(APP_ADDR, app), (APP_META, header), (STAGE_META, b"\xff" * 32)]
+    (out / "app_update.hex").write_text(make_hex(update), encoding="ascii")
+    (out / "first_install.hex").write_text(make_hex([(0x08000000, boot), *update]), encoding="ascii")
     crc = struct.unpack_from("<I", header, 20)[0]
     print(f"OTA: {len(app)} bytes, CRC32={crc:08X}; first_install.hex includes bootloader")
 

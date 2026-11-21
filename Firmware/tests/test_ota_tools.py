@@ -9,7 +9,7 @@ from unittest.mock import AsyncMock, patch
 import zlib
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools"))
-from ota_protocol import APP_ADDR, BOARD_ID, DATA, Frame, Parser, image_header, read_image
+from ota_protocol import APP_ADDR, BOARD_ID, CHUNK, DATA, HELLO, IMAGE_MAX, Frame, Parser, image_header, read_image
 from package_firmware import make_hex
 from wireless_flash import DEFAULT_BLE, DEFAULT_UUID, Link, run
 
@@ -68,6 +68,46 @@ class ImageTests(unittest.TestCase):
 
 
 class RetryTests(unittest.IsolatedAsyncioTestCase):
+    async def test_holding_pipe_stops_before_bootloader_exchange(self):
+        link = Link(None, None)
+        link.write = AsyncMock(side_effect=lambda _: link.notify(None, b"C5OTA,BEAM HELD\r\n"))
+        link.request = AsyncMock()
+        with patch("wireless_flash.asyncio.sleep", new=AsyncMock()), \
+                self.assertRaisesRegex(RuntimeError, "supporting the pipe"):
+            await link.enter()
+        link.request.assert_not_awaited()
+        link.write.assert_awaited_once_with(b"!\nC5:OTA\n")
+
+    async def test_supported_pipe_is_released_before_requesting_bootloader(self):
+        link = Link(None, None)
+        messages = []
+        def write(data):
+            messages.append(data)
+            if len(messages) == 1:
+                link.notify(None, b"C5OTA,BEAM HELD\r\n")
+            elif b"C5:BAL?" in data:
+                link.notify(None, b"C5BAL,1,23,0,0,0,1,1,500,0,0,0,0,0,3200,1,0,2,0,0\r\n")
+        link.write = AsyncMock(side_effect=write)
+        link.request = AsyncMock(return_value=struct.pack("<8I", 0, 0, BOARD_ID, APP_ADDR,
+                                                          IMAGE_MAX, CHUNK, 60804, 123))
+        with patch("wireless_flash.asyncio.sleep", new=AsyncMock()):
+            self.assertEqual(await link.enter(pipe_supported=True), (60804, 123))
+        self.assertEqual(messages, [b"!\nC5:OTA\n", b"\nC5:BAL\n", b"C5:FREE\nC5:BAL?\n", b"!\nC5:OTA\n"])
+        link.request.assert_awaited_once_with(HELLO)
+
+    async def test_supported_pipe_requires_drive_confirmation(self):
+        link = Link(None, None)
+        def write(data):
+            if b"C5:OTA" in data:
+                link.notify(None, b"C5OTA,BEAM HELD\r\n")
+            else:
+                link.notify(None, b"C5BAL,1,23,0,0,0,1,1,500,0,0,0,0,0,3200,10,0,3,0,0\r\n")
+        link.write = AsyncMock(side_effect=write)
+        link.request = AsyncMock()
+        with patch("wireless_flash.asyncio.sleep", new=AsyncMock()), self.assertRaisesRegex(RuntimeError, "No confirmation"):
+            await link.enter(pipe_supported=True)
+        link.request.assert_not_awaited()
+
     async def test_already_installed_does_not_erase_or_upload(self):
         image = b"verified image"
         link = Link(None, None)

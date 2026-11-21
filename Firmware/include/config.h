@@ -5,6 +5,7 @@
 /* Measured on the fitted HC-08, not the module manual's factory default. */
 #define BT_BAUD			57600U
 #define STEP_BAUD		115200U
+#define CAMERA_BAUD		115200U
 #define STEP_ADDRESS		1U
 #define STEP_RPM_STEP		30U
 #define STEP_ACCEL		10U

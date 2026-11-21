@@ -21,12 +21,16 @@ int main(int argc, char **argv)
 
 	assert(argc == 2 || argc == 3);
 	if (argc == 3) {
-		if (!strcmp(argv[2], "lap")) {
+		if (!strcmp(argv[2], "home") || !strcmp(argv[2], "detail")) {
+			state.menu.page = !strcmp(argv[2], "home") ? MENU_HOME : MENU_DETAIL;
+			state.ball = (struct ball_view){ .status = BALL_TRACKED, .permille = 500 };
+		} else if (!strcmp(argv[2], "lap")) {
 			state.task = TASK_LAP;
 			state.lap_status = LAP_RUNNING;
 			state.lap_speed = 1800;
 			state.lap_ms = 12500;
 			state.lap_armed = true;
+			state.ball = (struct ball_view){ .status = BALL_TRACKED, .permille = 500 };
 			state.lap_pwm[0] = 120;
 			state.lap_pwm[1] = 160;
 			state.lap_cps[0] = 800;
@@ -79,6 +83,7 @@ int main(int argc, char **argv)
 	ui_render_rows(sliced, &state, 152, UINT_MAX);
 	assert(!memcmp(sliced, buffer + 16, UI_BYTES));
 	state.running = false;
+	state.menu.page = MENU_DIAGNOSTIC;
 	state.wheel_requested = false;
 	ui_render(buffer + 16, &state);
 	state.task = TASK_STEPPER;
@@ -106,6 +111,22 @@ int main(int argc, char **argv)
 		ui_render(buffer + 16, &state);
 	}
 	state.task = TASK_LAP;
+	/* The marker follows the track and disappears from its last position. */
+	for (unsigned int i = 0; i <= 2; i++) {
+		unsigned int x = 8 + 56 * i;
+		unsigned int dot = 16 + (50 * UI_WIDTH + x) * 2;
+		state.ball = (struct ball_view){ .status = BALL_TRACKED, .permille = i * 500 };
+		ui_render(buffer + 16, &state);
+		assert(buffer[dot] == 0xfd && buffer[dot + 1] == 0x48);
+		for (unsigned int y = UI_PIPE_TOP; y < UI_PIPE_END; y += 2)
+			ui_render_pipe_rows(sliced, &state.ball, y, 2);
+		size_t start = UI_PIPE_TOP * UI_WIDTH * 2;
+		size_t length = (UI_PIPE_END - UI_PIPE_TOP) * UI_WIDTH * 2;
+		assert(!memcmp(sliced + start, buffer + 16 + start, length));
+		state.ball.status = BALL_MISSING;
+		ui_render(buffer + 16, &state);
+		assert(buffer[dot] == 0x2e && buffer[dot + 1] == 0x7d);
+	}
 	state.lap_pwm[0] = 350;
 	state.lap_cps[0] = -500;
 	for (unsigned int status = LAP_IDLE; status <= LAP_NO_MARKER; status++) {

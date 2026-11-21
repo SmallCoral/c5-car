@@ -24,9 +24,10 @@ struct uart_port {
 static struct uart_port ports[SERIAL_COUNT] = {
 	[SERIAL_BT] = { .uart = USART1 },
 	[SERIAL_STEP] = { .uart = USART6 },
+	[SERIAL_CAMERA] = { .uart = UART5 },
 };
 
-static bool uart_init(USART_TypeDef *uart, uint32_t baud)
+static bool uart_init(USART_TypeDef *uart, uint32_t baud, bool receive_only)
 {
 	uint32_t start = board_millis();
 
@@ -36,11 +37,16 @@ static bool uart_init(USART_TypeDef *uart, uint32_t baud)
 	LL_USART_SetDataWidth(uart, LL_USART_DATAWIDTH_8_BIT);
 	LL_USART_SetParity(uart, LL_USART_PARITY_NONE);
 	LL_USART_SetStopBitsLength(uart, LL_USART_STOP_BIT_1);
-	LL_USART_SetTransferDirection(uart, LL_USART_DIRECTION_TX_RX);
+	/* The 115200-baud encoder and camera can reply while the display and BLE
+	 * are active. Keep a hardware RX queue in front of both software rings. */
+	if (receive_only || uart == USART6)
+		LL_USART_EnableFIFO(uart);
+	LL_USART_SetTransferDirection(uart, receive_only ? LL_USART_DIRECTION_RX :
+							  LL_USART_DIRECTION_TX_RX);
 	LL_USART_SetBaudRate(uart, BOARD_CLOCK_HZ, LL_USART_PRESCALER_DIV1,
 			     LL_USART_OVERSAMPLING_16, baud);
 	LL_USART_Enable(uart);
-	while (!LL_USART_IsActiveFlag_TEACK(uart) ||
+	while ((!receive_only && !LL_USART_IsActiveFlag_TEACK(uart)) ||
 	       !LL_USART_IsActiveFlag_REACK(uart)) {
 		if (elapsed(board_millis(), start, 20))
 			return false;
@@ -52,12 +58,23 @@ static bool uart_init(USART_TypeDef *uart, uint32_t baud)
 
 bool serial_init(void)
 {
-	if (!uart_init(USART1, BT_BAUD) || !uart_init(USART6, STEP_BAUD))
+	if (!uart_init(USART1, BT_BAUD, false) ||
+	    !uart_init(USART6, STEP_BAUD, false))
 		return false;
 	NVIC_SetPriority(USART1_IRQn, 2);
 	NVIC_SetPriority(USART6_IRQn, 2);
 	NVIC_EnableIRQ(USART1_IRQn);
 	NVIC_EnableIRQ(USART6_IRQn);
+	return true;
+}
+
+bool serial_camera_init(void)
+{
+	board_camera_uart_init();
+	if (!uart_init(UART5, CAMERA_BAUD, true))
+		return false;
+	NVIC_SetPriority(UART5_IRQn, 2);
+	NVIC_EnableIRQ(UART5_IRQn);
 	return true;
 }
 
@@ -131,6 +148,10 @@ static void uart_irq(struct uart_port *p)
 		/* Error bit positions match the corresponding write-one-clear bits. */
 		uart->ICR = errors;
 		p->stats.errors++;
+		p->stats.framing += (errors & USART_ISR_FE) != 0U;
+		p->stats.noise += (errors & USART_ISR_NE) != 0U;
+		p->stats.overrun += (errors & USART_ISR_ORE) != 0U;
+		p->stats.parity += (errors & USART_ISR_PE) != 0U;
 	}
 	if (LL_USART_IsActiveFlag_RXNE_RXFNE(uart)) {
 		uint8_t byte = LL_USART_ReceiveData8(uart);
@@ -164,4 +185,9 @@ void USART1_IRQHandler(void)
 void USART6_IRQHandler(void)
 {
 	uart_irq(&ports[SERIAL_STEP]);
+}
+
+void UART5_IRQHandler(void)
+{
+	uart_irq(&ports[SERIAL_CAMERA]);
 }

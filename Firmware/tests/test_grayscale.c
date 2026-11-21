@@ -103,6 +103,8 @@ static void test_gray_controls(void)
 	controls_key(&ctl, KEY_MODE, 5);
 	assert(ctl.task == TASK_LAP);
 	controls_key(&ctl, KEY_MODE, 6);
+	assert(ctl.task == TASK_BALANCE);
+	controls_key(&ctl, KEY_MODE, 7);
 	assert(ctl.task == TASK_MONITOR);
 }
 
