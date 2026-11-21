@@ -1,0 +1,6 @@
+# Keep the copy deployed to MaixCAM2 identical to the recorded source hash.
+Firmware/26h/**/*.py text eol=lf
+
+# Application checksums and the matching debug symbols depend on exact bytes.
+Firmware/releases/**/*.ota binary
+Firmware/releases/**/*.elf binary

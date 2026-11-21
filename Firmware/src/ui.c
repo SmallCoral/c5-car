@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include "config.h"
 #include "ui.h"
 #include "menu_font.h"
 
@@ -302,6 +303,18 @@ static void balance_page(uint8_t *pixels, const struct ui_state *state)
 	     "HOLD L MAP  R ZERO", 1, MUTED);
 }
 
+static void lap_probes(uint8_t *pixels, const struct gray_reading *gray, int y)
+{
+	text(pixels, 5, y + 3, "GRAY", 1, MUTED);
+	for (unsigned int i = 0; i < 8; i++) {
+		int x = 36 + (int)i * 11;
+		bool black = gray->status != GRAY_WARMUP && (gray->black & (1U << i));
+		char label[] = { (char)('1' + i), 0 };
+		card(pixels, x, y, 9, 12, black ? GREEN : PANEL);
+		text(pixels, x + 2, y + 3, label, 1, black ? BG : MUTED);
+	}
+}
+
 static void lap_page(uint8_t *pixels, const struct ui_state *state)
 {
 	static const char *const keys[] = { "BACK", "MAP", "SPD", "RUN" };
@@ -337,16 +350,7 @@ static void lap_page(uint8_t *pixels, const struct ui_state *state)
 		snprintf(line, sizeof(line), "PWM %d%%", state->lap_pwm[index] / 10);
 		text(pixels, x + 5, 110, line, 1, CYAN);
 	}
-	text(pixels, 5, 130, "GRAY", 1, MUTED);
-	for (index = 0; index < 8; index++) {
-		int x = 36 + (int)index * 11;
-		bool black = state->grayscale.status != GRAY_WARMUP &&
-			     (state->grayscale.black & (1U << index));
-
-		card(pixels, x, 127, 9, 12, black ? GREEN : PANEL);
-		snprintf(line, sizeof(line), "%u", index + 1);
-		text(pixels, x + 2, 130, line, 1, black ? BG : MUTED);
-	}
+	lap_probes(pixels, &state->grayscale, 127);
 	snprintf(line, sizeof(line), "A %s %lu.%luS", state->lap_approach ? "NEAR" :
 		 state->lap_armed ? "ARMED" : "WAIT",
 		 (unsigned long)(state->lap_ms / 1000),
@@ -432,8 +436,9 @@ static void contest_page(uint8_t *pixels, const struct ui_state *s)
 	bool home = m->page == MENU_HOME, tools_page = m->page == MENU_TOOLS;
 	bool list = home || tools_page;
 	bool tune = m->page == MENU_DETAIL && m->item == EVENT_OFFSET;
+	bool lap_ready = m->page == MENU_DETAIL && m->item == EVENT_LAP;
 	const char *keys[] = { "返回", list ? "上项" : tune ? "+1" : "",
-			       list ? "下项" : tune ? "-1" : "",
+			       list ? "下项" : tune ? "-1" : lap_ready ? "SPD" : "",
 			       list ? "进入" : m->page == MENU_DETAIL ?
 			       (m->item <= EVENT_LAP && m->notice != NOTICE_TRAVEL ? "启动" : "确认") :
 			       m->page == MENU_RUN ? "停止" : "重选" };
@@ -475,8 +480,15 @@ static void contest_page(uint8_t *pixels, const struct ui_state *s)
 	rect(pixels, 4, 42, 120, 1, EDGE);
 	if (m->page == MENU_DETAIL) {
 		menu_text(pixels, 6, 52, e->route, WHITE);
-		menu_text(pixels, 6, 78, e->limit, MUTED);
-		menu_text(pixels, 6, 98, e->accuracy, MUTED);
+		menu_text(pixels, 6, lap_ready ? 70 : 78, e->limit, MUTED);
+		menu_text(pixels, 6, lap_ready ? 87 : 98, e->accuracy, MUTED);
+		if (lap_ready) {
+			snprintf(buf, sizeof(buf), "%u CPS", s->lap_speed);
+			text(pixels, 6, 107, buf, 1, CYAN);
+			lap_probes(pixels, &s->grayscale, 119);
+			menu_text(pixels, 6, 141, "A 点  SW2 启动", GREEN);
+			return;
+		}
 		if (m->item == EVENT_POSITION)
 			contest_ruler(pixels, &s->ball, 121);
 		if (tune) {
@@ -485,7 +497,7 @@ static void contest_page(uint8_t *pixels, const struct ui_state *s)
 		}
 		const char *hint = m->notice ? notices[m->notice] :
 				   m->item == EVENT_POSITION ? (s->level_ready ? "LEVEL OK" : "LEVEL  0 DEG") :
-				   m->item == EVENT_LAP ? "起点  A 线" : "控制待接入";
+				   "控制待接入";
 		menu_text(pixels, 6, 141, hint, m->notice || m->item > EVENT_LAP ? AMBER : CYAN);
 	} else if (m->page == MENU_RUN) {
 		if (m->item == EVENT_POSITION) {
@@ -502,14 +514,20 @@ static void contest_page(uint8_t *pixels, const struct ui_state *s)
 				  s->leg == HOLD_LEFT && !s->waiting_vision ? GREEN : AMBER);
 			contest_ruler(pixels, &s->ball, 113);
 		} else {
-			menu_text(pixels, 6, 52, "顺时针循线", CYAN);
-			menu_text(pixels, 6, 78, "终点  A 线", WHITE);
+			menu_text(pixels, 6, 51, s->lap_departing ? "FIND LINE" : "FOLLOW", CYAN);
+			snprintf(buf, sizeof(buf), "L %d   R %d", s->lap_cps[0], s->lap_cps[1]);
+			text(pixels, 6, 77, buf, 1, WHITE);
+			snprintf(buf, sizeof(buf), "ENC %lu/%u", (unsigned long)s->lap_counts, LAP_DISTANCE_COUNTS);
+			text(pixels, 6, 95, buf, 1, MUTED);
+			lap_probes(pixels, &s->grayscale, 112);
 		}
 		snprintf(buf, sizeof(buf), "用时  %lu.%02lu S", (unsigned long)(s->event_ms / 1000),
 			 (unsigned long)(s->event_ms / 10 % 100));
 		menu_text(pixels, 6, 137, buf, MUTED);
 	} else {
-		menu_text(pixels, 6, 60, notices[m->notice], m->notice == NOTICE_FINISHED ? GREEN : AMBER);
+		bool lap_fault = m->item == EVENT_LAP && (m->notice == NOTICE_LINE || m->notice == NOTICE_DRIVE);
+		menu_text(pixels, 6, 60, lap_fault ? lap_status_name(s->lap_status) : notices[m->notice],
+			  m->notice == NOTICE_FINISHED ? GREEN : AMBER);
 		if (m->notice == NOTICE_PENDING) {
 			menu_text(pixels, 6, 87, e->route, WHITE);
 		} else {
@@ -517,6 +535,8 @@ static void contest_page(uint8_t *pixels, const struct ui_state *s)
 				 (unsigned long)(s->event_ms / 10 % 100));
 			menu_text(pixels, 6, 89, buf, WHITE);
 		}
+		if (m->item == EVENT_LAP && m->notice == NOTICE_FINISHED)
+			menu_text(pixels, 6, 118, "一圈停车", CYAN);
 	}
 }
 

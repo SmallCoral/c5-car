@@ -1,0 +1,24 @@
+{
+  "firmware_crc": "049412B5",
+  "board": {
+    "page": 4,
+    "item": 0,
+    "notice": 3,
+    "phase": 10,
+    "drive_flags": 3,
+    "error": 0,
+    "running": 0,
+    "wheels": 0,
+    "now": 223587,
+    "start": 209273,
+    "count": 421,
+    "x": 402,
+    "camera_flags": 0,
+    "shaft": -20637,
+    "level": -18837
+  },
+  "finished_ms": 4918,
+  "event_elapsed_ms": 4918,
+  "rows": 421,
+  "data": "Firmware/validation/2026-11-20/task1-113953-209273.csv"
+}

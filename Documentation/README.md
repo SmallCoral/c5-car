@@ -1,6 +1,6 @@
 # A 题项目文档
 
-整理日期：2026-11-17。
+整理于 2026-11-21。第一题和第二题的实车固件现已分别归档。
 用途、当前状态与工程入口从[项目首页](../README.md)开始。
 接口和采购以参考表为入口，检查结果按日期保留。
 
@@ -8,7 +8,7 @@
 | --- | --- |
 | 原始赛题 | [2026 校赛题目](2026校赛题目（小车·无人机·嵌入式AI）.pdf)、[AC 器材清单](AC题清单.doc) |
 | 总体方案 | [A 题大纲](explanation/a-system-outline.md) |
-| 历史 PCB 检查及边界 | [2026-11-10 Motor PCB 复查](validation/2026-11-10-motor-pcb-review.md)；用户后续保存的 PCB 尚未重新检查 |
+| Motor 设计检查 | [11 月 21 日手工设计快照、ERC 和 DRC](validation/2026-11-21-handoff.md) · [11 月 10 日历史复查](validation/2026-11-10-motor-pcb-review.md) |
 | Motor 采购 | [完整 BOM、精简 RC、降本候选及使用限制](reference/motor-bom.md) |
 | 机械设计 | [总装与预览](../Mechanical/README.md)、[建模大纲](explanation/mechanical-outline.md)、[参数](../Mechanical/parameters.yaml) |
 | 外接模块 | [模块清单](reference/external-modules.md)、[板端针序与保护边界](reference/m2-interfaces.md) |
@@ -18,8 +18,10 @@
 | PCB 元器件模型 | [模型来源及精确性限制](validation/2026-11-09-3d-models.md)、[M3 安装孔](validation/2026-11-09-m3-mounting-holes.md) |
 | 调试 | [分阶段上电与验收](how-to/bring-up.md) |
 | 实物固件 | [构建入口](../Firmware/README.md)、[按键与蓝牙联调](how-to/firmware-bringup.md)、[遥测字段](reference/firmware-telemetry.md) |
+| 第一题停车移球 | [五点和轴角标定](../Firmware/validation/2026-11-19/camera640-and-shaft.json)、[三轮计时及丢球恢复](../Firmware/validation/2026-11-20/task1-recovery.md)、[MaixCAM2 源码及空管对照](../Firmware/26h/README.md) |
+| 比赛版恢复 | [两份实车固件、第一题调试符号与恢复命令](../Firmware/releases/README.md) |
 | 灰度联调 | [校准、通道顺序与偏差显示](how-to/grayscale-check.md)、[无线烧录与板上采集记录](validation/2026-11-17-grayscale.md) |
-| 循线一圈 | [LAP 操作、方向与停车条件](how-to/line-following-lap.md)、[4600 / 3100 CPS 高速档](validation/2026-11-18-lap-fast.md)、[3300 / 2200 CPS 稳定版](validation/2026-11-18-lap-centering.md)、[2200 CPS 两次 A 点起停](validation/2026-11-17-lap-repeat.md) |
+| 循线一圈 | [第二题操作](how-to/line-following-lap.md)、[按里程停车实测](../Firmware/validation/2026-11-20/task2-distance.md)、[4600 / 3100 CPS 高速档](validation/2026-11-18-lap-fast.md)、[3300 / 2200 CPS 稳定版](validation/2026-11-18-lap-centering.md) |
 | Rust 迁移 | [独立工程](../Firmware/Rust/README.md)、[RustRover 与工具链](how-to/rust-development.md)、[代码验证](../Firmware/Rust/VALIDATION.md) |
 | 接手项目 | [当前交接与后续步骤](../.agent/main/handoff.md) |
 | 无线升级 | [一键烧录与恢复](how-to/wireless-update.md)、[分区与协议](reference/wireless-update.md)、[实测结果](validation/2026-11-16-wireless-update.md) |

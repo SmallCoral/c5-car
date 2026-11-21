@@ -1,0 +1,24 @@
+{
+  "firmware_crc": "5F54B991",
+  "board": {
+    "page": 4,
+    "item": 0,
+    "notice": 3,
+    "phase": 10,
+    "drive_flags": 3,
+    "error": 0,
+    "running": 0,
+    "wheels": 0,
+    "now": 425347,
+    "start": 382615,
+    "count": 420,
+    "x": 77,
+    "camera_flags": 3,
+    "shaft": -26973,
+    "level": -26991
+  },
+  "finished_ms": 0,
+  "event_elapsed_ms": 4746,
+  "rows": 420,
+  "data": "Firmware/validation/2026-11-20/task1-174453-382615.csv"
+}

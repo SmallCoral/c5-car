@@ -1,0 +1,227 @@
+{
+  "physical_datum": "操作者将点动后的当前姿态确认为水管水平，主控在原位抱持时标记水平零点。",
+  "pipe_tilt_deg": 0.0,
+  "level_shaft_raw": -843,
+  "encoder_counts_per_shaft_revolution": 65536,
+  "shaft_deg_from_drive_origin": -4.630737,
+  "reference_scope": "编码器读数属于本次驱动坐标系。主控在本次运行中保存水平标定，驱动重置计数后需重新对齐机械基准。",
+  "existing_controller_zero_raw_before_mark": 0,
+  "controller_leveled_before_mark": false,
+  "controller_zero_raw_after_mark": -843,
+  "controller_shaft_display_deg": 0.01,
+  "running_application": "C5APP,1,00033118,46232",
+  "rcc_reset_flags": "0x14000000",
+  "local_start": "2026-11-18T22:51:32.247+08:00",
+  "local_mark": "2026-11-18T22:51:38.620+08:00",
+  "local_end": "2026-11-18T22:51:44.157+08:00",
+  "board_elapsed_ms": 8445,
+  "read_count": 34,
+  "before_mark_range_raw": [
+    -843,
+    -843
+  ],
+  "after_mark_range_raw": [
+    -843,
+    -841
+  ],
+  "stepper_phase": 10,
+  "driver_flags": 3,
+  "drive_error": 0,
+  "drive_configuration_pulses_per_revolution": 3200,
+  "wheels_active": false,
+  "balance_running": false,
+  "supersedes": "pipe-level-2204.json",
+  "capture": {
+    "tools": "Python 3.12.14 / Bleak 3.1.0 / HC-08",
+    "queries": [
+      "C5:INFO",
+      "C5:JOG?",
+      "C5:ROLL?",
+      "C5:BAL?",
+      "C5:F407?"
+    ],
+    "calibration_command": "C5:LEVEL",
+    "jog_before": "C5JOG,1,315372,3,-2,-189,-840,-843,0,3,0",
+    "jog_after": "C5JOG,1,323983,0,0,0,0,-841,0,3,0",
+    "speed_after": "C5F407,1,324028,0,0,0,0,0,0,0,0",
+    "columns": [
+      "board_uptime_ms",
+      "shaft_raw",
+      "controller_zero_raw"
+    ],
+    "before_mark": [
+      [
+        315482,
+        -843,
+        0
+      ],
+      [
+        315911,
+        -843,
+        0
+      ],
+      [
+        316063,
+        -843,
+        0
+      ],
+      [
+        316402,
+        -843,
+        0
+      ],
+      [
+        316549,
+        -843,
+        0
+      ],
+      [
+        316708,
+        -843,
+        0
+      ],
+      [
+        316843,
+        -843,
+        0
+      ],
+      [
+        317422,
+        -843,
+        0
+      ],
+      [
+        317918,
+        -843,
+        0
+      ],
+      [
+        318069,
+        -843,
+        0
+      ],
+      [
+        318223,
+        -843,
+        0
+      ],
+      [
+        318348,
+        -843,
+        0
+      ]
+    ],
+    "after_mark": [
+      [
+        318642,
+        -843,
+        -843
+      ],
+      [
+        318803,
+        -843,
+        -843
+      ],
+      [
+        319413,
+        -841,
+        -843
+      ],
+      [
+        319583,
+        -841,
+        -843
+      ],
+      [
+        319909,
+        -841,
+        -843
+      ],
+      [
+        320070,
+        -841,
+        -843
+      ],
+      [
+        320226,
+        -841,
+        -843
+      ],
+      [
+        320430,
+        -841,
+        -843
+      ],
+      [
+        320599,
+        -841,
+        -843
+      ],
+      [
+        320929,
+        -841,
+        -843
+      ],
+      [
+        321415,
+        -841,
+        -843
+      ],
+      [
+        321586,
+        -841,
+        -843
+      ],
+      [
+        321754,
+        -841,
+        -843
+      ],
+      [
+        321926,
+        -841,
+        -843
+      ],
+      [
+        322410,
+        -841,
+        -843
+      ],
+      [
+        322931,
+        -841,
+        -843
+      ],
+      [
+        323100,
+        -841,
+        -843
+      ],
+      [
+        323271,
+        -841,
+        -843
+      ],
+      [
+        323428,
+        -841,
+        -843
+      ],
+      [
+        323586,
+        -841,
+        -843
+      ],
+      [
+        323756,
+        -841,
+        -843
+      ],
+      [
+        323927,
+        -841,
+        -843
+      ]
+    ]
+  }
+}

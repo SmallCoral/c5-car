@@ -669,11 +669,21 @@ static void test_contest(void)
 		assert(contest_key(&m, back) == MENU_NONE && m.page == MENU_HOME);
 		assert((unsigned int)m.item == i);
 		assert(contest_key(&m, confirm) == MENU_NONE && m.page == MENU_DETAIL);
+		if (m.item == EVENT_LAP)
+			assert(contest_key(&m, KEY_NEXT) == MENU_LAP_SPEED && m.page == MENU_DETAIL);
 		assert(contest_key(&m, confirm) == MENU_START_EVENT);
 		assert(contest_key(&m, back) == MENU_NONE && m.page == MENU_HOME);
 		contest_key(&m, KEY_NEXT);
 	}
 	assert(m.item == EVENT_POSITION);
+	assert(contest_lap_notice(LAP_RUNNING, 29999) == NOTICE_NONE);
+	assert(contest_lap_notice(LAP_RUNNING, 30000) == NOTICE_TIMEOUT);
+	assert(contest_lap_notice(LAP_DONE, 30000) == NOTICE_FINISHED);
+	assert(contest_lap_notice(LAP_DONE, 30001) == NOTICE_TIMEOUT);
+	assert(contest_lap_notice(LAP_ENCODER, 4000) == NOTICE_DRIVE);
+	assert(contest_lap_notice(LAP_DRIVE, 10) == NOTICE_DRIVE);
+	assert(contest_lap_notice(LAP_NO_MARKER, 20000) == NOTICE_LINE);
+	assert(contest_lap_notice(LAP_CANCELLED, 2000) == NOTICE_STOPPED);
 	m.page = MENU_DETAIL;
 	m.notice = NOTICE_TRAVEL;
 	assert(contest_key(&m, confirm) == MENU_RELEVEL && m.page == MENU_DETAIL);

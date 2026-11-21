@@ -10,11 +10,13 @@
 ./Firmware/flash-wireless.ps1
 ```
 
-默认编译并上传 Debug；Release 使用 `./Firmware/flash-wireless.ps1 -Preset release`。脚本使用 CMake、Ninja、Arm GCC 和 Python；当前电脑的工具链与 BLE Python 环境已配置。
+脚本默认编译并上传当前源码的 Debug 版本。Release 使用 `./Firmware/flash-wireless.ps1 -Preset release`。要恢复已在板上实测的版本，直接上传对应 OTA。第一题为 `8A10EDEE`，第二题里程停车版为 `D97DBD0E`。[选择存档及查询版本](../../Firmware/releases/README.md)
 
-工具连接地址 `F8:2E:0C:F3:68:37`，先停止电机，再进入升级界面、分包上传、校验、安装和重启。完成后应看到 `Verified running application`，包含与上传文件一致的长度和 CRC。重启后程序进入 LAP，按 RUN 才启动。[当前速度档和操作](line-following-lap.md)
+工具连接地址 `F8:2E:0C:F3:68:37`，先停车，再进入升级界面、分包上传、校验、安装和重启。完成后应看到 `Verified running application`，包含与上传文件一致的长度和 CRC。重启进入比赛首页，车轮停止。上场跑第二题，按 SW3 选题、SW2 进入，再按 SW2 启动。[第二题操作](line-following-lap.md)
 
-屏幕按“按钮在上、屏幕在下”显示 UPDATE、当前阶段和进度条。安装阶段保持供电。镜像大小随构建变化，上传时间取决于蓝牙重试。[最近一次应用更新](../validation/2026-11-18-lap-fast.md)、[3300 稳定版恢复命令](../../Firmware/releases/lap-3300-BF33A9F7/README.md)、[引导程序与恢复测试](../validation/2026-11-16-wireless-update.md)
+如果步进仍在托住水管，主控返回 `BEAM HELD`。先将水管独立托稳，再执行 `./Firmware/flash-wireless.ps1 -PipeSupported`。这个单次参数让工具通过蓝牙解除抱持，读回步进已失能、车轮已停，再进入原有引导程序。直接上传已有文件时，对应参数为 `--pipe-supported`。
+
+屏幕按“按钮在上、屏幕在下”显示 UPDATE、当前阶段和进度条。安装阶段保持供电。镜像大小随构建变化，上传时间取决于蓝牙重试。[第一题恢复实录](../../Firmware/validation/2026-11-20/task1-restore-flash.txt) · [引导程序与恢复测试](../validation/2026-11-16-wireless-update.md)
 
 ## CLion
 

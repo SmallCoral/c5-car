@@ -1,0 +1,24 @@
+{
+  "firmware_crc": "26A29C96",
+  "board": {
+    "page": 3,
+    "item": 0,
+    "notice": 0,
+    "phase": 8,
+    "drive_flags": 1,
+    "error": 0,
+    "running": 1,
+    "wheels": 0,
+    "now": 275883,
+    "start": 266541,
+    "count": 270,
+    "x": 399,
+    "camera_flags": 3,
+    "shaft": -18534,
+    "level": -17019
+  },
+  "finished_ms": 6324,
+  "event_elapsed_ms": 0,
+  "rows": 270,
+  "data": "Firmware/validation/2026-11-19/task1-191711-266541.csv"
+}

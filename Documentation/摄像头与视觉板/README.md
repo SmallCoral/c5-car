@@ -4,6 +4,8 @@
 当前保留 MaixCAM2 识别、Action 4 图传和荔枝派 4A；接口、供电与保护边界统一见[接线表](../reference/m2-interfaces.md)。
 原始资料不代表软件和整车已验证。
 
+钢球识别的 [UART V2 协议原件](MaixCAM2_UART_V2_2026-11-19.md) 和[相机工程](../../Firmware/26h/README.md)记录了发送格式、现场标定与已知测试条件。
+
 - MaixCAM2：[官方硬件资料](https://wiki.sipeed.com/hardware/zh/maixcam/maixcam2.html)、[官方原理图](https://dl.sipeed.com/fileList/MaixCAM/MaixCAM2/Hardware/board_maixcam2/SCH_MaixCam2_379C.pdf)。本地 PDF 第 7 页核对 U56 六针接口，第 9 页核对五伏输入并联关系，第 10 页核对充电电路。
 - 荔枝派：[外设说明](https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/6_peripheral.html)、[供电 FAQ](https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/12_faq.html)、[底板原理图](https://dl.sipeed.com/fileList/LICHEE/licheepi4a/02_Schematic/SIPEED_TH1520_EXPAND_LPI4A_51602_SCH.pdf)。本地 PDF 第 17 页（图签 GPIO Expansion 25/25）用于核对 J2500/J2501，不能将图签页码直接当 PDF 页码。
 - `MaixCAM2_六针接口_用户实物.png` 是用户提供的照片。官方 IO 图来自 Sipeed Wiki 资源目录。

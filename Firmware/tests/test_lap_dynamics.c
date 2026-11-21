@@ -12,7 +12,7 @@
 #include "grayscale.h"
 #include "lap.h"
 
-enum path { STRAIGHT, RIGHT_BEND, LEFT_BEND, REVERSE_BENDS, A_COURSE };
+enum path { STRAIGHT, RIGHT_BEND, LEFT_BEND, REVERSE_BENDS, A_COURSE, UNMARKED_COURSE };
 
 /* Track geometry in mm, independent of the firmware's encoder windows. */
 static const double half_lap_mm = 1500.0 + 500.0 * 3.141592653589793;
@@ -53,11 +53,11 @@ static double path_curvature(enum path path, uint32_t now)
 }
 
 static bool simulate(double lookahead, double motor_ms, enum path path, bool jitter,
-		     bool weak_motors, unsigned int level, double counts_per_mm)
+		     bool weak_motors, unsigned int level, double counts_per_mm, uint32_t *a_counts)
 {
 	const double dt = 0.002;
 	const double track_mm = 210.0;
-	const bool course = path == A_COURSE;
+	const bool course = path == A_COURSE || path == UNMARKED_COURSE;
 	const double pitch = course ? 12.0 : 10.0;
 	/* The original low-gain plant cannot reach 3300 CPS at 45% PWM.
 	 * The second plant can; both have unequal left/right wheel gains.
@@ -95,12 +95,17 @@ static bool simulate(double lookahead, double motor_ms, enum path path, bool jit
 			if (fabs(distance) <= 10.0)
 				raw &= (uint8_t)~(1U << probe);
 		}
-		if (course && (traveled < 35 || fabs(traveled - 2 * half_lap_mm) < 15))
+		if (path == A_COURSE && (traveled < 35 || fabs(traveled - 2 * half_lap_mm) < 15))
 			raw = 0;	/* the physical transverse mark */
 		gray_update(&gray, raw, now, false);
-		if (now == 4 && !lap_start(&lap, &gray.reading, now, 0, 0,
-					   level, false))
-			return false;
+		if (now == 4) {
+			if (path == UNMARKED_COURSE) {
+				if (!lap_start_distance(&lap, &gray.reading, now, 0, 0, level, *a_counts))
+					return false;
+			} else if (!lap_start(&lap, &gray.reading, now, 0, 0, level, false)) {
+				return false;
+			}
+		}
 		if (now < 4)
 			continue;
 		if (now >= next_control) {
@@ -174,6 +179,11 @@ static bool simulate(double lookahead, double motor_ms, enum path path, bool jit
 		passed = lap.status == LAP_DONE && fabs(traveled - 2 * half_lap_mm) <= 25 &&
 			!gaps && center_pct >= 75.0 &&
 			(!race || weak_motors || (cruise_cps >= 4000.0 && bend_cps >= 2750.0));
+	if (path == UNMARKED_COURSE)
+		passed = passed && !lap.marker_hits && lap_progress(&lap) >= *a_counts &&
+			 lap_progress(&lap) < *a_counts + 50U;
+	if (path == A_COURSE && a_counts && passed)
+		*a_counts = lap_progress(&lap);
 
 	printf("level=%u counts_per_mm=%.2f lookahead=%.0f motor_ms=%.0f path=%d jitter=%u weak=%u status=%s "
 	       "bias_mm=%.3f sway_rms_mm=%.3f sway_pp_mm=%.3f center_pct=%.1f "
@@ -187,13 +197,19 @@ static bool simulate(double lookahead, double motor_ms, enum path path, bool jit
 static bool test_gears(double lookahead, double motor_ms, enum path path, bool jitter,
 		       bool weak)
 {
-	bool passed = simulate(lookahead, motor_ms, path, jitter, weak, LAP_FAST_LEVEL, 7.0);
+	uint32_t fast_counts = 0, race_counts = 0;
+	bool passed = simulate(lookahead, motor_ms, path, jitter, weak, LAP_FAST_LEVEL, 7.0, &fast_counts);
 
-	passed &= simulate(lookahead, motor_ms, path, jitter, weak, LAP_RACE_LEVEL, 7.0);
-	/* A calibrated bend must also tolerate a two-percent odometry error. */
+	passed &= simulate(lookahead, motor_ms, path, jitter, weak, LAP_RACE_LEVEL, 7.0, &race_counts);
 	if (path == A_COURSE) {
-		passed &= simulate(lookahead, motor_ms, path, jitter, weak, LAP_RACE_LEVEL, 6.86);
-		passed &= simulate(lookahead, motor_ms, path, jitter, weak, LAP_RACE_LEVEL, 7.14);
+		passed &= simulate(lookahead, motor_ms, path, jitter, weak, LAP_RACE_LEVEL, 6.86, NULL);
+		passed &= simulate(lookahead, motor_ms, path, jitter, weak, LAP_RACE_LEVEL, 7.14, NULL);
+		/* Use the distance measured on this chassis, as on the real cart.
+		 * Remove both marks, then check against the independent track geometry. */
+		passed &= simulate(lookahead, motor_ms, UNMARKED_COURSE, jitter, weak,
+				   LAP_FAST_LEVEL, 7.0, &fast_counts);
+		passed &= simulate(lookahead, motor_ms, UNMARKED_COURSE, jitter, weak,
+				   LAP_RACE_LEVEL, 7.0, &race_counts);
 	}
 	return passed;
 }

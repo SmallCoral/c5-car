@@ -610,15 +610,23 @@ static void upgrade_poll(uint32_t now)
 	NVIC_SystemReset();
 }
 
-static void start_lap(uint32_t now)
+static void start_lap(uint32_t now, bool competition)
 {
-	int direction = controls.lap_reverse ? -1 : 1;
+	uint32_t left = board_encoder(0), right = board_encoder(1);
+	bool started;
+	int direction;
 
-	if (!lap_start(&lap, &gray.reading, now, board_encoder(0),
-		       board_encoder(1), controls.lap_level, controls.lap_reverse)) {
+	if (competition)
+		started = lap_start_distance(&lap, &gray.reading, now, left, right,
+					     controls.lap_level, LAP_DISTANCE_COUNTS);
+	else
+		started = lap_start(&lap, &gray.reading, now, left, right,
+				    controls.lap_level, controls.lap_reverse);
+	if (!started) {
 		stop_test(now);
 		return;
 	}
+	direction = lap.reverse ? -1 : 1;
 	wheels_started = board_wheels_start(direction * LAP_LEFT_DRIVE_SIGN,
 					 direction * LAP_RIGHT_DRIVE_SIGN, true);
 	if (!wheels_started) {
@@ -689,7 +697,6 @@ static void start_event(uint32_t now)
 #endif
 	} else {
 		controls.task = TASK_LAP;
-		controls.lap_reverse = false;
 	}
 	controls.started_at = now;
 	controls.running = true;
@@ -698,11 +705,8 @@ static void start_event(uint32_t now)
 	if (menu.item == EVENT_POSITION)
 		record_position(now);
 #endif
-	if (menu.item == EVENT_LAP) {
-		start_lap(now);
-		if (!controls.running)
-			finish_event(lap.status == LAP_DRIVE ? NOTICE_DRIVE : NOTICE_LINE, now);
-	}
+	if (menu.item == EVENT_LAP)
+		start_lap(now, true);
 }
 
 static bool position_drive_ok(uint32_t now)
@@ -818,6 +822,8 @@ static void handle_keys(uint32_t now)
 			start_event(now);
 		else if (selected == MENU_RELEVEL)
 			prepare_position(now);
+		else if (selected == MENU_LAP_SPEED)
+			controls_key(&controls, KEY_NEXT, now);
 		else if (selected == MENU_STOP_EVENT) {
 			finish_event(menu.item == EVENT_POSITION && position.leg == HOLD_LEFT ?
 				     NOTICE_FINISHED : NOTICE_STOPPED, now);
@@ -907,7 +913,7 @@ static void handle_keys(uint32_t now)
 		return;
 	TRACE_STOP(0);
 	if (controls.task == TASK_LAP) {
-		start_lap(now);
+		start_lap(now, false);
 	} else if (task_uses_stepper(controls.task)) {
 		if (controls.task == TASK_ALL && board_faults()) {
 			TRACE_STOP(3U | (uint32_t)board_faults() << 8);
@@ -1145,6 +1151,13 @@ int main(void)
 			} else if (preparing_shaft) {
 				stop_test(now);
 			}
+			if (menu.page == MENU_DETAIL && menu.item == EVENT_LAP) {
+				/* Select black-line sensing before the confirming press. */
+				controls.task = TASK_LAP;
+				controls.lap_reverse = false;
+				menu.notice = NOTICE_NONE;
+				event_elapsed = 0;
+			}
 		}
 		while (serial_read(SERIAL_BT, &byte)) {
 			handle_remote(byte, now);
@@ -1174,10 +1187,14 @@ int main(void)
 		record_position(now);
 #endif
 		if (menu.page == MENU_RUN && menu.item == EVENT_LAP) {
-			if (!controls.running)
-				finish_event(lap.status == LAP_DONE ? NOTICE_FINISHED : NOTICE_LINE, now);
-			else if (now - controls.started_at > 30000)
-				finish_event(NOTICE_TIMEOUT, now);
+			uint32_t duration = now - controls.started_at;
+			enum contest_notice notice = contest_lap_notice(lap.status, duration);
+			if (notice == NOTICE_TIMEOUT) {
+				lap.elapsed_ms = duration;
+				lap_stop(&lap, LAP_TIMEOUT);
+			}
+			if (notice != NOTICE_NONE)
+				finish_event(notice, now);
 		}
 		if (!controls.running && !preparing_shaft)
 			stop_test(now);

@@ -1,0 +1,53 @@
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: C:/Users/sc/Documents/Dev/Hardware/c5-car/Firmware/build/debug
+[1/2] Packaging wireless image and first-install HEX
+OTA: 61632 bytes, CRC32=D97DBD0E; first_install.hex includes bootloader
+[1/2] Updating Coral-C5 over HC-08 BLE
+BLE connection interrupted (Not connected); reconnecting 1/2...
+Confirmed stepper disabled and wheels stopped
+Bootloader ready; current app 61348 bytes CRC32=B932AA20; received=0
+  0%  128/61632 bytes
+Retry command 3, sequence 12
+Retry command 3, sequence 45
+Retry command 3, sequence 47
+Retry command 3, sequence 49
+ 10%  6272/61632 bytes
+Retry command 3, sequence 63
+Retry command 3, sequence 89
+ 20%  12416/61632 bytes
+Retry command 3, sequence 104
+Retry command 3, sequence 117
+Retry command 3, sequence 120
+Retry command 3, sequence 130
+Retry command 3, sequence 134
+Retry command 3, sequence 147
+ 30%  18560/61632 bytes
+Retry command 3, sequence 176
+Retry command 3, sequence 179
+Retry command 3, sequence 191
+Retry command 3, sequence 195
+ 40%  24704/61632 bytes
+Retry command 3, sequence 223
+Retry command 3, sequence 231
+Retry command 3, sequence 235
+ 50%  30848/61632 bytes
+Retry command 3, sequence 288
+ 60%  36992/61632 bytes
+Retry command 3, sequence 295
+Retry command 3, sequence 297
+Retry command 3, sequence 303
+ 70%  43264/61632 bytes
+Retry command 3, sequence 342
+Retry command 3, sequence 362
+Retry command 3, sequence 382
+ 80%  49408/61632 bytes
+Retry command 3, sequence 412
+Retry command 3, sequence 429
+ 90%  55552/61632 bytes
+Retry command 3, sequence 447
+Retry command 3, sequence 457
+100%  61632/61632 bytes
+Image verified in staging; installing...
+Verified running application: 61632 bytes, CRC32=D97DBD0E
+Wireless update complete in 231.2s; retries=30; motors remain stopped

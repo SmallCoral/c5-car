@@ -39,6 +39,7 @@ struct lap {
 	uint32_t line_at;
 	uint32_t narrow_at;
 	uint32_t marker_at;
+	uint32_t finish_counts;	/* calibrated A-to-A distance, zero in marker mode */
 	uint32_t control_ms;
 	unsigned int marker_hits;
 	unsigned int marker_peak;
@@ -58,8 +59,13 @@ struct lap {
 	bool armed;
 };
 
+enum lap_start_surface { LAP_START_UNALIGNED, LAP_START_NARROW, LAP_START_MARKER };
+
+enum lap_start_surface lap_start_surface(const struct gray_reading *gray);
 bool lap_start(struct lap *lap, const struct gray_reading *gray, uint32_t now,
 	       uint32_t left, uint32_t right, unsigned int level, bool reverse);
+bool lap_start_distance(struct lap *lap, const struct gray_reading *gray, uint32_t now,
+			uint32_t left, uint32_t right, unsigned int level, uint32_t finish_counts);
 void lap_check_start(struct lap *lap, uint32_t now, uint32_t left,
 		     uint32_t right, bool reverse);
 bool lap_update(struct lap *lap, const struct gray_reading *gray, uint32_t now,

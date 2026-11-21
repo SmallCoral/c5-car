@@ -8,6 +8,8 @@
 | `Firmware/Rust` | 独立 Rust 应用、引导程序、电脑端 CLI 与测试；[Rust 说明](../../Firmware/Rust/README.md) |
 | `Firmware/Rust/.run` | 可移植的 RustRover 检查和 ARM 构建配置，不包含机器环境或烧录步骤 |
 | `Firmware/validation` | 实物遥测、烧录输出、测试日志、源码/产物哈希；按日期保存，历史记录不改写成当前结果 |
+| `Firmware/releases` | [实车固件](../../Firmware/releases/README.md)、恢复命令和第一题的调试符号 |
+| `Firmware/26h` | [MaixCAM2 钢球识别](../../Firmware/26h/README.md)、V2 发送和图传辅助脚本。设备模型单独部署。 |
 | `Hardware/stm32c5a3/Hardware` | Core、Motor、Transfer 的 KiCad 原生工程、随板库和模型；[硬件说明](../../Hardware/stm32c5a3/README.md) |
 | `Hardware/.../Shared` | Core/Motor 的 98 触点合同、共用参考与设计工具 |
 | `Mechanical` | 机械参考总装、模型、参数、生成器及验证；[机械说明](../../Mechanical/README.md) |

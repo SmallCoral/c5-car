@@ -13,6 +13,11 @@ Firmware/**/build/
 .idea/
 CMakeUserPresets.json
 
+# Device-specific hotspot configuration and local preview captures.
+/Firmware/26h/*.wifi.json
+/Firmware/26h/*.lnk
+/Firmware/26h/pc_resver/maixcam_*.mp4
+
 # KiCad local state; keep source, libraries, BOMs and reports.
 *.kicad_prl
 *.lck

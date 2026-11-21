@@ -1,0 +1,24 @@
+{
+  "firmware_crc": "344A4C11",
+  "board": {
+    "page": 4,
+    "item": 0,
+    "notice": 4,
+    "phase": 10,
+    "drive_flags": 3,
+    "error": 0,
+    "running": 0,
+    "wheels": 0,
+    "now": 347671,
+    "start": 333343,
+    "count": 421,
+    "x": 394,
+    "camera_flags": 5,
+    "shaft": -20339,
+    "level": -18837
+  },
+  "finished_ms": 0,
+  "event_elapsed_ms": 8001,
+  "rows": 421,
+  "data": "Firmware/validation/2026-11-20/task1-113258-333343.csv"
+}

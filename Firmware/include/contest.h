@@ -2,13 +2,16 @@
 #define CORAL_CONTEST_H
 
 #include "ball.h"
+#include "lap.h"
 #include "logic.h"
 
 enum contest_page { MENU_DIAGNOSTIC, MENU_HOME, MENU_DETAIL, MENU_RUN, MENU_RESULT, MENU_TOOLS };
 enum contest_item { EVENT_POSITION, EVENT_LAP, EVENT_HALF, EVENT_FULL, EVENT_OFFSET, EVENT_VIDEO, EVENT_COUNT };
 enum contest_notice { NOTICE_NONE, NOTICE_CENTER, NOTICE_DRIVE, NOTICE_VISION, NOTICE_TIMEOUT,
 	NOTICE_STOPPED, NOTICE_FINISHED, NOTICE_LINE, NOTICE_PENDING, NOTICE_TRAVEL };
-enum menu_action { MENU_NONE, MENU_START_EVENT, MENU_STOP_EVENT, MENU_OPEN_TOOL, MENU_RELEVEL };
+enum menu_action { MENU_NONE, MENU_START_EVENT, MENU_STOP_EVENT, MENU_OPEN_TOOL, MENU_RELEVEL, MENU_LAP_SPEED };
+
+enum { CONTEST_LAP_LIMIT_MS = 30000 };
 
 struct contest_menu {
 	enum contest_page page;
@@ -20,6 +23,7 @@ struct contest_menu {
 
 enum menu_action contest_key(struct contest_menu *menu, enum key_id key);
 enum task_id contest_tool(unsigned int index);
+enum contest_notice contest_lap_notice(enum lap_status status, uint32_t elapsed_ms);
 
 enum position_leg { MOVE_RIGHT, MOVE_LEFT, HOLD_LEFT, LEVEL_SHAFT, MOVE_CENTER };
 enum { POSITION_CENTER_DWELL_MS = 300, POSITION_RIGHT_DWELL_MS = 400, POSITION_LEFT_DWELL_MS = 400 };

@@ -30,13 +30,15 @@ static bool wide_marker(const struct gray_reading *gray)
 	       gray->count >= LAP_MARKER_CHANNELS;
 }
 
-static bool start_marker(const struct gray_reading *gray)
+enum lap_start_surface lap_start_surface(const struct gray_reading *gray)
 {
 	/* Measured A entry: 0x28/0x0d/0x3d (split), then a broad crossbar.
 	 * A central line plus a side marking may be split before full coverage.
 	 */
-	return wide_marker(gray) || (gray->status == GRAY_SPLIT &&
-		gray->groups == 2 && gray->count >= 2 && (gray->line & 0x3c));
+	if (wide_marker(gray) || (gray->status == GRAY_SPLIT &&
+	    gray->groups == 2 && gray->count >= 2 && (gray->line & 0x3c)))
+		return LAP_START_MARKER;
+	return gray->status == GRAY_LINE ? LAP_START_NARROW : LAP_START_UNALIGNED;
 }
 
 static bool partial_marker(const struct lap *lap, const struct gray_reading *gray)
@@ -45,7 +47,6 @@ static bool partial_marker(const struct lap *lap, const struct gray_reading *gra
 
 	/* Three black probes can also occur on a curve. Accept a partial A only
 	 * inside the measured lap's finish window, with a longer hold time.
-	 * Odometry alone must never produce DONE.
 	 */
 	return progress >= LAP_PARTIAL_MIN_COUNTS &&
 	       progress <= LAP_PARTIAL_MAX_COUNTS &&
@@ -99,13 +100,31 @@ static void initialize(struct lap *lap, uint32_t now, uint32_t left,
 bool lap_start(struct lap *lap, const struct gray_reading *gray, uint32_t now,
 	       uint32_t left, uint32_t right, unsigned int level, bool reverse)
 {
+	enum lap_start_surface surface = lap_start_surface(gray);
 	initialize(lap, now, left, right, level, reverse);
-	if (gray->status != GRAY_LINE && !start_marker(gray)) {
+	if (surface == LAP_START_UNALIGNED) {
 		lap_stop(lap, LAP_NOT_READY);
 		return false;
 	}
-	lap->departing = start_marker(gray);
+	lap->departing = surface == LAP_START_MARKER;
 	lap->from_a = lap->departing && !reverse;
+	lap->last_position = lap->departing ? 0 : gray->position;
+	lap->status = LAP_RUNNING;
+	return true;
+}
+
+bool lap_start_distance(struct lap *lap, const struct gray_reading *gray, uint32_t now,
+			uint32_t left, uint32_t right, unsigned int level, uint32_t finish_counts)
+{
+	initialize(lap, now, left, right, level, false);
+	if (!finish_counts) {
+		lap_stop(lap, LAP_NOT_READY);
+		return false;
+	}
+	/* The operator places the car at A and SW2 establishes the encoder origin. */
+	lap->from_a = true;
+	lap->finish_counts = finish_counts;
+	lap->departing = gray->status != GRAY_LINE || wide_marker(gray);
 	lap->last_position = lap->departing ? 0 : gray->position;
 	lap->status = LAP_RUNNING;
 	return true;
@@ -308,6 +327,20 @@ static int line_steering(struct lap *lap, int dt, bool tracking, int bend_permil
 	return lap->steering + clamp(steer - lap->steering, -step, step);
 }
 
+static int distance_finish_speed(int cruise, uint32_t remaining)
+{
+	uint32_t t, blend;
+
+	if (remaining >= LAP_FINISH_BLEND_COUNTS || cruise <= LAP_FINISH_CPS)
+		return cruise;
+	/* Smoothstep in remaining distance: flat at both ends of the blend.
+	 * Retain the measured cut-off speed so the subsequent coast is comparable. */
+	t = remaining * 1000U / LAP_FINISH_BLEND_COUNTS;
+	blend = t * t * (3000U - 2U * t) / 1000000U;
+
+	return LAP_FINISH_CPS + (cruise - LAP_FINISH_CPS) * (int)blend / 1000;
+}
+
 static int forward_speed(const struct lap *lap, int steer, int cruise, bool narrow,
 			 int pwm_limit)
 {
@@ -317,6 +350,7 @@ static int forward_speed(const struct lap *lap, int steer, int cruise, bool narr
 		lap->position_rate * LAP_BRAKE_LOOKAHEAD_MS / 1000);
 	int turn = magnitude(steer);
 	int turn_cost = unmapped_race(lap) ? 5 : 2;
+	uint32_t progress = lap_progress(lap);
 	int base, turn_cap;
 
 	if (projected > offset)
@@ -341,7 +375,9 @@ static int forward_speed(const struct lap *lap, int steer, int cruise, bool narr
 
 		base = min_int(base, available - (side ? -steer : steer));
 	}
-	if (lap_progress(lap) >= LAP_APPROACH_COUNTS)
+	if (lap->finish_counts)
+		base = min_int(base, distance_finish_speed(cruise, lap->finish_counts - progress));
+	else if (progress >= LAP_APPROACH_COUNTS)
 		base = min_int(base, LAP_APPROACH_CPS);
 	if (!narrow || lap->departing)
 		base = min_int(base, LAP_SPEED_SLOW_CPS);
@@ -378,13 +414,40 @@ static void steer_control(struct lap *lap, uint32_t dt, bool narrow)
 	speed_control(&lap->wheel[1], lap->base_target - lap->steering, dt, pwm_limit);
 }
 
+static bool marker_finish(struct lap *lap, const struct gray_reading *gray,
+			  bool wide, uint32_t now)
+{
+	bool candidate = wide || partial_marker(lap, gray);
+
+	lap->armed = lap->departed && lap->elapsed_ms >= LAP_ARM_MS &&
+		     lap_progress(lap) >= LAP_ARM_COUNTS;
+	if (lap->armed && gray->count > lap->marker_peak)
+		lap->marker_peak = gray->count;
+	if (candidate) {
+		if (!lap->marker) {
+			lap->marker_at = now;
+			if (lap->armed)
+				lap->marker_hits++;
+		}
+		if (lap->armed && elapsed(now, lap->marker_at,
+			wide ? LAP_MARKER_HOLD_MS : LAP_PARTIAL_HOLD_MS)) {
+			lap_stop(lap, LAP_DONE);
+			return true;
+		}
+	}
+	lap->marker = candidate;
+	if (lap_progress(lap) >= LAP_MAX_COUNTS) {
+		lap_stop(lap, LAP_NO_MARKER);
+		return true;
+	}
+	return false;
+}
+
 bool lap_update(struct lap *lap, const struct gray_reading *gray, uint32_t now,
 		uint32_t left, uint32_t right)
 {
 	uint32_t dt = now - lap->updated_at;
 	bool wide;
-	bool partial;
-	bool candidate;
 	bool narrow;
 	int position;
 	int rate;
@@ -408,13 +471,18 @@ bool lap_update(struct lap *lap, const struct gray_reading *gray, uint32_t now,
 	lap->differential = (lap->wheel[0].cps - lap->wheel[1].cps) / 2;
 	if (lap->status == LAP_CHECK)
 		return true;
+	if (lap->finish_counts && lap_progress(lap) >= lap->finish_counts) {
+		lap_stop(lap, LAP_DONE);
+		return true;
+	}
 	wide = wide_marker(gray);
-	partial = partial_marker(lap, gray);
-	candidate = wide || partial;
 	narrow = gray->status == GRAY_LINE && !wide;
+	if (lap->finish_counts && narrow)
+		lap->departing = false;
 	if (lap->departing && (lap->elapsed_ms >= LAP_DEPART_TIMEOUT_MS ||
 			     lap_progress(lap) >= LAP_DEPART_MAX_COUNTS)) {
-		lap_stop(lap, LAP_AMBIGUOUS);
+		lap_stop(lap, lap->finish_counts && gray->status == GRAY_LOST ?
+			 LAP_NO_LINE : LAP_AMBIGUOUS);
 		return true;
 	}
 	if (narrow) {
@@ -445,39 +513,20 @@ bool lap_update(struct lap *lap, const struct gray_reading *gray, uint32_t now,
 		lap->position_rate = 0;
 	}
 	if (lap->departing) {
-		/* Bounded, slow departure using encoder damping; the crossbar's
-		 * changing centroid must not be interpreted as a curve to follow.
+		/* Drive straight and slowly until the probes acquire the course.
+		 * A changing centroid across a start mark is not a curve.
 		 */
 		lap->last_position = 0;
 		lap->position_rate = 0;
 	}
 	lap->narrow = narrow;
-	lap->armed = lap->departed && lap->elapsed_ms >= LAP_ARM_MS &&
-		     lap_progress(lap) >= LAP_ARM_COUNTS;
-	if (lap->armed && gray->count > lap->marker_peak)
-		lap->marker_peak = gray->count;
-	if (candidate) {
-		if (!lap->marker) {
-			lap->marker_at = now;
-			if (lap->armed)
-				lap->marker_hits++;
-		}
-		if (lap->armed && elapsed(now, lap->marker_at,
-			wide ? LAP_MARKER_HOLD_MS : LAP_PARTIAL_HOLD_MS)) {
-			lap_stop(lap, LAP_DONE);
-			return true;
-		}
-	}
-	lap->marker = candidate;
-	if (lap_progress(lap) >= LAP_MAX_COUNTS) {
-		lap_stop(lap, LAP_NO_MARKER);
+	if (!lap->finish_counts && marker_finish(lap, gray, wide, now))
 		return true;
-	}
 	/* Brief gaps use the last line position at reduced speed; never drive blind
 	 * indefinitely. A starting crossbar gets a bounded departure allowance.
 	 */
 	if (!lap->departing && !narrow && elapsed(now, lap->line_at,
-		wide && !lap->departed ? 800U :
+		!lap->finish_counts && wide && !lap->departed ? 800U :
 		gray->status == GRAY_LOST ? LAP_LINE_LOST_MS : LAP_AMBIGUOUS_MS)) {
 		lap_stop(lap, gray->status == GRAY_LOST ? LAP_NO_LINE : LAP_AMBIGUOUS);
 		return true;

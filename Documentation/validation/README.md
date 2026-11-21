@@ -4,6 +4,15 @@
 
 | 日期 | 记录 |
 | --- | --- |
+| 2026-11-21 | [交接核验、源码构建、镜像比对与 Motor ERC / DRC](2026-11-21-handoff.md) |
+| 2026-11-20 | [22:23 恢复第一题固件的无线回读](../../Firmware/validation/2026-11-20/task1-restore-flash.txt) · [相机静止钢球和空管的逐帧对照](../../Firmware/26h/README.md) |
+| 2026-11-20 | [第二题按键起跑、一圈里程停车与末弯速度](../../Firmware/validation/2026-11-20/task2-distance.md) |
+| 2026-11-20 | [第二题比赛菜单、巡线回归与 HC-08 无线更新](../../Firmware/validation/2026-11-20/task2-wireless.md) |
+| 2026-11-20 | [步进回水平、左点附近丢球恢复与超过 8 秒继续运行](../../Firmware/validation/2026-11-20/task1-recovery.md) |
+| 2026-11-20 | [第一题平衡轴角、漏检处理与末点保持实测](../../Firmware/validation/2026-11-20/task1-balance.md) |
+| 2026-11-19 | [第一题停车移球实测，含两轮轨迹和计时](../../Firmware/validation/2026-11-19/task1-position.md) |
+| 2026-11-19 | [640 像素相机球位及步进轴水平、最高、最低姿态标定](../../Firmware/validation/2026-11-19/camera640-and-shaft.json) |
+| 2026-11-19 | [钢球实物五点标定与相机逐帧记录](../../Firmware/validation/2026-11-19/ball-five-point.json) |
 | 2026-11-18 | [4600 / 3100 CPS 高速档与稳定版对比](2026-11-18-lap-fast.md) |
 | 2026-11-18 | [3300 CPS 循线、弯道居中与实车验证状态](2026-11-18-lap-centering.md) |
 | 2026-11-17 | [循线调参、A 点起停与交接整理检查](2026-11-17-lap-handoff.md) |

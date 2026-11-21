@@ -6,7 +6,7 @@
 | 内容 | 入口 |
 | --- | --- |
 | Motor 原理图和 PCB | [工程](Hardware/CoralC5-Motor/CoralC5-Motor.kicad_pro)、[说明](Hardware/CoralC5-Motor/README.md) |
-| Motor 历史 PCB 检查 | [2026-11-10 复查](../../Documentation/validation/2026-11-10-motor-pcb-review.md)，后续用户保存版本尚未重新检查 |
+| Motor PCB 检查 | [2026-11-21 手工设计快照复查](../../Documentation/validation/2026-11-21-handoff.md) · [2026-11-10 历史复查](../../Documentation/validation/2026-11-10-motor-pcb-review.md) |
 | Motor 采购表 | [完整 BOM 与精简采购表](../../Documentation/reference/motor-bom.md) |
 | Core 原理图和 PCB | [工程](Hardware/CoralC5-Core/CoralC5-Core.kicad_pro)、[说明](Hardware/CoralC5-Core/README.md) |
 | Transfer 电源输入转接板 | [输入极性修正用途与设计快照](Hardware/Transfer/README.md) |

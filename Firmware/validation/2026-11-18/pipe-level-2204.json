@@ -1,0 +1,134 @@
+{
+  "physical_datum": "操作者确认此时水管处于水平，将此姿态定义为水管倾角 0°。",
+  "pipe_tilt_deg": 0.0,
+  "level_shaft_raw": 1247,
+  "encoder_counts_per_shaft_revolution": 65536,
+  "shaft_deg_from_drive_origin": 6.849976,
+  "reference_scope": "本次步进驱动的编码器坐标系。驱动重置计数后需重新对齐机械基准。",
+  "existing_controller_zero_raw": 1241,
+  "offset_from_existing_zero_counts": 6,
+  "controller_shaft_display_deg": 0.03,
+  "running_application": "C5APP,1,DE192FDB,43672",
+  "rcc_reset_flags": "0x0C000000",
+  "local_start": "2026-11-18T22:04:12.145+08:00",
+  "local_end": "2026-11-18T22:04:16.416+08:00",
+  "board_elapsed_ms": 4295,
+  "read_count": 22,
+  "observed_range_raw": [
+    1247,
+    1247
+  ],
+  "stepper_phase": 10,
+  "driver_flags": 3,
+  "drive_error": 0,
+  "sent_rpm_start_end": [
+    0,
+    0
+  ],
+  "drive_configuration_pulses_per_revolution": 3200,
+  "wheels_active": false,
+  "balance_running": false,
+  "capture": {
+    "tools": "Python 3.12.14 / Bleak 3.1.0 / HC-08",
+    "queries": [
+      "C5:INFO",
+      "C5:ROLL?",
+      "C5:F407?",
+      "C5:BAL?"
+    ],
+    "columns": [
+      "board_uptime_ms",
+      "shaft_raw"
+    ],
+    "samples": [
+      [
+        272462,
+        1247
+      ],
+      [
+        272671,
+        1247
+      ],
+      [
+        272877,
+        1247
+      ],
+      [
+        273070,
+        1247
+      ],
+      [
+        273287,
+        1247
+      ],
+      [
+        273488,
+        1247
+      ],
+      [
+        273682,
+        1247
+      ],
+      [
+        273872,
+        1247
+      ],
+      [
+        274065,
+        1247
+      ],
+      [
+        274268,
+        1247
+      ],
+      [
+        274472,
+        1247
+      ],
+      [
+        274666,
+        1247
+      ],
+      [
+        274891,
+        1247
+      ],
+      [
+        275097,
+        1247
+      ],
+      [
+        275310,
+        1247
+      ],
+      [
+        275504,
+        1247
+      ],
+      [
+        275742,
+        1247
+      ],
+      [
+        275931,
+        1247
+      ],
+      [
+        276137,
+        1247
+      ],
+      [
+        276340,
+        1247
+      ],
+      [
+        276533,
+        1247
+      ],
+      [
+        276757,
+        1247
+      ]
+    ]
+  }
+}

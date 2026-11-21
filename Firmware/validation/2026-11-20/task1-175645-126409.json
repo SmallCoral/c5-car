@@ -1,0 +1,24 @@
+{
+  "firmware_crc": "4F66D6F0",
+  "board": {
+    "page": 3,
+    "item": 0,
+    "notice": 0,
+    "phase": 8,
+    "drive_flags": 3,
+    "error": 0,
+    "running": 1,
+    "wheels": 0,
+    "now": 140616,
+    "start": 126409,
+    "count": 420,
+    "x": 399,
+    "camera_flags": 0,
+    "shaft": -28179,
+    "level": -26991
+  },
+  "finished_ms": 7940,
+  "event_elapsed_ms": 0,
+  "rows": 420,
+  "data": "Firmware/validation/2026-11-20/task1-175645-126409.csv"
+}

@@ -30,6 +30,8 @@ enum menu_action contest_key(struct contest_menu *m, enum key_id key)
 		else if (key == KEY_MODE)
 			return m->item == EVENT_POSITION && m->notice == NOTICE_TRAVEL ?
 			       MENU_RELEVEL : MENU_START_EVENT;
+		else if (m->item == EVENT_LAP && key == KEY_NEXT)
+			return MENU_LAP_SPEED;
 		else if (m->item == EVENT_OFFSET) {
 			int next = m->target_cm + (key == KEY_OK ? 1 : -1);
 			if (next >= -5 && next <= 5)
@@ -58,6 +60,25 @@ enum menu_action contest_key(struct contest_menu *m, enum key_id key)
 		break;
 	}
 	return MENU_NONE;
+}
+
+enum contest_notice contest_lap_notice(enum lap_status status, uint32_t elapsed_ms)
+{
+	switch (status) {
+	case LAP_RUNNING:
+		return elapsed_ms >= CONTEST_LAP_LIMIT_MS ? NOTICE_TIMEOUT : NOTICE_NONE;
+	case LAP_DONE:
+		return elapsed_ms <= CONTEST_LAP_LIMIT_MS ? NOTICE_FINISHED : NOTICE_TIMEOUT;
+	case LAP_TIMEOUT:
+		return NOTICE_TIMEOUT;
+	case LAP_CANCELLED:
+		return NOTICE_STOPPED;
+	case LAP_DRIVE:
+	case LAP_ENCODER:
+		return NOTICE_DRIVE;
+	default:
+		return NOTICE_LINE;
+	}
 }
 
 int contest_ball_mm(int raw_x)

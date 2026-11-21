@@ -39,6 +39,7 @@ static void test_lap_and_marker(void)
 	struct lap lap;
 	struct gray_reading gray = marker();
 
+	assert(lap_start_surface(&gray) == LAP_START_MARKER);
 	assert(lap_start(&lap, &gray, 0, 4, 4, 0, false));
 	for (int i = 0; i < 10; i++)
 		tick(&lap, gray, 10, 10);
@@ -64,6 +65,7 @@ static void test_lap_and_marker(void)
 	assert(!lap.wheel[0].pwm && !lap.wheel[1].pwm && !lap.wheel[0].target);
 	assert(!lap_update(&lap, &gray, lap.updated_at + 10, 0, 0));
 	gray = line(0);
+	assert(lap_start_surface(&gray) == LAP_START_NARROW);
 	assert(lap_start(&lap, &gray, 3000, 100, 100, 1, true));
 	assert(!lap.armed && !lap.departed && !lap_progress(&lap));
 	assert(!lap.wheel[0].integral && !lap.wheel[1].pwm);
@@ -72,6 +74,86 @@ static void test_lap_and_marker(void)
 	assert(lap.status == LAP_RUNNING && lap.wheel[0].cps > 0);
 	lap_stop(&lap, LAP_CANCELLED);
 	assert(!lap.wheel[0].pwm && !lap.wheel[1].target);
+}
+
+static void test_distance_lap(void)
+{
+	struct lap lap;
+	struct gray_reading lost = { .status = GRAY_LOST };
+	struct gray_reading gray = line(0);
+	struct gray_reading partial = gray;
+	partial.count = 3;
+	partial.line = partial.black = 0x1c;
+
+	/* SW2 samples the two starting counts independently, including near wrap. */
+	assert(lap_start_distance(&lap, &lost, 2000, UINT32_MAX - 100U, 513U, LAP_RACE_LEVEL, LAP_DISTANCE_COUNTS));
+	assert(lap.status == LAP_RUNNING && lap.from_a && lap.departing && !lap_progress(&lap));
+	for (int i = 0; i < 8; i++)
+		tick(&lap, lost, 3, 3);
+	assert(lap.wheel[0].target > 0 && lap.wheel[1].target > 0);
+	tick(&lap, gray, 3, 3);
+	assert(!lap.departing);
+	while (lap.status == LAP_RUNNING) {
+		uint32_t progress = lap_progress(&lap);
+		/* Both legacy stop markers occur well inside their recognition windows. */
+		struct gray_reading input = progress >= 35000 && progress < 35120 ? marker() :
+			progress >= 41100 && progress < 41250 ? partial : gray;
+
+		tick(&lap, input, 36, 24);
+		if (lap_progress(&lap) < LAP_DISTANCE_COUNTS)
+			assert(lap.status == LAP_RUNNING);
+	}
+	assert(lap.status == LAP_DONE && !lap.armed && !lap.marker_hits);
+	assert(lap_progress(&lap) >= LAP_DISTANCE_COUNTS && lap_progress(&lap) < LAP_DISTANCE_COUNTS + 30U);
+	assert(!lap.wheel[0].target && !lap.wheel[1].target && !lap.wheel[0].pwm && !lap.wheel[1].pwm);
+	assert(!lap_update(&lap, &gray, lap.updated_at + 10, 0, 0));
+
+	/* A new start anywhere on the encoder counters has a new origin. */
+	gray = marker();
+	assert(lap_start_distance(&lap, &gray, 17000, 55000, 38000, LAP_FAST_LEVEL, LAP_DISTANCE_COUNTS));
+	assert(lap.departing && lap.from_a && !lap_progress(&lap));
+	tick(&lap, line(0), 10, 10);
+	assert(!lap.departing && lap.status == LAP_RUNNING);
+	for (int i = 0; i < 15; i++)
+		tick(&lap, lost, 10, 10);
+	assert(lap.status == LAP_NO_LINE && !lap.wheel[1].pwm);
+
+	assert(!lap_start_distance(&lap, &lost, 0, 0, 0, LAP_RACE_LEVEL, 0));
+	assert(lap_start_distance(&lap, &lost, 0, 0, 0, LAP_RACE_LEVEL, LAP_DISTANCE_COUNTS));
+	for (unsigned int i = 0; i < LAP_DEPART_TIMEOUT_MS / 10; i++)
+		tick(&lap, lost, 2, 2);
+	assert(lap.status == LAP_NO_LINE && !lap.wheel[0].pwm);
+}
+
+static void test_distance_finish_speed(void)
+{
+	struct lap lap;
+	struct gray_reading gray = line(0);
+	unsigned int normal = 0, blending = 0, cutoff = 0;
+
+	assert(lap_start_distance(&lap, &gray, 0, 0, 0, LAP_RACE_LEVEL, LAP_DISTANCE_COUNTS));
+	assert(lap.from_a && !lap.departing);
+	while (lap.status == LAP_RUNNING) {
+		int previous = lap.base_target;
+		tick(&lap, gray, (lap.wheel[0].target + 50) / 100,
+		     (lap.wheel[1].target + 50) / 100);
+		uint32_t counts = lap_progress(&lap);
+
+		if (counts >= LAP_APPROACH_COUNTS && counts <= LAP_DISTANCE_COUNTS - LAP_FINISH_BLEND_COUNTS) {
+			assert(lap.base_target > 2400);
+			normal++;
+		}
+		if (counts > LAP_DISTANCE_COUNTS - LAP_FINISH_BLEND_COUNTS && counts < LAP_DISTANCE_COUNTS) {
+			assert(lap.base_target >= previous - LAP_DECEL_CPS_S / 100);
+			if (lap.base_target > 1500 && lap.base_target < 2300)
+				blending++;
+			if (counts + 30 >= LAP_DISTANCE_COUNTS) {
+				assert(lap.base_target >= LAP_FINISH_CPS && lap.base_target < LAP_FINISH_CPS + 40);
+				cutoff++;
+			}
+		}
+	}
+	assert(lap.status == LAP_DONE && normal && blending && cutoff);
 }
 
 static void test_steering_and_speed(void)
@@ -120,6 +202,7 @@ static void test_failures(void)
 	struct gray_reading lost = { .status = GRAY_LOST };
 	struct gray_reading split = { .status = GRAY_SPLIT, .count = 2, .groups = 2 };
 
+	assert(lap_start_surface(&lost) == LAP_START_UNALIGNED);
 	assert(!lap_start(&lap, &lost, 0, 0, 0, 0, false));
 	assert(lap.status == LAP_NOT_READY && !lap.wheel[0].pwm);
 	assert(lap_start(&lap, &gray, 0, 0, 0, 0, false));
@@ -615,6 +698,8 @@ static void test_probe_to_motor_direction(void)
 int main(void)
 {
 	test_lap_and_marker();
+	test_distance_lap();
+	test_distance_finish_speed();
 	test_steering_and_speed();
 	test_failures();
 	test_wrap_and_controls();
@@ -632,6 +717,6 @@ int main(void)
 	test_race_speed_and_centering();
 	test_fitted_wheel_mapping();
 	test_probe_to_motor_direction();
-	puts("PASS: lap marker gating, PD direction, wheel PI, loss/stall/timeout, wrap and controls");
+	puts("PASS: distance and marker finishes, terminal speed, PD, PI, loss/stall/timeout, wrap and controls");
 	return 0;
 }

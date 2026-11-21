@@ -1,0 +1,132 @@
+{
+  "date_local": "2026-11-18",
+  "timezone": "Asia/Shanghai",
+  "base_commit": "83bb6c033642931d708ef6c4b30522e212adbe2e",
+  "installed_debug": {
+    "bytes": 46232,
+    "crc32": "00033118",
+    "sha256": "b0b486b698bdb22187e19d25fa4d56d5b9eaabbe79fd99b9589cbc536e893d64"
+  },
+  "release_build": {
+    "bytes": 40620,
+    "crc32": "3CF1A4B3",
+    "sha256": "c7227ccd9def44cbbe64c05b66a45363d2df4f64f24b0caa7c35755d3e441fa7"
+  },
+  "tools": {
+    "cmake": "4.3.1",
+    "target_compiler": "STM32 arm-none-eabi-gcc 14.3.1",
+    "python": "3.12.14",
+    "bleak": "3.1.0"
+  },
+  "verification_commands": [
+    "cmake --build Firmware/build/host",
+    "ctest --test-dir Firmware/build/host --output-on-failure",
+    "python -m unittest discover -s Firmware/tests -p 'test_*.py'",
+    "cmake --build Firmware/build/debug",
+    "cmake --build Firmware/build/release",
+    "cmake --build Firmware/build/debug --target wireless_flash"
+  ],
+  "host_result": {
+    "ctest": 9,
+    "python": 17,
+    "checks": [
+      "左右短按、长按一次、组合键、停止后松开不点动",
+      "首次使能、双向往返、每次 16 脉冲、到位抱持",
+      "连按、跨零、同一绝对目标重试、受外力移位后按新轴位起步、限位与驱动异常"
+    ]
+  },
+  "installation": {
+    "previous": "DE192FDB",
+    "app_readback": "C5APP,1,00033118,46232",
+    "support_confirmed_by_operator": true,
+    "wireless_session_seconds": 160.5,
+    "wireless_session_retries": 18,
+    "initial_ble_reconnect": true
+  },
+  "manual_test": {
+    "operator_confirmed": "已左一次、右一次。其后单独短按 SW3 一次。",
+    "start_local": "2026-11-18T22:46:38.331+08:00",
+    "end_local": "2026-11-18T22:48:30.236+08:00",
+    "configured_pulses_per_turn": 3200,
+    "encoder_counts_per_turn": 65536,
+    "requested_step_deg": 1.8,
+    "microsteps_per_press": 16,
+    "first_left_held": {
+      "ms": 47172,
+      "steps": -1,
+      "origin": -679,
+      "target": -1004,
+      "actual": -983,
+      "flags": 3,
+      "err": 0
+    },
+    "first_grid_return_held": {
+      "ms": 53349,
+      "steps": 0,
+      "origin": -679,
+      "target": -676,
+      "actual": -679,
+      "flags": 3,
+      "err": 0
+    },
+    "operator_button_series": {
+      "min_observed_index": -11,
+      "max_observed_index": 4,
+      "comment": "首次现场观察窗口含多次点按，因此另外记录了一次独立 SW3 短按。"
+    },
+    "isolated_sw3": {
+      "before": {
+        "ms": 127170,
+        "steps": -1,
+        "origin": 351,
+        "target": 20,
+        "actual": 19,
+        "flags": 3,
+        "err": 0
+      },
+      "after": {
+        "ms": 128834,
+        "steps": 0,
+        "origin": 351,
+        "target": 348,
+        "actual": 355,
+        "flags": 3,
+        "err": 0
+      },
+      "stable_queries_before": 11,
+      "stable_queries_after": 10,
+      "measured_encoder_delta": 336,
+      "measured_shaft_deg": 1.845703,
+      "offset_from_this_jog_origin_counts": 4
+    },
+    "drive_phase": 10,
+    "drive_flags": 3,
+    "drive_errors": [
+      0
+    ],
+    "drive_uart_final": "C5SLINK,1,128970,0,0,0,0,0,0",
+    "wheel_drive": [
+      0
+    ],
+    "final_map": -1,
+    "final_jog": {
+      "ms": 128924,
+      "state": 3,
+      "steps": 0,
+      "origin": 351,
+      "target": 348,
+      "actual": 355,
+      "limited": 0,
+      "flags": 3,
+      "err": 0
+    },
+    "final_auto_running": 0
+  },
+  "horizontal_calibration": {
+    "saved_level_raw": 1247,
+    "relative_to": "校准当次驱动的编码器坐标系",
+    "file": "pipe-level-2204.json",
+    "firmware_level_marked_during_lock": false
+  },
+  "scope": "点动角为电机轴角。水管倾角及冷启动自动寻球行程未在本次按键验证中测量。"
+}

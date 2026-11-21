@@ -5,7 +5,7 @@
 
 ## 1. 构建与烧录
 
-当前板已安装无线升级引导程序。日常从项目根目录执行 `./Firmware/flash-wireless.ps1`，完整说明见[蓝牙无线烧录](wireless-update.md)。
+当前板已安装无线升级引导程序。日常构建 Debug 后从项目根目录执行 `./Firmware/flash-jlink.ps1`。脚本使用 J-Link Commander 的 `-NoGui 1` 参数，通过 SWD 烧录并校验应用。需要通过 HC-08 更新时见[蓝牙无线烧录](wireless-update.md)。
 
 首次安装新板或修复引导程序时，从[固件入口](../../Firmware/README.md)构建合并包。当前本机 J-Link 序列号为 `69730331`，在项目根目录执行：
 
@@ -34,6 +34,8 @@ STM32_Programmer_CLI -c port=JLINK sn=69730331 -w Firmware/build/debug/first_ins
 | DIR / MAP | 反转下次启动方向；LAP 切换安装方向 A/B；GRAY 不动作 | 先停止 |
 | PWR / SPD / LVL / B/W | 普通轮 PWM 10/20/30/45%，步进 30/60/90 RPM，LAP 800/1800/2200/3300/4600 CPS。GRAY 切换黑线/白线目标，ALL 档位见固件说明 | 先停止 |
 | TASK | LAP、MONITOR、LEFT、RIGHT、BOTH、STEPPER、ALL、GRAY 循环 | 先停止 |
+
+BALANCE 页中，SW4 和 SW3 分别对应 LEFT 和 RIGHT。短按并松开一次，电机轴逆时针或顺时针点动 1.8°。长按 0.7 s 分别切换 MAP 和标记水平 ZERO。自动稳球时先按任意键停车，再进行点动。[BALANCE 页操作](../../Firmware/README.md)
 
 LEFT/RIGHT 大数字是上电后的原始正交计数，`/S` 是每秒计数；并非 RPM。
 标题右侧两个小点分别显示该路 A/B 的瞬时输入电平。

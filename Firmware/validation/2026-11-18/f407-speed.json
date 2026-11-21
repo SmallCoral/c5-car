@@ -1,0 +1,194 @@
+{
+  "date_local": "2026-11-18",
+  "timezone": "Asia/Shanghai",
+  "base_commit": "83bb6c033642931d708ef6c4b30522e212adbe2e",
+  "tools": {
+    "cmake": "cmake version 4.3.1",
+    "arm_gcc": "arm-none-eabi-gcc (GNU Tools for STM32 14.3.rel1.20251027-0700) 14.3.1 20250623",
+    "python": "3.12.14",
+    "bleak": "3.1.0"
+  },
+  "installed_debug": {
+    "bytes": 41420,
+    "sha256": "bc2f5fb6d366c2807f569c5a9a199bcbdcb9506f9dbc8f76d5dde55038a068c1",
+    "crc32": "282AB8C3"
+  },
+  "built_release": {
+    "bytes": 36372,
+    "sha256": "f6cc9a518444b1b4a606df7093f281d9bd58f3b9096476e756ce999908f07bfa",
+    "crc32": "3681BFA1"
+  },
+  "saved_ota": {
+    "bytes": 41452,
+    "sha256": "e26ca97d34ca5a7ae9c63bb606917855fc243f68dd2e12c8a76bf6d5f5a9f233",
+    "crc32": "21F50C00"
+  },
+  "archive_reference": {
+    "upstream_zip": "26H 平衡球装置 天空星F4.zip",
+    "upstream_zip_sha256": "5539b7c1d03ba859750657405ab61d336136180891c71ab6f60db3450ddbc81a",
+    "upstream_balance_c_sha256": "e57f00888f7dfb3c03ef7dc20c9720d031bee46979bc059e42ca4e04b734660b",
+    "port_core_sha256": "b9ed820750f67bb30beec1b18643bd130db24b9583e41ab7b3ff20794e9b0ea2",
+    "core_profile": 4,
+    "inputs": "Recorded direct camera X values on the manual-roll-1 path; synthetic in-range shaft trajectory and two-frame losses. Both executables use the C5 measured center offset and derivative startup seed.",
+    "simulation_ms": 36000,
+    "ticks_5ms": 7200,
+    "outer_updates": 1800,
+    "inner_updates": 2400,
+    "compared": [
+      "native beam target",
+      "estimated beam angle",
+      "signed integer rpm"
+    ],
+    "different_updates": 0,
+    "signed_rpm_minmax": [
+      -42,
+      42
+    ],
+    "zero_rpm_updates": 43,
+    "normalized_output_sha256": "8b8083b95ce1696da4820b4c9d1d71e93b6d964a5bf7f2223710c815082d7615"
+  },
+  "physical_marker_replay": {
+    "right-confirmed-repowered": {
+      "direct": 39,
+      "trusted": 21,
+      "unresolved": 18,
+      "shown_left_half": 0,
+      "shown_at_center": 0,
+      "shown_right_half": 21,
+      "trusted_permille_range": [
+        1000,
+        1000
+      ]
+    },
+    "left-confirmed-repowered": {
+      "direct": 27,
+      "trusted": 27,
+      "unresolved": 0,
+      "shown_left_half": 27,
+      "shown_at_center": 0,
+      "shown_right_half": 0,
+      "trusted_permille_range": [
+        0,
+        0
+      ]
+    },
+    "right-docked": {
+      "direct": 7,
+      "trusted": 7,
+      "unresolved": 0,
+      "shown_left_half": 0,
+      "shown_at_center": 0,
+      "shown_right_half": 7,
+      "trusted_permille_range": [
+        987,
+        1000
+      ]
+    },
+    "physical-center-1901": {
+      "direct": 36,
+      "trusted": 36,
+      "unresolved": 0,
+      "shown_left_half": 0,
+      "shown_at_center": 36,
+      "shown_right_half": 0,
+      "trusted_permille_range": [
+        500,
+        500
+      ]
+    },
+    "left_before_roll": {
+      "direct": 221,
+      "trusted": 96,
+      "unresolved": 125,
+      "shown_left_half": 96,
+      "shown_at_center": 0,
+      "shown_right_half": 0,
+      "trusted_permille_range": [
+        0,
+        62
+      ]
+    }
+  },
+  "commands": [
+    "cmake --build Firmware/build/host",
+    "ctest --test-dir Firmware/build/host --output-on-failure",
+    "cmake --build Firmware/build/debug",
+    "cmake --build Firmware/build/release",
+    "python -m unittest discover -s Firmware/tests -p 'test_*.py'",
+    "./Firmware/flash-wireless.ps1",
+    "Read-only post-flash C5:INFO, C5:BAL?, C5:F407?, C5:TIME?, C5:BALL?, C5:SLINK?"
+  ],
+  "host_tests": {
+    "ctest_passed": 9,
+    "python_unittest_passed": 17,
+    "wire_checks": [
+      "F6 01 0018 00 00: physical right, 24 rpm CCW",
+      "F6 00 0010 00 00: CW at 16 rpm",
+      "zero speed before travel limit",
+      "late reply brakes via FE while energized"
+    ]
+  },
+  "speed_protocol": {
+    "mode": "Emm F6, address 1, acceleration 0, sync disabled",
+    "positive_native_speed": "CCW raises physical right",
+    "negative_native_speed": "CW",
+    "f407_target_x": 160,
+    "camera_center_x": 135,
+    "physical_left_x": 274,
+    "primary_right_x": 15,
+    "alternate_right_x": 290,
+    "local_positive": "physical right"
+  },
+  "ota_transfer_seconds": 155.2,
+  "ota_retries": 20,
+  "post_flash": {
+    "identity": "C5APP,1,282AB8C3,41420",
+    "samples": 8,
+    "first": "2026-11-18T21:01:21.408498+08:00",
+    "last": "2026-11-18T21:01:25.429577+08:00",
+    "wheel_drive": [
+      0
+    ],
+    "active": [
+      0
+    ],
+    "driver_flags": [
+      2
+    ],
+    "driver_phases": [
+      1
+    ],
+    "pulses_per_rev": [
+      3200
+    ],
+    "actual_encoder": [
+      -19551
+    ],
+    "commanded_rpm": [
+      0
+    ],
+    "operation_clock": [
+      0
+    ],
+    "camera_raw_x": [
+      261,
+      262
+    ],
+    "camera_signed_offset": [
+      -127,
+      -126
+    ],
+    "step_uart_diagnostics": {
+      "ms": 53687,
+      "framing": 0,
+      "noise": 0,
+      "overrun": 0,
+      "parity": 0,
+      "last_bad_phase": 0,
+      "last_bad_command": 0
+    }
+  },
+  "physical_run_performed": false,
+  "settling_time_ms": null,
+  "limits": "The user requested a source port with stationary verification. The old ratio 0.039 is unmeasured on this linkage. Rotation, settling time, and sustained regulation on the physical assembly have not been tested on this image."
+}

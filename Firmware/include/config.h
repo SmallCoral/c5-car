@@ -42,14 +42,18 @@
 /* Provisional window for the 6.142 m course (~43k counts/lap), not mm. */
 #define LAP_ARM_COUNTS		30000U
 #define LAP_MAX_COUNTS		60000U
-/* First successful measured lap: 43208 counts. Slow down before its A zone. */
+/* Competition: median of four measured A crossings at the default gear. */
+#define LAP_DISTANCE_COUNTS	41800U
+#define LAP_FINISH_BLEND_COUNTS	900U
+#define LAP_FINISH_CPS		1100
+/* Optical-marker diagnostic: approach slowly to sample the crossbar. */
 #define LAP_APPROACH_COUNTS	39000U
 #define LAP_APPROACH_CPS		1100
 #define LAP_PARTIAL_MIN_COUNTS	41000U
 #define LAP_PARTIAL_MAX_COUNTS	47000U
 #define LAP_PARTIAL_CHANNELS	3U
 #define LAP_PARTIAL_HOLD_MS	30U
-/* Two clockwise R=0.5 m arcs. Counts are referenced to a detected A start. */
+/* Two clockwise R=0.5 m arcs. Counts are referenced to the start at A. */
 #define LAP_HALF_COURSE_COUNTS	21500
 #define LAP_BEND_BRAKE_COUNTS	9800
 #define LAP_BEND_ENTRY_COUNTS	10500

@@ -9,7 +9,7 @@ v1 为前 27 列，v2 为前 30 列，v3 为前 37 列，v4 为前 47 列，v5 �
 | --- | --- |
 | `tag`, `version` | 固定 `C5`、`6` |
 | `ms`, `seq` | MCU 启动毫秒和发送序号，均为 uint32，可回绕 |
-| `task` | 0 MONITOR；1 LEFT；2 RIGHT；3 BOTH；4 STEPPER；5 ALL（两轮与步进连续联动）；6 GRAY（只观察灰度）；7 LAP（默认页面，单圈循线） |
+| `task` | 0 MONITOR、1 LEFT、2 RIGHT、3 BOTH、4 STEPPER、5 ALL（两轮与步进连续联动）、6 GRAY、7 LAP（单圈循线）、8 BALANCE（停车稳球调试模式） |
 | `running` | 应用当前是否在执行任务，不等同于实测机械运动 |
 | `duty_permille` | 普通轮测试的 PWM 请求，带方向，单位千分之一；步进、LAP 为 0，LAP 的两轮输出见专用字段 |
 | `left_count`, `right_count` | 当前实车左 J6/TIM2、右 J4/TIM5 的原始 x4 正交计数，以带符号 32 位显示；旧记录映射不同，需结合当时源码 |
@@ -42,14 +42,14 @@ v1 为前 27 列，v2 为前 30 列，v3 为前 37 列，v4 为前 47 列，v5 �
 | `lap_left_target`, `lap_right_target` | 共同前进目标加/减差速后的左右轮目标，编码器计数/秒；不是 RPM 或 m/s |
 | `lap_left_cps`, `lap_right_cps` | 根据当前 MAP 归一化为前进为正、低通滤波后的双轮反馈，计数/秒；原始符号仍保留在 `left_cps/right_cps` |
 | `lap_ms`, `lap_counts` | 最近一次 LAP 的运行毫秒、两轮正向编码器行程平均值，停止后保留；行程未换算为毫米 |
-| `lap_armed` | 已稳定离开起点、运行至少 2 s、平均行程至少 30000 计数，允许将后续横线识别为终点 |
+| `lap_armed` | 设备调试 LAP 页在离开起点、运行满 2 s 且行程达到 30000 计数后启用横线检测。比赛第二题按里程停车，此位为 0 |
 | `lap_position` | 转向使用的低通灰度位置，1000 单位/探头间距；短暂失效时保留最后位置，需结合灰度状态 |
 | `lap_position_rate` | 滤波位置变化率，位置单位/秒；非窄线、重新见线的首个周期及停止时清零 |
 | `lap_steering` | 实际施加的半轮速差目标，CPS；正值左目标更快，负值右目标更快，停止清零 |
 | `lap_differential` | `(lap_left_cps - lap_right_cps) / 2`，CPS；编码器转向反馈，未标定为 rad/s，停止后保留最后样本 |
 | `lap_base_target` | 两轮共同速度目标，CPS。4600 档加速斜率为 4300 CPS/s，其余档为 3200 CPS/s，各档减速斜率为 8000 CPS/s。外轮触及目标上限时进一步下调共同目标，停车清零 |
 | `lap_control_ms` | 最近一次 LAP 控制调用的实际时间间隔；由 MCU 时钟测量，停止后保留 |
-| `lap_departing` | 1 为从起点标记受限直行驶离，屏幕显示 LEAVE A；停止时为 0 |
+| `lap_departing` | 1 表示起步阶段低速直行。比赛第二题在等待首次识别纵向窄线时显示 FIND LINE，设备调试 LAP 页驶离起点标记时显示 LEAVE A |
 | `lap_marker_hits` | `lap_armed=1` 后标记候选的上升沿次数，包含预计终点窗口内的三路候选；未满足保持时间的候选也计数，停止后保留 |
 | `lap_marker_peak` | `lap_armed=1` 后灰度目标覆盖通道数的最大值，停止后保留，用于判断是否漏采 A |
 
@@ -65,8 +65,14 @@ ALL 中 `duty_permille` 与 `step_target_rpm` 可同时非零，分别表示两�
 命令 `C5:LAP\n` 先停止再进入 LAP 页，`monitor.py --lap` 使用此入口，不通过蓝牙发起运动；实物 RUN 启动。LAP 固定检测黑线，不继承 GRAY 页的白线目标。
 Debug 另有 `C5:CHECK\n`，只在停止时执行一次固定 15% 输出、1.5 s 后停止的架空检查，独立于黑线；Release 不提供此命令。
 `C5:PERF\n` 返回独立文本 `C5PERF,1,<max_loop_ms>,<max_display_ms>,<max_telemetry_ms>`；它不是 `C5,6` 的 56 列遥测帧，诊断接收器单独处理。
+
+`C5:BALL?\n` 返回 `C5BALL,1,frames,rejected,sequence,flags,age,x,state,permille,updates,shown,shown_permille,uart_errors,rx_drops`。位置 0、500、1000 分别对应实物左端、中点、右端。`state` 的 0 为离线，1 为未见球，2 为可信直接观测，3 为坐标待确认。仅 2 有实时位置。`shown` 和 `shown_permille` 是 BALANCE 或 LAP 最近完成绘制的状态和位置。固件 `78F0CB6C` 起，`shown=4` 表示最多 2 秒前的可信位置，屏上标为 `LAST SEEN` 并画空心黄圈。`updates=0` 表示尚未完成水管绘制。板上 `EB453865` 的 640 像素标定中，`shown_permille` 使用实测五点显示标尺，`L、-5、O、+5、R` 分别为 0、263、500、762、1000。LCD 可从三次连续且位置相邻的直接观测重新取得静止球位，因此 `state=3` 时也可能出现 `shown=2`。控制环使用 `state` 和实物 O 对应的偏差，640 像素图像按 2:1 换算到原控制尺度。末两项来自相机 UART5，运动轨迹的锁定状态见 `C5:ROLL?`。
 LAP 的持续运行由独立 90 s 期限限制，步进离线不阻止单独轮循线，轮驱动硬件保护继续生效。
 安装方向、黑白校准见[灰度联调](../how-to/grayscale-check.md)，首圈操作见[循线一圈](../how-to/line-following-lap.md)。
+
+## 比赛菜单
+
+`C5:MENU` 停止运动并回到比赛主页。`C5:MENU?` 只读，返回 `C5MENU,1,page,item,notice,leg,running,wheels,elapsed_ms`。page 的 0～5 依次为设备调试页、比赛主页、题目详情、运行、结果、调试列表。item 的 1～6 对应四道基本题和两道发挥题。在第一题运行页，leg 按路线依次为 3（确认水平）、4（向 O）、0（向右 5 cm）、1（折返左 5 cm）、2（保持左点）。详情页确认启动时开始计时。兼容查询 `C5:ROLL?` 中的 boot_pending 为 0。[阶段枚举](../../Firmware/include/contest.h)
 
 ## 步进状态
 
@@ -75,13 +81,44 @@ LAP 的持续运行由独立 90 s 期限限制，步进离线不阻止单独轮�
 | 0 | BOOT | 等待驱动启动 |
 | 1 | IDLE | 已完成停止/失能，轮询反馈 |
 | 2 | ENABLE | 等待使能应答 |
-| 3 | SPEED | 等待 F6 连续速度命令应答 |
-| 4 | MOVING | 持续运动，轮询状态/速度/位置 |
+| 3 | SPEED | 等带转速和限位终点的 FD 定位命令应答 |
+| 4 | MOVING | 执行有限行程，轮询状态、速度和位置 |
 | 5 | STOP | 等待立即停止应答 |
 | 6 | DISABLE | 等待失能应答 |
 | 7 | OFFLINE | 下次仅尝试停止/失能恢复，不自动重发运动 |
+| 8 | POSITION | BALANCE 使能后，用 FD 发送绝对轴位，并用 43、3A 轮询轴位和驱动状态 |
+| 9 | BRAKE | 停止轴运动，保留驱动使能 |
+| 10 | PARKED | 继续读编码器和驱动标志，电机抱持连杆 |
+| 11 | LATCH | 正在使能抱持并读取参考轴位 |
+| 12 | BAL_SPEED | 同学控制环请求转速，非零转速使用限位 FD，轮询 43 轴位、3A 状态，故障发 FE 抱停 |
 
-本地错误码：`E0` 应答超时、`E1` TX 队列拒绝、`E3` 运动期间 UART 接收损坏。
+`C5:BAL?` 返回 `C5BAL,1,ms,state,active,leveled,map,ball_state,ball_permille,velocity,target_cd,shaft_cd,zero_raw,position_raw,pulses_per_rev,phase,error,flags,wheels,centered_ms`。F407 稳球时，`target_cd` 为管角目标折算的电机轴角，`shaft_cd` 是参考轴位以来的实测轴角，单位均为 0.01°。`leveled` 表示有软件参考轴位。球速的单位是显示管长千分比/秒，用于稳态显示。状态 0～7 为待启动、参考就绪、正向往返、返回、等球、调节、稳定、驱动错误。状态 8 和 12 用于手动试抬，11 用于退回起点。
+
+`C5:BAL` 停车并进入该页。在 BALANCE 调试页，`C5:HOLD` 和面板 SW2 从当前位置开始滚动寻球。启动等候相机有数据包和 15 ms 内的编码器反馈。`C5:MAP+` 为默认安装方向，`C5:MAP-` 翻转稳球纠偏及首次倾斜方向。任意键或 `!` 取消本次启动并抱停。车轮保持 `wheels=0`。
+
+`C5:ROLL?` 返回 `C5ROLL,1,ms,reset_flags,boot_pending,state,leg,origin_raw,lower_raw,upper_raw,lock_frames,lock_dx,lock_px_s,lock_ms`。13 表示正在滚动寻球，14 表示到达本次搜索端点，等待球开始滚动，15 表示相机断流期间原位保持。相机恢复后继续判断钢球轨迹。锁定时间从本次寻球开始计，坐标差和速度按实物左负右正。总计时 `C5:TIME?` 还包括启动抱持。
+
+`C5:JOG?` 返回 `C5JOG,1,ms,state,steps,origin_raw,target_raw,actual_raw,limited,drive_flags,drive_error`。点动状态依次为 0 待机、1 等待抱持与新轴位、2 定位、3 抱持、4 故障。每一级为电机轴 1.8°，左键为负，右键为正。`limited=1` 表示最近一次按键的目标超出行程。物理水平和两端均由 0x43 同包的多圈位置和单圈绝对角恢复。[实物水平及上下限标定](../../Firmware/validation/2026-11-19/camera640-and-shaft.json)
+
+`C5:LIMIT?` 返回 `C5LIMIT,1,valid,level_raw,highest_raw,lowest_raw,actual_raw`。后三个标定位置与实测位置使用本次驱动上电的多圈计数。物理轴角为 `(actual_raw-level_raw)*360/65536`。仅 valid=1 时接受运动请求。`C5:BAL?` 的 zero_raw 是控制参考，active 和 leveled 都为零时使用 LIMIT 查询物理轴角。
+
+`C5:CAL` 进入手动标定页。`C5:CAL?` 返回 `C5CAL,1,ms,cal,camera_ms,frames,seq,flags,age_ms,x,position,speed,encoder,encoder_ms,phase,drive_flags,drive_error,wheels`。MaixCAM2 V2 的 x 范围为 0～639，position 单位 0.01 cm，speed 单位 0.1 cm/s，两者均有符号。标定程序对 CRC 正确且序号更新的有效实测帧取样，排除预测、异常候选和过期帧。三个机构姿态使用现场确认位置时的驱动编码器，65536 计数为电机轴一圈。
+
+`C5:LOCK` 从 BALANCE 待机页在现有位置使能步进并抱持。水平标定使用 `C5:LEVEL` 或长按 SW3。软件重启后可通过 `C5:LOCK` 恢复抱持。
+
+`C5:F407?` 返回 `C5F407,1,ms,ball_state,raw_x,offset_px,target_beam_cd,estimated_beam_cd,requested_rpm,sent_rpm,speed_loop`。有效偏差按实物左负右正。两个管角的单位为 0.01°。转速按原代码的符号，正为驱动 CCW，负为 CW。最后一项为 1 时速度环运行。主控在 24 ms 应答超时、40 ms 无新编码器反馈或收到损坏数据时先发 FE 停车并保持使能，`flags & 1` 可核对使能。完全失去串口后，主控无法确认 FE 到达驱动。
+
+无直接球位达到 120 ms 时，转速降为零，界面显示 WAIT BALL。3 s 内取得可信新观测会恢复闭环，重新初始化外环差分。连续 3 s 无可信观测时，自动回到本次上电的行程边界内重新寻球，总计时继续。重新取得球位后从零累计连续居中时长。
+
+维护命令 `C5:LEVEL` 记录参考，`C5:TRY` 发约 4° 的有限相对试步，`C5:TILT` 做定角往返，`C5:REST` 以不超过 20 rpm 回到首次记录的起点。未起动时可用 `C5:UP-` 或 `C5:UP+` 选试步方向。`C5:LIFT?` 回复 `C5LIFT,1,cw_sign,origin_valid,origin_raw,lower_raw,upper_raw`。相对试步丢应答后读回轴位。已承托时可发 `C5:FREE` 释放并清除参考。抱持期间升级请求返回 `C5OTA,BEAM HELD`。
+
+兼容查询 `C5:LOOP?` 返回 `C5LOOP,1,ms,demand_cd,shaft_cd,goal_cd,requested_rpm,sent_rpm,motor_uart_errors,motor_rx_drops,motor_timeouts`。速度环运行时 `demand_cd` 和 `goal_cd` 都显示折算的轴角，速度字段为绝对值，带符号速度以 `C5:F407?` 为准。末三项分别是步进串口接收错误、丢字节与命令超时的累计次数。
+
+带驱动串口诊断的固件可查询 `C5:SLINK?`，回复为 `C5SLINK,1,ms,framing,noise,overrun,parity,last_bad_phase,last_bad_command`。四项计数来自 USART6 的帧格式、噪声、接收溢出和校验标志。同一字节可以触发多项标志。末两项记录最近一次接收出错或丢字节时的驱动状态和当时等待应答的命令，命令值为十进制，0 表示当时没有待应答命令。
+
+`C5:TIME?` 返回 `C5TIME,1,operation,counting,elapsed_ms,tracking_ms,steady_ms`。操作编号 1 为稳球，2 为试抬，3 为定角往返，4 为退回。所有毫秒数都从主控接受本次指令时起算，包含初始转轴行程。后两项分别记录首次进入闭环调节和首次通过持续一秒的稳态判定。稳态要求换算后的控制坐标在标定中点 ±1 控制像素、滤波球速不超过显示管长的 6%/s。值为 0 表示本次尚未达到该状态。停车后保留本次结果。
+
+本地错误码包括 `E0` 应答超时、`E1` TX 队列拒绝、`E3` 运动期间 UART 接收损坏、`E4` 超出轴位限制、`E5` 顺时针试步未取得可信的编码器位移。
 驱动非 `02` 应答原样保存；`E2` 也用于堵转标志。
 上电时“已失能所以拒绝停止”的错误，在收到成功失能应答后清除；运动期间错误保持到下次手动启动。
 清除堵转保护、参数存储、回零、X 固件与 Modbus 不属于当前实现。
