@@ -1,0 +1,80 @@
+{
+  "date": "2026-11-07",
+  "queried_utc": "2026-11-07T15:32:56.4680008Z",
+  "url": "https://item.szlcsc.com/268469.html",
+  "http_status": 200,
+  "product": {
+    "theRatio": 10,
+    "productArrange": "编带",
+    "productModel": "BSS138BK,215",
+    "stockNumber": 8268,
+    "encapsulationModel": "SOT-23",
+    "hasStockNow": "yes",
+    "productCycle": "normal",
+    "smtLabel": "SMT扩展库",
+    "isDisplayUsableTransitNum": true,
+    "remark": "N-沟道增强型场效应晶体管 (FET)，采用沟槽 MOSFET 技术，采用小型 SOT23 (TO-236AB) 表面贴装器件 (SMD) 塑料封装",
+    "productUnit": "个",
+    "luceneBreviaryImageUrls": "https://alimg.szlcsc.com/upload/public/product/breviary/20250816/68EE13091A59BBEEF779ACD2BA02F7D3.jpg<$>https://alimg.szlcsc.com/upload/public/product/breviary/20250816/585E9D359B917D21788EFAD23452FEDE.jpg<$>https://alimg.szlcsc.com/upload/public/product/breviary/20250816/94EBCF754C583880DDCAE79CFC0CA45F.jpg",
+    "productMinEncapsulationUnit": "圆盘",
+    "productName": "1个N沟道 耐压:60V 电流:360mA",
+    "returnCouponDesc": [],
+    "productGradePlateId": "1101",
+    "isShowQuotedPriceBtn": false,
+    "validStockNumber": 826,
+    "fileTypeVOList": [
+      {
+        "detailVOList": [
+          {
+            "fileName": "wj316221",
+            "fileUrl": "/upload/public/pdf/source/20181030/C282529_F3827BD90DC7182A7FB3D14B119734AB.pdf"
+          }
+        ],
+        "fileType": "pdf_property"
+      },
+      {
+        "detailVOList": [
+          {
+            "fileName": "全量通用_HF(无卤素)认证(英文版)_Nexperia(安世).pdf",
+            "fileUrl": "/upload/public/pdf/source/20260920/F322A38B15A9714539DB219E436D903A.pdf"
+          },
+          {
+            "fileName": "全量通用_REACH认证(英文版)_Nexperia(安世).pdf",
+            "fileUrl": "/upload/public/pdf/source/20260920/ECC91227BEB4D95081A59A4387F03079.pdf"
+          },
+          {
+            "fileName": "全量通用_ROHS认证(英文版)_Nexperia(安世).pdf",
+            "fileUrl": "/upload/public/pdf/source/20260920/DCB9B7623F4607B24A3AF838749FCFE8.pdf"
+          }
+        ],
+        "fileType": "certification_data_property"
+      }
+    ],
+    "isEnvironment": true,
+    "isReturnCoupon": false,
+    "productType": "场效应管(MOSFET)",
+    "encaptionPrice": 363.9,
+    "minBuyNumber": 1,
+    "minWholeNumber": 3000,
+    "saleRuleGroupId": 10051,
+    "convesionRatio": 10,
+    "productId": "268469",
+    "productGradePlateName": "Nexperia(安世)",
+    "eccnCode": "EAR99",
+    "productWeight": 2.43E-05,
+    "usableTransitNum": 0,
+    "isDisplay": true,
+    "pdfDESProductId": "604CF24FA44125C4296C67311B688FC3",
+    "productCode": "C282529",
+    "breviaryImageUrl": "https://alimg.szlcsc.com/upload/public/product/breviary/20250816/68EE13091A59BBEEF779ACD2BA02F7D3.jpg",
+    "isShowPrice": true,
+    "productMinEncapsulationNumber": 3000,
+    "inEdaWhiteList": false,
+    "productStockStatus": "yes",
+    "productUnsealVendition": "yes"
+  },
+  "price": 0.1213,
+  "gdWarehouseStockNumber": 8260,
+  "jsWarehouseStockNumber": 0,
+  "pageGeneratedAt": "2026-11-07T15:32:44.71Z"
+}

@@ -1,0 +1,63 @@
+{
+  "date": "2026-11-21",
+  "kicad": "10.0.6",
+  "git_base": "83bb6c033642931d708ef6c4b30522e212adbe2e",
+  "source_sha256": {
+    "02_Power.kicad_sch": "8bf6c8de5dccd7e4c953ffb00cee4ff041b5643d65241157ded1144112e169f0",
+    "03_Core_Interface.kicad_sch": "038e0ab2fbca1c7aaba1d04d18ed95ea188466b8985f5a3199fb74fd262a3d4d",
+    "04_Left_Motor.kicad_sch": "b3904b1489bba5d486c1b1baa555fcbc46d4d6ace4c0ece7a8051b85da93aa04",
+    "05_Right_Motor.kicad_sch": "127c94f293488a4580a3ace25a269fb2d0d18e2a3b7df8548e6c7ce7cd7dd768",
+    "06_Module_Power.kicad_sch": "fb62d29cd552b607d060d47357fa92112e20132e34877ba9620d4569d7810887",
+    "07_TFT_Buttons.kicad_sch": "d19bd0d68d3be55b1963d9d4604d87ef8f82e816dd2b8909d2891b1fa9c791e1",
+    "08_Grayscale_Cameras.kicad_sch": "b961b874c76bc7b1fbc038c474057bd3d8ad8a6659e6c8de9a52a98fe6d7289e",
+    "09_Bluetooth_Stepper.kicad_sch": "445df9ddd0cd4c1dae95b0f081a452d9088548a750c159d733181eba16a44a90",
+    "10_Lichee_Interface.kicad_sch": "5a0610b1258a46a714d6b7d0dcb8d7901b0e071bfb602ea98dfbb30dfe1e19ea",
+    "CoralC5-Motor.kicad_pcb": "331477e14b63084ced81a61b438d8dc929ef9729c21d6f1532b9593394dcfd09",
+    "CoralC5-Motor.kicad_sch": "53613ff23585f6b51eb830f6d281d405fab82505d1c052b6e4d823b8bab5c796"
+  },
+  "commands": [
+    {
+      "tool": "kicad-cli.exe",
+      "args": "sch export netlist --format kicadxml -o <snapshot>\\Hardware\\stm32c5a3\\Hardware\\CoralC5-Motor\\docs\\core_netlist.xml <snapshot>\\Hardware\\stm32c5a3\\Hardware\\CoralC5-Core\\CoralC5-Core.kicad_sch",
+      "exit": 0
+    },
+    {
+      "tool": "kicad-cli.exe",
+      "args": "sch export netlist --format kicadxml -o <snapshot>\\Hardware\\stm32c5a3\\Hardware\\CoralC5-Motor\\docs\\netlist.xml <snapshot>\\Hardware\\stm32c5a3\\Hardware\\CoralC5-Motor\\CoralC5-Motor.kicad_sch",
+      "exit": 0
+    },
+    {
+      "tool": "kicad-cli.exe",
+      "args": "sch erc --format json --exit-code-violations -o <snapshot>\\Hardware\\stm32c5a3\\Hardware\\CoralC5-Motor\\docs\\erc.json <snapshot>\\Hardware\\stm32c5a3\\Hardware\\CoralC5-Motor\\CoralC5-Motor.kicad_sch",
+      "exit": 0
+    },
+    {
+      "tool": "python.exe",
+      "args": "<snapshot>\\Hardware\\stm32c5a3\\Hardware\\CoralC5-Motor\\tools\\verify_schematic.py",
+      "exit": 1
+    },
+    {
+      "tool": "kicad-cli.exe",
+      "args": "pcb drc --schematic-parity --format json --exit-code-violations -o <snapshot>\\Hardware\\stm32c5a3\\Hardware\\CoralC5-Motor\\docs\\drc-21.json <snapshot>\\Hardware\\stm32c5a3\\Hardware\\CoralC5-Motor\\CoralC5-Motor.kicad_pcb",
+      "exit": 5
+    }
+  ],
+  "erc": {},
+  "resource_checks": 957,
+  "resource_failures": [
+    "Core schematic unchanged except permitted Git EOL 03_MCU.kicad_sch",
+    "Motor PCB unchanged except permitted Git EOL",
+    "only existing XT60 exact model missing",
+    "all Motor UUID associations retained"
+  ],
+  "drc": {
+    "violations": {
+      "error": 17,
+      "warning": 6
+    },
+    "unconnected_items": {},
+    "schematic_parity": {
+      "warning": 6
+    }
+  }
+}

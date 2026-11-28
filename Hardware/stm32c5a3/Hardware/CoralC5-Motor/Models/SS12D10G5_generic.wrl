@@ -1,0 +1,7 @@
+#VRML V2.0 utf8
+# Generic envelope from SHOU HAN C7431054, not an exact manufacturer assembly.
+Transform { translation 1.889764 0.0 1.259843 children [ Shape { appearance Appearance { material Material { diffuseColor .5 .5 .5 } } geometry Box { size 5.0 2.637795 2.519685 } } ] }
+Transform { translation 1.456693 0.0 3.503937 children [ Shape { appearance Appearance { material Material { diffuseColor .08 .08 .08 } } geometry Box { size 1.535433 1.535433 1.968504 } } ] }
+Transform { translation 0.0 0.0 -1.377953 children [ Shape { appearance Appearance { material Material { diffuseColor .75 .75 .7 } } geometry Box { size 0.511811 0.314961 2.755906 } } ] }
+Transform { translation 1.889764 0.0 -1.377953 children [ Shape { appearance Appearance { material Material { diffuseColor .75 .75 .7 } } geometry Box { size 0.511811 0.314961 2.755906 } } ] }
+Transform { translation 3.779528 0.0 -1.377953 children [ Shape { appearance Appearance { material Material { diffuseColor .75 .75 .7 } } geometry Box { size 0.511811 0.314961 2.755906 } } ] }

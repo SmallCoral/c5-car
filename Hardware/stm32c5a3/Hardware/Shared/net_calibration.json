@@ -1,0 +1,62 @@
+{
+  "date": "2026-10-20",
+  "projects": [
+    {
+      "project": "CoralC5-Core",
+      "numbered_pads_checked": 326,
+      "pad_net_mismatches": 0,
+      "contact_nets_changed": 90,
+      "existing_unrelated_segments_preserved": 68,
+      "current_segments": 86,
+      "peripheral_pin_nets_unchanged": true,
+      "board_geometry_preserved": true,
+      "erc_errors": 0,
+      "erc_warnings": 0,
+      "schematic_parity_issues": 0,
+      "remaining_drc_violations": 4,
+      "unconnected_items": 182
+    },
+    {
+      "project": "CoralC5-Expansion",
+      "numbered_pads_checked": 474,
+      "pad_net_mismatches": 0,
+      "contact_nets_changed": 90,
+      "existing_unrelated_segments_preserved": 0,
+      "current_segments": 0,
+      "peripheral_pin_nets_unchanged": true,
+      "board_geometry_preserved": true,
+      "erc_errors": 0,
+      "erc_warnings": 0,
+      "schematic_parity_issues": 0,
+      "remaining_drc_violations": 1,
+      "unconnected_items": 316
+    }
+  ],
+  "repairs": {
+    "D2.2": {
+      "before": "Net-(D2-A)",
+      "after": "USB_VBUS"
+    },
+    "U2.1_FB": {
+      "before_schematic": "unconnected-(U2-FB-Pad1)",
+      "after_schematic": "+3V3",
+      "pcb_net": "+3V3",
+      "repair": "Added missing junction at schematic coordinates (205.74, 63.5)."
+    }
+  },
+  "numbered_pads_checked": 800,
+  "pad_net_mismatches": 0,
+  "scope": "Custom Core/Expansion signal reassignment and affected fanout rerouting. Incomplete routing and existing footprint clearance issues remain.",
+  "layout_and_unrelated_routing_preserved": true,
+  "edge_order_revision": "C5-EDGE-2",
+  "rerouted_core_signals": [
+    "PD15",
+    "PC6",
+    "PC7",
+    "PC8",
+    "PC9",
+    "PA8",
+    "PA9",
+    "PA10"
+  ]
+}

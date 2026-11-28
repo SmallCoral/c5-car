@@ -1,0 +1,97 @@
+{
+  "date": "2026-11-07",
+  "queried_utc": "2026-11-07T15:32:54.7353546Z",
+  "url": "https://item.szlcsc.com/22114.html",
+  "http_status": 200,
+  "product": {
+    "theRatio": 1,
+    "productArrange": "编带",
+    "productModel": "GRM32ER71E226KE15L",
+    "stockNumber": 52241,
+    "encapsulationModel": "1210",
+    "hasStockNow": "yes",
+    "productCycle": "normal",
+    "smtLabel": "SMT扩展库",
+    "isDisplayUsableTransitNum": true,
+    "remark": "",
+    "productUnit": "个",
+    "luceneBreviaryImageUrls": "https://alimg.szlcsc.com/upload/public/product/breviary/20251022/4E6368E0E4C2BEFA4B86DD9BC63BE38A.jpg<$>https://alimg.szlcsc.com/upload/public/product/breviary/20251022/5F827187A87393FC301E8A5E8AE75CAF.jpg<$>https://alimg.szlcsc.com/upload/public/product/breviary/20251022/45A173838F902C2FACF7274A7452BD79.jpg",
+    "productMinEncapsulationUnit": "圆盘",
+    "productName": "22uF ±10% 25V",
+    "returnCouponDesc": [],
+    "productGradePlateId": "79",
+    "isShowQuotedPriceBtn": false,
+    "isOldBatchClearance": false,
+    "validStockNumber": 52241,
+    "fileTypeVOList": [
+      {
+        "detailVOList": [
+          {
+            "fileName": "wj421341.pdf",
+            "fileUrl": "/upload/public/pdf/source/20230811/6AA9DB9766E5496748A2F980D0C94A94.pdf"
+          }
+        ],
+        "fileType": "pdf_property"
+      },
+      {
+        "detailVOList": [
+          {
+            "fileName": "原材料适用_ROHS认证(英文版)_muRata(村田).zip",
+            "fileUrl": "/upload/public/pdf/source/20260918/F2559BBCBB3CC0510EE27EBE17B82693.zip"
+          },
+          {
+            "fileName": "原材料适用_ROHS认证(英文版)_muRata(村田).zip",
+            "fileUrl": "/upload/public/pdf/source/20260918/34A1C9055F54B8A86494874FAC98E24C.zip"
+          },
+          {
+            "fileName": "PTC陶瓷体_ROHS认证(英文版)_muRata(村田).pdf",
+            "fileUrl": "/upload/public/pdf/source/20231211/0F8290E7DF1A282772E05F66BEF5F35B.pdf"
+          },
+          {
+            "fileName": "镀锡_ROHS认证(英文版)_muRata(村田).pdf",
+            "fileUrl": "/upload/public/pdf/source/20231211/E8B2C7CD41D78126A592241404885AA5.pdf"
+          },
+          {
+            "fileName": "TargetZA_230130_ROHS认证(英文版)_muRata(村田).pdf",
+            "fileUrl": "/upload/public/pdf/source/20231211/74966F132EC02AE801FF2B2EB61291DB.pdf"
+          },
+          {
+            "fileName": "TargetZA_230110_ROHS认证(英文版)_muRata(村田).pdf",
+            "fileUrl": "/upload/public/pdf/source/20231211/DB9CCE3D5EC139944BD0B06398CCF574.pdf"
+          },
+          {
+            "fileName": "TargetZB230110_ROHS认证(英文版)_muRata(村田).pdf",
+            "fileUrl": "/upload/public/pdf/source/20231211/56126850675479FC833771E41C354140.pdf"
+          }
+        ],
+        "fileType": "certification_data_property"
+      }
+    ],
+    "isEnvironment": true,
+    "isReturnCoupon": false,
+    "productType": "贴片电容(MLCC)",
+    "encaptionPrice": 1150,
+    "minBuyNumber": 1,
+    "minWholeNumber": 1000,
+    "saleRuleGroupId": 10039,
+    "convesionRatio": 1,
+    "productId": "22114",
+    "productGradePlateName": "muRata(村田)",
+    "eccnCode": "EAR99",
+    "productWeight": 0.00015,
+    "usableTransitNum": 0,
+    "isDisplay": true,
+    "pdfDESProductId": "077CADAEEDA0CC98",
+    "productCode": "C21397",
+    "breviaryImageUrl": "https://alimg.szlcsc.com/upload/public/product/breviary/20251022/4E6368E0E4C2BEFA4B86DD9BC63BE38A.jpg",
+    "isShowPrice": true,
+    "productMinEncapsulationNumber": 1000,
+    "inEdaWhiteList": false,
+    "productStockStatus": "yes",
+    "productUnsealVendition": "yes"
+  },
+  "price": 1.15,
+  "gdWarehouseStockNumber": 52241,
+  "jsWarehouseStockNumber": 0,
+  "pageGeneratedAt": "2026-11-07T15:32:42.194Z"
+}

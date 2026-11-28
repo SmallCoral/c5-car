@@ -1,0 +1,93 @@
+{
+  "date": "2026-11-07",
+  "queried_utc": "2026-11-07T15:32:54.7479375Z",
+  "url": "https://item.szlcsc.com/5735814.html",
+  "http_status": 200,
+  "product": {
+    "theRatio": 1,
+    "productArrange": "编带",
+    "productModel": "744325330",
+    "stockNumber": 15,
+    "encapsulationModel": "SMD,10.5x10.2mm",
+    "hasStockNow": "yes",
+    "productCycle": "normal",
+    "smtLabel": "SMT扩展库",
+    "isDisplayUsableTransitNum": true,
+    "remark": "",
+    "productUnit": "个",
+    "luceneBreviaryImageUrls": "https://alimg.szlcsc.com/upload/public/product/breviary/20251106/065B87E9E6D3D93AB1E3181FEC8EF6D6.jpg<$>https://alimg.szlcsc.com/upload/public/product/breviary/20251106/BCF14AF9DEBA610546BE6E1009EF1585.jpg<$>https://alimg.szlcsc.com/upload/public/product/breviary/20251106/E7B7C491AEBFC1208E501BD75E1AA4E3.jpg",
+    "productMinEncapsulationUnit": "圆盘",
+    "productName": "3.3uH ±20% 15A",
+    "returnCouponDesc": [],
+    "productGradePlateId": "795",
+    "isShowQuotedPriceBtn": false,
+    "validStockNumber": 15,
+    "fileTypeVOList": [
+      {
+        "detailVOList": [
+          {
+            "fileName": "744325330",
+            "linkAddress": "https://www.we-online.com/components/products/datasheet/744325330.pdf"
+          }
+        ],
+        "fileType": "pdf_property"
+      },
+      {
+        "detailVOList": [
+          {
+            "fileName": "全量通用_REACH认证(英文版)_Wurth(伍尔特).pdf",
+            "fileUrl": "/upload/public/pdf/source/20241128/671F78C1E1EE60A0E0F64870D95ED862.pdf"
+          },
+          {
+            "fileName": "全量通用_RoHS认证(英文版)_Wurth(伍尔特).pdf",
+            "fileUrl": "/upload/public/pdf/source/20251221/dgkr1968.pdf"
+          },
+          {
+            "fileName": "全量通用_ROHS认证_Wurth(伍尔特).zip",
+            "fileUrl": "/upload/public/pdf/source/20260512/BF47981A3E94DAED87955FFC92FCC4B7.zip"
+          },
+          {
+            "fileName": "全量通用_ROHS认证(英文版)_Wurth(伍尔特).pdf",
+            "fileUrl": "/upload/public/pdf/source/20241128/D66209144C4C9DD40958F29B14080B2E.pdf"
+          }
+        ],
+        "fileType": "certification_data_property"
+      },
+      {
+        "detailVOList": [
+          {
+            "fileName": "PCN_IndHCI_20230224.pdf",
+            "fileUrl": "/search_file/pdf/4d22/b0bd/bc78/e1e8/9dd5/5119/5743/13fc/4d22b0bdbc78e1e89dd55119574313fc.pdf"
+          }
+        ],
+        "fileType": "industry_information"
+      }
+    ],
+    "isEnvironment": true,
+    "isReturnCoupon": false,
+    "productType": "功率电感",
+    "encaptionPrice": 16282,
+    "minBuyNumber": 1,
+    "minWholeNumber": 700,
+    "saleRuleGroupId": 10010,
+    "convesionRatio": 1,
+    "productId": "5735814",
+    "productGradePlateName": "Wurth(伍尔特)",
+    "eccnCode": "EAR99",
+    "productWeight": 0.002746667,
+    "usableTransitNum": 0,
+    "isDisplay": true,
+    "pdfDESProductId": "C8A444D4921B7F8F62C20E132BF121C8",
+    "productCode": "C5129929",
+    "breviaryImageUrl": "https://alimg.szlcsc.com/upload/public/product/breviary/20251106/065B87E9E6D3D93AB1E3181FEC8EF6D6.jpg",
+    "isShowPrice": true,
+    "productMinEncapsulationNumber": 700,
+    "inEdaWhiteList": false,
+    "productStockStatus": "yes",
+    "productUnsealVendition": "yes"
+  },
+  "price": 25.62,
+  "gdWarehouseStockNumber": 15,
+  "jsWarehouseStockNumber": 0,
+  "pageGeneratedAt": "2026-11-07T15:32:42.161Z"
+}

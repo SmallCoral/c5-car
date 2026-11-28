@@ -1,0 +1,98 @@
+{
+  "date": "2026-11-07",
+  "queried_utc": "2026-11-07T15:32:54.7457036Z",
+  "url": "https://item.szlcsc.com/24390.html",
+  "http_status": 200,
+  "product": {
+    "theRatio": 5,
+    "productArrange": "编带",
+    "productModel": "SN74LVC1G125DBVR",
+    "stockNumber": 161199,
+    "encapsulationModel": "SOT-23-5",
+    "hasStockNow": "yes",
+    "productCycle": "normal",
+    "smtLabel": "SMT扩展库",
+    "isDisplayUsableTransitNum": true,
+    "remark": "SN74LVC1G125 具有三态输出的 1.65V 至 5.5V 单路缓冲器",
+    "productUnit": "个",
+    "luceneBreviaryImageUrls": "https://alimg.szlcsc.com/upload/public/product/breviary/20221228/48E2938FF4A09648749A354556D9BE10.jpg<$>https://alimg.szlcsc.com/upload/public/product/breviary/20221228/83ECA6C069DE2140CA841BA0AA3BA7E7.jpg<$>https://alimg.szlcsc.com/upload/public/product/breviary/20221228/068A457AD6E005711A7C3CADFEA00C36.jpg",
+    "productMinEncapsulationUnit": "圆盘",
+    "productName": "单总线缓冲门，带三态输出",
+    "returnCouponDesc": [],
+    "productGradePlateId": "100",
+    "isShowQuotedPriceBtn": false,
+    "isOldBatchClearance": false,
+    "validStockNumber": 32239,
+    "fileTypeVOList": [
+      {
+        "detailVOList": [
+          {
+            "fileName": "wj186173",
+            "linkAddress": "https://www.ti.com/cn/lit/ds/symlink/sn74lvc1g125.pdf"
+          }
+        ],
+        "fileType": "pdf_property"
+      },
+      {
+        "detailVOList": [
+          {
+            "fileName": "TI(德州仪器)+产品标识与命名变更+2023-12-07.pdf.pdf.pdf",
+            "fileUrl": "/upload/public/pdf/source/20250320/E3BB32F82911CCE086245F74F40B1459.pdf"
+          }
+        ],
+        "fileType": "industry_information"
+      },
+      {
+        "detailVOList": [
+          {
+            "fileName": "全量通用_ROHS认证_TI(德州仪器)",
+            "linkAddress": "https://www.ti.com/lit/cr/szzq088t/szzq088t.pdf?ts=1777249348149"
+          },
+          {
+            "fileName": "全量通用_HF (无卤素)认证_TI(德州仪器).pdf",
+            "linkAddress": "https://www.ti.com/lit/cr/szzq077h/szzq077h.pdf?ts=1765430053461"
+          },
+          {
+            "fileName": "全量通用_REACH认证_TI(德州仪器).pdf",
+            "linkAddress": "https://www.ti.com/lit/cr/szzq087ao/szzq087ao.pdf"
+          },
+          {
+            "fileName": "全量通用_ROHS认证_TI(德州仪器).pdf",
+            "linkAddress": "https://www.ti.com/lit/cr/szzq088s/szzq088s.pdf"
+          },
+          {
+            "fileName": "全量通用_ROHS认证(英文版)_TI(德州仪器).pdf",
+            "fileUrl": "/upload/public/pdf/source/20231226/823FFD7B00BCBCBF37F864AB0ADB8D54.pdf"
+          }
+        ],
+        "fileType": "certification_data_property"
+      }
+    ],
+    "isEnvironment": true,
+    "isReturnCoupon": false,
+    "productType": "缓冲器/驱动器/收发器",
+    "encaptionPrice": 652.5,
+    "minBuyNumber": 1,
+    "minWholeNumber": 3000,
+    "saleRuleGroupId": 10039,
+    "convesionRatio": 5,
+    "productId": "24390",
+    "productGradePlateName": "TI(德州仪器)",
+    "eccnCode": "EAR99",
+    "productWeight": 3.3E-05,
+    "usableTransitNum": 21000,
+    "isDisplay": true,
+    "pdfDESProductId": "A2BC99CB62FA34A7",
+    "productCode": "C23654",
+    "breviaryImageUrl": "https://alimg.szlcsc.com/upload/public/product/breviary/20221228/48E2938FF4A09648749A354556D9BE10.jpg",
+    "isShowPrice": true,
+    "productMinEncapsulationNumber": 3000,
+    "inEdaWhiteList": false,
+    "productStockStatus": "yes",
+    "productUnsealVendition": "yes"
+  },
+  "price": 0.2175,
+  "gdWarehouseStockNumber": 152050,
+  "jsWarehouseStockNumber": 0,
+  "pageGeneratedAt": "2026-11-07T15:32:42.052Z"
+}

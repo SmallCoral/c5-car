@@ -1,0 +1,26 @@
+# MaixCAM2 钢球识别
+
+相机侧运行 [main.py](main.py)，负责钢球识别、跟踪与 UART4 V2 发送。STM32 从 Core UART5 接收。首次在新设备上运行时，需另行准备 `/root/models/wuhaha/feball/model_331496.mud` 与该描述文件引用的模型权重。脚本也支持在自身目录查找同名模型。仓库收录应用源码，模型文件在设备端。[主控接收与字段](../../Documentation/reference/firmware-telemetry.md)
+
+| 版本 | 用途 | main.py 的 SHA-256 |
+| --- | --- | --- |
+| 本目录工作副本 | 640 × 480 采集，截取 y=192 起的 128 行，用宽 320 的局部视野搜索和跟踪 | `acf043920dac06466077de3926ecdbb7597402acf01c548b6811cfff550b8825` |
+| [原安装包 v1.1.1](https://github.com/SmallCoral/c5-car/blob/1b936e16e70845d13a9f0e41dbcd20ecfca4ad00/Firmware/26h/dist/maix-aaaa1213325-v1.1.1.zip) 内的脚本 | 复查早期整宽窄带识别以及发送节拍问题 | `9a9bbd0ac927a99e020da8cf723fce8a93b87c6de68ebbc4905b84915f4b47ad` |
+
+`app.yaml` 的版本号仍为 1.1.1。现场再次调整识别后，设备上运行的脚本及模型版本尚待比对。当前本地脚本运行期间将补光 GPIOB25 置高，请求曝光 2300 µs、增益 15。实际设置以相机启动回读为准。主控用原图绝对 x 和五点标尺换算位置。[五点标定](../calibration/camera640-and-shaft.json)
+
+主控接收的 V2 帧为 16 字节。包头为 `AA 55`，包尾为 `17`，对负载第 2～13 字节（从 0 计）计算 CRC-8/ATM。直接实测、短时预测和过期分别上报。11 月 19 日随相机提供的协议原件保留了各字段、单位与测试包。[UART V2 格式原件](../../Documentation/摄像头与视觉板/MaixCAM2_UART_V2_2026-11-19.md)
+
+## 现场对照
+
+右挡杆起步时，相机帧可能继续更新而球位暂时失测。复测时同时检查帧序号、实测标志和观测年龄。[11 月 21 日轨迹](../../Documentation/validation/README.md)
+
+## 图传辅助脚本
+
+`26h.py`、`maixcam_link.py` 提供独立的图传联调入口。两者优先复用设备已取得的 Wi-Fi 地址。需要脚本连接热点时，在对应脚本旁建立 `26h.wifi.json` 或 `maixcam_link.wifi.json`，填入本机使用的两项字符串。设备配置仅在需要连热点时读取。
+
+```json
+{"ssid": "你的热点名称", "password": "你的热点口令"}
+```
+
+电脑接收脚本在 [pc_resver/pc_res.py](pc_resver/pc_res.py)。这些图传工具独立于钢球 UART 控制链路。

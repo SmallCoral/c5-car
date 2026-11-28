@@ -1,0 +1,317 @@
+{
+  "date": "2026-11-07",
+  "measurement": false,
+  "datasheet": "https://www.diodes.com/datasheet/download/AP64500.pdf",
+  "datasheet_revision": "DS41979 Rev5-2 December2024; equations17-19",
+  "polymer_source": "https://industrial.panasonic.com/ww/products/pt/os-con/models/16SVP150M",
+  "polymer_ESR_ohm_at100kHz": 0.03,
+  "nominal_output_V": 5.088000000000001,
+  "reference_tolerance": 0.01,
+  "divider_tolerance_each": 0.001,
+  "output_tolerance_V": [
+    5.028638241758243,
+    5.147550430430431
+  ],
+  "rt_ohm": 200000,
+  "fsw_target_Hz": 500000.0,
+  "inductor_H": 3.3e-06,
+  "nominal_ripple_A": 1.7761745454545452,
+  "peak_A_4p2_load": 5.088087272727273,
+  "hs_peak_limit_min_A": 6.8,
+  "compensation": {
+    "R_ohm": 15800,
+    "Cseries_F": 1e-08,
+    "Chf_F": 4.7e-10,
+    "Chf_min_5pct_pF": 446.5,
+    "previous_Chf_pF": 39,
+    "reason": "Include the retained 150uF polymer ESR in Eq19; 39pF did not cover that term."
+  },
+  "cases": [
+    {
+      "effective_C_uF": 130.0,
+      "assumed_ESR_ohm": 0.001,
+      "load_A": 0.5,
+      "eq17_fc_Hz": 5115.048446631009,
+      "eq18_Cseries_nF": 83.72658227848103,
+      "eq19_Chf_pF": 40.29239065617604,
+      "first_order_unity_crossings": [
+        {
+          "hz": 4916.620262745646,
+          "phase_margin_deg": 67.6946924208494
+        }
+      ]
+    },
+    {
+      "effective_C_uF": 130.0,
+      "assumed_ESR_ohm": 0.001,
+      "load_A": 4,
+      "eq17_fc_Hz": 5115.048446631009,
+      "eq18_Cseries_nF": 10.465822784810129,
+      "eq19_Chf_pF": 40.29239065617604,
+      "first_order_unity_crossings": [
+        {
+          "hz": 4823.178482239304,
+          "phase_margin_deg": 77.57510096528145
+        }
+      ]
+    },
+    {
+      "effective_C_uF": 130.0,
+      "assumed_ESR_ohm": 0.001,
+      "load_A": 4.2,
+      "eq17_fc_Hz": 5115.048446631009,
+      "eq18_Cseries_nF": 9.967450271247742,
+      "eq19_Chf_pF": 40.29239065617604,
+      "first_order_unity_crossings": [
+        {
+          "hz": 4823.178482239304,
+          "phase_margin_deg": 78.1229674751983
+        }
+      ]
+    },
+    {
+      "effective_C_uF": 130.0,
+      "assumed_ESR_ohm": 0.03,
+      "load_A": 0.5,
+      "eq17_fc_Hz": 5115.048446631009,
+      "eq18_Cseries_nF": 83.72658227848103,
+      "eq19_Chf_pF": 246.83544303797467,
+      "first_order_unity_crossings": [
+        {
+          "hz": 4916.620262745646,
+          "phase_margin_deg": 74.3304384324317
+        }
+      ]
+    },
+    {
+      "effective_C_uF": 130.0,
+      "assumed_ESR_ohm": 0.03,
+      "load_A": 4,
+      "eq17_fc_Hz": 5115.048446631009,
+      "eq18_Cseries_nF": 10.465822784810129,
+      "eq19_Chf_pF": 246.83544303797467,
+      "first_order_unity_crossings": [
+        {
+          "hz": 4731.512589614803,
+          "phase_margin_deg": 83.92823349016517
+        }
+      ]
+    },
+    {
+      "effective_C_uF": 130.0,
+      "assumed_ESR_ohm": 0.03,
+      "load_A": 4.2,
+      "eq17_fc_Hz": 5115.048446631009,
+      "eq18_Cseries_nF": 9.967450271247742,
+      "eq19_Chf_pF": 246.83544303797467,
+      "first_order_unity_crossings": [
+        {
+          "hz": 4731.512589614803,
+          "phase_margin_deg": 84.46168582125384
+        }
+      ]
+    },
+    {
+      "effective_C_uF": 180.0,
+      "assumed_ESR_ohm": 0.001,
+      "load_A": 0.5,
+      "eq17_fc_Hz": 3694.201655900172,
+      "eq18_Cseries_nF": 115.92911392405067,
+      "eq19_Chf_pF": 40.29239065617604,
+      "first_order_unity_crossings": [
+        {
+          "hz": 3651.741272548377,
+          "phase_margin_deg": 66.93520970001093
+        }
+      ]
+    },
+    {
+      "effective_C_uF": 180.0,
+      "assumed_ESR_ohm": 0.001,
+      "load_A": 4,
+      "eq17_fc_Hz": 3694.201655900172,
+      "eq18_Cseries_nF": 14.491139240506334,
+      "eq19_Chf_pF": 40.29239065617604,
+      "first_order_unity_crossings": [
+        {
+          "hz": 3582.3388806164767,
+          "phase_margin_deg": 76.42922688234908
+        }
+      ]
+    },
+    {
+      "effective_C_uF": 180.0,
+      "assumed_ESR_ohm": 0.001,
+      "load_A": 4.2,
+      "eq17_fc_Hz": 3694.201655900172,
+      "eq18_Cseries_nF": 13.801084990958413,
+      "eq19_Chf_pF": 40.29239065617604,
+      "first_order_unity_crossings": [
+        {
+          "hz": 3582.3388806164767,
+          "phase_margin_deg": 76.96312934554788
+        }
+      ]
+    },
+    {
+      "effective_C_uF": 180.0,
+      "assumed_ESR_ohm": 0.03,
+      "load_A": 0.5,
+      "eq17_fc_Hz": 3694.201655900172,
+      "eq18_Cseries_nF": 115.92911392405067,
+      "eq19_Chf_pF": 341.7721518987342,
+      "first_order_unity_crossings": [
+        {
+          "hz": 3651.741272548377,
+          "phase_margin_deg": 73.75769660338493
+        }
+      ]
+    },
+    {
+      "effective_C_uF": 180.0,
+      "assumed_ESR_ohm": 0.03,
+      "load_A": 4,
+      "eq17_fc_Hz": 3694.201655900172,
+      "eq18_Cseries_nF": 14.491139240506334,
+      "eq19_Chf_pF": 341.7721518987342,
+      "first_order_unity_crossings": [
+        {
+          "hz": 3514.255501080684,
+          "phase_margin_deg": 82.8417892167983
+        }
+      ]
+    },
+    {
+      "effective_C_uF": 180.0,
+      "assumed_ESR_ohm": 0.03,
+      "load_A": 4.2,
+      "eq17_fc_Hz": 3694.201655900172,
+      "eq18_Cseries_nF": 13.801084990958413,
+      "eq19_Chf_pF": 341.7721518987342,
+      "first_order_unity_crossings": [
+        {
+          "hz": 3514.255501080684,
+          "phase_margin_deg": 83.36163638041126
+        }
+      ]
+    },
+    {
+      "effective_C_uF": 220.0,
+      "assumed_ESR_ohm": 0.001,
+      "load_A": 0.5,
+      "eq17_fc_Hz": 3022.528627554687,
+      "eq18_Cseries_nF": 141.69113924050635,
+      "eq19_Chf_pF": 40.29239065617604,
+      "first_order_unity_crossings": [
+        {
+          "hz": 3043.2198871077226,
+          "phase_margin_deg": 65.54121619791901
+        }
+      ]
+    },
+    {
+      "effective_C_uF": 220.0,
+      "assumed_ESR_ohm": 0.001,
+      "load_A": 4,
+      "eq17_fc_Hz": 3022.528627554687,
+      "eq18_Cseries_nF": 17.711392405063293,
+      "eq19_Chf_pF": 40.29239065617604,
+      "first_order_unity_crossings": [
+        {
+          "hz": 2985.3826189179604,
+          "phase_margin_deg": 74.79080926026002
+        }
+      ]
+    },
+    {
+      "effective_C_uF": 220.0,
+      "assumed_ESR_ohm": 0.001,
+      "load_A": 4.2,
+      "eq17_fc_Hz": 3022.528627554687,
+      "eq18_Cseries_nF": 16.86799276672695,
+      "eq19_Chf_pF": 40.29239065617604,
+      "first_order_unity_crossings": [
+        {
+          "hz": 2985.3826189179604,
+          "phase_margin_deg": 75.31570679846496
+        }
+      ]
+    },
+    {
+      "effective_C_uF": 220.0,
+      "assumed_ESR_ohm": 0.03,
+      "load_A": 0.5,
+      "eq17_fc_Hz": 3022.528627554687,
+      "eq18_Cseries_nF": 141.69113924050635,
+      "eq19_Chf_pF": 417.72151898734177,
+      "first_order_unity_crossings": [
+        {
+          "hz": 3043.2198871077226,
+          "phase_margin_deg": 72.48906096432601
+        }
+      ]
+    },
+    {
+      "effective_C_uF": 220.0,
+      "assumed_ESR_ohm": 0.03,
+      "load_A": 4,
+      "eq17_fc_Hz": 3022.528627554687,
+      "eq18_Cseries_nF": 17.711392405063293,
+      "eq19_Chf_pF": 417.72151898734177,
+      "first_order_unity_crossings": [
+        {
+          "hz": 2956.877505109187,
+          "phase_margin_deg": 81.31409943689505
+        }
+      ]
+    },
+    {
+      "effective_C_uF": 220.0,
+      "assumed_ESR_ohm": 0.03,
+      "load_A": 4.2,
+      "eq17_fc_Hz": 3022.528627554687,
+      "eq18_Cseries_nF": 16.86799276672695,
+      "eq19_Chf_pF": 417.72151898734177,
+      "first_order_unity_crossings": [
+        {
+          "hz": 2928.6445646252373,
+          "phase_margin_deg": 81.76173510984317
+        }
+      ]
+    }
+  ],
+  "rail_loads_A": {
+    "Lichee": 3,
+    "Core": 0.75,
+    "gray": 0.3,
+    "TFT_BT_LDO": 0.15,
+    "Action4": 3,
+    "Maix": 1
+  },
+  "input_budget": {
+    "adapter_V": 12,
+    "adapter_A": 12.5,
+    "assumed_efficiency": 0.85,
+    "wheel_A": 4,
+    "stepper_A": 3,
+    "calculated_A": 11.090352941176471,
+    "adapter_headroom_A": 1.4096470588235288,
+    "F1_rating_A": 15,
+    "F1_75pct_A": 11.25,
+    "fuse_derated_headroom_A": 0.1596470588235288
+  },
+  "mosfet_conduction_only_W_25C": {
+    "4": 0.48960000000000004,
+    "4.2": 0.539784
+  },
+  "limits": [
+    "Ceff130-220uF and ESR1-30mOhm are sizing envelopes, not measured converter output impedance. Unknown module/cable capacitors are excluded.",
+    "The simple transconductance/current-source model omits inner current-loop poles, sampling, DCM/PFM, delay, distributed ESR/ESL and parasitics; its apparent phase margins are not a stability certificate.",
+    "10nF series compensation and 470pF high-frequency pole are prototype starting values. Measure loop gain/load-step response at cable/load/temperature corners before release.",
+    "5A is the IC rating, not proven board capability. Peak current uses nominal L/frequency only; verify tolerance, inductor saturation and thermal rise.",
+    "Conduction numbers omit switching, quiescent, inductor, diode, copper and connector losses. No junction temperature is certified.",
+    "Input startup/stall/inrush and fuse temperature derating are unmeasured; 0.16A assumed continuous fuse headroom is small. Stage module startup and test, do not silently raise F1.",
+    "5V Type-C is 3A current advertisement, no PD/PPS negotiation. 150uF bulk remains at TPS25810 IN and 10uF at OUT per TI8.2.1.1.1."
+  ],
+  "eq19_envelope_satisfied": true
+}

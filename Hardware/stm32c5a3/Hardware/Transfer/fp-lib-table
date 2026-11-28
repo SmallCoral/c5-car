@@ -1,0 +1,9 @@
+(fp_lib_table
+	(lib
+		(name "Transfer")
+		(type "KiCad")
+		(uri "${KIPRJMOD}/Transfer.pretty")
+		(options "")
+		(descr "Transfer local horizontal XT60PW footprints")
+	)
+)

@@ -1,0 +1,62 @@
+{
+  "date": "2026-11-07",
+  "queried_utc": "2026-11-07T15:32:55.3273099Z",
+  "url": "https://item.szlcsc.com/189739.html",
+  "http_status": 200,
+  "product": {
+    "theRatio": 1,
+    "productArrange": "编带",
+    "productModel": "16SVP150M",
+    "stockNumber": 62,
+    "encapsulationModel": "SMD,D10xL7.9mm",
+    "hasStockNow": "yes",
+    "productCycle": "normal",
+    "smtLabel": "SMT扩展库",
+    "remark": "特性：贴装标准品。丰富的产品系列。已应对RoHS指令,无卤对应完成",
+    "productUnit": "个",
+    "luceneBreviaryImageUrls": "https://alimg.szlcsc.com/upload/public/product/breviary/20230110/760D02595499D2A2BE03118EDA541B3F.jpg<$>https://alimg.szlcsc.com/upload/public/product/breviary/20230110/B34ED1812434836AFE44C5310849CEB2.jpg<$>https://alimg.szlcsc.com/upload/public/product/breviary/20230110/FE12571F33D0A472F7A8A84DCCFEFAA9.jpg<$>https://alimg.szlcsc.com/upload/public/brand/product/certificate/20260401/B2030846A008DBF3B799828AAE4E5504.png",
+    "productMinEncapsulationUnit": "圆盘",
+    "productName": "不推荐用于新设计 150uF ±20% 16V",
+    "returnCouponDesc": [],
+    "productGradePlateId": "121",
+    "isShowQuotedPriceBtn": false,
+    "validStockNumber": 62,
+    "fileTypeVOList": [
+      {
+        "detailVOList": [
+          {
+            "fileName": "wj132734",
+            "fileUrl": "/upload/public/pdf/source/20180327/C178381_788ABC8D67C0072CE0F50013720BA8BF.pdf"
+          }
+        ],
+        "fileType": "pdf_property"
+      }
+    ],
+    "isEnvironment": true,
+    "isReturnCoupon": false,
+    "productType": "固态电容",
+    "encaptionPrice": 2005,
+    "minBuyNumber": 1,
+    "minWholeNumber": 500,
+    "saleRuleGroupId": 2,
+    "convesionRatio": 1,
+    "productId": "189739",
+    "productGradePlateName": "PANASONIC(松下)",
+    "eccnCode": "EAR99",
+    "productWeight": 0.001708,
+    "usableTransitNum": 0,
+    "isDisplay": true,
+    "pdfDESProductId": "ACC41D1E91F9747C296C67311B688FC3",
+    "productCode": "C178346",
+    "breviaryImageUrl": "https://alimg.szlcsc.com/upload/public/product/breviary/20230110/760D02595499D2A2BE03118EDA541B3F.jpg",
+    "isShowPrice": true,
+    "productMinEncapsulationNumber": 500,
+    "inEdaWhiteList": false,
+    "productStockStatus": "yes",
+    "productUnsealVendition": "yes"
+  },
+  "price": 5.65,
+  "gdWarehouseStockNumber": 62,
+  "jsWarehouseStockNumber": 0,
+  "pageGeneratedAt": "2026-11-07T15:32:42.945Z"
+}

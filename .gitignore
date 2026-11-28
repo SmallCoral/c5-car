@@ -1,0 +1,37 @@
+# 本机 Python 和 Node 工具环境。
+__pycache__/
+*.py[cod]
+.venv/
+node_modules/
+/.scratch/
+/.workbuddy-ai/
+/.agent/diagnostics/
+
+# 固件编译产物与编辑器产生的本地状态。
+Firmware/**/build/
+.vscode/
+.idea/
+CMakeUserPresets.json
+
+# 设备热点配置与本机调试截屏。
+/Firmware/26h/*.wifi.json
+/Firmware/26h/*.lnk
+/Firmware/26h/pc_resver/maixcam_*.mp4
+
+# 忽略 KiCad 本地状态，保留设计源文件、元件库、物料表和报告。
+*.kicad_prl
+*.lck
+*-backups/
+.history/
+~$*.xlsx
+~$*.docx
+/Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/schematic-only-resume/raster-preview-profile/
+
+# 采购留存结构化记录与 BOM，忽略商城整页下载。
+/Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/sources/m28*/*-retail.html
+/Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/sources/m28*/search-*.html
+
+# 原始调车抓包留在本机，实车测量摘要在 Documentation/validation。
+/Firmware/validation/
+/.ruff_cache/
+/dist/

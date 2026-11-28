@@ -1,0 +1,141 @@
+{
+  "date": "2026-11-14",
+  "source_commit": "64c5210ef6b4a552aac22b4bfe8a288ffd95149f",
+  "kicad_version": "10.0.6",
+  "commands_from_project_directory": [
+    "kicad-cli sch export netlist --format kicadxml -o docs/Transfer.net.xml Transfer.kicad_sch",
+    "kicad-cli sch erc --format json --exit-code-violations -o docs/Transfer.erc.json Transfer.kicad_sch",
+    "kicad-cli sch export pdf -o docs/Transfer.pdf Transfer.kicad_sch",
+    "python tools/verify_schematic.py"
+  ],
+  "command_exit_codes": [
+    0,
+    1,
+    0,
+    1
+  ],
+  "passed": false,
+  "checks": [
+    {
+      "name": "exactly J1 and J2",
+      "passed": true
+    },
+    {
+      "name": "original sheet UUID preserved",
+      "passed": true
+    },
+    {
+      "name": "placement only; no wires or artificial NC flags",
+      "passed": false
+    },
+    {
+      "name": "local libraries registered",
+      "passed": true
+    },
+    {
+      "name": "J1 embedded and local symbol agree",
+      "passed": false
+    },
+    {
+      "name": "J1 explicit polarity 1 negative / 2 positive",
+      "passed": true
+    },
+    {
+      "name": "J1 footprint property matches local symbol",
+      "passed": true
+    },
+    {
+      "name": "J1 two electrical pads",
+      "passed": true
+    },
+    {
+      "name": "J1 correct gender and 7.2mm pitch",
+      "passed": true
+    },
+    {
+      "name": "J1 2.7mm drills",
+      "passed": true
+    },
+    {
+      "name": "J1 two unnumbered retaining tabs",
+      "passed": true
+    },
+    {
+      "name": "J1 portable STEP binding",
+      "passed": true
+    },
+    {
+      "name": "J1 model offset and rotation",
+      "passed": true
+    },
+    {
+      "name": "J1 source STEP bytes preserved",
+      "passed": true
+    },
+    {
+      "name": "J1 native netlist footprint",
+      "passed": true
+    },
+    {
+      "name": "J2 embedded and local symbol agree",
+      "passed": false
+    },
+    {
+      "name": "J2 explicit polarity 1 negative / 2 positive",
+      "passed": true
+    },
+    {
+      "name": "J2 footprint property matches local symbol",
+      "passed": true
+    },
+    {
+      "name": "J2 two electrical pads",
+      "passed": true
+    },
+    {
+      "name": "J2 correct gender and 7.2mm pitch",
+      "passed": true
+    },
+    {
+      "name": "J2 2.7mm drills",
+      "passed": true
+    },
+    {
+      "name": "J2 two unnumbered retaining tabs",
+      "passed": true
+    },
+    {
+      "name": "J2 portable STEP binding",
+      "passed": true
+    },
+    {
+      "name": "J2 model offset and rotation",
+      "passed": true
+    },
+    {
+      "name": "J2 source STEP bytes preserved",
+      "passed": true
+    },
+    {
+      "name": "J2 native netlist footprint",
+      "passed": true
+    },
+    {
+      "name": "native netlist has exactly two components",
+      "passed": true
+    },
+    {
+      "name": "ERC has only the four intentionally unwired pins",
+      "passed": false
+    }
+  ],
+  "footprint_bindings": 2,
+  "model_bindings": 2,
+  "erc_passed": false,
+  "erc_errors": 0,
+  "erc_reason": "Placement only; J1/J2 pins are not wired.",
+  "limitations": [
+    "No board/DRC or physical fit verification.",
+    "Domestic live inventory could not be confirmed."
+  ]
+}

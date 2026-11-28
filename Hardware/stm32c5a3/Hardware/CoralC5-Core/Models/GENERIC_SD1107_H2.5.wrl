@@ -1,0 +1,7 @@
+#VRML V2.0 utf8
+# GENERIC ENVELOPE from SD-1107 drawing; not an exact manufacturer model. Units 0.1 inch.
+Transform { translation 0.0 0.0 0.275591 children [ Shape { appearance Appearance { material Material { diffuseColor 0.08 0.08 0.08 } } geometry Box { size 2.401575 1.417323 0.551181 } } ] }
+Transform { translation 0.0 0.0 0.590551 children [ Shape { appearance Appearance { material Material { diffuseColor 0.65 0.65 0.65 } } geometry Box { size 2.283465 1.299213 0.23622 } } ] }
+Transform { translation 0.0 0.0 0.807087 children [ Shape { appearance Appearance { material Material { diffuseColor 0.90 0.9 0.8 } } geometry Box { size 1.043307 0.492126 0.354331 } } ] }
+Transform { translation -1.358268 0.0 0.03937 children [ Shape { appearance Appearance { material Material { diffuseColor 0.72 0.72 0.72 } } geometry Box { size 0.393701 0.23622 0.07874 } } ] }
+Transform { translation 1.358268 0.0 0.03937 children [ Shape { appearance Appearance { material Material { diffuseColor 0.72 0.72 0.72 } } geometry Box { size 0.393701 0.23622 0.07874 } } ] }

@@ -1,0 +1,52 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-23T18:02:26",
+    "ignored_checks": [
+        {
+            "description": "Global label only appears once in the schematic",
+            "key": "single_global_label"
+        },
+        {
+            "description": "Four connection points are joined together",
+            "key": "four_way_junction"
+        },
+        {
+            "description": "SPICE model issue",
+            "key": "simulation_model_issue"
+        },
+        {
+            "description": "Assigned footprint doesn't match footprint filters",
+            "key": "footprint_filter"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.6",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/85c41429-7e40-520e-a425-d86b78022329",
+            "violations": []
+        },
+        {
+            "path": "/电源输入、三点三伏降压与原生 USB/",
+            "uuid_path": "/85c41429-7e40-520e-a425-d86b78022329/864407e1-5936-5bc7-915c-23278a5808f5",
+            "violations": []
+        },
+        {
+            "path": "/主控端口、供电、复位与时钟/",
+            "uuid_path": "/85c41429-7e40-520e-a425-d86b78022329/74a8a62a-9b00-5f7f-826a-d15ca1a04db7",
+            "violations": []
+        },
+        {
+            "path": "/公共金手指与核心板操作/",
+            "uuid_path": "/85c41429-7e40-520e-a425-d86b78022329/d26173da-a26d-50f4-8596-ef1da0dd0c82",
+            "violations": []
+        }
+    ],
+    "source": "CoralC5-Core.kicad_sch"
+}

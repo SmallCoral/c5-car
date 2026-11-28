@@ -1,0 +1,139 @@
+# A 题器件选型与采购
+
+## 当前采购入口
+
+Core 的历史选型表与原始数据见[核心板采购目录](../../Hardware/stm32c5a3/Hardware/CoralC5-Core/docs/bom)。Motor 的完整 BOM、精简 RC 表和降本候选见[采购表说明](motor-bom.md)。
+2026-11-09 的完整表覆盖当前 PCB 的 140 个电气位号；其中替代件仍须验证，不能直接当作已实施选型或生产 BOM。
+以下 2026-11-07 M2.8 记录和更早报价保留为历史来源；其中 178 位号、复杂保护和已删除器件不代表当前精简设计。
+
+## 历史 M2.8 采购记录
+
+2026-11-07 M2.8，保留荔枝派 4A、MaixCAM2 与 Action 4。扩展板 U1/U6 为双路 AP64500SP-13，标称 5.088V、500kHz；U7 单独供 TFT/蓝牙三伏三。Core 仍由 D3 后 A48/B48 供电并由本板 AP63203 降压，三伏三不并联。
+
+22 种新增或修订 SKU 已取得立创国内直接商品页、明确型号和本地仓现货记录，覆盖全部 33 个新增器件及修订的旧器件。该范围之外的旧料尚未逐项重新核价；178 位号草表不是生产采购清单。见 [草表](../../Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/BOM_M2_SCHEMATIC_DRAFT.csv)、[原始记录](../../Hardware/stm32c5a3/Hardware/CoralC5-Motor/docs/procurement_m28.json)、[M2.8 验证](https://github.com/SmallCoral/c5-car/blob/e631797d99cd60486eccc874f66cc99cdf3f7496/Documentation/validation/2026-11-07-m28-resume.md)。
+
+## 新增与修订器件快照
+
+查询日为 2026-11-07；库存、价格来自 `szlcsc.com` 国内商品记录，不采用海外、询价或订货替代。价格为页面默认阶梯的人民币含税单价快照，最小采购量及数量阶梯可按采购记录中的商品链接复核，不是按整板数量结算的报价。未下单，库存会变。
+
+| 位号 | 完整型号 | C 编号 | 国内库存快照 | 默认阶梯单价 CNY |
+| --- | --- | --- | --- | --- |
+| C90,C91 | [CC0603KRX7R9BB103](https://item.szlcsc.com/101256.html) | C100042 | 579041 | 0.0135 |
+| C63,C89 | [CC0603JRNPO9BN471](https://item.szlcsc.com/107426.html) | C106211 | 402124 | 0.0155 |
+| C94 | [CL21A106KAYNNNE](https://item.szlcsc.com/16532.html) | C15850 | 7431502 | 0.1201 |
+| C74,C75,C85,C87,C93 | [CL10B104KB8NNNC](https://item.szlcsc.com/1943.html) | C1591 | 1802765 | 0.0223 |
+| C92 | [16SVP150M](https://item.szlcsc.com/189739.html) | C178346 | 62 | 5.65 |
+| U1,U6 | [AP64500SP-13](https://item.szlcsc.com/2162503.html) | C2070920 | 1788 | 6.33 |
+| C86,C88 | [GRM32ER71E226KE15L](https://item.szlcsc.com/22114.html) | C21397 | 52241 | 1.15 |
+| R66,R67 | [0603WAF1582T5E](https://item.szlcsc.com/23607.html) | C22880 | 8260 | 0.0086 |
+| R61 | [0603WAF8202T5E](https://item.szlcsc.com/23981.html) | C23254 | 772676 | 0.0079 |
+| U12 | [SN74LVC1G125DBVR](https://item.szlcsc.com/24390.html) | C23654 | 161199 | 0.2175 |
+| R73,R75,R79,R93 | [0603WAF1003T5E](https://item.szlcsc.com/26546.html) | C25803 | 7497373 | 0.0088 |
+| R62,R74 | [0603WAF1002T5E](https://item.szlcsc.com/26547.html) | C25804 | 3820389 | 0.0089 |
+| R63,R92 | [0603WAF2003T5E](https://item.szlcsc.com/26554.html) | C25811 | 1063003 | 0.0059 |
+| R59,R64 | [ARG03BTC5362](https://item.szlcsc.com/2782693.html) | C2684559 | 3975 | 0.1178 |
+| Q3 | [BSS138BK,215](https://item.szlcsc.com/268469.html) | C282529 | 8268 | 0.1213 |
+| R60,R65 | [ARG03BTC1002](https://item.szlcsc.com/292745.html) | C309083 | 863791 | 0.0786 |
+| J25 | [USB4125-GF-A](https://item.szlcsc.com/3712352.html) | C3151650 | 31 | 3.4 |
+| C84 | [GRM21BR61H106KE43L](https://item.szlcsc.com/439567.html) | C440198 | 193410 | 0.568 |
+| U11 | [SN74LV1T125DBVR](https://item.szlcsc.com/480066.html) | C473338 | 86579 | 0.59 |
+| U8 | [TPS25810RVCR](https://item.szlcsc.com/480472.html) | C473913 | 6108 | 1.9 |
+| L1,L2 | [744325330](https://item.szlcsc.com/5735814.html) | C5129929 | 15 | 25.62 |
+| J18 | [HX PZ2.54-2x6P ZZ](https://item.szlcsc.com/34444559.html) | C32713279 | 23349 | 0.2915 |
+
+L1/L2 的 744325330 仅余 15 个快照、J25 Type-C 仅 31 个，16SVP150M 为 NRND 且仅 62 个，适合作原型备料依据，长期生产应重新评估。C63/C89 改 470pF/50V C0G，R59/R64 与 R60/R65 均锁定 0.1% 分压电阻；补偿 15.8k+10nF 仍是待实测初值。J18 按厂家图核对 2.54mm 双排、1.0mm 推荐孔和 0.64mm 方针，选择直针型号，不以弯针或简牛代替。
+
+U11 是 SN74LV1T125DBVR，不能把 SN74LVC1G125 当成等价的 1.8V 升压接收器；后者仅用于 U12 的三伏三路径。U8/U16 为 TPS25810RVCR，固定五伏源端与 3A 通告，无 PD/PPS。芯片电流额定、连接器额定与板级实测分别报告，详见 [本轮电源核算](https://github.com/SmallCoral/c5-car/blob/e631797d99cd60486eccc874f66cc99cdf3f7496/Documentation/validation/2026-11-07-m28-resume.md#电源核算与原厂条件)。
+
+### C1、C13、C33 的必要性
+
+三颗目前均为 EEU-FR1E471，470µF / 25V 直插电解：C1 在总电源入口，C13、C33 分别在左右 DRV8874 的 VM 电源旁。它们均在 VM 与地之间，用于就近提供脉冲电流并缓冲母线电压变化，不是三路降压的输出电容。
+
+[DRV8874 手册 Rev A](https://www.ti.com/lit/ds/symlink/drv8874.pdf)第 7.3.1 节要求 VM 的 0.1µF 陶瓷旁路及足够的储能电容；第 9.1 节说明容量取决于电机电流、电源能力、线束寄生电感、允许纹波和制动方式，并需要系统实测；第 10.1 节允许储能电容采用陶瓷或电解。厂家没有要求这三颗必须均为 470µF，也没有要求必须用直插封装。
+
+当前建议保留入口储能及各驱动的本地储能位置。需要降低高度时，可另选立创现货贴片铝电解，核对容量、耐压、纹波电流、ESR、寿命和焊盘尺寸。能否减小 C13/C33，或让相邻驱动共用一颗，需要结合实际距离、回路与启停/反转波形决定；本轮未据未完成的 PCB 作判断。不能仅因同在一个 VM 网络就直接删掉本地电容，也不能将三颗电解都用 100nF 小电容代替。
+
+以下 2026-11-03 至 11-06 的候选、报价与选型过程为历史记录，不能作为当前采购 BOM。Core 原有 AP63203 保留。
+
+整理日期：2026-11-03。
+## 历史候选与来源
+
+2026-11-05 更新：用户确认两只摄像头，检测端用 MaixCAM，图传端沿用 OV2640 规划。光栅条目为此前备选，本轮未据此采购或加入生产 BOM。见 [双摄资料](https://github.com/SmallCoral/c5-car/blob/1b936e16e70845d13a9f0e41dbcd20ecfca4ad00/Documentation/reference/cameras.md)。
+2026-11-06 更新：循迹采用用户已有的感为八路灰度＋MSPM0L1306 辅助板，原 QRE1113GR 和 74HC4067 探头方案不再作为当前主选。见 [实物资料](https://github.com/SmallCoral/c5-car/blob/1b936e16e70845d13a9f0e41dbcd20ecfca4ad00/Documentation/%E6%84%9F%E4%B8%BA%E5%85%AB%E8%B7%AF%E7%81%B0%E5%BA%A6%E8%B5%84%E6%96%99/README.md)。
+以下区分已在 Motor 使用的器件、推荐新增器件和候选项。
+报价来自查询到的销售页，可能含搜索缓存；币种保留USD，不按假定汇率伪装成人民币现价。
+报价不含运费、税费、PCB、贴装和机械加工，库存需在下单时复核。
+LCSC社区查询API本轮返回403，供货依据改用销售商商品页。
+
+## 历史推荐清单
+
+| 用途 | 具体器件和数量 | 使用方式与选择理由 | 采购依据 |
+| --- | --- | --- | --- |
+| 主控 | 现有 STM32C5A3VGT6 核心板×1 | 继续承担所有运动控制，不另购主控开发板 | 复用 |
+| 视觉检测 | MaixCAM×1，用户确认 | 顶部俯视钢球；镜头与外壳版本、通讯和供电待核对 | 用户本轮确认；[原厂资料](https://wiki.sipeed.com/hardware/zh/maixcam/maixcam.html) |
+| 左右轮 | 现有 MG513XP28_12V×2 | 编码器轮速闭环，六芯线束接J4/J6 | 复用；[接口表](motor-interface.md) |
+| 直流驱动 | DRV8874PWPR×2，C1855818 | 保留硬件限流、电流反馈和故障输出，比换成无反馈廉价桥更利于调试 | [LCSC](https://www.lcsc.com/product-detail/Motor-Driver-ICs_Texas-Instruments-DRV8874PWPR_C1855818.html)：1片$1.1886，页面显示9851片 |
+| 摆杆执行 | 用户已购 ZDT_XS 第二代 TTL 驱动及电机一体套件×1 | 电机固定底盘，通过曲柄连杆抬升摆杆自由端；J23 八针仅接四根有效线 | 用户最新确认；[当前接线](m2-interfaces.md)，不把此前裸电机铭牌相电流当成套件输入电流 |
+| 此前步进驱动候选 | TMC2209-LA-T×1，C2150710；本轮未集成 | 当前已选 ZDT 一体套件，本项仅为历史候选 | [LCSC](https://www.lcsc.com/zh-CN/category/1016.html)：此前报价快照1片$2.8518、10片$2.523，页面显示19179片；搜索定位C2150710 |
+| 摆杆角度 | AS5600-ASOT×1，C499458 | 安在摆杆铰轴，测实际摆杆角度；不只测电机轴 | [LCSC](https://www.lcsc.com/product-detail/C499458.html)：1片$1.3747，页面显示2611片 |
+| 循迹 | 用户已有感为无MCU八路灰度＋MSPM0L1306辅助板 | 读取辅助板的八路数字量或CLK/DAT；不用C5直接采样本体 | 用户照片及[厂家资料](https://github.com/SmallCoral/c5-car/blob/1b936e16e70845d13a9f0e41dbcd20ecfca4ad00/Documentation/%E6%84%9F%E4%B8%BA%E5%85%AB%E8%B7%AF%E7%81%B0%E5%BA%A6%E8%B5%84%E6%96%99/README.md)，本轮未采购 |
+| 此前循迹备选 | QRE1113GR＋74HC4067 自研探头 | 保留历史方案，不纳入当前感为组件用料 | 原方案记录；本轮不选型采购 |
+| 钢球光栅发射 | IR333-A×32，备料按40只，C264290 | 940nm、5mm灯珠；沿杆8mm节距，4组错时发光 | [LCSC](https://www.lcsc.com/product-detail/C264290.html?is_substitute=1&original_product_code=C2936543&original_unit_price=0.1582)：10片档$0.0557/片，页面显示36500片，10只起/10只倍数 |
+| 钢球光栅接收 | PT204-6B×32 | 940nm黑色3mm光敏三极管，配遮光孔；买一小批先验证光路 | [DigiKey](https://www.digikey.com/en/products/detail/everlight-electronics-co-ltd/PT204-6B/2675642)：10片档$0.236/片，页面显示14953片；国内批量报价待核 |
+| 光栅读取 | SN74HCS165PWR×4，C2867845 | 在接收条串联读取32位；输入自带施密特，不把慢光电边沿直接送普通HC165 | [LCSC](https://www.lcsc.com/fr/product-detail/C2867845.html)有商品；[Mouser](https://www.mouser.com/ProductDetail/Texas-Instruments/SN74HCS165PWR?qs=DPoM0jnrROXHipdFjx%2FLiA%3D%3D)1片$0.69、10片$0.489，页面显示1903片 |
+| 发挥图传 | ESP32-S3-WROOM-1-N8R8×1，C2913201 | 自研电路上的射频模组，PSRAM用于图像缓冲；不买ESP32-CAM开发板代替设计 | [LCSC](https://lcsc.com/product-detail/wifi%20modules_espressif%20systems_esp32-s3-wroom-1-n8r8_C2913201.html)显示1片$5.515、1661片，但该价格快照较旧；[原厂模组页](https://www.espressif.com/products/modules)提供销售入口 |
+| 摄像头和存储 | OV2640成像组件×1、microSD插座×1、正规卡×1 | 只用镜头/传感器组件，主板自做处理、存储与供电；最终FPC针序按具体货源锁定 | [乐鑫相机驱动](https://github.com/espressif/esp32-camera)支持OV2640；本轮未锁定镜头组件商家，价格不作为已核报价 |
+
+AP63205、SN74LVC2G17 保留；M2.3 按当前负载将主功率 MOS 改为 DMP3007LK3-13、开关改为 SS12D10G5，并重新选择主保险和步进支路保险。
+当前器件与电流预算以[本轮验证](https://github.com/SmallCoral/c5-car/blob/e631797d99cd60486eccc874f66cc99cdf3f7496/Documentation/validation/2026-11-06-m23-power-connectors.md)和原生原理图为准，以上历史候选及报价不自动转为当前生产 BOM。
+2026-11-06 原理图实际新增 AP63205WU-7 五伏外设支路与 AP2112K-3.3 三伏三支路，分别按 1.5A 和 150mA 设计预算；此前 AP63203 为候选，未采用。完整已绘制接口与边界见 [M2 接线表](m2-interfaces.md)。
+光栅、循迹与图传不从Core的100mA外接预算取电。
+
+低成本优先通过复用电机和主控、取消不需要的网口、按阶段装配图传来实现。
+AS5600不需要高价多圈编码器，TMC2209只用一颗。
+小批新增电子部分先按人民币300～450元预留，此为预算目标，不是商城结算报价。
+该目标包含光学用料、驱动和图传配套，不含现有器件、制板、加工和运费；锁定国内货源后再收敛。
+
+## 此前光栅备选思路
+
+沿球杆布置32对红外通道，节距8mm，通道跨度248mm。
+球遮挡一个或多个通道，以遮挡区间中点估计位置。
+理想几何量化误差约为半个节距，即4mm；这不是总测量精度，实际还包括孔位、光斑、球径和阈值。
+先用4～8路验证，再决定是否扩到32路，不先下单整套长板。
+
+发射与接收要装在槽的两侧，光轴接近钢球赤道高度。
+使用黑色光阑、分组点亮和关灯基线，减少邻道串光及环境光影响。
+灯灭仍被判定有光的通道属于基线异常，不能简单相减后当作有效球位置。
+无球、球在边缘、遮挡不连续和所有通道饱和都要有无效状态。
+发射支路初拟5V、每灯680Ω，按1.2V正向压降约5.6mA，仅作小样起始值。
+每组8灯、4组分时，每组约45mA；实际接收裕量决定阻值和时序。
+对管供货型号变化必须重新验证波长、灵敏度、脚序和光阑，不能只替换BOM文字。
+
+PT333-3C曾作为低价候选，但[销售页](https://lcsc.com/product-detail/Phototransistors_Everlight-Elec-PT333-3C_C264295.html)显示缺货，未作为主选。
+PT204-6B目前有可购依据，国内报价需要进一步压低；可比较PT334-6B同类，但不在没有稳定货源时承诺替代。
+
+## 需要守住的电气边界
+
+- [TMC2209原厂资料](https://www.analog.com/en/products/tmc2209.html)的2A RMS是芯片能力；板级散热、取样电阻和实测温升决定可用相电流。
+- 步进先以较低RMS电流调试，测绕组电阻和温升后再设额定；不要把铭牌1.5A直接等同UART设定或电池电流。
+- [AS5600资料](https://look.ams-osram.com/m/7059eac7531a86fd/original/AS5600-DS000365.pdf)的12bit分辨率不等于12bit角度准确度；检查磁场状态并做零位标定。
+- [QRE1113GR](https://www.onsemi.com/download/data-sheet/pdf/qre1113-d.pdf)需要试验离地高度与黑白对比，不能按远距离反射开关使用。
+- [SN74HCS165](https://www.ti.com/lit/gpn/SN74HCS165)使用3.3V电源，所有并行输入受限于该电源；光敏集电极上拉也用3.3V。
+- [IR333-A](https://en.everlight.com/wp-content/plugins/ItemRelationship/product_files/pdf/IR333-A.pdf)的峰值电流有脉宽与占空比条件，本方案不采用1A脉冲宣传值。
+
+## 暂不选择的方案
+
+| 候选 | 当前处理 |
+| --- | --- |
+| 单个VL53L4CD直接测钢球 | 不作基本闭环主选；[ST资料](https://www.st.com/en/imaging-and-photonics-solutions/vl53l4cd.html)的量程不证明能稳定测槽内小钢球，需验证视场、槽壁和镜面反射 |
+| OpenMV、K210、成套循迹控制模块 | 当前先不采购，避免重复主控和增加成本；算法、电路与采样链自己完成 |
+| TB6612替换现有DRV8874 | 不建议为少量成本损失现有限流和电流反馈；MG513系列堵转约3.2A需要认真处理 |
+| MG996R直接做摆杆 | 可作快速原型备选，正式方案优先复用现有步进，比较回差、温升和控制带宽后再决定 |
+| MPU6050等IMU | 首版不必需；轮速、灰度和直接摆杆角度已能形成闭环，确认侧向补偿收益后再加 |
+
+## 采购与规则确认
+
+赛题对模块化成品控制方案的限制表述需要主办方澄清。
+推荐自研PCB、裸驱动及传感器；ESP32射频模组和镜头成像组件是否允许，提前以具体料号确认。
+比赛运行只自主控制，Wi-Fi页面用于只读画面与回放。
+没有为本轮下单，也没有把未核实报价填入当前Motor生产BOM。

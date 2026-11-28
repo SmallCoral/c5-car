@@ -1,0 +1,93 @@
+{
+  "date": "2026-11-07",
+  "queried_utc": "2026-11-07T15:33:53.2181721Z",
+  "url": "https://item.szlcsc.com/26546.html",
+  "http_status": 200,
+  "product": {
+    "theRatio": 100,
+    "productArrange": "编带",
+    "productModel": "0603WAF1003T5E",
+    "stockNumber": 7497373,
+    "encapsulationModel": "0603",
+    "hasStockNow": "yes",
+    "productCycle": "normal",
+    "smtLabel": "SMT基础库",
+    "isDisplayUsableTransitNum": true,
+    "remark": "小尺寸、重量轻。降低组装成本,与贴片机匹配。适用于波峰焊和回流焊",
+    "productUnit": "个",
+    "luceneBreviaryImageUrls": "https://alimg.szlcsc.com/upload/public/product/breviary/20221229/9CADD82CDD9E855DF3936BDC26AC09E2.jpg<$>https://alimg.szlcsc.com/upload/public/product/breviary/20221229/BA91C52FB701C36647CDF2E722A117FC.jpg<$>https://alimg.szlcsc.com/upload/public/product/breviary/20221229/AAF49512BD8D9F7BAF92BA16B6E41068.jpg<$>https://alimg.szlcsc.com/upload/public/brand/product/certificate/20260105/174E4162723206200A398CF31D45C76C.png",
+    "productMinEncapsulationUnit": "圆盘",
+    "productName": "厚膜电阻 100kΩ ±1% 100mW",
+    "returnCouponDesc": [],
+    "productGradePlateId": "99",
+    "isShowQuotedPriceBtn": false,
+    "isOldBatchClearance": false,
+    "validStockNumber": 74973,
+    "fileTypeVOList": [
+      {
+        "detailVOList": [
+          {
+            "fileName": "wj01897",
+            "fileUrl": "/upload/public/pdf/source/20200306/C422600_1E6D84923E4A46A82E41ADD87F860B5C.pdf"
+          }
+        ],
+        "fileType": "pdf_property"
+      },
+      {
+        "detailVOList": [
+          {
+            "fileName": "厚膜表面贴装晶片电阻_ROHS认证@@HF(无卤素)认证_UNI-ROYAL(厚声).pdf",
+            "fileUrl": "/upload/public/pdf/source/20260921/17FBA3C5F08B5A93B3329F05DAEAE3BB.pdf"
+          },
+          {
+            "fileName": "全量通用_IATF16949认证_ UNI-ROYAL(厚声).pdf.pdf",
+            "fileUrl": "/upload/public/pdf/source/20260224/E44AAC05C76BFDF9D891182309441D38.pdf"
+          },
+          {
+            "fileName": "全量通用_ISO14001认证_ UNI-ROYAL(厚声).pdf.pdf",
+            "fileUrl": "/upload/public/pdf/source/20260224/FA9D496E8C37F288264303BC5040CE7A.pdf"
+          },
+          {
+            "fileName": "贴片电阻器_ROHS认证(中文版)_UNI-ROYAL(厚声).pdf",
+            "fileUrl": "/upload/public/pdf/source/20250102/011BC44AA609F7824F4536AAE4F1141F.pdf"
+          }
+        ],
+        "fileType": "certification_data_property"
+      },
+      {
+        "detailVOList": [
+          {
+            "fileName": "全量选型手册_UNI-ROYAL(厚声).pdf",
+            "fileUrl": "/upload/public/pdf/source/20250425/89E070FC74995DDEEE9CD1FEC668BE8D.pdf"
+          }
+        ],
+        "fileType": "industry_information"
+      }
+    ],
+    "isEnvironment": true,
+    "isReturnCoupon": false,
+    "productType": "贴片电阻",
+    "encaptionPrice": 44,
+    "minBuyNumber": 1,
+    "minWholeNumber": 5000,
+    "saleRuleGroupId": 10039,
+    "convesionRatio": 100,
+    "productId": "26546",
+    "productGradePlateName": "UNI-ROYAL(厚声)",
+    "productWeight": 2.5946E-05,
+    "usableTransitNum": 0,
+    "isDisplay": true,
+    "pdfDESProductId": "B181E429D41EF46E",
+    "productCode": "C25803",
+    "breviaryImageUrl": "https://alimg.szlcsc.com/upload/public/product/breviary/20221229/9CADD82CDD9E855DF3936BDC26AC09E2.jpg",
+    "isShowPrice": true,
+    "productMinEncapsulationNumber": 5000,
+    "inEdaWhiteList": false,
+    "productStockStatus": "yes",
+    "productUnsealVendition": "yes"
+  },
+  "price": 0.0088,
+  "gdWarehouseStockNumber": 7497300,
+  "jsWarehouseStockNumber": 0,
+  "pageGeneratedAt": "2026-11-07T15:33:53.116Z"
+}

@@ -1,0 +1,67 @@
+{
+  "date": "2026-11-14",
+  "source_commit": "64c5210ef6b4a552aac22b4bfe8a288ffd95149f",
+  "kicad_version": "10.0.6",
+  "baseline_sha256": "395615fa382faaae5b126b4dba0a5e578da6f8b37d0f815eb3873445c7a80297",
+  "library_credit": "嘉立创EDA/EasyEDA官方库; https://lceda.cn/ ; https://easyeda.com",
+  "parts": [
+    {
+      "reference": "J1",
+      "mpn": "XT60PW-M",
+      "lcsc": "C98732",
+      "supplier_url": "https://item.szlcsc.com/99942.html",
+      "stock_checked": "2026-11-14",
+      "stock_quantity": null,
+      "procurement_status": "candidate; domestic live stock inaccessible",
+      "footprint": "Transfer:AMASS_XT60PW-M_1x02_P7.20mm_Horizontal",
+      "pin_polarity": {
+        "1": "negative",
+        "2": "positive"
+      },
+      "model": "AMASS_XT60PW-M_EasyEDA_C98732.step",
+      "offset": [
+        3.6,
+        7.1,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        90
+      ],
+      "geometry_modified": false,
+      "model_source_url": "https://modules.easyeda.com/qAxj6KHrDKw4blvCG8QJPs7Y/d22c67b9ac914fc88e11c9408076081e",
+      "model_catalog_url": "https://lceda.cn/api/products/C98732/components?version=6.4.19.5",
+      "model_sha256": "3b036d033f3037f3bb025b765d33774d9f1a53459046d49200378027d424d01a"
+    },
+    {
+      "reference": "J2",
+      "mpn": "XT60PW-F",
+      "lcsc": "C428722",
+      "supplier_url": "https://item.szlcsc.com/423834.html",
+      "stock_checked": "2026-11-14",
+      "stock_quantity": null,
+      "procurement_status": "candidate; domestic live stock inaccessible",
+      "footprint": "Transfer:AMASS_XT60PW-F_1x02_P7.20mm_Horizontal",
+      "pin_polarity": {
+        "1": "negative",
+        "2": "positive"
+      },
+      "model": "AMASS_XT60PW-F_EasyEDA_C428722.step",
+      "offset": [
+        -3.6,
+        6.8,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "geometry_modified": false,
+      "model_source_url": "https://modules.easyeda.com/qAxj6KHrDKw4blvCG8QJPs7Y/e0f7d290dcc84ebd8815ba245f7c3813",
+      "model_catalog_url": "https://lceda.cn/api/products/C428722/components?version=6.4.19.5",
+      "model_sha256": "05aef5de90210f686354a3f0927aeeb7d0f8f3c630afed5e943049df79cd53e4"
+    }
+  ]
+}

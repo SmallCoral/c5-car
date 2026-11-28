@@ -1,0 +1,95 @@
+{
+  "date": "2026-11-09",
+  "tool": "cadquery-ocp-novtk",
+  "version": "8.0.1.1.0",
+  "operation": "Read and validate existing STEP geometry only; no CAD export or construction",
+  "models": [
+    {
+      "file": "AMASS_XT60PW-M_EasyEDA_C98732.step",
+      "refs": [
+        "J1"
+      ],
+      "sha256": "3b036d033f3037f3bb025b765d33774d9f1a53459046d49200378027d424d01a",
+      "read_status": 1,
+      "valid": true,
+      "raw_bbox_mm": [
+        -9.05,
+        -7.75,
+        -3.0,
+        9.05,
+        7.75,
+        8.1001
+      ]
+    },
+    {
+      "file": "Littelfuse_0448015-MR_EasyEDA_C187551.step",
+      "refs": [
+        "F1"
+      ],
+      "sha256": "80e41a34764cae48e12d5599ab86b7cf89dfcf1ef554308be31b702be97cda7a",
+      "read_status": 1,
+      "valid": true,
+      "raw_bbox_mm": [
+        -3.05,
+        -1.35,
+        -1.35,
+        3.05,
+        1.35,
+        1.35
+      ]
+    },
+    {
+      "file": "Megastar_ZX-MX1.25-6PWT_EasyEDA_C7430472.step",
+      "refs": [
+        "J19"
+      ],
+      "sha256": "4665411daee1c3827c49bf1583b5c66f68a5f7e60315275fab9a6fb231f4bc66",
+      "read_status": 1,
+      "valid": true,
+      "raw_bbox_mm": [
+        -6.25,
+        -3.1,
+        -0.02,
+        6.26,
+        2.15,
+        3.6
+      ]
+    },
+    {
+      "file": "DEALON_SS-12D10-G5_PackageReference_C2998777.step",
+      "refs": [
+        "SW1"
+      ],
+      "sha256": "799887bd7556044030594a532c557f25135860a26bb8a0efe1b9d3e655a4f54c",
+      "read_status": 1,
+      "valid": true,
+      "raw_bbox_mm": [
+        -6.35,
+        -3.35,
+        -6.8,
+        6.35,
+        3.35,
+        11.4
+      ]
+    },
+    {
+      "file": "Nichicon_D10x12.5_P5_Lead_PackageReference.step",
+      "refs": [
+        "C1",
+        "C13",
+        "C33"
+      ],
+      "sha256": "659bacf23c440d119984d1adad81d75da4c5540a4c2ec3135c2d6c47d9487b14",
+      "read_status": 1,
+      "valid": true,
+      "raw_bbox_mm": [
+        -5.0,
+        -0.0,
+        -5.0,
+        5.0,
+        31.5,
+        5.0
+      ]
+    }
+  ]
+}
